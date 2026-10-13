@@ -14,7 +14,10 @@ mkdirSync(`${OUT}/public/fonts`, { recursive: true });
 cpSync('public', `${OUT}/public`, { recursive: true });
 // the script and style URLs of the page carry the build time: a new release is never served from a browser's cache
 const indexFile = `${OUT}/public/index.html`;
-writeFileSync(indexFile, readFileSync(indexFile, 'utf8').replace(/__BUILD__/g, String(Date.now())));
+const BUILD = String(Date.now());
+writeFileSync(indexFile, readFileSync(indexFile, 'utf8').replace(/__BUILD__/g, BUILD));
+// the page asks for this file to know whether a newer build is being served (local testing)
+writeFileSync(`${OUT}/public/build.txt`, BUILD);
 copyFileSync('node_modules/@fontsource/stix-two-math/files/stix-two-math-latin-400-normal.woff2', `${OUT}/public/fonts/stix-two-math.woff2`);
 // the fonts of the PNG / PDF export in the browser (the server uses the same files)
 for (const f of ['Regular', 'Bold', 'Italic', 'BoldItalic']) copyFileSync(`server/fonts/LiberationSans-${f}.ttf`, `${OUT}/public/fonts/LiberationSans-${f}.ttf`);

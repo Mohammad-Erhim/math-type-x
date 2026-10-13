@@ -27,6 +27,21 @@
   var editor = MathTypeX.JsEditor.newInstance(opts);
   window.editor = editor;
   editor.insertInto(document.getElementById('editorContainer'));
+  // local testing: when a newer build is being served the page reloads itself (the formula is kept in local storage)
+  try {
+    var mine = /[?&]v=(\d+)/.exec((document.querySelector('script[src*="demo.js"]') || {}).src || '');
+    if (mine && (location.hostname === 'localhost' || location.hostname === '127.0.0.1') && q.get('autoreload') !== '0') {
+      setInterval(function () {
+        if (document.hidden) return;
+        fetch('build.txt?t=' + Date.now(), { cache: 'no-store' })
+          .then(function (r) { return r.ok ? r.text() : ''; })
+          .then(function (t) {
+            if (t && /^\d+$/.test(t.trim()) && t.trim() !== mine[1]) location.reload();
+          })
+          .catch(function () {});
+      }, 15000);
+    }
+  } catch (err) {}
   // the formula, the tab, the font … are kept in the browser (local storage): leaving the page loses nothing, so there is
   // no confirmation. Only when nothing can be kept (storage blocked, ?persist=0) a formula in the editor is guarded.
   window.addEventListener('beforeunload', function (e) {
