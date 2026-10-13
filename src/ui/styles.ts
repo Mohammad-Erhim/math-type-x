@@ -172,6 +172,12 @@ export const CSS = `
 .wrs_reflow .wrs_header>button[role=tab].wrs_selected{top:auto;height:40px;margin-top:0;background-size:100% 100%}
 .wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
 .wrs_fluid .wrs_toolbar.wrs_main{margin-bottom:10px}
+.wrs_tabCaption{display:none}
+.wrs_reflow .wrs_tabCaption{display:block;flex:none;padding:3px 10px;background:#e6edf0;border-bottom:1px solid #b7c4cb;color:#324d5b;font:700 12px/16px Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrs_hint{display:none;position:absolute;left:34px;right:12px;top:9px;color:#6d7f89;font:15px/1.3 Arial,sans-serif;pointer-events:none;z-index:1;direction:ltr;text-align:left}
+.wrs_rtl .wrs_hint{direction:rtl;text-align:right;left:12px;right:34px}
+.wrs_emptyDoc .wrs_hint{display:block}
+.wrs_handMode .wrs_hint{display:none}
 .wrs_reflow .wrs_panelContainer{height:auto;max-height:var(--wrs-panel-max,54vh);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
 .wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}
@@ -188,13 +194,19 @@ export const CSS = `
 /* the pad follows the toolbar's look: slate frame, light blue-grey face, cream when pressed */
 .wrs_editor .wrs_navKey{width:48px;flex:0 1 48px;min-width:36px;height:48px;padding:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);color:#324d5b;font:700 19px/1 Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .wrs_editor .wrs_navKey:active{background:linear-gradient(#fffdf2,#f6efd0);border-color:#5f7681}
-.wrs_editor .wrs_navKey svg{display:block;margin:auto}
+.wrs_editor .wrs_navKey svg{display:block;margin:0 auto}
+.wrs_editor .wrs_navKey .wrs_navCap{display:block;margin-top:2px;font:700 10px/1 Arial,sans-serif;white-space:nowrap}
+.wrs_editor .wrs_navClear{color:#fff}
+.wrs_editor .wrs_navKeyboard,.wrs_editor .wrs_navBackspace{color:#324d5b}
+@media (max-height:560px){.wrs_editor .wrs_navKey{height:40px;width:44px;flex-basis:44px}.wrs_fluid .wrs_navPad{padding:3px 8px}}
 .wrs_rtl .wrs_navBackspace svg{transform:scaleX(-1)}
+.wrs_editor .wrs_navKeyboard.wrs_navOn{background:linear-gradient(#e3eaed,#cfdbe0);border-color:#5f7681}
 .wrs_fluid .wrs_navPad .wrs_navClear{margin-right:auto}
+.wrs_editor .wrs_navKeyboard{margin-right:10px}
 .wrs_editor .wrs_navClear{margin-right:14px;border-color:#a3221c;background:linear-gradient(#ea5a52,#c62d26)}
 .wrs_editor .wrs_navClear:active{background:linear-gradient(#c62d26,#a3221c);border-color:#7d1914}
 .wrs_editor .wrs_navClear.wrs_navOff{opacity:.45;background:linear-gradient(#e6a9a5,#d68a85);border-color:#c9908c}
-.wrs_editor .wrs_navClear{display:flex;align-items:center;justify-content:center}
+.wrs_editor .wrs_navClear,.wrs_editor .wrs_navKeyboard,.wrs_editor .wrs_navBackspace{display:flex;flex-direction:column;align-items:center;justify-content:center}
 .wrs_navClear svg path{stroke:#fff}
 .wrs_confirm{position:absolute;right:8px;bottom:64px;z-index:7;width:min(280px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:2px solid #778e9a;border-radius:5px;background:linear-gradient(#f6f9fa,#e3eaed);box-shadow:0 0 10px rgba(52,64,84,.3);font:700 14px/1.35 Arial,sans-serif;color:#324d5b;direction:ltr}
 .wrs_confirmText{margin:0 0 10px}

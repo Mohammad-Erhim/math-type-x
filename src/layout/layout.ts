@@ -9,7 +9,7 @@
 import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr } from '../core/model';
 import { glyphText } from './glyphs';
-import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont } from './metrics';
+import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont, joinedPrefixWidth, isJoinedRun } from './metrics';
 import rtlMirror from '../data/rtl-mirror.json';
 
 /* ---------------------------------------------------------------- items */
@@ -441,15 +441,29 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   const asc = K.asc * size + padOf(size) - drop + lift;
   const desc = h - K.asc * size + drop;
   const items: Item[] = [{ k: 'g', x: 0, y: drop - lift, text: drawn, size, font, italic: italicFlag && font === 'sans', bold, color, w: info.w }];
-  // caret positions inside a merged run
+  // caret positions inside a merged run (x of the boundary after each letter but the last)
   let inner: number[] | undefined;
   if (to - from > 1) {
-    inner = [];
-    let acc = 0;
     const chars = Array.from(text);
+    // letters of a run advance as they are joined: boundaries come from the shaped prefixes, else from the isolated
+    // advances scaled so that the last boundary meets the end of the run
+    const iso: number[] = [];
+    let acc = 0;
     for (let k = 0; k < chars.length - 1; k++) {
       acc += tokenInfo(tag, mv, chars[k], size).w;
-      inner.push(acc);
+      iso.push(acc);
+    }
+    let sum = acc + tokenInfo(tag, mv, chars[chars.length - 1], size).w;
+    sum = sum > 0 ? sum : 1;
+    inner = iso.map((v) => (v * info.w) / sum);
+    if (isJoinedRun(text)) {
+      const sh: number[] = [];
+      for (let k = 0; k < chars.length - 1; k++) {
+        const w = joinedPrefixWidth(chars.slice(0, k + 1).join(''), size);
+        if (w === null || w <= (sh[k - 1] ?? 0) || w >= info.w) break;
+        sh.push(w);
+      }
+      if (sh.length === chars.length - 1) inner = sh;
     }
   }
   void italicDefault;

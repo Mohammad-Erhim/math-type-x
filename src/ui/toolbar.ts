@@ -10,7 +10,7 @@ import { controlIcon, tracedPaths, DRAWN_ICONS } from './icons';
 import CTX_LAYOUT from '../data/ctx-layout.json';
 import CTX_ICONS from '../data/ctx-icons.json';
 import { ART, TAB_ICONS } from './art';
-import { TAB_TITLES, FONT_FAMILIES, FONT_SIZES, ARABIC_FONTS_GROUP } from './messages';
+import { TAB_TITLES, TAB_CAPTIONS, FONT_FAMILIES, FONT_SIZES, ARABIC_FONTS_GROUP } from './messages';
 
 interface CtxCell {
   x: number;
@@ -84,13 +84,16 @@ export class Toolbar {
   readonly expands: HTMLButtonElement[][] = [];
   readonly selects: { font: HTMLSelectElement; size: HTMLSelectElement; fontLabel: HTMLElement; sizeLabel: HTMLElement; fontBox: HTMLElement; sizeBox: HTMLElement } | null = null;
   selected = 0;
+  private caption!: HTMLElement;
   private panelButtons: HTMLButtonElement[][] = [];
   private ctxPanel: HTMLElement;
 
   constructor(private host: ToolbarHost) {
     this.header = h('div', { class: 'wrs_header', role: 'tablist' });
     this.container = h('div', { class: 'wrs_panelContainer' });
-    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.container);
+    // the name of the open tab (narrow windows only): icons alone do not tell a first-time user what a tab holds
+    this.caption = h('div', { class: 'wrs_tabCaption', 'aria-hidden': 'true' });
+    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.caption, this.container);
     this.buildTabs();
     this.buildPanels();
     this.ctxPanel = this.panels[9];
@@ -451,6 +454,7 @@ export class Toolbar {
       (t.querySelector('svg') as SVGElement).style.color = on ? '#51636d' : '#fff';
     });
     this.panels.forEach((p, k) => p.classList.toggle('wrs_selected', k === i));
+    this.caption.textContent = TAB_CAPTIONS[i] ?? '';
     this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
     // the first control of the selected tab is the single tab stop
     for (let t = 0; t < 10; t++) this.setTabStop(t, null);

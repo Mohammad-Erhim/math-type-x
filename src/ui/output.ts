@@ -42,6 +42,7 @@ export class OutputPanel {
   private status: HTMLElement;
   private copyBtn: HTMLButtonElement;
   private dlBtn: HTMLButtonElement;
+  private shareBtn: HTMLButtonElement | null = null;
   private timer: ReturnType<typeof setTimeout> | null = null;
   /** counts requests: only the answer of the newest one is shown */
   private seq = 0;
@@ -89,7 +90,13 @@ export class OutputPanel {
     this.dlBtn = h('button', { type: 'button', text: 'Download' }) as HTMLButtonElement;
     this.copyBtn.addEventListener('click', () => void this.copy());
     this.dlBtn.addEventListener('click', () => this.download());
-    const foot = h('div', { class: 'mtx_foot' }, this.status, this.copyBtn, this.dlBtn);
+    // phones: hand the result to another app (messages, mail, documents) with the system share sheet
+    const nav = navigator as Navigator & { share?: (d: ShareData) => Promise<void> };
+    if (typeof nav.share === 'function') {
+      this.shareBtn = h('button', { type: 'button', text: 'Share' }) as HTMLButtonElement;
+      this.shareBtn.addEventListener('click', () => void this.share());
+    }
+    const foot = h('div', { class: 'mtx_foot' }, this.status, ...(this.shareBtn ? [this.shareBtn] : []), this.copyBtn, this.dlBtn);
     this.root = h('section', { class: 'mtx_output', 'aria-label': 'Output' }, tabs, this.body, foot);
     container.append(this.root);
     // translated labels (the code shown in the body stays as it is)
@@ -285,6 +292,23 @@ export class OutputPanel {
       this.status.textContent = 'Copied to clipboard';
     } catch {
       this.status.textContent = 'Copy failed – select the text and press Ctrl+C';
+    }
+  }
+
+  private async share(): Promise<void> {
+    const nav = navigator as Navigator & { share: (d: ShareData) => Promise<void>; canShare?: (d: ShareData) => boolean };
+    try {
+      if (this.blob && (this.kind === 'png' || this.kind === 'svg')) {
+        const file = new File([this.blob], this.kind === 'png' ? 'formula.png' : 'formula.svg', { type: this.blob.type || (this.kind === 'png' ? 'image/png' : 'image/svg+xml') });
+        if (!nav.canShare || nav.canShare({ files: [file] })) {
+          await nav.share({ files: [file] });
+          return;
+        }
+      }
+      await nav.share({ text: this.value });
+    } catch (e) {
+      // closing the share sheet is not an error
+      if ((e as Error).name !== 'AbortError') this.status.textContent = 'Could not share';
     }
   }
 

@@ -36,6 +36,9 @@ export const TAB_TITLES = [
   'Contextual tab (Alt+0)',
 ];
 
+/** short names of the tabs (shown above the panel in narrow windows) */
+export const TAB_CAPTIONS = ['General', 'Symbols', 'Arrows', 'Greek & letters', 'Matrices', 'Scripts & layout', 'Decorations', 'Big operators', 'Calculus', 'Contextual'];
+
 export interface FontOption {
   label: string;
   value: string;

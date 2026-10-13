@@ -27,17 +27,15 @@
   var editor = MathTypeX.JsEditor.newInstance(opts);
   window.editor = editor;
   editor.insertInto(document.getElementById('editorContainer'));
-  // the formula, the tab, the font … are kept in the browser (local storage), so leaving the page loses nothing: the
-  // browser only asks for a confirmation (it shows its own wording; the text below is for browsers that display it)
+  // the formula, the tab, the font … are kept in the browser (local storage): leaving the page loses nothing, so there is
+  // no confirmation. Only when nothing can be kept (storage blocked, ?persist=0) a formula in the editor is guarded.
   window.addEventListener('beforeunload', function (e) {
-    var empty = true;
+    var guard = false;
     try {
-      empty = editor.isEmpty();
+      guard = !editor.isEmpty() && !editor.isPersisted();
     } catch (err) {}
-    if (empty) return;
+    if (!guard) return;
     e.preventDefault();
-    e.returnValue = 'Your formula is saved on this device. Leave this page?';
-    return e.returnValue;
+    e.returnValue = '';
   });
-  if (q.get('output') !== '0') window.outputPanel = new MathTypeX.OutputPanel(editor, document.getElementById('outputContainer'));
 })();

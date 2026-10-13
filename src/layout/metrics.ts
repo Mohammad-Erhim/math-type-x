@@ -147,6 +147,19 @@ function stixAdv(ch: string): number {
   return m ? m[0] / raw.upm : 0.6;
 }
 
+/** where the next letter of a joined Arabic run starts: the advance of the first letters followed by a joiner (the last
+ * one then takes its joining form, as it does inside the whole run); null while the face cannot be measured */
+export function joinedPrefixWidth(prefix: string, size: number): number | null {
+  return runWidth(prefix + '\u200d', size);
+}
+
+/** true for a run of two or more letters of Arabic script (the ones that join) */
+export function isJoinedRun(text: string): boolean {
+  let n = 0;
+  for (const c of text) if (ARABIC_BLOCKS.test(c) && ++n >= 2) return true;
+  return false;
+}
+
 export function isBigOp(cp: number): boolean {
   return BIG.has(cp) || INT.has(cp);
 }

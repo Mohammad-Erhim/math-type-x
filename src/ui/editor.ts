@@ -186,6 +186,11 @@ export class MathEditor implements ToolbarHost {
     return formula;
   }
 
+  /** true while the editor's state is kept in the browser (the persist option, and storage that works) */
+  isPersisted(): boolean {
+    return !!this.store && this.store.ok;
+  }
+
   /** what is saved for this editor (output panel: the chosen format) */
   readState(): Saved | null {
     return this.store ? this.store.read() : null;
@@ -254,6 +259,7 @@ export class MathEditor implements ToolbarHost {
     if (k !== 1) this.root.classList.add('wrs_scaled');
     container.appendChild(this.root);
     // translated tooltips / labels (the handwriting panel stays English, like the reference)
+    this.display.wrapper.append(h('div', { class: 'wrs_hint', 'aria-hidden': 'true', text: 'Type here, or pick a symbol above' }));
     this.localizer = new Localizer(tableFor(this.lang), (el) => el.classList.contains('wrs_hand'));
     this.localizer.attach(this.root);
     handBtn.addEventListener('click', () => this.openHand());
@@ -281,7 +287,7 @@ export class MathEditor implements ToolbarHost {
       if (glyph) b.innerHTML = `<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="${glyph}" fill="#324d5b"/></svg>`;
       if (key === 'Backspace') {
         // the key's own sign: it points the way the text is deleted (mirrored in right-to-left formulas by the style)
-        b.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg>';
+        b.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Delete</span>';
       }
       // a press must not take the focus (and so the soft keyboard) away from the formula
       b.addEventListener('pointerdown', (e) => e.preventDefault());
@@ -322,7 +328,7 @@ export class MathEditor implements ToolbarHost {
     }
     // clear the whole formula – after a confirmation
     const clear = h('button', { type: 'button', class: 'wrs_navKey wrs_navClear', title: 'Clear the formula', 'aria-label': 'Clear the formula', tabindex: '-1' }) as HTMLButtonElement;
-    clear.innerHTML = '<svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    clear.innerHTML = '<svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wrs_navCap">Clear</span>';
     clear.addEventListener('pointerdown', (e) => e.preventDefault());
     clear.addEventListener('mousedown', (e) => e.preventDefault());
     const confirmBox = h('div', { class: 'wrs_confirm', role: 'alertdialog', 'aria-label': 'Clear the whole formula?' });
@@ -356,6 +362,25 @@ export class MathEditor implements ToolbarHost {
         this.focusEditor();
       }
     });
+    // the phone's own keyboard: shown while typing, put away with this key (the formula, the toolbar and the pad get its room
+    // back); the formula keeps its caret and the pad keeps working
+    const kb = h('button', { type: 'button', class: 'wrs_navKey wrs_navKeyboard', title: 'Keyboard', 'aria-label': 'Keyboard', 'aria-pressed': 'true', tabindex: '-1' }) as HTMLButtonElement;
+    kb.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.8" fill="none" stroke="#324d5b" stroke-width="1.7"/><path d="M6 10h1.6M10 10h1.6M14 10h1.6M18 10h.2M6 13.5h.2M8.5 14h7M18 13.5h.2" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Keys</span>';
+    kb.addEventListener('pointerdown', (e) => e.preventDefault());
+    kb.addEventListener('mousedown', (e) => e.preventDefault());
+    kb.addEventListener('click', (e) => {
+      e.preventDefault();
+      const input = this.display.input;
+      const on = input.inputMode === 'none';
+      input.inputMode = on ? 'text' : 'none';
+      kb.setAttribute('aria-pressed', String(on));
+      kb.classList.toggle('wrs_navOn', on);
+      // a changed input mode takes effect when the field is focused again
+      input.blur();
+      input.focus({ preventScroll: true });
+    });
+    kb.classList.add('wrs_navOn');
+    pad.prepend(kb);
     pad.prepend(clear);
     // a bar of its own below the formula area (fluid layout) so that it is never covered or scrolled away
     this.display.wrapper.after(pad, confirmBox);
@@ -468,7 +493,7 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_reflow', narrow);
     // the panel never takes the room the formula needs (tabs 40 px, touch pad 56 px, at least 120 px of formula): it
     // scrolls up and down inside itself instead
-    this.root.style.setProperty('--wrs-panel-max', Math.max(110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
+    this.root.style.setProperty('--wrs-panel-max', Math.max(h < 360 ? 84 : 110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
@@ -539,6 +564,7 @@ export class MathEditor implements ToolbarHost {
   render(): void {
     const core = this.core;
     this.navClear?.classList.toggle('wrs_navOff', core.isEmpty());
+    this.root.classList.toggle('wrs_emptyDoc', core.isEmpty());
     const arabic = arabicCssFamily(core.getFontFamily());
     this.ensureArabicFace(arabic);
     this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl, arabic);

@@ -11,6 +11,13 @@ html,body{height:100%;margin:0;padding:0;background:#fff;color:#18212f;font-fami
   .page{padding:0}
   #outputContainer .mtx_output{margin-top:0;border-radius:0;border-width:1px 0 0}
 }
+/* a low window (a soft keyboard is open, a phone held sideways): the output panel keeps its tabs, its status and a line or
+   two of the result, and the formula gets the rest */
+@media (max-height:560px){
+  #outputContainer .mtx_output{height:88px;min-height:88px}
+  #outputContainer .mtx_body{padding:4px 10px}
+  #outputContainer .mtx_foot{padding:2px 10px}
+}
 /* ?layout=classic */
 .classic body{height:auto}
 .classic .page{width:725px;max-width:725px;height:auto;min-height:0;margin:24px auto 48px;padding:0}
