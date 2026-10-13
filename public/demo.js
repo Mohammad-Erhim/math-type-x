@@ -60,7 +60,23 @@
     var was = false;
     try { was = localStorage.getItem('mtx:exportOpen') === '1'; } catch (err) {}
     setOpen(was, true);
-    bar.addEventListener('click', function () { setOpen(!outBox.classList.contains('mtx_open')); });
+    bar.addEventListener('click', function () {
+      var open = !outBox.classList.contains('mtx_open');
+      // opening the export section puts the phone's keyboard away
+      if (open) {
+        var a = document.activeElement;
+        if (a && a.classList && a.classList.contains('wrs_focusElement')) a.blur();
+      }
+      setOpen(open);
+    });
     outBox.appendChild(bar);
+    // the phone's keyboard takes half of the screen: the export section folds away when it opens (the choice made with the
+    // bar is not changed – it is back when the keyboard is put away and the page is opened again)
+    document.addEventListener('focusin', function (e) {
+      var t = e.target;
+      if (!t || !t.classList || !t.classList.contains('wrs_focusElement') || t.inputMode === 'none') return;
+      if (!window.matchMedia || !window.matchMedia('(pointer: coarse)').matches) return;
+      if (outBox.classList.contains('mtx_open')) setOpen(false, true);
+    });
   }
 })();

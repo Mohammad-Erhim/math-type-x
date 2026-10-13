@@ -93,11 +93,43 @@ export class Toolbar {
     this.container = h('div', { class: 'wrs_panelContainer' });
     // the name of the open tab (narrow windows only): icons alone do not tell a first-time user what a tab holds
     this.caption = h('div', { class: 'wrs_tabCaption', 'aria-hidden': 'true' });
-    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.caption, this.container);
+    // narrow windows: the panel is a short window onto its controls; arrows at its edges tell when there is more to see
+    const cue = (dir: 'up' | 'down') => {
+      const b = h('button', { type: 'button', class: 'wrs_scrollCue wrs_cue' + (dir === 'up' ? 'Up' : 'Down'), tabindex: '-1', 'aria-label': dir === 'up' ? 'Scroll up' : 'Scroll down' }) as HTMLButtonElement;
+      b.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${dir === 'up' ? 'M3 10l5-5 5 5' : 'M3 6l5 5 5-5'}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${dir === 'down' ? '<span>More</span>' : ''}`;
+      b.addEventListener('pointerdown', (e) => e.preventDefault());
+      b.addEventListener('click', () => this.container.scrollBy({ top: (dir === 'up' ? -1 : 1) * Math.max(40, this.container.clientHeight * 0.75), behavior: 'smooth' }));
+      return b;
+    };
+    const cueUp = cue('up');
+    const cueDown = cue('down');
+    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.caption, this.container, cueUp, cueDown);
     this.buildTabs();
     this.buildPanels();
+    this.watchScroll();
     this.ctxPanel = this.panels[9];
     this.select(0);
+  }
+
+  /** which edges of the panel have more content beyond them (classes of the toolbar): an IntersectionObserver on two
+   * sentinels – no scroll listener, nothing runs while the person scrolls */
+  private watchScroll(): void {
+    if (typeof IntersectionObserver !== 'function') return;
+    const top = h('div', { class: 'wrs_sentinel', 'aria-hidden': 'true' });
+    const bottom = h('div', { class: 'wrs_sentinel', 'aria-hidden': 'true' });
+    this.container.prepend(top);
+    this.container.append(bottom);
+    const visible = new Map<Element, boolean>([[top, true], [bottom, true]]);
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) visible.set(e.target, e.isIntersecting);
+        this.root.classList.toggle('wrs_moreAbove', visible.get(top) === false);
+        this.root.classList.toggle('wrs_moreBelow', visible.get(bottom) === false);
+      },
+      { root: this.container, threshold: 0 },
+    );
+    io.observe(top);
+    io.observe(bottom);
   }
 
   private buildTabs(): void {
@@ -348,6 +380,12 @@ export class Toolbar {
     this.reflowOn = on;
     this.reflowWidth = width;
     this.panels.forEach((p) => this.reflowPanel(p));
+    this.placeCues();
+  }
+
+  /** the upper cue sits on the top edge of the panel */
+  private placeCues(): void {
+    if (this.reflowOn) this.root.style.setProperty('--wrs-cue-top', this.container.offsetTop + 'px');
   }
 
   /** (re)arrange the children of one panel – also called after the contextual panel was rebuilt */
@@ -455,6 +493,8 @@ export class Toolbar {
     });
     this.panels.forEach((p, k) => p.classList.toggle('wrs_selected', k === i));
     this.caption.textContent = TAB_CAPTIONS[i] ?? '';
+    this.container.scrollTop = 0;
+    this.placeCues();
     this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
     // the first control of the selected tab is the single tab stop
     for (let t = 0; t < 10; t++) this.setTabStop(t, null);

@@ -185,7 +185,19 @@ export const CSS = `
 .wrs_rtl .wrs_hint{direction:rtl;text-align:right;left:12px;right:34px}
 .wrs_emptyDoc .wrs_hint{display:block}
 .wrs_handMode .wrs_hint{display:none}
-.wrs_reflow .wrs_panelContainer{height:auto;max-height:var(--wrs-panel-max,54vh);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+.wrs_sentinel{height:1px;width:1px;margin:0;padding:0;pointer-events:none;visibility:hidden}
+/* narrow windows: a short panel that scrolls. Its height follows the window in CSS alone (dvh: a soft keyboard makes it
+   shorter in the same frame, without script); the scroll cues say that there is more */
+.wrs_reflow .wrs_panelContainer{height:auto;max-height:120px;max-height:clamp(84px,24dvh,120px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f8793 transparent;-webkit-overflow-scrolling:touch;contain:layout paint}
+.wrs_reflow .wrs_panelContainer::-webkit-scrollbar{display:block;width:6px}
+.wrs_reflow .wrs_panelContainer::-webkit-scrollbar-thumb{background:#6f8793;border-radius:3px}
+.wrs_scrollCue{display:none}
+.wrs_reflow .wrs_toolbar.wrs_main{position:relative}
+.wrs_reflow .wrs_scrollCue{display:flex;position:absolute;left:0;right:6px;height:28px;align-items:center;justify-content:center;gap:4px;margin:0;padding:0;border:0;z-index:4;color:#324d5b;font:700 12px Arial,sans-serif;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .15s}
+.wrs_reflow .wrs_cueDown{bottom:1px;background:linear-gradient(rgba(214,224,229,0),rgba(214,224,229,.97) 65%)}
+.wrs_reflow .wrs_cueUp{top:var(--wrs-cue-top,66px);background:linear-gradient(rgba(214,224,229,.97) 35%,rgba(214,224,229,0))}
+.wrs_reflow.wrs_toolbar.wrs_moreBelow .wrs_cueDown,.wrs_reflow .wrs_toolbar.wrs_moreBelow .wrs_cueDown,.wrs_reflow .wrs_toolbar.wrs_moreAbove .wrs_cueUp{opacity:1;pointer-events:auto}
+@media (prefers-reduced-motion:reduce){.wrs_reflow .wrs_scrollCue{transition:none}}
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
 .wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}
 .wrs_reflow .wrs_line{display:none}

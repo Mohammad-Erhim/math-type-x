@@ -106,7 +106,18 @@ export class MathEditor implements ToolbarHost {
   private fluid = false;
   private host: HTMLElement | null = null;
   private resizeObs: ResizeObserver | null = null;
-  private onWinResize = (): void => this.applyLayout();
+  private layoutKey = '';
+  private stableW = -1;
+  private stableIH = 0;
+  private resizeRaf = 0;
+  /** resize events come in bursts while a soft keyboard slides in: the layout is looked at once per frame */
+  private onWinResize = (): void => {
+    if (this.resizeRaf) return;
+    this.resizeRaf = requestAnimationFrame(() => {
+      this.resizeRaf = 0;
+      this.applyLayout();
+    });
+  };
 
   constructor(options: EditorOptions = {}) {
     this.opts = { ...DEFAULTS, ...options } as any;
@@ -132,9 +143,12 @@ export class MathEditor implements ToolbarHost {
   private store: Store | null = null;
   private restoredTab: number | undefined;
   private onHide = (): void => {
-    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.store?.flush();
+    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.onPageHide();
   };
-  private onPageHide = (): void => this.store?.flush();
+  private onPageHide = (): void => {
+    if (this.changeTimer) this.flushChange();
+    this.store?.flush();
+  };
 
   /** apply a saved record; true when it brought a formula */
   private restore(s: Saved | null): boolean {
@@ -448,7 +462,7 @@ export class MathEditor implements ToolbarHost {
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
     this.resizeObs?.disconnect();
-    this.store?.flush();
+    this.onPageHide();
     document.removeEventListener('visibilitychange', this.onHide);
     window.removeEventListener('pagehide', this.onPageHide);
     window.removeEventListener('resize', this.onWinResize);
@@ -460,7 +474,7 @@ export class MathEditor implements ToolbarHost {
   private setupLayout(container: HTMLElement): void {
     this.host = container;
     if (typeof ResizeObserver !== 'undefined') {
-      this.resizeObs = new ResizeObserver(() => this.applyLayout());
+      this.resizeObs = new ResizeObserver(() => this.onWinResize());
       this.resizeObs.observe(container);
     }
     window.addEventListener('resize', this.onWinResize);
@@ -479,20 +493,30 @@ export class MathEditor implements ToolbarHost {
       return;
     }
     const w = this.host.clientWidth;
+    // the height of the window a soft keyboard leaves must not change the layout (no relayout, no flicker, also on slow
+    // phones): decisions use the tallest height seen at this width
+    if (w !== this.stableW) {
+      this.stableW = w;
+      this.stableIH = 0;
+    }
+    this.stableIH = Math.max(this.stableIH, window.innerHeight);
     const attr = this.host.dataset.wrsLayout as 'classic' | 'fluid' | 'auto' | undefined;
     const mode = this.layoutMode !== 'auto' ? this.layoutMode : attr ?? 'auto';
     // a low window (a phone held sideways) has no room for the 415 px widget either
-    const fluid = mode === 'fluid' || (mode === 'auto' && w > 0 && (w < 725 || window.innerHeight < 480));
+    const fluid = mode === 'fluid' || (mode === 'auto' && w > 0 && (w < 725 || this.stableIH < 480));
     const coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
-    const h = this.host.clientHeight;
-    // touch: controls of at least 44 px (the big buttons are 33 px); a low window gets less zoom to leave room for the formula
-    let k: number = this.opts.toolbarSize;
-    if (fluid && k === 1 && coarse) k = h > 0 && h < 480 ? 1.25 : 1.5;
+    // the controls keep their size on every device (the panel is made shorter and scrolls instead)
+    const k: number = this.opts.toolbarSize;
     // a narrow window (a phone): no sideways scrolling – the tabs share one row and the controls wrap into rows
-    // (touch sized, a little smaller when the window is low)
     const narrow = fluid && w > 0 && w < 960;
-    if (narrow && this.opts.toolbarSize === 1) k = !coarse ? 1 : h > 0 && h < 520 ? 1.1 : 1.45;
     const hk = fluid && coarse ? 1.35 : 1;
+    // nothing that matters changed (the window only became lower: a soft keyboard): leave everything as it is
+    const key = `${fluid}|${narrow}|${k}|${hk}|${coarse}|${w}`;
+    if (key === this.layoutKey) {
+      if (this.isHandOpen()) this.hand.resize();
+      return;
+    }
+    this.layoutKey = key;
     // only a change of the layout mode closes a pop-up; a new zoom (a different window height) keeps it
     const changed = fluid !== this.fluid;
     this.fluid = fluid;
@@ -503,7 +527,6 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_reflow', narrow);
     // the panel never takes the room the formula needs (tabs 40 px, touch pad 56 px, at least 120 px of formula): it
     // scrolls up and down inside itself instead
-    this.root.style.setProperty('--wrs-panel-max', Math.max(h < 360 ? 84 : 110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
@@ -538,12 +561,20 @@ export class MathEditor implements ToolbarHost {
     if (!this.root) return;
     this.normalizeRoot();
     this.render();
+    // what is not needed to answer a tap (the MathML text, the saved copy, the change event) waits until the taps pause:
+    // a slow phone spends the tap on the drawing, not on bookkeeping
+    if (this.changeTimer) clearTimeout(this.changeTimer);
+    this.changeTimer = setTimeout(() => this.flushChange(), 100);
+  }
+
+  private flushChange(): void {
+    if (this.changeTimer) clearTimeout(this.changeTimer);
+    this.changeTimer = null;
     const mml = this.core.getMathML();
     this.persistNow(mml);
     if (mml !== this.lastMml) {
       this.lastMml = mml;
-      if (this.changeTimer) clearTimeout(this.changeTimer);
-      this.changeTimer = setTimeout(() => this.emitEv('change', { mathml: this.getMathML(), empty: this.isEmpty() }), 100);
+      this.emitEv('change', { mathml: this.getMathML(), empty: this.isEmpty() });
     }
   }
 
