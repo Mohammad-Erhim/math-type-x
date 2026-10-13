@@ -94,6 +94,13 @@ All notable changes are documented here. The format follows
   (`tools/gen/zulfi/extract.py`, data in `src/data/zulfi.json`), private-use characters U+E100… in the formula, drawn as
   paths in the editor and in every export: no font is shipped for them. The other tables (operations, relations, …) were
   extracted too and removed again at the owner's request (`tools/gen/zulfi/categories.json` lists what ships).
+- **Vertical alignment of structures with inputs** (extension of the contextual tab): fractions, roots, scripts, limits, big
+  operators and enclosures offer Baseline / Middle / Middle-baseline (`wrs:valign`, like the fence); the default is the
+  reference's position, so existing formulas do not move. The bare engine keeps the reference's contextual tab
+  (`EditorCore.contextExtras`, switched on by the editor).
+- Arabic language: the differential d of the calculus controls (and their icons) is the Arabic math letter ء.
+- Mobile: long press selects, the clear confirmation is a centred modal, the page declares `color-scheme: only light`
+  (no forced dark mode), PNGs of the output panel are opaque white.
 - History group beside the arrows (Undo / Redo, greyed when there is nothing to go back / forward to, shortcuts in the
   tooltips): Ctrl+Z (Cmd+Z), Ctrl+Y and — new — Ctrl+Shift+Z (Cmd+Shift+Z) redo.
 - Narrow windows: the controls keep their size on every device; the panel is a short window (CSS height that follows the

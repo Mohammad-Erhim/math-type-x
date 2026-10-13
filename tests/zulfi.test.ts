@@ -69,3 +69,34 @@ test('in an Arabic editor the differential d of the calculus controls is the las
   const last = ZULFI_GROUPS[0].items[ZULFI_GROUPS[0].items.length - 1];
   assert.equal(last, 0xe188, 'the last letter of the list');
 });
+
+test('contextual extension: structures with inputs have a vertical alignment (not in the bare engine)', async () => {
+  const { contextState, applyContext } = await import('../src/core/context');
+  const { layoutDocument } = await import('../src/layout/layout');
+  const { parseMathML } = await import('../src/core/mathml');
+  const mml = `<math ${N}><mi>x</mi><msup><mi>a</mi><mn>2</mn></msup></math>`;
+  const make = (extras: boolean) => {
+    const ed = new EditorCore();
+    ed.setMathML(mml);
+    ed.contextExtras = extras;
+    ed.caret = { path: [[1, 0]], index: 1 }; // inside the base of the power
+    return ed;
+  };
+  assert.equal(contextState(make(false)), null, 'the engine alone keeps the reference behaviour');
+  const ed = make(true);
+  const st = contextState(ed)!;
+  assert.equal(st.kind, 'structure');
+  assert.deepEqual(st.controls.map((c) => c.id), ['valign_baseline', 'valign_middle', 'valign_middle_baseline']);
+  const h = (m: string) => {
+    const l = layoutDocument(parseMathML(m).row);
+    return [l.a, l.d];
+  };
+  const base = h(ed.getMathML());
+  applyContext(ed, 'valign_middle');
+  assert.match(ed.getMathML(), /<msup wrs:valign="middle">/);
+  const mid = h(ed.getMathML());
+  assert.notDeepEqual(mid, base, 'the structure moved');
+  applyContext(ed, 'valign_baseline');
+  assert.ok(!/valign/.test(ed.getMathML()));
+  assert.deepEqual(h(ed.getMathML()), base, 'baseline is the default position again');
+});

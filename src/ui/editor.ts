@@ -132,6 +132,7 @@ export class MathEditor implements ToolbarHost {
     // digits typed in an Arabic language are Arabic-Indic ones (Persian, Pashto and Urdu: Eastern Arabic-Indic);
     // the toolbar's Arabic-Indic toggles switch back
     this.core.arabicLanguage = /^ar(_|-|$)/i.test(this.lang);
+    this.core.contextExtras = true;
     this.core.modes.digits = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
     // what the person left in this browser (formula with its font and size, typing modes, tab)
     if (this.opts.persist) this.store = new Store('mtx:' + this.opts.persist);

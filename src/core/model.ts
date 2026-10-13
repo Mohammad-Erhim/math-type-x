@@ -154,3 +154,7 @@ export function countNodes(root: Row): number {
   walk(root, () => n++);
   return n;
 }
+
+/** structures with inputs whose vertical alignment can be chosen (contextual tab: Baseline / Middle / Middle-baseline,
+ * the `wrs:valign` attribute; the fence has it from the reference, the others are extensions) */
+export const VALIGN_TAGS: ReadonlySet<string> = new Set(['mfrac', 'msqrt', 'mroot', 'msub', 'msup', 'msubsup', 'munder', 'mover', 'munderover', 'mmultiscripts', 'menclose']);

@@ -7,7 +7,7 @@
  * integer pixel grid, Arial advances) — see evidence/measure_*.json and tests/layout.test.ts.
  */
 import ARROW_PIECES from '../data/arrow-pieces.json';
-import { El, Row, getAttr } from '../core/model';
+import { El, Row, getAttr, VALIGN_TAGS } from '../core/model';
 import { glyphText } from './glyphs';
 import { zulfiSymbol } from './zulfi';
 import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont, joinedPrefixWidth, isJoinedRun } from './metrics';
@@ -509,7 +509,37 @@ function withColor(el: El, env: Env): Env {
 
 /* ------------------------------------------------------------- elements */
 
+/** vertical alignment of a structure with inputs (contextual tab; the attribute `wrs:valign`, like the fence's):
+ *  baseline (default, the reference's position): unchanged;
+ *  middle: the middle of the structure sits on the middle of the line (the math axis);
+ *  middle-baseline: as high above the baseline as it is deep below it, the content stays put. */
+function alignBox(b: Box, valign: string, s: number): Box {
+  let drop = 0;
+  let a = b.a;
+  let d = b.d;
+  if (valign === 'middle') {
+    drop = (a - d) / 2 - K.axis * s;
+    a -= drop;
+    d += drop;
+  } else if (valign === 'middle-baseline') {
+    const m = Math.max(a, d);
+    a = m;
+    d = m;
+  } else return b;
+  if (drop === 0 && a === b.a && d === b.d) return b;
+  return { w: b.w, a, d, kids: [{ b, x: 0, y: drop }] };
+}
+
 export function layoutEl(el: El, envIn: Env, path: [number, number][], index: number): Box {
+  const b = layoutElBase(el, envIn, path, index);
+  if (el.c !== undefined && VALIGN_TAGS.has(el.t)) {
+    const v = getAttr(el, 'wrs:valign');
+    if (v) return alignBox(b, v, sc(withColor(el, envIn)));
+  }
+  return b;
+}
+
+function layoutElBase(el: El, envIn: Env, path: [number, number][], index: number): Box {
   const env = withColor(el, envIn);
   const here = (s: number) => [...path, [index, s] as [number, number]];
   const R = (s: number, e: Env = env) => layoutRow(el.c![s], e, here(s));

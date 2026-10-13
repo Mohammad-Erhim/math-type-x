@@ -62,6 +62,9 @@ export class EditorCore {
   rtl = false;
   /** the editor's language is Arabic: the differential d of the calculus controls is written with the Arabic math letter */
   arabicLanguage = false;
+  /** the contextual tab offers its extensions (vertical alignment of every structure with inputs): set by the editor; the
+   * bare engine behaves exactly like the reference's */
+  contextExtras = false;
   undoStack: Snapshot[] = [{ row: [], attrs: [], caret: { path: [], index: 0 }, sel: null }]; // Q-09: enabled at load
   redoStack: Snapshot[] = [];
   geometry: Geometry | null = null;

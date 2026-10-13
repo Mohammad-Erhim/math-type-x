@@ -2,11 +2,11 @@
  * Contextual tab model (SRS 4.11, Appendix G): which controls are offered for the structure at the caret
  * and what each control does to the document.
  */
-import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup } from './model';
+import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup, VALIGN_TAGS } from './model';
 import { EditorCore } from './engine';
 import STRETCHY from '../data/stretchy.json';
 
-export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep';
+export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep' | 'structure';
 
 export interface CtxControl {
   id: string;
@@ -68,6 +68,8 @@ function caretLayoutKey(loc: Located): string {
       return loc.spacing ? (st ? 'aligned_st' : 'aligned_sp') : 'aligned';
     case 'fence_in':
       return loc.spacing ? (st ? 'fence_st' : 'fence_sp') : 'fence';
+    case 'structure':
+      return 'structure';
     case 'operator':
       return st ? 'operator_st' : 'operator';
     case 'sum':
@@ -174,7 +176,7 @@ export function locate(core: EditorCore): Located | null {
   const loc = locateRaw(core);
   if (loc && loc.op && stretchDefault(loc.op) !== null) loc.stretchy = true;
   // a selection shows the nudge buttons in front of everything else
-  if (loc && core.hasSelection()) loc.nudge = true;
+  if (loc && core.hasSelection() && loc.kind !== 'structure') loc.nudge = true;
   return loc;
 }
 
@@ -201,6 +203,14 @@ function locateRaw(core: EditorCore): Located | null {
         sel = { row: srow, from, to, els, spacing: lastOp || nextOp, op: isOpEl(last) ? last : isOpEl(next) ? next : undefined };
       }
     }
+  }
+  // extension (not in the reference): the vertical alignment of a structure with inputs – the one selected, or the
+  // innermost one the caret is in
+  if (core.contextExtras) {
+    if (sel && sel.els.length === 1 && sel.els[0].c !== undefined && VALIGN_TAGS.has(sel.els[0].t)) {
+      return { kind: 'structure', fence: { row: sel.row, index: sel.from, el: sel.els[0], path: core.sel!.path as Step[], slot: 0 } };
+    }
+    if (!sel && chain.length && chain[0].el.c !== undefined && VALIGN_TAGS.has(chain[0].el.t)) return { kind: 'structure', fence: chain[0] };
   }
   const row = core.currentRow();
   const idx = core.caret.index;
@@ -382,6 +392,12 @@ function ownControls(loc: Located): CtxControl[] {
         { id: 'valign_middle', title: 'Middle', kind: 'button', icon: 'valign_middle', group: 1 },
         { id: 'valign_middle_baseline', title: 'Middle-baseline', kind: 'button', icon: 'valign_middle_baseline', group: 1 },
         ...operatorControls(loc, 2),
+      ];
+    case 'structure':
+      return [
+        { id: 'valign_baseline', title: 'Baseline', kind: 'toggle', icon: 'valign_baseline', group: 0 },
+        { id: 'valign_middle', title: 'Middle', kind: 'button', icon: 'valign_middle', group: 0 },
+        { id: 'valign_middle_baseline', title: 'Middle-baseline', kind: 'button', icon: 'valign_middle_baseline', group: 0 },
       ];
     case 'operator':
       return [...SPACING(0), ...(loc.stretchy ? [STRETCHY_CTL(0)] : [])];
