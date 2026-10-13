@@ -41,6 +41,21 @@
   if (q.get('output') !== '0') {
     var outBox = document.getElementById('outputContainer');
     window.outputPanel = new MathTypeX.OutputPanel(editor, outBox);
+    // which build this page is (so a page opened before a release is easy to tell from a new one)
+    try {
+      var src = (document.currentScript && document.currentScript.src) || (document.querySelector('script[src*="demo.js"]') || {}).src || '';
+      var stamp = /[?&]v=(\d+)/.exec(src);
+      var foot = outBox.querySelector('.mtx_status');
+      if (stamp && foot) {
+        var d = new Date(parseInt(stamp[1], 10));
+        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+        foot.title = 'build ' + d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()) + ' ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+        var tag = document.createElement('span');
+        tag.className = 'mtx_build';
+        tag.textContent = 'build ' + pad(d.getHours()) + ':' + pad(d.getMinutes());
+        foot.parentNode.insertBefore(tag, foot);
+      }
+    } catch (err) {}
     // phones: the export section is folded away behind a bar at the bottom (more room for the formula); on larger
     // screens it is always shown. The choice is remembered.
     var ar = /^ar/i.test(opts.language);

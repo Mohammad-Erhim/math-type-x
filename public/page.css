@@ -22,6 +22,7 @@ html,body{height:100%;margin:0;padding:0;background:#fff;color:#18212f;font-fami
   #outputContainer .mtx_output{height:150px;min-height:150px}
   #outputContainer .mtx_body{padding:6px 10px}
 }
+.mtx_build{flex:none;padding-right:8px;color:#8b9aa3;font-size:10px}
 /* ?layout=classic */
 .classic body{height:auto}
 .classic .page{width:725px;max-width:725px;height:auto;min-height:0;margin:24px auto 48px;padding:0}
