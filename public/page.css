@@ -1,3 +1,4 @@
+html{color-scheme:only light}
 html,body{height:100%;margin:0;padding:0;background:#fff;color:#18212f;font-family:'Liberation Sans',Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
 /* the page is exactly as high as the window: the editor takes what the output panel leaves, nothing scrolls, the

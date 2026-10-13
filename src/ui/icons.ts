@@ -31,18 +31,27 @@ export function tracedPaths(layers: { fill: string; d: string; op?: number }[], 
  * curly d) do not survive tracing at this size, and the limit word follows the language */
 export const DRAWN_ICONS = new Set(['TB-9-009', 'TB-9-010', 'TB-1-024', 'TB-2-014', 'TB-9-008']);
 
-/** SVG markup (inner) of a catalogue control icon fitted into a w×h box */
-export function controlIcon(c: Control, w: number, h: number, arabic = false): string {
+/** the Arabic mathematical letter that stands for the differential d in an Arabic editor: the last letter of the list of
+ * Arabic math letters (ء) */
+export const ARABIC_DIFFERENTIAL = '\ue188';
+
+/** controls that carry a differential d: in an Arabic editor they write (and show) the Arabic letter instead */
+export const hasDifferential = (c: Control): boolean => /<mo>d<\/mo>/.test(c.A ?? '');
+
+/** SVG markup (inner) of a catalogue control icon fitted into a w×h box; `arabicLang`: the editor's language is Arabic */
+export function controlIcon(c: Control, w: number, h: number, arabic = false, arabicLang = false): string {
+  const arDiff = arabicLang && hasDifferential(c);
   // the limit buttons are drawn from their formula: the word follows the language (نها in Arabic, mirrored) and the
   // infinity sign stays clear at this size
   const limit = c.id === 'TB-9-009' || c.id === 'TB-9-010';
   // vector re-drawing of the reference artwork (tools/gen/trace_controls.py)
-  const t = DRAWN_ICONS.has(c.id) ? undefined : TRACED[c.id];
+  const t = DRAWN_ICONS.has(c.id) || arDiff ? undefined : TRACED[c.id];
   if (t) {
     const body = tracedPaths(t.layers as any);
     return t.w === w && t.w === h ? body : `<g transform="scale(${w / t.w} ${h / t.w})">${body}</g>`;
   }
   let mml = c.A ?? '<math/>';
+  if (arDiff) mml = mml.replace(/<mo>d<\/mo>/g, `<mo>${ARABIC_DIFFERENTIAL}</mo>`);
   if (limit && arabic) mml = mml.replace('<mi>lim</mi>', '<mi>\u0646\u0647\u0627</mi>').replace('&#x2192;', '&#x2190;');
   let doc;
   try {

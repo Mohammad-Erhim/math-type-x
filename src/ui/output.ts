@@ -14,7 +14,7 @@ const TABS: [Kind, string][] = [
 ];
 
 export const OUTPUT_CSS = `
-.mtx_output{width:100%;max-width:725px;min-height:180px;height:180px;margin:12px 0 0;border:1px solid #778e9a;border-radius:5px;background:#f5f8f9;font:12px/1.4 Arial,sans-serif;color:#18212f;display:flex;flex-direction:column;overflow:hidden}
+.mtx_output{color-scheme:only light;width:100%;max-width:725px;min-height:180px;height:180px;margin:12px 0 0;border:1px solid #778e9a;border-radius:5px;background:#f5f8f9;font:12px/1.4 Arial,sans-serif;color:#18212f;display:flex;flex-direction:column;overflow:hidden}
 .mtx_tabs{display:flex;gap:0;background:#dde6ea;border-bottom:1px solid #778e9a;flex:none}
 .mtx_tabs button{flex:1;padding:6px 4px;border:0;border-right:1px solid #b7c4cb;background:transparent;font:700 11px Arial,sans-serif;color:#425a66;cursor:pointer}
 .mtx_tabs button[aria-selected=true]{background:#f5f8f9;color:#18212f;box-shadow:inset 0 -2px 0 #778e9a}
@@ -222,7 +222,8 @@ export class OutputPanel {
           blob = new Blob([value], { type: 'image/svg+xml' });
           break;
         case 'png':
-          blob = await this.ed.getPNG({ zoom: 2, signal });
+          // opaque white: a transparent PNG is shown black by many viewers (and by messengers)
+          blob = await this.ed.getPNG({ zoom: 2, background: '#ffffff', signal });
           break;
         case 'accessible':
           value = await this.ed.getAccessibleText(undefined, { signal });

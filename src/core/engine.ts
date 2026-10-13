@@ -60,6 +60,8 @@ export class EditorCore {
     text: false,
   };
   rtl = false;
+  /** the editor's language is Arabic: the differential d of the calculus controls is written with the Arabic math letter */
+  arabicLanguage = false;
   undoStack: Snapshot[] = [{ row: [], attrs: [], caret: { path: [], index: 0 }, sel: null }]; // Q-09: enabled at load
   redoStack: Snapshot[] = [];
   geometry: Geometry | null = null;
@@ -267,6 +269,7 @@ export class EditorCore {
     if (!this.hasSelection()) this.settleStackCaret();
     let mapped = false;
     if (this.rtl) spec = rtlize(spec);
+    if (this.arabicLanguage) spec = withArabicDifferential(spec);
     // numbers a control brings along (the -1 of an inverse function …) are written in the digit set in use
     if (this.modes.digits !== 'western') spec = withDigits(spec, this.modes.digits);
     if (!this.modes.autoItalic && spec.tree.length === 1 && spec.tree[0].c === undefined) {
@@ -1785,6 +1788,16 @@ export class EditorCore {
 const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
 
 /** right-to-left editing writes function names in Arabic (arcsin → sin⁻¹); root-level indices are re-mapped */
+/** the differential d (`<mo>d</mo>` of the integral and derivative controls) written with the Arabic math letter ء */
+function withArabicDifferential(spec: InsertSpec): InsertSpec {
+  const mapEl = (e: El): El => {
+    if (e.c) return { ...e, c: e.c.map((r) => r.map(mapEl)) };
+    if (e.t === 'mo' && e.x === 'd') return { ...e, x: '\ue188' };
+    return e;
+  };
+  return { ...spec, tree: spec.tree.map(mapEl) };
+}
+
 /** the digits of the numbers (mn) of an insertion written in `digits` */
 function withDigits(spec: InsertSpec, digits: DigitSet): InsertSpec {
   const mapEl = (e: El): El => {

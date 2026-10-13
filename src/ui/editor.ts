@@ -131,6 +131,7 @@ export class MathEditor implements ToolbarHost {
     if (options.mml) this.core.setMathML(options.mml);
     // digits typed in an Arabic language are Arabic-Indic ones (Persian, Pashto and Urdu: Eastern Arabic-Indic);
     // the toolbar's Arabic-Indic toggles switch back
+    this.core.arabicLanguage = /^ar(_|-|$)/i.test(this.lang);
     this.core.modes.digits = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
     // what the person left in this browser (formula with its font and size, typing modes, tab)
     if (this.opts.persist) this.store = new Store('mtx:' + this.opts.persist);
@@ -358,15 +359,14 @@ export class MathEditor implements ToolbarHost {
     const no = h('button', { type: 'button', class: 'wrs_confirmNo', text: 'Cancel' }) as HTMLButtonElement;
     const yes = h('button', { type: 'button', class: 'wrs_confirmYes', text: 'Clear' }) as HTMLButtonElement;
     confirmBox.append(ask, no, yes);
-    confirmBox.style.display = 'none';
     const hideConfirm = () => {
-      confirmBox.style.display = 'none';
+      confirmBox.classList.remove('wrs_open');
     };
     this.navClear = clear;
     clear.addEventListener('click', (e) => {
       e.preventDefault();
       if (this.core.isEmpty()) return;
-      confirmBox.style.display = 'block';
+      confirmBox.classList.add('wrs_open');
       no.focus();
     });
     no.addEventListener('click', () => {
@@ -426,6 +426,37 @@ export class MathEditor implements ToolbarHost {
     document.addEventListener('mouseup', this.onMouseUp);
     disp.view.addEventListener('dblclick', (e) => this.onDblClick(e as MouseEvent));
     disp.view.addEventListener('contextmenu', (e) => e.preventDefault());
+    // a long press on a touch screen selects the word / run under the finger (the native selection of the browser would
+    // take the focus, and with it the keyboard, away from the formula)
+    let press: ReturnType<typeof setTimeout> | null = null;
+    let pressAt = { x: 0, y: 0 };
+    const cancelPress = () => {
+      if (press) clearTimeout(press);
+      press = null;
+    };
+    disp.view.addEventListener('pointerdown', (e) => {
+      const pe = e as PointerEvent;
+      if (pe.pointerType !== 'touch' || !pe.isPrimary) return;
+      cancelPress();
+      pressAt = { x: pe.clientX, y: pe.clientY };
+      press = setTimeout(() => {
+        press = null;
+        const p = this.display.toContent(pressAt.x, pressAt.y);
+        const hit = this.display.hitTest(p.x, p.y);
+        if (!hit) return;
+        this.closePopup();
+        this.core.setCaret(hit);
+        this.core.selectRun(hit);
+        // the browser may still send the mouse events of a tap when the finger lifts: they must not undo the selection
+        this.longPressedAt = Date.now();
+        this.wantKeyboard();
+        this.focusEditor();
+      }, 450);
+    });
+    disp.view.addEventListener('pointermove', (e) => {
+      if (press && Math.hypot((e as PointerEvent).clientX - pressAt.x, (e as PointerEvent).clientY - pressAt.y) > 10) cancelPress();
+    });
+    for (const t of ['pointerup', 'pointercancel', 'pointerleave']) disp.view.addEventListener(t, cancelPress);
     // keyboard
     input.addEventListener('keydown', (e) => this.onKeyDown(e));
     input.addEventListener('input', () => this.onInput());
@@ -1290,8 +1321,13 @@ export class MathEditor implements ToolbarHost {
     return this.display.toContent(e.clientX, e.clientY);
   }
 
+  private longPressedAt = 0;
   private onMouseDown(e: MouseEvent): void {
     if (e.button !== 0) return;
+    if (Date.now() - this.longPressedAt < 1200) {
+      e.preventDefault();
+      return;
+    }
     this.closePopup();
     const p = this.contentPoint(e);
     const hit = this.display.hitTest(p.x, p.y);

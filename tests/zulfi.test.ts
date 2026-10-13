@@ -53,3 +53,19 @@ test('the PNG of a formula with symbols draws them (image services need no font 
   assert.ok(a.width > b.width && a.height >= 10);
   assert.ok(!a.png.equals(b.png));
 });
+
+test('in an Arabic editor the differential d of the calculus controls is the last Arabic math letter; otherwise it stays d', async () => {
+  const { catalogue } = await import('../src/core/catalogue');
+  for (const title of ['Differential', 'Derivative', 'Definite integral with differential', 'Integral with subscript and differential']) {
+    const ctl = catalogue.controls.find((c) => c.title === title)!;
+    const en = new EditorCore();
+    en.activate(ctl);
+    assert.match(en.getMathML(), /<mo>d<\/mo>/, title);
+    const ar = new EditorCore();
+    ar.arabicLanguage = true;
+    ar.activate(ctl);
+    assert.ok(!/<mo>d<\/mo>/.test(ar.getMathML()) && ar.getMathML().includes('&#xE188;'), title + ' ' + ar.getMathML());
+  }
+  const last = ZULFI_GROUPS[0].items[ZULFI_GROUPS[0].items.length - 1];
+  assert.equal(last, 0xe188, 'the last letter of the list');
+});
