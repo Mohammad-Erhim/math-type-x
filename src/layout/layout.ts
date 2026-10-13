@@ -8,6 +8,7 @@
  */
 import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr, VALIGN_TAGS } from '../core/model';
+import { docStyleOf } from '../core/mathml';
 import { glyphText } from './glyphs';
 import { zulfiSymbol } from './zulfi';
 import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont, joinedPrefixWidth, isJoinedRun } from './metrics';
@@ -1002,6 +1003,8 @@ function arrowLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | nu
   if ((el.t !== 'mover' && el.t !== 'munder' && el.t !== 'munderover') || !el.c) return null;
   const row = el.c[0];
   if (row.length !== 1 || row[0].c !== undefined || row[0].t !== 'mo') return null;
+  // Stretchy switched off: the arrow stays a plain glyph with its scripts over / under it
+  if (getAttr(row[0], 'stretchy') === 'false') return null;
   const ch = row[0].x ?? '';
   const cp = ch.codePointAt(0);
   const info = cp === undefined || [...ch].length !== 1 ? undefined : (ARROW_PIECES as Record<string, { l: number; m: number; r: number; min: number; two: boolean }>)[cp.toString(16).toUpperCase().padStart(4, '0')];
@@ -1279,14 +1282,44 @@ function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
   const cols = el.cols ?? 1;
   const rows = Math.ceil(el.c!.length / cols);
   const cells = el.c!.map((r, k) => layoutRow(r, env, here(k)));
-  const colW = Array.from({ length: cols }, (_, c) => Math.max(...Array.from({ length: rows }, (_, r) => round(cells[r * cols + c].w))));
+  let colW = Array.from({ length: cols }, (_, c) => Math.max(...Array.from({ length: rows }, (_, r) => round(cells[r * cols + c].w))));
   let rowA = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.a)));
   let rowD = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.d)));
   if (getAttr(el, 'equalrows') === 'true') {
     rowA = rowA.map(() => Math.max(...rowA));
     rowD = rowD.map(() => Math.max(...rowD));
   }
-  const align = (getAttr(el, 'columnalign') ?? 'center').split(/\s+/);
+  if (getAttr(el, 'equalcolumns') === 'true') colW = colW.map(() => Math.max(...colW));
+  // wrs:columnalign (decimal / relation next to left / center / right) replaces columnalign when it is there
+  const align = (getAttr(el, 'wrs:columnalign') ?? getAttr(el, 'columnalign') ?? 'center').split(/\s+/);
+  const alignOf = (c: number) => align[Math.min(c, align.length - 1)];
+  const sepNames = (getAttr(el, 'wrs:decimalseparators') ?? '').split(/\s+/).filter(Boolean);
+  const SEPS: Record<string, string> = { dot: '.', comma: ',', apostrophe: "'\u2019", space: ' \u00a0\u2009' };
+  /** where a cell is split at its decimal separator / first relation: the width in front of it (null: none in the cell) */
+  const splitAt = (c: number, k: number): number | null => {
+    const row = el.c![k];
+    const mode = alignOf(c);
+    const chars = SEPS[sepNames.length ? sepNames[Math.min(c, sepNames.length - 1)] : 'dot'] ?? '.';
+    const i = row.findIndex((e) => e.c === undefined && (mode === 'decimal' ? e.x !== undefined && e.x.length === 1 && chars.includes(e.x) : e.t === 'mo' && /^[=<>\u2264\u2265\u2260\u2248\u2261\u223c\u2243\u2245\u221d\u226a\u226b\u227a\u227b\u2282\u2283\u2286\u2287\u2208\u220b\u2209\u2192\u2190\u2194\u21d2\u21d0\u21d4]$/.test(e.x ?? '')));
+    const xs = cells[k].row?.xs;
+    return i >= 0 && xs ? xs[i] : null;
+  };
+  const maxI: number[] = new Array(cols).fill(0);
+  const maxF: number[] = new Array(cols).fill(0);
+  const parts: (number | null)[] = new Array(cells.length).fill(null);
+  for (let c = 0; c < cols; c++) {
+    if (alignOf(c) !== 'decimal' && alignOf(c) !== 'relation') continue;
+    for (let r = 0; r < rows; r++) {
+      const k = r * cols + c;
+      const at = splitAt(c, k);
+      parts[k] = at;
+      if (at !== null) {
+        maxI[c] = Math.max(maxI[c], at);
+        maxF[c] = Math.max(maxF[c], round(cells[k].w) - at);
+      }
+    }
+    colW[c] = Math.max(colW[c], Math.round(maxI[c] + maxF[c]));
+  }
   const rowAlign = (getAttr(el, 'rowalign') ?? 'baseline').split(/\s+/);
   const colGaps = tableList(getAttr(el, 'columnspacing'), env);
   const rowGaps = tableList(getAttr(el, 'rowspacing'), env);
@@ -1321,9 +1354,14 @@ function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
     const ra = rowAlign[Math.min(r, rowAlign.length - 1)];
     for (let c = 0; c < cols; c++) {
       const b = cells[r * cols + c];
-      const al = align[Math.min(c, align.length - 1)];
+      const al = alignOf(c);
       const cw = colW[c];
-      const dx = al === 'left' ? 0 : al === 'right' ? cw - round(b.w) : Math.floor((cw - round(b.w)) / 2);
+      let dx = al === 'left' ? 0 : al === 'right' ? cw - round(b.w) : Math.floor((cw - round(b.w)) / 2);
+      if (al === 'decimal' || al === 'relation') {
+        const at = parts[r * cols + c];
+        if (at !== null) dx = Math.floor((cw - Math.round(maxI[c] + maxF[c])) / 2) + Math.round(maxI[c] - at);
+        else dx = al === 'decimal' ? cw - round(b.w) : 0; // a number without a separator ends at the column's edge
+      }
       const rowTop = rowBase[r] - rowA[r];
       const rowH = rowA[r] + rowD[r];
       let by = rowBase[r];
@@ -1993,11 +2031,14 @@ export function mirrorBox(b: Box): Box {
 }
 
 /** `arabicFont`: CSS family of the bundled Arabic face the letters of the Arabic blocks are measured in ('' = default) */
-export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false, arabicFont = ''): DocLayout {
-  return withArabicFont(arabicFont, () => layoutDocumentIn(row, size, rtl));
+/** `attrs`: the root attributes of the document – its whole-equation style (font size, alignment of the lines) is in them */
+export function layoutDocument(row: Row, attrs?: [string, string][], size = 16, rtl = false, arabicFont = ''): DocLayout {
+  const st = docStyleOf(attrs);
+  const px = st.mathsize && /px$/.test(st.mathsize) ? parseFloat(st.mathsize) : size;
+  return withArabicFont(arabicFont, () => layoutDocumentIn(row, px, rtl, st.indentalign));
 }
 
-function layoutDocumentIn(row: Row, size: number, rtl: boolean): DocLayout {
+function layoutDocumentIn(row: Row, size: number, rtl: boolean, indentalign?: string): DocLayout {
   const env: Env = { size, level: 0, display: true, rtl };
   const lines: { from: number; to: number }[] = [];
   let from = 0;
@@ -2028,7 +2069,10 @@ function layoutDocumentIn(row: Row, size: number, rtl: boolean): DocLayout {
     const piece = row.slice(ln.from, ln.to);
     const b = boxes[li];
     const baseY = y + b.a;
-    const fl = flatten(b, rtl ? width - b.w : 0, baseY);
+    // the lines are aligned at the left (default), centred or at the right of the widest one; right-to-left mirrors the sides
+    const side = indentalign === 'center' || indentalign === 'right' || indentalign === 'left' ? indentalign : rtl ? 'right' : 'left';
+    const dx = side === 'right' ? width - b.w : side === 'center' ? Math.round((width - b.w) / 2) : 0;
+    const fl = flatten(b, dx, baseY);
     items.push(...fl.items);
     fl.rows.forEach((v, k) => {
       if (k !== '') rowsMap.set(k, v);

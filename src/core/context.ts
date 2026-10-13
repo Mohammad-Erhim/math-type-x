@@ -4,6 +4,7 @@
  */
 import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup, VALIGN_TAGS } from './model';
 import { EditorCore } from './engine';
+import { DOC_STYLE_PREFIX, docStyleOf } from './mathml';
 import STRETCHY from '../data/stretchy.json';
 
 export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep' | 'structure';
@@ -256,10 +257,8 @@ function locateRaw(core: EditorCore): Located | null {
   const opNextTo = (): El | undefined => (sel ? sel.op : isOp(left) ? left : isOp(right) ? right : isOpScript(right) ? right!.c![0][0] : undefined);
   const spacingHere = sel ? sel.spacing : isOp(left) || isOp(right) || isOpScript(right);
   const multilineCtx = (): Located | null => {
-    // a formula aligned as a whole sits in a group (mstyle indentalign): the lines are still the document's lines
-    const group = core.row.length === 1 && core.row[0].t === 'mstyle' && getAttr(core.row[0], 'indentalign') !== undefined ? core.row[0] : null;
-    const lines = group && group.c ? group.c[0] : core.row;
-    const outer = group ? chain.filter((h) => h.el !== group) : chain;
+    const lines = core.row;
+    const outer = chain;
     if (lines.some((e) => isNl(e)) && outer.length === 0) {
       return { kind: 'multiline', spacing: sel ? sel.spacing : isNl(left) || isNl(right) || spacingHere, op: opNextTo() };
     }
@@ -612,9 +611,8 @@ export function ctxValue(core: EditorCore, loc: Located, id: string): CtxValue {
     case 'ml_center':
     case 'ml_right': {
       if (loc.relation) return { toggled: false };
-      // lines are left aligned unless the formula sits in a group with an indentalign
-      const row = core.row;
-      const al = row.length === 1 && row[0].t === 'mstyle' ? getAttr(row[0], 'indentalign') : undefined;
+      // lines are left aligned unless the document has an indentalign style
+      const al = docStyleOf(core.attrs).indentalign;
       return { toggled: (al ?? 'left') === id.slice(3) };
     }
     case 'left_spacing':
@@ -1053,8 +1051,7 @@ function isRelationTable(row: Row): boolean {
 
 /** the lines of the document become the rows of a table: left of the relation, the relation, the rest */
 function relationTable(core: EditorCore): void {
-  const group = core.row.length === 1 && core.row[0].t === 'mstyle' && core.row[0].c ? core.row[0] : null;
-  const src = group ? group.c![0] : core.row;
+  const src = core.row;
   const lines: Row[] = [[]];
   for (const e of src) {
     if (e.t === 'mspace' && getAttr(e, 'linebreak') === 'newline') lines.push([]);
@@ -1067,6 +1064,8 @@ function relationTable(core: EditorCore): void {
     else cells.push(ln.slice(0, k), [ln[k]], ln.slice(k + 1));
   }
   const t: El = { t: 'mtable', a: [['columnspacing', '0px'], ['columnalign', 'right center left']], c: cells, cols: 3 };
+  // the table has its own alignment: the document's indentalign goes
+  core.attrs = core.attrs.filter(([k]) => k !== DOC_STYLE_PREFIX + 'indentalign');
   core.row = [t];
   core.sel = null;
   core.caret = { path: [[0, 2]], index: cells[2].length };
@@ -1086,16 +1085,12 @@ function linesFromTable(core: EditorCore): void {
   core.caret = { path: [], index: out.length };
 }
 
+/** a style of the whole equation (the lines' alignment): written as the wrapping mstyle, kept as a style of the document */
 function wrapRootStyle(core: EditorCore, attr: string, v: string): void {
-  if (core.row.length === 1 && core.row[0].t === 'mstyle') {
-    setAttr(core.row[0], attr, v);
-    return;
-  }
-  const w: El = { t: 'mstyle', a: [[attr, v]], c: [core.row] };
-  core.row = [w];
-  core.caret = { path: [[0, 0], ...core.caret.path], index: core.caret.index };
-  // a selection moves into the group with the content
-  if (core.sel) core.sel = { ...core.sel, path: [[0, 0], ...core.sel.path] };
+  const key = DOC_STYLE_PREFIX + attr;
+  const i = core.attrs.findIndex(([k]) => k === key);
+  if (i >= 0) core.attrs[i][1] = v;
+  else core.attrs.push([key, v]);
 }
 
 function mergeNumSep(core: EditorCore, loc: Located): void {

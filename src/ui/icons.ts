@@ -73,7 +73,7 @@ export function controlIcon(c: Control, w: number, h: number, arabic = false, ar
   if (arLn || arDiff) size = 10.5;
   // drawn the way the editor draws what the control inserts: mirrored in right-to-left editing
   const rtlIcon = arabic && (limit || arLn || arDiff);
-  let lay = layoutDocument(doc.row, undefined, size, rtlIcon);
+  let lay = layoutDocument(doc.row, doc.attrs, size, rtlIcon);
   const fit = () => {
     const tw = lay.w;
     const th = lay.a + lay.d;
@@ -82,7 +82,7 @@ export function controlIcon(c: Control, w: number, h: number, arabic = false, ar
   let f = fit();
   if (f < 1) {
     size = Math.max(6, size * f);
-    lay = layoutDocument(doc.row, undefined, size, rtlIcon);
+    lay = layoutDocument(doc.row, doc.attrs, size, rtlIcon);
   }
   const x0 = (w - lay.w) / 2;
   const y0 = (h - (lay.a + lay.d)) / 2;

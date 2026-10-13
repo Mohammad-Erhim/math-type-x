@@ -24,7 +24,7 @@ function glyph(ch0: string): { lines: P[][]; adv: number } | null {
 
 export function simulateStrokes(mml: string, w: number, h: number): SimStroke[] {
   const doc = parseMathML(mml);
-  const lay = layoutDocument(doc.row);
+  const lay = layoutDocument(doc.row, doc.attrs);
   const out: SimStroke[] = [];
   const k = 2.6;
   const ox = 40;
