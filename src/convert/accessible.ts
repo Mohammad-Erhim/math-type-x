@@ -1,6 +1,8 @@
 /** accessible2mathml: inverse of mathml2accessible for the supported phrase grammar (SVC-005). */
 import symbols from '../data/symbols.json';
 import { escText } from '../core/mathml';
+import { EN, EN_TEMPLATES, packFor, SpeechPack } from './speech-lang';
+import { FENCE_NAMES } from './speech';
 
 const SYM = symbols as unknown as Record<string, [string | null, string | null]>;
 const NS = 'xmlns="http://www.w3.org/1998/Math/MathML"';
@@ -217,7 +219,70 @@ class Parser {
   }
 }
 
-export function accessible2mathml(text: string): string {
+/** phrases of a language → the English phrases of the grammar above (templates, token names, fences) */
+const INVERSE = new Map<SpeechPack, Map<string, string>>();
+function inverseOf(P: SpeechPack): Map<string, string> {
+  let m = INVERSE.get(P);
+  if (m) return m;
+  m = new Map();
+  const add = (ar: string | undefined, en: string | undefined) => {
+    const a = (ar ?? '').replace(/\u200f/g, '').replace(/\s+/g, ' ').trim();
+    if (a && en && a !== en && !m!.has(a)) m!.set(a, en);
+  };
+  // fixed words of the templates: "{0} على {1}" ↔ "{0} over {1}"
+  for (const [k, en] of Object.entries(EN_TEMPLATES)) {
+    const ar = P.t[k];
+    if (!ar || ar === en) continue;
+    // ordinals ("1 half") read like "over" in Arabic; templates that reorder their arguments cannot be aligned
+    if (/^ord|^fracOrd/.test(k)) continue;
+    const order = (t: string) => (t.match(/\{\d\}/g) ?? []).join('');
+    if (order(en) !== order(ar)) continue;
+    const ea = en.split(/\{\d\}/);
+    const aa = ar.split(/\{\d\}/);
+    if (ea.length === aa.length) ea.forEach((f, i) => add(aa[i], f.trim()));
+    else if (ea.length === 1 && aa.length === 1) add(ar, en);
+  }
+  // names of tokens
+  const en = EN.names ?? {};
+  for (const [k, v] of Object.entries(P.names ?? {})) add(v, en[k]);
+  // fences
+  for (const [ch, name] of Object.entries(FENCE_NAMES)) {
+    add(P.fenceOpen?.[ch], `open ${name}`);
+    add(P.fenceClose?.[ch], `close ${name}`);
+  }
+  add(P.t.fenceDefaultOpen, 'open parentheses');
+  add(P.t.fenceDefaultClose, 'close parentheses');
+  m.delete('ل');
+  INVERSE.set(P, m);
+  return m;
+}
+
+/** translate a spoken formula of another language word by word into the English grammar */
+function toEnglish(text: string, P: SpeechPack): string {
+  const inv = inverseOf(P);
+  const w = text.replace(/\u200f/g, ' ').trim().split(/\s+/).filter(Boolean);
+  const out: string[] = [];
+  for (let i = 0; i < w.length; ) {
+    let hit = false;
+    for (let n = Math.min(10, w.length - i); n >= 1 && !hit; n--) {
+      const en = inv.get(w.slice(i, i + n).join(' '));
+      if (en !== undefined) {
+        out.push(en);
+        i += n;
+        hit = true;
+      }
+    }
+    if (!hit) out.push(w[i++]);
+  }
+  // the Arabic "ل" stands for both "for" and "of": pair them (for … of), a lone one is "of"
+  const idx = out.map((t, k) => (t === 'ل' ? k : -1)).filter((k) => k >= 0);
+  for (let k = 0; k < idx.length; k++) out[idx[k]] = (idx.length - k) % 2 === 0 ? 'for' : 'of';
+  return out.join(' ').replace(/(\d) \./g, '$1.').replace(/\. (?=\d)/g, '.');
+}
+
+export function accessible2mathml(text: string, lang?: string): string {
+  const P = packFor(lang);
+  if (P !== EN) text = toEnglish(text, P);
   const words = text.trim().toLowerCase().split(/\s+/).filter(Boolean);
   if (!words.length || (words.length === 1 && words[0] === 'blank')) return `<math ${NS}/>`;
   const p = new Parser(words);

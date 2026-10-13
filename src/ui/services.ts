@@ -12,9 +12,9 @@ export interface ServicesOptions {
 }
 
 /** local conversion: formulas the service refuses give its error message */
-function mathml2accessible(mml: string): string {
+function mathml2accessible(mml: string, lang?: string): string {
   try {
-    return accessibleOf(mml);
+    return accessibleOf(mml, lang);
   } catch {
     return 'Error converting from MathML to accessible text.';
   }
@@ -47,12 +47,12 @@ export class Services {
   }
 
   async accessible(mml: string, lang: string): Promise<string> {
-    if (this.opts.local) return mathml2accessible(mml);
+    if (this.opts.local) return mathml2accessible(mml, lang);
     try {
       return await this.post('mathml2accessible', { mml, lang, 'wrs-cause': 'editor_screen_reader' });
     } catch (e) {
       if ((e as Error).name === 'AbortError') throw e;
-      return mathml2accessible(mml);
+      return mathml2accessible(mml, lang);
     }
   }
 

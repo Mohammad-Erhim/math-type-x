@@ -1,0 +1,822 @@
+{
+ "row3": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mo>+</mo><mi>W</mi><mo>=</mo><mi>Z</mi></math>",
+  "en": "Q plus W equals Z",
+  "ar": "Q‏ زائد‏ W‏ يساوي‏ Z"
+ },
+ "row_frac": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mo>+</mo><mfrac><mi>W</mi><mi>Z</mi></mfrac></math>",
+  "en": "Q plus W over Z",
+  "ar": "Q‏ زائد‏ W على Z"
+ },
+ "mstack": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+  "en": "stack attributes charalign center stackalign right end attributes 12 row plus 34 end row horizontal line 46 end stack",
+  "ar": "stack attributes charalign center stackalign right end attributes 12 row زائد‏ 34 end row horizontal line 46 end stack"
+ },
+ "longdiv": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mlongdiv longdivstyle=\"lefttop\"><mn>3</mn><mn>12</mn><msgroup><mn>36</mn><msline/><mn>0</mn></msgroup></mlongdiv></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "row2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mi>W</mi></math>",
+  "en": "Q W",
+  "ar": "Q‏ W"
+ },
+ "brace_pair": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>{</mo><mi>Q</mi><mo>}</mo></math>",
+  "en": "left curly bracket Q right curly bracket",
+  "ar": "قوس متمو ّ ج أيسر‏ Q‏ قوس متمو ّ ج أيمن"
+ },
+ "bracket_pair": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>[</mo><mi>Q</mi><mo>]</mo></math>",
+  "en": "left square bracket Q right square bracket",
+  "ar": "قوس تربيعي أيسر‏ Q‏ قوس تربيعي أيمن"
+ },
+ "paren_pair": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>(</mo><mi>Q</mi><mo>)</mo></math>",
+  "en": "left parenthesis Q right parenthesis",
+  "ar": "قوس هلالي أيسر‏ Q‏ قوس هلالي أيمن"
+ },
+ "numspace": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2007;</mo></math>",
+  "en": "number space",
+  "ar": "تباعد برقم"
+ },
+ "largeop": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo largeop=\"true\">&#x2211;</mo></math>",
+  "en": "large sum",
+  "ar": "كبير مجموع"
+ },
+ "dstruck_num": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn mathvariant=\"double-struck\">7</mn></math>",
+  "en": "double-struck 7",
+  "ar": "ة بخطين مزدوجين 7"
+ },
+ "dstruck_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"double-struck\">Q</mi></math>",
+  "en": "rational numbers",
+  "ar": "أرقام جذرية"
+ },
+ "fraktur_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"fraktur\">Q</mi></math>",
+  "en": "fraktur Q",
+  "ar": "فراكتور Q"
+ },
+ "script_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"script\">Q</mi></math>",
+  "en": "calligraphic Q",
+  "ar": "كاليغرافيك Q"
+ },
+ "bolditalic_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"bold-italic\">Q</mi></math>",
+  "en": "bold italic Q",
+  "ar": "bold italic Q"
+ },
+ "normal_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"normal\">Q</mi></math>",
+  "en": "straight Q",
+  "ar": "طبيعي Q"
+ },
+ "italic_multi": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"italic\">QW</mi></math>",
+  "en": "italic QW",
+  "ar": "مائل QW"
+ },
+ "italic_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"italic\">Q</mi></math>",
+  "en": "Q",
+  "ar": "Q"
+ },
+ "bold_op": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo mathvariant=\"bold\">+</mo></math>",
+  "en": "bold plus",
+  "ar": "غامق زائد"
+ },
+ "bold_num": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn mathvariant=\"bold\">7</mn></math>",
+  "en": "bold 7",
+  "ar": "غامق 7"
+ },
+ "bold_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"bold\">Q</mi></math>",
+  "en": "bold Q",
+  "ar": "غامق Q"
+ },
+ "comma_num": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn><mo>,</mo><mn>000</mn></math>",
+  "en": "1 comma 000",
+  "ar": "1‏ فاصلة‏ 000"
+ },
+ "minus_plus": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mo>&#x2213;</mo><mi>W</mi></math>",
+  "en": "Q minus-or-plus W",
+  "ar": "Q‏ ناقص زائد‏ W"
+ },
+ "dec_lead": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>.</mo><mn>5</mn></math>",
+  "en": ".5",
+  "ar": ".‏ 5"
+ },
+ "plus_minus": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mo>&#xB1;</mo><mi>W</mi></math>",
+  "en": "Q plus-or-minus W",
+  "ar": "Q‏ زائد-ناقص‏ W"
+ },
+ "dec_trail": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn><mo>.</mo></math>",
+  "en": "3.",
+  "ar": "3‏."
+ },
+ "dec": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn><mo>.</mo><mn>14</mn></math>",
+  "en": "3.14",
+  "ar": "3.14"
+ },
+ "neg_id": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>-</mo><mi>Q</mi></math>",
+  "en": "negative Q",
+  "ar": "ناقص‏ Q"
+ },
+ "minus_bin": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mo>-</mo><mi>W</mi></math>",
+  "en": "Q minus W",
+  "ar": "Q‏ ناقص‏ W"
+ },
+ "neg_num": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>-</mo><mn>1</mn></math>",
+  "en": "negative 1",
+  "ar": "ناقص‏ 1"
+ },
+ "space_back": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace width=\"-0.2em\"/></math>",
+  "en": "back space",
+  "ar": "الرجوع"
+ },
+ "space_nl": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>Q</mi><mspace linebreak=\"newline\"/><mi>W</mi></math>",
+  "en": "Q\nW",
+  "ar": "Q‏\n‏ W"
+ },
+ "space_w": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace width=\"1em\"/></math>",
+  "en": "space of 1em",
+  "ar": "مسافة 1em"
+ },
+ "text_sp": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>hello&#xA0;world</mtext></math>",
+  "en": "text hello world end text",
+  "ar": "texto hello world نهاية النص"
+ },
+ "text": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>hello</mtext></math>",
+  "en": "text hello end text",
+  "ar": "texto hello نهاية النص"
+ },
+ "style_size": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle mathsize=\"24px\"><mi>Q</mi></mstyle></math>",
+  "en": "begin mathsize 24px style Q end style",
+  "ar": "begin mathsize 24px style Q end style"
+ },
+ "style_display": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mi>Q</mi></mstyle></math>",
+  "en": "begin display style Q end style",
+  "ar": "الأسلوب عرض Q نهاية الأسلوب"
+ },
+ "style_inline": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"false\"><mi>Q</mi></mstyle></math>",
+  "en": "begin inline style Q end style",
+  "ar": "الأسلوب على الخط Q نهاية الأسلوب"
+ },
+ "enc_strike_empty": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"updiagonalstrike\"><mrow/></menclose></math>",
+  "en": "up diagonal strike blank",
+  "ar": "تشطيب مائل نحو الأعلى فضاء"
+ },
+ "enc_box_empty": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"box\"><mrow/></menclose></math>",
+  "en": "box enclose blank",
+  "ar": "محاط صندوق فضاء"
+ },
+ "enc_strike_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"updiagonalstrike\"><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow></menclose></math>",
+  "en": "up diagonal strike Q plus W end strike",
+  "ar": "تشطيب مائل نحو الأعلى Q‏ زائد‏ W نهاية التشطيب"
+ },
+ "enc_box_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"box\"><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow></menclose></math>",
+  "en": "box enclose Q plus W end enclose",
+  "ar": "محاط صندوق Q‏ زائد‏ W نهاية محاط"
+ },
+ "enc_phasorangle": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"phasorangle\"><mi>Q</mi></menclose></math>",
+  "en": "phasor angle enclose Q",
+  "ar": "محاط مطوار Q"
+ },
+ "enc_radical": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"radical\"><mi>Q</mi></menclose></math>",
+  "en": "square root enclose Q",
+  "ar": "محاط الجذرالمربع Q"
+ },
+ "enc_madruwb": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"madruwb\"><mi>Q</mi></menclose></math>",
+  "en": "arabic factorial enclose Q",
+  "ar": "محاط عاملي Q"
+ },
+ "enc_updiagonalstrike downdiagonalstrike": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"updiagonalstrike downdiagonalstrike\"><mi>Q</mi></menclose></math>",
+  "en": "up diagonal down diagonal strike Q",
+  "ar": "تشطيب مائل نحو الأعلى مائل نحو الأسفل Q"
+ },
+ "enc_horizontalstrike": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"horizontalstrike\"><mi>Q</mi></menclose></math>",
+  "en": "horizontal strike Q",
+  "ar": "تشطيب أفقي Q"
+ },
+ "enc_verticalstrike": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"verticalstrike\"><mi>Q</mi></menclose></math>",
+  "en": "vertical strike Q",
+  "ar": "تشطيب عمودي Q"
+ },
+ "enc_downdiagonalstrike": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"downdiagonalstrike\"><mi>Q</mi></menclose></math>",
+  "en": "down diagonal strike Q",
+  "ar": "تشطيب مائل نحو الأسفل Q"
+ },
+ "enc_updiagonalstrike": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"updiagonalstrike\"><mi>Q</mi></menclose></math>",
+  "en": "up diagonal strike Q",
+  "ar": "تشطيب مائل نحو الأعلى Q"
+ },
+ "enc_top": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"top\"><mi>Q</mi></menclose></math>",
+  "en": "top enclose Q",
+  "ar": "محاط علوي Q"
+ },
+ "enc_right": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"right\"><mi>Q</mi></menclose></math>",
+  "en": "right enclose Q",
+  "ar": "محاط على المين Q"
+ },
+ "enc_bottom": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"bottom\"><mi>Q</mi></menclose></math>",
+  "en": "bottom enclose Q",
+  "ar": "محاط سفلي Q"
+ },
+ "enc_left": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"left\"><mi>Q</mi></menclose></math>",
+  "en": "left enclose Q",
+  "ar": "محاط على اليسار Q"
+ },
+ "enc_circle": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"circle\"><mi>Q</mi></menclose></math>",
+  "en": "circle enclose Q",
+  "ar": "محاط دائرة Q"
+ },
+ "enc_roundedbox": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"roundedbox\"><mi>Q</mi></menclose></math>",
+  "en": "rounded box enclose Q",
+  "ar": "محاط صندوق مستدير Q"
+ },
+ "enc_box": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"box\"><mi>Q</mi></menclose></math>",
+  "en": "box enclose Q",
+  "ar": "محاط صندوق Q"
+ },
+ "enc_actuarial": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"actuarial\"><mi>Q</mi></menclose></math>",
+  "en": "actuarial enclose Q",
+  "ar": "محاط المستقبليات Q"
+ },
+ "table_empty_cell": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mrow/></mtd><mtd><mi>W</mi></mtd></mtr></mtable></math>",
+  "en": "table row blank W end table",
+  "ar": "قائمة العمود فضاء W نهاية قائمة"
+ },
+ "enc_longdiv": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"longdiv\"><mi>Q</mi></menclose></math>",
+  "en": "long division enclose Q",
+  "ar": "محاط قسمة طويلة Q"
+ },
+ "table_attrs2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable columnalign=\"left\" columnspacing=\"2em\"><mtr><mtd><mi>Q</mi></mtd></mtr></mtable></math>",
+  "en": "table attributes columnalign left columnspacing 2em end attributes row Q end table",
+  "ar": "قائمة بيانات تخطيط عمود left تباعد قائمات 2em نهاية بيانات العمود Q نهاية قائمة"
+ },
+ "enc_verticalstrike horizontalstrike": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"verticalstrike horizontalstrike\"><mi>Q</mi></menclose></math>",
+  "en": "vertical horizontal strike Q",
+  "ar": "تشطيب عمودي أفقي Q"
+ },
+ "table_attrs": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable columnalign=\"left\"><mtr><mtd><mi>Q</mi></mtd></mtr></mtable></math>",
+  "en": "table attributes columnalign left end attributes row Q end table",
+  "ar": "قائمة بيانات تخطيط عمود left نهاية بيانات العمود Q نهاية قائمة"
+ },
+ "table_cell": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow></mtd><mtd><mi>W</mi></mtd></mtr></mtable></math>",
+  "en": "table row cell Q plus W end cell W end table",
+  "ar": "قائمة العمود خلية Q‏ زائد‏ W نهاية خلية W نهاية قائمة"
+ },
+ "table": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mi>Q</mi></mtd><mtd><mi>W</mi></mtd></mtr><mtr><mtd><mi>Z</mi></mtd><mtd><mi>Q</mi></mtd></mtr></mtable></math>",
+  "en": "table row Q W row Z Q end table",
+  "ar": "قائمة العمود Q W العمود Z Q نهاية قائمة"
+ },
+ "fence_sep_*": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\"*\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q asterisk times W close parentheses",
+  "ar": "فتح القويسين Q جداء نجمة W غلق القويسين"
+ },
+ "fence_sep_+": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\"+\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q plus W close parentheses",
+  "ar": "فتح القويسين Q زائد W غلق القويسين"
+ },
+ "fence_sep_-": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\"-\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q minus W close parentheses",
+  "ar": "فتح القويسين Q ناقص W غلق القويسين"
+ },
+ "fence_sep_|": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\"|\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q vertical line W close parentheses",
+  "ar": "فتح القويسين Q خط عمودي W غلق القويسين"
+ },
+ "fence_sep_ ": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\" \"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_sep_:": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\":\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q colon W close parentheses",
+  "ar": "فتح القويسين Q نقطتان W غلق القويسين"
+ },
+ "fence_sep_.": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\".\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q. W close parentheses",
+  "ar": "فتح القويسين Q. W غلق القويسين"
+ },
+ "space_blank": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace/></math>",
+  "en": "blank",
+  "ar": "فضاء"
+ },
+ "fence_sep_;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\";\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q semicolon W close parentheses",
+  "ar": "فتح القويسين Q منقوطة W غلق القويسين"
+ },
+ "fence_sep_,": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\",\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "open parentheses Q comma W close parentheses",
+  "ar": "فتح القويسين Q فاصلة W غلق القويسين"
+ },
+ "fence_&#x3008;_&#x3009;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&#x3008;\" close=\"&#x3009;\"><mi>Q</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_/_\\\\": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"/\" close=\"\\\\\"><mi>Q</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_&#x2016;_&#x2016;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&#x2016;\" close=\"&#x2016;\"><mi>Q</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_(_": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\"\"><mi>Q</mi></mfenced></math>",
+  "en": "open parentheses Q close",
+  "ar": "فتح القويسين Q غلق"
+ },
+ "fence_&lt;_&gt;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&lt;\" close=\"&gt;\"><mi>Q</mi></mfenced></math>",
+  "en": "open angle brackets Q close angle brackets",
+  "ar": "فتح مفاتيح الزوايا Q غلق مفاتيح الزوايا"
+ },
+ "fence_&#x27E6;_&#x27E7;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&#x27E6;\" close=\"&#x27E7;\"><mi>Q</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence__)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"\" close=\")\"><mi>Q</mi></mfenced></math>",
+  "en": "open Q close parentheses",
+  "ar": "فتح Q غلق القويسين"
+ },
+ "fence__": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"\" close=\"\"><mi>Q</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_&#x2308;_&#x2309;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&#x2308;\" close=\"&#x2309;\"><mi>Q</mi></mfenced></math>",
+  "en": "open ceil Q close ceil",
+  "ar": "فتح السقف Q غلق السقف"
+ },
+ "fence_&#x230A;_&#x230B;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&#x230A;\" close=\"&#x230B;\"><mi>Q</mi></mfenced></math>",
+  "en": "open floor Q close floor",
+  "ar": "فتح الجزء الصحيح Q غلق الجزء الصحيح"
+ },
+ "fence_&#x27E8;_&#x27E9;": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"&#x27E8;\" close=\"&#x27E9;\"><mi>Q</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_||_||": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"||\" close=\"||\"><mi>Q</mi></mfenced></math>",
+  "en": "open double vertical bar Q close double vertical bar",
+  "ar": "فتح خطين أفقيان Q غلق خطين أفقيان"
+ },
+ "fence_|_|": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"|\" close=\"|\"><mi>Q</mi></mfenced></math>",
+  "en": "open vertical bar Q close vertical bar",
+  "ar": "فتح خط عمودي Q غلق خط عمودي"
+ },
+ "fence_{_}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"{\" close=\"}\"><mi>Q</mi></mfenced></math>",
+  "en": "open curly brackets Q close curly brackets",
+  "ar": "فتح المفتاتيح Q غلق مفاتيح"
+ },
+ "fence_[_]": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"[\" close=\"]\"><mi>Q</mi></mfenced></math>",
+  "en": "open square brackets Q close square brackets",
+  "ar": "فتح المعقوفتين Q غلف المعقوفتين"
+ },
+ "fence_empty": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\"/></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_3sep": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\" separators=\";\"><mi>Q</mi><mi>W</mi><mi>Z</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence_2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\"><mi>Q</mi><mi>W</mi></mfenced></math>",
+  "en": "Error converting from MathML to accessible text.",
+  "ar": "Error converting from MathML to accessible text."
+ },
+ "fence": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"(\" close=\")\"><mi>Q</mi></mfenced></math>",
+  "en": "open parentheses Q close parentheses",
+  "ar": "فتح القويسين Q غلق القويسين"
+ },
+ "integral_subsup": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mo>&#x222B;</mo><mi>W</mi><mi>Z</mi></msubsup></math>",
+  "en": "integral subscript W superscript Z",
+  "ar": "تكامل دليل سفلي W دليل علوي Z"
+ },
+ "integral_sub": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mo>&#x222B;</mo><mi>W</mi></msub></math>",
+  "en": "integral subscript W",
+  "ar": "تكامل دليل سفلي W"
+ },
+ "underover_arrow_sym": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2192;</mo><mi>W</mi><mi>Z</mi></munderover></math>",
+  "en": "rightwards arrow from W to Z of",
+  "ar": "سهم متجه يمين ً ا من W إلى Z ل"
+ },
+ "under_arrow_sym": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mo>&#x2192;</mo><mi>W</mi></munder></math>",
+  "en": "rightwards arrow for W of",
+  "ar": "سهم متجه يمين ً ا ل W ل"
+ },
+ "over_brace": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mo>&#x23DE;</mo></mover></math>",
+  "en": "stack Q plus W with overbrace on top",
+  "ar": "ركيزة Q‏ زائد‏ W مع مفتاح أفقي فوقي فوق"
+ },
+ "under_brace": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mo>&#x23DF;</mo></munder></math>",
+  "en": "stack Q plus W with underbrace below",
+  "ar": "ركيزة Q‏ زائد‏ W مع مفتاح أفقي تحتي تحتا"
+ },
+ "over_hat": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>Q</mi><mo>^</mo></mover></math>",
+  "en": "Q with hat on top",
+  "ar": "Q مع و فوق"
+ },
+ "over_bar": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>Q</mi><mo>&#xAF;</mo></mover></math>",
+  "en": "Q with bar on top",
+  "ar": "Q مع خط فوق"
+ },
+ "over_arrow": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>Q</mi><mo>&#x2192;</mo></mover></math>",
+  "en": "Q with rightwards arrow on top",
+  "ar": "Q مع سهم متجه يمين ً ا فوق"
+ },
+ "over_gen_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mi>Z</mi></mover></math>",
+  "en": "stack Q plus W with Z on top",
+  "ar": "ركيزة Q‏ زائد‏ W مع Z فوق"
+ },
+ "under_gen_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mi>Z</mi></munder></math>",
+  "en": "stack Q plus W with Z below",
+  "ar": "ركيزة Q‏ زائد‏ W مع Z تحتا"
+ },
+ "underover_gen": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mi>Q</mi><mi>W</mi><mi>Z</mi></munderover></math>",
+  "en": "Q with W below and Z on top",
+  "ar": "Q مع W تحتا و Z فوقا"
+ },
+ "over_gen": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>Q</mi><mi>W</mi></mover></math>",
+  "en": "Q with W on top",
+  "ar": "Q مع W فوق"
+ },
+ "under_gen": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>Q</mi><mi>W</mi></munder></math>",
+  "en": "Q with W below",
+  "ar": "Q مع W تحتا"
+ },
+ "under_max": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>max</mi><mi>W</mi></munder></math>",
+  "en": "max with W below",
+  "ar": "max مع W تحتا"
+ },
+ "under_lim": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>lim</mi><mi>W</mi></munder></math>",
+  "en": "limit as W of",
+  "ar": "نهاية عندما W ل"
+ },
+ "underover_sum_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2211;</mo><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow><mi>Z</mi></munderover></math>",
+  "en": "sum from W plus Z to Z of",
+  "ar": "مجموع من W‏ زائد‏ Z إلى Z ل"
+ },
+ "underover_sum": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2211;</mo><mi>W</mi><mi>Z</mi></munderover></math>",
+  "en": "sum from W to Z of",
+  "ar": "مجموع من W إلى Z ل"
+ },
+ "over_sum": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mo>&#x2211;</mo><mi>W</mi></mover></math>",
+  "en": "sum with W on top",
+  "ar": "مجموع مع W فوق"
+ },
+ "under_sum": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mo>&#x2211;</mo><mi>W</mi></munder></math>",
+  "en": "sum for W of",
+  "ar": "مجموع ل W ل"
+ },
+ "multi_none": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>Q</mi><none/><mi>Z</mi><mprescripts/><mi>W</mi><none/></mmultiscripts></math>",
+  "en": "Q presubscript W superscript Z",
+  "ar": "Q دليل سفلي سابق W دليل علوي Z"
+ },
+ "multi_both": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>Q</mi><mi>W</mi><mi>Z</mi><mprescripts/><mi>W</mi><mi>Z</mi></mmultiscripts></math>",
+  "en": "Q presubscript W presuperscript Z subscript W superscript Z",
+  "ar": "Q دليل سفلي سابق W دليل علوي سابق Z دليل سفلي W دليل علوي Z"
+ },
+ "multi_pre": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>Q</mi><mprescripts/><mi>W</mi><mi>Z</mi></mmultiscripts></math>",
+  "en": "Q presubscript W presuperscript Z",
+  "ar": "Q دليل سفلي سابق W دليل علوي سابق Z"
+ },
+ "multi_post": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>Q</mi><mi>W</mi><mi>Z</mi></mmultiscripts></math>",
+  "en": "Q subscript W superscript Z",
+  "ar": "Q دليل سفلي W دليل علوي Z"
+ },
+ "subsup_c2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>Q</mi><mi>W</mi><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow></msubsup></math>",
+  "en": "Q subscript W superscript W plus Z end superscript",
+  "ar": "Q دليل سفلي W دليل علوي W‏ زائد‏ Z نهاية دليل علوي"
+ },
+ "subsup_c1": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>Q</mi><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow><mi>Z</mi></msubsup></math>",
+  "en": "Q subscript W plus Z end subscript superscript Z",
+  "ar": "Q دليل سفلي W‏ زائد‏ Z نهاية دليل سفلي دليل علوي Z"
+ },
+ "subsup": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>Q</mi><mi>W</mi><mi>Z</mi></msubsup></math>",
+  "en": "Q subscript W superscript Z",
+  "ar": "Q دليل سفلي W دليل علوي Z"
+ },
+ "sub_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>Q</mi><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow></msub></math>",
+  "en": "Q subscript W plus Z end subscript",
+  "ar": "Q دليل سفلي W‏ زائد‏ Z نهاية دليل سفلي"
+ },
+ "sub": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>Q</mi><mi>W</mi></msub></math>",
+  "en": "Q subscript W",
+  "ar": "Q دليل سفلي W"
+ },
+ "sup_base_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mi>W</mi></msup></math>",
+  "en": "Q plus W to the power of W",
+  "ar": "Q‏ زائد‏ W أّسّ W"
+ },
+ "sup_blank": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>Q</mi><mrow/></msup></math>",
+  "en": "Q to the power of blank",
+  "ar": "Q أّسّ فضاء"
+ },
+ "sup_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>Q</mi><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow></msup></math>",
+  "en": "Q to the power of W plus Z end exponent",
+  "ar": "Q أس W‏ زائد‏ Z نهاية الأس"
+ },
+ "sup_4": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>Q</mi><mn>4</mn></msup></math>",
+  "en": "Q to the power of 4",
+  "ar": "Q أّسّ 4"
+ },
+ "sup_3": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>Q</mi><mn>3</mn></msup></math>",
+  "en": "Q cubed",
+  "ar": "Q أس 3"
+ },
+ "sup_2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>Q</mi><mn>2</mn></msup></math>",
+  "en": "Q squared",
+  "ar": "Q أس 2"
+ },
+ "sup": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>Q</mi><mi>W</mi></msup></math>",
+  "en": "Q to the power of W",
+  "ar": "Q أّسّ W"
+ },
+ "root_blank": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow/><mrow/></mroot></math>",
+  "en": "root index blank of blank",
+  "ar": "الجذرالمربع ل فضاء أس فضاء"
+ },
+ "root_idx_c_rad_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow></mroot></math>",
+  "en": "root index W plus Z of Q plus W end root",
+  "ar": "الجذرالمربع ل Q‏ زائد‏ W أس W‏ زائد‏ Z نهاية الجذر"
+ },
+ "root_idx_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow></mroot></math>",
+  "en": "root index W plus Z of Q",
+  "ar": "الجذرالمربع ل Q أس W‏ زائد‏ Z"
+ },
+ "root_W": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mi>W</mi></mroot></math>",
+  "en": "W-th root of Q",
+  "ar": "الجذرالمربع ل Q أس W على"
+ },
+ "root_k": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mi>k</mi></mroot></math>",
+  "en": "k-th root of Q",
+  "ar": "الجذرالمربع ل Q أس k على"
+ },
+ "root_n": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mi>n</mi></mroot></math>",
+  "en": "n-th root of Q",
+  "ar": "الجذرالمربع ل Q أس n على"
+ },
+ "root_n_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mi>n</mi></mroot></math>",
+  "en": "n-th root of Q plus W end root",
+  "ar": "الجذرالمربع ل Q‏ زائد‏ W أس n على نهاية الجذر"
+ },
+ "root_6": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mn>6</mn></mroot></math>",
+  "en": "root index 6 of Q",
+  "ar": "الجذرالمربع ل Q أس 6"
+ },
+ "root_c_3": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mn>3</mn></mroot></math>",
+  "en": "cube root of Q plus W end root",
+  "ar": "الجذرالمربع ل Q‏ زائد‏ W أس على 3 نهاية الجذر"
+ },
+ "root_10": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mn>10</mn></mroot></math>",
+  "en": "root index 10 of Q",
+  "ar": "الجذرالمربع ل Q أس 10"
+ },
+ "root_5": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mn>5</mn></mroot></math>",
+  "en": "fifth root of Q",
+  "ar": "الجذرالمربع ل Q أس على 5"
+ },
+ "root_3": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mn>3</mn></mroot></math>",
+  "en": "cube root of Q",
+  "ar": "الجذرالمربع ل Q أس على 3"
+ },
+ "root_4": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mn>4</mn></mroot></math>",
+  "en": "fourth root of Q",
+  "ar": "الجذرالمربع ل Q أس على 4"
+ },
+ "root_2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>Q</mi><mn>2</mn></mroot></math>",
+  "en": "square root of Q",
+  "ar": "الجذرالمربع ل Q أس على 2"
+ },
+ "sqrt_frac": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mfrac><mi>Q</mi><mi>W</mi></mfrac></msqrt></math>",
+  "en": "square root of Q over W end root",
+  "ar": "الجذر مربع ل Q على W نهاية الجذر"
+ },
+ "sqrt_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow></msqrt></math>",
+  "en": "square root of Q plus W end root",
+  "ar": "الجذر مربع ل Q‏ زائد‏ W نهاية الجذر"
+ },
+ "sqrt_empty": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mrow/></msqrt></math>",
+  "en": "square root of blank",
+  "ar": "الجذرالمربع ل فضاء"
+ },
+ "sqrt": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>Q</mi></msqrt></math>",
+  "en": "square root of Q",
+  "ar": "الجذرالمربع ل Q"
+ },
+ "frac_bev_1_2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac bevelled=\"true\"><mn>1</mn><mn>2</mn></mfrac></math>",
+  "en": "bevelled 1 half",
+  "ar": "مائلة 1 على 2"
+ },
+ "frac_blank_both": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow/><mrow/></mfrac></math>",
+  "en": "blank over blank",
+  "ar": "فضاء على فضاء"
+ },
+ "frac_blank_den": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>Z</mi><mrow/></mfrac></math>",
+  "en": "Z over blank",
+  "ar": "Z على فضاء"
+ },
+ "frac_blank_num": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow/><mi>Z</mi></mfrac></math>",
+  "en": "blank over Z",
+  "ar": "فضاء على Z"
+ },
+ "frac_1_6": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>6</mn></mfrac></math>",
+  "en": "1 over 6",
+  "ar": "1 على 6"
+ },
+ "subsup_c3": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>Q</mi><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow></msubsup></math>",
+  "en": "Q subscript W plus Z end subscript superscript Q plus W end superscript",
+  "ar": "Q دليل سفلي W‏ زائد‏ Z نهاية دليل سفلي دليل علوي Q‏ زائد‏ W نهاية دليل علوي"
+ },
+ "frac_1_5": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>5</mn></mfrac></math>",
+  "en": "1 fifth",
+  "ar": "1 على 5"
+ },
+ "frac_1_4": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>4</mn></mfrac></math>",
+  "en": "1 fourth",
+  "ar": "1 على 4"
+ },
+ "frac_1_3": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>3</mn></mfrac></math>",
+  "en": "1 third",
+  "ar": "1 على 3"
+ },
+ "frac_1_2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>2</mn></mfrac></math>",
+  "en": "1 half",
+  "ar": "1 على 2"
+ },
+ "frac_bev_c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac bevelled=\"true\"><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mi>Z</mi></mfrac></math>",
+  "en": "bevelled fraction numerator Q plus W over denominator Z end fraction",
+  "ar": "مائلة البسط Q‏ زائد‏ W على المقام Z نهاية الكسر"
+ },
+ "frac_cboth": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mrow><mi>W</mi><mo>+</mo><mi>Z</mi></mrow></mfrac></math>",
+  "en": "fraction numerator Q plus W over denominator W plus Z end fraction",
+  "ar": "البسط Q‏ زائد‏ W على المقام W‏ زائد‏ Z نهاية الكسر"
+ },
+ "frac_cden": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>Z</mi><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow></mfrac></math>",
+  "en": "fraction numerator Z over denominator Q plus W end fraction",
+  "ar": "البسط Z على المقام Q‏ زائد‏ W نهاية الكسر"
+ },
+ "frac_cnum": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>Q</mi><mo>+</mo><mi>W</mi></mrow><mi>Z</mi></mfrac></math>",
+  "en": "fraction numerator Q plus W over denominator Z end fraction",
+  "ar": "البسط Q‏ زائد‏ W على المقام Z نهاية الكسر"
+ },
+ "frac_bev": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac bevelled=\"true\"><mi>Q</mi><mi>W</mi></mfrac></math>",
+  "en": "bevelled Q over W",
+  "ar": "مائلة Q على W"
+ },
+ "frac": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>Q</mi><mi>W</mi></mfrac></math>",
+  "en": "Q over W",
+  "ar": "Q على W"
+ }
+}

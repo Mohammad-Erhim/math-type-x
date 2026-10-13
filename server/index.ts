@@ -147,7 +147,7 @@ function handleService(name: string, p: Record<string, string>): Reply {
     case 'mathml2accessible': {
       const m = mmlOf(p);
       try {
-        return text(mathml2accessible(m) || 'blank');
+        return text(mathml2accessible(m, p.lang) || 'blank');
       } catch (e) {
         if (e instanceof HttpError) throw e;
         return text('Error converting from MathML to accessible text.');
@@ -155,7 +155,7 @@ function handleService(name: string, p: Record<string, string>): Reply {
     }
     case 'accessible2mathml':
       if (p.accessible === undefined) throw new HttpError(400, 'missing parameter: accessible');
-      return text(accessible2mathml(p.accessible));
+      return text(accessible2mathml(p.accessible, p.lang));
     case 'latex2mathml': {
       if (p.latex === undefined) throw new HttpError(400, 'missing parameter: latex');
       const out = latex2mathml(p.latex);

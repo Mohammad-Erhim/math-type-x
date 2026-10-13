@@ -31,13 +31,13 @@ function conv(x: X): N[] {
   return [{ t: name, a, c: kids }];
 }
 
-export function parseNormalised(mml: string): { root: N; kids: N[] } {
+export function parseNormalised(mml: string): { root: N; kids: N[]; rootName: string } {
   const x = parseXml(mml);
   const attrs: Record<string, string> = {};
   for (const [k, v] of x.attrs) if (k !== 'xmlns' && !k.startsWith('xmlns:')) attrs[k] = v;
   const kids: N[] = [];
   for (const c of x.children) if (typeof c !== 'string') kids.push(...conv(c));
-  return { root: { t: 'math', a: attrs, c: kids }, kids };
+  return { root: { t: 'math', a: attrs, c: kids }, kids, rootName: x.name.replace(/^[a-z]+:/, '') };
 }
 
 void decodeEntitiesPublic;

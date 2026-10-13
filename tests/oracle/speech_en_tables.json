@@ -1,0 +1,14 @@
+{
+ "1": "table attributes columnalign left end attributes row",
+ "2": "table attributes columnspacing 3px end attributes row",
+ "3": "table attributes columnalign left columnspacing 3px end attributes row",
+ "4": "table attributes rowspacing 2px end attributes row",
+ "5": "table attributes columnalign left rowspacing 2px end attributes row",
+ "6": "table attributes columnspacing 3px rowspacing 2px end attributes row",
+ "7": "table attributes columnalign left columnspacing 3px rowspacing 2px end attributes row",
+ "8": "table attributes rowalign top end attributes row",
+ "9": "table attributes columnalign left rowalign top end attributes row",
+ "12": "table attributes rowspacing 2px rowalign top end attributes row",
+ "13": "table attributes columnalign left rowalign top rowspacing 2px end attributes row",
+ "16": "table attributes framespacing 1em end attributes row"
+}
