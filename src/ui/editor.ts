@@ -168,11 +168,14 @@ export class MathEditor implements ToolbarHost {
       this.store?.clear();
       return false;
     }
+    // the digit set (and the other typing modes) belong to the language they were chosen in: an English session does
+    // not turn the Arabic one's default Arabic-Indic digits back into Western ones
+    const sameLang = s.lang !== undefined && s.lang.toLowerCase() === this.lang.toLowerCase();
     const m = s.modes;
     if (m) {
       const t = this.core.modes as any;
       for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (m[k] !== undefined) t[k] = m[k];
-      if (m.digits) t.digits = m.digits;
+      if (m.digits && sameLang) t.digits = m.digits;
       if (m.color !== undefined) t.color = m.color;
     }
     this.restoredTab = s.tab;
@@ -190,7 +193,7 @@ export class MathEditor implements ToolbarHost {
   private persistNow(mml: string): void {
     if (!this.store) return;
     const m = this.core.modes as any;
-    this.store.set({ mml, modes: { bold: !!m.bold, italic: !!m.italic, autoItalic: !!m.autoItalic, text: !!m.text, arabicLigature: !!m.arabicLigature, digits: m.digits, color: m.color ?? null } });
+    this.store.set({ mml, lang: this.lang, modes: { bold: !!m.bold, italic: !!m.italic, autoItalic: !!m.autoItalic, text: !!m.text, arabicLigature: !!m.arabicLigature, digits: m.digits, color: m.color ?? null } });
   }
 
   static newInstance(o: EditorOptions = {}): MathEditor {

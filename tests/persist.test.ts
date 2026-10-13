@@ -20,8 +20,9 @@ function fakeStorage(init: Record<string, string> = {}, full = false) {
 test('a saved record keeps only values of the right shape', () => {
   assert.equal(sanitize(null), null);
   assert.equal(sanitize({ v: 2, mml: MML }), null, 'unknown version');
-  assert.deepEqual(sanitize({ v: 1, mml: MML, tab: 3, output: 'png', modes: { bold: true, digits: 'arabicIndic', color: '#FF0000' } }), {
+  assert.deepEqual(sanitize({ v: 1, mml: MML, tab: 3, output: 'png', lang: 'ar', modes: { bold: true, digits: 'arabicIndic', color: '#FF0000' } }), {
     v: 1,
+    lang: 'ar',
     mml: MML,
     tab: 3,
     output: 'png',

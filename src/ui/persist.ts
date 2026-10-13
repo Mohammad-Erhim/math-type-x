@@ -19,6 +19,8 @@ export interface Saved {
   tab?: number;
   modes?: Modes;
   output?: string;
+  /** the editor language the record was made in: typing defaults of another language are not carried over */
+  lang?: string;
 }
 
 /** a formula larger than this is not kept (storage quotas are a few MB for the whole origin) */
@@ -34,6 +36,7 @@ export function sanitize(raw: unknown): Saved | null {
   if (typeof r.mml === 'string' && r.mml.length <= MAX_MML && /^\s*<math[\s>/]/.test(r.mml)) out.mml = r.mml;
   if (typeof r.tab === 'number' && Number.isInteger(r.tab) && r.tab >= 0 && r.tab <= 8) out.tab = r.tab;
   if (typeof r.output === 'string' && /^[a-z]{1,16}$/.test(r.output)) out.output = r.output;
+  if (typeof r.lang === 'string' && /^[A-Za-z_-]{2,12}$/.test(r.lang)) out.lang = r.lang;
   if (r.modes && typeof r.modes === 'object') {
     const m = r.modes as Record<string, unknown>;
     const o: Modes = {};
