@@ -1,0 +1,11 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+# recorded reference data: keep out of language statistics and diffs
+evidence/** linguist-generated=true
+ref-shots/** linguist-generated=true
+src/data/*.json linguist-generated=true
+package-lock.json -diff

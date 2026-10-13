@@ -1,0 +1,15 @@
+node_modules/
+dist/
+dist-build/
+dist-old/
+.build/
+.cache/
+evidence/ours/
+*.log
+__pycache__/
+*.pyc
+.DS_Store
+.claude/
+.env
+.env.*
+coverage/
