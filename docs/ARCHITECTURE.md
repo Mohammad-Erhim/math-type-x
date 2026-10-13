@@ -83,7 +83,7 @@ See [SERVICES.md](SERVICES.md).
 ## Build
 
 `tools/build.mjs` (esbuild): `src/main.ts` → `dist/public/editor.js` (IIFE, exposes
-`com.wiris.jsEditor.JsEditor` and `MathTypeX`), `server/main.ts` → `dist/server.mjs`. The finished build is
+`MathTypeX`), `server/main.ts` → `dist/server.mjs`. The finished build is
 swapped into `dist/` in one rename so a running server never serves a half-written bundle.
 
 ## Generated data (`src/data`, `tools/gen`)

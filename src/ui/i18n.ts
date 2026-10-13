@@ -19,6 +19,18 @@ const OUTPUT_AR: Record<string, string> = {
   Error: 'خطأ',
   'Copied to clipboard': 'تم النسخ إلى الحافظة',
   'Rendered formula': 'المعادلة المعروضة',
+  'Move left': 'تحريك لليسار',
+  'Move right': 'تحريك لليمين',
+  'Move up': 'تحريك لأعلى',
+  'Move down': 'تحريك لأسفل',
+  'Move the cursor': 'تحريك المؤشر',
+  'Clear the formula': 'مسح المعادلة',
+  'Clear the whole formula?': 'هل تريد مسح المعادلة بالكامل؟',
+  Clear: 'مسح',
+  Cancel: 'إلغاء',
+  'Arabic fonts': 'خطوط عربية',
+  'Updating…': 'جارٍ التحديث…',
+  'Delete backward': 'حذف إلى الخلف',
 };
 
 const TABLES: Record<string, Record<string, string>> = { ar: { ...ar, ...OUTPUT_AR } };
@@ -43,7 +55,7 @@ export function translate(table: Record<string, string> | undefined, s: string):
   return s;
 }
 
-const ATTRS = ['title', 'aria-label', 'placeholder', 'alt'];
+const ATTRS = ['title', 'aria-label', 'placeholder', 'alt', 'label'];
 const EN_PREFIX = 'data-en-';
 
 export class Localizer {

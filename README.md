@@ -1,14 +1,12 @@
-# MathType-X – web equation editor playground
+# math-type-x – web equation editor
 
-A re-implementation of the MathType web playground ("See MathType in action!"): a 725 × 415 px
-equation editor with the full toolbar (700 controls, 10 tabs), the contextual tab, pop-ups, pickers,
-handwriting mode and the backend services behind them. It follows the two reference documents in `docs/`
-(`MathType_Playground_SRS.pdf`, `MathType_Playground_Functional_Reference.pdf`) and was verified against
-the live reference with recorded oracle corpora.
+A 725 × 415 px equation editor with the full toolbar (700 controls, 10 tabs), the contextual tab, pop-ups,
+pickers, handwriting mode and the backend services behind them. It follows the two specification documents in
+`docs/` (`SRS.pdf`, `Functional_Reference.pdf`) and was verified against recorded oracle corpora.
 
 ```
 npm install
-npm run build            # → dist/public (editor.js, demo page, font) and dist/server.mjs
+npm run build            # → dist/public (editor.js, demo page, fonts) and dist/server.mjs
 npm start                # http://localhost:8080  (services under /editor-services/)
 npm test                 # unit + golden + oracle suites
 ```
@@ -39,7 +37,8 @@ The page is static files plus an optional services server, so there are two ways
   scaled up on touch devices (≥ 44 px targets; less when the window is low), pop-ups are kept inside the screen, the
   handwriting surface fills the window and follows rotation, inputs are 16 px (no zoom on focus), hover styles do not
   stick on touch.
-* **Full screen** button on every size (Fullscreen API, CSS fallback where it is missing, e.g. iPhone).
+* The demo page is exactly as high as the window: the editor takes the height the output panel leaves, nothing scrolls
+  and the output panel is always visible (`?layout=classic` gives the fixed 725 × 415 widget).
 * API: `layout: 'auto' | 'classic' | 'fluid'` option, `editor.setLayout(mode)`, `editor.getLayout()`; a container can also
   say `data-wrs-layout="fluid"`. `node tools/responsive_shots.js` / `tools/responsive_touch.js` check the sizes in a browser.
 
@@ -63,7 +62,7 @@ The page is static files plus an optional services server, so there are two ways
 <div id="editorContainer"></div>
 <script src="editor.js"></script>
 <script>
-  const editor = com.wiris.jsEditor.JsEditor.newInstance({ language: 'en', services: { baseUrl: '/editor-services/' } });
+  const editor = MathTypeX.JsEditor.newInstance({ language: 'en', services: { baseUrl: '/editor-services/' } });
   editor.insertInto(document.getElementById('editorContainer'));
   editor.on('change', (e) => console.log(e.mathml));
 </script>
@@ -122,19 +121,24 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
   rows, fractions, scripts, matrices, brackets, elementary stacks and long division. Box heights of a few structures (scripts
   over fractions, enclosures, large integrals) differ by 1–3 px from the reference, which only moves the caret / underline
   mark by that much.
+* The three vertical-alignment buttons of fences (Baseline / Middle / Middle-baseline) change the layout here; the reference
+  editor ignores them (only its exported image differs, for even-row matrices).
 * Mouse clicks next to a structure (in the gap between its rows, right of a fraction) use the nearest row; the reference
   uses its own, less regular rule there.
 * The reference's conversion services answer a number of formulas with "Error converting …"; the ones seen in the
   recordings are reproduced (`tests/oracle/services_stack.json`), others are converted normally.
 * Exports produced in the browser (static build) equal the server's SVG byte for byte and its PNG to anti-aliasing
   differences (browser rasteriser instead of resvg); PDF / EPS wrap a 300 dpi raster in both.
-* Formula glyphs use Liberation Sans / the reference symbol fonts (`fontsUrl`); without the vendor fonts brackets fall back
-  to STIX glyphs.
+* Formulas are drawn with one bundled font set (STIX Two Math, Liberation Sans, an Arabic face) in the editor, the icons and
+  every export, so the canvas and the PNG / SVG / PDF agree; large delimiters are assembled from STIX glyph variants.
+* `persist: '<key>'` (editor option; the demo page uses it) keeps formula, tab, typing modes and the output panel's format in
+  local storage under `mtx:<key>`; nothing is stored without the option. The formula is user content: clear the key to forget it.
+* The Font list's **Arabic fonts** (Noto Naskh Arabic, Noto Sans Arabic, Noto Kufi Arabic, Tajawal) apply to Arabic-script text
+  only (letters, digits, punctuation); Latin letters, digits and operators stay in the bundled sans / math faces. The Latin
+  entries of the list (Arial, Tahoma, …) are stored in the equation (`style="font-family:…"`) but do not change the drawing.
 * The handwriting recogniser is a built-in template matcher with structure parsing (about 98 % of the synthetic corpora in
   `tests/oracle/hand_corpus*_in.json`; real handwriting is less regular). Its answers differ from the reference's cloud
   recogniser in detail; replace `hand/recognize` with a stronger provider if needed – the response contract is unchanged.
 * Navigation through structures that contain argument placeholders inside big operators ("Big operator with subscript",
   left scripts) differs by a stop or two from the reference; their contextual controls are the same.
-* The demo page keeps the playground visible at every viewport width (the reference host page hides it below 1275 px,
-  UI-012); on narrow screens the page scrolls horizontally.
 * Disabled toolbar buttons expose `aria-disabled` (SRS ACC-001) which the reference does not.

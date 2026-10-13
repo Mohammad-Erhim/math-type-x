@@ -4,14 +4,18 @@
  */
 import { Localizer, tableFor } from './i18n';
 import { EditorCore } from '../core/engine';
+import { digitsForLanguage } from '../core/typing';
+import { Store, Saved } from './persist';
 import { handleKey } from '../core/keys';
 import { catalogue, Control, behaviorOf, findControl } from '../core/catalogue';
 import { layoutDocument, DocLayout } from '../layout/layout';
 import { DocGeometry } from '../layout/geometry';
 import { FormulaDisplay } from './display';
 import { Toolbar, ToolbarHost } from './toolbar';
-import { injectStyles, injectVendorFonts } from './styles';
-import { setVendorFonts } from '../layout/svg';
+import { injectStyles, injectBundledFonts, BUNDLED_FACES } from './styles';
+import { getAssetsBase } from '../render/client';
+import { resetMeasuredAdvances } from '../layout/metrics';
+import { arabicCssFamily, arabicFontOf } from '../layout/arfonts';
 import { h } from './dom';
 import { Services, ServicesOptions } from './services';
 import { SWATCHES, FONT_FAMILIES } from './messages';
@@ -63,14 +67,15 @@ export interface EditorOptions {
   parity?: 'exact' | 'improved';
   services?: ServicesOptions;
   mml?: string;
-  manualUrl?: string;
   /** directory serving the reference symbol fonts (math1.ttf …); the bundled STIX Two Math is used without it */
   fontsUrl?: string;
+  /** local-storage key: the formula, tab, typing modes and output format are kept in the browser under it (off when empty) */
+  persist?: string;
 }
 
 type Ev = 'ready' | 'change' | 'focus' | 'blur' | 'tabchange' | 'handstart' | 'handend';
 
-const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'manualUrl' | 'fontsUrl'>> = {
+const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'fontsUrl' | 'persist'>> = {
   language: 'en',
   layout: 'auto',
   autoformat: false,
@@ -130,8 +135,69 @@ export class MathEditor implements ToolbarHost {
     if (options.reservedWords) this.core.reservedWords = options.reservedWords.filter((w) => /^[A-Za-z]+$/.test(w));
     if (this.opts.fontStyle === 'normal') this.core.modes.autoItalic = false;
     if (options.mml) this.core.setMathML(options.mml);
+    // digits typed in an Arabic language are Arabic-Indic ones (Persian, Pashto and Urdu: Eastern Arabic-Indic);
+    // the toolbar's Arabic-Indic toggles switch back
+    this.core.modes.digits = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
+    // what the person left in this browser (formula with its font and size, typing modes, tab)
+    if (this.opts.persist) this.store = new Store('mtx:' + this.opts.persist);
+    const restored = !options.mml && this.store ? this.restore(this.store.read()) : false;
     // right-to-left languages start with a right-to-left formula (`<math dir="rtl">`), like the reference
-    if (!options.mml && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
+    if (!options.mml && !restored && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
+  }
+
+  /* ---------------------------------------------------------- persistence */
+  private store: Store | null = null;
+  private restoredTab: number | undefined;
+  private onHide = (): void => {
+    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.store?.flush();
+  };
+  private onPageHide = (): void => this.store?.flush();
+
+  /** apply a saved record; true when it brought a formula */
+  private restore(s: Saved | null): boolean {
+    if (!s) return false;
+    let formula = false;
+    try {
+      if (s.mml) {
+        this.core.setMathML(s.mml);
+        this.core.clearHistory();
+        formula = true;
+      }
+    } catch {
+      // a formula the editor cannot read: forget the record rather than failing at every load
+      this.store?.clear();
+      return false;
+    }
+    // the digit set (and the other typing modes) belong to the language they were chosen in: an English session does
+    // not turn the Arabic one's default Arabic-Indic digits back into Western ones
+    const sameLang = s.lang !== undefined && s.lang.toLowerCase() === this.lang.toLowerCase();
+    const m = s.modes;
+    if (m) {
+      const t = this.core.modes as any;
+      for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (m[k] !== undefined) t[k] = m[k];
+      // digits the person chose themselves come back; the default follows the language / direction / Arabic font
+      if (m.digits && sameLang && m.digitsChosen) {
+        t.digits = m.digits;
+        this.digitsChosen = true;
+      }
+      if (m.color !== undefined) t.color = m.color;
+    }
+    this.restoredTab = s.tab;
+    return formula;
+  }
+
+  /** what is saved for this editor (output panel: the chosen format) */
+  readState(): Saved | null {
+    return this.store ? this.store.read() : null;
+  }
+  writeState(patch: Partial<Omit<Saved, 'v'>>): void {
+    this.store?.set(patch);
+  }
+
+  private persistNow(mml: string): void {
+    if (!this.store) return;
+    const m = this.core.modes as any;
+    this.store.set({ mml, lang: this.lang, modes: { bold: !!m.bold, italic: !!m.italic, autoItalic: !!m.autoItalic, text: !!m.text, arabicLigature: !!m.arabicLigature, digits: m.digits, digitsChosen: this.digitsChosen, color: m.color ?? null } });
   }
 
   static newInstance(o: EditorOptions = {}): MathEditor {
@@ -141,16 +207,15 @@ export class MathEditor implements ToolbarHost {
   /* ---------------------------------------------------------- lifecycle */
   insertInto(container: HTMLElement): void {
     injectStyles(container.ownerDocument);
-    if (this.opts.fontsUrl) {
-      injectVendorFonts(this.opts.fontsUrl, container.ownerDocument);
+    // the faces the formulas are drawn with come with the editor; the canvas is drawn again once they are in
+    const fontBase = this.opts.fontsUrl ?? getAssetsBase();
+    if (fontBase) {
       const doc = container.ownerDocument;
-      const want = ['Conv_math1', 'Conv_brackets', 'Conv_brack_sm', 'Conv_roundBrackets1854', 'Conv_horizontal'];
-      void Promise.all(want.map((f) => doc.fonts.load(`16px ${f}`)))
-        .then((r) => {
-          if (r.every((faces) => faces.length > 0)) {
-            setVendorFonts(true);
-            this.render();
-          }
+      injectBundledFonts(fontBase, doc);
+      void Promise.all(BUNDLED_FACES.map((f) => doc.fonts.load(f)))
+        .then(() => {
+          resetMeasuredAdvances();
+          this.render();
         })
         .catch(() => undefined);
     }
@@ -158,6 +223,13 @@ export class MathEditor implements ToolbarHost {
     this.attach();
     this.setupLayout(container);
     this.render();
+    this.ctx = contextState(this.core);
+    this.toolbar.setContextEnabled(!!(this.ctx && this.ctx.controls.length));
+    if (this.restoredTab !== undefined && this.restoredTab !== this.toolbar.selected) this.selectTab(this.restoredTab);
+    if (this.store) {
+      document.addEventListener('visibilitychange', this.onHide);
+      window.addEventListener('pagehide', this.onPageHide);
+    }
     this.ready = true;
     queueMicrotask(() => this.emitEv('ready', {}));
     this.scheduleAccessible(true);
@@ -165,12 +237,12 @@ export class MathEditor implements ToolbarHost {
 
   private build(container: HTMLElement): void {
     this.display = new FormulaDisplay();
-    this.toolbar = new Toolbar(this, this.opts.manualUrl ?? `https://www.wiris.net/demo/editor/resources/help.html?lang=${this.lang}&v=${VERSION}`);
+    this.toolbar = new Toolbar(this);
     this.geom = new DocGeometry(this.core);
     this.core.geometry = this.geom;
     const handWrapper = h('div', { class: 'wrs_handWrapper' });
     const strip = h('div', { class: 'wrs_handStrip' });
-    strip.innerHTML = `<svg width="30" height="316" viewBox="0 0 30 316" aria-hidden="true"><g transform="translate(3 140) scale(1.15)">${ART.hand(30, 30)}</g></svg>`;
+    strip.innerHTML = `<svg width="30" height="316" viewBox="0 0 30 316" aria-hidden="true"><g transform="translate(1 138)">${ART.hand(28, 40)}</g></svg>`;
     const handBtn = h('input', { type: 'button', title: 'Go to handwritten mode', 'aria-label': 'Go to handwritten mode' });
     handWrapper.append(strip, handBtn);
     this.clipboardArea = h('textarea', { class: 'wrs_clipboardTextarea', tabindex: '-1', 'aria-hidden': 'true', readOnly: true }) as HTMLTextAreaElement;
@@ -186,6 +258,108 @@ export class MathEditor implements ToolbarHost {
     this.localizer.attach(this.root);
     handBtn.addEventListener('click', () => this.openHand());
     strip.addEventListener('click', () => this.openHand());
+    this.buildNavPad();
+  }
+
+  /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
+   * script, down to the denominator, to the next line) like the arrow keys do. */
+  private navClear: HTMLButtonElement | null = null;
+  private buildNavPad(): void {
+    // built always; shown on touch screens and in narrow windows (CSS)
+    // left / right, then up / down
+    const keys: [string, string, string][] = [
+      ['ArrowLeft', 'Move left', 'M16 5L6 12l10 7z'],
+      ['ArrowRight', 'Move right', 'M8 5l10 7-10 7z'],
+      ['ArrowUp', 'Move up', 'M5 16l7-10 7 10z'],
+      ['ArrowDown', 'Move down', 'M5 8l7 10 7-10z'],
+      ['Backspace', 'Delete backward', ''],
+    ];
+    const pad = h('div', { class: 'wrs_navPad', role: 'group', 'aria-label': 'Move the cursor' });
+    for (const [key, label, glyph] of keys) {
+      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.replace(/^Arrow/, ''), title: label, 'aria-label': label, tabindex: '-1' }) as HTMLButtonElement;
+      // the four arrows are triangles of one size (10 x 14), so no glyph of a font makes one look smaller
+      if (glyph) b.innerHTML = `<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="${glyph}" fill="#324d5b"/></svg>`;
+      if (key === 'Backspace') {
+        // the key's own sign: it points the way the text is deleted (mirrored in right-to-left formulas by the style)
+        b.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg>';
+      }
+      // a press must not take the focus (and so the soft keyboard) away from the formula
+      b.addEventListener('pointerdown', (e) => e.preventDefault());
+      b.addEventListener('mousedown', (e) => e.preventDefault());
+      let timer: ReturnType<typeof setTimeout> | null = null;
+      const step = () => {
+        this.closePopup();
+        const host = { ed: this.core, runGeneral: (title: string) => this.runGeneral(title) };
+        handleKey(host, key, { ctrl: false, alt: false, shift: false, meta: false });
+        this.display.poke();
+        this.focusEditor();
+      };
+      const stop = () => {
+        if (timer) clearTimeout(timer);
+        timer = null;
+      };
+      // holding a key repeats it (after a short delay, like a keyboard); the click that ends a press is not a second step
+      const repeat = () => {
+        timer = setTimeout(() => {
+          step();
+          repeat();
+        }, 70);
+      };
+      b.addEventListener('pointerdown', (e) => {
+        if (e.button !== 0) return;
+        step();
+        stop();
+        timer = setTimeout(repeat, 420);
+      });
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        // pointer presses were handled on pointerdown; a click with no pointer is a key press on the focused button
+        if (e.detail === 0) step();
+      });
+      b.addEventListener('contextmenu', (e) => e.preventDefault());
+      for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, stop);
+      pad.append(b);
+    }
+    // clear the whole formula – after a confirmation
+    const clear = h('button', { type: 'button', class: 'wrs_navKey wrs_navClear', title: 'Clear the formula', 'aria-label': 'Clear the formula', tabindex: '-1' }) as HTMLButtonElement;
+    clear.innerHTML = '<svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    clear.addEventListener('pointerdown', (e) => e.preventDefault());
+    clear.addEventListener('mousedown', (e) => e.preventDefault());
+    const confirmBox = h('div', { class: 'wrs_confirm', role: 'alertdialog', 'aria-label': 'Clear the whole formula?' });
+    const ask = h('div', { class: 'wrs_confirmText', text: 'Clear the whole formula?' });
+    const no = h('button', { type: 'button', class: 'wrs_confirmNo', text: 'Cancel' }) as HTMLButtonElement;
+    const yes = h('button', { type: 'button', class: 'wrs_confirmYes', text: 'Clear' }) as HTMLButtonElement;
+    confirmBox.append(ask, no, yes);
+    confirmBox.style.display = 'none';
+    const hideConfirm = () => {
+      confirmBox.style.display = 'none';
+    };
+    this.navClear = clear;
+    clear.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (this.core.isEmpty()) return;
+      confirmBox.style.display = 'block';
+      no.focus();
+    });
+    no.addEventListener('click', () => {
+      hideConfirm();
+      this.focusEditor();
+    });
+    yes.addEventListener('click', () => {
+      hideConfirm();
+      this.core.reset();
+      this.focusEditor();
+    });
+    confirmBox.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Escape') {
+        hideConfirm();
+        this.focusEditor();
+      }
+    });
+    pad.prepend(clear);
+    // a bar of its own below the formula area (fluid layout) so that it is never covered or scrolled away
+    this.display.wrapper.after(pad, confirmBox);
+    this.root.classList.add('wrs_hasNavPad');
   }
 
   private attach(): void {
@@ -239,6 +413,9 @@ export class MathEditor implements ToolbarHost {
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
     this.resizeObs?.disconnect();
+    this.store?.flush();
+    document.removeEventListener('visibilitychange', this.onHide);
+    window.removeEventListener('pagehide', this.onPageHide);
     window.removeEventListener('resize', this.onWinResize);
     window.removeEventListener('orientationchange', this.onWinResize);
     this.root?.remove();
@@ -259,6 +436,13 @@ export class MathEditor implements ToolbarHost {
   /** the classic widget needs 725 px; a narrower container gets the fluid layout (or when asked for) */
   private applyLayout(): void {
     if (!this.root || !this.host) return;
+    // a field of a dialog / picker has the focus: on a phone its soft keyboard shrinks the window, which must not change
+    // the layout (and with it close the dialog the person is filling in)
+    const ae = this.root.ownerDocument.activeElement as HTMLElement | null;
+    if (ae && this.root.contains(ae) && ae.matches('input:not(.wrs_focusElement), textarea:not(.wrs_clipboardTextarea), select') && this.popup) {
+      this.hand.resize();
+      return;
+    }
     const w = this.host.clientWidth;
     const attr = this.host.dataset.wrsLayout as 'classic' | 'fluid' | 'auto' | undefined;
     const mode = this.layoutMode !== 'auto' ? this.layoutMode : attr ?? 'auto';
@@ -269,16 +453,26 @@ export class MathEditor implements ToolbarHost {
     // touch: controls of at least 44 px (the big buttons are 33 px); a low window gets less zoom to leave room for the formula
     let k: number = this.opts.toolbarSize;
     if (fluid && k === 1 && coarse) k = h > 0 && h < 480 ? 1.25 : 1.5;
+    // a narrow window (a phone): no sideways scrolling – the tabs share one row and the controls wrap into rows
+    // (touch sized, a little smaller when the window is low)
+    const narrow = fluid && w > 0 && w < 960;
+    if (narrow && this.opts.toolbarSize === 1) k = !coarse ? 1 : h > 0 && h < 520 ? 1.1 : 1.45;
     const hk = fluid && coarse ? 1.35 : 1;
-    const changed = fluid !== this.fluid || k !== this.zoomK;
+    // only a change of the layout mode closes a pop-up; a new zoom (a different window height) keeps it
+    const changed = fluid !== this.fluid;
     this.fluid = fluid;
     this.zoomK = k;
     this.root.classList.toggle('wrs_fluid', fluid);
     this.root.classList.toggle('wrs_scaled', !fluid && k !== 1);
     this.root.classList.toggle('wrs_touch', coarse);
+    this.root.classList.toggle('wrs_reflow', narrow);
+    // the panel never takes the room the formula needs (tabs 40 px, touch pad 56 px, at least 120 px of formula): it
+    // scrolls up and down inside itself instead
+    this.root.style.setProperty('--wrs-panel-max', Math.max(110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
+    this.toolbar.setReflow(narrow, narrow ? Math.floor(w / k) : 0);
     this.hand.resize();
   }
 
@@ -292,11 +486,25 @@ export class MathEditor implements ToolbarHost {
   }
 
   /* ------------------------------------------------------------ rendering */
+  /** the person set the digits themselves (toolbar toggles): the default no longer follows the language / font */
+  private digitsChosen = false;
+  /** Arabic-Indic digits by default as soon as the formula is Arabic: an Arabic language, the toolbar's right-to-left or
+   * Arabic-ligature button, or an Arabic font; Western again when none of them applies (unless the person chose) */
+  private syncDigits(): void {
+    if (this.digitsChosen) return;
+    const lang = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
+    const arabic = this.core.rtl || this.core.modes.arabicLigature || !!arabicFontOf(this.core.getFontFamily());
+    const want = lang !== 'western' ? lang : arabic ? 'arabicIndic' : 'western';
+    if (this.core.modes.digits !== want) this.core.modes.digits = want;
+  }
+
   private onCoreChange(): void {
+    this.syncDigits();
     if (!this.root) return;
     this.normalizeRoot();
     this.render();
     const mml = this.core.getMathML();
+    this.persistNow(mml);
     if (mml !== this.lastMml) {
       this.lastMml = mml;
       if (this.changeTimer) clearTimeout(this.changeTimer);
@@ -312,12 +520,31 @@ export class MathEditor implements ToolbarHost {
     }
   }
 
+  /** faces of the Font list are fetched when a formula first uses one; the formula is measured and drawn again then */
+  private arabicFaces = new Set<string>();
+  private ensureArabicFace(family: string): void {
+    if (!family || this.arabicFaces.has(family) || (!this.opts.fontsUrl && !getAssetsBase())) return;
+    this.arabicFaces.add(family);
+    const doc = this.root?.ownerDocument ?? document;
+    void doc.fonts
+      .load(`16px "${family}"`)
+      .then(() => {
+        resetMeasuredAdvances();
+        this.render();
+      })
+      // a face that cannot be fetched: the default Arabic face is used, try again on the next choice
+      .catch(() => this.arabicFaces.delete(family));
+  }
+
   render(): void {
     const core = this.core;
-    this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl);
+    this.navClear?.classList.toggle('wrs_navOff', core.isEmpty());
+    const arabic = arabicCssFamily(core.getFontFamily());
+    this.ensureArabicFace(arabic);
+    this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl, arabic);
     const rtl = core.rtl;
     this.root.classList.toggle('wrs_rtl', rtl);
-    this.display.render(this.lastLayout, { caret: core.caret, sel: core.sel, focused: this.focused, rtl, showCaret: true });
+    this.display.render(this.lastLayout, { caret: core.caret, sel: core.sel, focused: this.focused, rtl, showCaret: true, arabic });
     // font family of letters
     const fam = core.getFontFamily();
     this.display.view.style.fontFamily = fam === 'stix' ? "'STIX Two Math',serif" : fam || '';
@@ -369,7 +596,12 @@ export class MathEditor implements ToolbarHost {
       const fam = c.getFontFamily();
       sel.font.value = FONT_FAMILIES.some((f) => f.value === fam && fam) ? fam : 'inherit';
       const fl = FONT_FAMILIES.find((f) => f.value === (fam || 'inherit'));
-      sel.fontLabel.textContent = fl ? fl.label : fam;
+      // an Arabic face shows its name in Arabic script, drawn in the face (short, and flags it as an Arabic font)
+      const ar = fl?.arabic;
+      sel.fontLabel.textContent = ar ? ar.arLabel : fl ? fl.label : fam;
+      sel.fontLabel.style.fontFamily = ar ? `'${ar.family}'` : '';
+      sel.fontLabel.classList.toggle('wrs_arabicFont', !!ar);
+      sel.fontBox.title = ar ? ar.label : '';
       sel.fontBox.classList.toggle('wrs_active', !!fam);
       const fs = c.getFontSize();
       sel.size.value = fs ? fs + 'px' : 'inherit';
@@ -381,6 +613,7 @@ export class MathEditor implements ToolbarHost {
   /* ------------------------------------------------------ contextual tab */
   private refreshContext(): void {
     this.ctx = contextState(this.core);
+    this.toolbar.setContextEnabled(!!(this.ctx && this.ctx.controls.length));
     if (this.toolbar.selected === 9) this.renderContextPanel();
   }
 
@@ -414,6 +647,12 @@ export class MathEditor implements ToolbarHost {
     this.focusEditor();
   }
 
+  /** focus the field of a dialog – not on touch screens, where that would only raise the soft keyboard over it */
+  private focusField(el: HTMLElement): void {
+    if (typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches) return;
+    el.focus();
+  }
+
   /* ------------------------------------------------------- toolbar host */
   focusEditor(): void {
     this.display.input.focus({ preventScroll: true });
@@ -422,6 +661,8 @@ export class MathEditor implements ToolbarHost {
   selectTab(i: number, focusFirst = false): void {
     this.closePopup();
     this.toolbar.select(i);
+    // the Contextual tab depends on the caret: the page opens on the tab before it
+    if (i <= 8) this.store?.set({ tab: i });
     if (i === 9) this.renderContextPanel();
     this.emitEv('tabchange', { tab: i });
     if (focusFirst) {
@@ -446,11 +687,13 @@ export class MathEditor implements ToolbarHost {
       return;
     }
     if (b === 'digits-arabic') {
+      this.digitsChosen = true;
       core.setDigits(core.modes.digits === 'arabicIndic' ? 'western' : 'arabicIndic');
       this.focusEditor();
       return;
     }
     if (b === 'digits-eastern') {
+      this.digitsChosen = true;
       core.setDigits(core.modes.digits === 'easternArabicIndic' ? 'western' : 'easternArabicIndic');
       this.focusEditor();
       return;
@@ -524,7 +767,11 @@ export class MathEditor implements ToolbarHost {
   };
 
   openGroup(tab: number, group: number, btn: HTMLElement): void {
-    if (this.popup && this.popup.kind === 'group' && this.popup.owner === btn) return; // same arrow keeps it open
+    // the arrow of the open pop-up closes it again
+    if (this.popup && this.popup.kind === 'group' && this.popup.owner === btn) {
+      this.closePopup();
+      return;
+    }
     this.closePopup();
     const items = catalogue.controls.filter((c) => c.tab === tab && c.group === group).sort((a, b) => a.n - b.n);
     if (!items.length) return;
@@ -537,7 +784,14 @@ export class MathEditor implements ToolbarHost {
     // measured on the reference: 1px border + 2px padding around a grid of cells, 1px extra on the right
     el.style.left = minX - 3 + 'px';
     el.style.top = minY - 3 + 'px';
-    if (this.fluid) {
+    if (this.fluid && this.root.classList.contains('wrs_reflow')) {
+      // the controls were re-arranged to fit the width: the pop-up opens just under the tapped arrow
+      const b = btn.getBoundingClientRect();
+      const rr = this.root.getBoundingClientRect();
+      const kz = this.zoomK;
+      el.style.left = (b.left - rr.left) / kz - 4 + 'px';
+      el.style.top = (b.bottom - rr.top) / kz + 2 + 'px';
+    } else if (this.fluid) {
       // the toolbar is zoomed and scrolled: put the pop-up where its arrow's panel is on the screen
       const tb = this.toolbar.root.getBoundingClientRect();
       const rr0 = this.root.getBoundingClientRect();
@@ -679,7 +933,8 @@ export class MathEditor implements ToolbarHost {
     this.root.append(el);
     this.placePanel(el, btn);
     this.popup = { el, kind: 'picker', owner: btn as HTMLElement, close: () => undefined };
-    rows.focus();
+    // on a touch screen the squares are tapped; focusing a number field would only raise the soft keyboard
+    this.focusField(rows);
   }
 
   private insertTable(rows: number, cols: number, title: string): void {
@@ -763,7 +1018,7 @@ export class MathEditor implements ToolbarHost {
     this.root.append(el);
     this.placePanel(el, btn);
     this.popup = { el, kind: 'palette', owner: btn, close: () => undefined };
-    hex.focus();
+    this.focusField(hex);
     hex.select();
   }
 
@@ -846,7 +1101,7 @@ export class MathEditor implements ToolbarHost {
     this.placePanel(el, btn);
     showCategory();
     this.popup = { el, kind: 'unicode', owner: btn, close: () => undefined };
-    code.focus();
+    this.focusField(code);
   }
 
   /* --------------------------------------------------------- length field */
@@ -882,7 +1137,7 @@ export class MathEditor implements ToolbarHost {
     this.root.append(el);
     this.fitInside(el);
     this.popup = { el, kind: 'length', owner: btn, close: () => undefined };
-    input.focus();
+    this.focusField(input);
     input.setSelectionRange(0, 0);
   }
 
@@ -896,6 +1151,7 @@ export class MathEditor implements ToolbarHost {
       e.preventDefault();
       e.stopPropagation();
       const n = parseInt(digit[1], 10);
+      if ((n === 0 || n === 10) && this.toolbar.ctxOff) return;
       this.selectTab(n === 0 ? 9 : n - 1, true);
       return;
     }
@@ -903,7 +1159,7 @@ export class MathEditor implements ToolbarHost {
       e.preventDefault();
       e.stopPropagation();
       const t = this.toolbar.selected + (e.key === 'ArrowRight' ? 1 : -1) * (this.core.rtl ? -1 : 1);
-      if (t >= 0 && t <= 9) this.selectTab(t, true);
+      if (t >= 0 && t <= 9 && !(t === 9 && this.toolbar.ctxOff)) this.selectTab(t, true);
       else this.selectTab(this.toolbar.selected, true);
     }
   };
@@ -1198,26 +1454,26 @@ export class MathEditor implements ToolbarHost {
     if (p.parity) this.core.parity = p.parity;
     if (p.autoformat !== undefined) this.core.autoformat = !!p.autoformat;
   }
-  async getLaTeX(): Promise<string> {
-    return this.services.latex(this.core.getMathML());
+  async getLaTeX(o: { signal?: AbortSignal } = {}): Promise<string> {
+    return this.services.latex(this.core.getMathML(), o.signal);
   }
-  async getAccessibleText(lang?: string): Promise<string> {
-    return this.services.accessible(this.core.getMathML(), lang ?? this.lang);
+  async getAccessibleText(lang?: string, o: { signal?: AbortSignal } = {}): Promise<string> {
+    return this.services.accessible(this.core.getMathML(), lang ?? this.lang, o.signal);
   }
   getPlainText(): string {
     return this.core.plainText();
   }
-  async getSVG(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<string> {
+  async getSVG(o: { zoom?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<string> {
     const r = await this.services.render(this.core.getMathML(), 'svg', o);
     return r.body.text();
   }
-  async getPDF(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+  async getPDF(o: { zoom?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'pdf', o)).body;
   }
-  async getEPS(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+  async getEPS(o: { zoom?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'eps', o)).body;
   }
-  async getPNG(o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+  async getPNG(o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'png', o)).body;
   }
   async getImageDataURL(format: 'svg' | 'png', o: any = {}): Promise<string> {
@@ -1248,7 +1504,8 @@ export class MathEditor implements ToolbarHost {
   }
 }
 
-/** the vendor-compatible entry point: com.wiris.jsEditor.JsEditor.newInstance(...) */
+
+/** the entry point: MathTypeX.JsEditor.newInstance(...) */
 export const JsEditor = { newInstance: (o: EditorOptions = {}) => MathEditor.newInstance(o) };
 void serializeMathML;
 void parseMathML;

@@ -1,34 +1,19 @@
-@font-face{font-family:'STIX Two Math';src:url(fonts/stix-two-math.woff2) format('woff2');font-display:swap}
-html,body{margin:0;padding:0;background:#fff;color:#18212f;font-family:Arial,'Liberation Sans',Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+html,body{height:100%;margin:0;padding:0;background:#fff;color:#18212f;font-family:'Liberation Sans',Arial,Helvetica,sans-serif;-webkit-text-size-adjust:100%}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
-/* wide screens: the editor exactly as the reference page shows it (a 725 px widget) */
-.page{width:725px;margin:24px auto 48px}
-.page-head{display:flex;justify-content:flex-end;height:36px;margin-bottom:8px}
-#editorContainer{width:725px;height:415px}
-.wp-block-columns{display:flex;flex-wrap:nowrap}
-.wp-block-column{flex:1 1 auto;min-width:0}
-.fsbtn{display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border:1px solid #778e9a;border-radius:4px;background:#fff;color:#324d5b;font:700 13px Arial,sans-serif;cursor:pointer;touch-action:manipulation}
-.fsbtn:hover{background:#f1f5f6}
-.fsbtn:focus-visible{outline:2px solid #1b6ef3;outline-offset:2px}
-.fsbtn[aria-pressed=true]{background:#778e9a;color:#fff}
-
-/* narrow or low screens (phones, a phone held sideways) and full screen: the editor takes the whole window, the
-   full screen button floats over its lower right corner */
+/* the page is exactly as high as the window: the editor takes what the output panel leaves, nothing scrolls, the
+   output panel is always visible */
+.page{box-sizing:border-box;display:flex;flex-direction:column;width:100%;max-width:1200px;height:100vh;height:100dvh;min-height:380px;margin:0 auto;padding:12px max(12px,env(safe-area-inset-right)) max(12px,env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+.wp-block-columns,.wp-block-column{display:flex;flex-direction:column;flex:1 1 auto;min-width:0;min-height:0}
+#editorContainer{flex:1 1 auto;min-height:0;width:100%;height:auto}
+#outputContainer{flex:none;width:100%}
+#outputContainer .mtx_output{max-width:none;margin-top:12px;height:clamp(110px,30vh,230px);min-height:110px}
 @media (max-width:724px),(max-height:480px){
-  .page{width:auto;margin:0;padding:0 env(safe-area-inset-right) 0 env(safe-area-inset-left)}
-  .page-head{position:fixed;right:0;bottom:env(safe-area-inset-bottom,0px);z-index:50;height:auto;margin:0}
-  .fslabel{display:none}
-  .fsbtn{width:40px;min-height:40px;padding:0;justify-content:center;border-radius:6px 0 0 0;opacity:.85}
-  .wp-block-columns,.wp-block-column{display:block}
-  #editorContainer{width:100%;height:100vh;height:100dvh;min-height:320px}
-  #outputContainer{padding:0 12px 24px}
+  .page{padding:0}
+  #outputContainer .mtx_output{margin-top:0;border-radius:0;border-width:1px 0 0}
 }
-html.fs,html.fs body{height:100%;overflow:hidden}
-html.fs .page{position:fixed;inset:0;width:auto;margin:0;padding:0;display:flex;flex-direction:column;background:#fff;z-index:100}
-html.fs .page-head{position:fixed;right:0;bottom:env(safe-area-inset-bottom,0px);z-index:150;height:auto;margin:0}
-html.fs .fslabel{display:none}
-html.fs .fsbtn{width:40px;min-height:40px;padding:0;justify-content:center;border-radius:6px 0 0 0;opacity:.85}
-html.fs .wp-block-columns,html.fs .wp-block-column{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
-html.fs #editorContainer{width:100%;height:auto;flex:1 1 auto;min-height:0}
-html.fs #outputContainer{display:none}
+/* ?layout=classic */
+.classic body{height:auto}
+.classic .page{width:725px;max-width:725px;height:auto;min-height:0;margin:24px auto 48px;padding:0}
+.classic #editorContainer{flex:none;width:725px;height:415px}
+.classic #outputContainer .mtx_output{margin-top:12px;height:180px;border-radius:5px;border-width:1px}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}

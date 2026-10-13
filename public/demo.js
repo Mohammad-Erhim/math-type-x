@@ -1,15 +1,20 @@
 (function () {
   var q = new URLSearchParams(location.search);
-  var opts = { language: q.get('lang') || 'en', services: { baseUrl: '/editor-services/' } };
-  // the reference symbol fonts are loaded from the vendor CDN (cross-origin enabled); ?fonts=local keeps the bundled STIX Two Math
-  if (q.get('fonts') !== 'local') opts.fontsUrl = 'https://www.wiris.net/demo/editor/resources/fonts/';
+  // the editor fills the space the page gives it (the window height, minus the output panel)
+  var opts = { language: q.get('lang') || 'en', layout: 'fluid', services: { baseUrl: '/editor-services/' }, persist: q.get('persist') === '0' ? '' : 'mathtypex' };
+  // ?layout=classic: the fixed 725 x 415 widget (used by the test tools, whose coordinates assume it)
+  if (q.get('layout') === 'classic') {
+    opts.layout = 'classic';
+    document.documentElement.classList.add('classic');
+  }
   if (q.has('toolbarSize')) opts.toolbarSize = parseFloat(q.get('toolbarSize'));
   if (q.has('autoformat')) opts.autoformat = q.get('autoformat') === 'true';
-  if (q.has('detectHand')) opts.detectHand = q.get('detectHand') !== 'false';
+  // handwriting is switched off for now (?detectHand=true brings it back)
+  opts.detectHand = q.get('detectHand') === 'true';
   if (q.has('fontStyle')) opts.fontStyle = q.get('fontStyle');
   if (q.has('parity')) opts.parity = q.get('parity');
   // the host page follows the language of the editor (right-to-left for Arabic)
-  var AR = { title: 'شاهد MathType أثناء العمل!', lead: 'جرّب المحرر أدناه: استخدم شريط الأدوات أو اكتب بلوحة المفاتيح أو انتقل إلى وضع الكتابة بخط اليد.' };
+  var AR = { title: 'محرر المعادلات math-type-x', lead: 'جرّب المحرر أدناه: استخدم شريط الأدوات أو اكتب بلوحة المفاتيح أو انتقل إلى وضع الكتابة بخط اليد.' };
   if (/^ar/i.test(opts.language)) {
     document.documentElement.lang = 'ar';
     document.documentElement.dir = 'rtl';
@@ -19,37 +24,20 @@
     if (lead) lead.textContent = AR.lead;
     document.title = AR.title;
   } else if (opts.language) document.documentElement.lang = opts.language;
-  var editor = com.wiris.jsEditor.JsEditor.newInstance(opts);
+  var editor = MathTypeX.JsEditor.newInstance(opts);
   window.editor = editor;
   editor.insertInto(document.getElementById('editorContainer'));
-  // full screen: the whole window for the editor (the Fullscreen API where it exists, a CSS fallback elsewhere, e.g. iPhone)
-  var fs = document.getElementById('fsBtn');
-  function setFs(on) {
-    document.documentElement.classList.toggle('fs', on);
-    if (fs) {
-      fs.setAttribute('aria-pressed', String(on));
-      var label = on ? 'Exit full screen' : 'Full screen';
-      fs.title = label;
-      fs.setAttribute('aria-label', label);
-      var span = fs.querySelector('.fslabel');
-      if (span) span.textContent = label;
-    }
-    editor.setLayout(on ? 'fluid' : 'auto');
-  }
-  if (fs) {
-    fs.addEventListener('click', function () {
-      var on = !document.documentElement.classList.contains('fs');
-      setFs(on);
-      var d = document;
-      try {
-        if (on && d.documentElement.requestFullscreen && !d.fullscreenElement) d.documentElement.requestFullscreen({ navigationUI: 'hide' }).catch(function () {});
-        else if (!on && d.fullscreenElement && d.exitFullscreen) d.exitFullscreen().catch(function () {});
-      } catch (e) {}
-    });
-    // leaving the browser's full screen (Esc) leaves ours too
-    document.addEventListener('fullscreenchange', function () {
-      if (!document.fullscreenElement && document.documentElement.classList.contains('fs')) setFs(false);
-    });
-  }
+  // the formula, the tab, the font … are kept in the browser (local storage), so leaving the page loses nothing: the
+  // browser only asks for a confirmation (it shows its own wording; the text below is for browsers that display it)
+  window.addEventListener('beforeunload', function (e) {
+    var empty = true;
+    try {
+      empty = editor.isEmpty();
+    } catch (err) {}
+    if (empty) return;
+    e.preventDefault();
+    e.returnValue = 'Your formula is saved on this device. Leave this page?';
+    return e.returnValue;
+  });
   if (q.get('output') !== '0') window.outputPanel = new MathTypeX.OutputPanel(editor, document.getElementById('outputContainer'));
 })();

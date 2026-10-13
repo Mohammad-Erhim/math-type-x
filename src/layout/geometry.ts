@@ -2,6 +2,8 @@
 import { EditorCore, Geometry } from '../core/engine';
 import { Caret, Step } from '../core/model';
 import { layoutDocument, pathKey, DocLayout } from './layout';
+import { arabicCssFamily } from './arfonts';
+import { measureEpoch } from './metrics';
 
 export class DocGeometry implements Geometry {
   private cacheRow: unknown = null;
@@ -10,9 +12,10 @@ export class DocGeometry implements Geometry {
   constructor(private core: EditorCore, private size = 16) {}
 
   layout(): DocLayout {
-    const json = (this.core.rtl ? 'R' : 'L') + JSON.stringify(this.core.row);
+    const fam = arabicCssFamily(this.core.getFontFamily());
+    const json = (this.core.rtl ? 'R' : 'L') + fam + '|' + measureEpoch() + JSON.stringify(this.core.row);
     if (!this.lay || json !== this.cacheJson) {
-      this.lay = layoutDocument(this.core.row, undefined, this.size, this.core.rtl);
+      this.lay = layoutDocument(this.core.row, undefined, this.size, this.core.rtl, fam);
       this.cacheJson = json;
     }
     return this.lay;

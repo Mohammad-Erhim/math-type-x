@@ -2,7 +2,7 @@
   "name": "math-type-x",
   "version": "1.0.0",
   "private": true,
-  "description": "MathType-style equation editor playground (web) with output-extraction layer and backend services",
+  "description": "Equation editor (web) with output-extraction layer and backend services",
   "type": "module",
   "license": "UNLICENSED",
   "engines": {
@@ -17,7 +17,8 @@
     "typescript": "^7.0.2"
   },
   "dependencies": {
-    "@resvg/resvg-js": "^2.6.2"
+    "@resvg/resvg-js": "^2.6.2",
+    "harfbuzzjs": "1.6.3"
   },
   "scripts": {
     "build": "node tools/build.mjs",

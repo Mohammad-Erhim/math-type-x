@@ -59,7 +59,7 @@ const SIG = () => {
     await p.evaluate((m) => editor.setMathML(m), `<math ${NS}>${c.flow ? '' : c.mml}</math>`);
     await p.waitForTimeout(WAIT + 300);
     if (c.flow) await runFlow(c.flow);
-    await p.locator('#editorContainer .wrs_header button').nth(9).click();
+    await p.evaluate(() => (window.editor && typeof editor.selectTab === 'function' ? editor.selectTab(9) : document.querySelectorAll('#editorContainer .wrs_header button')[9].click()));
     await p.waitForTimeout(250);
     const bx = await p.locator('#editorContainer').boundingBox();
     await p.mouse.click(bx.x + 600, bx.y + 330);

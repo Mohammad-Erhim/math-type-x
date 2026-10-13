@@ -25,6 +25,6 @@ const fs = require('fs');
     out[t] = { panel, groups };
     console.log(t, panel.length, groups.map((g) => g.length).join(','));
   }
-  fs.writeFileSync('evidence/sprite_map.json', JSON.stringify(out));
+  fs.writeFileSync(process.env.OUT || 'evidence/sprite_map.json', JSON.stringify(out));
   await b.close();
 })();

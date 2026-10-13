@@ -22,7 +22,9 @@ export const OUTPUT_CSS = `
 .mtx_body{flex:1;min-height:0;position:relative;padding:8px 10px;overflow:auto}
 .mtx_body pre{margin:0;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all}
 .mtx_body img{max-width:100%;max-height:100%;background:#fff;border:1px solid #d3dce1}
+.mtx_body.mtx_image{display:flex;align-items:center;justify-content:center}
 .mtx_body .mtx_text{font-size:14px}
+.mtx_body.mtx_stale{opacity:.5;transition:opacity .15s .1s}
 .mtx_skeleton{height:14px;margin:4px 0;border-radius:3px;background:linear-gradient(90deg,#e3eaee,#f5f8f9,#e3eaee);background-size:200% 100%;animation:mtx_sk 1.2s linear infinite}
 @keyframes mtx_sk{to{background-position:-200% 0}}
 .mtx_err{color:#a12020}
@@ -41,11 +43,22 @@ export class OutputPanel {
   private copyBtn: HTMLButtonElement;
   private dlBtn: HTMLButtonElement;
   private timer: ReturnType<typeof setTimeout> | null = null;
+  /** counts requests: only the answer of the newest one is shown */
   private seq = 0;
+  /** the request in flight: cancelled as soon as the formula changes again */
+  private abort: AbortController | null = null;
+  /** what the body shows: format + formula it was made from ('' while it shows nothing valid) */
+  private shownKey = '';
+  private shownKind: Kind | null = null;
+  /** finished results, newest last (switching back to a format of the same formula costs nothing) */
+  private cache = new Map<string, { value: string; blob: Blob | null }>();
+  private hiddenPending = false;
   private value = '';
   private blob: Blob | null = null;
   private tabEls = new Map<Kind, HTMLButtonElement>();
   private imgUrl: string | null = null;
+  /** right-to-left interface: images and text follow it, source code (MathML, LaTeX) stays left to right */
+  private rtlUi = false;
 
   constructor(private ed: MathEditor, container: HTMLElement) {
     if (!container.ownerDocument.getElementById('mtx-output-style')) {
@@ -85,81 +98,172 @@ export class OutputPanel {
       new Localizer(table, (el) => el.classList.contains('mtx_body')).attach(this.root);
       if (ed.opts.rtlLanguages.includes(ed.lang.toLowerCase())) {
         this.root.setAttribute('dir', 'rtl');
+        this.rtlUi = true;
         this.body.setAttribute('dir', 'ltr');
       }
     }
-    ed.on('change', () => this.schedule());
+    // the format chosen last time
+    const saved = ed.readState()?.output as Kind | undefined;
+    if (saved && TABS.some((t) => t[0] === saved)) this.setKind(saved);
+    // a change: stop what is running, mark the shown output as out of date, and make the new one once typing pauses
+    ed.on('change', () => this.onChange());
     ed.on('ready', () => this.schedule(0));
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && this.hiddenPending) {
+        this.hiddenPending = false;
+        this.schedule(0);
+      }
+    });
     this.schedule(0);
   }
 
-  select(k: Kind): void {
+  private setKind(k: Kind): void {
     this.kind = k;
     for (const [kk, el] of this.tabEls) {
       el.setAttribute('aria-selected', String(kk === k));
       el.tabIndex = kk === k ? 0 : -1;
     }
     this.body.setAttribute('aria-labelledby', 'mtx-tab-' + k);
+  }
+
+  select(k: Kind): void {
+    this.setKind(k);
+    this.ed.writeState({ output: k });
+    this.cancel();
     this.schedule(0);
+  }
+
+  /** local formats are instant; the ones made by the service wait for a longer pause in typing */
+  private delay(): number {
+    return this.kind === 'mathml' || this.kind === 'plain' ? 120 : 350;
+  }
+
+  private cancel(): void {
+    this.abort?.abort();
+    this.abort = null;
+    this.seq++;
+  }
+
+  private key(k: Kind, mml: string): string {
+    return k + '\u0000' + (k === 'accessible' ? this.ed.lang + '\u0000' : '') + mml;
+  }
+
+  private onChange(): void {
+    // nothing new for the format shown (the event came from something else): leave the output alone
+    if (this.shownKey === this.key(this.kind, this.ed.getMathML())) return;
+    this.cancel();
+    this.body.classList.add('mtx_stale');
+    this.body.setAttribute('aria-busy', 'true');
+    this.status.textContent = 'Updating…';
+    this.schedule(this.delay());
   }
 
   private schedule(delay = 150): void {
     if (this.timer) clearTimeout(this.timer);
-    this.timer = setTimeout(() => void this.refresh(), delay);
+    this.timer = setTimeout(() => {
+      this.timer = null;
+      // a hidden page makes the output when it comes back
+      if (document.hidden) this.hiddenPending = true;
+      else void this.refresh();
+    }, delay);
   }
 
   async refresh(): Promise<void> {
-    const my = ++this.seq;
     const k = this.kind;
-    this.body.replaceChildren(h('div', { class: 'mtx_skeleton' }), h('div', { class: 'mtx_skeleton', style: { width: '70%' } }));
+    const mml = this.ed.getMathML();
+    const key = this.key(k, mml);
+    this.cancel();
+    const hit = this.cache.get(key);
+    if (hit) {
+      // a result made before: show it (and keep it the newest)
+      this.cache.delete(key);
+      this.cache.set(key, hit);
+      this.show(k, key, hit.value, hit.blob);
+      return;
+    }
+    const my = this.seq;
+    const ac = (this.abort = new AbortController());
+    const signal = ac.signal;
+    // the output of another format has nothing to show for this one: a skeleton; the same format stays visible (dimmed)
+    if (this.shownKind !== k) this.body.classList.remove('mtx_image');
+    if (this.shownKind !== k) this.body.replaceChildren(h('div', { class: 'mtx_skeleton' }), h('div', { class: 'mtx_skeleton', style: { width: '70%' } }));
+    this.body.classList.add('mtx_stale');
+    this.status.textContent = 'Updating…';
     try {
       let value = '';
       let blob: Blob | null = null;
       switch (k) {
         case 'mathml':
-          value = this.ed.getMathML();
+          value = mml;
           break;
         case 'latex':
-          value = await this.ed.getLaTeX();
+          value = await this.ed.getLaTeX({ signal });
           break;
         case 'svg':
-          value = await this.ed.getSVG();
+          value = await this.ed.getSVG({ signal });
           blob = new Blob([value], { type: 'image/svg+xml' });
           break;
         case 'png':
-          blob = await this.ed.getPNG({ zoom: 2 });
+          blob = await this.ed.getPNG({ zoom: 2, signal });
           break;
         case 'accessible':
-          value = await this.ed.getAccessibleText();
+          value = await this.ed.getAccessibleText(undefined, { signal });
           break;
         case 'plain':
           value = this.ed.getPlainText();
           break;
       }
-      if (my !== this.seq) return;
-      this.value = value;
-      this.blob = blob;
-      this.paint(k, value, blob);
-      const size = blob ? blob.size : new Blob([value]).size;
-      const d = new Date();
-      const pad = (n: number) => String(n).padStart(2, '0');
-      this.status.textContent = `Updated ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} · ${size < 1024 ? size + ' B' : (size / 1024).toFixed(1) + ' KB'}`;
-      this.copyBtn.disabled = false;
-      this.dlBtn.disabled = !blob;
+      // a newer request (or a change) overtook this one: its answer is not shown
+      if (my !== this.seq || signal.aborted) return;
+      // the formula changed while the answer was on its way without anyone telling us: make it again
+      if (this.ed.getMathML() !== mml) {
+        this.schedule(0);
+        return;
+      }
+      this.abort = null;
+      this.cache.set(key, { value, blob });
+      while (this.cache.size > 10) this.cache.delete(this.cache.keys().next().value as string);
+      this.show(k, key, value, blob);
     } catch (e) {
-      if (my !== this.seq) return;
+      // cancelled: whoever cancelled has scheduled the next one
+      if (my !== this.seq || signal.aborted || (e as Error).name === 'AbortError') return;
+      this.abort = null;
       const retry = h('button', { type: 'button', text: 'Retry' });
       retry.addEventListener('click', () => void this.refresh());
+      this.body.classList.remove('mtx_image');
       this.body.replaceChildren(h('div', { class: 'mtx_err', role: 'alert', text: 'Could not load this output: ' + (e as Error).message }), retry);
+      this.body.classList.remove('mtx_stale');
+      this.body.removeAttribute('aria-busy');
+      this.shownKey = '';
+      this.shownKind = null;
       this.status.textContent = 'Error';
     }
   }
 
+  private show(k: Kind, key: string, value: string, blob: Blob | null): void {
+    this.value = value;
+    this.blob = blob;
+    this.paint(k, value, blob);
+    this.shownKey = key;
+    this.shownKind = k;
+    this.body.classList.remove('mtx_stale');
+    this.body.removeAttribute('aria-busy');
+    const size = blob ? blob.size : new Blob([value]).size;
+    const d = new Date();
+    const pad = (n: number) => String(n).padStart(2, '0');
+    this.status.textContent = `Updated ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())} · ${size < 1024 ? size + ' B' : (size / 1024).toFixed(1) + ' KB'}`;
+    this.copyBtn.disabled = false;
+    this.dlBtn.disabled = !blob;
+  }
+
   private paint(k: Kind, value: string, blob: Blob | null): void {
+    if (this.rtlUi) this.body.setAttribute('dir', k === 'mathml' || k === 'latex' ? 'ltr' : 'rtl');
     if (this.imgUrl) {
       URL.revokeObjectURL(this.imgUrl);
       this.imgUrl = null;
     }
+    // an image sits in the middle of the panel
+    this.body.classList.toggle('mtx_image', (k === 'svg' || k === 'png') && !!blob);
     if ((k === 'svg' || k === 'png') && blob) {
       this.imgUrl = URL.createObjectURL(blob);
       this.body.replaceChildren(h('img', { src: this.imgUrl, alt: 'Rendered formula' }));

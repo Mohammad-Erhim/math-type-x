@@ -14,6 +14,8 @@ export interface RenderState {
   rtl: boolean;
   /** column / row marks (smart delete) are shown as selection */
   showCaret: boolean;
+  /** CSS family of the chosen bundled Arabic face */
+  arabic?: string;
 }
 
 export const COLORS = { selection: '#c3c3c3', selectionDark: '#3c3c3c', editCtx: '#cddce3', error: '#ffaaaa', caret: '#000', emptyBox: '#006400' };
@@ -84,7 +86,7 @@ export class FormulaDisplay {
     this.layout = layout;
     const w = Math.ceil(layout.w) + 2;
     const hgt = Math.ceil(layout.a + layout.d) + 2;
-    this.svgHost.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${hgt}" viewBox="0 0 ${w} ${hgt}" aria-hidden="true" role="presentation" style="position:absolute;left:0;top:0;overflow:visible;direction:ltr">${itemsToSvg(layout.items, { slot: COLORS.emptyBox, ui: true })}</svg>`;
+    this.svgHost.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${hgt}" viewBox="0 0 ${w} ${hgt}" aria-hidden="true" role="presentation" style="position:absolute;left:0;top:0;overflow:visible;direction:ltr">${itemsToSvg(layout.items, { slot: COLORS.emptyBox, ui: true, arabic: st.arabic })}</svg>`;
     this.content.style.width = w + 'px';
     this.content.style.height = hgt + 'px';
     this.content.style.direction = st.rtl ? 'rtl' : 'ltr';

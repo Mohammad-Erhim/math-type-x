@@ -66,6 +66,6 @@ export function rgbaToEps(rgba: Uint8Array, w: number, h: number, ptW: number, p
   const lines: string[] = [];
   const s = hex.join('');
   for (let i = 0; i < s.length; i += 72) lines.push(s.slice(i, i + 72));
-  const head = `%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 ${Math.ceil(ptW)} ${Math.ceil(ptH)}\n%%Creator: MathType-X\n%%EndComments\ngsave\n${ptW.toFixed(2)} ${ptH.toFixed(2)} scale\n/pix ${w * 3} string def\n${w} ${h} 8 [${w} 0 0 -${h} 0 ${h}]\n{ currentfile pix readhexstring pop } false 3 colorimage\n`;
+  const head = `%!PS-Adobe-3.0 EPSF-3.0\n%%BoundingBox: 0 0 ${Math.ceil(ptW)} ${Math.ceil(ptH)}\n%%Creator: math-type-x\n%%EndComments\ngsave\n${ptW.toFixed(2)} ${ptH.toFixed(2)} scale\n/pix ${w * 3} string def\n${w} ${h} 8 [${w} 0 0 -${h} 0 ${h}]\n{ currentfile pix readhexstring pop } false 3 colorimage\n`;
   return latin1(head + lines.join('\n') + '\ngrestore\n%%EOF\n');
 }

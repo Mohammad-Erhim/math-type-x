@@ -4,6 +4,7 @@
  */
 import { renderSvg, RenderOptions } from './svg';
 import { rgbaToPdf, rgbaToEps } from './pdf';
+import { ARABIC_FONTS } from '../layout/arfonts';
 
 /** directory the font files are served from (`<editor.js directory>/fonts/` unless configured) */
 let assetsBase = '';
@@ -21,6 +22,20 @@ const LIBERATION: Record<string, Face> = {
   '400/italic': { family: 'Liberation Sans', style: 'italic', weight: 400, file: 'LiberationSans-Italic.ttf', mime: 'font/ttf', format: 'truetype' },
   '700/italic': { family: 'Liberation Sans', style: 'italic', weight: 700, file: 'LiberationSans-BoldItalic.ttf', mime: 'font/ttf', format: 'truetype' },
 };
+const ARABIC: Record<string, Face> = {
+  '400/normal': { family: 'MTX Arabic', style: 'normal', weight: 400, file: 'MtxArabic-Regular.ttf', mime: 'font/ttf', format: 'truetype' },
+  '700/normal': { family: 'MTX Arabic', style: 'normal', weight: 700, file: 'MtxArabic-Bold.ttf', mime: 'font/ttf', format: 'truetype' },
+};
+/** the faces of the Font list: embedded (woff2) when a text of the SVG names one */
+const CHOSEN: Record<string, Face> = Object.fromEntries(
+  ARABIC_FONTS.flatMap((f) =>
+    [400, 700].map((weight) => [
+      `${f.family}/${weight}`,
+      { family: f.family, style: 'normal', weight, file: `${f.stem}-${weight === 700 ? 'Bold' : 'Regular'}.woff2`, mime: 'font/woff2', format: 'woff2' } as Face,
+    ]),
+  ),
+);
+const ARABIC_TEXT = /[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff\ufb50-\ufdff\ufe70-\ufeff]/;
 const STIX: Face = { family: 'STIX Two Math', style: 'normal', weight: 400, file: 'stix-two-math.woff2', mime: 'font/woff2', format: 'woff2' };
 
 const cache = new Map<string, Promise<string>>();
@@ -49,9 +64,17 @@ function dataUri(face: Face): Promise<string> {
 export function facesFor(svg: string): Face[] {
   const faces = new Map<string, Face>();
   let stix = false;
-  for (const m of svg.matchAll(/<text\b[^>]*>/g)) {
+  for (const m of svg.matchAll(/<text\b[^>]*>([^<]*)/g)) {
     const t = m[0];
-    const sans = /font-family="'Liberation Sans'/.test(t);
+    if (ARABIC_TEXT.test(m[1])) {
+      const k = /font-weight="bold"/.test(t) ? '700/normal' : '400/normal';
+      const chosen = /font-family="'(MTX [^']+)'/.exec(t)?.[1];
+      const face = chosen && CHOSEN[`${chosen}/${k.startsWith('700') ? 700 : 400}`];
+      // the chosen face covers the Arabic text; the default one stays for what it does not hold
+      if (face) faces.set('ch' + face.family + k, face);
+      faces.set('ar' + k, ARABIC[k]);
+    }
+    const sans = /font-family="(?:'MTX [^']+',)?'Liberation Sans'/.test(t);
     if (!sans) {
       stix = true;
       continue;
