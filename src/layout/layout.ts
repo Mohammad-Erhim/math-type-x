@@ -1202,10 +1202,15 @@ function enclose(el: El, env: Env, body: Box): Box {
   // line has 2 px (left / right) or 1 px (top / bottom); the strikes alone need none; the long division sign 7 px on the left
   const boxed = has('box') || has('roundedbox');
   const circle = has('circle');
-  const padL = circle ? 6 : has('longdiv') ? 7 : boxed || has('left') || has('horizontalstrike') ? 2 : 0;
-  const padR = circle ? 6 : boxed || has('right') || has('horizontalstrike') || has('madruwb') || has('actuarial') ? 2 : 0;
-  const padT = circle ? 5 : boxed || has('top') || has('verticalstrike') || has('actuarial') || has('longdiv') ? 1 : 0;
-  const padB = circle ? 5 : boxed || has('bottom') || has('verticalstrike') || has('madruwb') ? 1 : 0;
+  // a circle is drawn round the content: it grows with it (the ellipse through the corners, a little tighter sideways,
+  // and at least 21 px wide – measured on the reference with contents of every size)
+  const bodyH = body.a + body.d;
+  const circV = Math.round(0.2071 * bodyH) + 1;
+  const circH = Math.max(Math.round(0.202 * round(body.w) + 1), Math.ceil((21 * sc(env) - round(body.w)) / 2));
+  const padL = circle ? circH : has('longdiv') ? 7 : boxed || has('left') || has('horizontalstrike') ? 2 : 0;
+  const padR = circle ? circH : boxed || has('right') || has('horizontalstrike') || has('madruwb') || has('actuarial') ? 2 : 0;
+  const padT = circle ? circV : boxed || has('top') || has('verticalstrike') || has('actuarial') || has('longdiv') ? 1 : 0;
+  const padB = circle ? circV : boxed || has('bottom') || has('verticalstrike') || has('madruwb') ? 1 : 0;
   const w = round(body.w) + padL + padR;
   const top = body.a + padT;
   const bot = body.d + padB;
