@@ -62,6 +62,7 @@ export const CSS = `
 .wrs_lengthButtonPanel td{padding:0;text-align:left}
 .wrs_lengthButtonPanel tr:first-child td{padding-bottom:5.5px}
 .wrs_lengthButtonPanel .wrs_inputCell input{box-sizing:border-box;width:70px;height:16px;margin:0 0 0 5px;padding:1px;border:1px solid #b1b3b4;border-radius:10px;background:#fff;font:700 11px sans-serif;color:#000;outline:0}
+.wrs_lengthButtonPanel .wrs_inputCell input.wrs_invalid{border-color:#c0392b;background:#fff1f0}
 .wrs_formulaDisplayWrapper{position:absolute;left:0;top:99px;width:695px;height:316px;overflow:auto}
 .wrs_formulaDisplay{position:relative;width:695px;height:316px;border:1px solid #969696;background:#fff;overflow:auto;cursor:text;font-size:16px}
 .wrs_formulaContent{position:relative;margin:5px;min-width:1px;min-height:1px}

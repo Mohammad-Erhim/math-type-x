@@ -1122,12 +1122,16 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
 /** one delimiter of height a + d: a plain glyph when short, an assembled stretchy piece set when tall */
 function fenceBox(ch: string, isClose: boolean, a: number, d: number, env: Env, tall: boolean, gw: number, dy = 0): Box {
   const s = sc(env);
-  if (ch === '') return mk(0, 0, 0);
+  // an empty bracket still keeps its place (measured on the reference)
+  if (ch === '') return mk((tall ? 3 : 3.5) * s, 0, 0);
   // tall bars are assembled from narrow pieces, braces from wider ones (measured on the reference)
   const tallAdv = ch === '|' ? (isClose ? 3 : 2) : ch === '||' ? (isClose ? 6 : 5) : ch === '{' ? 7 : ch === '}' ? 8 : 6;
   // angle brackets are a pair of diagonal strokes: 9 px in front of the content, 11 behind it (measured on the reference)
   const angle = ch === '\u27e8' || ch === '\u27e9' || ch === '\u2329' || ch === '\u232a' || ch === '<' || ch === '>';
-  const adv = angle ? (isClose ? 11 : 9) * s : tall ? tallAdv * s : Math.round(gw);
+  // one line high: the symbol font's square brackets, floors, ceilings and bars are one pixel wider than the round ones,
+  // double bars two, braces as wide as parentheses (measured on the reference)
+  const flatAdv = ch === '||' ? 6 : /^[\[\]|\u230a\u230b\u2308\u2309]$/.test(ch) ? 5 : 4;
+  const adv = angle ? (isClose ? 11 : 9) * s : tall ? tallAdv * s : Math.round(flatAdv * s) + (isClose ? 0 : 1);
   // delimiters around a table hang one pixel lower than around other content (measured on the reference)
   return mk(adv, a, d, [{ k: 'f', x: 0, y: 0, ch, w: gw, a: a - 1, d, size: env.size, color: env.color, close: isClose, dy }]);
 }
@@ -1178,7 +1182,7 @@ function fenced(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
         x += 2;
         kids.push({ b: sbox, x, y: drop });
         x += round(info.w) + 2;
-      }
+      } else x += 5 * s; // an empty separator still keeps its place (measured on the reference)
     }
   });
   if (tall && !/^(\||\|\||\{|\})$/.test(open) && !/^(\||\|\||\{|\})$/.test(close)) x += 1;
@@ -1235,18 +1239,39 @@ function ellipsePath(w: number, h: number): string {
   return `M0.5 ${h / 2} A${rx} ${ry} 0 1 0 ${w - 0.5} ${h / 2} A${rx} ${ry} 0 1 0 0.5 ${h / 2}Z`;
 }
 
-function padded(el: El, env: Env, body: Box): Box {
-  const len = (v: string | undefined) => {
-    if (!v) return 0;
-    const m = /^([+-]?[\d.]+)\s*(px|em|ex)?$/.exec(v.trim());
-    return m && m[2] ? parseFloat(m[1]) * (m[2] === 'em' ? env.size * 1.25 : m[2] === 'ex' ? env.size * 0.625 : 1) : 0;
+function padded(el: El, _env: Env, body: Box): Box {
+  // the reference moves the content by the number in lspace (+ right, - left) and in voffset (+ down, - up) – whatever the
+  // unit says – and leaves its neighbours where they are (measured with its editor; width / height / depth are not drawn).
+  // The line grows when the content moves up or down, so nothing is cut off.
+  const num = (v: string | undefined) => {
+    const m = v ? /^\s*([+-]?(?:\d+(?:\.\d+)?|\.\d+))/.exec(v) : null;
+    return m ? parseFloat(m[1]) : 0;
   };
-  const dx = len(getAttr(el, 'lspace'));
-  const dy = len(getAttr(el, 'voffset'));
-  // the reference's convention (measured with its image service: voffset="+6px" sets the content 6 px lower, "-6px"
-  // higher – the opposite of the MathML specification), so that the Nudge buttons, which write -1px for "up", move the
-  // content the way their arrows point
-  return mk(body.w + Math.max(dx, 0), body.a + Math.max(-dy, 0), body.d + Math.max(dy, 0), undefined, [{ b: body, x: Math.max(dx, 0), y: dy }]);
+  const dx = num(getAttr(el, 'lspace'));
+  const dy = num(getAttr(el, 'voffset'));
+  return mk(body.w, body.a + Math.max(-dy, 0), body.d + Math.max(dy, 0), undefined, [{ b: body, x: dx, y: dy }]);
+}
+
+/** the reference's editor draws mtable attributes like this (measured with its image of the editor):
+ *  - columnspacing / rowspacing: the gap between columns (negative values pull them over each other);
+ *    default 0.4em / 0.25em; a list gives one value per gap and its last value repeats; a value without unit is ignored
+ *  - framespacing: the space between the table and its cells (default 4 px / 2.5 px); applies without a frame
+ *  - align: top / bottom / center / baseline (= center) put that part of the table on the baseline of the line;
+ *    axis (default) the centre on the math axis; `baseline n` / `axis n` the baseline of row n; anything else = axis
+ *  - rowalign: the cells of a row are put on its baseline (default) / top / bottom / centre / axis (6 px lower)
+ *  - equalrows: every row is as high as the highest one;  equalcolumns is not drawn by the reference. */
+function tableLen(v: string | undefined, env: Env): number | null {
+  if (!v) return null;
+  const t = v.trim();
+  if (/^-?0+(?:\.0+)?$/.test(t)) return 0; // a bare zero is a length
+  const m = /^(-?(?:\d+(?:\.\d+)?|\.\d+))\s*(px|em|ex)$/.exec(t);
+  if (!m) return null;
+  const n = parseFloat(m[1]);
+  return m[2] === 'em' ? (n * env.size * 5) / 4 : m[2] === 'ex' ? (n * env.size * 5) / 8 : n;
+}
+
+function tableList(v: string | undefined, env: Env): (number | null)[] {
+  return (v ?? '').split(/\s+/).filter(Boolean).map((t) => tableLen(t, env));
 }
 
 function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
@@ -1255,50 +1280,96 @@ function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
   const rows = Math.ceil(el.c!.length / cols);
   const cells = el.c!.map((r, k) => layoutRow(r, env, here(k)));
   const colW = Array.from({ length: cols }, (_, c) => Math.max(...Array.from({ length: rows }, (_, r) => round(cells[r * cols + c].w))));
-  const rowA = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.a)));
-  const rowD = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.d)));
+  let rowA = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.a)));
+  let rowD = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.d)));
+  if (getAttr(el, 'equalrows') === 'true') {
+    rowA = rowA.map(() => Math.max(...rowA));
+    rowD = rowD.map(() => Math.max(...rowD));
+  }
   const align = (getAttr(el, 'columnalign') ?? 'center').split(/\s+/);
+  const rowAlign = (getAttr(el, 'rowalign') ?? 'baseline').split(/\s+/);
+  const colGaps = tableList(getAttr(el, 'columnspacing'), env);
+  const rowGaps = tableList(getAttr(el, 'rowspacing'), env);
+  const gap = (list: (number | null)[], k: number, def: number): number => {
+    if (!list.length) return def;
+    const v = list[Math.min(k, list.length - 1)];
+    return v === null ? def : v;
+  };
+  const fs = tableList(getAttr(el, 'framespacing'), env);
+  const padX = fs.length && fs[0] !== null ? Math.max(0, fs[0]!) : 4 * s;
+  const padY = fs.length && (fs[1] ?? fs[0]) !== null ? (fs[1] ?? fs[0])! : 2.5 * s;
   const kids: Placed[] = [];
-  const cellPadX = 4 * s;
-  const cellPadY = 2.5 * s;
-  let x = 0;
+  let x = padX;
   const colX: number[] = [];
   for (let c = 0; c < cols; c++) {
     colX.push(x);
-    x += colW[c] + cellPadX * 2;
+    x += colW[c];
+    if (c < cols - 1) x += gap(colGaps, c, 8 * s);
   }
-  let y = 0;
+  x += padX;
+  let y = padY;
   const rowBase: number[] = [];
   for (let r = 0; r < rows; r++) {
-    y += cellPadY + rowA[r];
+    y += rowA[r];
     rowBase.push(y);
-    y += rowD[r] + cellPadY;
+    y += rowD[r];
+    if (r < rows - 1) y += gap(rowGaps, r, 5 * s);
   }
+  y += padY;
   const totalH = y;
   for (let r = 0; r < rows; r++) {
+    const ra = rowAlign[Math.min(r, rowAlign.length - 1)];
     for (let c = 0; c < cols; c++) {
       const b = cells[r * cols + c];
       const al = align[Math.min(c, align.length - 1)];
       const cw = colW[c];
       const dx = al === 'left' ? 0 : al === 'right' ? cw - round(b.w) : Math.floor((cw - round(b.w)) / 2);
-      kids.push({ b, x: Math.floor(colX[c] + cellPadX) + dx, y: rowBase[r] });
+      const rowTop = rowBase[r] - rowA[r];
+      const rowH = rowA[r] + rowD[r];
+      let by = rowBase[r];
+      if (ra === 'top') by = rowTop + b.a;
+      else if (ra === 'bottom') by = rowTop + rowH - b.d;
+      else if (ra === 'center') by = rowTop + (rowH - (b.a + b.d)) / 2 + b.a;
+      else if (ra === 'axis') by = rowBase[r] + 6 * s;
+      kids.push({ b, x: Math.floor(colX[c]) + dx, y: by });
     }
   }
   const items: Item[] = [];
   const frame = getAttr(el, 'frame');
   const rl = (getAttr(el, 'rowlines') ?? 'none').split(/\s+/);
   const cl = (getAttr(el, 'columnlines') ?? 'none').split(/\s+/);
-  const shift = totalH / 2 - K.axis * s; // centre the table on the math axis
-  const lift = totalH - shift; // the table's top sits this far above the baseline (its centre on the math axis)
+  // where the table sits on the line: `a` = the table's top above the baseline
+  const aAxis = totalH / 2 + K.axis * s;
+  let a = aAxis;
+  const av = (getAttr(el, 'align') ?? '').trim().split(/\s+/);
+  const n = av.length > 1 && /^\d+$/.test(av[1]) ? parseInt(av[1], 10) : 0;
+  if (av.length === 1 && av[0] === 'top') a = 2 * s;
+  else if (av.length === 1 && av[0] === 'bottom') a = totalH + 2 * s;
+  else if (av.length === 1 && (av[0] === 'center' || av[0] === 'baseline')) a = totalH / 2 + 2 * s;
+  else if (av.length === 2 && (av[0] === 'baseline' || av[0] === 'axis') && n >= 1) {
+    const r = n > rows ? 0 : n - 1; // a row that does not exist: the first one
+    a = rowBase[r];
+  }
+  const lift = a;
   kids.forEach((k) => (k.y -= lift));
   const top = -lift;
-  if (frame && frame !== 'none') {
-    items.push({ k: 'r', x: 0, y: top, w: x, h: 1 }, { k: 'r', x: 0, y: top + totalH - 1, w: x, h: 1 }, { k: 'r', x: 0, y: top, w: 1, h: totalH }, { k: 'r', x: x - 1, y: top, w: 1, h: totalH });
+  // the reference draws only solid lines (dashed ones are not drawn at all); the frame is one pixel bigger than the cells'
+  // box all around (1 px above / below and to the right), the lines between rows / columns run from
+  // the frame's left edge to 2 px short of its right edge / between the first and the last row of cells
+  if (frame === 'solid') {
+    const x0 = 0;
+    const x1 = x + 1;
+    const y0 = top - 1;
+    const y1 = top + totalH + 1;
+    items.push({ k: 'r', x: x0, y: y0, w: x1 - x0, h: 1 }, { k: 'r', x: x0, y: y1 - 1, w: x1 - x0, h: 1 }, { k: 'r', x: x0, y: y0, w: 1, h: y1 - y0 }, { k: 'r', x: x1 - 1, y: y0, w: 1, h: y1 - y0 });
   }
-  for (let r = 0; r < rows - 1; r++) if (rl[Math.min(r, rl.length - 1)] !== 'none') items.push({ k: 'r', x: 0, y: top + rowBase[r] + rowD[r] + cellPadY, w: x, h: 1 });
-  for (let c = 0; c < cols - 1; c++) if (cl[Math.min(c, cl.length - 1)] !== 'none') items.push({ k: 'r', x: colX[c + 1], y: top, w: 1, h: totalH });
-  const box = mk(x, totalH - shift, shift, items, kids);
-  return box;
+  for (let r = 0; r < rows - 1; r++) {
+    if (rl[Math.min(r, rl.length - 1)] === 'solid') items.push({ k: 'r', x: 0, y: top + rowBase[r] + rowD[r] + gap(rowGaps, r, 5 * s) / 2, w: x - 1, h: 1 });
+  }
+  for (let c = 0; c < cols - 1; c++) {
+    if (cl[Math.min(c, cl.length - 1)] === 'solid') items.push({ k: 'r', x: colX[c + 1] - gap(colGaps, c, 8 * s) / 2, y: top + 2, w: 1, h: totalH - 5 });
+  }
+  return mk(Math.max(0, x), a, Math.max(0, totalH - a), items, kids);
 }
 
 /* ------------------------------------------------------ elementary stacks */

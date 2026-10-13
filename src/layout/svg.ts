@@ -43,6 +43,43 @@ function fenceSvg(it: Extract<Item, { k: 'f' }>, fg: string): string {
     const m = Math.round((t + b) / 2);
     return `<path d="M${r(xa)} ${r(t)} L${r(xb)} ${r(m)} L${r(xa)} ${r(b)}" fill="none" stroke="${color}" stroke-width="1"/>`;
   }
+  // tall delimiters (around fractions, matrices…) are composed of pieces by the reference: constant width, one pixel
+  // stems and ticks; the ink sits at these offsets from the delimiter's box (measured on the reference)
+  const tall = h / it.size > 1.3;
+  if (tall) {
+    const X = it.x - 1; // the pieces of the reference start one pixel left of the box the layout hands over
+    const rect = (x: number, y: number, w2: number, h2: number) => `M${r(x)} ${r(y)}h${r(w2)}v${r(h2)}h${r(-w2)}Z`;
+    const T = Math.round(top);
+    const B = Math.round(bot);
+    let d = '';
+    switch (it.ch) {
+      case '[':
+        d = rect(X + 1, T, 1, B - T) + rect(X + 1, T, 5, 1) + rect(X + 1, B - 1, 5, 1);
+        break;
+      case ']':
+        d = rect(X + 4.5, T, 1, B - T) + rect(X + 0.5, T, 5, 1) + rect(X + 0.5, B - 1, 5, 1);
+        break;
+      case '⌊':
+        d = rect(X + 1, T, 1, B - T) + rect(X + 1, B - 1, 5, 1);
+        break;
+      case '⌋':
+        d = rect(X + 4.5, T, 1, B - T) + rect(X + 0.5, B - 1, 5, 1);
+        break;
+      case '⌈':
+        d = rect(X + 1, T, 1, B - T) + rect(X + 1, T, 5, 1);
+        break;
+      case '⌉':
+        d = rect(X + 4.5, T, 1, B - T) + rect(X + 0.5, T, 5, 1);
+        break;
+      case '|':
+        d = rect(X + (it.close ? 2 : 1), T, 1, B - T);
+        break;
+      case '||':
+        d = it.close ? rect(X + 2, T, 1, B - T) + rect(X + 4.5, T, 1, B - T) : rect(X + 1, T, 1, B - T) + rect(X + 3.5, T, 1, B - T);
+        break;
+    }
+    if (d) return `<path d="${d}" fill="${color}"/>`;
+  }
   const n = NAMES[it.ch];
   if (n) {
     const v = pickVariant(n, h / it.size);
@@ -55,7 +92,19 @@ function fenceSvg(it: Extract<Item, { k: 'f' }>, fg: string): string {
       // path is y-up negative in font units: flip handled by scale(k, k*sy) with path already y-down
       const midBox = top + h / 2;
       const ty = midBox + cy * sy;
-      return `<path transform="translate(${r(it.x)} ${r(ty)}) scale(${r(k * 1000) / 1000} ${r(k * sy * 1000) / 1000})" d="${v.d}" fill="${color}"/>`;
+      // tall parentheses and braces keep the reference's width and place: the glyph is narrowed to it
+      let sx = k;
+      let tx = it.x;
+      if (tall) {
+        const ink: Record<string, [number, number]> = { '(': [0, 5.5], ')': [-1, 4.5], '{': [0, 5.5], '}': [1, 6.5] };
+        const t = ink[it.ch];
+        if (t) {
+          const gw = (v.x2 - v.x1) * k;
+          sx = gw > 0 ? (k * (t[1] - t[0])) / gw : k;
+          tx = it.x + t[0] - v.x1 * sx;
+        }
+      }
+      return `<path transform="translate(${r(tx)} ${r(ty)}) scale(${r(sx * 1000) / 1000} ${r(k * sy * 1000) / 1000})" d="${v.d}" fill="${color}"/>`;
     }
   }
   const w = it.w;

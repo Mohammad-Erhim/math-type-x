@@ -210,7 +210,17 @@ function locateRaw(core: EditorCore): Located | null {
     if (sel && sel.els.length === 1 && sel.els[0].c !== undefined && VALIGN_TAGS.has(sel.els[0].t)) {
       return { kind: 'structure', fence: { row: sel.row, index: sel.from, el: sel.els[0], path: core.sel!.path as Step[], slot: 0 } };
     }
-    if (!sel) {
+    // next to an operator, a line break or a space the reference's own controls (spacing, width…) are the context
+    const here = core.currentRow();
+    const at = [here[core.caret.index - 1], here[core.caret.index]];
+    const refContext = at.some(
+      (e) =>
+        isOpEl(e) ||
+        isNlEl(e) ||
+        (!!e && e.t === 'mspace') ||
+        (!!e && (e.t === 'msub' || e.t === 'msup' || e.t === 'msubsup') && e.c![0].length === 1 && isOpEl(e.c![0][0])),
+    );
+    if (!sel && !refContext) {
       // the innermost structure of the caret: wrappers of an input (the argument placeholder, a big operator's text slot)
       // are looked through; a fence / table / stack keeps its own controls
       const WRAP = new Set(['maction', 'mrow', 'mstyle', 'mpadded', 'mo']);
@@ -661,25 +671,40 @@ function setOrdered(e: El, name: string, v: string | null, order: string[]): voi
 }
 
 /** parse a length: "2px", "0.5em", "1.5ex", "2 px", bare numbers; returns canonical or null */
+/** the text of a length field → the attribute value the reference writes: optional minus, decimal point or comma, unit
+ *  px / em / ex (any case) or none; ".5em" is written "0.5em", "1,5 em" "1.5em"; anything else (cm, %, +1em, words) is rejected */
 export function parseLength(raw: string): string | null {
-  const s = raw.trim();
-  const m = /^(\d+(?:\.\d+)?|\.\d+)\s*(px|em|ex)?$/i.exec(s);
+  const m = /^(-)?(\d+(?:[.,]\d+)?|[.,]\d+)\s*(px|em|ex)?$/i.exec(raw.trim());
   if (!m) return null;
-  return m[2] ? m[1] + m[2].toLowerCase() : m[1];
+  let num = m[2].replace(',', '.');
+  if (num.startsWith('.')) num = '0' + num;
+  return (m[1] ?? '') + num + (m[3] ? m[3].toLowerCase() : '');
+}
+
+/** whatever is changed on a fence, the reference writes both brackets in its own spelling (angle brackets as < >, ‖ as ||) */
+function normFence(f: El): void {
+  for (const side of ['open', 'close'] as const) {
+    const cur = getAttr(f, side);
+    if (cur !== undefined && cur !== '' && bracketAttr(cur) !== cur) setOrdered(f, side, bracketAttr(cur), FENCE_ORDER);
+  }
 }
 
 function bracketAttr(v: string): string {
   return v === '⟨' ? '<' : v === '⟩' ? '>' : v === '‖' ? '||' : v;
 }
 
-function insertCols(t: El, at: number, n: number, dupAlign = false): void {
+function insertCols(t: El, at: number, n: number, dupAlign: false | 'left' | 'right' = false): void {
   const cols = t.cols ?? 1;
   for (const name of ['columnalign', 'wrs:columnalign']) {
     const v = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
-    if (v.length && dupAlign) {
+    if (v.length && dupAlign === 'left') {
       const arr = Array.from({ length: cols }, (_, i) => v[i] ?? v[v.length - 1]);
       arr.splice(at, 0, arr[Math.max(at - 1, 0)]);
       setAttr(t, name, arr.join(' '), TABLE_ORDER);
+    } else if (v.length && dupAlign === 'right' && at < v.length) {
+      // a column added inside the listed ones repeats its left neighbour's entry; at the end the list is left alone
+      v.splice(at, 0, v[at - 1]);
+      setAttr(t, name, v.join(' '), TABLE_ORDER);
     }
   }
   const rows = Math.ceil(t.c!.length / cols);
@@ -741,6 +766,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       setOrdered(f, name, v === def && name !== 'separators' ? null : v === def ? null : bracketAttr(v), FENCE_ORDER);
       if (name === 'separators' && v === ',') setOrdered(f, name, null, FENCE_ORDER);
       if (name !== 'separators' && v === '') setOrdered(f, name, '', FENCE_ORDER);
+      normFence(f);
     });
   };
   switch (id) {
@@ -754,13 +780,14 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       fenceAttr('separators', value ?? ',');
       break;
     case 'valign_baseline':
-      if (f) withUndo(() => setOrdered(f, 'wrs:valign', null, FENCE_ORDER));
-      break;
     case 'valign_middle':
-      if (f) withUndo(() => setOrdered(f, 'wrs:valign', 'middle', FENCE_ORDER));
-      break;
     case 'valign_middle_baseline':
-      if (f) withUndo(() => setOrdered(f, 'wrs:valign', 'middle-baseline', FENCE_ORDER));
+      if (f) {
+        withUndo(() => {
+          setOrdered(f, 'wrs:valign', id === 'valign_baseline' ? null : id === 'valign_middle' ? 'middle' : 'middle-baseline', FENCE_ORDER);
+          if (f.t === 'mfenced') normFence(f);
+        });
+      }
       break;
     case 'align_axis':
       if (t) withUndo(() => setOrdered(t, 'align', null, TABLE_ORDER));
@@ -772,7 +799,8 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       if (t) withUndo(() => setOrdered(t, 'align', id.slice(6), TABLE_ORDER));
       break;
     case 'align_row':
-      if (t) withUndo(() => setOrdered(t, 'align', 'axis 2', TABLE_ORDER));
+      // the axis of the row the caret is in
+      if (t) withUndo(() => setOrdered(t, 'align', `axis ${(pos?.r ?? 0) + 1}`, TABLE_ORDER));
       break;
     case 'row_below':
     case 'row_above':
@@ -787,7 +815,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'col_right':
     case 'col_left':
       if (t && pos) {
-        withUndo(() => insertCols(t, id === 'col_right' ? pos.c + 1 : pos.c, 1, id === 'col_left'));
+        withUndo(() => insertCols(t, id === 'col_right' ? pos.c + 1 : pos.c, 1, id === 'col_left' ? 'left' : 'right'));
         keepCell(pos.r, pos.c, pos.cols + 1); // inserting at the left: the caret is in the new column
       }
       break;
@@ -822,10 +850,10 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       if (!t || !pos) break;
       const horizontal = id.startsWith('line_below');
       const name = horizontal ? 'rowlines' : 'columnlines';
-      const n = horizontal ? pos.rows : pos.cols;
       const at = (horizontal ? pos.r : pos.c);
       const cur = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
-      const arr = Array.from({ length: n + 1 }, (_, i) => cur[i] ?? 'none');
+      // one entry per line up to the one written, and a last 'none' (the reference's list is never shorter than the lines it keeps)
+      const arr = Array.from({ length: Math.max(cur.length, at + 2) }, (_, i) => cur[i] ?? 'none');
       const remove = id.endsWith('_remove');
       if (remove && !cur.length) break;
       withUndo(() => {
@@ -957,8 +985,8 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'sp_depth': {
       const v = parseLength(value ?? '');
       if (v === null || !loc.el) return false;
-      // reference: only some units are written (spec examples)
-      withUndo(() => setAttr(loc.el!, id.slice(3), v));
+      // a zero is the default of a space: the reference drops the attribute
+      withUndo(() => setAttr(loc.el!, id.slice(3), parseFloat(v) === 0 ? null : v));
       break;
     }
     case 'nudge_up':
@@ -974,7 +1002,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       core.nudge('right');
       break;
     case 'numsep_merge':
-      mergeNumSep(core, loc);
+      withUndo(() => mergeNumSep(core, loc));
       break;
     case 'ml_relation':
       if (!loc.relation) withUndo(() => relationTable(core));

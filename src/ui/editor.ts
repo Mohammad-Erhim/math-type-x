@@ -1234,11 +1234,21 @@ export class MathEditor implements ToolbarHost {
     const input = h('input', { type: 'text', value: cur, title: 'Value', 'aria-label': 'Value', spellcheck: 'false' }) as HTMLInputElement;
     const table = h('table', {}, h('tr', {}, h('td', { colspan: '2', text: ctl?.title ?? id })), h('tr', {}, h('td', { text: 'Value:' }), h('td', { class: 'wrs_inputCell' }, input)));
     el.append(table);
+    input.addEventListener('input', () => {
+      input.classList.remove('wrs_invalid');
+      input.removeAttribute('aria-invalid');
+    });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
         const v = parseLength(input.value);
-        if (v === null) return; // rejected: the panel stays open (Q-05)
+        if (v === null) {
+          // rejected: the panel stays open (Q-05) and the field is marked, so the refusal is not silent
+          input.classList.add('wrs_invalid');
+          input.setAttribute('aria-invalid', 'true');
+          input.select();
+          return;
+        }
         this.closePopup();
         applyContext(this.core, id, v);
         this.refreshContext();

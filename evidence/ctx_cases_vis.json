@@ -1,0 +1,18 @@
+[
+ {"name":"v_matrix_ctx","mml":"<mi>y</mi><mo>=</mo><mfenced><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>222</mn></mtd></mtr><mtr><mtd><mfrac><mi>a</mi><mi>b</mi></mfrac></mtd><mtd><mi>x</mi></mtd></mtr></mtable></mfenced><mo>+</mo><mi>z</mi>","start":2,"steps":8},
+ {"name":"v_table_ctx","mml":"<mi>y</mi><mo>=</mo><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>222</mn></mtd></mtr><mtr><mtd><mfrac><mi>a</mi><mi>b</mi></mfrac></mtd><mtd><mn>3.14</mn></mtd></mtr><mtr><mtd><mn>10.5</mn></mtd><mtd><mi>x</mi></mtd></mtr></mtable><mo>+</mo><mi>z</mi>","start":2,"steps":10},
+ {"name":"v_piecewise","mml":"<mi>f</mi><mo>=</mo><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mn>1</mn></mtd><mtd><mi>x</mi><mo>&gt;</mo><mn>0</mn></mtd></mtr><mtr><mtd><mfrac><mi>a</mi><mi>b</mi></mfrac></mtd><mtd><mi>x</mi><mo>&lt;</mo><mn>0</mn></mtd></mtr></mtable></mfenced>","start":2,"steps":8},
+ {"name":"v_aligned","mml":"<mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>ccc</mi></mtd><mtd><mo>=</mo><mi>d</mi><mo>+</mo><mi>e</mi></mtd></mtr></mtable>","steps":8},
+ {"name":"v_fence_tall","mml":"<mi>x</mi><mo>+</mo><mfenced><mfrac><mi>a</mi><mi>b</mi></mfrac></mfenced><mo>+</mo><mi>y</mi>","start":2,"steps":8},
+ {"name":"v_fence_text","mml":"<mi>x</mi><mfenced open=\"[\" close=\"]\" separators=\";\"><mi>a</mi><mi>b</mi><mi>c</mi></mfenced><mi>y</mi>","start":1,"steps":8},
+ {"name":"v_frac_inline","mml":"<mi>x</mi><mo>+</mo><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mi>y</mi>","start":2,"steps":6},
+ {"name":"v_sup_inline","mml":"<mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mi>b</mi>","start":1,"steps":6},
+ {"name":"v_sqrt_frac","mml":"<mi>x</mi><msqrt><mfrac><mi>a</mi><mi>b</mi></mfrac></msqrt><mi>y</mi>","start":1,"steps":6},
+ {"name":"v_sum_inline","mml":"<mi>a</mi><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>i</mi><mi>b</mi>","start":1,"steps":10},
+ {"name":"v_enclose","mml":"<mi>a</mi><menclose notation=\"box\"><mfrac><mi>x</mi><mi>y</mi></mfrac></menclose><mi>b</mi>","start":1,"steps":6},
+ {"name":"v_mspace","mml":"<mi>a</mi><mspace width=\"2em\" height=\"3ex\" depth=\"3ex\"/><mi>b</mi>","start":1,"steps":3},
+ {"name":"v_op","mml":"<mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mi>c</mi>","steps":6},
+ {"name":"v_arrow","mml":"<mi>a</mi><mover><mo>&#x2192;</mo><mi>f</mi></mover><mi>b</mi>","start":1,"steps":6},
+ {"name":"v_lines","mml":"<mi>a</mi><mo>+</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>cc</mi><mo>=</mo><mi>d</mi>","steps":8},
+ {"name":"v_binom","mml":"<mi>n</mi><mfenced><mfrac linethickness=\"0\"><mi>n</mi><mi>k</mi></mfrac></mfenced><mi>m</mi>","start":1,"steps":6}
+]
