@@ -106,7 +106,18 @@ export class MathEditor implements ToolbarHost {
   private fluid = false;
   private host: HTMLElement | null = null;
   private resizeObs: ResizeObserver | null = null;
-  private onWinResize = (): void => this.applyLayout();
+  private layoutKey = '';
+  private stableW = -1;
+  private stableIH = 0;
+  private resizeRaf = 0;
+  /** resize events come in bursts while a soft keyboard slides in: the layout is looked at once per frame */
+  private onWinResize = (): void => {
+    if (this.resizeRaf) return;
+    this.resizeRaf = requestAnimationFrame(() => {
+      this.resizeRaf = 0;
+      this.applyLayout();
+    });
+  };
 
   constructor(options: EditorOptions = {}) {
     this.opts = { ...DEFAULTS, ...options } as any;
@@ -120,6 +131,8 @@ export class MathEditor implements ToolbarHost {
     if (options.mml) this.core.setMathML(options.mml);
     // digits typed in an Arabic language are Arabic-Indic ones (Persian, Pashto and Urdu: Eastern Arabic-Indic);
     // the toolbar's Arabic-Indic toggles switch back
+    this.core.arabicLanguage = /^ar(_|-|$)/i.test(this.lang);
+    this.core.contextExtras = true;
     this.core.modes.digits = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
     // what the person left in this browser (formula with its font and size, typing modes, tab)
     if (this.opts.persist) this.store = new Store('mtx:' + this.opts.persist);
@@ -132,9 +145,12 @@ export class MathEditor implements ToolbarHost {
   private store: Store | null = null;
   private restoredTab: number | undefined;
   private onHide = (): void => {
-    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.store?.flush();
+    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.onPageHide();
   };
-  private onPageHide = (): void => this.store?.flush();
+  private onPageHide = (): void => {
+    if (this.changeTimer) this.flushChange();
+    this.store?.flush();
+  };
 
   /** apply a saved record; true when it brought a formula */
   private restore(s: Saved | null): boolean {
@@ -253,6 +269,7 @@ export class MathEditor implements ToolbarHost {
   /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
    * script, down to the denominator, to the next line) like the arrow keys do. */
   private navClear: HTMLButtonElement | null = null;
+  private navKeyboard: HTMLButtonElement | null = null;
   private navHistory: HTMLButtonElement[] = [];
   private buildNavPad(): void {
     // built always; shown on touch screens and in narrow windows (CSS)
@@ -343,15 +360,14 @@ export class MathEditor implements ToolbarHost {
     const no = h('button', { type: 'button', class: 'wrs_confirmNo', text: 'Cancel' }) as HTMLButtonElement;
     const yes = h('button', { type: 'button', class: 'wrs_confirmYes', text: 'Clear' }) as HTMLButtonElement;
     confirmBox.append(ask, no, yes);
-    confirmBox.style.display = 'none';
     const hideConfirm = () => {
-      confirmBox.style.display = 'none';
+      confirmBox.classList.remove('wrs_open');
     };
     this.navClear = clear;
     clear.addEventListener('click', (e) => {
       e.preventDefault();
       if (this.core.isEmpty()) return;
-      confirmBox.style.display = 'block';
+      confirmBox.classList.add('wrs_open');
       no.focus();
     });
     no.addEventListener('click', () => {
@@ -372,7 +388,7 @@ export class MathEditor implements ToolbarHost {
     // the phone's own keyboard: shown while typing, put away with this key (the formula, the toolbar and the pad get its room
     // back); the formula keeps its caret and the pad keeps working
     const kb = h('button', { type: 'button', class: 'wrs_navKey wrs_navKeyboard', title: 'Keyboard', 'aria-label': 'Keyboard', 'aria-pressed': 'true', tabindex: '-1' }) as HTMLButtonElement;
-    kb.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.8" fill="none" stroke="#324d5b" stroke-width="1.7"/><path d="M6 10h1.6M10 10h1.6M14 10h1.6M18 10h.2M6 13.5h.2M8.5 14h7M18 13.5h.2" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Keys</span>';
+    kb.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M6 10h1.6M10 10h1.6M14 10h1.6M18 10h.2M6 13.5h.2M8.5 14h7M18 13.5h.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Keys</span>';
     kb.addEventListener('pointerdown', (e) => e.preventDefault());
     kb.addEventListener('mousedown', (e) => e.preventDefault());
     kb.addEventListener('click', (e) => {
@@ -386,7 +402,12 @@ export class MathEditor implements ToolbarHost {
       input.blur();
       input.focus({ preventScroll: true });
     });
-    kb.classList.add('wrs_navOn');
+    // on a touch screen the keyboard stays away until the formula is tapped (or this key is pressed)
+    const touchKb = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+    if (touchKb) this.display.input.inputMode = 'none';
+    kb.setAttribute('aria-pressed', String(!touchKb));
+    kb.classList.toggle('wrs_navOn', !touchKb);
+    this.navKeyboard = kb;
     pad.prepend(kb);
     pad.prepend(clear);
     // the history group sits right before the arrows
@@ -406,6 +427,37 @@ export class MathEditor implements ToolbarHost {
     document.addEventListener('mouseup', this.onMouseUp);
     disp.view.addEventListener('dblclick', (e) => this.onDblClick(e as MouseEvent));
     disp.view.addEventListener('contextmenu', (e) => e.preventDefault());
+    // a long press on a touch screen selects the word / run under the finger (the native selection of the browser would
+    // take the focus, and with it the keyboard, away from the formula)
+    let press: ReturnType<typeof setTimeout> | null = null;
+    let pressAt = { x: 0, y: 0 };
+    const cancelPress = () => {
+      if (press) clearTimeout(press);
+      press = null;
+    };
+    disp.view.addEventListener('pointerdown', (e) => {
+      const pe = e as PointerEvent;
+      if (pe.pointerType !== 'touch' || !pe.isPrimary) return;
+      cancelPress();
+      pressAt = { x: pe.clientX, y: pe.clientY };
+      press = setTimeout(() => {
+        press = null;
+        const p = this.display.toContent(pressAt.x, pressAt.y);
+        const hit = this.display.hitTest(p.x, p.y);
+        if (!hit) return;
+        this.closePopup();
+        this.core.setCaret(hit);
+        this.core.selectRun(hit);
+        // the browser may still send the mouse events of a tap when the finger lifts: they must not undo the selection
+        this.longPressedAt = Date.now();
+        this.wantKeyboard();
+        this.focusEditor();
+      }, 450);
+    });
+    disp.view.addEventListener('pointermove', (e) => {
+      if (press && Math.hypot((e as PointerEvent).clientX - pressAt.x, (e as PointerEvent).clientY - pressAt.y) > 10) cancelPress();
+    });
+    for (const t of ['pointerup', 'pointercancel', 'pointerleave']) disp.view.addEventListener(t, cancelPress);
     // keyboard
     input.addEventListener('keydown', (e) => this.onKeyDown(e));
     input.addEventListener('input', () => this.onInput());
@@ -448,7 +500,7 @@ export class MathEditor implements ToolbarHost {
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
     this.resizeObs?.disconnect();
-    this.store?.flush();
+    this.onPageHide();
     document.removeEventListener('visibilitychange', this.onHide);
     window.removeEventListener('pagehide', this.onPageHide);
     window.removeEventListener('resize', this.onWinResize);
@@ -460,7 +512,7 @@ export class MathEditor implements ToolbarHost {
   private setupLayout(container: HTMLElement): void {
     this.host = container;
     if (typeof ResizeObserver !== 'undefined') {
-      this.resizeObs = new ResizeObserver(() => this.applyLayout());
+      this.resizeObs = new ResizeObserver(() => this.onWinResize());
       this.resizeObs.observe(container);
     }
     window.addEventListener('resize', this.onWinResize);
@@ -479,20 +531,30 @@ export class MathEditor implements ToolbarHost {
       return;
     }
     const w = this.host.clientWidth;
+    // the height of the window a soft keyboard leaves must not change the layout (no relayout, no flicker, also on slow
+    // phones): decisions use the tallest height seen at this width
+    if (w !== this.stableW) {
+      this.stableW = w;
+      this.stableIH = 0;
+    }
+    this.stableIH = Math.max(this.stableIH, window.innerHeight);
     const attr = this.host.dataset.wrsLayout as 'classic' | 'fluid' | 'auto' | undefined;
     const mode = this.layoutMode !== 'auto' ? this.layoutMode : attr ?? 'auto';
     // a low window (a phone held sideways) has no room for the 415 px widget either
-    const fluid = mode === 'fluid' || (mode === 'auto' && w > 0 && (w < 725 || window.innerHeight < 480));
+    const fluid = mode === 'fluid' || (mode === 'auto' && w > 0 && (w < 725 || this.stableIH < 480));
     const coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
-    const h = this.host.clientHeight;
-    // touch: controls of at least 44 px (the big buttons are 33 px); a low window gets less zoom to leave room for the formula
-    let k: number = this.opts.toolbarSize;
-    if (fluid && k === 1 && coarse) k = h > 0 && h < 480 ? 1.25 : 1.5;
+    // the controls keep their size on every device (the panel is made shorter and scrolls instead)
+    const k: number = this.opts.toolbarSize;
     // a narrow window (a phone): no sideways scrolling – the tabs share one row and the controls wrap into rows
-    // (touch sized, a little smaller when the window is low)
     const narrow = fluid && w > 0 && w < 960;
-    if (narrow && this.opts.toolbarSize === 1) k = !coarse ? 1 : h > 0 && h < 520 ? 1.1 : 1.45;
     const hk = fluid && coarse ? 1.35 : 1;
+    // nothing that matters changed (the window only became lower: a soft keyboard): leave everything as it is
+    const key = `${fluid}|${narrow}|${k}|${hk}|${coarse}|${w}`;
+    if (key === this.layoutKey) {
+      if (this.isHandOpen()) this.hand.resize();
+      return;
+    }
+    this.layoutKey = key;
     // only a change of the layout mode closes a pop-up; a new zoom (a different window height) keeps it
     const changed = fluid !== this.fluid;
     this.fluid = fluid;
@@ -503,7 +565,6 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_reflow', narrow);
     // the panel never takes the room the formula needs (tabs 40 px, touch pad 56 px, at least 120 px of formula): it
     // scrolls up and down inside itself instead
-    this.root.style.setProperty('--wrs-panel-max', Math.max(h < 360 ? 84 : 110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
@@ -538,12 +599,20 @@ export class MathEditor implements ToolbarHost {
     if (!this.root) return;
     this.normalizeRoot();
     this.render();
+    // what is not needed to answer a tap (the MathML text, the saved copy, the change event) waits until the taps pause:
+    // a slow phone spends the tap on the drawing, not on bookkeeping
+    if (this.changeTimer) clearTimeout(this.changeTimer);
+    this.changeTimer = setTimeout(() => this.flushChange(), 100);
+  }
+
+  private flushChange(): void {
+    if (this.changeTimer) clearTimeout(this.changeTimer);
+    this.changeTimer = null;
     const mml = this.core.getMathML();
     this.persistNow(mml);
     if (mml !== this.lastMml) {
       this.lastMml = mml;
-      if (this.changeTimer) clearTimeout(this.changeTimer);
-      this.changeTimer = setTimeout(() => this.emitEv('change', { mathml: this.getMathML(), empty: this.isEmpty() }), 100);
+      this.emitEv('change', { mathml: this.getMathML(), empty: this.isEmpty() });
     }
   }
 
@@ -1253,12 +1322,18 @@ export class MathEditor implements ToolbarHost {
     return this.display.toContent(e.clientX, e.clientY);
   }
 
+  private longPressedAt = 0;
   private onMouseDown(e: MouseEvent): void {
     if (e.button !== 0) return;
+    if (Date.now() - this.longPressedAt < 1200) {
+      e.preventDefault();
+      return;
+    }
     this.closePopup();
     const p = this.contentPoint(e);
     const hit = this.display.hitTest(p.x, p.y);
     if (!hit) {
+      this.wantKeyboard();
       this.focusEditor();
       e.preventDefault();
       return;
@@ -1272,8 +1347,20 @@ export class MathEditor implements ToolbarHost {
       this.core.selectRun(hit);
       this.lastDblAt = Date.now();
     }
+    this.wantKeyboard();
     this.focusEditor();
     e.preventDefault();
+  }
+
+  /** a tap on the formula is the one thing that brings the phone's keyboard up */
+  private wantKeyboard(): void {
+    const input = this.display.input;
+    if (input.inputMode !== 'none') return;
+    input.inputMode = 'text';
+    this.navKeyboard?.setAttribute('aria-pressed', 'true');
+    this.navKeyboard?.classList.add('wrs_navOn');
+    // the mode counts when the field is focused (again)
+    input.blur();
   }
 
   private onMouseMove = (e: MouseEvent): void => {

@@ -2,11 +2,11 @@
  * Contextual tab model (SRS 4.11, Appendix G): which controls are offered for the structure at the caret
  * and what each control does to the document.
  */
-import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup } from './model';
+import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup, VALIGN_TAGS } from './model';
 import { EditorCore } from './engine';
 import STRETCHY from '../data/stretchy.json';
 
-export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep';
+export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep' | 'structure';
 
 export interface CtxControl {
   id: string;
@@ -68,6 +68,8 @@ function caretLayoutKey(loc: Located): string {
       return loc.spacing ? (st ? 'aligned_st' : 'aligned_sp') : 'aligned';
     case 'fence_in':
       return loc.spacing ? (st ? 'fence_st' : 'fence_sp') : 'fence';
+    case 'structure':
+      return 'structure';
     case 'operator':
       return st ? 'operator_st' : 'operator';
     case 'sum':
@@ -174,7 +176,7 @@ export function locate(core: EditorCore): Located | null {
   const loc = locateRaw(core);
   if (loc && loc.op && stretchDefault(loc.op) !== null) loc.stretchy = true;
   // a selection shows the nudge buttons in front of everything else
-  if (loc && core.hasSelection()) loc.nudge = true;
+  if (loc && core.hasSelection() && loc.kind !== 'structure') loc.nudge = true;
   return loc;
 }
 
@@ -199,6 +201,36 @@ function locateRaw(core: EditorCore): Located | null {
         const lastOp = isOpEl(last) || isNlEl(last);
         const nextOp = isOpEl(next) || isNlEl(next);
         sel = { row: srow, from, to, els, spacing: lastOp || nextOp, op: isOpEl(last) ? last : isOpEl(next) ? next : undefined };
+      }
+    }
+  }
+  // extension (not in the reference): the vertical alignment of a structure with inputs – the one selected, or the
+  // innermost one the caret is in
+  if (core.contextExtras) {
+    if (sel && sel.els.length === 1 && sel.els[0].c !== undefined && VALIGN_TAGS.has(sel.els[0].t)) {
+      return { kind: 'structure', fence: { row: sel.row, index: sel.from, el: sel.els[0], path: core.sel!.path as Step[], slot: 0 } };
+    }
+    if (!sel) {
+      // the innermost structure of the caret: wrappers of an input (the argument placeholder, a big operator's text slot)
+      // are looked through; a fence / table / stack keeps its own controls
+      const WRAP = new Set(['maction', 'mrow', 'mstyle', 'mpadded', 'mo']);
+      let last: Hit | null = null;
+      for (const h of chain) {
+        if (VALIGN_TAGS.has(h.el.t) && h.el.c !== undefined) return { kind: 'structure', fence: h };
+        if (!WRAP.has(h.el.t)) {
+          last = null;
+          break;
+        }
+        last = h;
+      }
+      // an input of the formula's own row (the integrand after an integral): the structure just before it
+      if (last) {
+        const nb = [last.row[last.index - 1], last.row[last.index + 1]];
+        const k = nb.findIndex((e) => !!e && e.c !== undefined && VALIGN_TAGS.has(e.t));
+        if (k >= 0) {
+          const i = k === 0 ? last.index - 1 : last.index + 1;
+          return { kind: 'structure', fence: { row: last.row, index: i, el: last.row[i], path: last.path, slot: 0 } };
+        }
       }
     }
   }
@@ -274,6 +306,14 @@ function locateRaw(core: EditorCore): Located | null {
   const ml = multilineCtx();
   if (ml) return ml;
   if (isOp(left) || isOp(right) || isOpScript(right)) return { kind: 'operator', tokens: [{ row, index: isOp(left) ? idx - 1 : idx }], op: opNextTo() };
+  // extension: the caret stands right behind (or in front of) a structure with inputs – the one just inserted, say
+  if (core.contextExtras) {
+    const nb = [left, right].findIndex((e) => !!e && e.c !== undefined && VALIGN_TAGS.has(e.t));
+    if (nb >= 0) {
+      const i = nb === 0 ? idx - 1 : idx;
+      return { kind: 'structure', fence: { row, index: i, el: row[i], path: core.caret.path as Step[], slot: 0 } };
+    }
+  }
   return null;
 }
 
@@ -382,6 +422,12 @@ function ownControls(loc: Located): CtxControl[] {
         { id: 'valign_middle', title: 'Middle', kind: 'button', icon: 'valign_middle', group: 1 },
         { id: 'valign_middle_baseline', title: 'Middle-baseline', kind: 'button', icon: 'valign_middle_baseline', group: 1 },
         ...operatorControls(loc, 2),
+      ];
+    case 'structure':
+      return [
+        { id: 'valign_baseline', title: 'Baseline', kind: 'toggle', icon: 'valign_baseline', group: 0 },
+        { id: 'valign_middle', title: 'Middle', kind: 'button', icon: 'valign_middle', group: 0 },
+        { id: 'valign_middle_baseline', title: 'Middle-baseline', kind: 'button', icon: 'valign_middle_baseline', group: 0 },
       ];
     case 'operator':
       return [...SPACING(0), ...(loc.stretchy ? [STRETCHY_CTL(0)] : [])];

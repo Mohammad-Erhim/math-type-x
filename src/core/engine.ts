@@ -60,6 +60,12 @@ export class EditorCore {
     text: false,
   };
   rtl = false;
+  /** the editor's language is Arabic (or right-to-left editing is on): the differential d of the calculus controls is
+   * written with the Arabic math letter */
+  arabicLanguage = false;
+  /** the contextual tab offers its extensions (vertical alignment of every structure with inputs): set by the editor; the
+   * bare engine behaves exactly like the reference's */
+  contextExtras = false;
   undoStack: Snapshot[] = [{ row: [], attrs: [], caret: { path: [], index: 0 }, sel: null }]; // Q-09: enabled at load
   redoStack: Snapshot[] = [];
   geometry: Geometry | null = null;
@@ -266,7 +272,8 @@ export class EditorCore {
     if (spec.tree.length === 0) return; // mode toggles carry no symbols
     if (!this.hasSelection()) this.settleStackCaret();
     let mapped = false;
-    if (this.rtl) spec = rtlize(spec);
+    if (this.rtl) spec = rtlize(spec, this.hasSelection());
+    if (this.arabicLanguage || this.rtl) spec = withArabicDifferential(spec);
     // numbers a control brings along (the -1 of an inverse function …) are written in the digit set in use
     if (this.modes.digits !== 'western') spec = withDigits(spec, this.modes.digits);
     if (!this.modes.autoItalic && spec.tree.length === 1 && spec.tree[0].c === undefined) {
@@ -1782,9 +1789,19 @@ export class EditorCore {
 }
 
 
-const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لط', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
+const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لو', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
 
 /** right-to-left editing writes function names in Arabic (arcsin → sin⁻¹); root-level indices are re-mapped */
+/** the differential d (`<mo>d</mo>` of the integral and derivative controls) written with the Arabic math letter ء */
+function withArabicDifferential(spec: InsertSpec): InsertSpec {
+  const mapEl = (e: El): El => {
+    if (e.c) return { ...e, c: e.c.map((r) => r.map(mapEl)) };
+    if (e.t === 'mo' && e.x === 'd') return { ...e, x: '\ue188' };
+    return e;
+  };
+  return { ...spec, tree: spec.tree.map(mapEl) };
+}
+
 /** the digits of the numbers (mn) of an insertion written in `digits` */
 function withDigits(spec: InsertSpec, digits: DigitSet): InsertSpec {
   const mapEl = (e: El): El => {
@@ -1795,8 +1812,10 @@ function withDigits(spec: InsertSpec, digits: DigitSet): InsertSpec {
   return { ...spec, tree: spec.tree.map(mapEl) };
 }
 
-function rtlize(spec: InsertSpec): InsertSpec {
+function rtlize(spec: InsertSpec, selected = false): InsertSpec {
   const idxMap: number[] = [];
+  /** index of a fence whose input was filled with the Arabic math letter U+E14E (the natural logarithm: لو(ه)) */
+  let filledFence = -1;
   const mapRow = (r: Row, top: boolean): Row => {
     const out: Row = [];
     let i = 0;
@@ -1816,6 +1835,17 @@ function rtlize(spec: InsertSpec): InsertSpec {
             out.push({ t: 'msup', a: [], c: [letters, exp] });
           } else out.push(...letters);
           if (top) for (let k = i; k < j; k++) idxMap[k] = start;
+          // the natural logarithm of an Arabic editor is written لو(ه): the bracket after it holds the letter U+E14E
+          const nx = r[j];
+          if (fn === 'ln' && !inv && !selected && !spec.takePrev && nx && nx.t === 'mfenced' && nx.c && nx.c.length === 1 && nx.c[0].length === 0) {
+            out.push({ ...nx, c: [[{ t: 'mi', a: [], x: '\ue14e', g: newGroup() }]] });
+            if (top) {
+              idxMap[j] = out.length - 1;
+              filledFence = j;
+            }
+            i = j + 1;
+            continue;
+          }
           i = j;
           continue;
         }
@@ -1833,7 +1863,9 @@ function rtlize(spec: InsertSpec): InsertSpec {
     if (!s) return s;
     if (s.path.length === 0) return { ...s, index: idxMap[s.index] ?? s.index } as T;
     const [first, ...rest] = s.path;
-    return { ...s, path: [[idxMap[first[0]] ?? first[0], first[1]] as Step, ...rest] } as T;
+    // inside the filled bracket the caret stands after the letter
+    const after = first[0] === filledFence && rest.length === 0 ? { index: 1 } : {};
+    return { ...s, ...after, path: [[idxMap[first[0]] ?? first[0], first[1]] as Step, ...rest] } as T;
   };
   return { ...spec, tree, caret: fix(spec.caret as any) as any, sel: fix(spec.sel as any) as any, takePrev: fix(spec.takePrev as any) as any };
 }

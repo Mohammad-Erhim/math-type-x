@@ -6,7 +6,7 @@ import rtlIcons from '../data/rtl-icons.json';
 import { catalogue, Control, behaviorOf } from '../core/catalogue';
 import layoutData from '../data/toolbar-layout.json';
 import { h, svg } from './dom';
-import { controlIcon, tracedPaths, DRAWN_ICONS } from './icons';
+import { controlIcon, tracedPaths, DRAWN_ICONS, NO_RTL_ART, hasDifferential } from './icons';
 import CTX_LAYOUT from '../data/ctx-layout.json';
 import CTX_ICONS from '../data/ctx-icons.json';
 import { ART, TAB_ICONS } from './art';
@@ -93,11 +93,43 @@ export class Toolbar {
     this.container = h('div', { class: 'wrs_panelContainer' });
     // the name of the open tab (narrow windows only): icons alone do not tell a first-time user what a tab holds
     this.caption = h('div', { class: 'wrs_tabCaption', 'aria-hidden': 'true' });
-    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.caption, this.container);
+    // narrow windows: the panel is a short window onto its controls; arrows at its edges tell when there is more to see
+    const cue = (dir: 'up' | 'down') => {
+      const b = h('button', { type: 'button', class: 'wrs_scrollCue wrs_cue' + (dir === 'up' ? 'Up' : 'Down'), tabindex: '-1', 'aria-label': dir === 'up' ? 'Scroll up' : 'Scroll down' }) as HTMLButtonElement;
+      b.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${dir === 'up' ? 'M3 10l5-5 5 5' : 'M3 6l5 5 5-5'}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${dir === 'down' ? '<span>More</span>' : ''}`;
+      b.addEventListener('pointerdown', (e) => e.preventDefault());
+      b.addEventListener('click', () => this.container.scrollBy({ top: (dir === 'up' ? -1 : 1) * Math.max(40, this.container.clientHeight * 0.75), behavior: 'smooth' }));
+      return b;
+    };
+    const cueUp = cue('up');
+    const cueDown = cue('down');
+    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.caption, this.container, cueUp, cueDown);
     this.buildTabs();
     this.buildPanels();
+    this.watchScroll();
     this.ctxPanel = this.panels[9];
     this.select(0);
+  }
+
+  /** which edges of the panel have more content beyond them (classes of the toolbar): an IntersectionObserver on two
+   * sentinels – no scroll listener, nothing runs while the person scrolls */
+  private watchScroll(): void {
+    if (typeof IntersectionObserver !== 'function') return;
+    const top = h('div', { class: 'wrs_sentinel', 'aria-hidden': 'true' });
+    const bottom = h('div', { class: 'wrs_sentinel', 'aria-hidden': 'true' });
+    this.container.prepend(top);
+    this.container.append(bottom);
+    const visible = new Map<Element, boolean>([[top, true], [bottom, true]]);
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) visible.set(e.target, e.isIntersecting);
+        this.root.classList.toggle('wrs_moreAbove', visible.get(top) === false);
+        this.root.classList.toggle('wrs_moreBelow', visible.get(bottom) === false);
+      },
+      { root: this.container, threshold: 0 },
+    );
+    io.observe(top);
+    io.observe(bottom);
   }
 
   private buildTabs(): void {
@@ -228,11 +260,13 @@ export class Toolbar {
     const inner = gw - 4;
     const key = c.special ? specialKey(c.title) : null;
     let body = '';
-    const alt = this.rtlOn ? (DRAWN_ICONS.has(c.id) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
+    // Arabic mode: an Arabic language, or right-to-left editing switched on with the toolbar's button
+    const arLang = /^ar/i.test(this.host.lang) || this.rtlOn;
+    const alt = this.rtlOn ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && (hasDifferential(c) || /<mi>ln<\/mi>/.test(c.A ?? ''))) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
     if (alt) body = tracedPaths(alt.layers as any);
     else if (key && ART[key]) body = ART[key](inner, gh - 4);
     else if (behaviorOf(c) === 'digits-arabic' || behaviorOf(c) === 'digits-eastern') body = controlIcon(c, inner, gh - 4) || `<text x="${inner / 2}" y="${inner * 0.75}" font-size="13" text-anchor="middle" fill="#000" font-family="Arial">${behaviorOf(c) === 'digits-arabic' ? '٣٢١' : '۳۲۱'}</text>`;
-    else body = controlIcon(c, inner, gh - 4, this.rtlOn);
+    else body = controlIcon(c, inner, gh - 4, this.rtlOn, arLang);
     btn.innerHTML = `<svg width="${inner}" height="${gh - 4}" viewBox="0 0 ${inner} ${gh - 4}" aria-hidden="true">${body}</svg>`;
     btn.addEventListener('mousedown', (e) => e.preventDefault());
     btn.addEventListener('click', (e) => {
@@ -301,12 +335,13 @@ export class Toolbar {
       if (!btn) continue;
       const svgEl = btn.querySelector('svg');
       if (!svgEl) continue;
-      const alt = on ? (DRAWN_ICONS.has(c.id) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
+      const arLang = /^ar/i.test(this.host.lang) || on;
+      const alt = on ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && (hasDifferential(c) || /<mi>ln<\/mi>/.test(c.A ?? ''))) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
       const [w, hh] = [c.geom[2] - 4, c.geom[3] - 4];
       if (alt) svgEl.innerHTML = tracedPaths(alt.layers as any);
       else {
         const key = c.special ? specialKey(c.title) : null;
-        svgEl.innerHTML = key && ART[key] ? ART[key](w, hh) : controlIcon(c, w, hh, on);
+        svgEl.innerHTML = key && ART[key] ? ART[key](w, hh) : controlIcon(c, w, hh, on, arLang);
       }
     }
     this.tabs.forEach((t, i) => {
@@ -348,6 +383,12 @@ export class Toolbar {
     this.reflowOn = on;
     this.reflowWidth = width;
     this.panels.forEach((p) => this.reflowPanel(p));
+    this.placeCues();
+  }
+
+  /** the upper cue sits on the top edge of the panel */
+  private placeCues(): void {
+    if (this.reflowOn) this.root.style.setProperty('--wrs-cue-top', this.container.offsetTop + 'px');
   }
 
   /** (re)arrange the children of one panel – also called after the contextual panel was rebuilt */
@@ -455,6 +496,8 @@ export class Toolbar {
     });
     this.panels.forEach((p, k) => p.classList.toggle('wrs_selected', k === i));
     this.caption.textContent = TAB_CAPTIONS[i] ?? '';
+    this.container.scrollTop = 0;
+    this.placeCues();
     this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
     // the first control of the selected tab is the single tab stop
     for (let t = 0; t < 10; t++) this.setTabStop(t, null);

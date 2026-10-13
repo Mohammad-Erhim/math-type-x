@@ -156,6 +156,8 @@ export function joinedPrefixWidth(prefix: string, size: number): number | null {
 
 /** true for a run of two or more letters of Arabic script (the ones that join) */
 export function isJoinedRun(text: string): boolean {
+  // a symbol drawn as a shape inside the run: its letters are measured one by one
+  for (const c of text) if (zulfiSymbol(c.codePointAt(0) ?? 0)) return false;
   let n = 0;
   for (const c of text) if (ARABIC_BLOCKS.test(c) && ++n >= 2) return true;
   return false;
@@ -181,6 +183,35 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
   // composed text (merged runs): sum of the characters
   const chars = Array.from(text);
   if (chars.length > 1) {
+    // a run holding symbols drawn as shapes: its letters are measured as runs of their own, the symbols add their advance
+    if (chars.some((c) => zulfiSymbol(c.codePointAt(0) ?? 0))) {
+      let w = 0;
+      let lp = 0;
+      let rp = 0;
+      let seg = '';
+      let first = true;
+      const flush = () => {
+        if (!seg) return;
+        const t = tokenInfo(tag, mathvariant, seg, size);
+        w += t.w;
+        if (first) lp = t.lpad;
+        rp = t.rpad;
+        first = false;
+        seg = '';
+      };
+      for (const c of chars) {
+        if (zulfiSymbol(c.codePointAt(0) ?? 0)) {
+          flush();
+          const t = tokenInfo(tag, mathvariant, c, size);
+          w += t.w;
+          if (first) lp = t.lpad;
+          rp = t.rpad;
+          first = false;
+        } else seg += c;
+      }
+      flush();
+      return { w, lpad: lp, rpad: rp, font: 'sans' };
+    }
     let w = 0;
     let font: FontKind = 'sans';
     let lp = 0;
