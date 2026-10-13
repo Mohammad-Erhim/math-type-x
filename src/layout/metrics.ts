@@ -5,6 +5,7 @@
  */
 import stix from '../data/metrics.json';
 import ref from '../data/ref-metrics.json';
+import arWidths from '../data/ar-widths.json';
 
 export interface Variant { adv: number; y1: number; y2: number; x1: number; x2: number; d: string }
 export const raw = stix as unknown as { upm: number; cps: Record<string, number[]>; variants: Record<string, Variant> };
@@ -21,7 +22,7 @@ const ARIAL: Record<string, number> = {
 };
 ARIAL.q = 556;
 
-export type FontKind = 'sans' | 'math' | 'fraktur' | 'script' | 'double';
+export type FontKind = 'sans' | 'math' | 'fraktur' | 'script' | 'double' | 'mathrtl';
 
 export interface TokInfo {
   /** advance at `size` px (fractional) */
@@ -35,6 +36,33 @@ const BIG = new Set([0x2211, 0x220f, 0x2210, 0x22c0, 0x22c1, 0x22c2, 0x22c3, 0x2
 const INT = new Set([0x222b, 0x222c, 0x222d, 0x222e, 0x222f, 0x2230, 0x2231, 0x2232, 0x2233]);
 
 const KIND: Record<string, FontKind> = { '': 'sans', wrs_italic: 'sans', wrs_mathChar: 'math', 'wrs_mathChar wrs_italic': 'math', wrs_frakturChar: 'fraktur', wrs_scriptChar: 'script', wrs_doubleStruckChar: 'double', wrs_roundBrackets1854Char: 'math' };
+
+const AR_WIDTHS = arWidths as Record<string, number>;
+const ADV_CACHE = new Map<string, number | null>();
+let measureCtx: CanvasRenderingContext2D | null | undefined;
+
+/** advance (em) of a letter of a script without a metrics table: measured by the browser in the font the text is drawn in
+ * (like the reference, which lays out what the browser measures), tables of the Arabic blocks without a canvas */
+function measuredAdv(ch: string): number | null {
+  const hit = ADV_CACHE.get(ch);
+  if (hit !== undefined) return hit;
+  let w: number | null = null;
+  if (measureCtx === undefined) {
+    try {
+      measureCtx = typeof document !== 'undefined' ? document.createElement('canvas').getContext('2d') : null;
+      if (measureCtx) measureCtx.font = "100px Arial,'Liberation Sans',Helvetica,sans-serif";
+    } catch {
+      measureCtx = null;
+    }
+  }
+  if (measureCtx) {
+    const m = measureCtx.measureText(ch).width;
+    if (m > 0) w = m / 100;
+  }
+  if (w === null) w = AR_WIDTHS[(ch.codePointAt(0) ?? 0).toString(16)] ?? null;
+  ADV_CACHE.set(ch, w);
+  return w;
+}
 
 function stixAdv(ch: string): number {
   const m = raw.cps[ch.codePointAt(0)!];
@@ -81,7 +109,7 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
     return { w: (ARIAL[ch] / 1000) * size, lpad: isOp ? 1 : 0, rpad: isOp ? 1 : 0, font: 'sans' };
   }
   // letters of other scripts: sans-serif approximation
-  if (/\p{L}|\p{Nd}/u.test(ch) && tag !== 'mo') return { w: 0.58 * size, lpad: 0, rpad: 0, font: 'sans' };
+  if (/\p{L}|\p{M}|\p{Nd}/u.test(ch) && tag !== 'mo') return { w: (measuredAdv(ch) ?? 0.58) * size, lpad: 0, rpad: 0, font: 'sans' };
   const mv = mathvariant;
   const font: FontKind = mv === 'fraktur' ? 'fraktur' : mv === 'script' ? 'script' : mv === 'double-struck' ? 'double' : 'math';
   return { w: stixAdv(ch) * size, lpad: tag === 'mo' ? 2 * (size / 16) : 0, rpad: tag === 'mo' ? 1 * (size / 16) : 0, font };

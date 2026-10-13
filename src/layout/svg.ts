@@ -11,6 +11,7 @@ export const KIND_FONT: Record<string, string> = {
   script: `'Conv_script',${FONT}`,
   fraktur: `'Conv_fraktur',${FONT}`,
   double: `'Conv_doubleStruck','Conv_math1',${FONT}`,
+  mathrtl: `'Conv_math1RTL',${FONT}`,
 };
 /** family of letters and digits (the layout uses Arial advance widths) */
 export const SANS = "Arial,'Liberation Sans',Helvetica,sans-serif";
@@ -191,7 +192,11 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
         const asc = it.font === 'sans' ? K.asc * it.size : K.asc * it.size + 0.125 * it.size;
         const up = it.size >= 15.5 && (it.font === 'sans' || it.size === 24);
         const base = Math.round(it.y - asc) + Math.round(asc) - (up ? 1 : 0);
-        o += `<text x="${r(it.x)}" y="${r(base)}" font-size="${r(it.size)}" font-family="${fam}" fill="${fill}"${it.italic ? ' font-style="italic"' : ''}${it.bold ? ' font-weight="bold"' : ''} xml:space="preserve">${esc(it.text)}</text>`;
+        // the mirrored symbols of right-to-left formulas come from the reference font Conv_math1RTL; without it the
+        // regular glyph is flipped around the middle of its advance
+        const flipGlyph = it.flip && !vendorFonts && it.w !== undefined;
+        const tx = flipGlyph ? ` transform="translate(${r(2 * it.x + it.w!)} 0) scale(-1 1)"` : '';
+        o += `<text x="${r(it.x)}" y="${r(base)}"${tx} font-size="${r(it.size)}" font-family="${fam}" fill="${fill}"${it.italic ? ' font-style="italic"' : ''}${it.bold ? ' font-weight="bold"' : ''} xml:space="preserve">${esc(it.text)}</text>`;
         break;
       }
       case 'f':
@@ -202,7 +207,7 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
         o += `<rect x="${Math.round(it.x)}" y="${Math.round(it.y)}" width="${Math.max(1, Math.round(it.w))}" height="${Math.max(1, Math.round(it.h))}" fill="${it.color ?? fg}"/>`;
         break;
       case 'p':
-        o += `<path transform="translate(${r(it.x)} ${r(it.y)})" d="${it.d}" fill="${it.fill ? it.color ?? fg : 'none'}" stroke="${it.color ?? fg}" stroke-width="${it.sw ?? 1}"/>`;
+        o += `<path transform="translate(${r(it.x)} ${r(it.y)})${it.flip ? ' scale(-1 1)' : ''}" d="${it.d}" fill="${it.fill ? it.color ?? fg : 'none'}" stroke="${it.color ?? fg}" stroke-width="${it.sw ?? 1}"/>`;
         break;
       case 's':
         o += `<rect x="${r(it.x) + 0.5}" y="${r(it.y) + 0.5}" width="${r(it.w) - 1}" height="${r(it.h) - 1}" fill="none" stroke="${opts.slot ?? SLOT_COLOR}" stroke-width="1"/>`;

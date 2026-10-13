@@ -9,14 +9,15 @@
 import { El, Row, getAttr } from '../core/model';
 import { glyphText } from './glyphs';
 import { tokenInfo, FontKind, isBigOp, isIntegral } from './metrics';
+import rtlMirror from '../data/rtl-mirror.json';
 
 /* ---------------------------------------------------------------- items */
 
 export type Item =
-  | { k: 'g'; x: number; y: number; text: string; size: number; font: FontKind; italic?: boolean; bold?: boolean; color?: string }
+  | { k: 'g'; x: number; y: number; text: string; size: number; font: FontKind; italic?: boolean; bold?: boolean; color?: string; w?: number; flip?: boolean }
   | { k: 'f'; x: number; y: number; ch: string; w: number; a: number; d: number; size: number; color?: string; close?: boolean; dy?: number }
   | { k: 'r'; x: number; y: number; w: number; h: number; color?: string; ui?: boolean }
-  | { k: 'p'; x: number; y: number; d: string; color?: string; fill?: boolean; sw?: number; ui?: boolean }
+  | { k: 'p'; x: number; y: number; d: string; color?: string; fill?: boolean; sw?: number; ui?: boolean; flip?: boolean }
   | { k: 's'; x: number; y: number; w: number; h: number; small?: boolean };
 
 export interface Placed {
@@ -306,14 +307,6 @@ export function layoutRow(row: Row, env: Env, path: [number, number][] = [], bas
   const last = atoms[atoms.length - 1];
   if (last) x += last.rpad + (last.italic ? icor : 0);
   xs[row.length] = x - (last && last.italic ? icor : 0) - last.rpad;
-  if (env.rtl && atoms.length) {
-    // right-to-left: atoms run from the right edge; caret boundaries mirror with them
-    const W = x;
-    kids.forEach((k) => {
-      k.x = W - k.x - Math.round(k.b.w);
-    });
-    for (let q = 0; q < xs.length; q++) xs[q] = W - xs[q];
-  }
   const box = mk(x, a, d, undefined, kids);
   // caret rectangle of every position: the element to its left (the first one at the start of the row) sets it
   const ct: number[] = new Array(row.length + 1).fill(0);
@@ -403,7 +396,7 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   const lift = !noLift && font === 'math' && !big && env.size >= 15.5 && size <= env.size * 1.01 ? 1 : 0;
   const asc = K.asc * size + padOf(size) - drop + lift;
   const desc = h - K.asc * size + drop;
-  const items: Item[] = [{ k: 'g', x: 0, y: drop - lift, text: drawn, size, font, italic: italicFlag && font === 'sans', bold, color }];
+  const items: Item[] = [{ k: 'g', x: 0, y: drop - lift, text: drawn, size, font, italic: italicFlag && font === 'sans', bold, color, w: info.w }];
   // caret positions inside a merged run
   let inner: number[] | undefined;
   if (to - from > 1) {
@@ -1541,6 +1534,72 @@ export interface DocLayout extends Layout {
   lines: { from: number; to: number; y: number; a: number; d: number; lift?: number; uld?: number }[];
 }
 
+/* -------------------------------------------------------- right-to-left */
+
+const RTL_SWAP = (rtlMirror as { swap: Record<string, string> }).swap;
+const RTL_FONT = new Set<number>((rtlMirror as { rtlFont: string[] }).rtlFont.map((h) => parseInt(h, 16)));
+
+/** advance of a text item */
+function itemWidth(it: Extract<Item, { k: 'g' }>): number {
+  if (it.w !== undefined) return it.w;
+  let w = 0;
+  for (const c of Array.from(it.text)) w += tokenInfo('mo', '', c, it.size).w;
+  return w;
+}
+
+const FLIPPED = '()[]{}<>';
+function mirrorItem(it: Item, W: number): Item {
+  switch (it.k) {
+    case 'g': {
+      // characters with a mirror image are swapped; symbols that only exist in the right-to-left font are
+      // drawn from it (or flipped when the font is not available)
+      let text = it.text;
+      let flip = false;
+      let font = it.font;
+      if (it.font === 'math' || it.font === 'sans') {
+        text = Array.from(it.text)
+          .map((c) => RTL_SWAP[(c.codePointAt(0) ?? 0).toString(16)] ?? c)
+          .join('');
+        if (it.font === 'math' && Array.from(it.text).some((c) => RTL_FONT.has(c.codePointAt(0) ?? 0))) {
+          font = 'mathrtl';
+          flip = true;
+        }
+      }
+      return { ...it, text, font, flip, x: W - it.x - itemWidth(it), w: itemWidth(it) };
+    }
+    case 'f': {
+      const swap: Record<string, string> = { '(': ')', ')': '(', '[': ']', ']': '[', '{': '}', '}': '{', '<': '>', '>': '<', '\u27e8': '\u27e9', '\u27e9': '\u27e8', '\u2308': '\u2309', '\u2309': '\u2308', '\u230a': '\u230b', '\u230b': '\u230a' };
+      const ch = swap[it.ch] ?? it.ch;
+      return { ...it, ch, close: it.close === undefined ? undefined : !it.close, x: W - it.x - it.w };
+    }
+    case 'r':
+    case 's':
+      return { ...it, x: W - it.x - it.w };
+    case 'p':
+      return { ...it, x: W - it.x, flip: !it.flip };
+  }
+}
+
+void FLIPPED;
+
+/** mirror a laid out box horizontally: items, children and caret positions (right-to-left documents) */
+export function mirrorBox(b: Box): Box {
+  const W = b.w;
+  const out: Box = { ...b };
+  if (b.items) out.items = b.items.map((it) => mirrorItem(it, W));
+  if (b.kids) out.kids = b.kids.map((k) => ({ b: mirrorBox(k.b), x: W - k.x - Math.round(k.b.w), y: k.y }));
+  if (b.row) {
+    const r = b.row;
+    out.row = {
+      ...r,
+      xs: r.xs.map((v) => W - v),
+      hx: r.hx?.map((v) => W - v),
+      ul: r.ul?.map((u) => (u ? { x0: W - u.x1, x1: W - u.x0, y: u.y } : null)),
+    };
+  }
+  return out;
+}
+
 export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false): DocLayout {
   const env: Env = { size, level: 0, display: true, rtl };
   const lines: { from: number; to: number }[] = [];
@@ -1563,7 +1622,10 @@ export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false): 
   const lineInfo: DocLayout['lines'] = [];
   let y = 0;
   let w = 0;
-  const boxes = lines.map((ln) => layoutRow(row.slice(ln.from, ln.to), env, [], ln.from));
+  const boxes = lines.map((ln) => {
+    const lb = layoutRow(row.slice(ln.from, ln.to), env, [], ln.from);
+    return rtl ? mirrorBox(lb) : lb;
+  });
   const width = Math.max(...boxes.map((bx) => bx.w));
   lines.forEach((ln, li) => {
     const piece = row.slice(ln.from, ln.to);
@@ -1586,6 +1648,17 @@ export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false): 
     w = Math.max(w, b.w);
     y = baseY + b.d + (li < lines.length - 1 ? K.lineGap : 0);
   });
-  rowsMap.set('', { path: [], x: 0, y: lineInfo[0].y, a: lineInfo[0].a, d: lineInfo[0].d, size, xs: xsAll, ct: ctAll, ch: chAll, runs: runsAll, structs: structsAll });
+  // an empty document: the caret is a bar at the left edge of the empty box, as tall as the box area, with the
+  // underline above the box (measured on the reference)
+  let ulAll: ({ x0: number; x1: number; y: number } | null)[] | undefined;
+  if (row.length === 0) {
+    const sz = size / 16;
+    const x0 = rtl ? width - boxes[0].w : 0;
+    xsAll[0] = x0;
+    ctAll[0] = sz - lineInfo[0].a;
+    chAll[0] = 17 * sz;
+    ulAll = [{ x0, x1: x0 + boxes[0].w, y: 0 }];
+  }
+  rowsMap.set('', { path: [], x: 0, y: lineInfo[0].y, a: lineInfo[0].a, d: lineInfo[0].d, size, xs: xsAll, ct: ctAll, ch: chAll, runs: runsAll, structs: structsAll, ul: ulAll });
   return { w, a: lineInfo[0].a, d: y - lineInfo[0].y, items, rows: rowsMap, rootYs: ysAll, lines: lineInfo };
 }

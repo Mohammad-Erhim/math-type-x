@@ -28,7 +28,8 @@ export const safeColor = (c: string | undefined, d: string) => (c && COLOR.test(
 export function renderSvg(mml: string, o: RenderOptions = {}): Rendered {
   const doc = parseMathML(mml);
   const size = Math.min(Math.max(o.fontSize ?? 16, 4), 128);
-  const lay = layoutDocument(doc.row, undefined, size);
+  const rtl = doc.attrs.some(([k, v]) => k === 'dir' && v === 'rtl');
+  const lay = layoutDocument(doc.row, undefined, size, rtl);
   const pad = o.padding ?? 2;
   const zoom = Math.min(Math.max(o.zoom ?? 1, 0.25), 8);
   const w = Math.max(1, Math.ceil(lay.w) + pad * 2);

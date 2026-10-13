@@ -84,7 +84,7 @@ export class FormulaDisplay {
     this.layout = layout;
     const w = Math.ceil(layout.w) + 2;
     const hgt = Math.ceil(layout.a + layout.d) + 2;
-    this.svgHost.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${hgt}" viewBox="0 0 ${w} ${hgt}" aria-hidden="true" role="presentation" style="position:absolute;left:0;top:0;overflow:visible">${itemsToSvg(layout.items, { slot: COLORS.emptyBox, ui: true })}</svg>`;
+    this.svgHost.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${hgt}" viewBox="0 0 ${w} ${hgt}" aria-hidden="true" role="presentation" style="position:absolute;left:0;top:0;overflow:visible;direction:ltr">${itemsToSvg(layout.items, { slot: COLORS.emptyBox, ui: true })}</svg>`;
     this.content.style.width = w + 'px';
     this.content.style.height = hgt + 'px';
     this.content.style.direction = st.rtl ? 'rtl' : 'ltr';
@@ -117,7 +117,8 @@ export class FormulaDisplay {
               const line = root ? lay.lines.find((l) => l.y === yy) : null;
               const a = line ? line.a : g.a;
               const d = line ? line.d : g.d;
-              if (x2 > x1) this.selLayer.append(h('div', { class: 'wrs_selection', style: { left: x1 + 'px', top: yy - a + 'px', width: x2 - x1 + 'px', height: a + d + 'px' } }));
+              // right-to-left rows run backwards: the selected span lies between the two caret positions either way
+              if (x2 !== x1) this.selLayer.append(h('div', { class: 'wrs_selection', style: { left: Math.min(x1, x2) + 'px', top: yy - a + 'px', width: Math.abs(x2 - x1) + 'px', height: a + d + 'px' } }));
             }
             start = i;
           }

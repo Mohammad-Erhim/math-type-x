@@ -25,10 +25,20 @@ if (process.env.FORMULAS) F = JSON.parse(fs.readFileSync(process.env.FORMULAS, '
   await p.goto(process.env.URL || 'http://localhost:8099/?output=0', { waitUntil: 'load', timeout: 120000 });
   await p.addStyleTag({ content: '#onetrust-consent-sdk,#onetrust-banner-sdk,.onetrust-pc-dark-filter{display:none !important} .wrs_caret,.wrs_underlineCaret,.wrs_inverseCaret{visibility:hidden !important}' });
   await p.waitForFunction(() => window.editor && document.querySelector('#editorContainer .wrs_toolbar button.wrs_button'), null, { timeout: 60000 });
+  if (process.env.LANGUAGE) {
+    await p.evaluate((l) => {
+      const c = document.getElementById('editorContainer');
+      c.innerHTML = '';
+      const ed = com.wiris.jsEditor.JsEditor.newInstance({ language: l });
+      ed.insertInto(c);
+      window.editor = ed;
+    }, process.env.LANGUAGE);
+    await p.waitForFunction(() => document.querySelector('#editorContainer .wrs_toolbar button'), null, { timeout: 30000 });
+  }
   await p.waitForTimeout(1500);
   await p.locator('#editorContainer').scrollIntoViewIfNeeded();
   for (let i = 0; i < F.length; i++) {
-    await p.evaluate((m) => editor.setMathML(m), `<math ${NS}>${F[i]}</math>`);
+    await p.evaluate((m) => editor.setMathML(m), F[i].startsWith('@rtl') ? `<math dir="rtl" ${NS}>${F[i].slice(4)}</math>` : `<math ${NS}>${F[i]}</math>`);
     await p.waitForTimeout(Number(process.env.WAIT || 1200));
     await p.mouse.click(1, 1);
     const bx = await p.locator('#editorContainer').boundingBox();
@@ -46,7 +56,7 @@ if (process.env.FORMULAS) F = JSON.parse(fs.readFileSync(process.env.FORMULAS, '
       return out;
     });
     fs.writeFileSync(`${out}/${String(i).padStart(2, '0')}.json`, JSON.stringify({ cb: bx, leaves }));
-    await p.screenshot({ path: `${out}/${String(i).padStart(2, '0')}.png`, clip: { x: bx.x, y: bx.y + 100, width: 300, height: 110 } });
+    await p.screenshot({ path: `${out}/${String(i).padStart(2, '0')}.png`, clip: { x: bx.x, y: bx.y + 100, width: Number(process.env.CLIPW || 300), height: 110 } });
   }
   await b.close();
 })();
