@@ -130,7 +130,7 @@ export class MathEditor implements ToolbarHost {
     if (this.opts.fontsUrl) {
       injectVendorFonts(this.opts.fontsUrl, container.ownerDocument);
       const doc = container.ownerDocument;
-      const want = ['Conv_math1', 'Conv_brackets', 'Conv_brack_sm', 'Conv_roundBrackets1854'];
+      const want = ['Conv_math1', 'Conv_brackets', 'Conv_brack_sm', 'Conv_roundBrackets1854', 'Conv_horizontal'];
       void Promise.all(want.map((f) => doc.fonts.load(`16px ${f}`)))
         .then((r) => {
           if (r.every((faces) => faces.length > 0)) {

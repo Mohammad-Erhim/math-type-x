@@ -17,8 +17,10 @@ export type Item =
   | { k: 'g'; x: number; y: number; text: string; size: number; font: FontKind; italic?: boolean; bold?: boolean; color?: string; w?: number; flip?: boolean }
   | { k: 'f'; x: number; y: number; ch: string; w: number; a: number; d: number; size: number; color?: string; close?: boolean; dy?: number }
   | { k: 'r'; x: number; y: number; w: number; h: number; color?: string; ui?: boolean }
-  | { k: 'p'; x: number; y: number; d: string; color?: string; fill?: boolean; sw?: number; ui?: boolean; flip?: boolean }
-  | { k: 's'; x: number; y: number; w: number; h: number; small?: boolean };
+  | { k: 'p'; x: number; y: number; d: string; color?: string; fill?: boolean; sw?: number; ui?: boolean; flip?: boolean; dash?: string }
+  | { k: 's'; x: number; y: number; w: number; h: number; small?: boolean }
+  /** a stretched horizontal brace / parenthesis / bracket of the reference's Conv_horizontal font: `n` line pieces per side */
+  | { k: 'h'; x: number; y: number; w: number; shape: 'brace' | 'paren' | 'bracket'; top: boolean; n: number; color?: string };
 
 export interface Placed {
   b: Box;
@@ -288,7 +290,7 @@ export function layoutRow(row: Row, env: Env, path: [number, number][] = [], bas
     let gap = at.lpad;
     if (prev) {
       gap += prev.rpad;
-      if (prev.italic && !at.italic && at.tag !== 'mspace') gap += icor;
+      if (prev.italic && !at.italic) gap += icor;
     }
     x += gap;
     if (!whole) x = Math.round(x); // script sizes: scaled (fractional) paddings, positions snap to whole pixels
@@ -376,6 +378,29 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
     return { from, to, box: mk(w, h, dd), tag, lpad: 0, rpad: 0, italic: false };
   }
   if (tag === 'none' || tag === 'mprescripts') return { from, to, box: mk(0, 0, 0), tag, lpad: 0, rpad: 0, italic: false };
+  // the invisible operators (function application, invisible times / separator / plus) are shown by the editor as the
+  // glyph they stand for inside a dotted frame
+  if (tag === 'mo' && to - from === 1 && /^[\u2061-\u2064]$/.test(text)) {
+    const glyph = ({ '\u2061': '\u2218', '\u2062': '\u00b7', '\u2063': ',', '\u2064': '+' } as Record<string, string>)[text];
+    const gi = tokenInfo('mo', '', glyph, env.size);
+    const gw = Math.ceil(gi.w);
+    const sA = textAsc(env.size);
+    const sD = textDesc(env.size);
+    const col = getAttr(el, 'mathcolor') ?? env.color;
+    const box = mk(gw, sA, sD, [
+      { k: 'g', x: 0, y: 0, text: glyph, size: env.size, font: 'math', color: col, w: gi.w },
+      { k: 'p', x: 0.5, y: -sA + 0.5, d: `M0 0H${gw - 1}V${sA + sD - 2}H0Z`, sw: 1, color: col, dash: '1 1' },
+    ]);
+    return { from, to, box, tag, lpad: 0, rpad: 0, italic: false };
+  }
+  // angle brackets written as operators are drawn like those of a fence: two diagonal strokes (10 / 11 px advance)
+  if (tag === 'mo' && to - from === 1 && /^[\u27e8\u27e9\u2329\u232a]$/.test(text)) {
+    const close = text === '\u27e9' || text === '\u232a';
+    const sA = textAsc(env.size);
+    const sD = textDesc(env.size);
+    const box = mk((close ? 11 : 10) * sc(env), sA, sD, [{ k: 'f', x: 0, y: 0, ch: text, w: 6, a: sA - 1, d: sD, size: env.size, color: getAttr(el, 'mathcolor') ?? env.color, close }]);
+    return { from, to, box, tag, lpad: 0, rpad: 0, italic: false };
+  }
   const largeop = tag === 'mo' && getAttr(el, 'largeop') === 'true';
   let size = env.size;
   const cp = text.codePointAt(0) ?? 0;
@@ -418,7 +443,16 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   void italicDefault;
   const box = mk(info.w, asc, desc, items);
   const rnd = env.size >= 15.5 ? Math.round : (v: number) => v;
-  return { from, to, box, tag, lpad: rnd(info.lpad), rpad: rnd(info.rpad), italic: italicFlag && tag === 'mi' && font === 'sans', inner };
+  // an operator's own spacing (the Left / Right spacing controls) replaces the default one
+  let lpad = rnd(info.lpad);
+  let rpad = rnd(info.rpad);
+  if (tag === 'mo' && to - from === 1) {
+    const ls = getAttr(el, 'lspace');
+    const rs = getAttr(el, 'rspace');
+    if (ls !== undefined) lpad = rnd(lenPx(ls, env));
+    if (rs !== undefined) rpad = rnd(lenPx(rs, env));
+  }
+  return { from, to, box, tag, lpad, rpad, italic: italicFlag && tag === 'mi' && font === 'sans', inner };
 }
 
 function lenPx(v: string | undefined, env: Env): number {
@@ -426,8 +460,11 @@ function lenPx(v: string | undefined, env: Env): number {
   const m = /^(-?[\d.]+)\s*(px|em|ex)?$/.exec(v.trim());
   if (!m) return 0;
   const n = parseFloat(m[1]);
-  const u = m[2] ?? 'px';
-  return u === 'em' ? n * env.size : u === 'ex' ? n * env.size * 0.5 : n;
+  // the reference's em is 20 px at the 16 px text size (the height of a line) and its ex half of that; a number
+  // without a unit is no length
+  const u = m[2];
+  if (!u) return 0;
+  return u === 'em' ? (n * env.size * 5) / 4 : u === 'ex' ? (n * env.size * 5) / 8 : n;
 }
 
 function withColor(el: El, env: Env): Env {
@@ -510,18 +547,18 @@ function fraction(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const den = R(1, innerEnv);
   void nested;
   if (bevelled) {
-    // a/b with a slash: numerator raised, denominator lowered
-    const gap = 1;
-    const slashW = Math.round(10 * s);
-    const w = round(num.w) + slashW + round(den.w) + gap * 2;
-    const raise = 6 * s;
+    // a/b with a slash (measured on the reference): numerator 3 px above and denominator 3 px below the line, a stroke
+    // 9 px wide and 18 px high from the top of the numerator to the baseline of the denominator, 1 px into the numerator
+    const nw = round(num.w);
+    const slashX = nw - Math.round(1 * s);
+    const denX = slashX + Math.round(9 * s);
+    const lift = 3 * s;
     const kids: Placed[] = [
-      { b: num, x: 0, y: -raise },
-      { b: den, x: round(num.w) + slashW + gap, y: raise * 0.6 },
+      { b: num, x: 0, y: -lift },
+      { b: den, x: denX, y: lift - 0.5 * s },
     ];
-    const h = num.a + num.d + raise;
-    const slash: Item = { k: 'p', x: round(num.w) + gap, y: -(num.a + raise - 4), d: `M0 ${h * 0.95} L${slashW} 0`, sw: 1, color: env.color };
-    return mk(w, num.a + raise, den.d + raise * 0.6, [slash], kids);
+    const slash: Item = { k: 'p', x: slashX, y: -15 * s, d: `M${9 * s} 0 L0 ${17.5 * s}`, sw: 1, color: env.color };
+    return mk(denX + round(den.w), num.a + lift, den.d + lift, [slash], kids);
   }
   const shift = K.fracShift * s;
   const ruleW = Math.max(round(num.w), round(den.w)) + 4;
@@ -782,7 +819,71 @@ function accentLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | n
   return mk(w, a, d, items, kids);
 }
 
+const HBRACE: Record<string, { shape: 'brace' | 'paren' | 'bracket'; top: boolean }> = {
+  '\u23DE': { shape: 'brace', top: true },
+  '\u23DF': { shape: 'brace', top: false },
+  '\u23DC': { shape: 'paren', top: true },
+  '\u23DD': { shape: 'paren', top: false },
+  '\u23B4': { shape: 'bracket', top: true },
+  '\u23B5': { shape: 'bracket', top: false },
+};
+
+/** room between a base and the stretched brace row (measured on the reference for letters, digits and structures) */
+function braceGap(baseRow: Row, top: boolean): number {
+  const text = leafText(baseRow);
+  const tokens = !!text && !baseRow.some((e) => e.c !== undefined && e.t !== 'mrow');
+  const tallInk = /[A-Zb-dfh-lt0-9()[\]{}|/+\-=<>]/.test(text);
+  const hasDesc = /[gjpqy]/.test(text);
+  const structure = !tokens;
+  const bigStruct = baseRow.some((e) => e.t === 'mfrac');
+  const hasOp = baseRow.some((e) => e.c === undefined && e.t === 'mo');
+  if (top) return structure ? (bigStruct ? 6 : 4) : hasOp ? 5.5 : tallInk ? 4 : 2;
+  return structure ? (bigStruct ? 4 : 2) : hasDesc ? 6 : /^[0-9A-Z]+$/.test(text) ? 2 : 4;
+}
+
+/** over / under a base: braces, parentheses and brackets stretched to the base (pieces of the reference's horizontal font) */
+function braceLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | null {
+  if ((el.t !== 'mover' && el.t !== 'munder') || !el.c || el.c.length !== 2) return null;
+  const acc = el.c[1];
+  if (acc.length !== 1 || acc[0].c !== undefined || acc[0].t !== 'mo') return null;
+  const spec = HBRACE[acc[0].x ?? ''];
+  if (!spec) return null;
+  const s = sc(env);
+  const base = R(0);
+  const bw = round(base.w);
+  const braces = spec.shape === 'brace';
+  // the stretched piece row is 12 wide (9 for parentheses and brackets) at least; each side grows by 4 px per line piece
+  const minW = braces ? 12 : 9;
+  const W = Math.max(bw, minW * s);
+  const n = Math.max(0, Math.floor((W - minW * s) / ((braces ? 8 : 4) * s)));
+  const extent = (braces ? 8 * n + 12 : 4 * n + 9) * s;
+  const x0 = Math.floor((W - extent) / 2);
+  const baseRow = el.c[0];
+  const gap = braceGap(baseRow, spec.top) * s;
+  const bx = Math.floor((W - bw) / 2);
+  const kids: Placed[] = [{ b: base, x: bx, y: 0 }];
+  let a = base.a;
+  let d = base.d;
+  let y: number;
+  if (spec.top) {
+    a = base.a + gap;
+    y = -a - Math.min(gap, 4 * s);
+  } else {
+    d = base.d + gap;
+    y = d - 10 * s;
+  }
+  // the brace is a slot of its own (the caret can enter it): an invisible row keeps the geometry of the glyph
+  const r1 = R(1);
+  const meta = mk(r1.w, r1.a, r1.d);
+  meta.row = r1.row;
+  kids.push({ b: meta, x: x0, y: spec.top ? y + 11 * s : y + 8 * s });
+  const items: Item[] = [{ k: 'h', x: x0, y, w: extent, shape: spec.shape, top: spec.top, n, color: env.color }];
+  return mk(W, a, d, items, kids);
+}
+
 function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
+  const brace = braceLayout(el, env, R);
+  if (brace) return brace;
   const acc = accentLayout(el, env, R);
   if (acc) return acc;
   const s = sc(env);
@@ -817,14 +918,26 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const kids: Placed[] = [{ b: base, x: Math.floor((w - bw) / 2), y: 0 }];
   let a = base.a;
   let d = base.d;
+  // a base of letters / digits: the scripts keep a constant distance from the ink of the base (measured on the reference)
+  const baseText = leafText(el.c![0]);
+  const tok = !big && !!baseText && !el.c![0].some((e) => e.c !== undefined && e.t !== 'mrow');
+  const inkTall = /[A-Zb-dfh-lt0-9()[\]{}|/]/.test(baseText);
+  const inkDesc = /[gjpqy]/.test(baseText);
+  const inkDigits = /^[0-9A-Z]+$/.test(baseText);
+  // a sign of the symbol font in the base reaches higher / lower than the letters
+  const inkOp = /[+\-=<>\u00b1\u00d7\u00f7\u2212\u2264\u2265\u2260]/.test(baseText);
   if (over) {
     // big operators: limit baseline 1.036 op-size above; accents: 8.1 px above the base row top line
-    const y = big ? (-1.0358 + K.bigScriptDrop) * os : -(base.a - 2 + 1.5 * s);
+    // over a stretched brace: the script sits just above the brace row's ink
+    const inner = el.c![0].length === 1 ? el.c![0][0] : null;
+    const braced = !!inner && (inner.t === 'mover' || inner.t === 'munder') && !!inner.c && inner.c.length === 2 && inner.c[1].length === 1 && !!HBRACE[inner.c[1][0].x ?? ''];
+    const braceOff = braced ? 1 + Math.min(braceGap(inner!.c![0], HBRACE[inner!.c![1][0].x ?? ''].top), 4) / 2 : 2;
+    const y = big ? (-1.0358 + K.bigScriptDrop) * os : tok ? -((inkOp ? 15 : inkTall ? 12 : 8) + 4.5) * s : -(base.a + braceOff * s);
     kids.push({ b: over, x: Math.floor((w - round(over.w)) / 2), y });
-    a = Math.max(a, -y + over.a + (big ? 2 : 0));
+    a = Math.max(a, -y + over.a + 2);
   }
   if (under) {
-    const y = big ? (0.506 + K.bigScriptDrop) * os : base.d + under.a - 2.5 * s;
+    const y = big ? (0.506 + K.bigScriptDrop) * os : tok ? (inkDesc ? 18 : inkDigits ? 14 : 16) * s : base.d + under.a - 0.5 * s;
     kids.push({ b: under, x: Math.floor((w - round(under.w)) / 2), y });
     d = Math.max(d, y + under.d);
   }
@@ -837,7 +950,9 @@ function fenceBox(ch: string, isClose: boolean, a: number, d: number, env: Env, 
   if (ch === '') return mk(0, 0, 0);
   // tall bars are assembled from narrow pieces, braces from wider ones (measured on the reference)
   const tallAdv = ch === '|' ? (isClose ? 3 : 2) : ch === '||' ? (isClose ? 6 : 5) : ch === '{' ? 7 : ch === '}' ? 8 : 6;
-  const adv = tall ? tallAdv * s : Math.round(gw);
+  // angle brackets are a pair of diagonal strokes: 9 px in front of the content, 11 behind it (measured on the reference)
+  const angle = ch === '\u27e8' || ch === '\u27e9' || ch === '\u2329' || ch === '\u232a';
+  const adv = angle ? (isClose ? 11 : 9) * s : tall ? tallAdv * s : Math.round(gw);
   // delimiters around a table hang one pixel lower than around other content (measured on the reference)
   return mk(adv, a, d, [{ k: 'f', x: 0, y: 0, ch, w: gw, a: a - 1, d, size: env.size, color: env.color, close: isClose, dy }]);
 }
@@ -934,7 +1049,7 @@ function padded(el: El, env: Env, body: Box): Box {
   const len = (v: string | undefined) => {
     if (!v) return 0;
     const m = /^([+-]?[\d.]+)\s*(px|em|ex)?$/.exec(v.trim());
-    return m ? parseFloat(m[1]) * (m[2] === 'em' ? env.size : m[2] === 'ex' ? env.size / 2 : 1) : 0;
+    return m && m[2] ? parseFloat(m[1]) * (m[2] === 'em' ? env.size * 1.25 : m[2] === 'ex' ? env.size * 0.625 : 1) : 0;
   };
   const dx = len(getAttr(el, 'lspace'));
   const dy = len(getAttr(el, 'voffset'));
@@ -1122,7 +1237,7 @@ function stackOpts(el: El, s: number): StackOpts {
   let spacing = 3 * s;
   if (sp && sp !== 'medium') {
     const m = /^(-?[\d.]+)\s*(px|em|ex)?$/.exec(sp.trim());
-    if (m) spacing = parseFloat(m[1]) * (m[2] === 'em' ? 16 * s : m[2] === 'ex' ? 8 * s : 1);
+    if (m) spacing = parseFloat(m[1]) * (m[2] === 'em' ? 20 * s : m[2] === 'ex' ? 10 * s : 1);
   }
   return { stackalign: getAttr(el, 'stackalign') ?? 'right', charalign: getAttr(el, 'charalign') ?? 'right', spacing };
 }
@@ -1586,6 +1701,7 @@ function mirrorItem(it: Item, W: number): Item {
     }
     case 'r':
     case 's':
+    case 'h':
       return { ...it, x: W - it.x - it.w };
     case 'p':
       return { ...it, x: W - it.x, flip: !it.flip };

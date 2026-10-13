@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
     const b = await chromium.launch({ channel: 'chrome' });
     const p = await (await b.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 2 })).newPage();
     await p.goto(url, { waitUntil: 'load', timeout: 150000 });
-    await p.addStyleTag({ content: '#onetrust-consent-sdk,#onetrust-banner-sdk,.onetrust-pc-dark-filter{display:none !important}' });
+    await p.addStyleTag({ content: '#onetrust-consent-sdk,#onetrust-banner-sdk,.onetrust-pc-dark-filter{display:none !important} .wrs_caret,.wrs_underlineCaret{display:none !important}' });
     await p.waitForFunction(() => window.editor && document.querySelector('#editorContainer .wrs_toolbar button.wrs_button'), null, { timeout: 90000 });
     await p.waitForTimeout(2500);
     await p.locator('#editorContainer').scrollIntoViewIfNeeded();
@@ -18,7 +18,7 @@ const { chromium } = require('playwright');
       await p.mouse.click(5, 400);
       await p.waitForTimeout(300);
       const bx = await p.locator('#editorContainer').boundingBox();
-      list.push(await p.screenshot({ clip: { x: bx.x, y: bx.y + 95, width: 160, height: 90 } }));
+      list.push(await p.screenshot({ clip: { x: bx.x, y: bx.y + 95, width: +(process.env.W || 160), height: +(process.env.H || 90) } }));
     }
     shots.push(list);
     await b.close();

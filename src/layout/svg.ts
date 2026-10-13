@@ -117,6 +117,17 @@ function fenceSvg(it: Extract<Item, { k: 'f' }>, fg: string): string {
   const top = it.y - it.a;
   const bot = it.y + it.d;
   const h = bot - top;
+  // angle brackets: two diagonal strokes, 6 px wide (the reference draws them as a pair of SVG lines)
+  if (it.ch === '\u27e8' || it.ch === '\u27e9' || it.ch === '\u2329' || it.ch === '\u232a') {
+    const open = it.ch === '\u27e8' || it.ch === '\u2329';
+    const x0 = it.x + (open ? 2 : 3);
+    const xa = open ? x0 + 6 : x0;
+    const xb = open ? x0 : x0 + 6;
+    const t = top + 2;
+    const b = bot - 2;
+    const m = Math.round((t + b) / 2);
+    return `<path d="M${r(xa)} ${r(t)} L${r(xb)} ${r(m)} L${r(xa)} ${r(b)}" fill="none" stroke="${color}" stroke-width="1"/>`;
+  }
   if (vendorFonts) {
     const vf = vendorFence(it, color);
     if (vf) return vf;
@@ -176,6 +187,54 @@ function fenceSvg(it: Extract<Item, { k: 'f' }>, fg: string): string {
   return `<text x="${r(it.x)}" y="${r(it.y)}" font-size="${r(it.size)}" font-family="${FONT}" fill="${color}">${esc(it.ch)}</text>`;
 }
 
+/** stretched braces, parentheses and brackets: pieces of the reference's Conv_horizontal font (12 px, 4 px apart), or paths */
+const H_PIECES: Record<string, { left: number; peak?: number; right: number }> = {
+  'brace/true': { left: 0xf302, peak: 0xf305, right: 0xf303 },
+  'brace/false': { left: 0xf300, peak: 0xf304, right: 0xf301 },
+  'paren/true': { left: 0xf306, right: 0xf307 },
+  'paren/false': { left: 0xf308, right: 0xf309 },
+  'bracket/true': { left: 0xf30a, right: 0xf30b },
+  'bracket/false': { left: 0xf30c, right: 0xf30d },
+};
+function horizontalSvg(it: Extract<Item, { k: 'h' }>, color: string): string {
+  const spec = H_PIECES[`${it.shape}/${it.top}`];
+  const n = it.n;
+  const xs: [number, number][] = []; // [x, code]
+  if (it.shape === 'brace') {
+    xs.push([0, spec.left]);
+    for (let i = 0; i < n; i++) xs.push([4 * (i + 1), 0x23af]);
+    const peak = 4 * (n + 1);
+    xs.push([peak, spec.peak!]);
+    for (let j = 0; j < n; j++) xs.push([peak + 3 + 4 * j, 0x23af]);
+    xs.push([peak + 4 * n + 3, spec.right]);
+  } else {
+    xs.push([0, spec.left]);
+    for (let i = 0; i < n; i++) xs.push([4 * (i + 1), 0x23af]);
+    xs.push([4 * (n + 1), spec.right]);
+  }
+  if (vendorFonts) {
+    // the pieces sit in 14 px boxes; their ink is the lower (upper for under braces) part
+    return xs.map(([x, c]) => `<text x="${r(it.x + x)}" y="${r(it.y + 12)}" font-size="12" font-family="'Conv_horizontal'" fill="${color}">${String.fromCodePoint(c)}</text>`).join('');
+  }
+  // without the vendor font: a curve of the same extent
+  const x0 = it.x;
+  const x1 = it.x + it.w;
+  const yTip = it.top ? it.y + 3 : it.y + 11; // the line the ends sit on / the peak
+  const yEnd = it.top ? it.y + 10 : it.y + 4;
+  const mid = (x0 + x1) / 2;
+  const dir = it.top ? -1 : 1;
+  let d = '';
+  if (it.shape === 'brace') {
+    d = `M${r(x0)} ${r(yEnd)} Q${r(x0)} ${r(yEnd + dir * 3)} ${r(x0 + 4)} ${r(yEnd + dir * 3)} L${r(mid - 4)} ${r(yEnd + dir * 3)} Q${r(mid)} ${r(yEnd + dir * 3)} ${r(mid)} ${r(yEnd + dir * 6)} Q${r(mid)} ${r(yEnd + dir * 3)} ${r(mid + 4)} ${r(yEnd + dir * 3)} L${r(x1 - 4)} ${r(yEnd + dir * 3)} Q${r(x1)} ${r(yEnd + dir * 3)} ${r(x1)} ${r(yEnd)}`;
+  } else if (it.shape === 'paren') {
+    d = `M${r(x0)} ${r(yEnd)} Q${r(x0)} ${r(yEnd + dir * 4)} ${r(x0 + 4)} ${r(yEnd + dir * 4)} L${r(x1 - 4)} ${r(yEnd + dir * 4)} Q${r(x1)} ${r(yEnd + dir * 4)} ${r(x1)} ${r(yEnd)}`;
+  } else {
+    d = `M${r(x0)} ${r(yEnd)} L${r(x0)} ${r(yEnd + dir * 4)} L${r(x1)} ${r(yEnd + dir * 4)} L${r(x1)} ${r(yEnd)}`;
+  }
+  void yTip;
+  return `<path d="${d}" fill="none" stroke="${color}" stroke-width="1"/>`;
+}
+
 export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sans?: string; ui?: boolean } = {}): string {
   const fg = opts.fg ?? '#000';
   let o = '';
@@ -207,7 +266,10 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
         o += `<rect x="${Math.round(it.x)}" y="${Math.round(it.y)}" width="${Math.max(1, Math.round(it.w))}" height="${Math.max(1, Math.round(it.h))}" fill="${it.color ?? fg}"/>`;
         break;
       case 'p':
-        o += `<path transform="translate(${r(it.x)} ${r(it.y)})${it.flip ? ' scale(-1 1)' : ''}" d="${it.d}" fill="${it.fill ? it.color ?? fg : 'none'}" stroke="${it.color ?? fg}" stroke-width="${it.sw ?? 1}"/>`;
+        o += `<path transform="translate(${r(it.x)} ${r(it.y)})${it.flip ? ' scale(-1 1)' : ''}" d="${it.d}" fill="${it.fill ? it.color ?? fg : 'none'}" stroke="${it.color ?? fg}" stroke-width="${it.sw ?? 1}"${it.dash ? ` stroke-dasharray="${it.dash}"` : ''}/>`;
+        break;
+      case 'h':
+        o += horizontalSvg(it, it.color ?? fg);
         break;
       case 's':
         o += `<rect x="${r(it.x) + 0.5}" y="${r(it.y) + 0.5}" width="${r(it.w) - 1}" height="${r(it.h) - 1}" fill="none" stroke="${opts.slot ?? SLOT_COLOR}" stroke-width="1"/>`;
