@@ -177,11 +177,11 @@ export const CSS = `
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
 .wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}
 .wrs_reflow .wrs_line{display:none}
-.wrs_reflow .wrs_expandButton{width:26px;box-sizing:border-box;border:0;border-radius:2px;background:rgba(119,142,154,.2)}
+.wrs_reflow .wrs_expandButton{width:26px;box-sizing:border-box;border:0;border-radius:2px;background:transparent}
 .wrs_reflow .wrs_expandButton::after{left:8px;top:calc(50% - 3px);border-width:7px 5px 0 5px;border-color:#51636d transparent transparent transparent}
 .wrs_reflow .wrs_expandButton.wrs_pressed,.wrs_reflow .wrs_expandButton[aria-expanded=true]{background:#778e9a;box-shadow:0 0 10px rgba(52,64,84,.2)}
 .wrs_reflow .wrs_expandButton.wrs_pressed::after,.wrs_reflow .wrs_expandButton[aria-expanded=true]::after{border-color:#fff transparent transparent transparent}
-.wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true]),.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true]){background:rgba(119,142,154,.2);box-shadow:none}
+.wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true]),.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true]){background:transparent;box-shadow:none}
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true])::after,.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true])::after{border-color:#51636d transparent transparent transparent}
 .wrs_navPad{position:absolute;right:38px;top:356px;z-index:6;display:grid;grid-template-columns:repeat(5,48px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
 .wrs_fluid .wrs_navPad{position:relative;right:auto;top:auto;flex:none;width:100%;box-sizing:border-box;justify-content:end;padding:4px 8px;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed)}
