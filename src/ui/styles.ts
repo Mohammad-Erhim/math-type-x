@@ -134,10 +134,10 @@ export const CSS = `
 .wrs_unicodeChooserPanel>div:first-child input{position:absolute;left:39px;top:6px;width:65px;height:16px;padding:0 4px}
 .wrs_unicodeChooserPanel>div:first-child select{position:absolute;left:112px;top:0;width:99px;height:30px;padding:0 6px;border-color:#8992a4}
 .wrs_unicodeChooserTableContainer{position:absolute;left:9px;top:47px;width:207px;height:150px;overflow-x:hidden;overflow-y:auto}
-.wrs_unicodeChooserPanel.wrs_zulfiMode{width:350px;height:300px}
-.wrs_zulfiMode>div:first-child{width:332px!important}
-.wrs_zulfiMode>div:first-child select{width:215px!important}
-.wrs_zulfiMode .wrs_unicodeChooserTableContainer{width:332px;height:244px}
+.wrs_unicodeChooserPanel.wrs_zulfiMode{width:min(350px,calc(100vw - 24px));height:330px;max-width:100%}
+.wrs_zulfiMode>div:first-child{width:calc(100% - 18px)!important;height:70px!important}
+.wrs_zulfiMode>div:first-child select{left:0!important;top:34px!important;width:100%!important;height:32px!important}
+.wrs_zulfiMode .wrs_unicodeChooserTableContainer{top:84px;width:calc(100% - 18px);height:236px}
 .wrs_zulfiMode .wrs_unicodeTable td{padding:0}
 .wrs_unicodeTable td{width:17px;height:17px;background:#fff;border-right:1px solid #ddd;border-bottom:1px solid #ddd}
 .wrs_zulfiButton svg{display:block;margin:auto}

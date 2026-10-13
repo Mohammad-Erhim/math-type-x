@@ -1078,7 +1078,8 @@ export class MathEditor implements ToolbarHost {
       current = cps;
       container.textContent = '';
       const tb = h('tbody');
-      const COLS = el.classList.contains('wrs_zulfiMode') ? 8 : 9;
+      // the shapes are 40 px cells: as many columns as the panel is wide
+      const COLS = el.classList.contains('wrs_zulfiMode') ? Math.max(4, Math.min(8, Math.floor((container.clientWidth || 320) / 40))) : 9;
       const max = Math.min(cps.length, 3600);
       for (let i = 0; i < max; i += COLS) {
         const tr = h('tr');
@@ -1114,6 +1115,8 @@ export class MathEditor implements ToolbarHost {
     const showCategory = () => {
       // the Arabic math symbols are bigger shapes: the panel grows for them
       el.classList.toggle('wrs_zulfiMode', cat.value.startsWith('Z:'));
+      // the bigger panel must stay on the screen
+      this.fitInside(el);
       if (cat.value.startsWith('Z:')) fill(ZULFI_GROUPS.find((g) => g.id === cat.value.slice(2))?.items ?? []);
       else fill((unicodeData as any)[CATS.find((c) => c[0] === cat.value)![1]]);
     };
