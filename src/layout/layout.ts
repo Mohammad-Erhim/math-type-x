@@ -6,6 +6,7 @@
  * Constants were calibrated against the measured geometry of the reference editor (16 px base size,
  * integer pixel grid, Arial advances) — see evidence/measure_*.json and tests/layout.test.ts.
  */
+import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr } from '../core/model';
 import { glyphText } from './glyphs';
 import { tokenInfo, FontKind, isBigOp, isIntegral } from './metrics';
@@ -20,7 +21,7 @@ export type Item =
   | { k: 'p'; x: number; y: number; d: string; color?: string; fill?: boolean; sw?: number; ui?: boolean; flip?: boolean; dash?: string }
   | { k: 's'; x: number; y: number; w: number; h: number; small?: boolean }
   /** a stretched horizontal brace / parenthesis / bracket of the reference's Conv_horizontal font: `n` line pieces per side */
-  | { k: 'h'; x: number; y: number; w: number; shape: 'brace' | 'paren' | 'bracket'; top: boolean; n: number; color?: string };
+  | { k: 'h'; x: number; y: number; w: number; shape: 'brace' | 'paren' | 'bracket' | 'arrow'; top: boolean; n: number; color?: string; arrow?: { l: number; m: number; r: number; ch: string } };
 
 export interface Placed {
   b: Box;
@@ -543,6 +544,8 @@ function fraction(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const depth = env.fracDepth ?? 0;
   const innerEnv: Env = { ...env, fracDepth: depth + 1 };
   if (depth > 0 && env.level === 0) innerEnv.size = Math.max(K.minScript, Math.round(env.size * K.scriptScale));
+  // a fraction in text style (mstyle displaystyle="false": the "Small fraction" control) is set at script size
+  else if (depth === 0 && env.level === 0 && env.display === false) innerEnv.size = Math.max(K.minScript, Math.round(env.size * K.scriptScale));
   const num = R(0, innerEnv);
   const den = R(1, innerEnv);
   void nested;
@@ -560,24 +563,28 @@ function fraction(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
     const slash: Item = { k: 'p', x: slashX, y: -15 * s, d: `M${9 * s} 0 L0 ${17.5 * s}`, sw: 1, color: env.color };
     return mk(denX + round(den.w), num.a + lift, den.d + lift, [slash], kids);
   }
-  const shift = K.fracShift * s;
+  // a fraction whose contents are set smaller (nested, or in text style) also has smaller offsets
+  const sf = innerEnv.size < env.size ? innerEnv.size / env.size * s : s;
+  const shift = K.fracShift * sf;
   const ruleW = Math.max(round(num.w), round(den.w)) + 4;
   const w = ruleW + 4;
   const numBase = -Math.max(shift, num.d + (num.italicEnd ? 0 : 0) + 6.5 * s - 1 + 1);
   const denBase = Math.max(shift, den.a + 0.5 * s - 0.5);
   void numBase;
   // measured: numerator baseline = rule top − 2 − num.desc ; denominator baseline = rule bottom + 1 + den.asc
-  const ruleTop = K.fracRuleTop * s;
-  const nb = ruleTop - (num.kidsOnly ? 1 : 2) - num.d;
-  const db = ruleTop + 1 + 1 + den.a;
+  const ruleTop = K.fracRuleTop * sf;
+  // smaller contents sit one pixel closer to the rule
+  const tight = sf < s ? 1 : 0;
+  const nb = ruleTop - (num.kidsOnly ? 1 : 2) + tight - num.d;
+  const db = ruleTop + 1 + 1 - tight + den.a;
   const numY = Math.min(nb, -shift);
-  const denY = Math.max(db, shift - 2 * s);
+  const denY = Math.max(db, shift - 2 * sf);
   const items: Item[] = [{ k: 'r', x: 2, y: ruleTop, w: ruleW, h: 1, color: env.color }];
   const kids: Placed[] = [
     { b: num, x: 2 + round((ruleW - round(num.w)) / 2), y: numY },
     { b: den, x: 2 + round((ruleW - round(den.w)) / 2), y: denY },
   ];
-  return mk(w, -numY + num.a, denY + den.d, items, kids);
+  return mk(w, -numY + num.a + tight, denY + den.d, items, kids);
 }
 
 
@@ -732,12 +739,14 @@ function accentLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | n
   const kind = ACC_BAR.has(ch) ? 'bar' : ACC_ARROW.has(ch) ? 'arrow' : ch === '^' ? 'hat' : ch === '~' || ch === '\u223C' ? 'tilde' : ch === '\u02D9' ? 'dot' : ch === '\u00A8' ? 'dia' : null;
   if (!kind) return null;
   const baseRow = el.c[0];
-  const text = leafText(baseRow);
-  if (!text || baseRow.some((e) => e.c !== undefined && !(e.t === 'mrow'))) return null; // only token bases
+  // an empty base (its placeholder box) carries the accent right above the box
+  const emptyBase = baseRow.length === 0;
+  const text = emptyBase ? '' : leafText(baseRow);
+  if ((!text && !emptyBase) || baseRow.some((e) => e.c !== undefined && !(e.t === 'mrow'))) return null; // only token bases
   const s = sc(env);
   const base = R(0);
   const bw = round(base.w);
-  const tall = /[A-Zb-dfh-lt0-9()\[\]{}|\/]/.test(text);
+  const tall = emptyBase || /[A-Zb-dfh-lt0-9()\[\]{}|\/]/.test(text);
   const hasDesc = /[gjpqy]/.test(text);
   const lastIt = baseRow[baseRow.length - 1];
   const italic = !!lastIt && lastIt.t === 'mi' && getAttr(lastIt, 'mathvariant') === undefined && !lastIt.up;
@@ -749,7 +758,7 @@ function accentLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | n
   let a = base.a;
   let d = base.d;
   if (el.t === 'mover') {
-    const cy = -(tall ? 15.95 : 11.5) * s; // centre line of the accent above the baseline
+    const cy = emptyBase ? -(K.slotBoxH + 5 + 1.45) * s : -(tall ? 15.95 : 11.5) * s; // centre line of the accent above the baseline
     if (kind === 'bar') {
       const n = Math.max(1, Math.round(bw / 4));
       const W = 4 * n + 1;
@@ -767,7 +776,7 @@ function accentLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | n
       const hw = 9;
       w = Math.max(bw, hw + 1);
       const x0 = Math.max(0, Math.floor((bw - hw) / 2 + (italic ? 1 : 0)));
-      const top = -(tall ? 14.5 : 10.5) * s;
+      const top = emptyBase ? -(K.slotBoxH + 0.5 + 5) * s : -(tall ? 14.5 : 10.5) * s;
       items.push({ k: 'p', x: x0, y: top, d: `M0 3L4.5 0L9 3`, sw: 1, color });
       a = Math.max(a, -top + 1);
     } else {
@@ -881,7 +890,50 @@ function braceLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | nu
   return mk(W, a, d, items, kids);
 }
 
+/** extensible arrows (an arrow operator with scripts over / under it): stretched from the pieces of the reference's horizontal font */
+function arrowLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | null {
+  if ((el.t !== 'mover' && el.t !== 'munder' && el.t !== 'munderover') || !el.c) return null;
+  const row = el.c[0];
+  if (row.length !== 1 || row[0].c !== undefined || row[0].t !== 'mo') return null;
+  const ch = row[0].x ?? '';
+  const cp = ch.codePointAt(0);
+  const info = cp === undefined || [...ch].length !== 1 ? undefined : (ARROW_PIECES as Record<string, { l: number; m: number; r: number; min: number; two: boolean }>)[cp.toString(16).toUpperCase().padStart(4, '0')];
+  if (!info) return null;
+  const s = sc(env);
+  const se = scriptEnv(env);
+  const hasUnder = el.t === 'munder' || el.t === 'munderover';
+  const hasOver = el.t === 'mover' || el.t === 'munderover';
+  const under = hasUnder ? R(1, se) : null;
+  const over = hasOver ? R(el.t === 'mover' ? 1 : 2, se) : null;
+  const ws = Math.max(over ? over.w : 0, under ? under.w : 0);
+  // pieces 6 px apart; the arrow is the shortest one that leaves 16.6 px more than the widest script
+  const pieces = Math.max(info.min, Math.ceil((ws + 16.6 * s - 6.7 * s) / (6 * s)) + 1);
+  const L = 6 * s * (pieces - 1) + 6.7 * s;
+  const W = Math.round(L);
+  const base = R(0);
+  const items: Item[] = [{ k: 'h', x: 0, y: -14 * s, w: L, shape: 'arrow', top: false, n: pieces, color: env.color, arrow: { l: info.l, m: info.m, r: info.r, ch } }];
+  const kids: Placed[] = [];
+  const meta = mk(base.w, base.a, base.d);
+  meta.row = base.row;
+  kids.push({ b: meta, x: 0, y: 0 });
+  let a = 14 * s;
+  let d = 4 * s;
+  if (over) {
+    const y = -(info.two ? 11 : 9) * s;
+    kids.push({ b: over, x: Math.floor((W - round(over.w)) / 2), y });
+    a = Math.max(a, -y + over.a + 2 * s);
+  }
+  if (under) {
+    const y = 13 * s;
+    kids.push({ b: under, x: Math.floor((W - round(under.w)) / 2), y });
+    d = Math.max(d, y + under.d);
+  }
+  return mk(W, a, d, items, kids);
+}
+
 function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
+  const arrow = arrowLayout(el, env, R);
+  if (arrow) return arrow;
   const brace = braceLayout(el, env, R);
   if (brace) return brace;
   const acc = accentLayout(el, env, R);
@@ -932,7 +984,7 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
     const inner = el.c![0].length === 1 ? el.c![0][0] : null;
     const braced = !!inner && (inner.t === 'mover' || inner.t === 'munder') && !!inner.c && inner.c.length === 2 && inner.c[1].length === 1 && !!HBRACE[inner.c[1][0].x ?? ''];
     const braceOff = braced ? 1 + Math.min(braceGap(inner!.c![0], HBRACE[inner!.c![1][0].x ?? ''].top), 4) / 2 : 2;
-    const y = big ? (-1.0358 + K.bigScriptDrop) * os : tok ? -((inkOp ? 15 : inkTall ? 12 : 8) + 4.5) * s : -(base.a + braceOff * s);
+    const y = big ? (-1.0358 + K.bigScriptDrop) * os : tok ? -((inkOp ? 15 : inkTall ? 12 : 8) + 4.5) * s : braced ? -(base.a + braceOff * s) : -(base.a - 2 + 1.5 * s);
     kids.push({ b: over, x: Math.floor((w - round(over.w)) / 2), y });
     a = Math.max(a, -y + over.a + 2);
   }
@@ -951,7 +1003,7 @@ function fenceBox(ch: string, isClose: boolean, a: number, d: number, env: Env, 
   // tall bars are assembled from narrow pieces, braces from wider ones (measured on the reference)
   const tallAdv = ch === '|' ? (isClose ? 3 : 2) : ch === '||' ? (isClose ? 6 : 5) : ch === '{' ? 7 : ch === '}' ? 8 : 6;
   // angle brackets are a pair of diagonal strokes: 9 px in front of the content, 11 behind it (measured on the reference)
-  const angle = ch === '\u27e8' || ch === '\u27e9' || ch === '\u2329' || ch === '\u232a';
+  const angle = ch === '\u27e8' || ch === '\u27e9' || ch === '\u2329' || ch === '\u232a' || ch === '<' || ch === '>';
   const adv = angle ? (isClose ? 11 : 9) * s : tall ? tallAdv * s : Math.round(gw);
   // delimiters around a table hang one pixel lower than around other content (measured on the reference)
   return mk(adv, a, d, [{ k: 'f', x: 0, y: 0, ch, w: gw, a: a - 1, d, size: env.size, color: env.color, close: isClose, dy }]);

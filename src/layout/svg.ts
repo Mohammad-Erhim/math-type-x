@@ -16,6 +16,8 @@ export const KIND_FONT: Record<string, string> = {
 /** family of letters and digits (the layout uses Arial advance widths) */
 export const SANS = "Arial,'Liberation Sans',Helvetica,sans-serif";
 export const SLOT_COLOR = '#006400';
+/** placeholders of script-sized slots are drawn fainter (measured on the reference) */
+export const SMALL_SLOT_COLOR = '#6aa46a';
 
 const r = (n: number) => Math.round(n * 100) / 100;
 export const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -118,8 +120,8 @@ function fenceSvg(it: Extract<Item, { k: 'f' }>, fg: string): string {
   const bot = it.y + it.d;
   const h = bot - top;
   // angle brackets: two diagonal strokes, 6 px wide (the reference draws them as a pair of SVG lines)
-  if (it.ch === '\u27e8' || it.ch === '\u27e9' || it.ch === '\u2329' || it.ch === '\u232a') {
-    const open = it.ch === '\u27e8' || it.ch === '\u2329';
+  if (it.ch === '\u27e8' || it.ch === '\u27e9' || it.ch === '\u2329' || it.ch === '\u232a' || it.ch === '<' || it.ch === '>') {
+    const open = it.ch === '\u27e8' || it.ch === '\u2329' || it.ch === '<';
     const x0 = it.x + (open ? 2 : 3);
     const xa = open ? x0 + 6 : x0;
     const xb = open ? x0 : x0 + 6;
@@ -197,6 +199,22 @@ const H_PIECES: Record<string, { left: number; peak?: number; right: number }> =
   'bracket/false': { left: 0xf30c, right: 0xf30d },
 };
 function horizontalSvg(it: Extract<Item, { k: 'h' }>, color: string): string {
+  if (it.shape === 'arrow' && it.arrow) {
+    const a = it.arrow;
+    if (vendorFonts) {
+      // pieces 6 px apart in the reference's horizontal font at 16 px (14 px from the top of the box to the baseline)
+      let o = '';
+      for (let i = 0; i < it.n; i++) {
+        const c = i === 0 ? a.l : i === it.n - 1 ? a.r : a.m;
+        o += `<text x="${r(it.x + 6 * i)}" y="${r(it.y + 14)}" font-size="16" font-family="'Conv_horizontal'" fill="${color}">${String.fromCodePoint(c)}</text>`;
+      }
+      return o;
+    }
+    // without the vendor font: the arrow glyph stretched to the length
+    const gw = 12;
+    const sx = it.w / gw;
+    return `<text transform="translate(${r(it.x)} ${r(it.y + 14)}) scale(${r(sx)} 1)" font-size="16" font-family="${FONT}" fill="${color}">${esc(a.ch)}</text>`;
+  }
   const spec = H_PIECES[`${it.shape}/${it.top}`];
   const n = it.n;
   const xs: [number, number][] = []; // [x, code]
@@ -272,7 +290,7 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
         o += horizontalSvg(it, it.color ?? fg);
         break;
       case 's':
-        o += `<rect x="${r(it.x) + 0.5}" y="${r(it.y) + 0.5}" width="${r(it.w) - 1}" height="${r(it.h) - 1}" fill="none" stroke="${opts.slot ?? SLOT_COLOR}" stroke-width="1"/>`;
+        o += `<rect x="${r(it.x) + 0.5}" y="${r(it.y) + 0.5}" width="${r(it.w) - 1}" height="${r(it.h) - 1}" fill="none" stroke="${it.small ? SMALL_SLOT_COLOR : opts.slot ?? SLOT_COLOR}" stroke-width="1"/>`;
         break;
     }
   }
