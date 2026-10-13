@@ -184,7 +184,8 @@ export const CSS = `
 .wrs_reflow .wrs_expandButton.wrs_pressed::after,.wrs_reflow .wrs_expandButton[aria-expanded=true]::after{border-color:#fff transparent transparent transparent}
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true]),.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true]){background:transparent;box-shadow:none}
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true])::after,.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true])::after{border-color:#51636d transparent transparent transparent}
-.wrs_navPad{position:absolute;right:38px;top:356px;z-index:6;display:grid;grid-template-columns:repeat(5,48px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.wrs_navPad{display:none;position:absolute;right:38px;top:356px;z-index:6;grid-template-columns:repeat(5,48px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.wrs_touch .wrs_navPad,.wrs_reflow .wrs_navPad,.wrs_fluid .wrs_navPad{display:grid;grid-template-columns:repeat(5,48px);gap:4px}
 .wrs_fluid .wrs_navPad{position:relative;right:auto;top:auto;flex:none;width:100%;box-sizing:border-box;justify-content:end;padding:4px 8px;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed)}
 /* the pad follows the toolbar's look: slate frame, light blue-grey face, cream when pressed */
 .wrs_editor .wrs_navKey{width:48px;height:48px;padding:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);color:#324d5b;font:700 19px/1 Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent}

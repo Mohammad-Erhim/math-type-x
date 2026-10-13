@@ -194,8 +194,7 @@ export class MathEditor implements ToolbarHost {
   /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
    * script, down to the denominator, to the next line) like the arrow keys do. */
   private buildNavPad(): void {
-    const touch = (typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches) || (typeof window !== 'undefined' && 'ontouchstart' in window);
-    if (!touch) return;
+    // built always; shown on touch screens and in narrow windows (CSS)
     // left / right, then up / down
     const keys: [string, string, string][] = [
       ['ArrowLeft', 'Move left', '◀'],
