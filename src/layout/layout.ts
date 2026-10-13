@@ -1243,7 +1243,10 @@ function padded(el: El, env: Env, body: Box): Box {
   };
   const dx = len(getAttr(el, 'lspace'));
   const dy = len(getAttr(el, 'voffset'));
-  return mk(body.w + Math.max(dx, 0), body.a + Math.max(dy, 0), body.d + Math.max(-dy, 0), undefined, [{ b: body, x: Math.max(dx, 0), y: -dy }]);
+  // the reference's convention (measured with its image service: voffset="+6px" sets the content 6 px lower, "-6px"
+  // higher – the opposite of the MathML specification), so that the Nudge buttons, which write -1px for "up", move the
+  // content the way their arrows point
+  return mk(body.w + Math.max(dx, 0), body.a + Math.max(-dy, 0), body.d + Math.max(dy, 0), undefined, [{ b: body, x: Math.max(dx, 0), y: dy }]);
 }
 
 function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
