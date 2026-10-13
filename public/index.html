@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MathType Playground</title>
+<meta name="description" content="See MathType in action! Type or handwrite a formula and copy it as MathML, LaTeX, SVG or PNG.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23778e9a'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='700'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="page.css">
+</head>
+<body>
+<main class="page">
+  <h1>See MathType in action!</h1>
+  <p class="lead">Try the editor below: use the toolbar, type with the keyboard or switch to handwriting mode.</p>
+  <!-- the host page hides the playground below 1275 px of viewport width (SRS UI-012) -->
+  <div class="wp-block-columns is-style-hidden-mobile is-layout-flex">
+    <div class="wp-block-column">
+      <div id="editorContainer"></div>
+      <div id="outputContainer"></div>
+    </div>
+  </div>
+  <p class="notice is-style-hidden-desktop">The interactive playground needs a wider screen (at least 1275&nbsp;px).</p>
+</main>
+<script src="editor.js"></script>
+<script src="demo.js"></script>
+</body>
+</html>

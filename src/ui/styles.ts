@@ -1,0 +1,168 @@
+/** Editor stylesheet (scoped under .wrs_editor, NFR-004). Values follow SRS Appendix H / the measured reference. */
+import skin from '../data/skin.json';
+
+export const CSS = `
+.wrs_editor{position:relative;width:725px;height:415px;margin:0;padding:0;font:16px sans-serif;color:#000;background:transparent;text-align:left;direction:ltr;line-height:normal;overflow:visible;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.wrs_editor *,.wrs_editor *::before,.wrs_editor *::after{box-sizing:border-box}
+.wrs_editor button{font:inherit;color:inherit;margin:0;padding:0;border:0;background:none;cursor:pointer;outline:0;appearance:none;-webkit-appearance:none}
+.wrs_editor svg{display:block}
+.wrs_toolbar{position:absolute;left:0;top:0;width:725px;height:97px;font-size:11px;font-weight:400}
+.wrs_linksContainer{position:absolute;left:705px;top:4px;width:18px;height:18px;z-index:5}
+.wrs_linkButton{display:block;width:18px;height:18px;overflow:hidden;cursor:pointer;outline:0;color:rgb(24,33,47)}
+.wrs_linkButton:focus-visible{outline:2px solid #778e9a;outline-offset:1px;border-radius:50%}
+.wrs_header{position:absolute;left:0;top:1px;width:725px;height:25px;z-index:2}
+.wrs_header>button[role=tab]{position:absolute;top:3px;width:44px;height:21px;border:0;border-radius:0;background:url(${skin.tab}) no-repeat 0 0;cursor:default;overflow:hidden}
+.wrs_header>button[role=tab]:hover{background-image:url(${skin.tabHover})}
+.wrs_header>button[role=tab] .wrs_imageContainer{position:absolute;left:7px;top:1px;width:30px;height:20px;pointer-events:none}
+.wrs_header>button[role=tab].wrs_context{background-image:url(${skin.ctx})}
+.wrs_header>button[role=tab].wrs_context:hover{background-image:url(${skin.ctxHover})}
+.wrs_header>button[role=tab].wrs_selected{top:0;height:25px;background-image:url(${skin.tabSel});z-index:3}
+.wrs_header>button[role=tab].wrs_selected.wrs_context{background-image:url(${skin.ctxSel})}
+.wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{top:2px}
+.wrs_header>button[role=tab]:focus-visible{outline:2px solid #ffcc00;outline-offset:-3px}
+.wrs_panelContainer{position:absolute;left:0;top:25px;width:725px;height:72px;border:1px solid #778e9a;border-radius:0 0 5px 5px;z-index:1;overflow:hidden;background:url(${skin.panel}) no-repeat 0 0}
+.wrs_multipleRowPanel{position:absolute;left:2px;top:2px;width:719px;height:66px;display:none}
+.wrs_multipleRowPanel.wrs_selected{display:block}
+.wrs_editor button.wrs_button,.wrs_editor .wrs_button{position:absolute;display:block;border:2px solid transparent;border-radius:0;background:transparent;overflow:hidden;padding:0;margin:0}
+.wrs_button svg{pointer-events:none}
+.wrs_editor .wrs_button:hover,.wrs_editor .wrs_button:focus,.wrs_editor .wrs_button.wrs_pressed{border-color:#778e9a;border-radius:3px;background:linear-gradient(#ffffff,#fffbe0);box-shadow:0 0 10px rgba(52,64,84,.2)}
+.wrs_editor .wrs_button:focus{box-shadow:none}
+.wrs_editor .wrs_button.wrs_toggled{background:url(${skin.btnSmallActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
+.wrs_editor .wrs_button.wrs_toggled:hover,.wrs_editor .wrs_button.wrs_toggled:focus{border-color:#778e9a;border-radius:3px;background:linear-gradient(#ebefe9 0,#edecdc 50%,#faf3d7 100%)}
+.wrs_editor .wrs_button.wrs_disabled{cursor:default;opacity:.45}
+.wrs_editor .wrs_button.wrs_disabled:hover{border-color:transparent;background:none;box-shadow:none}
+.wrs_editor .wrs_button.wrs_disabled:focus{outline:2px solid rgba(119,142,154,.3)}
+.wrs_line{position:absolute;display:block;width:1px;height:60px;background:#bbbdbe}
+.wrs_expandButton{position:absolute;width:7px;height:60px;border:0;border-radius:3px;background:transparent;padding:0}
+.wrs_expandButton::after{content:"";position:absolute;left:2px;top:50px;width:0;height:0;border-style:solid;border-width:3.5px 0 3.5px 3px;border-color:transparent transparent transparent #b1b3b4}
+.wrs_expandButton:hover,.wrs_expandButton:focus,.wrs_expandButton.wrs_pressed,.wrs_expandButton[aria-expanded=true]{background:linear-gradient(#ffffff,#fffbe0);box-shadow:inset 0 0 0 1px #778e9a;outline:0}
+.wrs_expandButton:hover::after,.wrs_expandButton.wrs_pressed::after{border-left-color:#778e9a}
+.wrs_select{position:absolute;width:73px;height:18px;border:1px solid #b1b3b4;border-radius:2px;background:#fff linear-gradient(#fff,#eef1f3);overflow:hidden}
+.wrs_select .wrs_label{position:absolute;left:1px;top:0;width:55px;text-overflow:ellipsis;height:16px;line-height:16px;font-size:11px;font-weight:700;color:#b1b3b4;white-space:nowrap;overflow:hidden;pointer-events:none;text-indent:3px}
+.wrs_select::after{content:"";position:absolute;right:5px;top:6px;border:4px solid transparent;border-top:5px solid #b1b3b4;border-bottom:0}
+.wrs_select select{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:12px}
+.wrs_select.wrs_active .wrs_label{color:#3b4a53}
+.wrs_editor .wrs_button.wrs_toggled.wrs_big{background:url(${skin.btnActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
+.wrs_editor .wrs_button.wrs_toggled.wrs_small{background:url(${skin.btnSmallActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
+.wrs_editor .wrs_button.wrs_big.wrs_disabled svg,.wrs_editor .wrs_button.wrs_small.wrs_disabled svg{opacity:.3}
+.wrs_editor .wrs_button.wrs_big.wrs_disabled,.wrs_editor .wrs_button.wrs_small.wrs_disabled{opacity:1}
+.wrs_select.wrs_ctxSelect{border-radius:0;background:url(${skin.selBg}) no-repeat 100% 50%;overflow:hidden;box-sizing:border-box;font:700 11px sans-serif}
+.wrs_select.wrs_ctxSelect::after{display:none}
+.wrs_select.wrs_ctxSelect .wrs_label{position:static;left:auto;top:auto;width:auto;height:18px;line-height:16px;padding:0 15px 0 5px;text-indent:0;color:#b1b3b4;font:700 11px/16px sans-serif}
+.wrs_select.wrs_ctxSelect select{left:0;top:0;width:100%;height:100%}
+.wrs_lengthButtonPanel{position:absolute;z-index:6;box-sizing:border-box;padding:1px;border:1px solid #b1b3b4;background:#edf2f4;font:700 11px sans-serif;color:#778e9a;white-space:nowrap}
+.wrs_lengthButtonPanel table{border:0;border-collapse:separate;border-spacing:1px}
+.wrs_lengthButtonPanel td{padding:0;text-align:left}
+.wrs_lengthButtonPanel tr:first-child td{padding-bottom:5.5px}
+.wrs_lengthButtonPanel .wrs_inputCell input{box-sizing:border-box;width:70px;height:16px;margin:0 0 0 5px;padding:1px;border:1px solid #b1b3b4;border-radius:10px;background:#fff;font:700 11px sans-serif;color:#000;outline:0}
+.wrs_formulaDisplayWrapper{position:absolute;left:0;top:99px;width:695px;height:316px;overflow:auto}
+.wrs_formulaDisplay{position:relative;width:695px;height:316px;border:1px solid #969696;background:#fff;overflow:auto;cursor:text;font-size:16px}
+.wrs_formulaContent{position:relative;margin:5px;min-width:1px;min-height:1px}
+.wrs_formulaSvg svg{overflow:visible}
+.wrs_caret{position:absolute;width:0;border-left:1px solid #000;z-index:3;pointer-events:none}
+.wrs_caret.wrs_dark{border-left-color:#000}
+.wrs_caret.wrs_light{border-left-color:#fff}
+.wrs_underlineCaret{position:absolute;height:0;border-bottom:1px solid #000;opacity:.5;pointer-events:none}
+.wrs_selection{position:absolute;background:#c3c3c3;pointer-events:none}
+.wrs_editctx{position:absolute;background:#cddce3;pointer-events:none}
+.wrs_focusElementContainer{position:absolute;left:0;top:0;width:1px;height:1px;overflow:hidden}
+.wrs_focusElement{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;border:0;padding:0;margin:0;background:transparent;color:transparent;caret-color:transparent;font-size:16px}
+.wrs_ariaLiveRegion{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}
+.wrs_hiddenButDisplayed{clip-path:inset(50%)}
+.wrs_clipboardTextarea{position:absolute;left:-9999px;top:0;width:1px;height:1px;opacity:0}
+.wrs_scaled{height:calc(415px + (var(--wrs-k) - 1) * 97px)}
+.wrs_scaled .wrs_toolbar.wrs_main{zoom:var(--wrs-k)}
+.wrs_scaled .wrs_formulaDisplayWrapper,.wrs_scaled .wrs_handWrapper{top:calc(99px + (var(--wrs-k) - 1) * 97px)}
+.wrs_scaled .wrs_popup,.wrs_scaled .wrs_panel{zoom:var(--wrs-k)}
+.wrs_noHand .wrs_handWrapper{display:none}
+.wrs_noHand .wrs_formulaDisplay,.wrs_noHand .wrs_formulaDisplayWrapper{width:725px}
+.wrs_handWrapper{position:absolute;left:695px;top:99px;width:30px;height:316px;background:#778e9a;overflow:hidden}
+.wrs_handWrapper .wrs_handStrip{position:absolute;left:0;top:0;width:30px;height:316px;cursor:pointer}
+.wrs_handWrapper input[type=button]{position:absolute;left:0;top:0;width:30px;height:316px;opacity:0;cursor:pointer;margin:0;padding:0;border:0}
+.wrs_handWrapper input[type=button]:focus-visible{opacity:1;background:rgba(255,255,255,.25);outline:2px solid #fff;outline-offset:-3px}
+.wrs_popup{position:absolute;z-index:20;padding:2px;background:#f3f5f6 url(${skin.bodyBg}) no-repeat 0 100%;background-size:auto 100%;border:1px solid #778e9a;border-radius:0 0 5px 5px}
+.wrs_popup.wrs_periodic::before{content:"";position:absolute;left:1px;top:1px;width:399px;height:200px;background:url(${skin.periodic}) no-repeat 50% 50%;background-size:100% 100%;pointer-events:none}
+.wrs_popup .wrs_button{position:absolute}
+.wrs_dialog{position:absolute;z-index:30;background:#ebeff2;border:1px solid #a9b4bb;font-size:12px;font-weight:700;color:#778e9a}
+.wrs_dialog label{position:absolute;white-space:nowrap}
+.wrs_dialog input,.wrs_dialog select{font:700 12px sans-serif;color:#000}
+.wrs_colorButton{position:absolute;width:13px;height:13px;border:1px solid #a3a3a3;cursor:pointer}
+.wrs_colorButton:hover,.wrs_colorButton.wrs_focused{outline:2px solid #778e9a;outline-offset:0}
+.wrs_hand{position:absolute;left:0;top:0;width:725px;height:415px;background:#fff;display:none;z-index:40}
+.wrs_hand .wrs_toolbar{position:absolute;left:0;top:0;width:39px;height:415px;background:#e6edf0;border-right:1px solid #778e9a}
+.wrs_hand .wrs_button{position:absolute;left:3px;width:33px;height:33px}
+.wrs_hand .wrs_key2edit{position:absolute;left:0;bottom:0;width:39px;height:39px;margin:0;padding:0;border:0;background:#4e5861 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='39' height='39' viewBox='0 0 39 39'%3E%3Crect x='7' y='12' width='25' height='15' rx='2' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3Cpath d='M10.5 16h2M15 16h2M19.5 16h2M24 16h2M28 16h1M11 20h1.5M15.5 20h8M27 20h1M12 24h15' stroke='%23fff' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") no-repeat center;cursor:pointer;appearance:none;-webkit-appearance:none}
+.wrs_hand .wrs_canvasContainer{position:absolute;left:41px;top:0;width:684px;height:415px;background:#fff;touch-action:none;border-left:1px solid #969696;border-top:1px solid #969696;box-shadow:inset 3px 3px 5px -2px rgba(150,150,150,.5)}
+.wrs_hand canvas{position:absolute;left:0;top:0;width:684px;height:415px;touch-action:none;cursor:crosshair;background:linear-gradient(to right,transparent 19px,rgba(150,150,150,.4) 19px,rgba(150,150,150,.4) 20px) 1px 1px/20px 20px,linear-gradient(to bottom,transparent 19px,rgba(150,150,150,.4) 19px,rgba(150,150,150,.4) 20px) 1px 1px/20px 20px}
+.wrs_hand .wrs_button svg{position:absolute;left:0;top:0}
+.wrs_hand .wrs_line{background:#bbbdbe}
+.wrs_hand .wrs_helpText{position:absolute;left:0;right:0;top:60%;text-align:center;font:18px Arial,sans-serif;color:#425a66;pointer-events:none}
+.wrs_hand .wrs_helpBrand{margin-top:8px;font-size:12px;color:#778e9a}
+.wrs_handMode .wrs_hand{display:block}
+.wrs_handMode .wrs_toolbar.wrs_main,.wrs_handMode .wrs_formulaDisplayWrapper,.wrs_handMode .wrs_handWrapper{visibility:hidden}
+.wrs_panel{position:absolute;z-index:30;background:#edf2f4;border:1px solid #b1b3b4;color:#778e9a;font:700 11px Arial,sans-serif;box-sizing:border-box}
+.wrs_panel table{border-collapse:separate;border-spacing:0;border:0;margin:0;padding:0}
+.wrs_panel td{padding:0;vertical-align:middle}
+.wrs_panel input,.wrs_panel select{font:700 11px Arial,sans-serif;color:#000;background:#fff;border:1px solid #b1b3b4;border-radius:10px;outline:0;margin:0;box-sizing:border-box}
+.wrs_panel input:focus{border-color:#000;box-shadow:0 0 0 1px #000}
+.wrs_matrixButtonPanel{width:101px;height:124px}
+.wrs_matrixButtonPanel>table{position:absolute;left:2px;border-spacing:1px}
+.wrs_matrixButtonPanel>table:first-child{top:2px}
+.wrs_matrixButtonPanel>table:first-child td{width:15px;height:13px;padding:0}
+.wrs_matrixButtonPanel .wrs_matrixButton{width:13px;height:13px;border:1px solid #b1b3b4;background:#fff;cursor:pointer}
+.wrs_matrixButtonPanel .wrs_matrixButton.wrs_selected{background:#ffcc00;border-color:#8c7600}
+.wrs_matrixButtonPanel>table:last-child{top:87px}
+.wrs_matrixButtonPanel>table:last-child td{height:16px;padding:0}
+.wrs_matrixButtonPanel>table:last-child td:first-child{width:56px}
+.wrs_matrixButtonPanel .wrs_inputCell{width:38px}
+.wrs_matrixButtonPanel .wrs_inputCell input{width:35px;height:16px;padding:0 3px;margin-left:3px;display:block}
+.wrs_colorChooserPanel{width:102px;height:118px}
+.wrs_colorChooserPanel>table{position:absolute;left:1px;top:1px;padding:5px}
+.wrs_colorChooserPanel td{width:18px;height:18px}
+.wrs_colorChooserPanel .wrs_colorButton{position:static;width:13px;height:13px;border:1px solid #b1b3b4;cursor:pointer;box-sizing:border-box}
+.wrs_colorChooserPanel>div{position:absolute;left:1px;top:96px;width:100px;height:21px;padding-left:5px;line-height:16px;white-space:nowrap}
+.wrs_colorChooserPanel>div input{position:absolute;left:45px;top:0;width:50px;height:16px;padding:0 4px}
+.wrs_unicodeChooserPanel{width:225px;height:206px}
+.wrs_unicodeChooserPanel>div:first-child{position:absolute;left:9px;top:9px;width:207px;height:38px;line-height:16px;white-space:nowrap}
+.wrs_unicodeChooserPanel>div:first-child input{position:absolute;left:39px;top:6px;width:65px;height:16px;padding:0 4px}
+.wrs_unicodeChooserPanel>div:first-child select{position:absolute;left:112px;top:0;width:99px;height:30px;padding:0 6px;border-color:#8992a4}
+.wrs_unicodeChooserTableContainer{position:absolute;left:9px;top:47px;width:207px;height:150px;overflow-x:hidden;overflow-y:auto}
+.wrs_unicodeTable td{width:17px;height:17px;background:#fff;border-right:1px solid #ddd;border-bottom:1px solid #ddd}
+.wrs_unicodeButton{width:16px;height:16px;line-height:16px;overflow:hidden;text-align:center;font:700 13px 'STIX Two Math',serif;color:#778e9a;cursor:pointer;overflow:hidden}
+.wrs_unicodeButton:hover,.wrs_unicodeButton:focus{background:#ffcc00;color:#000;outline:0}
+.wrs_caretPrecisionController{position:absolute;touch-action:none;z-index:6}
+.wrs_caretPrecisionController.wrs_forSelection{width:24px;height:36px}
+.wrs_snackbar{position:absolute;left:10px;bottom:10px;padding:6px 10px;background:#333;color:#fff;font:12px sans-serif;border-radius:3px}
+.wrs_hidden{display:none!important}
+@media (prefers-reduced-motion:reduce){.wrs_hand .wrs_hint{animation:none!important}}
+`;
+
+let injected = false;
+export function injectStyles(doc: Document = document): void {
+  if (injected && doc.getElementById('wrs-editor-style')) return;
+  const st = doc.createElement('style');
+  st.id = 'wrs-editor-style';
+  st.textContent = CSS;
+  doc.head.appendChild(st);
+  injected = true;
+}
+
+/** @font-face rules of the reference symbol fonts served from `base` (an absolute or relative directory URL) */
+export function vendorFontCss(base: string): string {
+  const b = base.replace(/\/?$/, '/');
+  const face = (family: string, file: string) => `@font-face{font-family:'${family}';src:url('${b}${file}') format('truetype');font-display:swap}`;
+  return [
+    ['Conv_math1', 'math1.ttf'], ['Conv_math1RTL', 'math1_rtl.ttf'], ['Conv_horizontal', 'horizontal.ttf'], ['Conv_brackets', 'brackets.ttf'],
+    ['Conv_brack_sm', 'brack_sm.ttf'], ['Conv_script', 'script.ttf'], ['Conv_fraktur', 'fraktur.ttf'], ['Conv_doubleStruck', 'double-struck.ttf'],
+    ['Conv_roundBrackets1854', 'round_brackets1854.ttf'], ['Conv_roundBrackets2254', 'round_brackets2254.ttf'], ['Conv_roundBrackets2654', 'round_brackets2654.ttf'],
+    ['Conv_roundBrackets3054', 'round_brackets3054.ttf'], ['Conv_roundBrackets3454', 'round_brackets3454.ttf'],
+  ].map(([f, u]) => face(f, u)).join('\n');
+}
+
+export function injectVendorFonts(base: string, doc: Document = document): void {
+  if (doc.getElementById('wrs-editor-fonts')) return;
+  const st = doc.createElement('style');
+  st.id = 'wrs-editor-fonts';
+  st.textContent = vendorFontCss(base);
+  doc.head.appendChild(st);
+}
