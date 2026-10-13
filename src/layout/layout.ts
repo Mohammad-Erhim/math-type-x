@@ -1477,7 +1477,7 @@ interface StackLevel {
 
 type SEntry =
   | { k: 'row'; cells: SCell[]; path: [number, number][]; n: number; level: StackLevel | null; item: number; env: Env; src: Row }
-  | { k: 'line'; level: StackLevel; item: number }
+  | { k: 'line'; level: StackLevel; item: number; el?: El }
   | { k: 'carry'; cells: SCell[]; path: [number, number][]; n: number; loc: string; level: StackLevel; item: number; env: Env };
 
 /** flatten the items (rows, lines, carries, groups) of a stack slot into entries */
@@ -1493,7 +1493,7 @@ function stackEntries(items: Row, slotPath: [number, number][], env: Env, levels
         break;
       case 'msline':
         level.entryOf.set(k, out.length);
-        out.push({ k: 'line', level, item: k });
+        out.push({ k: 'line', level, item: k, el: it });
         break;
       case 'mscarries': {
         const e2 = scriptEnv(env);
@@ -1711,8 +1711,29 @@ function stackBlock(entries: SEntry[], levels: StackLevel[], env: Env, o: StackO
     if (e.k === 'row') place(e, idx);
   });
   // lines
+  // (`length` columns counted from the right end, moved `position` columns to the left; a negative length draws nothing;
+  // a negative position gives a stub 4 px wide the columns to the right – measured on the reference)
+  const colLeft = (c: number) => (c < 0 ? colX[0] + c * (9 * s + o.spacing) : c < ncols ? colX[c] : W + o.spacing + (c - ncols) * (9 * s + o.spacing));
+  const colRight = (c: number) => (c >= 0 && c < ncols ? colX[c] + colW[c] : colLeft(c) + 9 * s);
   entries.forEach((e) => {
-    if (e.k === 'line') items.push({ k: 'r', x: 0, y: lineY.get(e)! + 4 * s, w: W, h: 1 });
+    if (e.k !== 'line') return;
+    const y0 = lineY.get(e)! + 4 * s;
+    const len = e.el ? parseInt(getAttr(e.el, 'length') ?? '0', 10) || 0 : 0;
+    const pos = e.el ? parseInt(getAttr(e.el, 'position') ?? '0', 10) || 0 : 0;
+    if (len < 0) return;
+    if (len === 0) {
+      items.push({ k: 'r', x: 0, y: y0, w: W, h: 1 });
+      return;
+    }
+    const leftAligned = o.stackalign === 'left';
+    let first = leftAligned ? (pos > 0 ? -pos : 0) : ncols - len - pos;
+    if (pos < 0) {
+      if (first > ncols) first = 0;
+      items.push({ k: 'r', x: colLeft(first), y: y0, w: 4 * s, h: 1 });
+      return;
+    }
+    const x0 = colLeft(first);
+    items.push({ k: 'r', x: x0, y: y0, w: colRight(first + len - 1) - x0, h: 1 });
   });
   // carries
   entries.forEach((e, idx) => {
