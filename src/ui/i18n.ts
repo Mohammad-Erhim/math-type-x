@@ -29,6 +29,7 @@ const OUTPUT_AR: Record<string, string> = {
   Clear: 'مسح',
   Cancel: 'إلغاء',
   'Arabic fonts': 'خطوط عربية',
+  'Delete backward': 'حذف إلى الخلف',
 };
 
 const TABLES: Record<string, Record<string, string>> = { ar: { ...ar, ...OUTPUT_AR } };

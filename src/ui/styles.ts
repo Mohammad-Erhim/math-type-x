@@ -187,19 +187,24 @@ export const CSS = `
 .wrs_reflow .wrs_expandButton.wrs_pressed::after,.wrs_reflow .wrs_expandButton[aria-expanded=true]::after{border-color:#fff transparent transparent transparent}
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true]),.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true]){background:transparent;box-shadow:none}
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true])::after,.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true])::after{border-color:#51636d transparent transparent transparent}
-.wrs_navPad{display:none;position:absolute;right:38px;top:356px;z-index:6;grid-template-columns:repeat(5,48px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
-.wrs_touch .wrs_navPad,.wrs_reflow .wrs_navPad,.wrs_fluid .wrs_navPad{display:grid;grid-template-columns:repeat(5,48px);gap:4px}
-.wrs_fluid .wrs_navPad{position:relative;right:auto;top:auto;flex:none;width:100%;box-sizing:border-box;justify-content:end;padding:4px 8px;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed)}
+.wrs_navPad{display:none;position:absolute;right:38px;top:356px;z-index:6;gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.wrs_touch .wrs_navPad,.wrs_reflow .wrs_navPad,.wrs_fluid .wrs_navPad{display:flex;gap:4px}
+.wrs_fluid .wrs_navPad{position:relative;right:auto;top:auto;flex:none;width:100%;box-sizing:border-box;justify-content:flex-end;padding:4px 8px;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed)}
 /* the pad follows the toolbar's look: slate frame, light blue-grey face, cream when pressed */
-.wrs_editor .wrs_navKey{width:48px;height:48px;padding:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);color:#324d5b;font:700 19px/1 Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.wrs_editor .wrs_navKey{width:48px;flex:0 1 48px;min-width:36px;height:48px;padding:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);color:#324d5b;font:700 19px/1 Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .wrs_editor .wrs_navKey:active{background:linear-gradient(#fffdf2,#f6efd0);border-color:#5f7681}
+.wrs_editor .wrs_navKey svg{display:block;margin:auto}
+.wrs_rtl .wrs_navBackspace svg{transform:scaleX(-1)}
+.wrs_editor .wrs_navClear{margin-right:14px;border-color:#a3221c;background:linear-gradient(#ea5a52,#c62d26)}
+.wrs_editor .wrs_navClear:active{background:linear-gradient(#c62d26,#a3221c);border-color:#7d1914}
+.wrs_editor .wrs_navClear.wrs_navOff{opacity:.45;background:linear-gradient(#e6a9a5,#d68a85);border-color:#c9908c}
 .wrs_editor .wrs_navClear{display:flex;align-items:center;justify-content:center}
 .wrs_navClear svg path{stroke:#51636d}
 .wrs_confirm{position:absolute;right:8px;bottom:64px;z-index:7;width:min(280px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:2px solid #778e9a;border-radius:5px;background:linear-gradient(#f6f9fa,#e3eaed);box-shadow:0 0 10px rgba(52,64,84,.3);font:700 14px/1.35 Arial,sans-serif;color:#324d5b;direction:ltr}
 .wrs_confirmText{margin:0 0 10px}
 .wrs_editor .wrs_confirm button{height:48px;min-width:104px;margin-right:8px;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);font:700 14px Arial,sans-serif;color:#324d5b}
 .wrs_editor .wrs_confirm button:active{background:linear-gradient(#fffdf2,#f6efd0)}
-.wrs_editor .wrs_confirm .wrs_confirmYes{background:linear-gradient(#8aa0ab,#66808d);border-color:#51636d;color:#fff}
+.wrs_editor .wrs_confirm .wrs_confirmYes{background:linear-gradient(#ea5a52,#c62d26);border-color:#a3221c;color:#fff}
 /* touch devices have no hover: a tapped control must not stay highlighted */
 @media (hover:none){
 .wrs_editor .wrs_button:focus:not(:focus-visible):not(.wrs_pressed):not(.wrs_toggled){border-color:transparent;border-radius:0;box-shadow:none}

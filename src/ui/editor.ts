@@ -194,10 +194,12 @@ export class MathEditor implements ToolbarHost {
 
   /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
    * script, down to the denominator, to the next line) like the arrow keys do. */
+  private navClear: HTMLButtonElement | null = null;
   private buildNavPad(): void {
     // built always; shown on touch screens and in narrow windows (CSS)
     // left / right, then up / down
     const keys: [string, string, string][] = [
+      ['Backspace', 'Delete backward', ''],
       ['ArrowLeft', 'Move left', '◀'],
       ['ArrowRight', 'Move right', '▶'],
       ['ArrowUp', 'Move up', '▲'],
@@ -205,7 +207,11 @@ export class MathEditor implements ToolbarHost {
     ];
     const pad = h('div', { class: 'wrs_navPad', role: 'group', 'aria-label': 'Move the cursor' });
     for (const [key, label, glyph] of keys) {
-      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.slice(5), title: label, 'aria-label': label, tabindex: '-1', text: glyph }) as HTMLButtonElement;
+      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.replace(/^Arrow/, ''), title: label, 'aria-label': label, tabindex: '-1', text: glyph }) as HTMLButtonElement;
+      if (key === 'Backspace') {
+        // the key's own sign: it points the way the text is deleted (mirrored in right-to-left formulas by the style)
+        b.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg>';
+      }
       // a press must not take the focus (and so the soft keyboard) away from the formula
       b.addEventListener('pointerdown', (e) => e.preventDefault());
       b.addEventListener('mousedown', (e) => e.preventDefault());
@@ -221,18 +227,31 @@ export class MathEditor implements ToolbarHost {
         if (timer) clearTimeout(timer);
         timer = null;
       };
+      // holding a key repeats it (after a short delay, like a keyboard); the click that ends a press is not a second step
+      const repeat = () => {
+        timer = setTimeout(() => {
+          step();
+          repeat();
+        }, 70);
+      };
+      b.addEventListener('pointerdown', (e) => {
+        if (e.button !== 0) return;
+        step();
+        stop();
+        timer = setTimeout(repeat, 420);
+      });
       b.addEventListener('click', (e) => {
         e.preventDefault();
-        step();
+        // pointer presses were handled on pointerdown; a click with no pointer is a key press on the focused button
+        if (e.detail === 0) step();
       });
       b.addEventListener('contextmenu', (e) => e.preventDefault());
-      b.addEventListener('pointerup', stop);
-      b.addEventListener('pointerleave', stop);
+      for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) b.addEventListener(ev, stop);
       pad.append(b);
     }
     // clear the whole formula – after a confirmation
     const clear = h('button', { type: 'button', class: 'wrs_navKey wrs_navClear', title: 'Clear the formula', 'aria-label': 'Clear the formula', tabindex: '-1' }) as HTMLButtonElement;
-    clear.innerHTML = '<svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#51636d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    clear.innerHTML = '<svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     clear.addEventListener('pointerdown', (e) => e.preventDefault());
     clear.addEventListener('mousedown', (e) => e.preventDefault());
     const confirmBox = h('div', { class: 'wrs_confirm', role: 'alertdialog', 'aria-label': 'Clear the whole formula?' });
@@ -244,6 +263,7 @@ export class MathEditor implements ToolbarHost {
     const hideConfirm = () => {
       confirmBox.style.display = 'none';
     };
+    this.navClear = clear;
     clear.addEventListener('click', (e) => {
       e.preventDefault();
       if (this.core.isEmpty()) return;
@@ -430,6 +450,7 @@ export class MathEditor implements ToolbarHost {
 
   render(): void {
     const core = this.core;
+    this.navClear?.classList.toggle('wrs_navOff', core.isEmpty());
     const arabic = arabicCssFamily(core.getFontFamily());
     this.ensureArabicFace(arabic);
     this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl, arabic);
