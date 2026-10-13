@@ -22,6 +22,7 @@ import { SWATCHES, FONT_FAMILIES } from './messages';
 import { contextState, locate, applyContext, ctxValue, CtxState, parseLength } from '../core/context';
 import { ctxIcon } from './ctxart';
 import { ART } from './art';
+import { ZULFI_GROUPS, zulfiSvg, zulfiSymbol } from '../layout/zulfi';
 import { controlIcon } from './icons';
 import { HandMode } from './hand';
 import { serializeMathML, parseMathML } from '../core/mathml';
@@ -1057,7 +1058,14 @@ export class MathEditor implements ToolbarHost {
     const code = h('input', { type: 'text', title: 'Code', id: 'customUnicodeInput' }) as HTMLInputElement;
     const cat = h('select') as HTMLSelectElement;
     const CATS: [string, keyof typeof unicodeData][] = [['S', 'Symbol'], ['P', 'Punctuation'], ['L', 'Letter'], ['M', 'Mark'], ['N', 'Number'], ['F', 'Phonetical'], ['C', 'Other']];
+    // the Arabic mathematical symbols (the symbol tables of the Zulfi keyboard maps) are lists of their own: first in an
+    // Arabic editor, after the Unicode categories otherwise
+    const arabicUi = /^ar/i.test(this.lang) || this.core.rtl;
+    const zGroup = h('optgroup', { label: arabicUi ? 'رموز رياضية عربية' : 'Arabic math symbols' });
+    ZULFI_GROUPS.forEach((g) => zGroup.append(h('option', { value: 'Z:' + g.id, text: arabicUi ? g.ar : g.en })));
+    if (arabicUi) cat.append(zGroup);
     CATS.forEach(([v, n]) => cat.append(h('option', { value: v, text: n })));
+    if (!arabicUi) cat.append(zGroup);
     const container = h('div', { class: 'wrs_unicodeChooserTableContainer' });
     el.append(h('div', {}, document.createTextNode('Code: '), code, cat), container);
     const pick = (cp: number) => {
@@ -1070,7 +1078,7 @@ export class MathEditor implements ToolbarHost {
       current = cps;
       container.textContent = '';
       const tb = h('tbody');
-      const COLS = 9;
+      const COLS = el.classList.contains('wrs_zulfiMode') ? 8 : 9;
       const max = Math.min(cps.length, 3600);
       for (let i = 0; i < max; i += COLS) {
         const tr = h('tr');
@@ -1078,7 +1086,13 @@ export class MathEditor implements ToolbarHost {
           const td = h('td');
           const cp = cps[i + k];
           if (i + k < max && cp !== undefined) {
-            const d = h('div', { class: 'wrs_unicodeButton wrs_mathChar wrs_font_stix', tabindex: '0', title: 'U+' + cp.toString(16).toUpperCase().padStart(4, '0') + '\n &#' + cp + ';', text: String.fromCodePoint(cp) });
+            const zs = zulfiSymbol(cp);
+            const d = h('div', { class: 'wrs_unicodeButton wrs_mathChar wrs_font_stix' + (zs ? ' wrs_zulfiButton' : ''), tabindex: '0', title: zs ? `${zs.k}\n U+${cp.toString(16).toUpperCase()}` : 'U+' + cp.toString(16).toUpperCase().padStart(4, '0') + '\n &#' + cp + ';' });
+            if (zs) {
+              d.innerHTML = zulfiSvg(cp, 26);
+              d.setAttribute('role', 'button');
+              d.setAttribute('aria-label', zs.k);
+            } else d.textContent = String.fromCodePoint(cp);
             d.addEventListener('click', () => pick(cp));
             d.addEventListener('keydown', (e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -1097,7 +1111,12 @@ export class MathEditor implements ToolbarHost {
       }
       container.append(h('table', { class: 'wrs_unicodeTable' }, tb));
     };
-    const showCategory = () => fill((unicodeData as any)[CATS.find((c) => c[0] === cat.value)![1]]);
+    const showCategory = () => {
+      // the Arabic math symbols are bigger shapes: the panel grows for them
+      el.classList.toggle('wrs_zulfiMode', cat.value.startsWith('Z:'));
+      if (cat.value.startsWith('Z:')) fill(ZULFI_GROUPS.find((g) => g.id === cat.value.slice(2))?.items ?? []);
+      else fill((unicodeData as any)[CATS.find((c) => c[0] === cat.value)![1]]);
+    };
     cat.addEventListener('change', () => {
       code.value = '';
       showCategory();
@@ -1125,6 +1144,7 @@ export class MathEditor implements ToolbarHost {
     });
     this.root.append(el);
     this.placePanel(el, btn);
+    cat.selectedIndex = 0;
     showCategory();
     this.popup = { el, kind: 'unicode', owner: btn, close: () => undefined };
     this.focusField(code);

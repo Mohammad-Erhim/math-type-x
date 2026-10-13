@@ -1,6 +1,7 @@
 /** Drawing of layout items as SVG markup (shared by the editor, the icons and the image services). */
 import { Item } from './layout';
-import { pickVariant, raw } from './metrics';
+import { pickVariant, raw, tokenInfo } from './metrics';
+import { zulfiSymbol } from './zulfi';
 import { K } from './layout';
 import { ARABIC_SCRIPT } from './arfonts';
 
@@ -267,6 +268,33 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
         // the mirrored symbols of right-to-left formulas: the regular glyph flipped around the middle of its advance
         const flipGlyph = it.flip && it.w !== undefined;
         const tx = flipGlyph ? ` transform="translate(${r(2 * it.x + it.w!)} 0) scale(-1 1)"` : '';
+        // Arabic mathematical symbols are shapes, not text: each one a path at its advance
+        if (/[\ue100-\uefff]/.test(it.text) && [...it.text].some((c) => zulfiSymbol(c.codePointAt(0) ?? 0))) {
+          let x = it.x;
+          let pending = '';
+          let px = x;
+          const flushText = () => {
+            if (!pending) return;
+            o += `<text x="${r(px)}" y="${r(base)}" font-size="${r(it.size)}" font-family="${fam}" fill="${fill}"${it.italic ? ' font-style="italic"' : ''}${it.bold ? ' font-weight="bold"' : ''} xml:space="preserve">${esc(pending)}</text>`;
+            pending = '';
+          };
+          for (const ch of it.text) {
+            const zs = zulfiSymbol(ch.codePointAt(0) ?? 0);
+            if (zs) {
+              flushText();
+              const k = it.size / 1000;
+              o += `<path transform="translate(${r(x)} ${r(base)}) scale(${r(k * 1000) / 1000})" d="${zs.d}" fill="${fill}"/>`;
+              x += zs.a * k;
+              px = x;
+            } else {
+              if (!pending) px = x;
+              pending += ch;
+              x += tokenInfo('mi', '', ch, it.size).w;
+            }
+          }
+          flushText();
+          break;
+        }
         o += `<text x="${r(it.x)}" y="${r(base)}"${tx} font-size="${r(it.size)}" font-family="${fam}" fill="${fill}"${it.italic ? ' font-style="italic"' : ''}${it.bold ? ' font-weight="bold"' : ''} xml:space="preserve">${esc(it.text)}</text>`;
         break;
       }

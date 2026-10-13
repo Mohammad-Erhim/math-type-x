@@ -54,6 +54,8 @@ export class OutputPanel {
   /** finished results, newest last (switching back to a format of the same formula costs nothing) */
   private cache = new Map<string, { value: string; blob: Blob | null }>();
   private hiddenPending = false;
+  /** false while the panel is folded away or scrolled out of sight: nothing is made then (the bar of a phone page) */
+  private shown = true;
   private value = '';
   private blob: Blob | null = null;
   private tabEls = new Map<Kind, HTMLButtonElement>();
@@ -115,6 +117,15 @@ export class OutputPanel {
     // a change: stop what is running, mark the shown output as out of date, and make the new one once typing pauses
     ed.on('change', () => this.onChange());
     ed.on('ready', () => this.schedule(0));
+    if (typeof IntersectionObserver === 'function') {
+      new IntersectionObserver((es) => {
+        this.shown = es[es.length - 1].isIntersecting;
+        if (this.shown && this.hiddenPending) {
+          this.hiddenPending = false;
+          this.schedule(0);
+        }
+      }).observe(this.root);
+    }
     document.addEventListener('visibilitychange', () => {
       if (!document.hidden && this.hiddenPending) {
         this.hiddenPending = false;
@@ -170,7 +181,7 @@ export class OutputPanel {
     this.timer = setTimeout(() => {
       this.timer = null;
       // a hidden page makes the output when it comes back
-      if (document.hidden) this.hiddenPending = true;
+      if (document.hidden || !this.shown) this.hiddenPending = true;
       else void this.refresh();
     }, delay);
   }

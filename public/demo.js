@@ -38,4 +38,29 @@
     e.preventDefault();
     e.returnValue = '';
   });
+  if (q.get('output') !== '0') {
+    var outBox = document.getElementById('outputContainer');
+    window.outputPanel = new MathTypeX.OutputPanel(editor, outBox);
+    // phones: the export section is folded away behind a bar at the bottom (more room for the formula); on larger
+    // screens it is always shown. The choice is remembered.
+    var ar = /^ar/i.test(opts.language);
+    var bar = document.createElement('button');
+    bar.type = 'button';
+    bar.className = 'mtx_exportBar';
+    bar.setAttribute('aria-controls', 'outputContainer');
+    var label = ar ? 'تصدير' : 'Export';
+    var setOpen = function (open, keep) {
+      outBox.classList.toggle('mtx_open', open);
+      bar.setAttribute('aria-expanded', String(open));
+      bar.innerHTML = '<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M4 11l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="transform-origin:9px 9px;transform:rotate(' + (open ? 180 : 0) + 'deg)"/></svg><span>' + label + '</span>';
+      if (!keep) {
+        try { localStorage.setItem('mtx:exportOpen', open ? '1' : '0'); } catch (err) {}
+      }
+    };
+    var was = false;
+    try { was = localStorage.getItem('mtx:exportOpen') === '1'; } catch (err) {}
+    setOpen(was, true);
+    bar.addEventListener('click', function () { setOpen(!outBox.classList.contains('mtx_open')); });
+    outBox.appendChild(bar);
+  }
 })();

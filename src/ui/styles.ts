@@ -134,9 +134,16 @@ export const CSS = `
 .wrs_unicodeChooserPanel>div:first-child input{position:absolute;left:39px;top:6px;width:65px;height:16px;padding:0 4px}
 .wrs_unicodeChooserPanel>div:first-child select{position:absolute;left:112px;top:0;width:99px;height:30px;padding:0 6px;border-color:#8992a4}
 .wrs_unicodeChooserTableContainer{position:absolute;left:9px;top:47px;width:207px;height:150px;overflow-x:hidden;overflow-y:auto}
+.wrs_unicodeChooserPanel.wrs_zulfiMode{width:350px;height:300px}
+.wrs_zulfiMode>div:first-child{width:332px!important}
+.wrs_zulfiMode>div:first-child select{width:215px!important}
+.wrs_zulfiMode .wrs_unicodeChooserTableContainer{width:332px;height:244px}
+.wrs_zulfiMode .wrs_unicodeTable td{padding:0}
 .wrs_unicodeTable td{width:17px;height:17px;background:#fff;border-right:1px solid #ddd;border-bottom:1px solid #ddd}
+.wrs_zulfiButton svg{display:block;margin:auto}
 .wrs_unicodeButton{width:16px;height:16px;line-height:16px;overflow:hidden;text-align:center;font:700 13px 'STIX Two Math',serif;color:#778e9a;cursor:pointer;overflow:hidden}
 .wrs_unicodeButton:hover,.wrs_unicodeButton:focus{background:#ffcc00;color:#000;outline:0}
+.wrs_unicodeButton.wrs_zulfiButton{width:40px;height:40px;line-height:0;display:flex;align-items:center;justify-content:center;color:#18212f;overflow:visible}
 .wrs_caretPrecisionController{position:absolute;touch-action:none;z-index:6}
 .wrs_caretPrecisionController.wrs_forSelection{width:24px;height:36px}
 .wrs_snackbar{position:absolute;left:10px;bottom:10px;padding:6px 10px;background:#333;color:#fff;font:12px sans-serif;border-radius:3px}

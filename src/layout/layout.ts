@@ -9,6 +9,7 @@
 import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr } from '../core/model';
 import { glyphText } from './glyphs';
+import { zulfiSymbol } from './zulfi';
 import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont, joinedPrefixWidth, isJoinedRun } from './metrics';
 import rtlMirror from '../data/rtl-mirror.json';
 
@@ -421,7 +422,7 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   const italicDefault = tag === 'mi' && (variant === '' || variant === 'italic') && to - from >= 1 && Array.from(text).length === 1;
   const bold = variant === 'bold' || variant === 'bold-italic';
   // letters of scripts that have no italic (Hebrew, Arabic, Thai, kana, CJK, Hangul) stay upright, like the reference
-  const noItalic = /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff\u0e00-\u0eff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(text);
+  const noItalic = /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff\u0e00-\u0eff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\ue100-\uefff]/.test(text);
   const italicFlag = !noItalic && (tag === 'mi' ? (variant === '' ? Array.from(text).length === 1 : variant === 'italic' || variant === 'bold-italic') : variant === 'italic');
   let font = info.font;
   let drawn = tag === 'mo' ? text.replace(/-/g, '\u2212') : text;
@@ -438,8 +439,16 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   // operator glyphs of the symbol font have a one pixel taller box above the baseline (measured on the reference):
   // letters of a line holding one sit a pixel lower; the glyph itself keeps its place
   const lift = !noLift && font === 'math' && !big && env.size >= 15.5 && size <= env.size * 1.01 ? 1 : 0;
-  const asc = K.asc * size + padOf(size) - drop + lift;
-  const desc = h - K.asc * size + drop;
+  let asc = K.asc * size + padOf(size) - drop + lift;
+  let desc = h - K.asc * size + drop;
+  // tall Arabic math symbols (integral and derivative blocks, brackets) reach beyond the line's box
+  for (const ch of text) {
+    const zs = zulfiSymbol(ch.codePointAt(0) ?? 0);
+    if (zs) {
+      asc = Math.max(asc, (-zs.t / 1000) * size + K.asc * size * 0.08 + 1);
+      desc = Math.max(desc, (zs.b / 1000) * size + 1);
+    }
+  }
   const items: Item[] = [{ k: 'g', x: 0, y: drop - lift, text: drawn, size, font, italic: italicFlag && font === 'sans', bold, color, w: info.w }];
   // caret positions inside a merged run (x of the boundary after each letter but the last)
   let inner: number[] | undefined;

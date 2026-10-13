@@ -11,6 +11,13 @@ html,body{height:100%;margin:0;padding:0;background:#fff;color:#18212f;font-fami
   .page{padding:0}
   #outputContainer .mtx_output{margin-top:0;border-radius:0;border-width:1px 0 0}
 }
+/* the export bar: only where the export section can be folded away (phones, low windows) */
+.mtx_exportBar{display:none}
+@media (max-width:724px),(max-height:480px){
+  #outputContainer .mtx_exportBar{display:flex;align-items:center;justify-content:center;gap:8px;box-sizing:border-box;width:100%;height:46px;margin:0;padding:0 12px;border:0;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed);color:#324d5b;font:700 15px Arial,sans-serif;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  #outputContainer .mtx_exportBar:active{background:linear-gradient(#fffdf2,#f6efd0)}
+  #outputContainer:not(.mtx_open) .mtx_output{display:none}
+}
 /* a low window (a soft keyboard is open, a phone held sideways): the output panel keeps its tabs, its status and a line or
    two of the result, and the formula gets the rest */
 @media (max-height:560px){
