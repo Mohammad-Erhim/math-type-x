@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 import { ZULFI_GROUPS, zulfiSymbol, isZulfiChar, zulfiSvg } from '../src/layout/zulfi';
 import { renderSvg } from '../src/render/svg';
 import { renderPng } from '../server/render';
+import { layoutDocument } from '../src/layout/layout';
+import { parseMathML } from '../src/core/mathml';
 import { EditorCore } from '../src/core/engine';
 import { classify } from '../src/core/typing';
 
@@ -52,6 +54,20 @@ test('the PNG of a formula with symbols draws them (image services need no font 
   const b = renderPng(`<math ${N}><mi>x</mi></math>`);
   assert.ok(a.width > b.width && a.height >= 10);
   assert.ok(!a.png.equals(b.png));
+});
+
+test('in an Arabic editor the natural logarithm is لو followed by the Arabic math letter U+E14E', async () => {
+  const { catalogue } = await import('../src/core/catalogue');
+  const ctl = catalogue.controls.find((c) => c.title === 'Natural logarithm')!;
+  const ed = new EditorCore();
+  ed.setRtl(true);
+  ed.activate(ctl);
+  assert.match(ed.getMathML(), /<mi>&#x644;&#x648;&#xE14E;<\/mi>/);
+  const l = layoutDocument(parseMathML(ed.getMathML()).row, undefined, 16, true);
+  assert.ok(l.w > 20 && l.w < 80, 'a sane width: ' + l.w);
+  const en = new EditorCore();
+  en.activate(ctl);
+  assert.match(en.getMathML(), /<mi>ln<\/mi>/);
 });
 
 test('in an Arabic editor the differential d of the calculus controls is the last Arabic math letter; otherwise it stays d', async () => {

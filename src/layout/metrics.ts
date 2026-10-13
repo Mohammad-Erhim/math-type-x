@@ -156,6 +156,8 @@ export function joinedPrefixWidth(prefix: string, size: number): number | null {
 
 /** true for a run of two or more letters of Arabic script (the ones that join) */
 export function isJoinedRun(text: string): boolean {
+  // a symbol drawn as a shape inside the run: its letters are measured one by one
+  for (const c of text) if (zulfiSymbol(c.codePointAt(0) ?? 0)) return false;
   let n = 0;
   for (const c of text) if (ARABIC_BLOCKS.test(c) && ++n >= 2) return true;
   return false;
@@ -193,7 +195,7 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
       if (i === chars.length - 1) rp = t.rpad;
     });
     // Arabic letters join inside a run: the reference lays out what the browser measures for the whole run
-    if (chars.filter((c) => ARABIC_BLOCKS.test(c)).length >= 2) {
+    if (chars.filter((c) => ARABIC_BLOCKS.test(c)).length >= 2 && !chars.some((c) => zulfiSymbol(c.codePointAt(0) ?? 0))) {
       const sw = runWidth(text, size);
       if (sw !== null) w = sw;
     }

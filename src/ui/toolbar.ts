@@ -261,7 +261,7 @@ export class Toolbar {
     const key = c.special ? specialKey(c.title) : null;
     let body = '';
     const arLang = /^ar/i.test(this.host.lang);
-    const alt = this.rtlOn ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && hasDifferential(c)) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
+    const alt = this.rtlOn ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && (hasDifferential(c) || /<mi>ln<\/mi>/.test(c.A ?? ''))) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
     if (alt) body = tracedPaths(alt.layers as any);
     else if (key && ART[key]) body = ART[key](inner, gh - 4);
     else if (behaviorOf(c) === 'digits-arabic' || behaviorOf(c) === 'digits-eastern') body = controlIcon(c, inner, gh - 4) || `<text x="${inner / 2}" y="${inner * 0.75}" font-size="13" text-anchor="middle" fill="#000" font-family="Arial">${behaviorOf(c) === 'digits-arabic' ? '٣٢١' : '۳۲۱'}</text>`;
@@ -335,7 +335,7 @@ export class Toolbar {
       const svgEl = btn.querySelector('svg');
       if (!svgEl) continue;
       const arLang = /^ar/i.test(this.host.lang);
-      const alt = on ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && hasDifferential(c)) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
+      const alt = on ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && (hasDifferential(c) || /<mi>ln<\/mi>/.test(c.A ?? ''))) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
       const [w, hh] = [c.geom[2] - 4, c.geom[3] - 4];
       if (alt) svgEl.innerHTML = tracedPaths(alt.layers as any);
       else {

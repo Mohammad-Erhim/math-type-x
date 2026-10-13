@@ -45,16 +45,19 @@ export const hasDifferential = (c: Control): boolean => /<mo>d<\/mo>/.test(c.A ?
 /** SVG markup (inner) of a catalogue control icon fitted into a w×h box; `arabicLang`: the editor's language is Arabic */
 export function controlIcon(c: Control, w: number, h: number, arabic = false, arabicLang = false): string {
   const arDiff = arabicLang && hasDifferential(c);
+  const arLn = arabicLang && /<mi>ln<\/mi>/.test(c.A ?? '');
   // the limit buttons are drawn from their formula: the word follows the language (نها in Arabic, mirrored) and the
   // infinity sign stays clear at this size
   const limit = c.id === 'TB-9-009' || c.id === 'TB-9-010';
   // vector re-drawing of the reference artwork (tools/gen/trace_controls.py)
-  const t = DRAWN_ICONS.has(c.id) || arDiff ? undefined : TRACED[c.id];
+  const t = DRAWN_ICONS.has(c.id) || arDiff || arLn ? undefined : TRACED[c.id];
   if (t) {
     const body = tracedPaths(t.layers as any);
     return t.w === w && t.w === h ? body : `<g transform="scale(${w / t.w} ${h / t.w})">${body}</g>`;
   }
   let mml = c.A ?? '<math/>';
+  // the natural logarithm of an Arabic editor: لو followed by the Arabic math letter U+E14E
+  if (arLn) mml = mml.replace('<mi>ln</mi>', '<mi>&#x644;&#x648;</mi><mi>&#xE14E;</mi>');
   if (arDiff) mml = mml.replace(/<mo>d<\/mo>/g, `<mo>${ARABIC_DIFFERENTIAL}</mo>`);
   if (limit && arabic) mml = mml.replace('<mi>lim</mi>', '<mi>\u0646\u0647\u0627</mi>').replace('&#x2192;', '&#x2190;');
   let doc;

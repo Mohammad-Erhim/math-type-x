@@ -1788,7 +1788,7 @@ export class EditorCore {
 }
 
 
-const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
+const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لو\ue14e', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
 
 /** right-to-left editing writes function names in Arabic (arcsin → sin⁻¹); root-level indices are re-mapped */
 /** the differential d (`<mo>d</mo>` of the integral and derivative controls) written with the Arabic math letter ء */

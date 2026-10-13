@@ -222,7 +222,7 @@ export const CSS = `
 @media (max-height:560px){.wrs_editor .wrs_navKey{height:40px;width:44px;flex-basis:44px}.wrs_fluid .wrs_navPad{padding:3px 8px}}
 .wrs_rtl .wrs_navBackspace svg{transform:scaleX(-1)}
 .wrs_editor .wrs_navKeyboard.wrs_navOn{background:linear-gradient(#5f7681,#3f535c);border-color:#2b3b43;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
-@media (pointer:fine){.wrs_editor .wrs_navKeyboard{display:none}}
+@media (pointer:fine),(min-width:720px){.wrs_editor .wrs_navKeyboard{display:none}}
 .wrs_fluid .wrs_navPad .wrs_navClear{margin-right:auto}
 .wrs_editor .wrs_navKeyboard{margin-right:10px}
 .wrs_editor .wrs_navHistory{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#324d5b}
