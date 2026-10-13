@@ -71,7 +71,8 @@ export function controlIcon(c: Control, w: number, h: number, arabic = false, ar
   let size = w <= 22 ? 15 : 14;
   // drawn beside traced artwork of the reference (whose lettering is small): the Arabic variants are set to match it
   if (arLn || arDiff) size = 10.5;
-  const rtlIcon = limit && arabic;
+  // drawn the way the editor draws what the control inserts: mirrored in right-to-left editing
+  const rtlIcon = arabic && (limit || arLn || arDiff);
   let lay = layoutDocument(doc.row, undefined, size, rtlIcon);
   const fit = () => {
     const tw = lay.w;
