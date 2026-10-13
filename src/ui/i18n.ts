@@ -7,7 +7,21 @@
  */
 import ar from '../data/i18n/ar.json';
 
-const TABLES: Record<string, Record<string, string>> = { ar };
+/** strings of the optional output panel (not part of the reference editor) */
+const OUTPUT_AR: Record<string, string> = {
+  'Output format': 'تنسيق الإخراج',
+  Output: 'الإخراج',
+  'Accessible text': 'نص قابل للوصول',
+  'Plain text': 'نص عادي',
+  Copy: 'نسخ',
+  Download: 'تنزيل',
+  Retry: 'إعادة المحاولة',
+  Error: 'خطأ',
+  'Copied to clipboard': 'تم النسخ إلى الحافظة',
+  'Rendered formula': 'المعادلة المعروضة',
+};
+
+const TABLES: Record<string, Record<string, string>> = { ar: { ...ar, ...OUTPUT_AR } };
 
 /** table for a language code ("ar", "ar_eg", "AR-sa" …), or undefined for English / unsupported languages */
 export function tableFor(lang: string): Record<string, string> | undefined {

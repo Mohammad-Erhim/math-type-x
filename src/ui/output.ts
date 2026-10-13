@@ -1,5 +1,6 @@
 /** Optional output panel below the widget (OUT-004 / SRS 9.3): MathML · LaTeX · SVG · PNG · Accessible text · Plain text. */
 import { h } from './dom';
+import { Localizer, tableFor } from './i18n';
 import type { MathEditor } from './editor';
 
 type Kind = 'mathml' | 'latex' | 'svg' | 'png' | 'accessible' | 'plain';
@@ -78,6 +79,15 @@ export class OutputPanel {
     const foot = h('div', { class: 'mtx_foot' }, this.status, this.copyBtn, this.dlBtn);
     this.root = h('section', { class: 'mtx_output', 'aria-label': 'Output' }, tabs, this.body, foot);
     container.append(this.root);
+    // translated labels (the code shown in the body stays as it is)
+    const table = tableFor(ed.lang);
+    if (table) {
+      new Localizer(table, (el) => el.classList.contains('mtx_body')).attach(this.root);
+      if (ed.opts.rtlLanguages.includes(ed.lang.toLowerCase())) {
+        this.root.setAttribute('dir', 'rtl');
+        this.body.setAttribute('dir', 'ltr');
+      }
+    }
     ed.on('change', () => this.schedule());
     ed.on('ready', () => this.schedule(0));
     this.schedule(0);

@@ -8,6 +8,17 @@
   if (q.has('detectHand')) opts.detectHand = q.get('detectHand') !== 'false';
   if (q.has('fontStyle')) opts.fontStyle = q.get('fontStyle');
   if (q.has('parity')) opts.parity = q.get('parity');
+  // the host page follows the language of the editor (right-to-left for Arabic)
+  var AR = { title: 'شاهد MathType أثناء العمل!', lead: 'جرّب المحرر أدناه: استخدم شريط الأدوات أو اكتب بلوحة المفاتيح أو انتقل إلى وضع الكتابة بخط اليد.' };
+  if (/^ar/i.test(opts.language)) {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+    var h1 = document.querySelector('h1');
+    var lead = document.querySelector('.lead');
+    if (h1) h1.textContent = AR.title;
+    if (lead) lead.textContent = AR.lead;
+    document.title = AR.title;
+  } else if (opts.language) document.documentElement.lang = opts.language;
   var editor = com.wiris.jsEditor.JsEditor.newInstance(opts);
   window.editor = editor;
   editor.insertInto(document.getElementById('editorContainer'));
