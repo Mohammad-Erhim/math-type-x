@@ -173,23 +173,30 @@ export const CSS = `
 .wrs_reflow .wrs_header>button[role=tab].wrs_selected{top:auto;height:40px;margin-top:0;background-size:100% 100%}
 .wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
 .wrs_reflow .wrs_linksContainer{top:8px;right:6px;zoom:1}
-.wrs_reflow .wrs_panelContainer{height:auto;max-height:46vh;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+.wrs_reflow .wrs_panelContainer{height:auto;max-height:54vh;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
+.wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}
 .wrs_reflow .wrs_line{display:none}
-.wrs_reflow .wrs_expandButton{width:18px}
-.wrs_reflow .wrs_expandButton::after{left:6px}
-.wrs_navPad{position:absolute;right:8px;bottom:8px;z-index:6;display:grid;grid-template-columns:repeat(5,40px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
-.wrs_navKey{width:40px;height:40px;padding:0;border:1px solid #778e9a;border-radius:6px;background:rgba(255,255,255,.92);color:#324d5b;font:700 16px/1 Arial,sans-serif;box-shadow:0 1px 4px rgba(52,64,84,.25);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.wrs_reflow .wrs_expandButton{width:26px;height:33px;box-sizing:border-box;border:1px solid #9db0b9;border-radius:8px;background:#f3f6f7}
+.wrs_reflow .wrs_expandButton::after{left:7px;top:12px;border-width:7px 5px 0 5px;border-color:#51636d transparent transparent transparent}
+.wrs_reflow .wrs_expandButton.wrs_pressed,.wrs_reflow .wrs_expandButton[aria-expanded=true]{background:#778e9a;border-color:#51636d;box-shadow:none}
+.wrs_reflow .wrs_expandButton.wrs_pressed::after,.wrs_reflow .wrs_expandButton[aria-expanded=true]::after{border-color:#fff transparent transparent transparent}
+.wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true]),.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true]){background:#f3f6f7;box-shadow:none}
+.wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true])::after,.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true])::after{border-color:#51636d transparent transparent transparent}
+.wrs_navPad{position:absolute;right:8px;bottom:8px;z-index:6;display:grid;grid-template-columns:repeat(5,48px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.wrs_navKey{width:48px;height:48px;padding:0;border:1px solid #778e9a;border-radius:6px;background:rgba(255,255,255,.92);color:#324d5b;font:700 19px/1 Arial,sans-serif;box-shadow:0 1px 4px rgba(52,64,84,.25);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .wrs_navKey:active{background:#dfe8ec}
 .wrs_navClear{border-color:#c9a0a0;display:flex;align-items:center;justify-content:center}
-.wrs_confirm{position:absolute;right:8px;bottom:60px;z-index:7;width:min(260px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:1px solid #778e9a;border-radius:8px;background:#fff;box-shadow:0 4px 16px rgba(52,64,84,.35);font:14px/1.35 Arial,sans-serif;color:#18212f;direction:ltr}
+.wrs_confirm{position:absolute;right:8px;bottom:68px;z-index:7;width:min(260px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:1px solid #778e9a;border-radius:8px;background:#fff;box-shadow:0 4px 16px rgba(52,64,84,.35);font:14px/1.35 Arial,sans-serif;color:#18212f;direction:ltr}
 .wrs_confirmText{margin:0 0 10px}
-.wrs_confirm button{height:40px;min-width:96px;margin-right:8px;border:1px solid #778e9a;border-radius:6px;background:#f4f7f8;font:700 14px Arial,sans-serif;color:#18212f}
+.wrs_confirm button{height:48px;min-width:96px;margin-right:8px;border:1px solid #778e9a;border-radius:6px;background:#f4f7f8;font:700 14px Arial,sans-serif;color:#18212f}
 .wrs_confirm .wrs_confirmYes{background:#a12020;border-color:#7d1818;color:#fff}
-.wrs_hasNavPad .wrs_formulaDisplay{padding-bottom:56px;box-sizing:border-box}
+.wrs_hasNavPad .wrs_formulaDisplay{padding-bottom:64px;box-sizing:border-box}
 /* touch devices have no hover: a tapped control must not stay highlighted */
 @media (hover:none){
-.wrs_editor .wrs_button:hover:not(.wrs_pressed):not(.wrs_toggled):not(:focus),.wrs_editor .wrs_expandButton:hover:not([aria-expanded=true]):not(:focus){border-color:transparent;background:none;box-shadow:none}
+.wrs_editor .wrs_button:focus:not(:focus-visible):not(.wrs_pressed):not(.wrs_toggled){border-color:transparent;border-radius:0;box-shadow:none}
+.wrs_editor:not(.wrs_reflow) .wrs_expandButton:focus:not(:focus-visible):not(.wrs_pressed):not([aria-expanded=true]){background:transparent;box-shadow:none}
+.wrs_editor .wrs_button:hover:not(.wrs_pressed):not(.wrs_toggled):not(:focus),.wrs_editor:not(.wrs_reflow) .wrs_expandButton:hover:not([aria-expanded=true]):not(:focus){border-color:transparent;background:none;box-shadow:none}
 .wrs_header>button[role=tab]:hover:not(.wrs_selected){background-image:url(${skin.tab})}
 }
 @media (prefers-reduced-motion:reduce){.wrs_hand .wrs_hint{animation:none!important}}

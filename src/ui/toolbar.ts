@@ -6,7 +6,7 @@ import rtlIcons from '../data/rtl-icons.json';
 import { catalogue, Control, behaviorOf } from '../core/catalogue';
 import layoutData from '../data/toolbar-layout.json';
 import { h, svg } from './dom';
-import { controlIcon, tracedPaths } from './icons';
+import { controlIcon, tracedPaths, DRAWN_ICONS } from './icons';
 import CTX_LAYOUT from '../data/ctx-layout.json';
 import CTX_ICONS from '../data/ctx-icons.json';
 import { ART, TAB_ICONS } from './art';
@@ -111,6 +111,14 @@ export class Toolbar {
       btn.append(icon);
       btn.addEventListener('click', () => {
         if (ctx && this.ctxOff) return; // nothing to show there
+        // narrow screens: a second tap on the open tab folds its panel away (more room for the formula)
+        if (this.reflowOn && i === this.selected) {
+          const folded = this.container.classList.toggle('wrs_collapsed');
+          btn.setAttribute('aria-expanded', String(!folded));
+          return;
+        }
+        this.container.classList.remove('wrs_collapsed');
+        this.tabs.forEach((t) => t.removeAttribute('aria-expanded'));
         this.host.selectTab(i);
       });
       btn.addEventListener('keydown', (e) => this.tabKey(e as KeyboardEvent, i));
@@ -208,11 +216,11 @@ export class Toolbar {
     const inner = gw - 4;
     const key = c.special ? specialKey(c.title) : null;
     let body = '';
-    const alt = this.rtlOn ? RTL_ICONS.controls[c.id] : undefined;
+    const alt = this.rtlOn ? (DRAWN_ICONS.has(c.id) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
     if (alt) body = tracedPaths(alt.layers as any);
     else if (key && ART[key]) body = ART[key](inner, gh - 4);
     else if (behaviorOf(c) === 'digits-arabic' || behaviorOf(c) === 'digits-eastern') body = controlIcon(c, inner, gh - 4) || `<text x="${inner / 2}" y="${inner * 0.75}" font-size="13" text-anchor="middle" fill="#000" font-family="Arial">${behaviorOf(c) === 'digits-arabic' ? '٣٢١' : '۳۲۱'}</text>`;
-    else body = controlIcon(c, inner, gh - 4);
+    else body = controlIcon(c, inner, gh - 4, this.rtlOn);
     btn.innerHTML = `<svg width="${inner}" height="${gh - 4}" viewBox="0 0 ${inner} ${gh - 4}" aria-hidden="true">${body}</svg>`;
     btn.addEventListener('mousedown', (e) => e.preventDefault());
     btn.addEventListener('click', (e) => {
@@ -281,12 +289,12 @@ export class Toolbar {
       if (!btn) continue;
       const svgEl = btn.querySelector('svg');
       if (!svgEl) continue;
-      const alt = on ? RTL_ICONS.controls[c.id] : undefined;
+      const alt = on ? (DRAWN_ICONS.has(c.id) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
       const [w, hh] = [c.geom[2] - 4, c.geom[3] - 4];
       if (alt) svgEl.innerHTML = tracedPaths(alt.layers as any);
       else {
         const key = c.special ? specialKey(c.title) : null;
-        svgEl.innerHTML = key && ART[key] ? ART[key](w, hh) : controlIcon(c, w, hh);
+        svgEl.innerHTML = key && ART[key] ? ART[key](w, hh) : controlIcon(c, w, hh, on);
       }
     }
     this.tabs.forEach((t, i) => {
@@ -356,8 +364,8 @@ export class Toolbar {
       .map((el) => {
         const expand = el.classList.contains('wrs_expandButton');
         const select = el.classList.contains('wrs_select');
-        const w = expand ? 18 : num(el.style.width) || (select ? 73 : 0);
-        const hgt = expand ? 60 : num(el.style.height) || (select ? 18 : 0);
+        const w = expand ? 26 : num(el.style.width) || (select ? 73 : 0);
+        const hgt = expand ? 33 : num(el.style.height) || (select ? 18 : 0);
         const x = num(el.dataset.ol);
         // the font / size boxes sit side by side instead of one above the other (the row is short of room)
         const y = select && !el.classList.contains('wrs_ctxSelect') ? NaN : num(el.dataset.ot);
@@ -393,7 +401,7 @@ export class Toolbar {
       for (const u of units) if (u.ex) { u.h = Math.max(u.h, u.ex.h); }
       if (cx > PAD) cx += 12;
       for (const u of units) {
-        const full = u.w + (u.ex ? 2 + u.ex.w : 0);
+        const full = u.w + (u.ex ? 4 + u.ex.w : 0);
         if (cx > PAD && cx + full > avail + PAD) {
           cx = PAD;
           cy += rowH + 8;
@@ -404,7 +412,7 @@ export class Toolbar {
           q.el.style.top = cy + (q.y - minY) + 'px';
         }
         if (u.ex) {
-          u.ex.el.style.left = cx + u.w + 2 + 'px';
+          u.ex.el.style.left = cx + u.w + 4 + 'px';
           u.ex.el.style.top = cy + 'px';
         }
         cx += full + 2;

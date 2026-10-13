@@ -196,11 +196,12 @@ export class MathEditor implements ToolbarHost {
   private buildNavPad(): void {
     const touch = (typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches) || (typeof window !== 'undefined' && 'ontouchstart' in window);
     if (!touch) return;
+    // left / right, then up / down
     const keys: [string, string, string][] = [
       ['ArrowLeft', 'Move left', '◀'],
+      ['ArrowRight', 'Move right', '▶'],
       ['ArrowUp', 'Move up', '▲'],
       ['ArrowDown', 'Move down', '▼'],
-      ['ArrowRight', 'Move right', '▶'],
     ];
     const pad = h('div', { class: 'wrs_navPad', role: 'group', 'aria-label': 'Move the cursor' });
     for (const [key, label, glyph] of keys) {
@@ -210,6 +211,7 @@ export class MathEditor implements ToolbarHost {
       b.addEventListener('mousedown', (e) => e.preventDefault());
       let timer: ReturnType<typeof setTimeout> | null = null;
       const step = () => {
+        this.closePopup();
         const host = { ed: this.core, runGeneral: (title: string) => this.runGeneral(title) };
         handleKey(host, key, { ctrl: false, alt: false, shift: false, meta: false });
         this.display.poke();
@@ -359,7 +361,7 @@ export class MathEditor implements ToolbarHost {
     // a narrow window (a phone): no sideways scrolling – the tabs share one row and the controls wrap into rows
     // (touch sized, a little smaller when the window is low)
     const narrow = fluid && w > 0 && w < 960;
-    if (narrow && this.opts.toolbarSize === 1) k = !coarse || (h > 0 && h < 520) ? 1 : 1.3;
+    if (narrow && this.opts.toolbarSize === 1) k = !coarse ? 1 : h > 0 && h < 520 ? 1.1 : 1.45;
     const hk = fluid && coarse ? 1.35 : 1;
     // only a change of the layout mode closes a pop-up; a new zoom (a different window height) keeps it
     const changed = fluid !== this.fluid;
@@ -625,7 +627,11 @@ export class MathEditor implements ToolbarHost {
   };
 
   openGroup(tab: number, group: number, btn: HTMLElement): void {
-    if (this.popup && this.popup.kind === 'group' && this.popup.owner === btn) return; // same arrow keeps it open
+    // the arrow of the open pop-up closes it again
+    if (this.popup && this.popup.kind === 'group' && this.popup.owner === btn) {
+      this.closePopup();
+      return;
+    }
     this.closePopup();
     const items = catalogue.controls.filter((c) => c.tab === tab && c.group === group).sort((a, b) => a.n - b.n);
     if (!items.length) return;
