@@ -11,16 +11,15 @@
 </head>
 <body>
 <main class="page">
-  <header class="page-head">
-    <div class="page-titles">
-      <h1>See MathType in action!</h1>
-      <p class="lead">Try the editor below: use the toolbar, type with the keyboard or switch to handwriting mode.</p>
-    </div>
+  <!-- the title is kept for screen readers and search engines only -->
+  <h1 class="sr-only">See MathType in action!</h1>
+  <p class="lead sr-only">Try the editor below: use the toolbar, type with the keyboard or switch to handwriting mode.</p>
+  <div class="page-head">
     <button type="button" id="fsBtn" class="fsbtn" aria-pressed="false" title="Full screen" aria-label="Full screen">
       <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3h4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <span class="fslabel">Full screen</span>
     </button>
-  </header>
+  </div>
   <div class="wp-block-columns is-layout-flex">
     <div class="wp-block-column">
       <div id="editorContainer"></div>
