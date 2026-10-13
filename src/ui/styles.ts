@@ -195,11 +195,12 @@ export const CSS = `
 .wrs_editor .wrs_navKey:active{background:linear-gradient(#fffdf2,#f6efd0);border-color:#5f7681}
 .wrs_editor .wrs_navKey svg{display:block;margin:auto}
 .wrs_rtl .wrs_navBackspace svg{transform:scaleX(-1)}
+.wrs_fluid .wrs_navPad .wrs_navClear{margin-right:auto}
 .wrs_editor .wrs_navClear{margin-right:14px;border-color:#a3221c;background:linear-gradient(#ea5a52,#c62d26)}
 .wrs_editor .wrs_navClear:active{background:linear-gradient(#c62d26,#a3221c);border-color:#7d1914}
 .wrs_editor .wrs_navClear.wrs_navOff{opacity:.45;background:linear-gradient(#e6a9a5,#d68a85);border-color:#c9908c}
 .wrs_editor .wrs_navClear{display:flex;align-items:center;justify-content:center}
-.wrs_navClear svg path{stroke:#51636d}
+.wrs_navClear svg path{stroke:#fff}
 .wrs_confirm{position:absolute;right:8px;bottom:64px;z-index:7;width:min(280px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:2px solid #778e9a;border-radius:5px;background:linear-gradient(#f6f9fa,#e3eaed);box-shadow:0 0 10px rgba(52,64,84,.3);font:700 14px/1.35 Arial,sans-serif;color:#324d5b;direction:ltr}
 .wrs_confirmText{margin:0 0 10px}
 .wrs_editor .wrs_confirm button{height:48px;min-width:104px;margin-right:8px;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);font:700 14px Arial,sans-serif;color:#324d5b}

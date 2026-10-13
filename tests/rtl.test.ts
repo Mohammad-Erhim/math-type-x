@@ -59,3 +59,14 @@ test('toolbar controls in right-to-left mode', () => {
   if (fails.length) console.log(fails.slice(0, 400).join('\n'));
   assert.equal(fails.length, 0);
 });
+
+test('Arabic languages type Arabic-Indic digits by default, Persian / Urdu the Eastern set, others Western', async () => {
+  const { digitsForLanguage } = await import('../src/core/typing');
+  for (const l of ['ar', 'ar_eg', 'AR-sa', 'ar_ma']) assert.equal(digitsForLanguage(l), 'arabicIndic', l);
+  for (const l of ['fa', 'ur', 'ps']) assert.equal(digitsForLanguage(l, [], ['fa', 'ps', 'ur']), 'easternArabicIndic', l);
+  for (const l of ['en', 'fr', '', 'arm']) assert.equal(digitsForLanguage(l), 'western', l);
+  const c = new EditorCore();
+  c.modes.digits = digitsForLanguage('ar');
+  c.typeText('12');
+  assert.match(c.getMathML(), /<mn>&#x661;&#x662;<\/mn>|<mn>\u0661\u0662<\/mn>/);
+});

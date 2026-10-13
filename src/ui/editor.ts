@@ -4,6 +4,7 @@
  */
 import { Localizer, tableFor } from './i18n';
 import { EditorCore } from '../core/engine';
+import { digitsForLanguage } from '../core/typing';
 import { handleKey } from '../core/keys';
 import { catalogue, Control, behaviorOf, findControl } from '../core/catalogue';
 import { layoutDocument, DocLayout } from '../layout/layout';
@@ -132,6 +133,9 @@ export class MathEditor implements ToolbarHost {
     if (options.reservedWords) this.core.reservedWords = options.reservedWords.filter((w) => /^[A-Za-z]+$/.test(w));
     if (this.opts.fontStyle === 'normal') this.core.modes.autoItalic = false;
     if (options.mml) this.core.setMathML(options.mml);
+    // digits typed in an Arabic language are Arabic-Indic ones (Persian, Pashto and Urdu: Eastern Arabic-Indic);
+    // the toolbar's Arabic-Indic toggles switch back
+    this.core.modes.digits = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
     // right-to-left languages start with a right-to-left formula (`<math dir="rtl">`), like the reference
     if (!options.mml && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
   }
@@ -199,15 +203,17 @@ export class MathEditor implements ToolbarHost {
     // built always; shown on touch screens and in narrow windows (CSS)
     // left / right, then up / down
     const keys: [string, string, string][] = [
+      ['ArrowLeft', 'Move left', 'M16 5L6 12l10 7z'],
+      ['ArrowRight', 'Move right', 'M8 5l10 7-10 7z'],
+      ['ArrowUp', 'Move up', 'M5 16l7-10 7 10z'],
+      ['ArrowDown', 'Move down', 'M5 8l7 10 7-10z'],
       ['Backspace', 'Delete backward', ''],
-      ['ArrowLeft', 'Move left', '◀'],
-      ['ArrowRight', 'Move right', '▶'],
-      ['ArrowUp', 'Move up', '▲'],
-      ['ArrowDown', 'Move down', '▼'],
     ];
     const pad = h('div', { class: 'wrs_navPad', role: 'group', 'aria-label': 'Move the cursor' });
     for (const [key, label, glyph] of keys) {
-      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.replace(/^Arrow/, ''), title: label, 'aria-label': label, tabindex: '-1', text: glyph }) as HTMLButtonElement;
+      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.replace(/^Arrow/, ''), title: label, 'aria-label': label, tabindex: '-1' }) as HTMLButtonElement;
+      // the four arrows are triangles of one size (10 x 14), so no glyph of a font makes one look smaller
+      if (glyph) b.innerHTML = `<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="${glyph}" fill="#324d5b"/></svg>`;
       if (key === 'Backspace') {
         // the key's own sign: it points the way the text is deleted (mirrored in right-to-left formulas by the style)
         b.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg>';

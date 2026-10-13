@@ -3,6 +3,14 @@ import { El, Attr } from './model';
 
 export type DigitSet = 'western' | 'arabicIndic' | 'easternArabicIndic';
 
+/** the digits a language types by default: Arabic-Indic for every Arabic language, Eastern Arabic-Indic for Persian,
+ * Pashto and Urdu (`eastern`), Western otherwise; `arabicIndic` lists further languages that use the Arabic-Indic set */
+export function digitsForLanguage(lang: string, arabicIndic: string[] = [], eastern: string[] = []): DigitSet {
+  const l = (lang || 'en').toLowerCase().replace('-', '_');
+  if (eastern.includes(l)) return 'easternArabicIndic';
+  return /^ar(_|$)/.test(l) || arabicIndic.includes(l) ? 'arabicIndic' : 'western';
+}
+
 export interface TypeModes {
   bold: boolean;
   italic: boolean;
