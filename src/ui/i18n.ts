@@ -33,6 +33,8 @@ const OUTPUT_AR: Record<string, string> = {
   'Delete backward': 'حذف إلى الخلف',
   Keyboard: 'لوحة المفاتيح',
   Keys: 'مفاتيح',
+  'Undo (⌘Z)': 'تراجع (⌘Z)',
+  'Redo (⇧⌘Z)': 'إعادة (⇧⌘Z)',
   General: 'عام',
   Symbols: 'الرموز',
   Arrows: 'الأسهم',

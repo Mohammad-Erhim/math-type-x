@@ -210,6 +210,11 @@ export const CSS = `
 .wrs_editor .wrs_navKeyboard.wrs_navOn{background:linear-gradient(#e3eaed,#cfdbe0);border-color:#5f7681}
 .wrs_fluid .wrs_navPad .wrs_navClear{margin-right:auto}
 .wrs_editor .wrs_navKeyboard{margin-right:10px}
+.wrs_editor .wrs_navHistory{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#324d5b}
+.wrs_editor .wrs_navRedo{margin-right:10px}
+.wrs_editor .wrs_navHistory.wrs_navOff{opacity:.4}
+.wrs_editor .wrs_navKey{min-width:28px}
+@media (max-width:380px){.wrs_fluid .wrs_navPad{gap:3px;padding:3px 4px}.wrs_editor .wrs_navKey .wrs_navCap{font-size:9px;letter-spacing:-.3px}.wrs_editor .wrs_navKeyboard,.wrs_editor .wrs_navRedo{margin-right:6px}}
 .wrs_editor .wrs_navClear{margin-right:14px;border-color:#a3221c;background:linear-gradient(#ea5a52,#c62d26)}
 .wrs_editor .wrs_navClear:active{background:linear-gradient(#c62d26,#a3221c);border-color:#7d1914}
 .wrs_editor .wrs_navClear.wrs_navOff{opacity:.45;background:linear-gradient(#e6a9a5,#d68a85);border-color:#c9908c}

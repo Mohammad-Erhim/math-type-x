@@ -33,8 +33,9 @@ export function handleKey(host: KeyHost, key: string, m: Mods): boolean {
         ed.toggleItalic();
         return true;
       case 'z':
-        if (m.shift) return true; // Ctrl+Shift+Z has no effect
-        ed.undo();
+        // Ctrl+Z undoes, Ctrl+Shift+Z (Cmd+Shift+Z on a Mac) redoes, like Ctrl+Y
+        if (m.shift) ed.redo();
+        else ed.undo();
         return true;
       case 'y':
         ed.redo();
