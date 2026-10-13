@@ -131,6 +131,8 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
   differences (browser rasteriser instead of resvg); PDF / EPS wrap a 300 dpi raster in both.
 * Formulas are drawn with one bundled font set (STIX Two Math, Liberation Sans, an Arabic face) in the editor, the icons and
   every export, so the canvas and the PNG / SVG / PDF agree; large delimiters are assembled from STIX glyph variants.
+* `persist: '<key>'` (editor option; the demo page uses it) keeps formula, tab, typing modes and the output panel's format in
+  local storage under `mtx:<key>`; nothing is stored without the option. The formula is user content: clear the key to forget it.
 * The Font list's **Arabic fonts** (Noto Naskh Arabic, Noto Sans Arabic, Noto Kufi Arabic, Tajawal) apply to Arabic-script text
   only (letters, digits, punctuation); Latin letters, digits and operators stay in the bundled sans / math faces. The Latin
   entries of the list (Arial, Tahoma, …) are stored in the equation (`style="font-family:…"`) but do not change the drawing.

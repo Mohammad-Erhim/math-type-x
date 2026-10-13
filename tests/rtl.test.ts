@@ -70,3 +70,43 @@ test('Arabic languages type Arabic-Indic digits by default, Persian / Urdu the E
   c.typeText('12');
   assert.match(c.getMathML(), /<mn>&#x661;&#x662;<\/mn>|<mn>\u0661\u0662<\/mn>/);
 });
+
+test('bold / italic on a joined Arabic word keeps the letters one run (they stay joined in the drawing)', async () => {
+  const { parseMathML } = await import('../src/core/mathml');
+  const { layoutDocument } = await import('../src/layout/layout');
+  const texts = (c: EditorCore) =>
+    layoutDocument(parseMathML(c.getMathML()).row, undefined, 16, true).items.filter((i) => i.k === 'g').map((i) => (i as { text: string }).text);
+  for (const act of ['bold', 'italic', 'color']) {
+    const c = new EditorCore();
+    c.setRtl(true);
+    c.modes.arabicLigature = true;
+    c.typeText('نها');
+    assert.deepEqual(texts(c), ['نها']);
+    c.selectAll();
+    if (act === 'bold') c.toggleBold();
+    else if (act === 'italic') c.toggleItalic();
+    else c.setColor('#FF0000');
+    assert.deepEqual(texts(c), ['نها'], act);
+  }
+  // letters typed one by one without the ligature mode were separate letters and stay so
+  const d = new EditorCore();
+  d.setRtl(true);
+  d.typeText('نها');
+  d.selectAll();
+  d.toggleBold();
+  assert.equal(texts(d).length, 3);
+});
+
+test('the exponent of an inverse function follows the typed digit set (Arabic-Indic digits in Arabic)', () => {
+  const ctl = catalogue.controls.find((c) => c.title === 'Arcsine')!;
+  for (const [set, one] of [['western', '1'], ['arabicIndic', '١'], ['easternArabicIndic', '۱']] as const) {
+    const ed = new EditorCore();
+    ed.setMathML(EMPTY);
+    ed.setRtl(true);
+    ed.setDigits(set);
+    ed.activate(ctl);
+    const m = ed.getMathML();
+    const cp = (one.codePointAt(0) as number).toString(16).toUpperCase();
+    assert.ok(set === 'western' ? m.includes('<mn>1</mn>') : m.includes(`<mn>&#x${cp};</mn>`), set + ' ' + m);
+  }
+});

@@ -83,18 +83,14 @@ export class Toolbar {
   readonly byTitle = new Map<string, HTMLButtonElement>();
   readonly expands: HTMLButtonElement[][] = [];
   readonly selects: { font: HTMLSelectElement; size: HTMLSelectElement; fontLabel: HTMLElement; sizeLabel: HTMLElement; fontBox: HTMLElement; sizeBox: HTMLElement } | null = null;
-  readonly link: HTMLAnchorElement;
   selected = 0;
   private panelButtons: HTMLButtonElement[][] = [];
   private ctxPanel: HTMLElement;
 
-  constructor(private host: ToolbarHost, manualUrl: string) {
+  constructor(private host: ToolbarHost) {
     this.header = h('div', { class: 'wrs_header', role: 'tablist' });
     this.container = h('div', { class: 'wrs_panelContainer' });
-    this.link = h('a', { class: 'wrs_linkButton wrs_imageContainer', href: manualUrl, target: '_blank', rel: 'noopener', title: 'Manual', 'aria-label': 'Manual' }) as HTMLAnchorElement;
-    this.link.innerHTML = `<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">${ART.help(18, 18)}</svg>`;
-    const links = h('div', { class: 'wrs_linksContainer' }, this.link);
-    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, links, this.header, this.container);
+    this.root = h('div', { class: 'wrs_toolbar wrs_main' }, this.header, this.container);
     this.buildTabs();
     this.buildPanels();
     this.ctxPanel = this.panels[9];

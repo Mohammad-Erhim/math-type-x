@@ -8,9 +8,6 @@ export const CSS = `
 .wrs_editor button{font:inherit;color:inherit;margin:0;padding:0;border:0;background:none;cursor:pointer;outline:0;appearance:none;-webkit-appearance:none}
 .wrs_editor svg{display:block}
 .wrs_toolbar{position:absolute;left:0;top:0;width:725px;height:97px;font-size:11px;font-weight:400}
-.wrs_linksContainer{position:absolute;left:705px;top:4px;width:18px;height:18px;z-index:5}
-.wrs_linkButton{display:block;width:18px;height:18px;overflow:hidden;cursor:pointer;outline:0;color:rgb(24,33,47)}
-.wrs_linkButton:focus-visible{outline:2px solid #778e9a;outline-offset:1px;border-radius:50%}
 .wrs_header{position:absolute;left:0;top:1px;width:725px;height:25px;z-index:2}
 .wrs_header>button[role=tab]{position:absolute;top:3px;width:44px;height:21px;border:0;border-radius:0;background:url(${skin.tab}) no-repeat 0 0;cursor:default;overflow:hidden}
 .wrs_header>button[role=tab]:hover{background-image:url(${skin.tabHover})}
@@ -151,7 +148,6 @@ export const CSS = `
 .wrs_fluid .wrs_header{position:relative;left:auto;top:auto;flex:none;width:calc(100% - 26px * var(--wrs-k));height:calc(25px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .wrs_fluid .wrs_header::-webkit-scrollbar,.wrs_fluid .wrs_panelContainer::-webkit-scrollbar{display:none}
 .wrs_fluid .wrs_header>button[role=tab]{zoom:var(--wrs-k)}
-.wrs_fluid .wrs_linksContainer{left:auto;right:calc(4px * var(--wrs-k));top:calc(4px * var(--wrs-k));zoom:var(--wrs-k)}
 .wrs_fluid .wrs_panelContainer{position:relative;left:auto;top:auto;flex:none;width:100%;height:calc(72px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:url(${skin.panel}) no-repeat 0 0 / auto 100%,url(${skin.panel}) no-repeat 100% 0 / 20000% 100%,linear-gradient(#f6f9fa,#e3eaed)}
 .wrs_fluid .wrs_multipleRowPanel{zoom:var(--wrs-k)}
 .wrs_fluid .wrs_formulaDisplayWrapper{position:relative;left:auto;top:auto;flex:1 1 0;width:auto;height:auto;min-height:0;margin-right:var(--wrs-strip)}
@@ -176,7 +172,6 @@ export const CSS = `
 .wrs_reflow .wrs_header>button[role=tab].wrs_selected{top:auto;height:40px;margin-top:0;background-size:100% 100%}
 .wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
 .wrs_fluid .wrs_toolbar.wrs_main{margin-bottom:10px}
-.wrs_reflow .wrs_linksContainer{top:8px;right:6px;zoom:1}
 .wrs_reflow .wrs_panelContainer{height:auto;max-height:var(--wrs-panel-max,54vh);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
 .wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}

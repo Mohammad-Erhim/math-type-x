@@ -5,6 +5,7 @@
 import { Localizer, tableFor } from './i18n';
 import { EditorCore } from '../core/engine';
 import { digitsForLanguage } from '../core/typing';
+import { Store, Saved } from './persist';
 import { handleKey } from '../core/keys';
 import { catalogue, Control, behaviorOf, findControl } from '../core/catalogue';
 import { layoutDocument, DocLayout } from '../layout/layout';
@@ -66,14 +67,15 @@ export interface EditorOptions {
   parity?: 'exact' | 'improved';
   services?: ServicesOptions;
   mml?: string;
-  manualUrl?: string;
   /** directory serving the reference symbol fonts (math1.ttf …); the bundled STIX Two Math is used without it */
   fontsUrl?: string;
+  /** local-storage key: the formula, tab, typing modes and output format are kept in the browser under it (off when empty) */
+  persist?: string;
 }
 
 type Ev = 'ready' | 'change' | 'focus' | 'blur' | 'tabchange' | 'handstart' | 'handend';
 
-const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'manualUrl' | 'fontsUrl'>> = {
+const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'fontsUrl' | 'persist'>> = {
   language: 'en',
   layout: 'auto',
   autoformat: false,
@@ -136,8 +138,59 @@ export class MathEditor implements ToolbarHost {
     // digits typed in an Arabic language are Arabic-Indic ones (Persian, Pashto and Urdu: Eastern Arabic-Indic);
     // the toolbar's Arabic-Indic toggles switch back
     this.core.modes.digits = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
+    // what the person left in this browser (formula with its font and size, typing modes, tab)
+    if (this.opts.persist) this.store = new Store('mtx:' + this.opts.persist);
+    const restored = !options.mml && this.store ? this.restore(this.store.read()) : false;
     // right-to-left languages start with a right-to-left formula (`<math dir="rtl">`), like the reference
-    if (!options.mml && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
+    if (!options.mml && !restored && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
+  }
+
+  /* ---------------------------------------------------------- persistence */
+  private store: Store | null = null;
+  private restoredTab: number | undefined;
+  private onHide = (): void => {
+    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.store?.flush();
+  };
+  private onPageHide = (): void => this.store?.flush();
+
+  /** apply a saved record; true when it brought a formula */
+  private restore(s: Saved | null): boolean {
+    if (!s) return false;
+    let formula = false;
+    try {
+      if (s.mml) {
+        this.core.setMathML(s.mml);
+        this.core.clearHistory();
+        formula = true;
+      }
+    } catch {
+      // a formula the editor cannot read: forget the record rather than failing at every load
+      this.store?.clear();
+      return false;
+    }
+    const m = s.modes;
+    if (m) {
+      const t = this.core.modes as any;
+      for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (m[k] !== undefined) t[k] = m[k];
+      if (m.digits) t.digits = m.digits;
+      if (m.color !== undefined) t.color = m.color;
+    }
+    this.restoredTab = s.tab;
+    return formula;
+  }
+
+  /** what is saved for this editor (output panel: the chosen format) */
+  readState(): Saved | null {
+    return this.store ? this.store.read() : null;
+  }
+  writeState(patch: Partial<Omit<Saved, 'v'>>): void {
+    this.store?.set(patch);
+  }
+
+  private persistNow(mml: string): void {
+    if (!this.store) return;
+    const m = this.core.modes as any;
+    this.store.set({ mml, modes: { bold: !!m.bold, italic: !!m.italic, autoItalic: !!m.autoItalic, text: !!m.text, arabicLigature: !!m.arabicLigature, digits: m.digits, color: m.color ?? null } });
   }
 
   static newInstance(o: EditorOptions = {}): MathEditor {
@@ -165,6 +218,11 @@ export class MathEditor implements ToolbarHost {
     this.render();
     this.ctx = contextState(this.core);
     this.toolbar.setContextEnabled(!!(this.ctx && this.ctx.controls.length));
+    if (this.restoredTab !== undefined && this.restoredTab !== this.toolbar.selected) this.selectTab(this.restoredTab);
+    if (this.store) {
+      document.addEventListener('visibilitychange', this.onHide);
+      window.addEventListener('pagehide', this.onPageHide);
+    }
     this.ready = true;
     queueMicrotask(() => this.emitEv('ready', {}));
     this.scheduleAccessible(true);
@@ -172,7 +230,7 @@ export class MathEditor implements ToolbarHost {
 
   private build(container: HTMLElement): void {
     this.display = new FormulaDisplay();
-    this.toolbar = new Toolbar(this, this.opts.manualUrl ?? helpUrl(this.lang));
+    this.toolbar = new Toolbar(this);
     this.geom = new DocGeometry(this.core);
     this.core.geometry = this.geom;
     const handWrapper = h('div', { class: 'wrs_handWrapper' });
@@ -348,6 +406,9 @@ export class MathEditor implements ToolbarHost {
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
     this.resizeObs?.disconnect();
+    this.store?.flush();
+    document.removeEventListener('visibilitychange', this.onHide);
+    window.removeEventListener('pagehide', this.onPageHide);
     window.removeEventListener('resize', this.onWinResize);
     window.removeEventListener('orientationchange', this.onWinResize);
     this.root?.remove();
@@ -423,6 +484,7 @@ export class MathEditor implements ToolbarHost {
     this.normalizeRoot();
     this.render();
     const mml = this.core.getMathML();
+    this.persistNow(mml);
     if (mml !== this.lastMml) {
       this.lastMml = mml;
       if (this.changeTimer) clearTimeout(this.changeTimer);
@@ -579,6 +641,8 @@ export class MathEditor implements ToolbarHost {
   selectTab(i: number, focusFirst = false): void {
     this.closePopup();
     this.toolbar.select(i);
+    // the Contextual tab depends on the caret: the page opens on the tab before it
+    if (i <= 8) this.store?.set({ tab: i });
     if (i === 9) this.renderContextPanel();
     this.emitEv('tabchange', { tab: i });
     if (focusFirst) {
@@ -1368,26 +1432,26 @@ export class MathEditor implements ToolbarHost {
     if (p.parity) this.core.parity = p.parity;
     if (p.autoformat !== undefined) this.core.autoformat = !!p.autoformat;
   }
-  async getLaTeX(): Promise<string> {
-    return this.services.latex(this.core.getMathML());
+  async getLaTeX(o: { signal?: AbortSignal } = {}): Promise<string> {
+    return this.services.latex(this.core.getMathML(), o.signal);
   }
-  async getAccessibleText(lang?: string): Promise<string> {
-    return this.services.accessible(this.core.getMathML(), lang ?? this.lang);
+  async getAccessibleText(lang?: string, o: { signal?: AbortSignal } = {}): Promise<string> {
+    return this.services.accessible(this.core.getMathML(), lang ?? this.lang, o.signal);
   }
   getPlainText(): string {
     return this.core.plainText();
   }
-  async getSVG(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<string> {
+  async getSVG(o: { zoom?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<string> {
     const r = await this.services.render(this.core.getMathML(), 'svg', o);
     return r.body.text();
   }
-  async getPDF(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+  async getPDF(o: { zoom?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'pdf', o)).body;
   }
-  async getEPS(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+  async getEPS(o: { zoom?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'eps', o)).body;
   }
-  async getPNG(o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+  async getPNG(o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'png', o)).body;
   }
   async getImageDataURL(format: 'svg' | 'png', o: any = {}): Promise<string> {
@@ -1418,12 +1482,6 @@ export class MathEditor implements ToolbarHost {
   }
 }
 
-/** the help page ships next to editor.js (fonts/ is the assets directory) */
-function helpUrl(lang: string): string {
-  const base = getAssetsBase();
-  const root = base ? new URL('../', new URL(base, document.baseURI)).href : '';
-  return `${root}help.html?lang=${encodeURIComponent(lang)}&v=${VERSION}`;
-}
 
 /** the entry point: MathTypeX.JsEditor.newInstance(...) */
 export const JsEditor = { newInstance: (o: EditorOptions = {}) => MathEditor.newInstance(o) };

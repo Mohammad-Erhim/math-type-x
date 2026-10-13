@@ -1,7 +1,7 @@
 (function () {
   var q = new URLSearchParams(location.search);
   // the editor fills the space the page gives it (the window height, minus the output panel)
-  var opts = { language: q.get('lang') || 'en', layout: 'fluid', services: { baseUrl: '/editor-services/' } };
+  var opts = { language: q.get('lang') || 'en', layout: 'fluid', services: { baseUrl: '/editor-services/' }, persist: q.get('persist') === '0' ? '' : 'mathtypex' };
   // ?layout=classic: the fixed 725 x 415 widget (used by the test tools, whose coordinates assume it)
   if (q.get('layout') === 'classic') {
     opts.layout = 'classic';
@@ -27,7 +27,8 @@
   var editor = MathTypeX.JsEditor.newInstance(opts);
   window.editor = editor;
   editor.insertInto(document.getElementById('editorContainer'));
-  // leaving the page by mistake (a swipe back, a closed tab) would lose the formula: the browser asks first
+  // the formula, the tab, the font … are kept in the browser (local storage), so leaving the page loses nothing: the
+  // browser only asks for a confirmation (it shows its own wording; the text below is for browsers that display it)
   window.addEventListener('beforeunload', function (e) {
     var empty = true;
     try {
@@ -35,7 +36,8 @@
     } catch (err) {}
     if (empty) return;
     e.preventDefault();
-    e.returnValue = '';
+    e.returnValue = 'Your formula is saved on this device. Leave this page?';
+    return e.returnValue;
   });
   if (q.get('output') !== '0') window.outputPanel = new MathTypeX.OutputPanel(editor, document.getElementById('outputContainer'));
 })();

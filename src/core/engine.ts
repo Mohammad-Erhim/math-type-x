@@ -267,6 +267,8 @@ export class EditorCore {
     if (!this.hasSelection()) this.settleStackCaret();
     let mapped = false;
     if (this.rtl) spec = rtlize(spec);
+    // numbers a control brings along (the -1 of an inverse function …) are written in the digit set in use
+    if (this.modes.digits !== 'western') spec = withDigits(spec, this.modes.digits);
     if (!this.modes.autoItalic && spec.tree.length === 1 && spec.tree[0].c === undefined) {
       // script capitals are drawn from the plain letter in upright mode
       const t = spec.tree[0];
@@ -1314,7 +1316,9 @@ export class EditorCore {
       const tokens = leaves.filter((e) => e.t === 'mi' || e.t === 'mn' || e.t === 'mo' || e.t === 'mtext');
       const want = kind === 'bold' ? ['bold', 'bold-italic'] : ['italic', 'bold-italic'];
       const allOn = tokens.length > 0 && tokens.every((e) => want.includes(getAttr(e, 'mathvariant') ?? '') || (kind === 'italic' && e.t === 'mi' && this.modes.autoItalic && getAttr(e, 'mathvariant') === undefined));
-      for (const e of tokens) this.applyVariant(e, kind, !allOn);
+      // letters that formed one run (joined Arabic letters) keep forming one: the style changes, the word stays a word
+      const regroup = new Map<unknown, unknown>();
+      for (const e of tokens) this.applyVariant(e, kind, !allOn, regroup);
       this.modes[kind] = !allOn;
       this.emit();
       return;
@@ -1323,7 +1327,7 @@ export class EditorCore {
     this.emit();
   }
 
-  private applyVariant(e: El, kind: 'bold' | 'italic', on: boolean): void {
+  private applyVariant(e: El, kind: 'bold' | 'italic', on: boolean, regroup?: Map<unknown, unknown>): void {
     const cur = getAttr(e, 'mathvariant') ?? null;
     let bold = cur === 'bold' || cur === 'bold-italic';
     let italic = cur === 'italic' || cur === 'bold-italic';
@@ -1337,7 +1341,12 @@ export class EditorCore {
     else v = null;
     setAttr(e, 'mathvariant', v);
     if (mi) {
-      e.g = newGroup();
+      // a letter of Arabic script stays in the run it was typed in (the new group is shared by the old group's letters)
+      const old = e.g;
+      if (regroup && old !== undefined && /^\p{Script=Arabic}+$/u.test(e.x ?? '')) {
+        if (!regroup.has(old)) regroup.set(old, newGroup());
+        e.g = regroup.get(old) as typeof e.g;
+      } else e.g = newGroup();
       delete e.up;
     }
   }
@@ -1776,6 +1785,16 @@ export class EditorCore {
 const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لط', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
 
 /** right-to-left editing writes function names in Arabic (arcsin → sin⁻¹); root-level indices are re-mapped */
+/** the digits of the numbers (mn) of an insertion written in `digits` */
+function withDigits(spec: InsertSpec, digits: DigitSet): InsertSpec {
+  const mapEl = (e: El): El => {
+    if (e.c) return { ...e, c: e.c.map((r) => r.map(mapEl)) };
+    if (e.t === 'mn' && e.x && /\d/.test(e.x)) return { ...e, x: Array.from(e.x).map((ch) => mapDigit(ch, digits)).join('') };
+    return e;
+  };
+  return { ...spec, tree: spec.tree.map(mapEl) };
+}
+
 function rtlize(spec: InsertSpec): InsertSpec {
   const idxMap: number[] = [];
   const mapRow = (r: Row, top: boolean): Row => {

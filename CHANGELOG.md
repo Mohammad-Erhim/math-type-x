@@ -63,7 +63,8 @@ All notable changes are documented here. The format follows
   confirmation joins the touch pad; the contextual tab is disabled (greyed) while the caret has no options; leaving the
   page with a formula in it asks first; handwriting is switched off in the demo (`?detectHand=true` brings it back);
   the limit of a right-to-left formula is the Arabic word نها.
-- Brand-neutral naming: no third-party site links or names in the product, help page shipped with the editor.
+- Brand-neutral naming: no third-party site links or names in the product.
+- The manual link, its icon, the `manualUrl` option and the help page are gone.
 
 ### Added (Arabic fonts)
 - The Font list has a group of Arabic fonts (Noto Naskh Arabic, Noto Sans Arabic, Noto Kufi Arabic, Tajawal; SIL OFL):
@@ -73,6 +74,19 @@ All notable changes are documented here. The format follows
 - Subset fonts (woff2 for browsers, loaded only when used; ttf for the image services) from
   `tools/gen/subset_arabic_fonts.py`; the image services measure Arabic runs with HarfBuzz (`harfbuzzjs`) in each face.
 - `tools/font_check.js` compares editor and PNG for every face, `tests/arfonts.test.ts`.
+
+### Added (state, output, Arabic details)
+- The demo keeps its state in the browser (local storage, `persist` option / `?persist=0` to switch off): the formula with its
+  font family, size and direction, the active tab, the typing modes (bold, italic, regular text, digits, …) and the output
+  format. A reload, closed tab or swipe back loses nothing; unreadable or foreign records are ignored (`src/ui/persist.ts`).
+- Output panel: results are made once typing pauses (120 ms for local formats, 350 ms for service formats), the running
+  request is cancelled the moment the formula changes, the shown output is dimmed ("Updating…") instead of flashing a
+  skeleton, an answer for an older formula is never shown (checked again when it arrives), results of the last 10 formulas /
+  formats are cached, and nothing is made while the page is hidden.
+- Arabic languages type Arabic-Indic digits by default (Persian / Pashto / Urdu: Eastern Arabic-Indic); numbers a control
+  brings along (the exponent of an inverse function) follow the digit set.
+- Bold / Italic on a joined Arabic word keeps the word one run (the letters stay joined).
+- Touch pad: backspace key (repeats while held, mirrored in right-to-left formulas), clear is a separate red button.
 
 ### Known deviations
 See *Known deviations* in the [README](README.md).

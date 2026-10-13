@@ -71,10 +71,15 @@ export class Services {
     return read(res);
   }
 
-  private async post(name: string, body: Record<string, string>, key = name): Promise<string> {
+  private async post(name: string, body: Record<string, string>, key = name, signal?: AbortSignal): Promise<string> {
     this.pending.get(key)?.abort();
     const ac = new AbortController();
     this.pending.set(key, ac);
+    // the caller can cancel too (a newer formula makes this answer useless)
+    if (signal) {
+      if (signal.aborted) ac.abort();
+      else signal.addEventListener('abort', () => ac.abort(), { once: true });
+    }
     const base = this.opts.baseUrl.replace(/\/?$/, '/');
     return this.remote(
       () =>
@@ -88,21 +93,23 @@ export class Services {
     );
   }
 
-  async accessible(mml: string, lang: string): Promise<string> {
+  async accessible(mml: string, lang: string, signal?: AbortSignal): Promise<string> {
     if (this.opts.local) return mathml2accessible(mml, lang);
     try {
-      return await this.post('mathml2accessible', { mml, lang, 'wrs-cause': 'editor_screen_reader' });
+      return await this.post('mathml2accessible', { mml, lang, 'wrs-cause': 'editor_screen_reader' }, 'mathml2accessible', signal);
     } catch (e) {
       if ((e as Error).name === 'AbortError') throw e;
       return mathml2accessible(mml, lang);
     }
   }
 
-  async latex(mml: string): Promise<string> {
+  async latex(mml: string, signal?: AbortSignal): Promise<string> {
     if (this.opts.local) return mathml2latex(mml);
     try {
-      return await this.post('mathml2latex', { mml });
-    } catch {
+      return await this.post('mathml2latex', { mml }, 'mathml2latex', signal);
+    } catch (e) {
+      // cancelled by the caller: its answer is not wanted, no local conversion either
+      if (signal?.aborted && (e as Error).name === 'AbortError') throw e;
       return mathml2latex(mml);
     }
   }
@@ -117,7 +124,7 @@ export class Services {
     }
   }
 
-  async render(mml: string, format: 'svg' | 'png' | 'pdf' | 'eps', o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<{ body: Blob; text?: string }> {
+  async render(mml: string, format: 'svg' | 'png' | 'pdf' | 'eps', o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string; signal?: AbortSignal } = {}): Promise<{ body: Blob; text?: string }> {
     const params: Record<string, string> = { mml, format };
     if (o.zoom) params.zoom = String(o.zoom);
     if (o.dpi) params.dpi = String(o.dpi);
@@ -127,7 +134,7 @@ export class Services {
     const base = this.opts.baseUrl.replace(/\/?$/, '/');
     try {
       const body = await this.remote(
-        () => fetch(base + 'render.' + format, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', ...(this.opts.headers ?? {}) }, body: new URLSearchParams(params) }),
+        () => fetch(base + 'render.' + format, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', ...(this.opts.headers ?? {}) }, body: new URLSearchParams(params), signal: o.signal }),
         (r) => r.blob(),
       );
       return { body };

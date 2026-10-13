@@ -29,6 +29,7 @@ const OUTPUT_AR: Record<string, string> = {
   Clear: 'مسح',
   Cancel: 'إلغاء',
   'Arabic fonts': 'خطوط عربية',
+  'Updating…': 'جارٍ التحديث…',
   'Delete backward': 'حذف إلى الخلف',
 };
 

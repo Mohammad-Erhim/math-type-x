@@ -2,7 +2,6 @@ import { ARABIC_FONTS, ArabicFont } from '../layout/arfonts';
 /** UI message catalogue (NFR-008). Keys are the English tooltips; other languages can extend the table. */
 export const MESSAGES: Record<string, Record<string, string>> = {
   en: {
-    manual: 'Manual',
     more: 'More',
     mathInput: 'Math input',
     goToHand: 'Go to handwritten mode',
