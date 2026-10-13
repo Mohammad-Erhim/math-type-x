@@ -24,6 +24,7 @@
     "build:prod": "node tools/build.mjs --prod",
     "start": "node dist/server.mjs",
     "typecheck": "tsc --noEmit -p .",
-    "test": "node tools/run-tests.mjs"
+    "test": "node tools/run-tests.mjs",
+    "build:static": "node tools/build.mjs --prod --static"
   }
 }

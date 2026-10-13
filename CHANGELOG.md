@@ -34,5 +34,11 @@ All notable changes are documented here. The format follows
 - Tools: contextual-tab crawler (`tools/ctx_matrix.js`) with comparison and replay helpers, handwriting end-to-end check,
   selection / enclosure probes.
 
+### Added (static deployment)
+- The editor works without any server: image export (SVG, PNG, PDF, EPS), handwriting recognition (Web Worker) and the
+  converters run in the browser when the services are not there; `npm run build:static`, `vercel.json`,
+  `tools/static_e2e.js`, `tests/static.test.ts`.
+- `editor.getPDF()` / `editor.getEPS()`; shared SVG / PDF code in `src/render`.
+
 ### Known deviations
 See *Known deviations* in the [README](README.md).

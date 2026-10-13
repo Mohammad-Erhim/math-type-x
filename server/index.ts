@@ -142,7 +142,7 @@ interface Reply {
 }
 const text = (body: string): Reply => ({ type: 'text/plain; charset=UTF-8', body });
 
-function handleService(name: string, p: Record<string, string>): Reply {
+function handleService(name: string, p: Record<string, string>): Reply | Promise<Reply> {
   switch (name) {
     case 'mathml2accessible': {
       const m = mmlOf(p);
@@ -218,8 +218,9 @@ function handleService(name: string, p: Record<string, string>): Reply {
     }
     if (fmt === 'pdf' || fmt === 'eps') {
       const r = renderRaster(mml, o);
-      const body = fmt === 'pdf' ? rgbaToPdf(r.rgba, r.width, r.height, r.ptW, r.ptH) : rgbaToEps(r.rgba, r.width, r.height, r.ptW, r.ptH, safeColor(o.background, '#ffffff'));
-      return { type: fmt === 'pdf' ? 'application/pdf' : 'application/postscript', body, headers: { 'X-Baseline': String(r.baseline) } };
+      const headers = { 'X-Baseline': String(r.baseline) };
+      if (fmt === 'pdf') return rgbaToPdf(r.rgba, r.width, r.height, r.ptW, r.ptH).then((body) => ({ type: 'application/pdf', body, headers }));
+      return { type: 'application/postscript', body: rgbaToEps(r.rgba, r.width, r.height, r.ptW, r.ptH, safeColor(o.background, '#ffffff')), headers };
     }
     throw new HttpError(400, 'unsupported format');
   }
@@ -267,7 +268,7 @@ export function createApp(cfg: Config) {
         const body = req.method === 'POST' ? await readBody(req, cfg.maxBody) : Buffer.alloc(0);
         const params = parseParams(url, body, String(req.headers['content-type'] ?? ''));
         const name = url.pathname.slice(cfg.base.length);
-        const r = handleService(name, params);
+        const r = await handleService(name, params);
         return send(r.status ?? 200, r.type, r.body, { 'Cache-Control': 'no-store', ...cors, ...(r.headers ?? {}) });
       }
       // static

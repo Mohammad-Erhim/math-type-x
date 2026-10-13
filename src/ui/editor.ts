@@ -1019,6 +1019,7 @@ export class MathEditor implements ToolbarHost {
   openHand(): void {
     this.closePopup();
     this.root.classList.add('wrs_handMode');
+    this.services.warmUp();
     this.hand.open(this.core.getMathML());
     this.emitEv('handstart', {});
   }
@@ -1114,6 +1115,12 @@ export class MathEditor implements ToolbarHost {
   async getSVG(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<string> {
     const r = await this.services.render(this.core.getMathML(), 'svg', o);
     return r.body.text();
+  }
+  async getPDF(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+    return (await this.services.render(this.core.getMathML(), 'pdf', o)).body;
+  }
+  async getEPS(o: { zoom?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
+    return (await this.services.render(this.core.getMathML(), 'eps', o)).body;
   }
   async getPNG(o: { zoom?: number; dpi?: number; background?: string; color?: string; fontSize?: string } = {}): Promise<Blob> {
     return (await this.services.render(this.core.getMathML(), 'png', o)).body;

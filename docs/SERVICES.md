@@ -48,3 +48,11 @@ elementary-maths stacks to LaTeX) this service answers the same text; the record
 
 Point `services.baseUrl` of the editor to any server implementing the table above; the client does not
 depend on this implementation.
+
+## Without the services (static hosting)
+
+`src/ui/services.ts` calls the services first. A network error or a 403 / 404 / 405 / 501 answer marks the server as
+absent for 60 s and the call is answered locally: `render` (`src/render/svg.ts` + canvas rasterising in
+`src/render/client.ts`, PDF / EPS from `src/render/pdf.ts`), `hand/recognize` (`src/hand/worker.ts`, built to
+`hand-worker.js`; the recogniser runs on the page when workers are unavailable) and the converters. Other error
+statuses (400, 500, …) are real answers of a service and are reported. `services: { local: true }` skips the server.

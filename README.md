@@ -16,6 +16,21 @@ npm test                 # unit + golden + oracle suites
 Documentation: [`docs/`](docs/README.md) – [architecture](docs/ARCHITECTURE.md), [services](docs/SERVICES.md),
 [testing](docs/TESTING.md); [changelog](CHANGELOG.md); [contributing](CONTRIBUTING.md). Requires Node ≥ 22.
 
+## Deploying
+
+The page is static files plus an optional services server, so there are two ways to host it:
+
+* **With the server** (`npm run build && npm start`, Node ≥ 22): the services of `/editor-services/` are available
+  (images through resvg, handwriting, converters). Any Node host works (Render, Railway, Fly.io, a VPS).
+* **Static** (`npm run build:static` → `dist/public`): no server. The client first tries the services and, when the host
+  answers 403 / 404 / 405 / 501 or is unreachable, falls back — and remembers that for a minute — to its own code:
+  SVG, PNG (canvas, fonts embedded in the SVG), PDF / EPS (canvas pixels + the same writers), handwriting recognition
+  (the same recogniser in a Web Worker) and the converters. The same build therefore also runs unchanged behind the
+  server. `?local=1`-style forcing is available through `services: { local: true }`.
+* **Vercel**: import the repository (framework "Other"); `vercel.json` sets the build command
+  (`npm run build:static`), the output directory (`dist/public`) and cache / security headers.
+  `node tools/static_e2e.js` checks the static build in a real browser against the server's images.
+
 ## Layout
 
 | path | content |
@@ -99,6 +114,8 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
   uses its own, less regular rule there.
 * The reference's conversion services answer a number of formulas with "Error converting …"; the ones seen in the
   recordings are reproduced (`tests/oracle/services_stack.json`), others are converted normally.
+* Exports produced in the browser (static build) equal the server's SVG byte for byte and its PNG to anti-aliasing
+  differences (browser rasteriser instead of resvg); PDF / EPS wrap a 300 dpi raster in both.
 * Formula glyphs use Liberation Sans / the reference symbol fonts (`fontsUrl`); without the vendor fonts brackets fall back
   to STIX glyphs.
 * The handwriting recogniser is a built-in template matcher with structure parsing (about 98 % of the synthetic corpora in
