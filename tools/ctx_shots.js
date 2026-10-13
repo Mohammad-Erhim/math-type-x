@@ -15,7 +15,7 @@ const fs = require('fs');
       await p.keyboard.press('Escape').catch(() => {});
       await p.evaluate((m) => editor.setMathML(m), `<math${process.env.RTL ? ' dir="rtl"' : ''} ${NS}>${c.mml}</math>`);
       await p.waitForTimeout(WAIT + 300);
-      await p.locator('#editorContainer .wrs_header button').nth(9).click();
+      await p.evaluate(() => (window.editor && typeof editor.selectTab === 'function' ? editor.selectTab(9) : document.querySelectorAll('#editorContainer .wrs_header button')[9].click()));
       await p.waitForTimeout(250);
       await p.mouse.click(box.x + 600, box.y + 330);
       await p.waitForTimeout(150);

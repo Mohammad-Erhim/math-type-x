@@ -450,7 +450,7 @@ export class EditorCore {
             const ca = e.a.find(([k]) => k === 'columnalign');
             if (ca) ca[1] = ca[1].split(/\s+/).map((v) => (v === 'left' ? 'right' : v === 'right' ? 'left' : v)).join(' ');
           }
-          if (e.t === 'munder' && e.c && e.c[0].map((t) => t.x).join('') === 'lim') {
+          if (e.t === 'munder' && e.c && ['lim', '\u0646\u0647\u0627'].includes(e.c[0].map((t) => t.x).join(''))) {
             for (const t of e.c[1]) if (t.t === 'mo' && t.x === '\u2192') t.x = '\u2190';
             for (const t of e.c[1]) t.c?.forEach((rr) => rr.forEach((q) => { if (q.t === 'mo' && q.x === '\u2192') q.x = '\u2190'; }));
           }
@@ -1773,7 +1773,7 @@ export class EditorCore {
 }
 
 
-const ARABIC_FN: Record<string, string> = { sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لط', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
+const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لط', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
 
 /** right-to-left editing writes function names in Arabic (arcsin → sin⁻¹); root-level indices are re-mapped */
 function rtlize(spec: InsertSpec): InsertSpec {

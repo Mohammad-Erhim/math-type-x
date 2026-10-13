@@ -58,6 +58,11 @@ All notable changes are documented here. The format follows
 - The demo page is exactly as high as the window (no page scroll, output panel always visible); no full-screen button.
 - Touch screens get a small ◀ ▲ ▼ ▶ pad in the formula area (soft keyboards have no arrow keys, so a numerator could not
   be left for the denominator, a script exited, …).
+- Narrow windows (phones, tablets, landscape phones): no sideways scrolling – the tabs share one row and the controls of a
+  tab wrap into rows (each group's arrow stays with it), pop-ups open under the tapped arrow; a clear-formula button with
+  confirmation joins the touch pad; the contextual tab is disabled (greyed) while the caret has no options; leaving the
+  page with a formula in it asks first; handwriting is switched off in the demo (`?detectHand=true` brings it back);
+  the limit of a right-to-left formula is the Arabic word نها.
 - Brand-neutral naming: no third-party site links or names in the product, help page shipped with the editor.
 
 ### Known deviations

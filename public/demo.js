@@ -9,7 +9,8 @@
   }
   if (q.has('toolbarSize')) opts.toolbarSize = parseFloat(q.get('toolbarSize'));
   if (q.has('autoformat')) opts.autoformat = q.get('autoformat') === 'true';
-  if (q.has('detectHand')) opts.detectHand = q.get('detectHand') !== 'false';
+  // handwriting is switched off for now (?detectHand=true brings it back)
+  opts.detectHand = q.get('detectHand') === 'true';
   if (q.has('fontStyle')) opts.fontStyle = q.get('fontStyle');
   if (q.has('parity')) opts.parity = q.get('parity');
   // the host page follows the language of the editor (right-to-left for Arabic)
@@ -26,5 +27,15 @@
   var editor = MathTypeX.JsEditor.newInstance(opts);
   window.editor = editor;
   editor.insertInto(document.getElementById('editorContainer'));
+  // leaving the page by mistake (a swipe back, a closed tab) would lose the formula: the browser asks first
+  window.addEventListener('beforeunload', function (e) {
+    var empty = true;
+    try {
+      empty = editor.isEmpty();
+    } catch (err) {}
+    if (empty) return;
+    e.preventDefault();
+    e.returnValue = '';
+  });
   if (q.get('output') !== '0') window.outputPanel = new MathTypeX.OutputPanel(editor, document.getElementById('outputContainer'));
 })();

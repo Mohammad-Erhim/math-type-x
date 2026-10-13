@@ -158,6 +158,8 @@ export class MathEditor implements ToolbarHost {
     this.attach();
     this.setupLayout(container);
     this.render();
+    this.ctx = contextState(this.core);
+    this.toolbar.setContextEnabled(!!(this.ctx && this.ctx.controls.length));
     this.ready = true;
     queueMicrotask(() => this.emitEv('ready', {}));
     this.scheduleAccessible(true);
@@ -226,7 +228,43 @@ export class MathEditor implements ToolbarHost {
       b.addEventListener('pointerleave', stop);
       pad.append(b);
     }
-    this.display.wrapper.append(pad);
+    // clear the whole formula – after a confirmation
+    const clear = h('button', { type: 'button', class: 'wrs_navKey wrs_navClear', title: 'Clear the formula', 'aria-label': 'Clear the formula', tabindex: '-1' }) as HTMLButtonElement;
+    clear.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#a12020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    clear.addEventListener('pointerdown', (e) => e.preventDefault());
+    clear.addEventListener('mousedown', (e) => e.preventDefault());
+    const confirmBox = h('div', { class: 'wrs_confirm', role: 'alertdialog', 'aria-label': 'Clear the whole formula?' });
+    const ask = h('div', { class: 'wrs_confirmText', text: 'Clear the whole formula?' });
+    const no = h('button', { type: 'button', class: 'wrs_confirmNo', text: 'Cancel' }) as HTMLButtonElement;
+    const yes = h('button', { type: 'button', class: 'wrs_confirmYes', text: 'Clear' }) as HTMLButtonElement;
+    confirmBox.append(ask, no, yes);
+    confirmBox.style.display = 'none';
+    const hideConfirm = () => {
+      confirmBox.style.display = 'none';
+    };
+    clear.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (this.core.isEmpty()) return;
+      confirmBox.style.display = 'block';
+      no.focus();
+    });
+    no.addEventListener('click', () => {
+      hideConfirm();
+      this.focusEditor();
+    });
+    yes.addEventListener('click', () => {
+      hideConfirm();
+      this.core.reset();
+      this.focusEditor();
+    });
+    confirmBox.addEventListener('keydown', (e) => {
+      if ((e as KeyboardEvent).key === 'Escape') {
+        hideConfirm();
+        this.focusEditor();
+      }
+    });
+    pad.prepend(clear);
+    this.display.wrapper.append(pad, confirmBox);
     this.root.classList.add('wrs_hasNavPad');
   }
 
@@ -318,6 +356,10 @@ export class MathEditor implements ToolbarHost {
     // touch: controls of at least 44 px (the big buttons are 33 px); a low window gets less zoom to leave room for the formula
     let k: number = this.opts.toolbarSize;
     if (fluid && k === 1 && coarse) k = h > 0 && h < 480 ? 1.25 : 1.5;
+    // a narrow window (a phone): no sideways scrolling – the tabs share one row and the controls wrap into rows
+    // (touch sized, a little smaller when the window is low)
+    const narrow = fluid && w > 0 && w < 960;
+    if (narrow && this.opts.toolbarSize === 1) k = !coarse || (h > 0 && h < 520) ? 1 : 1.3;
     const hk = fluid && coarse ? 1.35 : 1;
     // only a change of the layout mode closes a pop-up; a new zoom (a different window height) keeps it
     const changed = fluid !== this.fluid;
@@ -326,9 +368,11 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_fluid', fluid);
     this.root.classList.toggle('wrs_scaled', !fluid && k !== 1);
     this.root.classList.toggle('wrs_touch', coarse);
+    this.root.classList.toggle('wrs_reflow', narrow);
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
+    this.toolbar.setReflow(narrow, narrow ? Math.floor(w / k) : 0);
     this.hand.resize();
   }
 
@@ -431,6 +475,7 @@ export class MathEditor implements ToolbarHost {
   /* ------------------------------------------------------ contextual tab */
   private refreshContext(): void {
     this.ctx = contextState(this.core);
+    this.toolbar.setContextEnabled(!!(this.ctx && this.ctx.controls.length));
     if (this.toolbar.selected === 9) this.renderContextPanel();
   }
 
@@ -593,7 +638,14 @@ export class MathEditor implements ToolbarHost {
     // measured on the reference: 1px border + 2px padding around a grid of cells, 1px extra on the right
     el.style.left = minX - 3 + 'px';
     el.style.top = minY - 3 + 'px';
-    if (this.fluid) {
+    if (this.fluid && this.root.classList.contains('wrs_reflow')) {
+      // the controls were re-arranged to fit the width: the pop-up opens just under the tapped arrow
+      const b = btn.getBoundingClientRect();
+      const rr = this.root.getBoundingClientRect();
+      const kz = this.zoomK;
+      el.style.left = (b.left - rr.left) / kz - 4 + 'px';
+      el.style.top = (b.bottom - rr.top) / kz + 2 + 'px';
+    } else if (this.fluid) {
       // the toolbar is zoomed and scrolled: put the pop-up where its arrow's panel is on the screen
       const tb = this.toolbar.root.getBoundingClientRect();
       const rr0 = this.root.getBoundingClientRect();
@@ -953,6 +1005,7 @@ export class MathEditor implements ToolbarHost {
       e.preventDefault();
       e.stopPropagation();
       const n = parseInt(digit[1], 10);
+      if ((n === 0 || n === 10) && this.toolbar.ctxOff) return;
       this.selectTab(n === 0 ? 9 : n - 1, true);
       return;
     }
@@ -960,7 +1013,7 @@ export class MathEditor implements ToolbarHost {
       e.preventDefault();
       e.stopPropagation();
       const t = this.toolbar.selected + (e.key === 'ArrowRight' ? 1 : -1) * (this.core.rtl ? -1 : 1);
-      if (t >= 0 && t <= 9) this.selectTab(t, true);
+      if (t >= 0 && t <= 9 && !(t === 9 && this.toolbar.ctxOff)) this.selectTab(t, true);
       else this.selectTab(this.toolbar.selected, true);
     }
   };

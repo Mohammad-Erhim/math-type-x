@@ -20,6 +20,10 @@ export const CSS = `
 .wrs_header>button[role=tab].wrs_selected.wrs_context{background-image:url(${skin.ctxSel})}
 .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{top:2px}
 .wrs_header>button[role=tab]:focus-visible{outline:2px solid #ffcc00;outline-offset:-3px}
+/* the contextual tab when the caret has nothing to offer: greyed out, the panel too */
+.wrs_header>button[role=tab].wrs_disabledTab{opacity:.45;filter:grayscale(1);cursor:default}
+.wrs_header>button[role=tab].wrs_disabledTab:hover{background-image:url(${skin.ctx})}
+.wrs_panelContainer.wrs_ctxEmpty{filter:grayscale(1);opacity:.6}
 .wrs_panelContainer{position:absolute;left:0;top:25px;width:725px;height:72px;border:1px solid #778e9a;border-radius:0 0 5px 5px;z-index:1;overflow:hidden;background:url(${skin.panel}) no-repeat 0 0}
 .wrs_multipleRowPanel{position:absolute;left:2px;top:2px;width:719px;height:66px;display:none}
 .wrs_multipleRowPanel.wrs_selected{display:block}
@@ -163,9 +167,25 @@ export const CSS = `
 .wrs_fluid .wrs_hand .wrs_canvasContainer{left:calc(41px * var(--wrs-hk));right:0;bottom:0;width:auto;height:auto}
 .wrs_fluid .wrs_hand canvas{width:100%;height:100%}
 .wrs_fluid .wrs_hand .wrs_helpText{font-size:16px;padding:0 12px}
-.wrs_navPad{position:absolute;right:8px;bottom:8px;z-index:6;display:grid;grid-template-columns:repeat(4,40px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+/* narrow windows: no sideways scrolling – one row of tabs, the controls of a tab wrap into rows */
+.wrs_reflow .wrs_header{width:calc(100% - 26px * var(--wrs-k));height:40px;display:flex;overflow:visible;gap:1px}
+.wrs_reflow .wrs_header>button[role=tab]{position:relative;left:auto!important;top:auto;zoom:1;flex:1 1 0;min-width:0;width:auto;height:36px;background-size:100% 100%;margin-top:3px}
+.wrs_reflow .wrs_header>button[role=tab].wrs_selected{top:auto;height:40px;margin-top:0;background-size:100% 100%}
+.wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
+.wrs_reflow .wrs_linksContainer{top:8px;right:6px;zoom:1}
+.wrs_reflow .wrs_panelContainer{height:auto;max-height:46vh;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
+.wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
+.wrs_reflow .wrs_line{display:none}
+.wrs_reflow .wrs_expandButton{width:18px}
+.wrs_reflow .wrs_expandButton::after{left:6px}
+.wrs_navPad{position:absolute;right:8px;bottom:8px;z-index:6;display:grid;grid-template-columns:repeat(5,40px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
 .wrs_navKey{width:40px;height:40px;padding:0;border:1px solid #778e9a;border-radius:6px;background:rgba(255,255,255,.92);color:#324d5b;font:700 16px/1 Arial,sans-serif;box-shadow:0 1px 4px rgba(52,64,84,.25);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .wrs_navKey:active{background:#dfe8ec}
+.wrs_navClear{border-color:#c9a0a0;display:flex;align-items:center;justify-content:center}
+.wrs_confirm{position:absolute;right:8px;bottom:60px;z-index:7;width:min(260px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:1px solid #778e9a;border-radius:8px;background:#fff;box-shadow:0 4px 16px rgba(52,64,84,.35);font:14px/1.35 Arial,sans-serif;color:#18212f;direction:ltr}
+.wrs_confirmText{margin:0 0 10px}
+.wrs_confirm button{height:40px;min-width:96px;margin-right:8px;border:1px solid #778e9a;border-radius:6px;background:#f4f7f8;font:700 14px Arial,sans-serif;color:#18212f}
+.wrs_confirm .wrs_confirmYes{background:#a12020;border-color:#7d1818;color:#fff}
 .wrs_hasNavPad .wrs_formulaDisplay{padding-bottom:56px;box-sizing:border-box}
 /* touch devices have no hover: a tapped control must not stay highlighted */
 @media (hover:none){

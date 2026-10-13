@@ -109,7 +109,10 @@ export class Toolbar {
       const icon = h('span', { class: 'wrs_imageContainer' });
       icon.innerHTML = `<svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true" style="color:#fff">${TAB_ICONS[i]}</svg>`;
       btn.append(icon);
-      btn.addEventListener('click', () => this.host.selectTab(i));
+      btn.addEventListener('click', () => {
+        if (ctx && this.ctxOff) return; // nothing to show there
+        this.host.selectTab(i);
+      });
       btn.addEventListener('keydown', (e) => this.tabKey(e as KeyboardEvent, i));
       this.header.append(btn);
       this.tabs.push(btn);
@@ -131,7 +134,7 @@ export class Toolbar {
       return;
     } else return;
     e.preventDefault();
-    if (t < 0 || t > 9) return;
+    if (t < 0 || t > 9 || (t === 9 && this.ctxOff)) return;
     this.host.selectTab(t);
     this.tabs[t].focus();
   }
@@ -300,6 +303,118 @@ export class Toolbar {
     if (btn) btn.tabIndex = 0;
   }
 
+  /** the contextual tab has nothing to offer at the caret: it looks disabled and cannot be opened */
+  ctxOff = false;
+  setContextEnabled(on: boolean): void {
+    this.ctxOff = !on;
+    const tab = this.tabs[9];
+    if (!tab) return;
+    tab.classList.toggle('wrs_disabledTab', !on);
+    tab.setAttribute('aria-disabled', String(!on));
+    this.container.classList.toggle('wrs_ctxEmpty', !on && this.selected === 9);
+  }
+
+  /* ------------------------------------------------------------ narrow screens */
+  private reflowOn = false;
+  private reflowWidth = 0;
+
+  /**
+   * Narrow screens (phones): the controls of every panel are laid out in rows that fit the width, so nothing scrolls
+   * sideways. Groups stay together (a column of controls is a unit that is never split) and each group's arrow follows
+   * it. `width` is the width available to the panel in its own (zoomed) units; 0 puts everything back.
+   */
+  setReflow(on: boolean, width: number): void {
+    if (on === this.reflowOn && width === this.reflowWidth) return;
+    this.reflowOn = on;
+    this.reflowWidth = width;
+    this.panels.forEach((p) => this.reflowPanel(p));
+  }
+
+  /** (re)arrange the children of one panel – also called after the contextual panel was rebuilt */
+  reflowPanel(panel: HTMLElement): void {
+    const num = (s: string | undefined) => parseFloat(s ?? '') || 0;
+    const kids = [...panel.children] as HTMLElement[];
+    for (const el of kids) {
+      if (el.dataset.ol === undefined) {
+        el.dataset.ol = el.style.left;
+        el.dataset.ot = el.style.top;
+      }
+    }
+    if (!this.reflowOn) {
+      for (const el of kids) {
+        el.style.left = el.dataset.ol ?? '';
+        el.style.top = el.dataset.ot ?? '';
+      }
+      panel.style.width = '';
+      panel.style.height = '';
+      return;
+    }
+    const isLine = (el: HTMLElement) => el.classList.contains('wrs_line');
+    const lines = kids.filter(isLine).map((l) => num(l.dataset.ol));
+    const items = kids
+      .filter((el) => !isLine(el))
+      .map((el) => {
+        const expand = el.classList.contains('wrs_expandButton');
+        const select = el.classList.contains('wrs_select');
+        const w = expand ? 18 : num(el.style.width) || (select ? 73 : 0);
+        const hgt = expand ? 60 : num(el.style.height) || (select ? 18 : 0);
+        const x = num(el.dataset.ol);
+        // the font / size boxes sit side by side instead of one above the other (the row is short of room)
+        const y = select && !el.classList.contains('wrs_ctxSelect') ? NaN : num(el.dataset.ot);
+        return { el, x, y, w, h: hgt, part: lines.filter((lx) => lx <= x + 0.5).length };
+      });
+    if (!items.length) return;
+    const minY = Math.min(...items.filter((q) => !Number.isNaN(q.y)).map((q) => q.y), Infinity);
+    for (const q of items) if (Number.isNaN(q.y)) q.y = Number.isFinite(minY) ? minY : 0;
+    const parts = new Map<number, typeof items>();
+    for (const q of items) parts.set(q.part, [...(parts.get(q.part) ?? []), q]);
+    // room around the controls: the edges of the panel are not a place to tap
+    const PAD = 10;
+    const avail = Math.max(60, this.reflowWidth - PAD * 2);
+    let cx = PAD;
+    let cy = 8;
+    let rowH = 0;
+    for (const key of [...parts.keys()].sort((a, b) => a - b)) {
+      const list = parts.get(key)!.sort((a, b) => a.x - b.x || a.y - b.y);
+      // columns: controls that start at (nearly) the same x are stacked and move together
+      const units: { x0: number; w: number; h: number; items: typeof items; ex?: (typeof items)[number] }[] = [];
+      for (const q of list) {
+        const u = units[units.length - 1];
+        const isExpand = q.el.classList.contains('wrs_expandButton');
+        if (u && isExpand && !u.ex) {
+          // the arrow of a group stays with the group's last column
+          u.ex = q;
+        } else if (u && Math.abs(q.x - u.x0) <= 3 && !isExpand && !q.el.classList.contains('wrs_select')) {
+          u.items.push(q);
+          u.w = Math.max(u.w, q.w);
+          u.h = Math.max(u.h, q.y - minY + q.h);
+        } else units.push({ x0: q.x, w: q.w, h: q.y - minY + q.h, items: [q] });
+      }
+      for (const u of units) if (u.ex) { u.h = Math.max(u.h, u.ex.h); }
+      if (cx > PAD) cx += 12;
+      for (const u of units) {
+        const full = u.w + (u.ex ? 2 + u.ex.w : 0);
+        if (cx > PAD && cx + full > avail + PAD) {
+          cx = PAD;
+          cy += rowH + 8;
+          rowH = 0;
+        }
+        for (const q of u.items) {
+          q.el.style.left = cx + (q.x - u.x0) + 'px';
+          q.el.style.top = cy + (q.y - minY) + 'px';
+        }
+        if (u.ex) {
+          u.ex.el.style.left = cx + u.w + 2 + 'px';
+          u.ex.el.style.top = cy + 'px';
+        }
+        cx += full + 2;
+        rowH = Math.max(rowH, u.h);
+      }
+    }
+    panel.style.width = this.reflowWidth + 'px';
+    panel.style.height = cy + rowH + 10 + 'px';
+  }
+
   select(i: number): void {
     this.selected = i;
     this.tabs.forEach((t, k) => {
@@ -310,6 +425,7 @@ export class Toolbar {
       (t.querySelector('svg') as SVGElement).style.color = on ? '#51636d' : '#fff';
     });
     this.panels.forEach((p, k) => p.classList.toggle('wrs_selected', k === i));
+    this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
     // the first control of the selected tab is the single tab stop
     for (let t = 0; t < 10; t++) this.setTabStop(t, null);
     const first = this.firstButton(i);
@@ -398,6 +514,7 @@ export class Toolbar {
         panel.append(btn);
       }
     }
+    if (this.reflowOn) this.reflowPanel(panel);
   }
 
   /** fallback arrangement (a control set without a recorded layout) */
@@ -470,6 +587,7 @@ export class Toolbar {
         col += 1;
       }
     });
+    if (this.reflowOn) this.reflowPanel(this.ctxPanel);
   }
 }
 
