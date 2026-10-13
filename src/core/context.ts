@@ -2,8 +2,9 @@
  * Contextual tab model (SRS 4.11, Appendix G): which controls are offered for the structure at the caret
  * and what each control does to the document.
  */
-import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, newGroup } from './model';
+import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup } from './model';
 import { EditorCore } from './engine';
+import STRETCHY from '../data/stretchy.json';
 
 export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep';
 
@@ -26,31 +27,60 @@ export interface CtxState {
   layout: string;
 }
 
+const STRETCH_ON = new Set<number>((STRETCHY as { on: number[] }).on);
+const STRETCH_OFF = new Set<number>((STRETCHY as { off: number[] }).off);
+
+/** operators that can be switched between stretchy and not stretchy (arrows, braces, accents, fences): their default state, otherwise null */
+export function stretchDefault(el?: El): boolean | null {
+  if (!el || el.t !== 'mo' || el.c !== undefined) return null;
+  const x = el.x ?? '';
+  if ([...x].length !== 1) return null;
+  const cp = x.codePointAt(0)!;
+  return STRETCH_ON.has(cp) ? true : STRETCH_OFF.has(cp) ? false : null;
+}
+
 /** which recorded arrangement of the contextual tab shows the controls of `loc` */
 export function ctxLayoutKey(loc: Located): string {
+  const key = caretLayoutKey(loc);
+  if (!loc.nudge) return key;
+  // nudge buttons, a separator, then the controls of the context (derived and checked in tools/gen/ctx_layout.py)
+  switch (loc.kind) {
+    case 'symbol_sel':
+      return loc.spacing ? (loc.stretchy ? 'sel_operator_st' : 'sel_symbol_sp') : 'sel_symbol';
+    case 'numsep_sel':
+      return loc.spacing ? 'sel_numsep_sel_sp' : 'sel_numsep_sel';
+    case 'piecewise':
+      return 'sel_' + caretLayoutKey({ ...loc, kind: 'matrix' });
+    default:
+      return 'sel_' + key;
+  }
+}
+
+function caretLayoutKey(loc: Located): string {
+  const st = !!loc.stretchy;
   switch (loc.kind) {
     case 'matrix':
     case 'piecewise':
-      return 'matrix';
+      return loc.spacing ? (st ? 'matrix_st' : 'matrix_sp') : 'matrix';
     case 'table':
-      return 'table';
+      return loc.spacing ? (st ? 'table_st' : 'table_sp') : 'table';
     case 'aligned':
-      return loc.spacing ? 'aligned_sp' : 'aligned';
+      return loc.spacing ? (st ? 'aligned_st' : 'aligned_sp') : 'aligned';
     case 'fence_in':
-      return loc.spacing ? 'fence_sp' : 'fence';
+      return loc.spacing ? (st ? 'fence_st' : 'fence_sp') : 'fence';
     case 'operator':
-      return 'operator';
+      return st ? 'operator_st' : 'operator';
     case 'sum':
       return 'sum';
     case 'mspace':
       return 'mspace';
     case 'multiline':
     case 'longdiv':
-      return loc.spacing ? 'multiline_sp' : 'multiline';
+      return loc.spacing ? (st ? 'multiline_st' : 'multiline_sp') : 'multiline';
     case 'stack':
       return loc.inNumber ? 'stack_merge' : 'stack';
     case 'symbol_sel':
-      return loc.spacing ? 'symbol_sp' : 'symbol';
+      return 'symbol';
     case 'numsep_sel':
       return 'numsep_sel';
     case 'numsep':
@@ -120,6 +150,12 @@ export interface Located {
   hit?: Hit;
   /** the Left / Right spacing controls apply (operator adjacent, line break adjacent, …) */
   spacing?: boolean;
+  /** the operator next to the caret (spacing / stretchy controls refer to it) */
+  op?: El;
+  /** the Stretchy toggle applies (the operator next to the caret can stretch) */
+  stretchy?: boolean;
+  /** a selection: the nudge buttons come first */
+  nudge?: boolean;
   /** stacks: the caret sits inside a number of several digits */
   inNumber?: boolean;
   /** stacks: the current row has a carries row above it (carry-location buttons enabled) */
@@ -135,96 +171,109 @@ function withCarries(core: EditorCore, loc: Located): Located {
 }
 
 export function locate(core: EditorCore): Located | null {
+  const loc = locateRaw(core);
+  if (loc && loc.op && stretchDefault(loc.op) !== null) loc.stretchy = true;
+  // a selection shows the nudge buttons in front of everything else
+  if (loc && core.hasSelection()) loc.nudge = true;
+  return loc;
+}
+
+function locateRaw(core: EditorCore): Located | null {
   const chain = enclosing(core);
-  // selection based contexts
-  const isSep = (e?: El) => !!e && e.c === undefined && e.t === 'mo' && (e.x ?? '') !== '' && (e.x ?? '') !== ',';
-  // items selected at the stack level of an elementary stack (rows, lines) are handled by the stack's controls
-  const stackLevelSel = (() => {
-    if (!core.hasSelection() || !core.sel!.path.length) return false;
-    const [e, sl] = core.sel!.path[core.sel!.path.length - 1];
-    const owner = tryRowAt(core.row, core.sel!.path.slice(0, -1))?.[e];
-    if (!owner) return false;
-    if ((owner.t === 'mstack' && sl === 0) || (owner.t === 'msgroup' && sl === 0) || (owner.t === 'mlongdiv' && sl === 2)) return true;
-    // symbols selected inside a row of a stack keep the stack's controls
-    return owner.t === 'msrow' && chain.some((h) => h.el.t === 'mstack');
-  })();
-  if (core.hasSelection() && !stackLevelSel) {
+  const isTokEl = (e?: El) => !!e && e.c === undefined;
+  const isOpEl = (e?: El) => isTokEl(e) && e!.t === 'mo' && (e!.x ?? '') !== '';
+  const isNlEl = (e?: El) => !!e && e.t === 'mspace' && getAttr(e, 'linebreak') === 'newline';
+  // a non-empty selection: its controls are the nudges and the controls of the structure it lies in; the spacing controls
+  // come when the last selected item or the item after the selection is an operator (or a line break)
+  let sel: { row: Row; from: number; to: number; els: El[]; spacing: boolean; op?: El } | null = null;
+  if (core.hasSelection()) {
     const s = core.sel!;
-    const row = tryRowAt(core.row, s.path)!;
-    const from = Math.min(s.from, s.to);
-    const to = Math.max(s.from, s.to);
-    const els = row.slice(from, to);
-    // the Left / Right spacing controls follow an operator next to the start of the selection (",", a separator, does not count)
-    const spacing = chain.length === 0 && (isSep(row[from - 1]) || isSep(row[from]));
-    // a whole number with separators (mn mo mn …) is selected: merge / unmerge
-    if (els.length >= 3 && els[0].t === 'mn' && els[els.length - 1].t === 'mn' && els.some((e) => e.t === 'mo') && els.every((e) => e.c === undefined && (e.t === 'mn' || (e.t === 'mo' && /^[.,]$/.test(e.x ?? ''))))) {
-      return { kind: 'numsep_sel', tokens: els.map((_, k) => ({ row, index: from + k })) };
+    const srow = tryRowAt(core.row, s.path);
+    if (srow) {
+      const from = Math.min(s.from, s.to);
+      const to = Math.max(s.from, s.to);
+      const els = srow.slice(from, to);
+      if (els.length) {
+        const last = els[els.length - 1];
+        const next = srow[to];
+        const lastOp = isOpEl(last) || isNlEl(last);
+        const nextOp = isOpEl(next) || isNlEl(next);
+        sel = { row: srow, from, to, els, spacing: lastOp || nextOp, op: isOpEl(last) ? last : isOpEl(next) ? next : undefined };
+      }
     }
-    if (els.length === 1 && els[0].c === undefined) return { kind: 'symbol_sel', tokens: [{ row, index: from }], spacing };
-    if (els.length === 1 && els[0].t === 'mpadded') return { kind: 'symbol_sel', tokens: [{ row, index: from }], spacing };
-    if (els.length === 1 && els[0].t === 'mspace' && getAttr(els[0], 'linebreak') !== 'newline') return { kind: 'mspace', el: els[0] };
-    if (chain.length === 0 && els.length > 1 && els.every((e) => e.c === undefined)) return { kind: 'symbol_sel', tokens: els.map((_, k) => ({ row, index: from + k })), spacing };
   }
   const row = core.currentRow();
   const idx = core.caret.index;
   const left = row[idx - 1];
   const right = row[idx];
-  const isTok = (e?: El) => !!e && e.c === undefined;
-  const isOp = (e?: El) => isTok(e) && e!.t === 'mo' && (e!.x ?? '') !== '';
-  const isNl = (e?: El) => !!e && e.t === 'mspace' && getAttr(e, 'linebreak') === 'newline';
+  const isOp = isOpEl;
+  const isNl = isNlEl;
+  // a script structure whose base is an operator (an integral with limits): the caret in front of it is next to that operator
+  const isOpScript = (e?: El) => !!e && (e.t === 'msub' || e.t === 'msup' || e.t === 'msubsup') && e.c![0].length === 1 && isOp(e.c![0][0]);
+  /** the operator token the spacing / stretchy controls refer to */
+  const opNextTo = (): El | undefined => (sel ? sel.op : isOp(left) ? left : isOp(right) ? right : isOpScript(right) ? right!.c![0][0] : undefined);
+  const spacingHere = sel ? sel.spacing : isOp(left) || isOp(right) || isOpScript(right);
+  const multilineCtx = (): Located | null => {
+    // a formula aligned as a whole sits in a group (mstyle indentalign): the lines are still the document's lines
+    const group = core.row.length === 1 && core.row[0].t === 'mstyle' && getAttr(core.row[0], 'indentalign') !== undefined ? core.row[0] : null;
+    const lines = group && group.c ? group.c[0] : core.row;
+    const outer = group ? chain.filter((h) => h.el !== group) : chain;
+    if (lines.some((e) => isNl(e)) && outer.length === 0) {
+      return { kind: 'multiline', spacing: sel ? sel.spacing : isNl(left) || isNl(right) || spacingHere, op: opNextTo() };
+    }
+    return null;
+  };
   // lines aligned at their relation symbols are kept in a three column table
-  if (isRelationTable(core.row)) return { kind: 'multiline', spacing: false, relation: true };
+  if (isRelationTable(core.row)) return { kind: 'multiline', spacing: sel ? sel.spacing : isOp(left) || isOp(right), relation: true, op: opNextTo() };
   for (const h of chain) {
     const t = tableCtx(h, chain);
     if (t) {
-      // the line of the current cell carries an operator and the caret is not at its start
-      const hasOp = row.some((e) => isOp(e));
-      return { kind: t.kind, table: h, fence: t.fence, spacing: t.kind === 'aligned' && hasOp && idx > 0 };
+      // a range of cells: the controls show the state of its first cell
+      const cs = core.sel?.cells;
+      const hit = cs && cs.slots.length && h.el === rowAt(core.row, core.sel!.path)[core.sel!.from] ? { ...h, slot: cs.slots[0] } : h;
+      return { kind: t.kind, table: hit, fence: t.fence, spacing: spacingHere, op: opNextTo() };
     }
-    // a long division has no contextual controls of its own (reference, s16 / s30); the digits written in its group do
+    // a long division: its quotient row and the rows of its group are stack contexts, the divisor is an ordinary row
     if (h.el.t === 'mlongdiv') {
-      if (chain.some((c) => c.el.t === 'msgroup')) return { kind: 'stack', hit: h, inNumber: false, carries: false };
-      return null;
+      if (h.slot === 0) continue;
+      return withCarries(core, { kind: 'stack', hit: h, inNumber: false, carries: false });
     }
     if (h.el.t === 'mstack' || h.el.t === 'msrow' || h.el.t === 'msgroup') {
       const st = chain.find((c) => c.el.t === 'mstack' || c.el.t === 'mlongdiv');
       if (st) {
         // the digits of a long division written in a group behave like a stack
-        if (st.el.t === 'mlongdiv') return chain.some((c) => c.el.t === 'msgroup') ? { kind: 'stack', hit: st, inNumber: false, carries: false } : null;
+        if (st.el.t === 'mlongdiv') return withCarries(core, { kind: 'stack', hit: st, inNumber: false, carries: false });
         const digit = (e?: El) => !!e && e.t === 'mn';
-        // inside a row of the stack a caret next to digits counts as being in the number; between the stack's own items only between two digits
-        const between = digit(left) && digit(right) && left!.g === right!.g;
-        const inRow = h.el.t === 'msrow' && !row.every((e) => digit(e)) && ((digit(left) && (digit(row[idx - 2]) || digit(right))) || (digit(right) && digit(row[idx + 1])));
-        return withCarries(core, { kind: 'stack', hit: st, inNumber: between || inRow });
+        // only a caret between two digits of one number can merge / unmerge its separators
+        const between = !sel && digit(left) && digit(right) && left!.g === right!.g;
+        return withCarries(core, { kind: 'stack', hit: st, inNumber: between });
       }
     }
-    if (h.el.t === 'mfenced') return { kind: 'fence_in', fence: h, spacing: isOp(left) };
+    if (h.el.t === 'mfenced') return { kind: 'fence_in', fence: h, spacing: spacingHere, op: opNextTo() };
   }
-  // big operator (sum, product, …): caret in a script slot after something, or in the operator slot
-  for (const h of chain) {
-    if ((h.el.t === 'munderover' || h.el.t === 'munder' || h.el.t === 'mover') && h.el.c![0].length === 1 && h.el.c![0][0].t === 'mo') return { kind: 'sum', hit: h, spacing: h.slot !== 0 && idx > 0 };
-  }
-  // caret right after a structure of the line
-  if (left && left.c !== undefined && core.caret.path.length === 0) {
-    if (left.t === 'mtable') {
-      const ca = (getAttr(left, 'columnalign') ?? '').split(/\s+/).filter(Boolean);
-      const kind: CtxKind = ca.length === 2 && ca[0] === 'right' && ca[1] === 'left' ? 'aligned' : 'table';
-      return { kind, table: { row, index: idx - 1, el: left, path: [], slot: left.c!.length - 1 } };
+  if (sel) {
+    const { els, from } = sel;
+    // a whole number with separators (mn mo mn …) is selected: merge / unmerge
+    if (els.length >= 3 && els[0].t === 'mn' && els[els.length - 1].t === 'mn' && els.some((e) => e.t === 'mo') && els.every((e) => e.c === undefined && (e.t === 'mn' || (e.t === 'mo' && /^[.,]$/.test(e.x ?? ''))))) {
+      return { kind: 'numsep_sel', tokens: els.map((_, k) => ({ row: sel!.row, index: from + k })), spacing: sel.spacing, op: sel.op };
     }
-    if (left.t === 'mstack') return withCarries(core, { kind: 'stack', hit: { row, index: idx - 1, el: left, path: [], slot: 0 } });
-    if ((left.t === 'munderover' || left.t === 'munder' || left.t === 'mover') && left.c![0].length === 1 && left.c![0][0].t === 'mo') return { kind: 'sum', hit: { row, index: idx - 1, el: left, path: [], slot: 0 }, spacing: true };
+    // the last selected item or the one after the selection is a space: its width / height / depth can be set
+    const isSp = (e?: El) => !!e && e.t === 'mspace' && getAttr(e, 'linebreak') !== 'newline';
+    const spaceEl = isSp(els[els.length - 1]) ? els[els.length - 1] : isSp(sel.row[sel.to]) ? sel.row[sel.to] : undefined;
+    if (spaceEl) return { kind: 'mspace', el: spaceEl };
+    const ml = multilineCtx();
+    if (ml) return ml;
+    return { kind: 'symbol_sel', tokens: els.map((_, k) => ({ row: sel!.row, index: from + k })), spacing: sel.spacing, op: sel.op };
   }
   for (const e of [left, right]) {
     if (e && e.t === 'mspace' && getAttr(e, 'linebreak') !== 'newline') return { kind: 'mspace', el: e };
   }
   // caret between two characters of one number: merge / unmerge its separators
   if (left && right && left.t === 'mn' && right.t === 'mn' && left.c === undefined && right.c === undefined && left.g !== undefined && left.g === right.g) return { kind: 'numsep', tokens: [{ row, index: idx }] };
-  if (isOp(left) || isOp(right)) return { kind: 'operator', tokens: [{ row, index: isOp(left) ? idx - 1 : idx }] };
-  // a formula aligned as a whole sits in a group (mstyle indentalign): the lines are still the document's lines
-  const group = core.row.length === 1 && core.row[0].t === 'mstyle' && getAttr(core.row[0], 'indentalign') !== undefined ? core.row[0] : null;
-  const lines = group && group.c ? group.c[0] : core.row;
-  const outer = group ? chain.filter((h) => h.el !== group) : chain;
-  if (lines.some((e) => isNl(e)) && outer.length === 0) return { kind: 'multiline', spacing: isNl(left) || isNl(right) };
+  // lines of a multi-line formula: their alignment controls come with the spacing of the operator or line break next to the caret
+  const ml = multilineCtx();
+  if (ml) return ml;
+  if (isOp(left) || isOp(right) || isOpScript(right)) return { kind: 'operator', tokens: [{ row, index: isOp(left) ? idx - 1 : idx }], op: opNextTo() };
   return null;
 }
 
@@ -292,18 +341,38 @@ function lenControls(ids: [string, string][], icon: string, group = 0): CtxContr
   return ids.map(([id, title]) => ({ id, title, kind: 'length' as const, icon: icon + '_' + id, group }));
 }
 
+const SPACING = (group: number, ids: [string, string][] = [['left_spacing', 'Left spacing'], ['right_spacing', 'Right spacing']], icon = 'sp'): CtxControl[] => lenControls(ids, icon, group);
+const STRETCHY_CTL = (group: number): CtxControl => ({ id: 'stretchy', title: 'Stretchy', kind: 'toggle', icon: 'stretchy', group });
+
+/** Left / Right spacing (and Stretchy) of the operator next to the caret: they come first for tables and lines, last for fences */
+function operatorControls(loc: Located, group: number): CtxControl[] {
+  if (!loc.spacing) return [];
+  return [...SPACING(group), ...(loc.stretchy ? [STRETCHY_CTL(group)] : [])];
+}
+
 export function controlsFor(loc: Located): CtxControl[] {
+  const own = ownControls(loc);
+  return loc.nudge ? [...NUDGES(), ...own] : own;
+}
+
+function ownControls(loc: Located): CtxControl[] {
+  const withSpacing = (all: CtxControl[]): CtxControl[] => {
+    const sp = operatorControls(loc, 0);
+    return sp.length ? [...sp, ...all.map((c) => ({ ...c, group: c.group + 1 }))] : all;
+  };
   switch (loc.kind) {
     case 'matrix':
-    case 'piecewise':
-      return TABLE_CONTROLS(true);
-    case 'table':
-      return TABLE_CONTROLS(false);
-    case 'aligned': {
-      const all = TABLE_CONTROLS(false);
-      const sp: CtxControl[] = loc.spacing ? [{ id: 'left_spacing', title: 'Left spacing', kind: 'length', icon: 'left_spacing', group: 0 }, { id: 'right_spacing', title: 'Right spacing', kind: 'length', icon: 'right_spacing', group: 0 }] : [];
-      return [...sp, ...all.map((c) => ({ ...c, group: c.group + (loc.spacing ? 1 : 0) }))];
+    case 'piecewise': {
+      // the fence controls come first, then the operator's, then the table's
+      const all = TABLE_CONTROLS(true);
+      const sp = operatorControls(loc, 1);
+      if (!sp.length) return all;
+      const fence = all.filter((c) => c.group === 0);
+      return [...fence, ...sp, ...all.filter((c) => c.group > 0).map((c) => ({ ...c, group: c.group + 1 }))];
     }
+    case 'table':
+    case 'aligned':
+      return withSpacing(TABLE_CONTROLS(false));
     case 'fence_in':
       return [
         { id: 'setOpenBracket', title: 'setOpenBracket', kind: 'select', icon: 'sel_open', options: sel(BRACKETS), group: 0 },
@@ -312,12 +381,12 @@ export function controlsFor(loc: Located): CtxControl[] {
         { id: 'valign_baseline', title: 'Baseline', kind: 'toggle', icon: 'valign_baseline', group: 1 },
         { id: 'valign_middle', title: 'Middle', kind: 'button', icon: 'valign_middle', group: 1 },
         { id: 'valign_middle_baseline', title: 'Middle-baseline', kind: 'button', icon: 'valign_middle_baseline', group: 1 },
-        ...(loc.spacing ? lenControls([['left_spacing', 'Left spacing'], ['right_spacing', 'Right spacing']], 'sp', 2) : []),
+        ...operatorControls(loc, 2),
       ];
     case 'operator':
-      return lenControls([['left_spacing', 'Left spacing'], ['right_spacing', 'Right spacing']], 'sp');
+      return [...SPACING(0), ...(loc.stretchy ? [STRETCHY_CTL(0)] : [])];
     case 'sum':
-      return loc.spacing ? lenControls([['left_spacing', 'Left spacing'], ['right_spacing', 'Right spacing']], 'sp') : [];
+      return operatorControls({ ...loc, spacing: !!loc.spacing }, 0);
     case 'longdiv':
     case 'multiline':
       return [
@@ -325,6 +394,7 @@ export function controlsFor(loc: Located): CtxControl[] {
           ? ([
               { id: 'left_spacing', title: 'Left spacing', kind: 'length', icon: 'ml_left', group: 0 },
               { id: 'right_spacing', title: 'Right spacing', kind: 'length', icon: 'ml_right', group: 0 },
+              ...(loc.stretchy ? [STRETCHY_CTL(0)] : []),
             ] as CtxControl[])
           : []),
         { id: 'ml_left', title: 'Align left', kind: 'toggle', icon: 'ml_align_left', group: 1 },
@@ -354,9 +424,9 @@ export function controlsFor(loc: Located): CtxControl[] {
         { id: 'sp_depth', title: 'Space depth', kind: 'length', icon: 'sp_depth', group: 0 },
       ];
     case 'symbol_sel':
-      return [...NUDGES(), ...(loc.spacing ? lenControls([['left_spacing', 'Left spacing'], ['right_spacing', 'Right spacing']], 'sp', 1) : [])];
+      return operatorControls(loc, 1);
     case 'numsep_sel':
-      return [...NUDGES(), { id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 1 }];
+      return [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 1 }, ...operatorControls(loc, 2)];
     case 'numsep':
       return [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0 }];
   }
@@ -494,8 +564,13 @@ export function ctxValue(core: EditorCore, loc: Located, id: string): CtxValue {
     case 'left_spacing':
     case 'right_spacing': {
       const tk = loc.tokens?.[0];
-      const e = tk ? tk.row[tk.index] : null;
+      const e = loc.op ?? (tk ? tk.row[tk.index] : null);
       return { value: e ? getAttr(e, id === 'left_spacing' ? 'lspace' : 'rspace') ?? '' : '' };
+    }
+    case 'stretchy': {
+      const def = stretchDefault(loc.op);
+      const cur = loc.op ? getAttr(loc.op, 'stretchy') : undefined;
+      return { toggled: cur === undefined ? def === true : cur === 'true' };
     }
     case 'sp_width':
     case 'sp_height':
@@ -515,7 +590,9 @@ export function ctxValue(core: EditorCore, loc: Located, id: string): CtxValue {
         // the location of the carries row above the current row of a stack (north unless given)
         const info = stackInfo(core, loc);
         const e = info ? info.items[info.cur - 1] : undefined;
-        return { toggled: !!e && e.t === 'mscarries' && (getAttr(e, 'location') ?? 'n') === id.slice(9) };
+        // without a carries row the buttons are disabled; the last location used in this session shows as the current one
+        const where = e && e.t === 'mscarries' ? getAttr(e, 'location') ?? 'n' : core.ctxCarry;
+        return { toggled: where === id.slice(9) };
       }
       return {};
     }
@@ -813,10 +890,20 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
         const ix = isOp(r[at]) ? at : isOp(r[at - 1]) ? at - 1 : r.findIndex((x) => isOp(x));
         if (ix >= 0) tk = { row: r, index: ix };
       }
-      if (!tk) break;
-      const e = tk.row[tk.index];
+      // the operator next to the caret / selection when the context found one
+      const e = loc.op ?? (tk ? tk.row[tk.index] : undefined);
       if (!e || e.c !== undefined) break;
       withUndo(() => setAttr(e, id === 'left_spacing' ? 'lspace' : 'rspace', v));
+      break;
+    }
+    case 'stretchy': {
+      // the reference writes the opposite of the operator's default and drops the attribute again when it is switched back
+      const e = loc.op;
+      const def = stretchDefault(e);
+      if (!e || def === null) break;
+      const cur = getAttr(e, 'stretchy');
+      const on = cur === undefined ? def : cur === 'true';
+      withUndo(() => setAttr(e, 'stretchy', on === !def ? null : String(!on)));
       break;
     }
     case 'sp_width':
@@ -988,11 +1075,14 @@ function mergeNumSep(core: EditorCore, loc: Located): void {
 /* ---------------------------------------------------------------- stacks */
 
 interface StackInfo {
+  /** the element that carries the attributes (the stack, or the long division) */
   stack: El;
   items: Row;
   itemsPath: Step[];
   /** index of the row the caret works on */
   cur: number;
+  /** long division, caret in the result row: the row and its path (the rows of the group are `items`) */
+  result?: { row: Row; path: Step[]; group: El };
 }
 
 function samePrefix(a: Step[], b: Step[]): boolean {
@@ -1001,11 +1091,28 @@ function samePrefix(a: Step[], b: Step[]): boolean {
 
 export function stackInfo(core: EditorCore, loc: Located): StackInfo | null {
   const st = loc.hit;
-  if (!st || st.el.t !== 'mstack' || !st.el.c) return null;
+  if (!st || !st.el.c) return null;
+  const cp = core.caret.path;
+  if (st.el.t === 'mlongdiv') {
+    // the rows of a long division are the items of its group; the result row above it is the first row of the stack
+    if (!st.el.c[2]) st.el.c[2] = [];
+    if (!st.el.c[2][0] || st.el.c[2][0].t !== 'msgroup') st.el.c[2].unshift({ t: 'msgroup', a: [], c: [[{ t: 'msrow', a: [], c: [[]] }]] });
+    const group = st.el.c[2][0];
+    const items = group.c![0];
+    const itemsPath: Step[] = [...st.path, [st.index, 2], [0, 0]];
+    const resultPath: Step[] = [...st.path, [st.index, 1]];
+    if (samePrefix(resultPath, cp) && cp.length === resultPath.length) return { stack: st.el, items, itemsPath, cur: 0, result: { row: st.el.c[1], path: resultPath, group } };
+    let cur = items.length - 1;
+    if (samePrefix(itemsPath, cp)) {
+      if (cp.length > itemsPath.length) cur = cp[itemsPath.length][0];
+      else cur = Math.max(0, Math.min(items.length - 1, core.caret.index - 1));
+    }
+    return { stack: st.el, items, itemsPath, cur: Math.max(0, cur) };
+  }
+  if (st.el.t !== 'mstack') return null;
   const items = st.el.c[0];
   const itemsPath: Step[] = [...st.path, [st.index, 0]];
   let cur = items.length - 1;
-  const cp = core.caret.path;
   if (samePrefix(itemsPath, cp)) {
     if (cp.length > itemsPath.length) cur = cp[itemsPath.length][0];
     else cur = Math.max(0, Math.min(items.length - 1, core.caret.index - 1));
@@ -1022,15 +1129,162 @@ const rowWidth = (e: El): number => {
   return 1;
 };
 
+/** the controls with the caret in the result row of a long division (the first row of the stack above its group) */
+function resultRowOp(core: EditorCore, info: StackInfo, id: string, value?: string): void {
+  const { stack, items } = info;
+  const { row, group } = info.result!;
+  const idx = Math.min(core.caret.index, row.length);
+  const asRow = (r: Row): El => ({ t: 'msrow', a: [], c: [r] });
+  const W = Math.max(row.length, ...items.map(rowWidth));
+  switch (id) {
+    case 'st_line': {
+      const line: El = { t: 'msline', a: [], x: '' };
+      if (row.length > 0 && row.length < W) setAttr(line, 'length', String(row.length));
+      if (idx === 0 && row.length > 0) {
+        // in front of the result: the line takes the result's place and the result joins the rows
+        const first = row.splice(0, row.length);
+        items.unshift(asRow(first));
+        row.push(line);
+        core.caret = { path: info.itemsPath.concat([[0, 0]]), index: 0 };
+      } else {
+        // after the result: the first item of the group
+        items.unshift(line);
+        core.caret = { path: info.result!.path, index: idx };
+      }
+      break;
+    }
+    case 'st_prepend': {
+      const first = row.splice(0, row.length);
+      items.unshift(asRow(first));
+      core.caret = { path: info.result!.path, index: 0 };
+      break;
+    }
+    case 'st_append':
+      items.unshift(newRow());
+      core.caret = { path: info.itemsPath.concat([[0, 0]]), index: 0 };
+      break;
+    case 'st_carries': {
+      core.ctxCarry ??= 'n';
+      const k = (getAttr(stack, 'stackalign') ?? 'right') === 'left' ? Math.max(0, idx - 1) : Math.max(0, row.length - idx);
+      const first = row.splice(0, row.length);
+      items.unshift(asRow(first));
+      row.push({ t: 'mscarries', a: [], c: [Array.from({ length: k }, noneTok)] });
+      core.caret = { path: info.itemsPath.concat([[0, 0]]), index: Math.min(idx, first.length) };
+      break;
+    }
+    case 'st_spacing':
+      setAttr(stack, 'charspacing', value && value !== 'medium' ? value : null, ['charalign', 'charspacing', 'stackalign', 'align']);
+      break;
+    case 'st_strike': {
+      row.splice(idx, 0, { t: 'menclose', a: [['notation', 'updiagonalstrike']], c: [[]] });
+      core.caret = { path: info.result!.path, index: idx + 1 };
+      break;
+    }
+    case 'st_left':
+    case 'st_right': {
+      const alignLeft = (getAttr(stack, 'stackalign') ?? 'right') === 'left';
+      // the result row moves against the rows of the group (see stackOp for the row case)
+      const padOthers = (id === 'st_right') !== alignLeft;
+      if (padOthers) {
+        items.forEach((e) => {
+          if (e.t === 'msline') {
+            if (!e.a.some(([n]) => n === 'length')) setAttr(e, 'length', String(W));
+            if (!e.a.some(([n]) => n === 'position')) setAttr(e, 'position', '1');
+          } else if (e.t === 'msrow' || e.t === 'mscarries') {
+            if (alignLeft) e.c![0].unshift(noneTok());
+            else e.c![0].push(noneTok());
+          }
+        });
+      } else if (alignLeft) {
+        row.unshift(noneTok());
+        core.caret = { path: info.result!.path, index: idx + 1 };
+      } else row.push(noneTok());
+      break;
+    }
+  }
+  void group;
+}
+
 function stackOp(core: EditorCore, loc: Located, id: string, value?: string): void {
   const info = stackInfo(core, loc);
   if (!info) return;
+  if (info.result) {
+    resultRowOp(core, info, id, value);
+    return;
+  }
   const { stack, items, itemsPath } = info;
   let cur = info.cur;
   const caretTo = (idx: number) => {
     core.caret = { path: [...itemsPath, [idx, 0]], index: 0 };
   };
   const groupStart = () => (items[cur - 1]?.t === 'mscarries' ? cur - 1 : cur);
+  // the caret is inside the row `cur` (not at the gaps of the stack level): its position in the row
+  const cp = core.caret.path;
+  const inRow = samePrefix(itemsPath, cp) && cp.length === itemsPath.length + 1 && !!items[cur] && (items[cur].t === 'msrow' || items[cur].t === 'mscarries');
+  const colIdx = inRow ? core.caret.index : 0;
+  const alignLeft = (getAttr(stack, 'stackalign') ?? 'right') === 'left';
+  // the caret on a line of the stack level: the line and the end of it the caret is at (a line has two stops)
+  let lineK = -1;
+  let lineEnd: 'left' | 'right' | null = null;
+  if (!inRow && samePrefix(itemsPath, cp) && cp.length === itemsPath.length) {
+    const k = core.caret.index;
+    if (items[k]?.t === 'msline') {
+      lineK = k;
+      lineEnd = 'left';
+    } else if (items[k - 1]?.t === 'msline') {
+      lineK = k - 1;
+      lineEnd = 'right';
+    }
+  }
+  if (lineK >= 0) cur = lineK;
+  /** number of `none` cells in front of the carry cell put over the digit before column `idx` of a row of `len` cells */
+  const carryNones = (len: number, idx: number) => (alignLeft ? Math.max(0, idx - 1) : Math.max(0, len - idx));
+  const stackRightAll = () => {
+    const width = Math.max(0, ...items.map(rowWidth));
+    // a line under a row that ends in an argument placeholder keeps its extent
+    const endsInPlaceholder = items.map((e) => isPlaceholderEl(e.c?.[0]?.[(e.c?.[0]?.length ?? 1) - 1]));
+    items.forEach((e, k) => {
+      if (e.t === 'msline') {
+        if (endsInPlaceholder[k - 1]) {
+          setAttr(e, 'length', String(width));
+          setAttr(e, 'position', '1');
+        }
+      } else if (e.t === 'msrow' || e.t === 'mscarries') {
+        const r = e.c![0];
+        if (e.t === 'msrow' && r.length === 0) items[k] = noneTok();
+        else r.push(noneTok());
+      } else if (e.t !== 'none') {
+        items[k] = { t: 'msrow', a: [], c: [[e, noneTok()]] };
+      }
+    });
+  };
+  const stackLeftAll = () => {
+    const width = Math.max(0, ...items.map(rowWidth));
+    let removed = false;
+    items.forEach((e, k) => {
+      if (e.t === 'msline') {
+        if (e.a.some(([n]) => n === 'length' || n === 'position')) removed = true;
+        setAttr(e, 'length', null);
+        setAttr(e, 'position', null);
+      } else if (e.t === 'none') {
+        items[k] = newRow();
+        removed = true;
+      } else if (e.t === 'msrow' || e.t === 'mscarries') {
+        const r = e.c![0];
+        const last = r[r.length - 1];
+        if (last && last.t === 'none' && !isPlaceholderEl(r[r.length - 2])) {
+          r.pop();
+          removed = true;
+        }
+      }
+    });
+    // nothing to pull back: the current line is shortened instead
+    const line = items[cur];
+    if (!removed && line && line.t === 'msline' && width > 1) {
+      setAttr(line, 'length', String(width - 1));
+      setAttr(line, 'position', '1');
+    }
+  };
   switch (id) {
     case 'st_prepend': {
       const at = groupStart();
@@ -1045,23 +1299,48 @@ function stackOp(core: EditorCore, loc: Located, id: string, value?: string): vo
     }
     case 'st_line': {
       const e = items[cur];
+      // in front of the first character of a row the line goes above the row, anywhere else under it
+      // a line of a left aligned stack (long division) is as long as the row it belongs to when that is shorter than the stack
+      const newLine = (belongs?: El): El => {
+        const l: El = { t: 'msline', a: [], x: '' };
+        if (alignLeft && belongs && (belongs.t === 'msrow' || belongs.t === 'mscarries')) {
+          const w = rowWidth(belongs);
+          const Wd = Math.max(0, ...items.map(rowWidth));
+          if (w > 0 && w < Wd) setAttr(l, 'length', String(w));
+        }
+        return l;
+      };
+      if (inRow && e.t === 'msrow' && colIdx === 0 && (e.c?.[0] ?? []).length > 0) {
+        items.splice(cur, 0, newLine(e));
+        core.caret = { path: [...itemsPath, [cur + 1, 0]], index: 0 };
+        break;
+      }
       if (e && e.t === 'msrow' && (e.c?.[0] ?? []).length === 0) {
         items[cur] = { t: 'msline', a: [], x: '' };
-        // the caret moves to the nearest row below (or above)
-        let k = items.findIndex((it, i) => i > cur && it.t === 'msrow');
-        if (k < 0) for (let i = cur - 1; i >= 0; i--) if (items[i].t === 'msrow') { k = i; break; }
-        if (k >= 0) caretTo(k);
-        else core.caret = { path: itemsPath, index: cur + 1 };
-      } else items.splice(cur + 1, 0, { t: 'msline', a: [], x: '' });
+        // the caret is on the line (typing there goes to the row below it)
+        core.caret = { path: itemsPath, index: cur + 1 };
+      } else items.splice(cur + 1, 0, newLine(inRow ? e : lineK >= 0 ? items[lineK + 1] : e));
       break;
     }
     case 'st_carries': {
       if (items[cur - 1]?.t === 'mscarries') break;
-      if (items[cur]?.t === 'msline' || !items[cur]) {
+      core.ctxCarry ??= 'n';
+      if (items[cur]?.t === 'msline' && items[cur + 1] && (items[cur + 1].t === 'msrow' || items[cur + 1].t === 'mscarries')) {
+        // on a line: the carries row goes over the row below it
+        const k = carryNones(rowWidth(items[cur + 1]), 0);
+        items.splice(cur + 1, 0, { t: 'mscarries', a: [], c: [Array.from({ length: k }, noneTok)] });
+        caretTo(cur + 1);
+      } else if (items[cur]?.t === 'msline' || !items[cur]) {
         items.splice(cur + 1, 0, { t: 'mscarries', a: [], c: [[]] }, newRow());
         caretTo(cur + 2);
       } else {
-        items.splice(cur, 0, { t: 'mscarries', a: [], c: [[]] });
+        // the carry cell sits over the digit before the caret: the cells in front of it are `none`
+        let k = 0;
+        if (inRow) {
+          const len = rowWidth(items[cur]);
+          k = carryNones(len, colIdx);
+        }
+        items.splice(cur, 0, { t: 'mscarries', a: [], c: [Array.from({ length: k }, noneTok)] });
         caretTo(cur + 1);
       }
       break;
@@ -1069,54 +1348,96 @@ function stackOp(core: EditorCore, loc: Located, id: string, value?: string): vo
     case 'st_spacing':
       setAttr(stack, 'charspacing', value && value !== 'medium' ? value : null, ['charalign', 'charspacing', 'stackalign', 'align']);
       break;
-    case 'st_right': {
-      const width = Math.max(0, ...items.map(rowWidth));
-      // a line under a row that ends in an argument placeholder keeps its extent
-      const endsInPlaceholder = items.map((e) => isPlaceholderEl(e.c?.[0]?.[(e.c?.[0]?.length ?? 1) - 1]));
-      items.forEach((e, k) => {
-        if (e.t === 'msline') {
-          if (endsInPlaceholder[k - 1]) {
-            setAttr(e, 'length', String(width));
-            setAttr(e, 'position', '1');
-          }
-        } else if (e.t === 'msrow' || e.t === 'mscarries') {
-          const r = e.c![0];
-          if (e.t === 'msrow' && r.length === 0) items[k] = noneTok();
-          else r.push(noneTok());
-        } else if (e.t !== 'none') {
-          items[k] = { t: 'msrow', a: [], c: [[e, noneTok()]] };
+    case 'st_right':
+    case 'st_left':
+      if (inRow && items[cur].t === 'msrow') {
+        // the row under the caret moves against the other rows of the stack: it is padded itself (right aligned stacks: at its
+        // end when moved left) or the others are (left aligned: at their start when moved left); lines keep their place
+        const width = Math.max(0, ...items.map(rowWidth));
+        const row = items[cur].c![0];
+        const padOthers = (id === 'st_right') !== alignLeft;
+        if (padOthers) {
+          items.forEach((e, k) => {
+            if (k === cur) return;
+            if (e.t === 'msline') {
+              if (!e.a.some(([n]) => n === 'length')) setAttr(e, 'length', String(width));
+              if (!e.a.some(([n]) => n === 'position')) setAttr(e, 'position', '1');
+            } else if (e.t === 'msrow' || e.t === 'mscarries') {
+              const r = e.c![0];
+              if (alignLeft) r.unshift(noneTok());
+              else if (e.t === 'msrow' && r.length === 0) items[k] = noneTok();
+              else r.push(noneTok());
+            } else if (e.t !== 'none') {
+              items[k] = { t: 'msrow', a: [], c: [alignLeft ? [noneTok(), e] : [e, noneTok()]] };
+            }
+          });
+        } else if (alignLeft) row.unshift(noneTok());
+        else row.push(noneTok());
+        core.caret = { path: cp, index: Math.min(colIdx + (padOthers || !alignLeft ? 0 : 1), row.length) };
+        // the result row of a long division is one of the other rows
+        if (padOthers && stack.t === 'mlongdiv' && stack.c![1]) {
+          if (alignLeft) stack.c![1].unshift(noneTok());
+          else stack.c![1].push(noneTok());
         }
-      });
-      break;
-    }
-    case 'st_left': {
-      const width = Math.max(0, ...items.map(rowWidth));
-      let removed = false;
-      items.forEach((e, k) => {
-        if (e.t === 'msline') {
-          if (e.a.some(([n]) => n === 'length' || n === 'position')) removed = true;
-          setAttr(e, 'length', null);
-          setAttr(e, 'position', null);
-        } else if (e.t === 'none') {
-          items[k] = newRow();
-          removed = true;
-        } else if (e.t === 'msrow' || e.t === 'mscarries') {
-          const r = e.c![0];
-          const last = r[r.length - 1];
-          if (last && last.t === 'none' && !isPlaceholderEl(r[r.length - 2])) {
-            r.pop();
-            removed = true;
-          }
-        }
-      });
-      // nothing to pull back: the current line is shortened instead
-      const line = items[cur];
-      if (!removed && line && line.t === 'msline' && width > 1) {
-        setAttr(line, 'length', String(width - 1));
-        setAttr(line, 'position', '1');
+        break;
       }
+      if (lineK >= 0 && lineEnd) {
+        // a line: moving its left / right end (positions are counted from the edge the rows are aligned at)
+        const line = items[lineK];
+        const W = Math.max(0, ...items.map(rowWidth));
+        const dirLeft = id === 'st_left';
+        // near edge = the end next to the alignment edge: the left end of a left aligned stack, the right end of a right aligned one
+        const near = (lineEnd === 'left') === alignLeft;
+        // moving an end outwards (the left end to the left, the right end to the right) or inwards
+        const outward = (lineEnd === 'left') === dirLeft;
+        let len = parseInt(getAttr(line, 'length') ?? '0', 10) || W;
+        let pos = parseInt(getAttr(line, 'position') ?? '0', 10) || 0;
+        if (near && outward && pos === 0) {
+          // beyond the alignment edge: every row gets an empty cell there; the other lines stay where they were
+          items.forEach((e, k) => {
+            if (e.t === 'msrow' || e.t === 'mscarries') {
+              if (alignLeft) e.c![0].unshift(noneTok());
+              else if (e.t === 'msrow' && e.c![0].length === 0) items[k] = noneTok();
+              else e.c![0].push(noneTok());
+            } else if (e.t === 'msline' && k !== lineK) {
+              if (!e.a.some(([n]) => n === 'length')) setAttr(e, 'length', String(W));
+              if (!e.a.some(([n]) => n === 'position')) setAttr(e, 'position', '1');
+            }
+          });
+          if (stack.t === 'mlongdiv' && stack.c![1]) {
+            if (alignLeft) stack.c![1].unshift(noneTok());
+            else stack.c![1].push(noneTok());
+          }
+          len += 1;
+          if (len >= W + 1) len = 0;
+        } else if (near && !outward && pos === 0) {
+          // pulls the padding back (or shortens the line when there is none)
+          stackLeftAll();
+          break;
+        } else if (near) {
+          if (outward) {
+            pos -= 1;
+            len += 1;
+          } else {
+            pos += 1;
+            len -= 1;
+          }
+        } else {
+          len += outward ? 1 : -1;
+        }
+        const Wn = Math.max(0, ...items.map(rowWidth));
+        if (len <= 0) len = Wn;
+        // a line as long as the stack and not shifted is the default one
+        setAttr(line, 'length', pos === 0 && len === Wn ? null : String(len));
+        setAttr(line, 'position', pos > 0 ? String(pos) : null);
+        break;
+      }
+      if (id === 'st_left') {
+        stackLeftAll();
+        break;
+      }
+      stackRightAll();
       break;
-    }
     case 'st_strike': {
       if (core.hasSelection() && samePrefix(itemsPath, core.sel!.path) && core.sel!.path.length === itemsPath.length) {
         const sel = core.sel!;
@@ -1164,6 +1485,8 @@ function stackOp(core: EditorCore, loc: Located, id: string, value?: string): vo
           let k = samePrefix(itemsPath, cp) && cp.length === itemsPath.length ? core.caret.index : cur;
           while (k < items.length && items[k].t === 'msline') k++;
           if (k < items.length && items[k].t === 'msrow' && (items[k].c?.[0] ?? []).length === 0) items[k] = X();
+          // in front of a row (after a line): the strike becomes the first cell of that row
+          else if (k < items.length && items[k].t === 'msrow' && lineK >= 0) items[k].c![0].unshift(X());
           else items.splice(Math.min(k, items.length), 0, X());
         }
       }
@@ -1171,7 +1494,10 @@ function stackOp(core: EditorCore, loc: Located, id: string, value?: string): vo
     }
     default: {
       const m = /^st_carry_(nw|n|ne|w|e|sw|s|se)$/.exec(id);
-      if (m && items[cur - 1]?.t === 'mscarries') setAttr(items[cur - 1], 'location', m[1] === 'n' ? null : m[1]);
+      if (m && items[cur - 1]?.t === 'mscarries') {
+        setAttr(items[cur - 1], 'location', m[1] === 'n' ? null : m[1]);
+        core.ctxCarry = m[1];
+      }
     }
   }
   cur = 0;

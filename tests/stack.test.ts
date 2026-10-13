@@ -48,6 +48,8 @@ test('stack contextual controls from a finished stack (s10b)', () => {
     if (!id) continue;
     const e = new EditorCore();
     e.setMathML(init.replace('<math', '<math xmlns="http://www.w3.org/1998/Math/MathML"'));
+    // the controls belong to the stack: the caret sits at the end of its level (after the stack itself there are none)
+    e.caret = { path: [[0, 0]], index: e.row[0].c![0].length };
     applyContext(e, id, m[3]);
     assert.equal(strip(e.getMathML()), s.mathml, s.desc);
   }

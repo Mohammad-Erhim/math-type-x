@@ -64,9 +64,14 @@ MathML), `xml.ts` / `util.ts` (strict XML helpers).
 
 ## Handwriting (`src/hand`)
 
-Stroke font and Hershey data to synthesise strokes (`simulate.ts`, demo) and a compact recogniser
-(`recognize.ts`) for digits, a few letters, operators, fractions and scripts. The service contract is
-independent of the recogniser, so a stronger provider can be dropped in.
+`glyphs.ts` holds the stroke templates (digits, Latin and Greek letters, operators, brackets, calculus symbols),
+`classify.ts` the context decisions (case, digit / letter, × / x, dots → i / j / !), `recognize.ts` the pipeline:
+denoise (even resampling + moving average), template matching with shear / aspect variants, dynamic-programming
+segmentation of the strokes into symbols (crossing, linking, pauses), a rejection threshold for scribbles, and a
+structure parser (fraction bars, radicals, big operators with limits, fences, scripts) that emits MathML.
+`simulate.ts` draws the same symbols as strokes (demo and test corpora). The service contract
+(`hand/recognize`: `x`, `y` and optional `t` arrays) is independent of the recogniser, so a stronger provider can be
+dropped in.
 
 ## Server (`server/`)
 

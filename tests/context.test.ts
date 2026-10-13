@@ -53,6 +53,8 @@ test('contextual controls produce the recorded MathML', () => {
       // multiline: the spacing fields show up only next to a line break (the recording clicked there)
       if (kind === 'multiline' && /spacing$/.test(title)) continue;
       const ed = setup(kind, init);
+      // the spacing fields belong to an operator next to the caret: step to the right of the relation sign
+      if (/spacing$/.test(title) && kind === 'aligned') ed.moveLeft();
       const loc = locate(ed);
       if (!loc) { bad.push(`${kind}/${s.n}: no context`); continue; }
       const ctl = controlsFor(loc).find((c) => c.title === title || c.id === title || (title === 'setOpenBracket' && c.id === title));

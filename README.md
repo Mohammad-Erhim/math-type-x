@@ -62,7 +62,10 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
 * `tests/noitalic.test.ts` – the same with "Automatic italic" off (1508 cases).
 * `tests/oracle.test.ts` – typing / navigation programs against the reference editor (186 + 66 programs; the documented
   deviations are left-script navigation, a few vertical-navigation cases and bold-twice-on-selection).
-* `tests/ctxprobe.test.ts`, `tests/context.test.ts` – contextual-tab control sets and apply logic (60/60, 298/300).
+* `tests/ctxprobe.test.ts`, `tests/context.test.ts` – contextual-tab control sets and apply logic (60/60, 250/250).
+* `tests/ctxsets.test.ts`, `tests/ctxeffects.test.ts` – the contextual tab against crawls of the real playground: control set and
+  toggles at ~1 100 caret / selection stops, and the MathML of ~500 control clicks (stacks, long division, fences, operators,
+  multi-line, Stretchy); recordings in `evidence/ctx_*_ref.json` (tools/ctx_matrix.js).
 * `tests/modes.test.ts` – Bold / Italic / Regular text / Automatic-italic-off switched on while any of ~700 toolbar
   controls is used, then "a" typed (≈ 2500 probes of the reference: tools/probe_modes.js, probe_modes_popup.js;
   evidence/modes_regular_auto_ref.json).
@@ -98,8 +101,11 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
   recordings are reproduced (`tests/oracle/services_stack.json`), others are converted normally.
 * Formula glyphs use Liberation Sans / the reference symbol fonts (`fontsUrl`); without the vendor fonts brackets fall back
   to STIX glyphs.
-* The handwriting recogniser is a compact built-in engine (digits, a few letters, operators, fractions, scripts);
-  replace `hand/recognize` with a stronger provider if needed – the response contract is unchanged.
+* The handwriting recogniser is a built-in template matcher with structure parsing (about 98 % of the synthetic corpora in
+  `tests/oracle/hand_corpus*_in.json`; real handwriting is less regular). Its answers differ from the reference's cloud
+  recogniser in detail; replace `hand/recognize` with a stronger provider if needed – the response contract is unchanged.
+* Navigation through structures that contain argument placeholders inside big operators ("Big operator with subscript",
+  left scripts) differs by a stop or two from the reference; their contextual controls are the same.
 * The demo page keeps the playground visible at every viewport width (the reference host page hides it below 1275 px,
   UI-012); on narrow screens the page scrolls horizontally.
 * Disabled toolbar buttons expose `aria-disabled` (SRS ACC-001) which the reference does not.

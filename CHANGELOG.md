@@ -21,5 +21,18 @@ All notable changes are documented here. The format follows
   reference, recorded evidence, CI workflow.
 - Documentation: SRS and functional reference PDFs, architecture, services, testing.
 
+### Added (behaviour pass)
+- Arabic: translated user interface (toolbar, pop-ups, output panel, demo page), right-to-left default, RTL layout with
+  mirrored structures and glyphs, Arabic typing classes and function names, Arabic accessible text.
+- Handwriting recogniser rebuilt: template matching with segmentation and a structure parser (fractions, radicals, big
+  operators, fences, scripts), rejection of scribbles, time-aware stroke grouping, warm-up at server start.
+- Contextual tab matches the reference at every caret and selection stop: operator spacing and the new Stretchy toggle,
+  nudge buttons with the controls of the enclosing structure for selections, table cell range selection (Delete clears the
+  cells), stack / long-division row and line operations (insert line before / after, carries cells, move left / right,
+  line ends), carries location memory.
+- Enclosure padding per notation (box, circle, strikes, long division sign), placeholder-aware caret navigation.
+- Tools: contextual-tab crawler (`tools/ctx_matrix.js`) with comparison and replay helpers, handwriting end-to-end check,
+  selection / enclosure probes.
+
 ### Known deviations
 See *Known deviations* in the [README](README.md).
