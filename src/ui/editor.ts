@@ -253,6 +253,7 @@ export class MathEditor implements ToolbarHost {
   /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
    * script, down to the denominator, to the next line) like the arrow keys do. */
   private navClear: HTMLButtonElement | null = null;
+  private navHistory: HTMLButtonElement[] = [];
   private buildNavPad(): void {
     // built always; shown on touch screens and in narrow windows (CSS)
     // left / right, then up / down
@@ -264,6 +265,29 @@ export class MathEditor implements ToolbarHost {
       ['Backspace', 'Delete backward', ''],
     ];
     const pad = h('div', { class: 'wrs_navPad', role: 'group', 'aria-label': 'Move the cursor' });
+    // history: back / forward through the changes (a group of its own, beside the arrows)
+    const mac = typeof navigator !== 'undefined' && /Mac|iPhone|iPad/.test(navigator.platform || navigator.userAgent || '');
+    const hist: [string, string, string, () => void, string][] = [
+      ['Undo', mac ? 'Undo (⌘Z)' : 'Undo (Ctrl+Z)', 'M9 7L4.5 11.5 9 16M5 11.5h8.5a4.5 4.5 0 0 1 0 9H10', () => this.core.undo(), 'wrs_navUndo'],
+      ['Redo', mac ? 'Redo (⇧⌘Z)' : 'Redo (Ctrl+Y)', 'M15 7l4.5 4.5L15 16M19 11.5h-8.5a4.5 4.5 0 0 0 0 9H14', () => this.core.redo(), 'wrs_navRedo'],
+    ];
+    const histEls: HTMLButtonElement[] = [];
+    for (const [cap, title, d, run, cls] of hist) {
+      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_navHistory ' + cls, title, 'aria-label': title, tabindex: '-1' }) as HTMLButtonElement;
+      b.innerHTML = `<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="${d}" fill="none" stroke="#324d5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wrs_navCap">${cap}</span>`;
+      b.addEventListener('pointerdown', (e) => e.preventDefault());
+      b.addEventListener('mousedown', (e) => e.preventDefault());
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (b.getAttribute('aria-disabled') === 'true') return;
+        this.closePopup();
+        run();
+        this.display.poke();
+        this.focusEditor();
+      });
+      histEls.push(b);
+    }
+    this.navHistory = histEls;
     for (const [key, label, glyph] of keys) {
       const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.replace(/^Arrow/, ''), title: label, 'aria-label': label, tabindex: '-1' }) as HTMLButtonElement;
       // the four arrows are triangles of one size (10 x 14), so no glyph of a font makes one look smaller
@@ -365,6 +389,9 @@ export class MathEditor implements ToolbarHost {
     kb.classList.add('wrs_navOn');
     pad.prepend(kb);
     pad.prepend(clear);
+    // the history group sits right before the arrows
+    const firstArrow = pad.querySelector('.wrs_navLeft');
+    histEls.forEach((b) => pad.insertBefore(b, firstArrow));
     // a bar of its own below the formula area (fluid layout) so that it is never covered or scrolled away
     this.display.wrapper.after(pad, confirmBox);
     this.root.classList.add('wrs_hasNavPad');
@@ -547,6 +574,13 @@ export class MathEditor implements ToolbarHost {
   render(): void {
     const core = this.core;
     this.navClear?.classList.toggle('wrs_navOff', core.isEmpty());
+    // back / forward are greyed while there is nothing to go back / forward to
+    this.navHistory.forEach((b, i) => {
+      const off = i === 0 ? !core.canUndo() : !core.canRedo();
+      b.classList.toggle('wrs_navOff', off);
+      if (off) b.setAttribute('aria-disabled', 'true');
+      else b.removeAttribute('aria-disabled');
+    });
     this.root.classList.toggle('wrs_emptyDoc', core.isEmpty());
     const arabic = arabicCssFamily(core.getFontFamily());
     this.ensureArabicFace(arabic);

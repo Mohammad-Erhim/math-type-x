@@ -94,6 +94,8 @@ All notable changes are documented here. The format follows
   (`tools/gen/zulfi/extract.py`, data in `src/data/zulfi.json`), private-use characters U+E100… in the formula, drawn as
   paths in the editor and in every export: no font is shipped for them. The other tables (operations, relations, …) were
   extracted too and removed again at the owner's request (`tools/gen/zulfi/categories.json` lists what ships).
+- History group beside the arrows (Undo / Redo, greyed when there is nothing to go back / forward to, shortcuts in the
+  tooltips): Ctrl+Z (Cmd+Z), Ctrl+Y and — new — Ctrl+Shift+Z (Cmd+Shift+Z) redo.
 - Phones: the export section sits behind an "Export" bar at the bottom (remembered); a low window (soft keyboard) keeps
   tabs, panel, formula, pad and export visible; "Keys" button puts the phone keyboard away; labelled pad keys; tab name above
   the panel; hint in an empty formula; Share (system share sheet); caret positions inside joined Arabic words.
