@@ -12,6 +12,18 @@ async function open(opts = {}) {
   await p.waitForTimeout(3000);
   await p.evaluate(() => { document.querySelectorAll('#onetrust-consent-sdk, #onetrust-banner-sdk, .onetrust-pc-dark-filter').forEach(e => e.remove()); });
   await p.waitForFunction(() => window.editor && typeof editor.getMathML === 'function' && document.querySelector('#editorContainer .wrs_toolbar button.wrs_button'), null, { timeout: 60000 });
+  // LANGUAGE=ar: replace the editor of the page by one in that language (the reference page and our demo alike)
+  if (process.env.LANGUAGE) {
+    await p.evaluate((l) => {
+      const c = document.getElementById('editorContainer');
+      c.innerHTML = '';
+      const ed = com.wiris.jsEditor.JsEditor.newInstance({ language: l });
+      ed.insertInto(c);
+      window.editor = ed;
+    }, process.env.LANGUAGE);
+    await p.waitForFunction(() => document.querySelector('#editorContainer .wrs_toolbar button'), null, { timeout: 30000 });
+    await p.waitForTimeout(1500);
+  }
   await p.waitForTimeout(800);
   await p.locator('#editorContainer').scrollIntoViewIfNeeded();
   await p.waitForTimeout(500);

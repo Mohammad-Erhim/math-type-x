@@ -2,6 +2,7 @@
  * MathEditor – the embeddable editor: shell, toolbar, formula display, dialogs, clipboard, services,
  * handwriting and the public API (SRS chapter 9).
  */
+import { Localizer, tableFor } from './i18n';
 import { EditorCore } from '../core/engine';
 import { handleKey } from '../core/keys';
 import { catalogue, Control, behaviorOf, findControl } from '../core/catalogue';
@@ -94,6 +95,7 @@ export class MathEditor implements ToolbarHost {
   private popup: { el: HTMLElement; kind: string; owner?: HTMLElement; close: () => void } | null = null;
   private lastLayout: DocLayout | null = null;
   private lastRtl = false;
+  private localizer!: Localizer;
   private ctx: CtxState | null = null;
   private ready = false;
   private accessibleTimer: ReturnType<typeof setTimeout> | null = null;
@@ -114,7 +116,8 @@ export class MathEditor implements ToolbarHost {
     if (options.reservedWords) this.core.reservedWords = options.reservedWords.filter((w) => /^[A-Za-z]+$/.test(w));
     if (this.opts.fontStyle === 'normal') this.core.modes.autoItalic = false;
     if (options.mml) this.core.setMathML(options.mml);
-    if (this.opts.rtlLanguages.includes(this.lang)) this.core.rtl = false;
+    // right-to-left languages start with a right-to-left formula (`<math dir="rtl">`), like the reference
+    if (!options.mml && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
   }
 
   static newInstance(o: EditorOptions = {}): MathEditor {
@@ -162,6 +165,9 @@ export class MathEditor implements ToolbarHost {
     this.root.style.setProperty('--wrs-k', String(k));
     if (k !== 1) this.root.classList.add('wrs_scaled');
     container.appendChild(this.root);
+    // translated tooltips / labels (the handwriting panel stays English, like the reference)
+    this.localizer = new Localizer(tableFor(this.lang), (el) => el.classList.contains('wrs_hand'));
+    this.localizer.attach(this.root);
     handBtn.addEventListener('click', () => this.openHand());
     strip.addEventListener('click', () => this.openHand());
   }
@@ -212,6 +218,7 @@ export class MathEditor implements ToolbarHost {
   }
 
   destroy(): void {
+    this.localizer?.detach();
     document.removeEventListener('mousemove', this.onMouseMove);
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
@@ -250,7 +257,8 @@ export class MathEditor implements ToolbarHost {
     this.display.view.style.fontFamily = fam === 'stix' ? "'STIX Two Math',serif" : fam || '';
     if (rtl) {
       const w = this.display.view.clientWidth;
-      const cw = Math.ceil(this.lastLayout.w) + 2;
+      // the content box is two pixels wider than the drawing: the drawing ends at the reference's right padding
+      const cw = Math.ceil(this.lastLayout.w);
       (this.display as any).content.style.marginLeft = Math.max(5, w - cw - 5) + 'px';
     } else (this.display as any).content.style.marginLeft = '5px';
     this.display.scrollCaretIntoView(core.caret);
@@ -265,7 +273,7 @@ export class MathEditor implements ToolbarHost {
     const c = this.core;
     const tb = this.toolbar;
     const hasSel = c.hasSelection();
-    const by = (prefix: string) => [...tb.buttons.values()].find((b) => b.title.startsWith(prefix));
+    const by = (prefix: string) => [...tb.buttons.values()].find((b) => Localizer.english(b).startsWith(prefix));
     const setDis = (prefix: string, dis: boolean) => {
       const b = by(prefix);
       if (!b) return;

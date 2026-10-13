@@ -17,7 +17,6 @@ export const MESSAGES: Record<string, Record<string, string>> = {
     code: 'Code:',
     contextual: 'Contextual tab (Alt+0)',
   },
-  ar: { manual: 'دليل' },
 };
 
 export function t(lang: string, key: string): string {
