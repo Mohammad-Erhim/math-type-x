@@ -12,14 +12,13 @@
 <main class="page">
   <h1>See MathType in action!</h1>
   <p class="lead">Try the editor below: use the toolbar, type with the keyboard or switch to handwriting mode.</p>
-  <!-- the host page hides the playground below 1275 px of viewport width (SRS UI-012) -->
-  <div class="wp-block-columns is-style-hidden-mobile is-layout-flex">
+  <!-- always visible: on narrow viewports the page scrolls horizontally instead of hiding the playground -->
+  <div class="wp-block-columns is-layout-flex">
     <div class="wp-block-column">
       <div id="editorContainer"></div>
       <div id="outputContainer"></div>
     </div>
   </div>
-  <p class="notice is-style-hidden-desktop">The interactive playground needs a wider screen (at least 1275&nbsp;px).</p>
 </main>
 <script src="editor.js"></script>
 <script src="demo.js"></script>

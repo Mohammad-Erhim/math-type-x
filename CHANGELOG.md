@@ -12,7 +12,8 @@ All notable changes are documented here. The format follows
   Bold / Italic / Regular-text / Automatic-italic modes.
 - Layout engine calibrated to the reference: fractions, roots, scripts, fences, matrices, enclosures,
   big operators, elementary-maths stacks and both long-division notations; caret and underline marks.
-- Keyboard, mouse and touch interaction (selection handles, double tap), RTL toolbar.
+- Keyboard, mouse and touch interaction (selection handles, double tap), RTL toolbar; the demo page keeps
+  the playground visible on small screens (horizontal scroll) instead of hiding it.
 - Node service: accessible text, LaTeX, Content MathML, SVG / PNG / PDF / EPS rendering, handwriting
   recognition; strict input validation, rate limit, configurable CORS origins, structured access log.
 - Offline converters with the reference's error texts.

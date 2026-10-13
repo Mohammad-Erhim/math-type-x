@@ -100,6 +100,6 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
   to STIX glyphs.
 * The handwriting recogniser is a compact built-in engine (digits, a few letters, operators, fractions, scripts);
   replace `hand/recognize` with a stronger provider if needed – the response contract is unchanged.
-* Below 1275 px of viewport width the demo page hides the playground, like the host page of the reference (UI-012);
-  a short notice takes its place.
+* The demo page keeps the playground visible at every viewport width (the reference host page hides it below 1275 px,
+  UI-012); on narrow screens the page scrolls horizontally.
 * Disabled toolbar buttons expose `aria-disabled` (SRS ACC-001) which the reference does not.

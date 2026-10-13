@@ -4,10 +4,8 @@ html,body{margin:0;padding:0;background:#fff;color:#18212f;font-family:Arial,'Li
 h1{font-size:28px;font-weight:700;margin:0 0 8px}
 .lead{margin:0 0 20px;color:#5d727d;font-size:15px}
 #editorContainer{width:725px;height:415px}
-@media (max-width:760px){.page{width:auto;margin:16px;overflow-x:auto}}
+/* narrow viewports: keep the 725 px widget fully usable, the page scrolls sideways */
+@media (max-width:760px){.page{width:auto;margin:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}}
 
 .wp-block-columns{display:flex;flex-wrap:nowrap}
 .wp-block-column{flex:1 1 auto;min-width:0}
-.is-style-hidden-desktop{display:none}
-.notice{color:#5d727d;font-size:14px}
-@media (max-width:1274px){.is-style-hidden-mobile{display:none !important}.is-style-hidden-desktop{display:block}}
