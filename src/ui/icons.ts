@@ -69,6 +69,8 @@ export function controlIcon(c: Control, w: number, h: number, arabic = false, ar
   if (doc.row.length === 0) return '';
   // find a font size that fits
   let size = w <= 22 ? 15 : 14;
+  // drawn beside traced artwork of the reference (whose lettering is small): the Arabic variants are set to match it
+  if (arLn || arDiff) size = 10.5;
   const rtlIcon = limit && arabic;
   let lay = layoutDocument(doc.row, undefined, size, rtlIcon);
   const fit = () => {
