@@ -1782,7 +1782,7 @@ export class EditorCore {
 }
 
 
-const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'لط', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
+const ARABIC_FN: Record<string, string> = { lim: 'نها', sin: 'جا', cos: 'جتا', tan: 'ظا', log: 'لو', ln: 'طا', csc: 'قتا', sec: 'قا', cot: 'ظتا' };
 
 /** right-to-left editing writes function names in Arabic (arcsin → sin⁻¹); root-level indices are re-mapped */
 /** the digits of the numbers (mn) of an insertion written in `digits` */
