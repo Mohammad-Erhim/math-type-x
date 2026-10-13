@@ -31,6 +31,10 @@ export function tracedPaths(layers: { fill: string; d: string; op?: number }[], 
  * curly d) do not survive tracing at this size, and the limit word follows the language */
 export const DRAWN_ICONS = new Set(['TB-9-009', 'TB-9-010', 'TB-1-024', 'TB-2-014', 'TB-9-008']);
 
+/** controls whose mirrored (right-to-left) artwork is not used: the natural logarithm's one shows the word لط, which is no
+ * function of Arabic mathematics – the icon stays "ln" */
+export const NO_RTL_ART = new Set(['TB-9-024']);
+
 /** the Arabic mathematical letter that stands for the differential d in an Arabic editor: the last letter of the list of
  * Arabic math letters (ء) */
 export const ARABIC_DIFFERENTIAL = '\ue188';
