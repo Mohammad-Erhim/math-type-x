@@ -260,7 +260,8 @@ export class Toolbar {
     const inner = gw - 4;
     const key = c.special ? specialKey(c.title) : null;
     let body = '';
-    const arLang = /^ar/i.test(this.host.lang);
+    // Arabic mode: an Arabic language, or right-to-left editing switched on with the toolbar's button
+    const arLang = /^ar/i.test(this.host.lang) || this.rtlOn;
     const alt = this.rtlOn ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && (hasDifferential(c) || /<mi>ln<\/mi>/.test(c.A ?? ''))) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
     if (alt) body = tracedPaths(alt.layers as any);
     else if (key && ART[key]) body = ART[key](inner, gh - 4);
@@ -334,7 +335,7 @@ export class Toolbar {
       if (!btn) continue;
       const svgEl = btn.querySelector('svg');
       if (!svgEl) continue;
-      const arLang = /^ar/i.test(this.host.lang);
+      const arLang = /^ar/i.test(this.host.lang) || on;
       const alt = on ? (DRAWN_ICONS.has(c.id) || NO_RTL_ART.has(c.id) || (arLang && (hasDifferential(c) || /<mi>ln<\/mi>/.test(c.A ?? ''))) ? undefined : RTL_ICONS.controls[c.id]) : undefined;
       const [w, hh] = [c.geom[2] - 4, c.geom[3] - 4];
       if (alt) svgEl.innerHTML = tracedPaths(alt.layers as any);

@@ -82,6 +82,11 @@ test('in an Arabic editor the differential d of the calculus controls is the las
     ar.arabicLanguage = true;
     ar.activate(ctl);
     assert.ok(!/<mo>d<\/mo>/.test(ar.getMathML()) && ar.getMathML().includes('&#xE188;'), title + ' ' + ar.getMathML());
+    // right-to-left editing (the toolbar's button) is Arabic mode as well
+    const rtl = new EditorCore();
+    rtl.setRtl(true);
+    rtl.activate(ctl);
+    assert.ok(rtl.getMathML().includes('&#xE188;'), title + ' (rtl)');
   }
   const last = ZULFI_GROUPS[0].items[ZULFI_GROUPS[0].items.length - 1];
   assert.equal(last, 0xe188, 'the last letter of the list');

@@ -37,6 +37,8 @@ test('toolbar controls in right-to-left mode', () => {
         n++;
         // a deliberate deviation: the limit of a right-to-left formula is the Arabic word نها (the reference keeps "lim")
         want = want.replace(/<mi>lim<\/mi>/g, '<mi>&#x646;&#x647;&#x627;</mi>');
+        // the differential d is the Arabic math letter U+E188 in right-to-left editing
+        want = want.replace(/<mo>d<\/mo>/g, '<mo>&#xE188;</mo>');
         // and the natural logarithm is لو(ه), the bracket holding the Arabic math letter U+E14E (the reference writes لط,
         // which is no function of Arabic mathematics)
         want = want.replace(/<mi>&#x644;&#x637;<\/mi><mfenced><mrow\/><\/mfenced>/g, '<mi>&#x644;&#x648;</mi><mfenced><mi>&#xE14E;</mi></mfenced>').replace(/<mi>&#x644;&#x637;<\/mi>/g, '<mi>&#x644;&#x648;</mi>');

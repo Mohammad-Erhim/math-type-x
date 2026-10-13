@@ -60,7 +60,8 @@ export class EditorCore {
     text: false,
   };
   rtl = false;
-  /** the editor's language is Arabic: the differential d of the calculus controls is written with the Arabic math letter */
+  /** the editor's language is Arabic (or right-to-left editing is on): the differential d of the calculus controls is
+   * written with the Arabic math letter */
   arabicLanguage = false;
   /** the contextual tab offers its extensions (vertical alignment of every structure with inputs): set by the editor; the
    * bare engine behaves exactly like the reference's */
@@ -272,7 +273,7 @@ export class EditorCore {
     if (!this.hasSelection()) this.settleStackCaret();
     let mapped = false;
     if (this.rtl) spec = rtlize(spec, this.hasSelection());
-    if (this.arabicLanguage) spec = withArabicDifferential(spec);
+    if (this.arabicLanguage || this.rtl) spec = withArabicDifferential(spec);
     // numbers a control brings along (the -1 of an inverse function …) are written in the digit set in use
     if (this.modes.digits !== 'western') spec = withDigits(spec, this.modes.digits);
     if (!this.modes.autoItalic && spec.tree.length === 1 && spec.tree[0].c === undefined) {
