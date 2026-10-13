@@ -647,6 +647,7 @@ export class EditorCore {
         const p = prevEl();
         const join = m.arabicLigature && joinable(p, 'mi', a) && /^\p{Script=Arabic}$/u.test(p.x ?? '');
         putChar('mi', a, ch, {}, join);
+        this.mergeReserved();
         break;
       }
       case 'cjk':
@@ -1287,8 +1288,8 @@ export class EditorCore {
     this.modes.color = c;
     this.emit();
   }
-  setRtl(on: boolean): void {
-    this.checkpoint();
+  setRtl(on: boolean, record = true): void {
+    if (record) this.checkpoint();
     this.rtl = on;
     const i = this.attrs.findIndex(([k]) => k === 'dir');
     if (on && i < 0) this.attrs.unshift(['dir', 'rtl']);

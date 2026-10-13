@@ -1,0 +1,628 @@
+{
+ "0": {
+  "l": {
+   "w": 8.90625,
+   "h": 18,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.8984375
+ },
+ "1": {
+  "l": {
+   "w": 8.90625,
+   "h": 18,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.8984375
+ },
+ "2": {
+  "l": {
+   "w": 8.90625,
+   "h": 18,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.8984375
+ },
+ "3": {
+  "l": {
+   "w": 8.90625,
+   "h": 18,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.8984375
+ },
+ "س": {
+  "l": {
+   "w": 19.53125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 19.53125
+ },
+ "ص": {
+  "l": {
+   "w": 19.34375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 19.34375
+ },
+ "ع": {
+  "l": {
+   "w": 9.546875,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 9.546875
+ },
+ "ك": {
+  "l": {
+   "w": 13.1875,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 13.1875
+ },
+ "ل": {
+  "l": {
+   "w": 11.625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 11.625
+ },
+ "م": {
+  "l": {
+   "w": 9.90625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 9.90625
+ },
+ "ن": {
+  "l": {
+   "w": 11.75,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 11.75
+ },
+ "ه": {
+  "l": {
+   "w": 8.390625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.3828125
+ },
+ "و": {
+  "l": {
+   "w": 7.734375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 7.7265625
+ },
+ "ي": {
+  "l": {
+   "w": 12.53125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 12.5234375
+ },
+ "ا": {
+  "l": {
+   "w": 4.453125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 4.4453125
+ },
+ "ب": {
+  "l": {
+   "w": 15.0625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 15.0625
+ },
+ "ت": {
+  "l": {
+   "w": 15.0625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 15.0625
+ },
+ "ث": {
+  "l": {
+   "w": 15.0625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 15.0625
+ },
+ "ج": {
+  "l": {
+   "w": 10.328125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 10.328125
+ },
+ "ح": {
+  "l": {
+   "w": 10.328125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 10.328125
+ },
+ "خ": {
+  "l": {
+   "w": 10.328125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 10.328125
+ },
+ "د": {
+  "l": {
+   "w": 7.125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 7.125
+ },
+ "ذ": {
+  "l": {
+   "w": 7.125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 7.125
+ },
+ "ر": {
+  "l": {
+   "w": 7.734375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 7.7265625
+ },
+ "ز": {
+  "m": null
+ },
+ "ش": {
+  "l": {
+   "w": 19.53125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 19.53125
+ },
+ "ض": {
+  "l": {
+   "w": 19.34375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 19.34375
+ },
+ "ط": {
+  "m": null
+ },
+ "ظ": {
+  "l": {
+   "w": 14.796875,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 14.796875
+ },
+ "غ": {
+  "l": {
+   "w": 9.546875,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 9.546875
+ },
+ "ف": {
+  "l": {
+   "w": 16.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 16.5859375
+ },
+ "ق": {
+  "l": {
+   "w": 12.421875,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 12.4140625
+ },
+ "ء": {
+  "l": {
+   "w": 7.53125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 7.5234375
+ },
+ "آ": {
+  "l": {
+   "w": 4.453125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 4.4453125
+ },
+ "أ": {
+  "l": {
+   "w": 4.453125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 4.4453125
+ },
+ "إ": {
+  "l": {
+   "w": 4.453125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 4.4453125
+ },
+ "ؤ": {
+  "l": {
+   "w": 7.734375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 7.7265625
+ },
+ "ئ": {
+  "l": {
+   "w": 12.53125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 12.5234375
+ },
+ "ة": {
+  "l": {
+   "w": 8.390625,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.3828125
+ },
+ "ى": {
+  "l": {
+   "w": 12.53125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 12.5234375
+ },
+ "٠": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "١": {
+  "m": null
+ },
+ "٢": {
+  "m": null
+ },
+ "٣": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "٤": {
+  "m": null
+ },
+ "٥": {
+  "m": null
+ },
+ "٦": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "٧": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "٨": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "٩": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "٫": {
+  "l": {
+   "w": 5.203125,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 5.1953125
+ },
+ "٪": {
+  "l": {
+   "w": 8.59375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.59375
+ },
+ "،": {
+  "l": {
+   "w": 5.171875,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 5.1640625
+ },
+ "؛": {
+  "l": {
+   "w": 5.09375,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 5.0859375
+ },
+ "؟": {
+  "l": {
+   "w": 8.5,
+   "h": 19,
+   "font": "16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 8.4921875
+ },
+ "a": {
+  "l": {
+   "w": 8.90625,
+   "h": 18,
+   "font": "italic 16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "italic"
+  },
+  "m": 8.8984375
+ },
+ "b": {
+  "l": {
+   "w": 8.90625,
+   "h": 18,
+   "font": "italic 16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "italic"
+  },
+  "m": 8.8984375
+ },
+ "x": {
+  "l": {
+   "w": 8,
+   "h": 18,
+   "font": "italic 16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "italic"
+  },
+  "m": 8
+ },
+ "y": {
+  "l": {
+   "w": 8,
+   "h": 18,
+   "font": "italic 16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "italic"
+  },
+  "m": 8
+ },
+ "z": {
+  "l": {
+   "w": 8,
+   "h": 18,
+   "font": "italic 16px Arial, Helvetica, sans-serif",
+   "ff": "Arial, Helvetica, sans-serif",
+   "fs": "16px",
+   "fst": "italic"
+  },
+  "m": 8
+ },
+ "+": {
+  "m": null
+ },
+ "=": {
+  "l": {
+   "w": 13.34375,
+   "h": 18,
+   "font": "16px Conv_math1",
+   "ff": "Conv_math1",
+   "fs": "16px",
+   "fst": "normal"
+  },
+  "m": 13.34375
+ }
+}

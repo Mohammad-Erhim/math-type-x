@@ -14,7 +14,8 @@ export interface TypeModes {
   lock?: { v: string | null };
 }
 
-export const RESERVED_WORDS = ['sin', 'cos', 'tan', 'log', 'ln'];
+/** typed letters that form one function name: the Latin names and their Arabic counterparts (جا جتا ظل لو لط) */
+export const RESERVED_WORDS = ['sin', 'cos', 'tan', 'log', 'ln', '\u062C\u0627', '\u062C\u062A\u0627', '\u0638\u0644', '\u0644\u0648', '\u0644\u0637'];
 
 const DIGIT_BASE: Record<DigitSet, number> = { western: 0x30, arabicIndic: 0x660, easternArabicIndic: 0x6f0 };
 
@@ -36,6 +37,12 @@ export function classify(ch: string): CharClass {
   if (ch === '_') return 'under';
   if (ch === '\u210F') return 'op'; // the reference types the reduced Planck constant as an operator
   if (reDigit.test(ch)) return 'digit';
+  // the Arabic blocks: letters, marks and punctuation of the basic / supplement blocks are identifiers (mi), the signs
+  // U+0600–060F and every presentation form are operators (recorded with tools/probe_ar_classify.js)
+  const cp = ch.codePointAt(0)!;
+  if ((cp >= 0x610 && cp <= 0x6ff) || (cp >= 0x750 && cp <= 0x77f) || (cp >= 0x8a0 && cp <= 0x8ff)) return 'arabic';
+  if (cp >= 0x600 && cp <= 0x60f) return 'op';
+  if ((cp >= 0xfb50 && cp <= 0xfdff) || (cp >= 0xfe70 && cp <= 0xfeff) || (cp >= 0x1ee00 && cp <= 0x1eeff)) return 'op';
   if (reArabic.test(ch) && reLetter.test(ch)) return 'arabic';
   if (reCjkHeb.test(ch)) return 'cjk';
   if (reGreek.test(ch) && reLetter.test(ch)) return 'greek';
