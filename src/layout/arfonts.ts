@@ -2,6 +2,8 @@
  * Arabic-script faces offered in the Font list. They are subsets of open-licence fonts (tools/gen/subset_arabic_fonts.py)
  * that hold the Arabic blocks only: Arabic letters, digits and punctuation are set in the chosen face, Latin letters,
  * digits and operators keep their own faces, so the layout metrics of the rest of the formula do not move.
+ * Faces whose rules stack letters (Amiri and Scheherazade New raise the noon over the heh of نها) are deliberately not
+ * offered: short words of a formula must stay flat and legible.
  * `value` is what the equation's `style="font-family:…"` holds (the name users and other tools know), `family` the
  * name of the bundled face (never a name an installed font could shadow).
  */
@@ -13,14 +15,14 @@ export interface ArabicFont {
   label: string;
   /** the name in Arabic script, drawn in the face itself in the list: a preview of the letters */
   arLabel: string;
-  style: 'naskh' | 'kufi';
+  style: 'naskh' | 'sans' | 'kufi';
 }
 
 export const ARABIC_FONTS: ArabicFont[] = [
-  { value: 'Amiri', family: 'MTX Amiri', stem: 'MtxAmiri', label: 'Amiri', arLabel: 'أميري', style: 'naskh' },
-  { value: 'Scheherazade New', family: 'MTX Scheherazade', stem: 'MtxScheherazade', label: 'Scheherazade New', arLabel: 'شهرزاد', style: 'naskh' },
   { value: 'Noto Naskh Arabic', family: 'MTX Noto Naskh', stem: 'MtxNotoNaskh', label: 'Noto Naskh Arabic', arLabel: 'نوتو نسخ', style: 'naskh' },
+  { value: 'Noto Sans Arabic', family: 'MTX Noto Sans', stem: 'MtxNotoSans', label: 'Noto Sans Arabic', arLabel: 'نوتو سانس', style: 'sans' },
   { value: 'Noto Kufi Arabic', family: 'MTX Noto Kufi', stem: 'MtxNotoKufi', label: 'Noto Kufi Arabic', arLabel: 'نوتو كوفي', style: 'kufi' },
+  { value: 'Tajawal', family: 'MTX Tajawal', stem: 'MtxTajawal', label: 'Tajawal', arLabel: 'تجوال', style: 'sans' },
 ];
 
 const BY_VALUE = new Map(ARABIC_FONTS.map((f) => [f.value.toLowerCase(), f]));

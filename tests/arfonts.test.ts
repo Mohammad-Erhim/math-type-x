@@ -19,7 +19,7 @@ test('the Font list flags the Arabic faces as a group of their own', () => {
   assert.ok(ar.length >= 4);
   for (const f of ar) assert.ok(/[؀-ۿ]/.test(f.arabic!.arLabel), 'the name in Arabic script: ' + f.value);
   // values the equation stores are looked up case-insensitively
-  assert.equal(arabicFontOf('amiri')?.family, 'MTX Amiri');
+  assert.equal(arabicFontOf('tajawal')?.family, 'MTX Tajawal');
   assert.equal(arabicCssFamily('Arial'), '');
 });
 
@@ -32,14 +32,14 @@ test('every face of the list ships as woff2 (browser) and ttf (image services), 
 
 test('the chosen face draws the Arabic text and nothing else; Latin text keeps its face', () => {
   const plain = renderSvg(doc(''));
-  assert.ok(!plain.svg.includes('MTX Amiri'));
-  const r = renderSvg(doc('Amiri'));
-  assert.equal(r.arabic, 'MTX Amiri');
+  assert.ok(!plain.svg.includes('MTX Tajawal'));
+  const r = renderSvg(doc('Tajawal'));
+  assert.equal(r.arabic, 'MTX Tajawal');
   const texts = [...r.svg.matchAll(/<text\b[^>]*font-family="([^"]*)"[^>]*>([^<]*)</g)];
   assert.ok(texts.length >= 3);
   for (const [, fam, t] of texts) {
     const arabic = /[؀-ۿ]/.test(t);
-    assert.equal(fam.startsWith("'MTX Amiri',"), arabic, `${t} → ${fam}`);
+    assert.equal(fam.startsWith("'MTX Tajawal',"), arabic, `${t} → ${fam}`);
   }
 });
 
@@ -52,14 +52,14 @@ test('Arabic metrics follow the face: another face, another width; the letters o
 
 test('the font family is kept in the equation and survives a round trip', () => {
   const c = new EditorCore();
-  c.setFontFamily('Scheherazade New');
-  assert.equal(c.getFontFamily(), 'Scheherazade New');
+  c.setFontFamily('Noto Sans Arabic');
+  assert.equal(c.getFontFamily(), 'Noto Sans Arabic');
   const mml = c.getMathML();
-  assert.match(mml, /font-family:'Scheherazade New'/);
+  assert.match(mml, /font-family:'Noto Sans Arabic'/);
   const d = new EditorCore();
   d.setMathML(mml);
-  assert.equal(d.getFontFamily(), 'Scheherazade New');
-  assert.equal(arabicCssFamily(d.getFontFamily()), 'MTX Scheherazade');
+  assert.equal(d.getFontFamily(), 'Noto Sans Arabic');
+  assert.equal(arabicCssFamily(d.getFontFamily()), 'MTX Noto Sans');
 });
 
 test('PNG export draws with the chosen face (different pixels, same layout width as the SVG)', () => {
@@ -71,8 +71,8 @@ test('PNG export draws with the chosen face (different pixels, same layout width
 });
 
 test('the browser export embeds the chosen face next to the faces of the rest of the formula', () => {
-  const faces = facesFor(renderSvg(doc('Amiri', '<mi>س</mi><mi>x</mi>')).svg);
+  const faces = facesFor(renderSvg(doc('Tajawal', '<mi>س</mi><mi>x</mi>')).svg);
   const names = faces.map((f) => f.family);
-  assert.ok(names.includes('MTX Amiri'), names.join());
+  assert.ok(names.includes('MTX Tajawal'), names.join());
   assert.ok(names.includes('Liberation Sans'), 'the Latin letter still needs its sans face: ' + names.join());
 });

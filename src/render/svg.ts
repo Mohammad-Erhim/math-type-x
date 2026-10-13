@@ -30,7 +30,7 @@ export function renderSvg(mml: string, o: RenderOptions = {}): Rendered {
   const doc = parseMathML(mml);
   const size = Math.min(Math.max(o.fontSize ?? 16, 4), 128);
   const rtl = doc.attrs.some(([k, v]) => k === 'dir' && v === 'rtl');
-  // the equation's font-family (`<math style="font-family:Amiri">`): the bundled Arabic face for Arabic-script text
+  // the equation's font-family (`<math style="font-family:Tajawal">`): the bundled Arabic face for Arabic-script text
   const family = arabicCssFamily(/font-family:\s*'?([^';]+)'?/.exec(doc.attrs.find(([k]) => k === 'style')?.[1] ?? '')?.[1]);
   const lay = layoutDocument(doc.row, undefined, size, rtl, family);
   const pad = o.padding ?? 2;

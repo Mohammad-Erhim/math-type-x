@@ -38,7 +38,7 @@ const BODY = '<mi>س</mi><mo>=</mo><mn>٣</mn><mi>x</mi><mtext>مرحبا بال
       return { a: [aw, ah], b: [bw, bh], recall: nb ? hb / nb : 1, precision: na ? ha / na : 1 };
     };
   });
-  const faces = ['', 'Amiri', 'Scheherazade New', 'Noto Naskh Arabic', 'Noto Kufi Arabic'];
+  const faces = ['', 'Noto Naskh Arabic', 'Noto Sans Arabic', 'Noto Kufi Arabic', 'Tajawal'];
   const out = [];
   for (const rtl of [false, true]) for (const f of faces) {
     // through the Font select, like a user (the formula first, then the choice)

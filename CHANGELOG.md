@@ -66,7 +66,7 @@ All notable changes are documented here. The format follows
 - Brand-neutral naming: no third-party site links or names in the product, help page shipped with the editor.
 
 ### Added (Arabic fonts)
-- The Font list has a group of Arabic fonts (Amiri, Scheherazade New, Noto Naskh Arabic, Noto Kufi Arabic; SIL OFL):
+- The Font list has a group of Arabic fonts (Noto Naskh Arabic, Noto Sans Arabic, Noto Kufi Arabic, Tajawal; SIL OFL):
   entries are drawn in their face with their name in Arabic script, the closed list shows that name in the face.
   Arabic letters, digits and punctuation are set in the chosen face in the editor and in the PNG / SVG / PDF / EPS
   exports (browser and server); Latin letters, digits and operators keep their faces, so nothing else moves.

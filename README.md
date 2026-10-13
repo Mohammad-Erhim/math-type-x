@@ -131,7 +131,7 @@ Environment: `PORT`, `HOST`, `SERVICES_BASE`, `STATIC_DIR`, `CORS_ORIGINS`, `RAT
   differences (browser rasteriser instead of resvg); PDF / EPS wrap a 300 dpi raster in both.
 * Formulas are drawn with one bundled font set (STIX Two Math, Liberation Sans, an Arabic face) in the editor, the icons and
   every export, so the canvas and the PNG / SVG / PDF agree; large delimiters are assembled from STIX glyph variants.
-* The Font list's **Arabic fonts** (Amiri, Scheherazade New, Noto Naskh Arabic, Noto Kufi Arabic) apply to Arabic-script text
+* The Font list's **Arabic fonts** (Noto Naskh Arabic, Noto Sans Arabic, Noto Kufi Arabic, Tajawal) apply to Arabic-script text
   only (letters, digits, punctuation); Latin letters, digits and operators stay in the bundled sans / math faces. The Latin
   entries of the list (Arial, Tahoma, …) are stored in the equation (`style="font-family:…"`) but do not change the drawing.
 * The handwriting recogniser is a built-in template matcher with structure parsing (about 98 % of the synthetic corpora in
