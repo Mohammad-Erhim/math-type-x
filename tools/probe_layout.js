@@ -1,0 +1,22 @@
+const { open } = require('./lib');
+const fs = require('fs');
+(async () => {
+  const { b, p } = await open({ dsf: 1 });
+  const bx = await p.locator('#editorContainer').boundingBox();
+  const res = {};
+  const grab = async (label) => { await p.waitForTimeout(500); res[label] = await p.evaluate(() => [...document.querySelectorAll('.wrs_formulaDisplay span, .wrs_formulaDisplay div')].filter(e => e.children.length === 0 && e.textContent.trim() && !/AriaLive/.test(e.className) && e.getBoundingClientRect().y > 0).map(e => { const r = e.getBoundingClientRect(); return { t: e.textContent, fs: getComputedStyle(e).fontSize, x: Math.round(r.x), y: Math.round(r.y), w: Math.round(r.width * 10) / 10, h: Math.round(r.height * 10) / 10, cls: e.className.slice(0, 40) }; }).slice(0, 14)); res[label + '_rules'] = await p.evaluate(() => [...document.querySelectorAll('.wrs_formulaDisplay *')].filter(e => { const cs = getComputedStyle(e); return e.children.length === 0 && !e.textContent.trim() && (parseFloat(cs.borderTopWidth) > 0 || parseFloat(cs.borderBottomWidth) > 0 || (cs.backgroundColor !== 'rgba(0, 0, 0, 0)' && e.getBoundingClientRect().height <= 3)); }).map(e => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return { w: Math.round(r.width * 10) / 10, h: Math.round(r.height * 10) / 10, bt: cs.borderTopWidth, bb: cs.borderBottomWidth, bg: cs.backgroundColor }; }).slice(0, 6)); };
+  const reset = async (mml) => { const rp = p.waitForResponse(r => /mathml2internal/.test(r.url()), { timeout: 6000 }).catch(() => null); await p.evaluate(m => editor.setMathML(m), mml); await rp; await p.waitForTimeout(500); };
+  const NS = 'xmlns="http://www.w3.org/1998/Math/MathML"';
+  await reset(`<math ${NS}><mi>x</mi></math>`); await grab('x');
+  await reset(`<math ${NS}><msup><mi>x</mi><mn>2</mn></msup></math>`); await grab('x^2');
+  await reset(`<math ${NS}><msup><mi>x</mi><msup><mn>2</mn><mn>3</mn></msup></msup></math>`); await grab('x^2^3');
+  await reset(`<math ${NS}><msub><mi>x</mi><mn>1</mn></msub></math>`); await grab('x_1');
+  await reset(`<math ${NS}><mfrac><mi>a</mi><mi>b</mi></mfrac></math>`); await grab('frac');
+  await reset(`<math ${NS}><mfrac><mfrac><mi>a</mi><mi>b</mi></mfrac><mi>c</mi></mfrac></math>`); await grab('frac_nested');
+  await reset(`<math ${NS}><msqrt><mi>x</mi></msqrt></math>`); await grab('sqrt');
+  await reset(`<math ${NS}><munderover><mo>&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>`); await grab('sum');
+  await reset(`<math ${NS}><mfenced><mi>x</mi></mfenced></math>`); await grab('paren');
+  fs.writeFileSync('layout_probe.json', JSON.stringify(res, null, 1));
+  console.log(JSON.stringify(res).slice(0, 2500));
+  await b.close();
+})();

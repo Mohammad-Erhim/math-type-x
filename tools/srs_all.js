@@ -1,0 +1,12 @@
+const fs = require('fs');
+const L = require('./build_lib');
+const S = require('./srs_build');
+const m1 = require('./srs_main');
+const m2 = require('./srs_main2');
+const m3 = require('./srs_main3');
+let body = m1.h + m2.h + m3.h;
+const toc = m1.toc;
+const tocHtml = '<ol style="columns:2;font-size:8.5pt;list-style:none;margin:0;padding:0">' + toc.map(t => `<li><a href="#${t[2]}">${L.esc(t[0])} ${L.esc(t[1])}</a></li>`).join('') + '</ol>';
+body = body.replace('<div class="toc" id="TOC_PLACEHOLDER"></div>', `<div class="toc">${tocHtml}</div>`);
+fs.writeFileSync('srs.html', `<!doctype html><html><head><meta charset="utf-8"><title>SRS — MathType-style equation editor playground</title><style>${S.SRS_CSS}</style></head><body>${body}</body></html>`);
+console.log('srs.html bytes', body.length, 'toc', toc.length);
