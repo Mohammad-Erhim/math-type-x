@@ -279,10 +279,17 @@ export function createApp(cfg: Config) {
       if (file !== staticRoot && !file.startsWith(staticRoot + sep)) throw new HttpError(403, 'forbidden');
       const st = await stat(file).catch(() => null);
       if (!st || !st.isFile()) throw new HttpError(404, 'not found');
-      const data = await readFile(file);
       const type = MIME[extname(file)] ?? 'application/octet-stream';
+      // pages, scripts and styles keep their names between releases: the browser revalidates them (a cheap 304) so an
+      // update shows at once; fonts and images may be kept for a week
+      const code = ['.html', '.js', '.css', '.map', '.json'].includes(extname(file));
+      const etag = `W/"${st.size.toString(16)}-${Math.floor(st.mtimeMs).toString(16)}"`;
+      const cc = code ? 'no-cache' : 'public, max-age=604800';
+      if (req.headers['if-none-match'] === etag) return send(304, type, '', { ETag: etag, 'Cache-Control': cc });
+      const data = await readFile(file);
       return send(200, type, data, {
-        'Cache-Control': extname(file) === '.html' ? 'no-cache' : 'public, max-age=3600',
+        ETag: etag,
+        'Cache-Control': cc,
         'Content-Security-Policy': `default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' ${fontSrc}; frame-ancestors 'self'`,
       });
     } catch (e) {
