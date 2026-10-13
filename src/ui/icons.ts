@@ -56,8 +56,8 @@ export function controlIcon(c: Control, w: number, h: number, arabic = false, ar
     return t.w === w && t.w === h ? body : `<g transform="scale(${w / t.w} ${h / t.w})">${body}</g>`;
   }
   let mml = c.A ?? '<math/>';
-  // the natural logarithm of an Arabic editor: لو followed by the Arabic math letter U+E14E
-  if (arLn) mml = mml.replace('<mi>ln</mi>', '<mi>&#x644;&#x648;</mi><mi>&#xE14E;</mi>');
+  // the natural logarithm of an Arabic editor: لو(ه), the bracket holding the Arabic math letter U+E14E
+  if (arLn) mml = mml.replace('<mi>ln</mi><mfenced><mrow/></mfenced>', '<mi>&#x644;&#x648;</mi><mfenced><mi>&#xE14E;</mi></mfenced>');
   if (arDiff) mml = mml.replace(/<mo>d<\/mo>/g, `<mo>${ARABIC_DIFFERENTIAL}</mo>`);
   if (limit && arabic) mml = mml.replace('<mi>lim</mi>', '<mi>\u0646\u0647\u0627</mi>').replace('&#x2192;', '&#x2190;');
   let doc;

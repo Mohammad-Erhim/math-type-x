@@ -183,6 +183,35 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
   // composed text (merged runs): sum of the characters
   const chars = Array.from(text);
   if (chars.length > 1) {
+    // a run holding symbols drawn as shapes: its letters are measured as runs of their own, the symbols add their advance
+    if (chars.some((c) => zulfiSymbol(c.codePointAt(0) ?? 0))) {
+      let w = 0;
+      let lp = 0;
+      let rp = 0;
+      let seg = '';
+      let first = true;
+      const flush = () => {
+        if (!seg) return;
+        const t = tokenInfo(tag, mathvariant, seg, size);
+        w += t.w;
+        if (first) lp = t.lpad;
+        rp = t.rpad;
+        first = false;
+        seg = '';
+      };
+      for (const c of chars) {
+        if (zulfiSymbol(c.codePointAt(0) ?? 0)) {
+          flush();
+          const t = tokenInfo(tag, mathvariant, c, size);
+          w += t.w;
+          if (first) lp = t.lpad;
+          rp = t.rpad;
+          first = false;
+        } else seg += c;
+      }
+      flush();
+      return { w, lpad: lp, rpad: rp, font: 'sans' };
+    }
     let w = 0;
     let font: FontKind = 'sans';
     let lp = 0;
@@ -195,7 +224,7 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
       if (i === chars.length - 1) rp = t.rpad;
     });
     // Arabic letters join inside a run: the reference lays out what the browser measures for the whole run
-    if (chars.filter((c) => ARABIC_BLOCKS.test(c)).length >= 2 && !chars.some((c) => zulfiSymbol(c.codePointAt(0) ?? 0))) {
+    if (chars.filter((c) => ARABIC_BLOCKS.test(c)).length >= 2) {
       const sw = runWidth(text, size);
       if (sw !== null) w = sw;
     }
