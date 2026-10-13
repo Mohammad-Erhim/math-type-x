@@ -1,0 +1,2917 @@
+{
+ "tab": 1,
+ "tabTitle": "Symbols (Alt+2)",
+ "results": [
+  {
+   "id": "t1_b0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Negate operator",
+   "x": 611.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><menclose notation=\"updiagonalstrike\"/></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><menclose notation=\"updiagonalstrike\"><mn>7</mn></menclose></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><menclose notation=\"updiagonalstrike\"/></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><menclose notation=\"updiagonalstrike\"><mi>x</mi></menclose></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Plus sign",
+   "x": 636.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>+</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>+</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>+</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>+</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Multiplication sign",
+   "x": 658.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xD7;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#xD7;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#xD7;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xD7;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b3",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Middle dot",
+   "x": 680.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB7;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB7;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#xB7;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB7;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b4",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Minus sign",
+   "x": 636.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>-</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>-</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>-</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>-</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b5",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Division sign",
+   "x": 658.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xF7;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#xF7;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#xF7;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xF7;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b6",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Forward slash",
+   "x": 680.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>/</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>/</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>/</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>/</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b7",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Plus-minus sign",
+   "x": 636.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB1;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB1;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#xB1;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB1;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b8",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Asterisk",
+   "x": 658.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>*</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>*</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>*</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>*</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b9",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Ring operator",
+   "x": 680.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2218;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2218;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2218;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2218;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b10",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Number pi",
+   "x": 713.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mi mathvariant=\"normal\">&#x3C0;</mi></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mi mathvariant=\"normal\">&#x3C0;</mi><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mi mathvariant=\"normal\">&#x3C0;</mi></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mi mathvariant=\"normal\">&#x3C0;</mi></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b11",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Partial differential",
+   "x": 735.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2202;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2202;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2202;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2202;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b12",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Degree sign",
+   "x": 757.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB0;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB0;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#xB0;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xB0;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b13",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Infinity",
+   "x": 713.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x221E;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x221E;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x221E;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x221E;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b14",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Increment",
+   "x": 735.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2206;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2206;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2206;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2206;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b15",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Apostrophe",
+   "x": 757.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>'</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b16",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Empty set",
+   "x": 713.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2205;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2205;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2205;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2205;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b17",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Nabla",
+   "x": 735.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2207;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2207;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2207;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2207;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b18",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Double apostrophe",
+   "x": 757.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>''</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo><mn>7</mn><mo>'</mo></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>''</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo><mi>x</mi><mo>'</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b19",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Equals sign",
+   "x": 790.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>=</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>=</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>=</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>=</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b20",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Identical to",
+   "x": 812.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2261;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2261;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2261;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2261;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b21",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Tilde operator",
+   "x": 790.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>~</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>~</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>~</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>~</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b22",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Almost equal to",
+   "x": 812.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2248;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2248;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2248;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2248;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b23",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Asymptotically equal to",
+   "x": 790.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2243;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2243;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2243;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2243;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b24",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Approximately equal to",
+   "x": 812.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2245;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2245;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2245;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2245;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b25",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Greater-than sign",
+   "x": 845.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&gt;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&gt;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&gt;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&gt;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b26",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Less-than sign",
+   "x": 867.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&lt;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&lt;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&lt;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&lt;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b27",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Greater-than or equal to",
+   "x": 845.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2265;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2265;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2265;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2265;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b28",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Less-than or equal to",
+   "x": 867.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2264;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2264;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2264;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2264;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b29",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Greater-than or slanted equal to",
+   "x": 845.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A7E;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A7E;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2A7E;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A7E;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b30",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Less-than or slanted equal to",
+   "x": 867.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A7D;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A7D;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2A7D;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A7D;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b31",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Element of",
+   "x": 900.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2208;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2208;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2208;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2208;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b32",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Contains as member",
+   "x": 922.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x220B;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x220B;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x220B;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x220B;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b33",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Union",
+   "x": 900.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x222A;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x222A;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x222A;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x222A;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b34",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Intersection",
+   "x": 922.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2229;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2229;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2229;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2229;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b35",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Subset of",
+   "x": 900.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2282;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2282;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2282;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2282;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b36",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Superset of",
+   "x": 922.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2283;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2283;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2283;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2283;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b37",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Logical and",
+   "x": 955.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2227;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2227;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2227;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2227;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b38",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Logical or",
+   "x": 977.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2228;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2228;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2228;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2228;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b39",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not sign",
+   "x": 955.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xAC;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#xAC;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#xAC;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#xAC;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b40",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "For all",
+   "x": 977.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2200;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2200;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2200;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2200;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b41",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "There exists",
+   "x": 955.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2203;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2203;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2203;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2203;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b42",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "There does not exist",
+   "x": 977.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2204;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2204;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2204;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2204;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b43",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Angle",
+   "x": 1010.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2220;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2220;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2220;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2220;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b44",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Parallel to",
+   "x": 1010.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2225;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2225;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2225;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2225;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b45",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Perpendicular",
+   "x": 1010.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22A5;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22A5;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x22A5;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22A5;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b46",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square",
+   "x": 1043.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25A1;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25A1;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x25A1;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25A1;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b47",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Triangle",
+   "x": 1043.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25B3;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25B3;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x25B3;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25B3;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b48",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circle",
+   "x": 1043.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25CB;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25CB;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x25CB;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25CB;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b49",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circled plus",
+   "x": 1076.5,
+   "y": 704.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2295;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2295;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2295;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2295;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b50",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circled times",
+   "x": 1076.5,
+   "y": 726.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2297;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2297;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2297;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2297;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_b51",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circled dot",
+   "x": 1076.5,
+   "y": 748.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2299;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2299;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2299;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2299;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x0_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Reverse solidus",
+   "x": 706.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>\\</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>\\</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>\\</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>\\</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x0_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Set minus",
+   "x": 706.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2216;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2216;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2216;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2216;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x0_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Minus-or-plus sign",
+   "x": 706.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2213;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2213;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2213;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2213;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x0",
+   "expander": true,
+   "popupItems": [
+    "Reverse solidus",
+    "Set minus",
+    "Minus-or-plus sign"
+   ]
+  },
+  {
+   "id": "t1_x1_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Triple apostrophe",
+   "x": 783.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>'''</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo><mn>7</mn><mo>''</mo></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>'''</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>'</mo><mi>x</mi><mo>''</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x1_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Quadruple apostrophe",
+   "x": 783.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>''''</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>''</mo><mn>7</mn><mo>''</mo></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>''''</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>''</mo><mi>x</mi><mo>''</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x1_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Reversed prime",
+   "x": 783.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2035;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2035;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2035;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2035;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x1",
+   "expander": true,
+   "popupItems": [
+    "Triple apostrophe",
+    "Quadruple apostrophe",
+    "Reversed prime"
+   ]
+  },
+  {
+   "id": "t1_x2_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not equal to",
+   "x": 838.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2260;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2260;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2260;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2260;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x2_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not almost equal to",
+   "x": 860.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2249;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2249;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2249;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2249;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x2_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not identical to",
+   "x": 838.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2262;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2262;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2262;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2262;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x2_i3",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not tilde",
+   "x": 838.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2241;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2241;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2241;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2241;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x2",
+   "expander": true,
+   "popupItems": [
+    "Not equal to",
+    "Not almost equal to",
+    "Not identical to",
+    "Not tilde"
+   ]
+  },
+  {
+   "id": "t1_x3_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Less-than and single-line not equal to",
+   "x": 893.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A87;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A87;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2A87;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A87;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Much greater-than",
+   "x": 915.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x226B;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x226B;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x226B;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x226B;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Succeeds",
+   "x": 937.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x227B;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x227B;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x227B;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x227B;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i3",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Greater-than and single-line not equal to",
+   "x": 893.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A88;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A88;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2A88;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A88;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i4",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Proportional to",
+   "x": 915.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x221D;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x221D;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x221D;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x221D;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i5",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Normal subgroup of",
+   "x": 937.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22B2;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22B2;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x22B2;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22B2;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i6",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Much less-than",
+   "x": 893.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x226A;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x226A;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x226A;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x226A;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i7",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Precedes",
+   "x": 915.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x227A;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x227A;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x227A;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x227A;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3_i8",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Contains as normal subgroup",
+   "x": 937.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22B3;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22B3;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x22B3;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22B3;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x3",
+   "expander": true,
+   "popupItems": [
+    "Less-than and single-line not equal to",
+    "Much greater-than",
+    "Succeeds",
+    "Greater-than and single-line not equal to",
+    "Proportional to",
+    "Normal subgroup of",
+    "Much less-than",
+    "Precedes",
+    "Contains as normal subgroup"
+   ]
+  },
+  {
+   "id": "t1_x4_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not an element of",
+   "x": 948.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2209;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2209;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2209;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2209;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Does not contain as member",
+   "x": 970.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x220C;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x220C;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x220C;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x220C;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Subset of or equal to",
+   "x": 992.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2286;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2286;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2286;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2286;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i3",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Superset of or equal to",
+   "x": 1014.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2287;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2287;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2287;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2287;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i4",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square subset of",
+   "x": 948.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x228F;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x228F;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x228F;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x228F;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i5",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square superset of",
+   "x": 970.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2290;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2290;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2290;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2290;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i6",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square subset of or equal to",
+   "x": 992.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2291;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2291;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2291;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2291;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i7",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square superset of or equal to",
+   "x": 1014.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2292;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2292;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2292;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2292;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i8",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square cap",
+   "x": 948.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2293;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2293;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2293;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2293;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4_i9",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Square cup",
+   "x": 970.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2294;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2294;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2294;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2294;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x4",
+   "expander": true,
+   "popupItems": [
+    "Not an element of",
+    "Does not contain as member",
+    "Subset of or equal to",
+    "Superset of or equal to",
+    "Square subset of",
+    "Square superset of",
+    "Square subset of or equal to",
+    "Square superset of or equal to",
+    "Square cap",
+    "Square cup"
+   ]
+  },
+  {
+   "id": "t1_x5_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Therefore",
+   "x": 1003.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2234;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2234;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2234;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2234;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x5_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Because",
+   "x": 1003.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2235;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2235;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2235;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2235;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x5",
+   "expander": true,
+   "popupItems": [
+    "Therefore",
+    "Because"
+   ]
+  },
+  {
+   "id": "t1_x6_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Not parallel to",
+   "x": 1036.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2226;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2226;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2226;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2226;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x6_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Diamond",
+   "x": 1058.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22C4;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22C4;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x22C4;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x22C4;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x6_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Measured angle",
+   "x": 1036.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2221;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2221;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2221;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2221;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x6_i3",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Spherical angle",
+   "x": 1036.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2222;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2222;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2222;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2222;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x6",
+   "expander": true,
+   "popupItems": [
+    "Not parallel to",
+    "Diamond",
+    "Measured angle",
+    "Spherical angle"
+   ]
+  },
+  {
+   "id": "t1_x7_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Rectangle",
+   "x": 1069.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25AD;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25AD;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x25AD;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25AD;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x7_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Parallelogram",
+   "x": 1069.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25B1;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25B1;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x25B1;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x25B1;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x7",
+   "expander": true,
+   "popupItems": [
+    "Rectangle",
+    "Parallelogram"
+   ]
+  },
+  {
+   "id": "t1_x8_i0",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circled dash",
+   "x": 1102.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x229D;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x229D;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x229D;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x229D;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x8_i1",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Bullet",
+   "x": 1124.5,
+   "y": 770.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2219;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2219;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2219;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2219;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x8_i2",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circled asterisk",
+   "x": 1102.5,
+   "y": 792.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x229B;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x229B;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x229B;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x229B;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x8_i3",
+   "tab": 1,
+   "tabTitle": "Symbols (Alt+2)",
+   "title": "Circled division",
+   "x": 1102.5,
+   "y": 814.0625,
+   "cases": {
+    "A": {
+     "desc": "Empty editor, click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A38;</mo></math>"
+    },
+    "A2": {
+     "desc": "Then type \"7\" (shows where the caret lands)",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A38;</mo><mn>7</mn></math>"
+    },
+    "B": {
+     "desc": "Typed \"x\" (caret after it), click button",
+     "mathml": "<math dir=\"rtl\"><mi>x</mi><mo>&#x2A38;</mo></math>"
+    },
+    "C": {
+     "desc": "Typed \"x\", selected it (Shift+Left), click button",
+     "mathml": "<math dir=\"rtl\"><mo>&#x2A38;</mo></math>"
+    }
+   },
+   "errors": []
+  },
+  {
+   "id": "t1_x8",
+   "expander": true,
+   "popupItems": [
+    "Circled dash",
+    "Bullet",
+    "Circled asterisk",
+    "Circled division"
+   ]
+  }
+ ],
+ "console": [
+  "info: %c22:54:43.668 %cINF%c %cwidget·services·auth %cAPI key validation successful color: gray; background-color: white; color: black; background-color: default; color: gray; color: default;"
+ ],
+ "errors": [],
+ "net": [
+  "GET https://www.wiris.net/demo/editor/editor",
+  "GET https://www.wiris.net/demo/hand/hand.js?httpstatus=true",
+  "GET https://www.wiris.net/demo/editor/resources/template.css?v=7.25.6.804ace",
+  "POST https://www.wiris.net/demo/editor/tick?httpstatus=true BODY=wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=instantiation",
+  "GET https://www.wiris.net/demo/editor/resources/icons/icons.png?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/editor/resources/icons/font_color.png?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/editor/resources/icons/unicode.png?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/hand/hand.js?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/hand/resources/hand.css?v=7.11.4.71fa31",
+  "POST https://www.wiris.net/demo/hand/tick?httpstatus=true BODY=wrs-license=null&wrs-deployment=mathtype-web-hand-java&wrs-cause=hand_tick",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+ ]
+}

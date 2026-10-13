@@ -1,0 +1,5305 @@
+{
+ "unicode": {
+  "html": "<div class=\"wrs_unicodeChooserPanel\" id=\"wrs_unicodeChooserPanelId\"><div>Code: <input title=\"Code\" id=\"customUnicodeInput\"><select><option value=\"S\">Symbol</option><option value=\"P\">Punctuation</option><option value=\"L\">Letter</option><option value=\"M\">Mark</option><option value=\"N\">Number</option><option value=\"F\">Phonetical</option><option value=\"C\">Other</option></select></div><div class=\"wrs_unicodeChooserTableContainer\"><table class=\"wrs_unicodeTable\"><tbody><tr><td><div class=\"wrs_unicodeButton wrs_mathChar wrs_font_stix\" tabindex=\"0\" title=\"U+0024\n &amp;#36;\">$</div></td><td><div class=\"wrs_unicodeButton wrs_mathChar wrs_font_stix\" tabindex=\"0\" title=\"U+002B\n &amp;#43;\">+</div></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><",
+  "rect": [
+   962.5,
+   736.0625,
+   225,
+   206
+  ],
+  "tree": {
+   "tag": "DIV",
+   "cls": "wrs_unicodeChooserPanel",
+   "title": null,
+   "type": null,
+   "css": {
+    "l": 0,
+    "t": 0,
+    "w": 225,
+    "h": 206,
+    "bg": "rgb(237, 242, 244)",
+    "bgi": "none",
+    "border": "1px solid rgb(177, 179, 180)",
+    "br": "0px",
+    "fs": "11px",
+    "fw": "700",
+    "color": "rgb(119, 142, 154)",
+    "pos": "static"
+   },
+   "kids": [
+    {
+     "tag": "DIV",
+     "cls": "",
+     "title": null,
+     "type": null,
+     "css": {
+      "l": 9,
+      "t": 9,
+      "w": 207,
+      "h": 38,
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "none",
+      "border": "0px none rgb(119, 142, 154)",
+      "br": "0px",
+      "fs": "11px",
+      "fw": "700",
+      "color": "rgb(119, 142, 154)",
+      "pos": "static"
+     },
+     "kids": [
+      {
+       "tag": "INPUT",
+       "cls": "",
+       "title": "Code",
+       "type": "text",
+       "css": {
+        "l": 48,
+        "t": 15,
+        "w": 65,
+        "h": 16,
+        "bg": "rgb(255, 255, 255)",
+        "bgi": "none",
+        "border": "1px solid rgb(177, 179, 180)",
+        "br": "10px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(0, 0, 0)",
+        "pos": "static"
+       },
+       "kids": []
+      },
+      {
+       "tag": "SELECT",
+       "cls": "",
+       "title": null,
+       "type": "select-one",
+       "css": {
+        "l": 121,
+        "t": 9,
+        "w": 99,
+        "h": 30,
+        "bg": "rgb(255, 255, 255)",
+        "bgi": "linear-gradient(45deg, rgba(0, 0, 0, 0) 49%, rgb(0, 0, 0) 51%), linear-gradient(135deg, rgb(0, 0, 0) 51%, rgba(0, 0, 0, ",
+        "border": "1px solid rgb(137, 142, 164)",
+        "br": "10px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(0, 0, 0)",
+        "pos": "static"
+       },
+       "kids": [
+        {
+         "tag": "OPTION",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(0, 0, 0)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(0, 0, 0)",
+          "pos": "static"
+         },
+         "kids": []
+        },
+        {
+         "tag": "OPTION",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(0, 0, 0)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(0, 0, 0)",
+          "pos": "static"
+         },
+         "kids": []
+        },
+        {
+         "tag": "OPTION",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(0, 0, 0)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(0, 0, 0)",
+          "pos": "static"
+         },
+         "kids": []
+        },
+        {
+         "tag": "OPTION",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(0, 0, 0)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(0, 0, 0)",
+          "pos": "static"
+         },
+         "kids": []
+        },
+        {
+         "tag": "OPTION",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(0, 0, 0)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(0, 0, 0)",
+          "pos": "static"
+         },
+         "kids": []
+        },
+        {
+         "tag": "OPTION",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 0,
+          "h": 0,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(0, 0, 0)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(0, 0, 0)",
+          "pos": "static"
+         },
+         "kids": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_unicodeChooserTableContainer",
+     "title": null,
+     "type": null,
+     "css": {
+      "l": 9,
+      "t": 47,
+      "w": 207,
+      "h": 150,
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "none",
+      "border": "0px none rgb(119, 142, 154)",
+      "br": "0px",
+      "fs": "11px",
+      "fw": "700",
+      "color": "rgb(119, 142, 154)",
+      "pos": "static"
+     },
+     "kids": [
+      {
+       "tag": "TABLE",
+       "cls": "wrs_unicodeTable",
+       "title": null,
+       "type": null,
+       "css": {
+        "l": 9,
+        "t": 47,
+        "w": 154,
+        "h": 2772,
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgi": "none",
+        "border": "",
+        "br": "0px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(119, 142, 154)",
+        "pos": "static"
+       },
+       "kids": [
+        {
+         "tag": "TBODY",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 0,
+          "t": 0,
+          "w": 153,
+          "h": 2771,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TR",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 0,
+            "t": 0,
+            "w": 153,
+            "h": 17,
+            "bg": "rgb(255, 255, 255)",
+            "bgi": "none",
+            "border": "",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+0024\n &#36;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 17,
+              "t": 0,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+002B\n &#43;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 34,
+              "t": 0,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+003C\n &#60;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 51,
+              "t": 0,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+003D\n &#61;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 68,
+              "t": 0,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+003E\n &#62;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 85,
+              "t": 0,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+005E\n &#94;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "tag": "TR",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 0,
+            "t": 17,
+            "w": 153,
+            "h": 17,
+            "bg": "rgb(255, 255, 255)",
+            "bgi": "none",
+            "border": "",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 17,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00A2\n &#162;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 17,
+              "t": 17,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00A3\n &#163;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 34,
+              "t": 17,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00A4\n &#164;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 51,
+              "t": 17,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00A5\n &#165;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 68,
+              "t": 17,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00A6\n &#166;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 85,
+              "t": 17,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00A8\n &#168;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "tag": "TR",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 0,
+            "t": 34,
+            "w": 153,
+            "h": 17,
+            "bg": "rgb(255, 255, 255)",
+            "bgi": "none",
+            "border": "",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 34,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00AF\n &#175;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 17,
+              "t": 34,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00B0\n &#176;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 34,
+              "t": 34,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00B1\n &#177;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 51,
+              "t": 34,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00B4\n &#180;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 68,
+              "t": 34,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00B8\n &#184;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 85,
+              "t": 34,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+00D7\n &#215;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "tag": "TR",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 0,
+            "t": 51,
+            "w": 153,
+            "h": 17,
+            "bg": "rgb(255, 255, 255)",
+            "bgi": "none",
+            "border": "",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 51,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02C4\n &#708;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 17,
+              "t": 51,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02C5\n &#709;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 34,
+              "t": 51,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02D2\n &#722;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 51,
+              "t": 51,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02D3\n &#723;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 68,
+              "t": 51,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02D4\n &#724;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 85,
+              "t": 51,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02D5\n &#725;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "tag": "TR",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 0,
+            "t": 68,
+            "w": 153,
+            "h": 17,
+            "bg": "rgb(255, 255, 255)",
+            "bgi": "none",
+            "border": "",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 68,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02D9\n &#729;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 17,
+              "t": 68,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02DA\n &#730;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 34,
+              "t": 68,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02DB\n &#731;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 51,
+              "t": 68,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02DC\n &#732;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 68,
+              "t": 68,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02DD\n &#733;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 85,
+              "t": 68,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02DE\n &#734;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "tag": "TR",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 0,
+            "t": 85,
+            "w": 153,
+            "h": 17,
+            "bg": "rgb(255, 255, 255)",
+            "bgi": "none",
+            "border": "",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 85,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02E7\n &#743;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 17,
+              "t": 85,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02E8\n &#744;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 34,
+              "t": 85,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02E9\n &#745;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 51,
+              "t": 85,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02EA\n &#746;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 68,
+              "t": 85,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02EB\n &#747;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            },
+            {
+             "tag": "TD",
+             "cls": "",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 85,
+              "t": 85,
+              "w": 17,
+              "h": 17,
+              "bg": "rgba(0, 0, 0, 0)",
+              "bgi": "none",
+              "border": "",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": [
+              {
+               "tag": "DIV",
+               "cls": "wrs_unicodeButton wrs_mathChar wrs_font_stix",
+               "title": "U+02ED\n &#749;",
+               "type": null,
+               "css": {
+                "l": 0,
+                "t": 0,
+                "w": 16,
+                "h": 16,
+                "bg": "rgba(0, 0, 0, 0)",
+                "bgi": "none",
+                "border": "0px none rgb(119, 142, 154)",
+                "br": "0px",
+                "fs": "13px",
+                "fw": "700",
+                "color": "rgb(119, 142, 154)",
+                "pos": "static"
+               },
+               "kids": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "parent": "wrs_contextPanel"
+ },
+ "color": {
+  "html": "<div class=\"wrs_colorChooserPanel\"><table><tbody><tr><td><div class=\"wrs_colorButton\" style=\"background: rgb(255, 0, 0);\"></div></td><td><div class=\"wrs_colorButton\" style=\"background: rgb(255, 0, 255);\"></div></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr></tbody></table><div>Color: <input title=\"Color\" value=\"#000000\"></div></div>",
+  "rect": [
+   962.5,
+   714.0625,
+   102,
+   118
+  ],
+  "tree": {
+   "tag": "DIV",
+   "cls": "wrs_colorChooserPanel",
+   "title": null,
+   "type": null,
+   "css": {
+    "l": 0,
+    "t": 0,
+    "w": 102,
+    "h": 118,
+    "bg": "rgb(237, 242, 244)",
+    "bgi": "none",
+    "border": "1px solid rgb(177, 179, 180)",
+    "br": "0px",
+    "fs": "11px",
+    "fw": "700",
+    "color": "rgb(119, 142, 154)",
+    "pos": "static"
+   },
+   "kids": [
+    {
+     "tag": "TABLE",
+     "cls": "",
+     "title": null,
+     "type": null,
+     "css": {
+      "l": 1,
+      "t": 1,
+      "w": 95,
+      "h": 95,
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "none",
+      "border": "0px none rgb(119, 142, 154)",
+      "br": "0px",
+      "fs": "11px",
+      "fw": "700",
+      "color": "rgb(119, 142, 154)",
+      "pos": "static"
+     },
+     "kids": [
+      {
+       "tag": "TBODY",
+       "cls": "",
+       "title": null,
+       "type": null,
+       "css": {
+        "l": 5,
+        "t": 5,
+        "w": 85,
+        "h": 85,
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgi": "none",
+        "border": "0px none rgb(119, 142, 154)",
+        "br": "0px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(119, 142, 154)",
+        "pos": "static"
+       },
+       "kids": [
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 5,
+          "t": 5,
+          "w": 85,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 5,
+            "t": 5,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 0, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 23,
+            "t": 5,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 0, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 41,
+            "t": 5,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 0, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 59,
+            "t": 5,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 77,
+            "t": 5,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 255, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 5,
+          "t": 23,
+          "w": 85,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 5,
+            "t": 23,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 23,
+            "t": 23,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(127, 0, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 41,
+            "t": 23,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(229, 195, 4)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 59,
+            "t": 23,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(174, 118, 30)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 77,
+            "t": 23,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(127, 0, 127)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 5,
+          "t": 41,
+          "w": 85,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 5,
+            "t": 41,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 0, 127)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 23,
+            "t": 41,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 127, 127)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 41,
+            "t": 41,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 127, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 59,
+            "t": 41,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(130, 127, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 77,
+            "t": 41,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(0, 0, 0)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 5,
+          "t": 59,
+          "w": 85,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 5,
+            "t": 59,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(25, 25, 25)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 23,
+            "t": 59,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(51, 51, 51)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 41,
+            "t": 59,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(76, 76, 76)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 59,
+            "t": 59,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(102, 102, 102)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 77,
+            "t": 59,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(127, 127, 127)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 5,
+          "t": 77,
+          "w": 85,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 5,
+            "t": 77,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(153, 153, 153)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 23,
+            "t": 77,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(178, 178, 178)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 41,
+            "t": 77,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(204, 204, 204)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 59,
+            "t": 77,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(229, 229, 229)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 77,
+            "t": 77,
+            "w": 13,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_colorButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "tag": "DIV",
+     "cls": "",
+     "title": null,
+     "type": null,
+     "css": {
+      "l": 1,
+      "t": 96,
+      "w": 100,
+      "h": 21,
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "none",
+      "border": "0px none rgb(119, 142, 154)",
+      "br": "0px",
+      "fs": "11px",
+      "fw": "700",
+      "color": "rgb(119, 142, 154)",
+      "pos": "static"
+     },
+     "kids": [
+      {
+       "tag": "INPUT",
+       "cls": "",
+       "title": "Color",
+       "type": "text",
+       "css": {
+        "l": 46,
+        "t": 96,
+        "w": 50,
+        "h": 16,
+        "bg": "rgb(255, 255, 255)",
+        "bgi": "none",
+        "border": "1px solid rgb(177, 179, 180)",
+        "br": "10px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(0, 0, 0)",
+        "pos": "static"
+       },
+       "kids": []
+      }
+     ]
+    }
+   ]
+  },
+  "parent": "wrs_contextPanel"
+ },
+ "matrix": {
+  "html": "<div class=\"wrs_matrixButtonPanel\"><table><tbody><tr><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td></tr><tr><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td></tr><tr><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td></tr><tr><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td></tr><tr><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td></tr><tr><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td><td><div class=\"wrs_matrixButton\"></div></td></tr></tbody></table><table><tbody><tr><td>Rows: </td><td class=\"wrs_inputCell\"><input type=\"number\" title=\"Rows\"></td></tr><tr><td>Columns: </td><td class=\"wrs_inputCell\"><input type=\"number\" title=\"Columns\"></td></tr></tbody></table></div>",
+  "rect": [
+   600.5,
+   725.0625,
+   101,
+   124
+  ],
+  "tree": {
+   "tag": "DIV",
+   "cls": "wrs_matrixButtonPanel",
+   "title": null,
+   "type": null,
+   "css": {
+    "l": 0,
+    "t": 0,
+    "w": 101,
+    "h": 124,
+    "bg": "rgb(237, 242, 244)",
+    "bgi": "none",
+    "border": "1px solid rgb(177, 179, 180)",
+    "br": "0px",
+    "fs": "11px",
+    "fw": "700",
+    "color": "rgb(119, 142, 154)",
+    "pos": "static"
+   },
+   "kids": [
+    {
+     "tag": "TABLE",
+     "cls": "",
+     "title": null,
+     "type": null,
+     "css": {
+      "l": 2,
+      "t": 2,
+      "w": 97,
+      "h": 85,
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "none",
+      "border": "0px none rgb(119, 142, 154)",
+      "br": "0px",
+      "fs": "11px",
+      "fw": "700",
+      "color": "rgb(119, 142, 154)",
+      "pos": "static"
+     },
+     "kids": [
+      {
+       "tag": "TBODY",
+       "cls": "",
+       "title": null,
+       "type": null,
+       "css": {
+        "l": 1,
+        "t": 1,
+        "w": 95,
+        "h": 83,
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgi": "none",
+        "border": "0px none rgb(119, 142, 154)",
+        "br": "0px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(119, 142, 154)",
+        "pos": "static"
+       },
+       "kids": [
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 1,
+          "w": 95,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 1,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 17,
+            "t": 1,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 33,
+            "t": 1,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 49,
+            "t": 1,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 65,
+            "t": 1,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 81,
+            "t": 1,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 15,
+          "w": 95,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 15,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 17,
+            "t": 15,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 33,
+            "t": 15,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 49,
+            "t": 15,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 65,
+            "t": 15,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 81,
+            "t": 15,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 29,
+          "w": 95,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 29,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 17,
+            "t": 29,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 33,
+            "t": 29,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 49,
+            "t": 29,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 65,
+            "t": 29,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 81,
+            "t": 29,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 43,
+          "w": 95,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 43,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 17,
+            "t": 43,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 33,
+            "t": 43,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 49,
+            "t": 43,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 65,
+            "t": 43,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 81,
+            "t": 43,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 57,
+          "w": 95,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 57,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 17,
+            "t": 57,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 33,
+            "t": 57,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 49,
+            "t": 57,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 65,
+            "t": 57,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 81,
+            "t": 57,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 71,
+          "w": 95,
+          "h": 13,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 71,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 17,
+            "t": 71,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 33,
+            "t": 71,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 49,
+            "t": 71,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 65,
+            "t": 71,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          },
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 81,
+            "t": 71,
+            "w": 15,
+            "h": 13,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "DIV",
+             "cls": "wrs_matrixButton",
+             "title": null,
+             "type": null,
+             "css": {
+              "l": 0,
+              "t": 0,
+              "w": 13,
+              "h": 13,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "0px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(119, 142, 154)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "tag": "TABLE",
+     "cls": "",
+     "title": null,
+     "type": null,
+     "css": {
+      "l": 2,
+      "t": 87,
+      "w": 97,
+      "h": 35,
+      "bg": "rgba(0, 0, 0, 0)",
+      "bgi": "none",
+      "border": "0px none rgb(119, 142, 154)",
+      "br": "0px",
+      "fs": "11px",
+      "fw": "700",
+      "color": "rgb(119, 142, 154)",
+      "pos": "static"
+     },
+     "kids": [
+      {
+       "tag": "TBODY",
+       "cls": "",
+       "title": null,
+       "type": null,
+       "css": {
+        "l": 1,
+        "t": 1,
+        "w": 95,
+        "h": 33,
+        "bg": "rgba(0, 0, 0, 0)",
+        "bgi": "none",
+        "border": "0px none rgb(119, 142, 154)",
+        "br": "0px",
+        "fs": "11px",
+        "fw": "700",
+        "color": "rgb(119, 142, 154)",
+        "pos": "static"
+       },
+       "kids": [
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 1,
+          "w": 95,
+          "h": 16,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 1,
+            "w": 56,
+            "h": 16,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": []
+          },
+          {
+           "tag": "TD",
+           "cls": "wrs_inputCell",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 58,
+            "t": 1,
+            "w": 38,
+            "h": 16,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "INPUT",
+             "cls": "",
+             "title": "Rows",
+             "type": "number",
+             "css": {
+              "l": 3,
+              "t": 0,
+              "w": 35,
+              "h": 16,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "10px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(0, 0, 0)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "tag": "TR",
+         "cls": "",
+         "title": null,
+         "type": null,
+         "css": {
+          "l": 1,
+          "t": 18,
+          "w": 95,
+          "h": 16,
+          "bg": "rgba(0, 0, 0, 0)",
+          "bgi": "none",
+          "border": "0px none rgb(119, 142, 154)",
+          "br": "0px",
+          "fs": "11px",
+          "fw": "700",
+          "color": "rgb(119, 142, 154)",
+          "pos": "static"
+         },
+         "kids": [
+          {
+           "tag": "TD",
+           "cls": "",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 1,
+            "t": 18,
+            "w": 56,
+            "h": 16,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": []
+          },
+          {
+           "tag": "TD",
+           "cls": "wrs_inputCell",
+           "title": null,
+           "type": null,
+           "css": {
+            "l": 58,
+            "t": 18,
+            "w": 38,
+            "h": 16,
+            "bg": "rgba(0, 0, 0, 0)",
+            "bgi": "none",
+            "border": "0px none rgb(119, 142, 154)",
+            "br": "0px",
+            "fs": "11px",
+            "fw": "700",
+            "color": "rgb(119, 142, 154)",
+            "pos": "static"
+           },
+           "kids": [
+            {
+             "tag": "INPUT",
+             "cls": "",
+             "title": "Columns",
+             "type": "number",
+             "css": {
+              "l": 3,
+              "t": 0,
+              "w": 35,
+              "h": 16,
+              "bg": "rgb(255, 255, 255)",
+              "bgi": "none",
+              "border": "1px solid rgb(177, 179, 180)",
+              "br": "10px",
+              "fs": "11px",
+              "fw": "700",
+              "color": "rgb(0, 0, 0)",
+              "pos": "static"
+             },
+             "kids": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "parent": "wrs_contextPanel"
+ },
+ "allPanels": [
+  "DIV.wrs_editor wrs_flexEditor wrs_withHand wrs_animated",
+  "DIV.wrs_toolbar",
+  "DIV.wrs_formulaDisplayWrapper",
+  "DIV.wrs_caretPrecisionController",
+  "DIV.wrs_caretPrecisionController wrs_forSelection",
+  "DIV.wrs_caretPrecisionController wrs_forSelection",
+  "DIV.wrs_contextPanel",
+  "TEXTAREA.wrs_clipboardTextarea",
+  "DIV.wrs_handWrapper"
+ ],
+ "popupCandidates": [
+  "DIV.wrs_multipleRowPanel 0x0",
+  "BUTTON.wrs_imageContainer wrs_button wrs_colorChooser 0x0",
+  "BUTTON.wrs_imageContainer wrs_button wrs_unicodeChooser 0x0",
+  "DIV.wrs_multipleRowPanel wrs_selected 719x66",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_multipleRowPanel 0x0",
+  "DIV.wrs_contextPanel 29x72",
+  "DIV.wrs_contextPanel wrs_hidden 0x0"
+ ],
+ "group": {
+  "html": "<span class=\"wrs_line\"></span>",
+  "rect": [
+   700.5,
+   696.0625,
+   1,
+   60
+  ],
+  "tree": {
+   "tag": "SPAN",
+   "cls": "wrs_line",
+   "title": null,
+   "type": null,
+   "css": {
+    "l": 103,
+    "t": 31,
+    "w": 1,
+    "h": 60,
+    "bg": "rgb(187, 189, 190)",
+    "bgi": "none",
+    "border": "0px none rgb(0, 0, 0)",
+    "br": "0px",
+    "fs": "11px",
+    "fw": "700",
+    "color": "rgb(0, 0, 0)",
+    "pos": "static"
+   },
+   "kids": []
+  },
+  "parent": "wrs_multipleRowPanel wrs_selected"
+ }
+}

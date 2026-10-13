@@ -1,0 +1,21 @@
+{
+ "tab": 9,
+ "tabTitle": "Contextual tab (Alt+0)",
+ "results": [],
+ "console": [
+  "info: %c22:27:29.435 %cINF%c %cwidget·services·auth %cAPI key validation successful color: gray; background-color: white; color: black; background-color: default; color: gray; color: default;"
+ ],
+ "errors": [],
+ "net": [
+  "GET https://www.wiris.net/demo/editor/editor",
+  "GET https://www.wiris.net/demo/hand/hand.js?httpstatus=true",
+  "GET https://www.wiris.net/demo/editor/resources/template.css?v=7.25.6.804ace",
+  "POST https://www.wiris.net/demo/editor/tick?httpstatus=true BODY=wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=instantiation",
+  "GET https://www.wiris.net/demo/editor/resources/icons/icons.png?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/editor/resources/icons/font_color.png?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/editor/resources/icons/unicode.png?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/hand/hand.js?v=7.25.6.804ace",
+  "GET https://www.wiris.net/demo/hand/resources/hand.css?v=7.11.4.71fa31",
+  "POST https://www.wiris.net/demo/hand/tick?httpstatus=true BODY=wrs-license=null&wrs-deployment=mathtype-web-hand-java&wrs-cause=hand_tick"
+ ]
+}

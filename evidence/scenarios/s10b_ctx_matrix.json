@@ -1,0 +1,1803 @@
+{
+ "name": "s10b_ctx_matrix",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT matrix: controls shown in the Contextual tab (43)",
+   "shot": "sc/s10b_ctx_matrix_01.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "SELECT",
+     "title": "setOpenBracket",
+     "cls": "",
+     "val": "(",
+     "opts": [
+      "",
+      "(",
+      ")",
+      "[",
+      "]",
+      "⟨",
+      "⟩",
+      "{",
+      "}",
+      "⌊",
+      "⌋",
+      "⌈",
+      "⌉",
+      "⟦",
+      "⟧",
+      "|",
+      "‖"
+     ]
+    },
+    {
+     "i": 1,
+     "tag": "SELECT",
+     "title": "setCloseBracket",
+     "cls": "",
+     "val": ")",
+     "opts": [
+      "",
+      "(",
+      ")",
+      "[",
+      "]",
+      "⟨",
+      "⟩",
+      "{",
+      "}",
+      "⌊",
+      "⌋",
+      "⌈",
+      "⌉",
+      "⟦",
+      "⟧",
+      "|",
+      "‖"
+     ]
+    },
+    {
+     "i": 2,
+     "tag": "SELECT",
+     "title": "setSeparator",
+     "cls": "",
+     "val": ",",
+     "opts": [
+      ",",
+      ".",
+      ";",
+      ":",
+      " "
+     ]
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Baseline",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Middle",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Middle-baseline",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 6,
+     "tag": "BUTTON",
+     "title": "Align with axis",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 7,
+     "tag": "BUTTON",
+     "title": "Align with top",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 8,
+     "tag": "BUTTON",
+     "title": "Align with baseline",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 9,
+     "tag": "BUTTON",
+     "title": "Align with center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 10,
+     "tag": "BUTTON",
+     "title": "Align to row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 11,
+     "tag": "BUTTON",
+     "title": "Align with bottom",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 12,
+     "tag": "BUTTON",
+     "title": "Insert row below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 13,
+     "tag": "BUTTON",
+     "title": "Insert row above",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 14,
+     "tag": "BUTTON",
+     "title": "Insert column at right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 15,
+     "tag": "BUTTON",
+     "title": "Insert column at left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 16,
+     "tag": "BUTTON",
+     "title": "Remove row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 17,
+     "tag": "BUTTON",
+     "title": "Remove column",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 18,
+     "tag": "BUTTON",
+     "title": "Insert frame",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 19,
+     "tag": "BUTTON",
+     "title": "Remove frame",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 20,
+     "tag": "BUTTON",
+     "title": "Activate solid lines",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 21,
+     "tag": "BUTTON",
+     "title": "Insert line below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 22,
+     "tag": "BUTTON",
+     "title": "Insert right line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 23,
+     "tag": "BUTTON",
+     "title": "Activate dash lines",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 24,
+     "tag": "BUTTON",
+     "title": "Remove line below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 25,
+     "tag": "BUTTON",
+     "title": "Remove right line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 26,
+     "tag": "BUTTON",
+     "title": "Align left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 27,
+     "tag": "BUTTON",
+     "title": "Align center",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 28,
+     "tag": "BUTTON",
+     "title": "Align right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 29,
+     "tag": "BUTTON",
+     "title": "Decimal align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 30,
+     "tag": "SELECT",
+     "title": "Decimal align symbol",
+     "cls": "",
+     "val": "dot",
+     "opts": [
+      "dot",
+      "comma",
+      "apostrophe",
+      "space"
+     ]
+    },
+    {
+     "i": 31,
+     "tag": "BUTTON",
+     "title": "Align rows to top",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 32,
+     "tag": "BUTTON",
+     "title": "Align rows to center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 33,
+     "tag": "BUTTON",
+     "title": "Align rows to bottom",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 34,
+     "tag": "BUTTON",
+     "title": "Relation align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 35,
+     "tag": "BUTTON",
+     "title": "Align rows to baseline",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 36,
+     "tag": "BUTTON",
+     "title": "Align rows to axis",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 37,
+     "tag": "BUTTON",
+     "title": "Force equal row heights",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 38,
+     "tag": "BUTTON",
+     "title": "Force equal column widths",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 39,
+     "tag": "BUTTON",
+     "title": "Column spacing at right",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 40,
+     "tag": "BUTTON",
+     "title": "Horizontal frame spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 41,
+     "tag": "BUTTON",
+     "title": "Row spacing below",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 42,
+     "tag": "BUTTON",
+     "title": "Vertical frame spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "matrix / setOpenBracket (select) -> option \"\"",
+   "shot": "sc/s10b_ctx_matrix_02.jpg",
+   "mathml": "<math><mfenced open=\"\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "matrix / setOpenBracket (select) -> option \"(\"",
+   "shot": "sc/s10b_ctx_matrix_03.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "matrix / setOpenBracket (select) -> option \")\"",
+   "shot": "sc/s10b_ctx_matrix_04.jpg",
+   "mathml": "<math><mfenced open=\")\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "matrix / setOpenBracket (select) -> option \"[\"",
+   "shot": "sc/s10b_ctx_matrix_05.jpg",
+   "mathml": "<math><mfenced open=\"[\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "matrix / setOpenBracket (select) -> option \"]\"",
+   "shot": "sc/s10b_ctx_matrix_06.jpg",
+   "mathml": "<math><mfenced open=\"]\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "matrix / setOpenBracket (select) -> option \"⟨\"",
+   "shot": "sc/s10b_ctx_matrix_07.jpg",
+   "mathml": "<math><mfenced open=\"&lt;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "matrix / setOpenBracket (select) -> option \"⟩\"",
+   "shot": "sc/s10b_ctx_matrix_08.jpg",
+   "mathml": "<math><mfenced open=\"&gt;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "matrix / setOpenBracket (select) -> option \"{\"",
+   "shot": "sc/s10b_ctx_matrix_09.jpg",
+   "mathml": "<math><mfenced open=\"{\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "matrix / setOpenBracket (select) -> option \"}\"",
+   "shot": "sc/s10b_ctx_matrix_10.jpg",
+   "mathml": "<math><mfenced open=\"}\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "matrix / setOpenBracket (select) -> option \"⌊\"",
+   "shot": "sc/s10b_ctx_matrix_11.jpg",
+   "mathml": "<math><mfenced open=\"&#x230A;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "matrix / setOpenBracket (select) -> option \"⌋\"",
+   "shot": "sc/s10b_ctx_matrix_12.jpg",
+   "mathml": "<math><mfenced open=\"&#x230B;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "matrix / setOpenBracket (select) -> option \"⌈\"",
+   "shot": "sc/s10b_ctx_matrix_13.jpg",
+   "mathml": "<math><mfenced open=\"&#x2308;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "matrix / setOpenBracket (select) -> option \"⌉\"",
+   "shot": "sc/s10b_ctx_matrix_14.jpg",
+   "mathml": "<math><mfenced open=\"&#x2309;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "matrix / setOpenBracket (select) -> option \"⟦\"",
+   "shot": "sc/s10b_ctx_matrix_15.jpg",
+   "mathml": "<math><mfenced open=\"&#x27E6;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "matrix / setOpenBracket (select) -> option \"⟧\"",
+   "shot": "sc/s10b_ctx_matrix_16.jpg",
+   "mathml": "<math><mfenced open=\"&#x27E7;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "matrix / setOpenBracket (select) -> option \"|\"",
+   "shot": "sc/s10b_ctx_matrix_17.jpg",
+   "mathml": "<math><mfenced open=\"|\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "matrix / setOpenBracket (select) -> option \"‖\"",
+   "shot": "sc/s10b_ctx_matrix_18.jpg",
+   "mathml": "<math><mfenced open=\"||\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "matrix / setCloseBracket (select) -> option \"\"",
+   "shot": "sc/s10b_ctx_matrix_19.jpg",
+   "mathml": "<math><mfenced close=\"\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "matrix / setCloseBracket (select) -> option \"(\"",
+   "shot": "sc/s10b_ctx_matrix_20.jpg",
+   "mathml": "<math><mfenced close=\"(\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "matrix / setCloseBracket (select) -> option \")\"",
+   "shot": "sc/s10b_ctx_matrix_21.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "matrix / setCloseBracket (select) -> option \"[\"",
+   "shot": "sc/s10b_ctx_matrix_22.jpg",
+   "mathml": "<math><mfenced close=\"[\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "matrix / setCloseBracket (select) -> option \"]\"",
+   "shot": "sc/s10b_ctx_matrix_23.jpg",
+   "mathml": "<math><mfenced close=\"]\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "matrix / setCloseBracket (select) -> option \"⟨\"",
+   "shot": "sc/s10b_ctx_matrix_24.jpg",
+   "mathml": "<math><mfenced close=\"&lt;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "matrix / setCloseBracket (select) -> option \"⟩\"",
+   "shot": "sc/s10b_ctx_matrix_25.jpg",
+   "mathml": "<math><mfenced close=\"&gt;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "matrix / setCloseBracket (select) -> option \"{\"",
+   "shot": "sc/s10b_ctx_matrix_26.jpg",
+   "mathml": "<math><mfenced close=\"{\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "matrix / setCloseBracket (select) -> option \"}\"",
+   "shot": "sc/s10b_ctx_matrix_27.jpg",
+   "mathml": "<math><mfenced close=\"}\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "matrix / setCloseBracket (select) -> option \"⌊\"",
+   "shot": "sc/s10b_ctx_matrix_28.jpg",
+   "mathml": "<math><mfenced close=\"&#x230A;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 29,
+   "desc": "matrix / setCloseBracket (select) -> option \"⌋\"",
+   "shot": "sc/s10b_ctx_matrix_29.jpg",
+   "mathml": "<math><mfenced close=\"&#x230B;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "matrix / setCloseBracket (select) -> option \"⌈\"",
+   "shot": "sc/s10b_ctx_matrix_30.jpg",
+   "mathml": "<math><mfenced close=\"&#x2308;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "matrix / setCloseBracket (select) -> option \"⌉\"",
+   "shot": "sc/s10b_ctx_matrix_31.jpg",
+   "mathml": "<math><mfenced close=\"&#x2309;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "matrix / setCloseBracket (select) -> option \"⟦\"",
+   "shot": "sc/s10b_ctx_matrix_32.jpg",
+   "mathml": "<math><mfenced close=\"&#x27E6;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "matrix / setCloseBracket (select) -> option \"⟧\"",
+   "shot": "sc/s10b_ctx_matrix_33.jpg",
+   "mathml": "<math><mfenced close=\"&#x27E7;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "matrix / setCloseBracket (select) -> option \"|\"",
+   "shot": "sc/s10b_ctx_matrix_34.jpg",
+   "mathml": "<math><mfenced close=\"|\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "matrix / setCloseBracket (select) -> option \"‖\"",
+   "shot": "sc/s10b_ctx_matrix_35.jpg",
+   "mathml": "<math><mfenced close=\"||\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 36,
+   "desc": "matrix / setSeparator (select) -> option \",\"",
+   "shot": "sc/s10b_ctx_matrix_36.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "matrix / setSeparator (select) -> option \".\"",
+   "shot": "sc/s10b_ctx_matrix_37.jpg",
+   "mathml": "<math><mfenced separators=\".\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 38,
+   "desc": "matrix / setSeparator (select) -> option \";\"",
+   "shot": "sc/s10b_ctx_matrix_38.jpg",
+   "mathml": "<math><mfenced separators=\";\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 39,
+   "desc": "matrix / setSeparator (select) -> option \":\"",
+   "shot": "sc/s10b_ctx_matrix_39.jpg",
+   "mathml": "<math><mfenced separators=\":\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 40,
+   "desc": "matrix / setSeparator (select) -> option \" \"",
+   "shot": "sc/s10b_ctx_matrix_40.jpg",
+   "mathml": "<math><mfenced separators=\"&#xA0;\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "matrix / Baseline (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_matrix_41.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 42,
+   "desc": "matrix / Middle (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_42.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced wrs:valign=\"middle\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Middle",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 43,
+   "desc": "matrix / Middle-baseline (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_43.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced wrs:valign=\"middle-baseline\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Middle-baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 44,
+   "desc": "matrix / Align with axis (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_matrix_44.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 45,
+   "desc": "matrix / Align with top (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_45.jpg",
+   "mathml": "<math><mfenced><mtable align=\"top\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with top",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 46,
+   "desc": "matrix / Align with baseline (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_46.jpg",
+   "mathml": "<math><mfenced><mtable align=\"baseline\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with baseline",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 47,
+   "desc": "matrix / Align with center (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_47.jpg",
+   "mathml": "<math><mfenced><mtable align=\"center\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with center",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 48,
+   "desc": "matrix / Align to row (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_48.jpg",
+   "mathml": "<math><mfenced><mtable align=\"axis 2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Align to row",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 49,
+   "desc": "matrix / Align with bottom (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_49.jpg",
+   "mathml": "<math><mfenced><mtable align=\"bottom\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with bottom",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 50,
+   "desc": "matrix / Insert row below (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_50.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 51,
+   "desc": "matrix / Insert row above (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_51.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd/><mtd/></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 52,
+   "desc": "matrix / Insert column at right (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_52.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd><mtd/></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 53,
+   "desc": "matrix / Insert column at left (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_53.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd/><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd/><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 54,
+   "desc": "matrix / Remove row (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_54.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 55,
+   "desc": "matrix / Remove column (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_55.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 56,
+   "desc": "matrix / Insert frame (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_56.jpg",
+   "mathml": "<math><mfenced><mtable frame=\"solid\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 57,
+   "desc": "matrix / Remove frame (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_57.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 58,
+   "desc": "matrix / Activate solid lines (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_matrix_58.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 59,
+   "desc": "matrix / Insert line below (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_59.jpg",
+   "mathml": "<math><mfenced><mtable rowlines=\"none solid none\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 60,
+   "desc": "matrix / Insert right line (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_60.jpg",
+   "mathml": "<math><mfenced><mtable columnlines=\"none solid none\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 61,
+   "desc": "matrix / Activate dash lines (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_61.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate dash lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 62,
+   "desc": "matrix / Remove line below (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_62.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 63,
+   "desc": "matrix / Remove right line (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_63.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 64,
+   "desc": "matrix / Align left (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_64.jpg",
+   "mathml": "<math><mfenced><mtable columnalign=\"center left\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 65,
+   "desc": "matrix / Align center (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_matrix_65.jpg",
+   "mathml": "<math><mfenced><mtable columnalign=\"center center\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 66,
+   "desc": "matrix / Align right (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_66.jpg",
+   "mathml": "<math><mfenced><mtable columnalign=\"center right\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align right",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 67,
+   "desc": "matrix / Decimal align (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_67.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced><mtable wrs:columnalign=\"center decimal\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Decimal align",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 68,
+   "desc": "matrix / Decimal align symbol (select) -> option \"dot\"",
+   "shot": "sc/s10b_ctx_matrix_68.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced><mtable wrs:columnalign=\"center decimal\" wrs:decimalseparators=\"dot dot\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 69,
+   "desc": "matrix / Decimal align symbol (select) -> option \"comma\"",
+   "shot": "sc/s10b_ctx_matrix_69.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced><mtable wrs:columnalign=\"center decimal\" wrs:decimalseparators=\"dot comma\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 70,
+   "desc": "matrix / Decimal align symbol (select) -> option \"apostrophe\"",
+   "shot": "sc/s10b_ctx_matrix_70.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced><mtable wrs:columnalign=\"center decimal\" wrs:decimalseparators=\"dot apostrophe\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 71,
+   "desc": "matrix / Decimal align symbol (select) -> option \"space\"",
+   "shot": "sc/s10b_ctx_matrix_71.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced><mtable wrs:columnalign=\"center decimal\" wrs:decimalseparators=\"dot space\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 72,
+   "desc": "matrix / Align rows to top (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_72.jpg",
+   "mathml": "<math><mfenced><mtable rowalign=\"baseline top\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to top"
+   ]
+  },
+  {
+   "n": 73,
+   "desc": "matrix / Align rows to center (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_73.jpg",
+   "mathml": "<math><mfenced><mtable rowalign=\"baseline center\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to center"
+   ]
+  },
+  {
+   "n": 74,
+   "desc": "matrix / Align rows to bottom (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_74.jpg",
+   "mathml": "<math><mfenced><mtable rowalign=\"baseline bottom\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to bottom"
+   ]
+  },
+  {
+   "n": 75,
+   "desc": "matrix / Relation align (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_75.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced><mtable wrs:columnalign=\"center relation\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Relation align",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 76,
+   "desc": "matrix / Align rows to baseline (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_matrix_76.jpg",
+   "mathml": "<math><mfenced><mtable rowalign=\"baseline baseline\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 77,
+   "desc": "matrix / Align rows to axis (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_77.jpg",
+   "mathml": "<math><mfenced><mtable rowalign=\"baseline axis\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to axis"
+   ]
+  },
+  {
+   "n": 78,
+   "desc": "matrix / Force equal row heights (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_78.jpg",
+   "mathml": "<math><mfenced><mtable equalrows=\"true\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline",
+    "Force equal row heights"
+   ]
+  },
+  {
+   "n": 79,
+   "desc": "matrix / Force equal column widths (button) -> click",
+   "shot": "sc/s10b_ctx_matrix_79.jpg",
+   "mathml": "<math><mfenced><mtable equalcolumns=\"true\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline",
+    "Force equal column widths"
+   ]
+  },
+  {
+   "n": 80,
+   "desc": "matrix / Column spacing at right (button, length) -> click",
+   "shot": "sc/s10b_ctx_matrix_80.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.4em"
+   ]
+  },
+  {
+   "n": 81,
+   "desc": "matrix / Column spacing at right (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_81.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 82,
+   "desc": "matrix / Column spacing at right (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_82.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 83,
+   "desc": "matrix / Column spacing at right (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_83.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 84,
+   "desc": "matrix / Horizontal frame spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_matrix_84.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.4em"
+   ]
+  },
+  {
+   "n": 85,
+   "desc": "matrix / Horizontal frame spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_85.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 86,
+   "desc": "matrix / Horizontal frame spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_86.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 87,
+   "desc": "matrix / Horizontal frame spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_87.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 88,
+   "desc": "matrix / Row spacing below (button, length) -> click",
+   "shot": "sc/s10b_ctx_matrix_88.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.25em"
+   ]
+  },
+  {
+   "n": 89,
+   "desc": "matrix / Row spacing below (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_89.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 90,
+   "desc": "matrix / Row spacing below (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_90.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 91,
+   "desc": "matrix / Row spacing below (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_91.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 92,
+   "desc": "matrix / Vertical frame spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_matrix_92.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.5ex"
+   ]
+  },
+  {
+   "n": 93,
+   "desc": "matrix / Vertical frame spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_93.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 94,
+   "desc": "matrix / Vertical frame spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_94.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 95,
+   "desc": "matrix / Vertical frame spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_matrix_95.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

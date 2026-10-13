@@ -1,0 +1,602 @@
+{
+ "name": "s10b_ctx_stack",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT stack: controls shown in the Contextual tab (17)",
+   "shot": "sc/s10b_ctx_stack_01.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%20stackalign%3D%22right%22%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsr"
+   ],
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 500 ()"
+   ],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "BUTTON",
+     "title": "Insert line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 1,
+     "tag": "BUTTON",
+     "title": "Join the selected digits in a single column",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 2,
+     "tag": "BUTTON",
+     "title": "Up diagonal strike",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Prepend row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Append row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Set carries location at north-west",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 6,
+     "tag": "BUTTON",
+     "title": "Set carries location at north",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 7,
+     "tag": "BUTTON",
+     "title": "Set carries location at north-east",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 8,
+     "tag": "BUTTON",
+     "title": "Set carries location at west",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 9,
+     "tag": "BUTTON",
+     "title": "Insert carries in this row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 10,
+     "tag": "BUTTON",
+     "title": "Set carries location at east",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 11,
+     "tag": "BUTTON",
+     "title": "Set carries location at south-west",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 12,
+     "tag": "BUTTON",
+     "title": "Set carries location at south",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 13,
+     "tag": "BUTTON",
+     "title": "Set carries location at south-east",
+     "cls": "wrs_imageContainer wrs_button wrs_disabled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 14,
+     "tag": "BUTTON",
+     "title": "Move to left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 15,
+     "tag": "BUTTON",
+     "title": "Move to right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 16,
+     "tag": "SELECT",
+     "title": "Spacing between digits",
+     "cls": "",
+     "val": "medium",
+     "opts": [
+      "medium",
+      "0px",
+      "1px",
+      "2px",
+      "3px",
+      "4px",
+      "5px",
+      "6px",
+      "7px",
+      "8px",
+      "9px",
+      "10px",
+      "12px",
+      "15px",
+      "20px",
+      "25px",
+      "30px"
+     ]
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "stack / Insert line (button) -> click",
+   "shot": "sc/s10b_ctx_stack_02.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 3,
+   "desc": "stack / Join the selected digits in a single column (button) -> click",
+   "shot": "sc/s10b_ctx_stack_03.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 4,
+   "desc": "stack / Up diagonal strike (button) -> click",
+   "shot": "sc/s10b_ctx_stack_04.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><menclose notation=\"updiagonalstrike\"/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 5,
+   "desc": "stack / Prepend row (button) -> click",
+   "shot": "sc/s10b_ctx_stack_05.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msrow/><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 6,
+   "desc": "stack / Append row (button) -> click",
+   "shot": "sc/s10b_ctx_stack_06.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 7,
+   "desc": "stack / Set carries location at north-west (button) -> click",
+   "shot": "sc/s10b_ctx_stack_07.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": []
+  },
+  {
+   "n": 8,
+   "desc": "stack / Set carries location at north (button) -> click",
+   "shot": "sc/s10b_ctx_stack_08.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": []
+  },
+  {
+   "n": 9,
+   "desc": "stack / Set carries location at north-east (button) -> click",
+   "shot": "sc/s10b_ctx_stack_09.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": []
+  },
+  {
+   "n": 10,
+   "desc": "stack / Set carries location at west (button) -> click",
+   "shot": "sc/s10b_ctx_stack_10.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait shot:TimeoutError: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n",
+   "extra": []
+  },
+  {
+   "n": 11,
+   "desc": "stack / Insert carries in this row (button) -> click",
+   "shot": "sc/s10b_ctx_stack_11.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mscarries/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 12,
+   "desc": "stack / Set carries location at east (button) -> click",
+   "shot": "sc/s10b_ctx_stack_12.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 13,
+   "desc": "stack / Set carries location at south-west (button) -> click",
+   "shot": "sc/s10b_ctx_stack_13.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 14,
+   "desc": "stack / Set carries location at south (button) -> click",
+   "shot": "sc/s10b_ctx_stack_14.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 15,
+   "desc": "stack / Set carries location at south-east (button) -> click",
+   "shot": "sc/s10b_ctx_stack_15.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: elementHandle.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × wait",
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 16,
+   "desc": "stack / Move to left (button) -> click",
+   "shot": "sc/s10b_ctx_stack_16.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline length=\"2\" position=\"1\"/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 17,
+   "desc": "stack / Move to right (button) -> click",
+   "shot": "sc/s10b_ctx_stack_17.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><msrow><mn>12</mn><none/></msrow><msrow><mo>+</mo><mn>34</mn><none/></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Set carries location at north"
+   ]
+  },
+  {
+   "n": 18,
+   "desc": "stack / Spacing between digits (select) -> option \"medium\"",
+   "shot": "sc/s10b_ctx_stack_18.jpg",
+   "mathml": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "stack / Spacing between digits (select) -> option \"0px\"",
+   "shot": "sc/s10b_ctx_stack_19.jpg",
+   "mathml": "<math><mstack charspacing=\"0px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "stack / Spacing between digits (select) -> option \"1px\"",
+   "shot": "sc/s10b_ctx_stack_20.jpg",
+   "mathml": "<math><mstack charspacing=\"1px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "stack / Spacing between digits (select) -> option \"2px\"",
+   "shot": "sc/s10b_ctx_stack_21.jpg",
+   "mathml": "<math><mstack charspacing=\"2px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "stack / Spacing between digits (select) -> option \"3px\"",
+   "shot": "sc/s10b_ctx_stack_22.jpg",
+   "mathml": "<math><mstack charspacing=\"3px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "stack / Spacing between digits (select) -> option \"4px\"",
+   "shot": "sc/s10b_ctx_stack_23.jpg",
+   "mathml": "<math><mstack charspacing=\"4px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "stack / Spacing between digits (select) -> option \"5px\"",
+   "shot": "sc/s10b_ctx_stack_24.jpg",
+   "mathml": "<math><mstack charspacing=\"5px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "stack / Spacing between digits (select) -> option \"6px\"",
+   "shot": "sc/s10b_ctx_stack_25.jpg",
+   "mathml": "<math><mstack charspacing=\"6px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "stack / Spacing between digits (select) -> option \"7px\"",
+   "shot": "sc/s10b_ctx_stack_26.jpg",
+   "mathml": "<math><mstack charspacing=\"7px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "stack / Spacing between digits (select) -> option \"8px\"",
+   "shot": "sc/s10b_ctx_stack_27.jpg",
+   "mathml": "<math><mstack charspacing=\"8px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "stack / Spacing between digits (select) -> option \"9px\"",
+   "shot": "sc/s10b_ctx_stack_28.jpg",
+   "mathml": "<math><mstack charspacing=\"9px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 29,
+   "desc": "stack / Spacing between digits (select) -> option \"10px\"",
+   "shot": "sc/s10b_ctx_stack_29.jpg",
+   "mathml": "<math><mstack charspacing=\"10px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "stack / Spacing between digits (select) -> option \"12px\"",
+   "shot": "sc/s10b_ctx_stack_30.jpg",
+   "mathml": "<math><mstack charspacing=\"12px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "stack / Spacing between digits (select) -> option \"15px\"",
+   "shot": "sc/s10b_ctx_stack_31.jpg",
+   "mathml": "<math><mstack charspacing=\"15px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "stack / Spacing between digits (select) -> option \"20px\"",
+   "shot": "sc/s10b_ctx_stack_32.jpg",
+   "mathml": "<math><mstack charspacing=\"20px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "stack / Spacing between digits (select) -> option \"25px\"",
+   "shot": "sc/s10b_ctx_stack_33.jpg",
+   "mathml": "<math><mstack charspacing=\"25px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "stack / Spacing between digits (select) -> option \"30px\"",
+   "shot": "sc/s10b_ctx_stack_34.jpg",
+   "mathml": "<math><mstack charspacing=\"30px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

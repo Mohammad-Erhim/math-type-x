@@ -1,0 +1,787 @@
+{
+ "documents": 6606,
+ "elements": {
+  "math": {
+   "count": 6606,
+   "attrs": [
+    "dir",
+    "style",
+    "xmlns:wrs"
+   ],
+   "example": "<math><mfrac><mrow/><mrow/></mfrac></math>"
+  },
+  "mfrac": {
+   "count": 112,
+   "attrs": [
+    "bevelled",
+    "mathcolor"
+   ],
+   "example": "<math><mfrac><mrow/><mrow/></mfrac></math>"
+  },
+  "mrow": {
+   "count": 1164,
+   "attrs": [],
+   "example": "<math><mfrac><mrow/><mrow/></mfrac></math>"
+  },
+  "mn": {
+   "count": 1833,
+   "attrs": [
+    "mathvariant"
+   ],
+   "example": "<math><mfrac><mn>7</mn><mrow/></mfrac></math>"
+  },
+  "mi": {
+   "count": 7004,
+   "attrs": [
+    "mathvariant",
+    "mathcolor"
+   ],
+   "example": "<math><mi>x</mi><mfrac><mrow/><mrow/></mfrac></math>"
+  },
+  "msqrt": {
+   "count": 24,
+   "attrs": [],
+   "example": "<math><msqrt/></math>"
+  },
+  "mroot": {
+   "count": 20,
+   "attrs": [],
+   "example": "<math><mroot><mrow/><mrow/></mroot></math>"
+  },
+  "msup": {
+   "count": 49,
+   "attrs": [],
+   "example": "<math><msup><maction actiontype=\"argument\"><mrow/></maction><mrow/></msup></math>"
+  },
+  "maction": {
+   "count": 177,
+   "attrs": [
+    "actiontype"
+   ],
+   "example": "<math><msup><maction actiontype=\"argument\"><mrow/></maction><mrow/></msup></math>"
+  },
+  "msub": {
+   "count": 62,
+   "attrs": [],
+   "example": "<math><msub><maction actiontype=\"argument\"><mrow/></maction><mrow/></msub></math>"
+  },
+  "mfenced": {
+   "count": 623,
+   "attrs": [
+    "open",
+    "close",
+    "separators",
+    "wrs:valign"
+   ],
+   "example": "<math><mfenced><mrow/></mfenced></math>"
+  },
+  "mo": {
+   "count": 2677,
+   "attrs": [
+    "largeop",
+    "lspace",
+    "rspace",
+    "mathvariant"
+   ],
+   "example": "<math><mo>+</mo></math>"
+  },
+  "menclose": {
+   "count": 130,
+   "attrs": [
+    "notation"
+   ],
+   "example": "<math><menclose notation=\"updiagonalstrike\"/></math>"
+  },
+  "mover": {
+   "count": 208,
+   "attrs": [],
+   "example": "<math><mover><mo>&#x2192;</mo><mrow/></mover></math>"
+  },
+  "munder": {
+   "count": 176,
+   "attrs": [],
+   "example": "<math><munder><mo>&#x2192;</mo><mrow/></munder></math>"
+  },
+  "munderover": {
+   "count": 137,
+   "attrs": [],
+   "example": "<math><munderover><mo>&#x2192;</mo><mrow/><mrow/></munderover></math>"
+  },
+  "mtable": {
+   "count": 481,
+   "attrs": [
+    "columnalign",
+    "columnspacing",
+    "align",
+    "frame",
+    "rowlines",
+    "columnlines",
+    "wrs:columnalign",
+    "wrs:decimalseparators",
+    "rowalign",
+    "equalrows",
+    "equalcolumns",
+    "framespacing"
+   ],
+   "example": "<math><mtable><mtr><mtd/></mtr><mtr><mtd/></mtr><mtr><mtd/></mtr></mtable></math>"
+  },
+  "mtr": {
+   "count": 1143,
+   "attrs": [],
+   "example": "<math><mtable><mtr><mtd/></mtr><mtr><mtd/></mtr><mtr><mtd/></mtr></mtable></math>"
+  },
+  "mtd": {
+   "count": 5139,
+   "attrs": [],
+   "example": "<math><mtable><mtr><mtd/></mtr><mtr><mtd/></mtr><mtr><mtd/></mtr></mtable></math>"
+  },
+  "mstack": {
+   "count": 94,
+   "attrs": [
+    "charalign",
+    "stackalign",
+    "charspacing"
+   ],
+   "example": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>"
+  },
+  "msrow": {
+   "count": 250,
+   "attrs": [],
+   "example": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>"
+  },
+  "msline": {
+   "count": 99,
+   "attrs": [
+    "length",
+    "position"
+   ],
+   "example": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>"
+  },
+  "mlongdiv": {
+   "count": 40,
+   "attrs": [
+    "charalign",
+    "charspacing",
+    "stackalign",
+    "longdivstyle"
+   ],
+   "example": "<math><mlongdiv charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><msrow/></msgroup></mlongdiv></math>"
+  },
+  "msgroup": {
+   "count": 40,
+   "attrs": [],
+   "example": "<math><mlongdiv charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><msrow/></msgroup></mlongdiv></math>"
+  },
+  "mstyle": {
+   "count": 64,
+   "attrs": [
+    "displaystyle",
+    "mathsize",
+    "indentalign"
+   ],
+   "example": "<math><mstyle displaystyle=\"false\"><mfrac><mrow/><mrow/></mfrac></mstyle></math>"
+  },
+  "msubsup": {
+   "count": 40,
+   "attrs": [],
+   "example": "<math><msubsup><maction actiontype=\"argument\"><mrow/></maction><mrow/><mrow/></msubsup></math>"
+  },
+  "mmultiscripts": {
+   "count": 24,
+   "attrs": [],
+   "example": "<math><mmultiscripts><maction actiontype=\"argument\"><mrow/></maction><mprescripts/><none/><mrow/></mmultiscripts></math>"
+  },
+  "mprescripts": {
+   "count": 24,
+   "attrs": [],
+   "example": "<math><mmultiscripts><maction actiontype=\"argument\"><mrow/></maction><mprescripts/><none/><mrow/></mmultiscripts></math>"
+  },
+  "none": {
+   "count": 45,
+   "attrs": [],
+   "example": "<math><mmultiscripts><maction actiontype=\"argument\"><mrow/></maction><mprescripts/><none/><mrow/></mmultiscripts></math>"
+  },
+  "mspace": {
+   "count": 85,
+   "attrs": [
+    "width",
+    "linebreak",
+    "height",
+    "depth"
+   ],
+   "example": "<math><mspace width=\"-0.2em\"/></math>"
+  },
+  "mtext": {
+   "count": 5,
+   "attrs": [],
+   "example": "<math><mtext>hello&#xA0;world</mtext></math>"
+  },
+  "mpadded": {
+   "count": 10,
+   "attrs": [
+    "lspace",
+    "voffset"
+   ],
+   "example": "<math><mpadded lspace=\"+1px\"><mi>x</mi></mpadded></math>"
+  },
+  "mscarries": {
+   "count": 17,
+   "attrs": [
+    "location"
+   ],
+   "example": "<math><mstack stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mscarries/><msrow/></mstack></math>"
+  }
+ },
+ "attributes": {
+  "bevelled": {
+   "count": 28,
+   "values": [
+    "true"
+   ],
+   "on": [
+    "mfrac"
+   ]
+  },
+  "actiontype": {
+   "count": 177,
+   "values": [
+    "argument"
+   ],
+   "on": [
+    "maction"
+   ]
+  },
+  "open": {
+   "count": 326,
+   "values": [
+    "[",
+    "|",
+    "{",
+    "",
+    "<",
+    "||",
+    "⌊",
+    "⌈",
+    ")",
+    "]",
+    ">",
+    "}",
+    "⌋",
+    "⌉"
+   ],
+   "on": [
+    "mfenced"
+   ]
+  },
+  "close": {
+   "count": 326,
+   "values": [
+    "]",
+    "|",
+    "}",
+    "",
+    ">",
+    "||",
+    "⌋",
+    "⌉",
+    "(",
+    "[",
+    "<",
+    "{",
+    "⌊",
+    "⌈"
+   ],
+   "on": [
+    "mfenced"
+   ]
+  },
+  "mathvariant": {
+   "count": 1600,
+   "values": [
+    "normal",
+    "fraktur",
+    "script",
+    "double-struck",
+    "bold-italic",
+    "bold",
+    "italic"
+   ],
+   "on": [
+    "mi",
+    "mn",
+    "mo"
+   ]
+  },
+  "notation": {
+   "count": 122,
+   "values": [
+    "updiagonalstrike",
+    "top",
+    "left",
+    "box",
+    "bottom",
+    "right",
+    "circle",
+    "horizontalstrike",
+    "downdiagonalstrike",
+    "downdiagonalstrike updiagonalstrike",
+    "actuarial",
+    "roundedbox",
+    "verticalstrike",
+    "verticalstrike horizontalstrike"
+   ],
+   "on": [
+    "menclose"
+   ]
+  },
+  "columnalign": {
+   "count": 184,
+   "values": [
+    "left",
+    "right",
+    "right center left",
+    "left center right",
+    "right left",
+    "right right left",
+    "right center",
+    "right right",
+    "center left",
+    "center center",
+    "center right",
+    "left left",
+    "center"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "columnspacing": {
+   "count": 22,
+   "values": [
+    "1.4ex",
+    "2px",
+    "0px",
+    "0.5em",
+    "1ex",
+    "5"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "charalign": {
+   "count": 99,
+   "values": [
+    "center"
+   ],
+   "on": [
+    "mstack",
+    "mlongdiv"
+   ]
+  },
+  "stackalign": {
+   "count": 134,
+   "values": [
+    "right",
+    "left"
+   ],
+   "on": [
+    "mstack",
+    "mlongdiv"
+   ]
+  },
+  "charspacing": {
+   "count": 58,
+   "values": [
+    "0px",
+    "1px",
+    "2px",
+    "3px",
+    "4px",
+    "5px",
+    "6px",
+    "7px",
+    "8px",
+    "9px",
+    "10px",
+    "12px",
+    "15px",
+    "20px"
+   ],
+   "on": [
+    "mlongdiv",
+    "mstack"
+   ]
+  },
+  "longdivstyle": {
+   "count": 20,
+   "values": [
+    "shortstackedrightright"
+   ],
+   "on": [
+    "mlongdiv"
+   ]
+  },
+  "displaystyle": {
+   "count": 51,
+   "values": [
+    "false",
+    "true"
+   ],
+   "on": [
+    "mstyle"
+   ]
+  },
+  "largeop": {
+   "count": 96,
+   "values": [
+    "true"
+   ],
+   "on": [
+    "mo"
+   ]
+  },
+  "width": {
+   "count": 48,
+   "values": [
+    "-0.2em",
+    "1em",
+    "2px",
+    "0.5em",
+    "1ex",
+    "5"
+   ],
+   "on": [
+    "mspace"
+   ]
+  },
+  "separators": {
+   "count": 20,
+   "values": [
+    "|",
+    ".",
+    ";",
+    ":",
+    " "
+   ],
+   "on": [
+    "mfenced"
+   ]
+  },
+  "dir": {
+   "count": 2753,
+   "values": [
+    "rtl"
+   ],
+   "on": [
+    "math"
+   ]
+  },
+  "mathcolor": {
+   "count": 35,
+   "values": [
+    "#FF0000",
+    "#007F00",
+    "#00AA55",
+    "#FF8800",
+    "#0000FF",
+    "#FF00FF",
+    "#00FFFF",
+    "#00FF00",
+    "#FFFF00",
+    "#7F0000",
+    "#E5C304",
+    "#AE761E",
+    "#7F007F",
+    "#00007F"
+   ],
+   "on": [
+    "mi",
+    "mfrac"
+   ]
+  },
+  "style": {
+   "count": 15,
+   "values": [
+    "font-family:Arial",
+    "font-family:stix",
+    "font-family:'Courier New'",
+    "font-family:Tahoma",
+    "font-family:'Times New Roman'",
+    "font-family:Verdana"
+   ],
+   "on": [
+    "math"
+   ]
+  },
+  "mathsize": {
+   "count": 9,
+   "values": [
+    "8px",
+    "12px",
+    "16px",
+    "24px",
+    "36px",
+    "48px",
+    "72px"
+   ],
+   "on": [
+    "mstyle"
+   ]
+  },
+  "linebreak": {
+   "count": 37,
+   "values": [
+    "newline"
+   ],
+   "on": [
+    "mspace"
+   ]
+  },
+  "lspace": {
+   "count": 26,
+   "values": [
+    "+1px",
+    "0.5em",
+    "5",
+    "-1px",
+    "2px",
+    "1ex"
+   ],
+   "on": [
+    "mpadded",
+    "mo"
+   ]
+  },
+  "voffset": {
+   "count": 5,
+   "values": [
+    "-1px",
+    "+1px"
+   ],
+   "on": [
+    "mpadded"
+   ]
+  },
+  "align": {
+   "count": 21,
+   "values": [
+    "top",
+    "baseline",
+    "center",
+    "axis 2",
+    "bottom"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "rspace": {
+   "count": 21,
+   "values": [
+    "0.5em",
+    "5",
+    "2px",
+    "1ex"
+   ],
+   "on": [
+    "mo"
+   ]
+  },
+  "frame": {
+   "count": 4,
+   "values": [
+    "solid"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "rowlines": {
+   "count": 4,
+   "values": [
+    "none solid none"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "columnlines": {
+   "count": 4,
+   "values": [
+    "none solid none",
+    "solid none"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "xmlns:wrs": {
+   "count": 30,
+   "values": [
+    "http://www.wiris.com/xml/mathml-extension"
+   ],
+   "on": [
+    "math"
+   ]
+  },
+  "wrs:columnalign": {
+   "count": 24,
+   "values": [
+    "right decimal",
+    "right relation",
+    "center decimal",
+    "center relation",
+    "decimal",
+    "relation"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "wrs:decimalseparators": {
+   "count": 16,
+   "values": [
+    "dot dot",
+    "dot comma",
+    "dot apostrophe",
+    "dot space",
+    "dot",
+    "comma",
+    "apostrophe",
+    "space"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "rowalign": {
+   "count": 20,
+   "values": [
+    "baseline top",
+    "baseline center",
+    "baseline bottom",
+    "baseline baseline",
+    "baseline axis"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "equalrows": {
+   "count": 4,
+   "values": [
+    "true"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "equalcolumns": {
+   "count": 4,
+   "values": [
+    "true"
+   ],
+   "on": [
+    "mtable"
+   ]
+  },
+  "wrs:valign": {
+   "count": 6,
+   "values": [
+    "middle",
+    "middle-baseline"
+   ],
+   "on": [
+    "mfenced"
+   ]
+  },
+  "height": {
+   "count": 40,
+   "values": [
+    "3ex",
+    "2px",
+    "0.5em",
+    "1ex",
+    "5"
+   ],
+   "on": [
+    "mspace"
+   ]
+  },
+  "depth": {
+   "count": 40,
+   "values": [
+    "2ex",
+    "2px",
+    "0.5em",
+    "1ex",
+    "5"
+   ],
+   "on": [
+    "mspace"
+   ]
+  },
+  "indentalign": {
+   "count": 4,
+   "values": [
+    "left",
+    "center",
+    "right"
+   ],
+   "on": [
+    "mstyle"
+   ]
+  },
+  "length": {
+   "count": 2,
+   "values": [
+    "2",
+    "3"
+   ],
+   "on": [
+    "msline"
+   ]
+  },
+  "position": {
+   "count": 2,
+   "values": [
+    "1"
+   ],
+   "on": [
+    "msline"
+   ]
+  },
+  "location": {
+   "count": 14,
+   "values": [
+    "nw",
+    "ne",
+    "w",
+    "e",
+    "sw",
+    "s",
+    "se"
+   ],
+   "on": [
+    "mscarries"
+   ]
+  },
+  "framespacing": {
+   "count": 10,
+   "values": [
+    "2px 0.5ex",
+    "0.5em 0.5ex",
+    "1ex 0.5ex",
+    "5 0.5ex",
+    "0.4em 2px",
+    "0.4em 0.5em",
+    "0.4em 1ex",
+    "0.4em 5"
+   ],
+   "on": [
+    "mtable"
+   ]
+  }
+ }
+}

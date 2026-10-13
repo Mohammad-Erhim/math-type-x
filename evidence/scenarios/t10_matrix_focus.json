@@ -1,0 +1,29 @@
+{
+ "name": "t10_matrix_focus",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "after typing 1 directly after cell-click",
+   "shot": "sc/t10_matrix_focus_01.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "after clicking the editing area then typing 3",
+   "shot": "sc/t10_matrix_focus_02.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced><mn>3</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%2F%3E%3Cmtd%2F%3E%3C%2Fmtr%3E%3Cmtr%3E%3Cmtd%2F%3E%3Cmtd%2F%3E%3C%2Fmtr%3E%3C%2Fmt"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

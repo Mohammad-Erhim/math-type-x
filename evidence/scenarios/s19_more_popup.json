@@ -1,0 +1,307 @@
+{
+ "name": "s19_more_popup",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Symbols tab; click first expand arrow (▸) next to operators",
+   "shot": "sc/s19_more_popup_01.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Reverse solidus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Pop-up open: first item is focused/highlighted — press ArrowDown",
+   "shot": "sc/s19_more_popup_02.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Set minus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 3,
+   "desc": "ArrowDown again",
+   "shot": "sc/s19_more_popup_03.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Minus-or-plus sign",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 4,
+   "desc": "ArrowUp",
+   "shot": "sc/s19_more_popup_04.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Set minus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Enter on highlighted item (inserts and closes)",
+   "shot": "sc/s19_more_popup_05.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Math input",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Reopen pop-up, press Escape",
+   "shot": "sc/s19_more_popup_06.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "More",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Reopen pop-up, click outside on editing area",
+   "shot": "sc/s19_more_popup_07.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "More",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Open pop-up 1 then click expand arrow 2 (switch)",
+   "shot": "sc/s19_more_popup_08.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Triple apostrophe",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Open pop-up then click another tab",
+   "shot": "sc/s19_more_popup_09.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "General tab (Alt+1)",
+    "expandersPressed": 0,
+    "visibleButtons": 38
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Open pop-up, then click same arrow again (toggle)",
+   "shot": "sc/s19_more_popup_10.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Reverse solidus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Keyboard: focus an item in grid then Space opens group?",
+   "shot": "sc/s19_more_popup_11.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Middle dot",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Press ArrowDown/Space to open the group popup",
+   "shot": "sc/s19_more_popup_12.jpg",
+   "mathml": "<math><mo>&#x2216;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Ring operator",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Space on focused item",
+   "shot": "sc/s19_more_popup_13.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Math input",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Keyboard: from \"Ring operator\" press ArrowRight (reach the ▸ “More” control?)",
+   "shot": "sc/s19_more_popup_14.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Ring operator",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Keyboard: ArrowRight again",
+   "shot": "sc/s19_more_popup_15.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "More",
+    "expandersPressed": 0,
+    "visibleButtons": 52
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Keyboard: ArrowDown on the More control (opens group)",
+   "shot": "sc/s19_more_popup_16.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Reverse solidus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Keyboard: Space on the More control",
+   "shot": "sc/s19_more_popup_17.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Reverse solidus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 18,
+   "desc": "Keyboard: Enter on the More control",
+   "shot": "sc/s19_more_popup_18.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Reverse solidus",
+    "expandersPressed": 1,
+    "visibleButtons": 55
+   }
+  },
+  {
+   "n": 19,
+   "desc": "Greek tab: open the first \"More\" (double-struck letters) popup",
+   "shot": "sc/s19_more_popup_19.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Capital alpha",
+    "expandersPressed": 1,
+    "visibleButtons": 75
+   }
+  },
+  {
+   "n": 20,
+   "desc": "Greek tab: popup scroll? hover an item",
+   "shot": "sc/s19_more_popup_20.jpg",
+   "mathml": "<math><mo>&#x2216;</mo><mo>&#x2218;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "active": "Capital alpha",
+    "expandersPressed": 1,
+    "visibleButtons": 75
+   }
+  }
+ ]
+}

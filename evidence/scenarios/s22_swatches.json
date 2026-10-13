@@ -1,0 +1,331 @@
+{
+ "name": "s22_swatches",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Colour swatch #1 (row 1, col 1) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_01.jpg",
+   "mathml": "<math><mi mathcolor=\"#FF0000\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23FF0000%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Colour swatch #2 (row 1, col 2) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_02.jpg",
+   "mathml": "<math><mi mathcolor=\"#FF00FF\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23FF00FF%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Colour swatch #3 (row 1, col 3) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_03.jpg",
+   "mathml": "<math><mi mathcolor=\"#0000FF\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%230000FF%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "Colour swatch #4 (row 1, col 4) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_04.jpg",
+   "mathml": "<math><mi mathcolor=\"#00FFFF\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%2300FFFF%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "Colour swatch #5 (row 1, col 5) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_05.jpg",
+   "mathml": "<math><mi mathcolor=\"#00FF00\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%2300FF00%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Colour swatch #6 (row 2, col 1) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_06.jpg",
+   "mathml": "<math><mi mathcolor=\"#FFFF00\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23FFFF00%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "Colour swatch #7 (row 2, col 2) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_07.jpg",
+   "mathml": "<math><mi mathcolor=\"#7F0000\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%237F0000%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Colour swatch #8 (row 2, col 3) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_08.jpg",
+   "mathml": "<math><mi mathcolor=\"#E5C304\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23E5C304%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Colour swatch #9 (row 2, col 4) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_09.jpg",
+   "mathml": "<math><mi mathcolor=\"#AE761E\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23AE761E%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "Colour swatch #10 (row 2, col 5) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_10.jpg",
+   "mathml": "<math><mi mathcolor=\"#7F007F\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%237F007F%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "Colour swatch #11 (row 3, col 1) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_11.jpg",
+   "mathml": "<math><mi mathcolor=\"#00007F\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%2300007F%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "Colour swatch #12 (row 3, col 2) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_12.jpg",
+   "mathml": "<math><mi mathcolor=\"#007F7F\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23007F7F%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Colour swatch #13 (row 3, col 3) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_13.jpg",
+   "mathml": "<math><mi mathcolor=\"#007F00\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23007F00%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Colour swatch #14 (row 3, col 4) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_14.jpg",
+   "mathml": "<math><mi mathcolor=\"#827F00\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23827F00%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "Colour swatch #15 (row 3, col 5) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_15.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reade"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "Colour swatch #16 (row 4, col 1) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_16.jpg",
+   "mathml": "<math><mi mathcolor=\"#191919\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23191919%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "Colour swatch #17 (row 4, col 2) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_17.jpg",
+   "mathml": "<math><mi mathcolor=\"#333333\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23333333%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "Colour swatch #18 (row 4, col 3) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_18.jpg",
+   "mathml": "<math><mi mathcolor=\"#4C4C4C\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%234C4C4C%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "Colour swatch #19 (row 4, col 4) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_19.jpg",
+   "mathml": "<math><mi mathcolor=\"#666666\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23666666%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Colour swatch #20 (row 4, col 5) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_20.jpg",
+   "mathml": "<math><mi mathcolor=\"#7F7F7F\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%237F7F7F%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Colour swatch #21 (row 5, col 1) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_21.jpg",
+   "mathml": "<math><mi mathcolor=\"#999999\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23999999%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "Colour swatch #22 (row 5, col 2) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_22.jpg",
+   "mathml": "<math><mi mathcolor=\"#B2B2B2\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23B2B2B2%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "Colour swatch #23 (row 5, col 3) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_23.jpg",
+   "mathml": "<math><mi mathcolor=\"#CCCCCC\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23CCCCCC%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "Colour swatch #24 (row 5, col 4) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_24.jpg",
+   "mathml": "<math><mi mathcolor=\"#E5E5E5\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23E5E5E5%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "Colour swatch #25 (row 5, col 5) applied to selected \"x\"",
+   "shot": "sc/s22_swatches_25.jpg",
+   "mathml": "<math><mi mathcolor=\"#FFFFFF\">x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23FFFFFF%22%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

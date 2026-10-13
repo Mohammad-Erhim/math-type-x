@@ -1,0 +1,25 @@
+{
+ "name": "t12_hand",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Before opening handwriting",
+   "shot": "sc/t12_hand_01.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "After clicking the handwriting strip",
+   "shot": "sc/t12_hand_02.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

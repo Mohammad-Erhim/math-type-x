@@ -1,0 +1,1462 @@
+{
+ "name": "s10a_ctx_probe",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Matrix 2x2 with parentheses: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 2,
+   "desc": "Matrix 2x2 with parentheses: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_02.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline"
+   ]
+  },
+  {
+   "n": 3,
+   "desc": "Matrix 2x2 with parentheses: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline",
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 4,
+   "desc": "Matrix 2x2 with parentheses: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_04.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline",
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 5,
+   "desc": "Table 2x2 without fence: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_05.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 6,
+   "desc": "Table 2x2 without fence: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_06.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "Table 2x2 without fence: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_07.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 8,
+   "desc": "Table 2x2 without fence: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_08.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 9,
+   "desc": "Piecewise function: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_09.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 10,
+   "desc": "Piecewise function: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_10.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline"
+   ]
+  },
+  {
+   "n": 11,
+   "desc": "Piecewise function: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_11.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline",
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 12,
+   "desc": "Piecewise function: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_12.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline",
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 13,
+   "desc": "Aligned equations: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_13.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 14,
+   "desc": "Aligned equations: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_14.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing",
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 15,
+   "desc": "Aligned equations: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_15.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing",
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 16,
+   "desc": "Aligned equations: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_16.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align with top",
+    "Align with baseline",
+    "Align with center",
+    "Align to row",
+    "Align with bottom",
+    "Insert row below",
+    "Insert row above",
+    "Insert column at right",
+    "Insert column at left",
+    "Remove row",
+    "Remove column",
+    "Insert frame",
+    "Remove frame",
+    "Activate solid lines",
+    "Insert line below",
+    "Insert right line",
+    "Activate dash lines",
+    "Remove line below",
+    "Remove right line",
+    "Align left",
+    "Align center",
+    "Align right",
+    "Decimal align",
+    "Decimal align symbol",
+    "Align rows to top",
+    "Align rows to center",
+    "Align rows to bottom",
+    "Relation align",
+    "Align rows to baseline",
+    "Align rows to axis",
+    "Force equal row heights",
+    "Force equal column widths",
+    "Column spacing at right",
+    "Horizontal frame spacing",
+    "Row spacing below",
+    "Vertical frame spacing"
+   ]
+  },
+  {
+   "n": 17,
+   "desc": "Fenced expression (square brackets): caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_17.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 18,
+   "desc": "Fenced expression (square brackets): caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_18.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline"
+   ]
+  },
+  {
+   "n": 19,
+   "desc": "Fenced expression (square brackets): caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_19.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline"
+   ]
+  },
+  {
+   "n": 20,
+   "desc": "Fenced expression (square brackets): caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_20.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "setOpenBracket",
+    "setCloseBracket",
+    "setSeparator",
+    "Baseline",
+    "Middle",
+    "Middle-baseline",
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 21,
+   "desc": "Fraction: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_21.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmfrac%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 22,
+   "desc": "Fraction: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_22.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmfrac%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 23,
+   "desc": "Fraction: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_23.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmfrac%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 24,
+   "desc": "Fraction: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_24.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmfrac%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 25,
+   "desc": "Operator in expression: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_25.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 26,
+   "desc": "Operator in expression: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_26.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 27,
+   "desc": "Operator in expression: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_27.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 28,
+   "desc": "Operator in expression: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_28.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 29,
+   "desc": "Multi-line expression (Enter): caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_29.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 30,
+   "desc": "Multi-line expression (Enter): caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_30.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing",
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 31,
+   "desc": "Multi-line expression (Enter): caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_31.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing",
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 32,
+   "desc": "Multi-line expression (Enter): caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_32.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 33,
+   "desc": "Long division: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_33.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmlongdiv%20longdivstyle%3D%22lefttop%22%3E%3Cmn%3E3%3C%2Fmn%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmlongdiv%3E"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught bad nodeType"
+   ],
+   "err": null,
+   "extra": [
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 34,
+   "desc": "Long division: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_34.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmlongdiv%20longdivstyle%3D%22lefttop%22%3E%3Cmn%3E3%3C%2Fmn%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmlongdiv%3E"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught bad nodeType"
+   ],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing",
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 35,
+   "desc": "Long division: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_35.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmlongdiv%20longdivstyle%3D%22lefttop%22%3E%3Cmn%3E3%3C%2Fmn%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmlongdiv%3E"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught bad nodeType"
+   ],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing",
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 36,
+   "desc": "Long division: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_36.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmlongdiv%20longdivstyle%3D%22lefttop%22%3E%3Cmn%3E3%3C%2Fmn%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmlongdiv%3E"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught bad nodeType"
+   ],
+   "err": null,
+   "extra": [
+    "Align left",
+    "Relation align",
+    "Align center",
+    "Align right"
+   ]
+  },
+  {
+   "n": 37,
+   "desc": "Stacked addition: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_37.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west",
+    "Set carries location at north",
+    "Set carries location at north-east",
+    "Set carries location at west",
+    "Insert carries in this row",
+    "Set carries location at east",
+    "Set carries location at south-west",
+    "Set carries location at south",
+    "Set carries location at south-east",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 38,
+   "desc": "Stacked addition: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_38.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west",
+    "Set carries location at north",
+    "Set carries location at north-east",
+    "Set carries location at west",
+    "Insert carries in this row",
+    "Set carries location at east",
+    "Set carries location at south-west",
+    "Set carries location at south",
+    "Set carries location at south-east",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 39,
+   "desc": "Stacked addition: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_39.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west",
+    "Set carries location at north",
+    "Set carries location at north-east",
+    "Set carries location at west",
+    "Insert carries in this row",
+    "Set carries location at east",
+    "Set carries location at south-west",
+    "Set carries location at south",
+    "Set carries location at south-east",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 40,
+   "desc": "Stacked addition: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_40.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Merge/unmerge separators in <mn>",
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west",
+    "Set carries location at north",
+    "Set carries location at north-east",
+    "Set carries location at west",
+    "Insert carries in this row",
+    "Set carries location at east",
+    "Set carries location at south-west",
+    "Set carries location at south",
+    "Set carries location at south-east",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 41,
+   "desc": "Existing mspace element: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_41.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 42,
+   "desc": "Existing mspace element: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_42.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Space width",
+    "Space height",
+    "Space depth"
+   ]
+  },
+  {
+   "n": 43,
+   "desc": "Existing mspace element: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_43.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Space width",
+    "Space height",
+    "Space depth"
+   ]
+  },
+  {
+   "n": 44,
+   "desc": "Existing mspace element: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_44.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 45,
+   "desc": "Number with separator: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_45.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 46,
+   "desc": "Number with separator: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_46.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 47,
+   "desc": "Number with separator: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_47.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 48,
+   "desc": "Number with separator: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_48.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 49,
+   "desc": "Single symbol: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_49.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 50,
+   "desc": "Single symbol: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_50.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 51,
+   "desc": "Single symbol: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_51.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 52,
+   "desc": "Single symbol: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_52.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 53,
+   "desc": "Big operator (sum): caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_53.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 54,
+   "desc": "Big operator (sum): caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_54.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 55,
+   "desc": "Big operator (sum): caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_55.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 56,
+   "desc": "Big operator (sum): caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_56.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 57,
+   "desc": "Square root: caret ArrowLeft x0 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_57.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsqrt%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmsqrt%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=se"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 58,
+   "desc": "Square root: caret ArrowLeft x1 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_58.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsqrt%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmsqrt%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=se"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 59,
+   "desc": "Square root: caret ArrowLeft x2 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_59.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsqrt%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmsqrt%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=se"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 60,
+   "desc": "Square root: caret ArrowLeft x3 from end, Contextual tab open",
+   "shot": "sc/s10a_ctx_probe_60.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsqrt%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmsqrt%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=se"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  }
+ ]
+}

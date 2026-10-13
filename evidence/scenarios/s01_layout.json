@@ -1,0 +1,148 @@
+{
+ "name": "s01_layout",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Initial state of the playground (page scrolled so the widget is in view)",
+   "shot": "sc/s01_layout_01.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Full viewport (1920x1080) with the playground in context",
+   "shot": "sc/s01_layout_02.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Hover over General tab button",
+   "shot": "sc/s01_layout_03.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "Hover over Fraction button",
+   "shot": "sc/s01_layout_04.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "Mouse down (pressed state) on Fraction button, not released",
+   "shot": "sc/s01_layout_05.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Hover over disabled Copy button",
+   "shot": "sc/s01_layout_06.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmrow%2F%3E%3Cmrow%2F%3E%3C%2Fmfrac%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-edito",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "Hover over Font family select",
+   "shot": "sc/s01_layout_07.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.hover: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer select').first()\u001b[22m\n\u001b[2m    - locator resolved to <select title=\"Font family\" aria-label=\"Font family\">…</select>\u001b[22m\n\u001b[2m  - attempting hover action\u001b[22m\n\u001b[2m    2 × waiting for element"
+  },
+  {
+   "n": 8,
+   "desc": "Hover over help (?) link",
+   "shot": "sc/s01_layout_08.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Hover over handwriting toggle strip",
+   "shot": "sc/s01_layout_09.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "Keyboard: Shift+Tab from edit area (focus moves toward toolbar)",
+   "shot": "sc/s01_layout_10.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "Keyboard: Shift+Tab again",
+   "shot": "sc/s01_layout_11.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "Keyboard: Tab",
+   "shot": "sc/s01_layout_12.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Keyboard: Tab",
+   "shot": "sc/s01_layout_13.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Keyboard: Tab",
+   "shot": "sc/s01_layout_14.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

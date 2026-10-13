@@ -1,0 +1,234 @@
+{
+ "name": "s10b_ctx_multiline",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT multiline: controls shown in the Contextual tab (6)",
+   "shot": "sc/s10b_ctx_multiline_01.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "BUTTON",
+     "title": "Left spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 1,
+     "tag": "BUTTON",
+     "title": "Right spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 2,
+     "tag": "BUTTON",
+     "title": "Align left",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Relation align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Align center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Align right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "multiline / Left spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_multiline_02.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 3,
+   "desc": "multiline / Left spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_multiline_03.jpg",
+   "mathml": "<math><mstyle indentalign=\"left\"><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi><mn>2</mn><mi>p</mi><mi>x</mi><mspace linebreak=\"newline\"/></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstyle%20indentalign%3D%22left%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "multiline / Left spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_multiline_04.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "multiline / Left spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_multiline_05.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "multiline / Right spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_multiline_06.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "multiline / Right spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_multiline_07.jpg",
+   "mathml": "<math><mtable columnspacing=\"0px\" columnalign=\"right center left\"><mtr><mtd/><mtd/><mtd><mi>a</mi></mtd></mtr><mtr><mtd/><mtd/><mtd><mi>b</mi><mn>2</mn><mi>p</mi><mi>x</mi></mtd></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnspacing%3D%220px%22%20columnalign%3D%22right%20center%20left%22%3E%3Cmtr%3E%3Cmtd%2F%3E%3Cmtd%2F%3E%3Cmtd"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "multiline / Right spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_multiline_08.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "multiline / Right spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_multiline_09.jpg",
+   "mathml": "<math><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "multiline / Align left (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_multiline_10.jpg",
+   "mathml": "<math><mstyle indentalign=\"left\"><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align left"
+   ]
+  },
+  {
+   "n": 11,
+   "desc": "multiline / Relation align (button) -> click",
+   "shot": "sc/s10b_ctx_multiline_11.jpg",
+   "mathml": "<math><mtable columnspacing=\"0px\" columnalign=\"right center left\"><mtr><mtd/><mtd/><mtd><mi>a</mi></mtd></mtr><mtr><mtd/><mtd/><mtd><mi>b</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Relation align"
+   ]
+  },
+  {
+   "n": 12,
+   "desc": "multiline / Align center (button) -> click",
+   "shot": "sc/s10b_ctx_multiline_12.jpg",
+   "mathml": "<math><mstyle indentalign=\"center\"><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align center"
+   ]
+  },
+  {
+   "n": 13,
+   "desc": "multiline / Align right (button) -> click",
+   "shot": "sc/s10b_ctx_multiline_13.jpg",
+   "mathml": "<math><mstyle indentalign=\"right\"><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deplo"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align right"
+   ]
+  }
+ ]
+}

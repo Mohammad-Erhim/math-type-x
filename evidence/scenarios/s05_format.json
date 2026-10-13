@@ -1,0 +1,646 @@
+{
+ "name": "s05_format",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Bold: type \"xy\", select both, click Bold",
+   "shot": "sc/s05_format_01.jpg",
+   "mathml": "<math><mi mathvariant=\"bold-italic\">x</mi><mi mathvariant=\"bold-italic\">y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "wrs_toggled",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Bold: click Bold again on same selection (toggle off)",
+   "shot": "sc/s05_format_02.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Bold with no selection: click Bold then type \"ab\"",
+   "shot": "sc/s05_format_03.jpg",
+   "mathml": "<math><mi mathvariant=\"bold-italic\">a</mi><mi mathvariant=\"bold-italic\">b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "wrs_toggled",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Bold: Ctrl+B shortcut with selection",
+   "shot": "sc/s05_format_04.jpg",
+   "mathml": "<math><mi mathvariant=\"bold-italic\">x</mi><mi mathvariant=\"bold-italic\">y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "wrs_toggled",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Bold on number 123 selected",
+   "shot": "sc/s05_format_05.jpg",
+   "mathml": "<math><mn mathvariant=\"bold\">123</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Italic: type \"123\", select, click Italic (numbers become italic)",
+   "shot": "sc/s05_format_06.jpg",
+   "mathml": "<math><mn mathvariant=\"italic\">123</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "wrs_toggled",
+    "Insert special characters": "normal",
+    "Automatic italic": "normal",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Italic: Ctrl+I shortcut on \"sin\" selection",
+   "shot": "sc/s05_format_07.jpg",
+   "mathml": "<math><mi>s</mi><mi>i</mi><mi>n</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Italic with no selection then type \"a1\"",
+   "shot": "sc/s05_format_08.jpg",
+   "mathml": "<math><mi>a</mi><mn mathvariant=\"italic\">1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "wrs_toggled",
+    "Insert special characters": "normal",
+    "Automatic italic": "normal",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Automatic italic ON (default): type \"xsin1\"",
+   "shot": "sc/s05_format_09.jpg",
+   "mathml": "<math><mi>x</mi><mi>sin</mi><mn>1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Toggle Automatic italic OFF then type \"xsin1\"",
+   "shot": "sc/s05_format_10.jpg",
+   "mathml": "<math><mi>xsin</mi><mn>1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "normal",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Automatic italic OFF then click it again (ON) and type \"xy\"",
+   "shot": "sc/s05_format_11.jpg",
+   "mathml": "<math><mi>xsin</mi><mn>1</mn><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Regular text: click button then type \"hello world\"",
+   "shot": "sc/s05_format_12.jpg",
+   "mathml": "<math><mtext>hello&#xA0;world</mtext></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "wrs_toggled",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Regular text: then ArrowRight and type \"+1\"",
+   "shot": "sc/s05_format_13.jpg",
+   "mathml": "<math><mtext>hello&#xA0;world+1</mtext></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Regular text applied on selected \"abc\"",
+   "shot": "sc/s05_format_14.jpg",
+   "mathml": "<math><mtext>abc</mtext></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "wrs_toggled",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Regular text toggled off after typing (click twice then type \"x\")",
+   "shot": "sc/s05_format_15.jpg",
+   "mathml": "<math><mtext>a</mtext><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Color": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Insert special characters": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Color: open palette (select \"xy\" first)",
+   "shot": "sc/s05_format_16.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "Color: click first swatch (red) on selection",
+   "shot": "sc/s05_format_17.jpg",
+   "mathml": "<math><mi mathcolor=\"#FF0000\">x</mi><mi mathcolor=\"#FF0000\">y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23FF0000%22%3Ex%3C%2Fmi%3E%3Cmi%20mathcolor%3D%22%23FF0000%22%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "Color: open again and click 13th swatch",
+   "shot": "sc/s05_format_18.jpg",
+   "mathml": "<math><mi mathcolor=\"#007F00\">x</mi><mi mathcolor=\"#007F00\">y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%20mathcolor%3D%22%23007F00%22%3Ex%3C%2Fmi%3E%3Cmi%20mathcolor%3D%22%23007F00%22%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "Color: open and type custom hex #00AA55 + Enter",
+   "shot": "sc/s05_format_19.jpg",
+   "mathml": "<math><mi mathcolor=\"#00AA55\">x</mi><mi mathcolor=\"#00AA55\">y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Color: invalid hex \"zzz\" + Enter",
+   "shot": "sc/s05_format_20.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Color: hex without # \"FF8800\" + Enter",
+   "shot": "sc/s05_format_21.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "Color: 3-digit hex \"#f80\" + Enter",
+   "shot": "sc/s05_format_22.jpg",
+   "mathml": "<math><mi mathcolor=\"#FF8800\">x</mi><mi mathcolor=\"#FF8800\">y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "Color: no selection, pick blue swatch then type \"ab\"",
+   "shot": "sc/s05_format_23.jpg",
+   "mathml": "<math><mi mathcolor=\"#0000FF\">a</mi><mi mathcolor=\"#0000FF\">b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "Color: open palette then press Escape",
+   "shot": "sc/s05_format_24.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "Color: open palette then click in editing area (outside)",
+   "shot": "sc/s05_format_25.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "Color: open palette then click Color again (toggle)",
+   "shot": "sc/s05_format_26.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "Font family: select \"Arial\" on typed \"xy\" (selected)",
+   "shot": "sc/s05_format_27.jpg",
+   "mathml": "<math style=\"font-family:Arial\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "Arial"
+  },
+  {
+   "n": 28,
+   "desc": "Font family: select \"stix\" on typed \"xy\" (selected)",
+   "shot": "sc/s05_format_28.jpg",
+   "mathml": "<math style=\"font-family:stix\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "stix"
+  },
+  {
+   "n": 29,
+   "desc": "Font family: select \"Courier New\" on typed \"xy\" (selected)",
+   "shot": "sc/s05_format_29.jpg",
+   "mathml": "<math style=\"font-family:'Courier New'\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "Courier New"
+  },
+  {
+   "n": 30,
+   "desc": "Font family: select \"Tahoma\" on typed \"xy\" (selected)",
+   "shot": "sc/s05_format_30.jpg",
+   "mathml": "<math style=\"font-family:Tahoma\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "Tahoma"
+  },
+  {
+   "n": 31,
+   "desc": "Font family: select \"Times New Roman\" on typed \"xy\" (selected)",
+   "shot": "sc/s05_format_31.jpg",
+   "mathml": "<math style=\"font-family:'Times New Roman'\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "Times New Roman"
+  },
+  {
+   "n": 32,
+   "desc": "Font family: select \"Verdana\" on typed \"xy\" (selected)",
+   "shot": "sc/s05_format_32.jpg",
+   "mathml": "<math style=\"font-family:Verdana\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "Verdana"
+  },
+  {
+   "n": 33,
+   "desc": "Font size: select \"8px\"",
+   "shot": "sc/s05_format_33.jpg",
+   "mathml": "<math><mstyle mathsize=\"8px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "8px"
+  },
+  {
+   "n": 34,
+   "desc": "Font size: select \"12px\"",
+   "shot": "sc/s05_format_34.jpg",
+   "mathml": "<math><mstyle mathsize=\"12px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "12px"
+  },
+  {
+   "n": 35,
+   "desc": "Font size: select \"16px\"",
+   "shot": "sc/s05_format_35.jpg",
+   "mathml": "<math><mstyle mathsize=\"16px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "16px"
+  },
+  {
+   "n": 36,
+   "desc": "Font size: select \"24px\"",
+   "shot": "sc/s05_format_36.jpg",
+   "mathml": "<math><mstyle mathsize=\"24px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "24px"
+  },
+  {
+   "n": 37,
+   "desc": "Font size: select \"36px\"",
+   "shot": "sc/s05_format_37.jpg",
+   "mathml": "<math><mstyle mathsize=\"36px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "36px"
+  },
+  {
+   "n": 38,
+   "desc": "Font size: select \"48px\"",
+   "shot": "sc/s05_format_38.jpg",
+   "mathml": "<math><mstyle mathsize=\"48px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "48px"
+  },
+  {
+   "n": 39,
+   "desc": "Font size: select \"72px\"",
+   "shot": "sc/s05_format_39.jpg",
+   "mathml": "<math><mstyle mathsize=\"72px\"><mi>x</mi><mi>y</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": "72px"
+  },
+  {
+   "n": 40,
+   "desc": "Font size 72px then reset option to \"— Size —\"",
+   "shot": "sc/s05_format_40.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "Font family with caret only (no selection) then type \"ab\"",
+   "shot": "sc/s05_format_41.jpg",
+   "mathml": "<math style=\"font-family:'Courier New'\"><mi>a</mi><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 42,
+   "desc": "Font family applied then toolbar select shows value after new typing",
+   "shot": "sc/s05_format_42.jpg",
+   "mathml": "<math style=\"font-family:'Courier New'\"><mi>a</mi><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "fam": "Courier New",
+    "size": "inherit"
+   }
+  }
+ ]
+}

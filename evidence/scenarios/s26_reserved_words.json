@@ -1,0 +1,906 @@
+{
+ "name": "s26_reserved_words",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Type \"sin\"",
+   "shot": "sc/s26_reserved_words_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>sin</mi></math>"
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Type \"cos\"",
+   "shot": "sc/s26_reserved_words_02.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>cos</mi></math>"
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Type \"tan\"",
+   "shot": "sc/s26_reserved_words_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>tan</mi></math>"
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Type \"cot\"",
+   "shot": "sc/s26_reserved_words_04.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>c</mi><mi>o</mi><mi>t</mi></math>"
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Type \"sec\"",
+   "shot": "sc/s26_reserved_words_05.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>s</mi><mi>e</mi><mi>c</mi></math>"
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Type \"csc\"",
+   "shot": "sc/s26_reserved_words_06.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>c</mi><mi>s</mi><mi>c</mi></math>"
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Type \"arcsin\"",
+   "shot": "sc/s26_reserved_words_07.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>r</mi><mi>c</mi><mi>sin</mi></math>"
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Type \"arccos\"",
+   "shot": "sc/s26_reserved_words_08.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>r</mi><mi>c</mi><mi>cos</mi></math>"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Type \"arctan\"",
+   "shot": "sc/s26_reserved_words_09.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>r</mi><mi>c</mi><mi>tan</mi></math>"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Type \"arccot\"",
+   "shot": "sc/s26_reserved_words_10.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>r</mi><mi>c</mi><mi>c</mi><mi>o</mi><mi>t</mi></math>"
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Type \"sinh\"",
+   "shot": "sc/s26_reserved_words_11.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>sin</mi><mi>h</mi></math>"
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Type \"cosh\"",
+   "shot": "sc/s26_reserved_words_12.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>cos</mi><mi>h</mi></math>"
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Type \"tanh\"",
+   "shot": "sc/s26_reserved_words_13.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>tan</mi><mi>h</mi></math>"
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Type \"coth\"",
+   "shot": "sc/s26_reserved_words_14.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>c</mi><mi>o</mi><mi>t</mi><mi>h</mi></math>"
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Type \"sech\"",
+   "shot": "sc/s26_reserved_words_15.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>s</mi><mi>e</mi><mi>c</mi><mi>h</mi></math>"
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Type \"csch\"",
+   "shot": "sc/s26_reserved_words_16.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>c</mi><mi>s</mi><mi>c</mi><mi>h</mi></math>"
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Type \"log\"",
+   "shot": "sc/s26_reserved_words_17.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>log</mi></math>"
+   }
+  },
+  {
+   "n": 18,
+   "desc": "Type \"ln\"",
+   "shot": "sc/s26_reserved_words_18.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>ln</mi></math>"
+   }
+  },
+  {
+   "n": 19,
+   "desc": "Type \"lg\"",
+   "shot": "sc/s26_reserved_words_19.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>l</mi><mi>g</mi></math>"
+   }
+  },
+  {
+   "n": 20,
+   "desc": "Type \"exp\"",
+   "shot": "sc/s26_reserved_words_20.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>e</mi><mi>x</mi><mi>p</mi></math>"
+   }
+  },
+  {
+   "n": 21,
+   "desc": "Type \"lim\"",
+   "shot": "sc/s26_reserved_words_21.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>l</mi><mi>i</mi><mi>m</mi></math>"
+   }
+  },
+  {
+   "n": 22,
+   "desc": "Type \"liminf\"",
+   "shot": "sc/s26_reserved_words_22.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>l</mi><mi>i</mi><mi>m</mi><mi>i</mi><mi>n</mi><mi>f</mi></math>"
+   }
+  },
+  {
+   "n": 23,
+   "desc": "Type \"limsup\"",
+   "shot": "sc/s26_reserved_words_23.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>l</mi><mi>i</mi><mi>m</mi><mi>s</mi><mi>u</mi><mi>p</mi></math>"
+   }
+  },
+  {
+   "n": 24,
+   "desc": "Type \"max\"",
+   "shot": "sc/s26_reserved_words_24.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>m</mi><mi>a</mi><mi>x</mi></math>"
+   }
+  },
+  {
+   "n": 25,
+   "desc": "Type \"min\"",
+   "shot": "sc/s26_reserved_words_25.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>m</mi><mi>i</mi><mi>n</mi></math>"
+   }
+  },
+  {
+   "n": 26,
+   "desc": "Type \"sup\"",
+   "shot": "sc/s26_reserved_words_26.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>s</mi><mi>u</mi><mi>p</mi></math>"
+   }
+  },
+  {
+   "n": 27,
+   "desc": "Type \"inf\"",
+   "shot": "sc/s26_reserved_words_27.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>i</mi><mi>n</mi><mi>f</mi></math>"
+   }
+  },
+  {
+   "n": 28,
+   "desc": "Type \"det\"",
+   "shot": "sc/s26_reserved_words_28.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>d</mi><mi>e</mi><mi>t</mi></math>"
+   }
+  },
+  {
+   "n": 29,
+   "desc": "Type \"dim\"",
+   "shot": "sc/s26_reserved_words_29.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>d</mi><mi>i</mi><mi>m</mi></math>"
+   }
+  },
+  {
+   "n": 30,
+   "desc": "Type \"ker\"",
+   "shot": "sc/s26_reserved_words_30.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>k</mi><mi>e</mi><mi>r</mi></math>"
+   }
+  },
+  {
+   "n": 31,
+   "desc": "Type \"gcd\"",
+   "shot": "sc/s26_reserved_words_31.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>g</mi><mi>c</mi><mi>d</mi></math>"
+   }
+  },
+  {
+   "n": 32,
+   "desc": "Type \"lcm\"",
+   "shot": "sc/s26_reserved_words_32.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>l</mi><mi>c</mi><mi>m</mi></math>"
+   }
+  },
+  {
+   "n": 33,
+   "desc": "Type \"mod\"",
+   "shot": "sc/s26_reserved_words_33.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>m</mi><mi>o</mi><mi>d</mi></math>"
+   }
+  },
+  {
+   "n": 34,
+   "desc": "Type \"deg\"",
+   "shot": "sc/s26_reserved_words_34.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>d</mi><mi>e</mi><mi>g</mi></math>"
+   }
+  },
+  {
+   "n": 35,
+   "desc": "Type \"arg\"",
+   "shot": "sc/s26_reserved_words_35.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>r</mi><mi>g</mi></math>"
+   }
+  },
+  {
+   "n": 36,
+   "desc": "Type \"Re\"",
+   "shot": "sc/s26_reserved_words_36.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>R</mi><mi>e</mi></math>"
+   }
+  },
+  {
+   "n": 37,
+   "desc": "Type \"Im\"",
+   "shot": "sc/s26_reserved_words_37.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>I</mi><mi>m</mi></math>"
+   }
+  },
+  {
+   "n": 38,
+   "desc": "Type \"sgn\"",
+   "shot": "sc/s26_reserved_words_38.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>s</mi><mi>g</mi><mi>n</mi></math>"
+   }
+  },
+  {
+   "n": 39,
+   "desc": "Type \"Pr\"",
+   "shot": "sc/s26_reserved_words_39.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>P</mi><mi>r</mi></math>"
+   }
+  },
+  {
+   "n": 40,
+   "desc": "Type \"hom\"",
+   "shot": "sc/s26_reserved_words_40.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>h</mi><mi>o</mi><mi>m</mi></math>"
+   }
+  },
+  {
+   "n": 41,
+   "desc": "Type \"tr\"",
+   "shot": "sc/s26_reserved_words_41.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>t</mi><mi>r</mi></math>"
+   }
+  },
+  {
+   "n": 42,
+   "desc": "Type \"rank\"",
+   "shot": "sc/s26_reserved_words_42.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>r</mi><mi>a</mi><mi>n</mi><mi>k</mi></math>"
+   }
+  },
+  {
+   "n": 43,
+   "desc": "Type \"cosec\"",
+   "shot": "sc/s26_reserved_words_43.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>cos</mi><mi>e</mi><mi>c</mi></math>"
+   }
+  },
+  {
+   "n": 44,
+   "desc": "Type \"asin\"",
+   "shot": "sc/s26_reserved_words_44.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>sin</mi></math>"
+   }
+  },
+  {
+   "n": 45,
+   "desc": "Type \"acos\"",
+   "shot": "sc/s26_reserved_words_45.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>cos</mi></math>"
+   }
+  },
+  {
+   "n": 46,
+   "desc": "Type \"atan\"",
+   "shot": "sc/s26_reserved_words_46.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>tan</mi></math>"
+   }
+  },
+  {
+   "n": 47,
+   "desc": "Type \"sen\"",
+   "shot": "sc/s26_reserved_words_47.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>s</mi><mi>e</mi><mi>n</mi></math>"
+   }
+  },
+  {
+   "n": 48,
+   "desc": "Type \"tg\"",
+   "shot": "sc/s26_reserved_words_48.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>t</mi><mi>g</mi></math>"
+   }
+  },
+  {
+   "n": 49,
+   "desc": "Type \"ctg\"",
+   "shot": "sc/s26_reserved_words_49.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>c</mi><mi>t</mi><mi>g</mi></math>"
+   }
+  },
+  {
+   "n": 50,
+   "desc": "Type \"sinx\"",
+   "shot": "sc/s26_reserved_words_50.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>sin</mi><mi>x</mi></math>"
+   }
+  },
+  {
+   "n": 51,
+   "desc": "Type \"xsin\"",
+   "shot": "sc/s26_reserved_words_51.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>x</mi><mi>sin</mi></math>"
+   }
+  },
+  {
+   "n": 52,
+   "desc": "Type \"sin2\"",
+   "shot": "sc/s26_reserved_words_52.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>sin</mi><mn>2</mn></math>"
+   }
+  },
+  {
+   "n": 53,
+   "desc": "Type \"abc\"",
+   "shot": "sc/s26_reserved_words_53.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>"
+   }
+  },
+  {
+   "n": 54,
+   "desc": "Type \"Sin\"",
+   "shot": "sc/s26_reserved_words_54.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>S</mi><mi>i</mi><mi>n</mi></math>"
+   }
+  },
+  {
+   "n": 55,
+   "desc": "Type \"SIN\"",
+   "shot": "sc/s26_reserved_words_55.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>S</mi><mi>I</mi><mi>N</mi></math>"
+   }
+  },
+  {
+   "n": 56,
+   "desc": "Type \"pi\"",
+   "shot": "sc/s26_reserved_words_56.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>p</mi><mi>i</mi></math>"
+   }
+  },
+  {
+   "n": 57,
+   "desc": "Type \"e\"",
+   "shot": "sc/s26_reserved_words_57.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>e</mi></math>"
+   }
+  },
+  {
+   "n": 58,
+   "desc": "Type \"i\"",
+   "shot": "sc/s26_reserved_words_58.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>i</mi></math>"
+   }
+  },
+  {
+   "n": 59,
+   "desc": "Type \"d\"",
+   "shot": "sc/s26_reserved_words_59.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>d</mi></math>"
+   }
+  },
+  {
+   "n": 60,
+   "desc": "Type \"dx\"",
+   "shot": "sc/s26_reserved_words_60.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "mathml": "<math><mi>d</mi><mi>x</mi></math>"
+   }
+  }
+ ]
+}

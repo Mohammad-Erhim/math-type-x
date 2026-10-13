@@ -1,0 +1,361 @@
+{
+ "name": "s27_numsep",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5 caret at end",
+   "shot": "sc/s27_numsep_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 2,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5: Shift+Left x1 (select 5)",
+   "shot": "sc/s27_numsep_02.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down",
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 3,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5: Shift+Left x2 (select .5)",
+   "shot": "sc/s27_numsep_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down",
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 4,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5: Ctrl+A",
+   "shot": "sc/s27_numsep_04.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down",
+    "Merge/unmerge separators in <mn>"
+   ]
+  },
+  {
+   "n": 5,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5: ArrowLeft x1 (between . and 5)",
+   "shot": "sc/s27_numsep_05.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 6,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5: ArrowLeft x2",
+   "shot": "sc/s27_numsep_06.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> — 1.5: Left x2 + Shift+Right (select .)",
+   "shot": "sc/s27_numsep_07.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down",
+    "Left spacing",
+    "Right spacing"
+   ]
+  },
+  {
+   "n": 8,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5 caret at end",
+   "shot": "sc/s27_numsep_08.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 9,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5: Shift+Left x1 (select 5)",
+   "shot": "sc/s27_numsep_09.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  },
+  {
+   "n": 10,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5: Shift+Left x2 (select .5)",
+   "shot": "sc/s27_numsep_10.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  },
+  {
+   "n": 11,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5: Ctrl+A",
+   "shot": "sc/s27_numsep_11.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down",
+    "Merge/unmerge separators in <mn>"
+   ]
+  },
+  {
+   "n": 12,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5: ArrowLeft x1 (between . and 5)",
+   "shot": "sc/s27_numsep_12.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Merge/unmerge separators in <mn>"
+   ]
+  },
+  {
+   "n": 13,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5: ArrowLeft x2",
+   "shot": "sc/s27_numsep_13.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Merge/unmerge separators in <mn>"
+   ]
+  },
+  {
+   "n": 14,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> — 1.5: Left x2 + Shift+Right (select .)",
+   "shot": "sc/s27_numsep_14.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  },
+  {
+   "n": 15,
+   "desc": "<mn>1.5</mn> — 1.5 caret at end",
+   "shot": "sc/s27_numsep_15.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 16,
+   "desc": "<mn>1.5</mn> — 1.5: Shift+Left x1 (select 5)",
+   "shot": "sc/s27_numsep_16.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  },
+  {
+   "n": 17,
+   "desc": "<mn>1.5</mn> — 1.5: Shift+Left x2 (select .5)",
+   "shot": "sc/s27_numsep_17.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  },
+  {
+   "n": 18,
+   "desc": "<mn>1.5</mn> — 1.5: Ctrl+A",
+   "shot": "sc/s27_numsep_18.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  },
+  {
+   "n": 19,
+   "desc": "<mn>1.5</mn> — 1.5: ArrowLeft x1 (between . and 5)",
+   "shot": "sc/s27_numsep_19.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Merge/unmerge separators in <mn>"
+   ]
+  },
+  {
+   "n": 20,
+   "desc": "<mn>1.5</mn> — 1.5: ArrowLeft x2",
+   "shot": "sc/s27_numsep_20.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Merge/unmerge separators in <mn>"
+   ]
+  },
+  {
+   "n": 21,
+   "desc": "<mn>1.5</mn> — 1.5: Left x2 + Shift+Right (select .)",
+   "shot": "sc/s27_numsep_21.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Nudge up",
+    "Nudge right",
+    "Nudge left",
+    "Nudge down"
+   ]
+  }
+ ]
+}

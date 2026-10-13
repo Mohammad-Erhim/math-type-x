@@ -1,0 +1,224 @@
+{
+ "name": "s10b_ctx_numsep_sel",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT numsep_sel: controls shown in the Contextual tab (6)",
+   "shot": "sc/s10b_ctx_numsep_sel_01.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "BUTTON",
+     "title": "Nudge up",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 1,
+     "tag": "BUTTON",
+     "title": "Nudge right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 2,
+     "tag": "BUTTON",
+     "title": "Nudge left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Nudge down",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Left spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Right spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "numsep_sel / Nudge up (button) -> click",
+   "shot": "sc/s10b_ctx_numsep_sel_02.jpg",
+   "mathml": "<math><mn>1</mn><mpadded voffset=\"-1px\"><mo>.</mo><mn>5</mn></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 3,
+   "desc": "numsep_sel / Nudge right (button) -> click",
+   "shot": "sc/s10b_ctx_numsep_sel_03.jpg",
+   "mathml": "<math><mn>1</mn><mpadded lspace=\"+1px\"><mo>.</mo><mn>5</mn></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 4,
+   "desc": "numsep_sel / Nudge left (button) -> click",
+   "shot": "sc/s10b_ctx_numsep_sel_04.jpg",
+   "mathml": "<math><mn>1</mn><mpadded lspace=\"-1px\"><mo>.</mo><mn>5</mn></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 5,
+   "desc": "numsep_sel / Nudge down (button) -> click",
+   "shot": "sc/s10b_ctx_numsep_sel_05.jpg",
+   "mathml": "<math><mn>1</mn><mpadded voffset=\"+1px\"><mo>.</mo><mn>5</mn></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 6,
+   "desc": "numsep_sel / Left spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_numsep_sel_06.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "numsep_sel / Left spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_numsep_sel_07.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 8,
+   "desc": "numsep_sel / Left spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_numsep_sel_08.jpg",
+   "mathml": "<math><mn>1</mn><mo lspace=\"0.5em\">.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "numsep_sel / Left spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_numsep_sel_09.jpg",
+   "mathml": "<math><mn>1</mn><mo lspace=\"5\">.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "numsep_sel / Right spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_numsep_sel_10.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 11,
+   "desc": "numsep_sel / Right spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_numsep_sel_11.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 12,
+   "desc": "numsep_sel / Right spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_numsep_sel_12.jpg",
+   "mathml": "<math><mn>1</mn><mo rspace=\"0.5em\">.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "numsep_sel / Right spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_numsep_sel_13.jpg",
+   "mathml": "<math><mn>1</mn><mo rspace=\"5\">.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

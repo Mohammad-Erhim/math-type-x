@@ -1,0 +1,427 @@
+{
+ "tag": "DIV",
+ "cls": "wrs_hand wrs_recognitionType_math",
+ "title": null,
+ "st": "height: 415px;",
+ "r": [
+  0,
+  0,
+  725,
+  415
+ ],
+ "bg": "rgba(0, 0, 0, 0)",
+ "bgi": "none",
+ "kids": [
+  {
+   "tag": "DIV",
+   "cls": "wrs_contextPanel wrs_hidden",
+   "title": null,
+   "st": "",
+   "r": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "bg": "rgba(0, 0, 0, 0)",
+   "bgi": "none",
+   "kids": []
+  },
+  {
+   "tag": "DIV",
+   "cls": "wrs_toolbar",
+   "title": null,
+   "st": "height: 409px;",
+   "r": [
+    0,
+    0,
+    39,
+    415
+   ],
+   "bg": "rgb(230, 237, 240)",
+   "bgi": "none",
+   "kids": [
+    {
+     "tag": "DIV",
+     "cls": "wrs_button wrs_disabled",
+     "title": "Undo",
+     "st": "",
+     "r": [
+      3,
+      3,
+      33,
+      33
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "none",
+     "kids": [
+      {
+       "tag": "IMG",
+       "cls": "",
+       "title": null,
+       "st": "",
+       "r": [
+        5,
+        5,
+        29,
+        29
+       ],
+       "bg": "rgba(0, 0, 0, 0)",
+       "bgi": "none",
+       "kids": []
+      }
+     ]
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_button wrs_disabled",
+     "title": "Redo",
+     "st": "",
+     "r": [
+      3,
+      36,
+      33,
+      33
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "none",
+     "kids": [
+      {
+       "tag": "IMG",
+       "cls": "",
+       "title": null,
+       "st": "",
+       "r": [
+        5,
+        38,
+        29,
+        29
+       ],
+       "bg": "rgba(0, 0, 0, 0)",
+       "bgi": "none",
+       "kids": []
+      }
+     ]
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_button wrs_disabled",
+     "title": "Clear",
+     "st": "",
+     "r": [
+      3,
+      69,
+      33,
+      33
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "none",
+     "kids": [
+      {
+       "tag": "IMG",
+       "cls": "",
+       "title": null,
+       "st": "",
+       "r": [
+        5,
+        71,
+        29,
+        29
+       ],
+       "bg": "rgba(0, 0, 0, 0)",
+       "bgi": "none",
+       "kids": []
+      }
+     ]
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_editionContainer",
+     "title": null,
+     "st": "",
+     "r": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "none",
+     "kids": [
+      {
+       "tag": "DIV",
+       "cls": "wrs_line",
+       "title": null,
+       "st": "",
+       "r": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "bg": "rgb(187, 189, 190)",
+       "bgi": "none",
+       "kids": []
+      },
+      {
+       "tag": "DIV",
+       "cls": "wrs_button",
+       "title": "Edit",
+       "st": "",
+       "r": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "bg": "rgba(0, 0, 0, 0)",
+       "bgi": "none",
+       "kids": [
+        {
+         "tag": "IMG",
+         "cls": "",
+         "title": null,
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": []
+        }
+       ]
+      },
+      {
+       "tag": "DIV",
+       "cls": "wrs_subEditionContainer",
+       "title": null,
+       "st": "",
+       "r": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "bg": "rgba(0, 0, 0, 0)",
+       "bgi": "none",
+       "kids": [
+        {
+         "tag": "DIV",
+         "cls": "wrs_button",
+         "title": "Remove point",
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": [
+          null
+         ]
+        },
+        {
+         "tag": "DIV",
+         "cls": "wrs_button",
+         "title": "Insert before",
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": [
+          null
+         ]
+        },
+        {
+         "tag": "DIV",
+         "cls": "wrs_button",
+         "title": "Insert after",
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": [
+          null
+         ]
+        },
+        {
+         "tag": "DIV",
+         "cls": "wrs_button",
+         "title": "Add stroke",
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": [
+          null
+         ]
+        },
+        {
+         "tag": "DIV",
+         "cls": "wrs_button",
+         "title": "Move up",
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": [
+          null
+         ]
+        },
+        {
+         "tag": "DIV",
+         "cls": "wrs_button",
+         "title": "Move down",
+         "st": "",
+         "r": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "bg": "rgba(0, 0, 0, 0)",
+         "bgi": "none",
+         "kids": [
+          null
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_line",
+     "title": null,
+     "st": "",
+     "r": [
+      3,
+      108,
+      33,
+      1
+     ],
+     "bg": "rgb(187, 189, 190)",
+     "bgi": "none",
+     "kids": []
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_button",
+     "title": "Help",
+     "st": "",
+     "r": [
+      3,
+      114,
+      33,
+      33
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "none",
+     "kids": [
+      {
+       "tag": "IMG",
+       "cls": "",
+       "title": null,
+       "st": "",
+       "r": [
+        5,
+        116,
+        29,
+        29
+       ],
+       "bg": "rgba(0, 0, 0, 0)",
+       "bgi": "none",
+       "kids": []
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "tag": "DIV",
+   "cls": "wrs_canvasContainer wrs_empty",
+   "title": null,
+   "st": "",
+   "r": [
+    41,
+    0,
+    684,
+    415
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bgi": "url(\"https://www.wiris.net/demo/hand/resources/decoration/empty.svg?v=7.11.4.71fa31\")",
+   "kids": [
+    {
+     "tag": "CANVAS",
+     "cls": "wrs_canvas",
+     "title": null,
+     "st": "",
+     "r": [
+      0,
+      0,
+      684,
+      415
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "url(\"https://www.wiris.net/demo/hand/resources/decoration/background.png?v=7.11.4.71fa31\")",
+     "kids": []
+    },
+    {
+     "tag": "DIV",
+     "cls": "wrs_snackbar wrs_hidden",
+     "title": null,
+     "st": "",
+     "r": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "bg": "rgb(50, 50, 50)",
+     "bgi": "none",
+     "kids": []
+    },
+    {
+     "tag": "IMG",
+     "cls": "wrs_previewImage",
+     "title": null,
+     "st": "",
+     "r": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "bg": "rgba(0, 0, 0, 0)",
+     "bgi": "none",
+     "kids": []
+    }
+   ]
+  }
+ ]
+}

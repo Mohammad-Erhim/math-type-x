@@ -1,0 +1,25 @@
+const { scenario } = require('./sc');
+scenario('s24_hand_edit', async (H) => {
+  const { p } = H;
+  const bx = await H.box();
+  const cv = async () => p.locator('#editorContainer canvas.wrs_canvas').boundingBox();
+  const stroke = async (pts, o = {}) => { const c = await cv(); const [x0, y0] = pts[0]; await p.mouse.move(c.x + x0, c.y + y0); await p.mouse.down(); for (const [x, y] of pts.slice(1)) await p.mouse.move(c.x + x, c.y + y, { steps: o.steps || 4 }); await p.mouse.up(); await H.sleep(o.wait || 150); };
+  const hidden = async () => p.evaluate(() => [...document.querySelectorAll('.wrs_hand .wrs_toolbar .wrs_button')].map(b => b.title + ':' + (b.getBoundingClientRect().width > 0 ? 'visible' : 'hidden') + ':' + (b.classList.contains('wrs_disabled') ? 'disabled' : 'enabled')));
+  await p.mouse.click(bx.x + bx.width - 15, bx.y + 250); await H.sleep(1500);
+  await H.step('Handwriting open: toolbar buttons incl. those hidden in DOM', null, { clip: 'full', noMathml: true, extra: hidden });
+  await stroke([[100, 150], [140, 210]]); await stroke([[140, 150], [100, 210]], { wait: 600 });
+  await stroke([[190, 180], [250, 180]]); await stroke([[220, 150], [220, 210]], { wait: 600 });
+  await stroke([[300, 150], [320, 140], [320, 215]], { wait: 1500 });
+  await H.step('Wrote x + 1', null, { clip: 'full', extra: hidden });
+  await H.step('Double-click on a stroke', async () => { const c = await cv(); await p.mouse.dblclick(c.x + 220, c.y + 180); await H.sleep(600); }, { clip: 'full', noMathml: true, extra: hidden });
+  await H.step('Right-click on a stroke', async () => { const c = await cv(); await p.mouse.click(c.x + 220, c.y + 180, { button: 'right' }); await H.sleep(600); }, { clip: 'full', noMathml: true, extra: hidden });
+  await H.step('Scribble (long zig-zag) over "+": capture right after the gesture', async () => { await stroke([[170, 150], [275, 160], [170, 170], [275, 180], [170, 190], [275, 200], [170, 210], [275, 220], [170, 150], [275, 170]], { wait: 100, steps: 3 }); }, { clip: 'full', noMathml: true, extra: hidden });
+  await H.step('0.6 s later (strokes should be red)', null, { clip: 'full', noMathml: true, wait: 600 });
+  await H.step('2 s later (erased?)', null, { clip: 'full', noMathml: true, wait: 2000 });
+  await H.step('Write "2" in the freed place', async () => { await stroke([[200, 150], [240, 150], [240, 180], [200, 210], [245, 210]], { wait: 1500 }); }, { clip: 'full', extra: hidden });
+  await H.step('Write a fraction: x over 2', async () => { await p.locator('.wrs_hand .wrs_button[title="Clear"]').click(); await H.sleep(500); await stroke([[100, 180], [200, 180]], { wait: 100 }); await stroke([[130, 120], [170, 160]], { wait: 100 }); await stroke([[170, 120], [130, 160]], { wait: 100 }); await stroke([[130, 200], [170, 200], [170, 215], [130, 240], [170, 240]], { wait: 1500 }); }, { clip: 'full', extra: hidden });
+  await H.step('Write a square root sign with 4 inside', async () => { await p.locator('.wrs_hand .wrs_button[title="Clear"]').click(); await H.sleep(500); await stroke([[100, 180], [115, 200], [135, 130], [230, 130]], { wait: 100 }); await stroke([[160, 150], [160, 190], [190, 190]], { wait: 100 }); await stroke([[190, 150], [190, 195]], { wait: 1500 }); }, { clip: 'full', extra: hidden });
+  await H.step('Write a superscript 2 after x', async () => { await p.locator('.wrs_hand .wrs_button[title="Clear"]').click(); await H.sleep(500); await stroke([[100, 150], [140, 210]], { wait: 100 }); await stroke([[140, 150], [100, 210]], { wait: 100 }); await stroke([[165, 120], [185, 120], [185, 140], [165, 160], [190, 160]], { wait: 1500 }); }, { clip: 'full', extra: hidden });
+  await H.step('Back to keyboard: formula transferred to classic editor', async () => { await p.locator('input[title="Use keyboard"]').first().click({ force: true }); await H.sleep(1500); }, { clip: 'full' });
+  await H.step('Handwriting again (formula re-drawn as simulated strokes)', async () => { await p.mouse.click(bx.x + bx.width - 15, bx.y + 250); await H.sleep(3000); }, { clip: 'full', noMathml: true, extra: hidden });
+}, {});

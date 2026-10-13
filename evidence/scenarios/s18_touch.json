@@ -1,0 +1,108 @@
+{
+ "name": "s18_touch",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Touch device emulation: initial",
+   "shot": "sc/s18_touch_01.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Tap in editing area",
+   "shot": "sc/s18_touch_02.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Type \"abc\" with keyboard while touch-enabled",
+   "shot": "sc/s18_touch_03.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "Tap between b and c",
+   "shot": "sc/s18_touch_04.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "Long press / double tap on character",
+   "shot": "sc/s18_touch_05.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Select with Shift+Arrows: caret precision controllers visible?",
+   "shot": "sc/s18_touch_06.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_caretPrecisionController {\"x\":0,\"y\":0,\"width\":0,\"height\":0,\"top\":0,\"right\":0,\"bottom\":0,\"left\":0}",
+    "wrs_caretPrecisionController wrs_forSelection {\"x\":591.5,\"y\":790.0625,\"width\":24,\"height\":36,\"top\":790.0625,\"right\":615.5,\"bottom\":826.0625,\"left\":591.5}",
+    "wrs_caretPrecisionController wrs_forSelection {\"x\":618.5,\"y\":790.0625,\"width\":24,\"height\":36,\"top\":790.0625,\"right\":642.5,\"bottom\":826.0625,\"left\":618.5}"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "Tap toolbar Fraction",
+   "shot": "sc/s18_touch_07.jpg",
+   "mathml": "<math><mfrac><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow><mrow/></mfrac></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Tap handwriting strip",
+   "shot": "sc/s18_touch_08.jpg",
+   "mathml": "<math><mfrac><mrow><mi>a</mi><mi>b</mi><mi>c</mi></mrow><mrow/></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B8%2C104%2C200%5D%2C%5B75%2C73%2C66%2C55%2C48%2C51%2C62%2C71%2C73%2C75%2C75%2C75%2C79%5D%2C%5B91%2C87%2C105%2C115%2C118%2C116%2C109%2C98%2C90%5D%2C%5B154%2C147%2C127%2C126%2C13",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmrow%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmi%3Eb%3C%2Fmi%3E%3Cmi%3Ec%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Touch-draw a stroke on the handwriting canvas via touch events",
+   "shot": "sc/s18_touch_09.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B8%2C104%2C200%5D%2C%5B75%2C73%2C66%2C55%2C48%2C51%2C62%2C71%2C73%2C75%2C75%2C75%2C79%5D%2C%5B91%2C87%2C105%2C115%2C118%2C116%2C109%2C98%2C90%5D%2C%5B154%2C147%2C127%2C126%2C13",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmfrac%3E%3Cmrow%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmi%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

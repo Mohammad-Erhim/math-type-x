@@ -1,0 +1,104 @@
+{
+ "name": "s10b_ctx_symbol_sel",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT symbol_sel: controls shown in the Contextual tab (4)",
+   "shot": "sc/s10b_ctx_symbol_sel_01.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reade"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "BUTTON",
+     "title": "Nudge up",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 1,
+     "tag": "BUTTON",
+     "title": "Nudge right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 2,
+     "tag": "BUTTON",
+     "title": "Nudge left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Nudge down",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "symbol_sel / Nudge up (button) -> click",
+   "shot": "sc/s10b_ctx_symbol_sel_02.jpg",
+   "mathml": "<math><mpadded voffset=\"-1px\"><mi>x</mi></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 3,
+   "desc": "symbol_sel / Nudge right (button) -> click",
+   "shot": "sc/s10b_ctx_symbol_sel_03.jpg",
+   "mathml": "<math><mpadded lspace=\"+1px\"><mi>x</mi></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 4,
+   "desc": "symbol_sel / Nudge left (button) -> click",
+   "shot": "sc/s10b_ctx_symbol_sel_04.jpg",
+   "mathml": "<math><mpadded lspace=\"-1px\"><mi>x</mi></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 5,
+   "desc": "symbol_sel / Nudge down (button) -> click",
+   "shot": "sc/s10b_ctx_symbol_sel_05.jpg",
+   "mathml": "<math><mpadded voffset=\"+1px\"><mi>x</mi></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  }
+ ]
+}

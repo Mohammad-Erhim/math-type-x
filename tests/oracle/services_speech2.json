@@ -1,0 +1,425 @@
+{
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>4</mn></mroot></math>": {
+  "acc": "fourth root of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>5</mn></mroot></math>": {
+  "acc": "fifth root of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>10</mn></mroot></math>": {
+  "acc": "root index 10 of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>2</mn></mroot></math>": {
+  "acc": "square root of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>1</mn></mroot></math>": {
+  "acc": "root index 1 of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mi>n</mi></mroot></math>": {
+  "acc": "n-th root of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mi>k</mi></mroot></math>": {
+  "acc": "k-th root of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mn>3</mn></mroot></math>": {
+  "acc": "cube root of x plus 1 end root"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mroot></math>": {
+  "acc": "root index n plus 1 of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>3</mn></mfrac></math>": {
+  "acc": "1 third"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>3</mn><mn>4</mn></mfrac></math>": {
+  "acc": "3 over 4"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>4</mn></mfrac></math>": {
+  "acc": "1 fourth"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>2</mn><mn>3</mn></mfrac></math>": {
+  "acc": "2 over 3"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>5</mn></mfrac></math>": {
+  "acc": "1 fifth"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>5</mn><mn>2</mn></mfrac></math>": {
+  "acc": "5 over 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>10</mn></mfrac></math>": {
+  "acc": "1 over 10"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>a</mi><mi>b</mi></mfrac></math>": {
+  "acc": "a over b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math>": {
+  "acc": "fraction numerator 1 over denominator x plus 1 end fraction"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></math>": {
+  "acc": "fraction numerator x plus 1 over denominator 2 end fraction"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mi>x</mi></mfrac></math>": {
+  "acc": "1 over x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mfrac><mi>a</mi><mi>b</mi></mfrac><mi>c</mi></mfrac></math>": {
+  "acc": "fraction numerator a over b over denominator c end fraction"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>a</mi><mfrac><mi>b</mi><mi>c</mi></mfrac></mfrac></math>": {
+  "acc": "fraction numerator a over denominator b over c end fraction"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></math>": {
+  "acc": "x squared over 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>2</mn></msup></math>": {
+  "acc": "x squared"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>3</mn></msup></math>": {
+  "acc": "x cubed"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>4</mn></msup></math>": {
+  "acc": "x to the power of 4"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>10</mn></msup></math>": {
+  "acc": "x to the power of 10"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mi>n</mi></msup></math>": {
+  "acc": "x to the power of n"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup></math>": {
+  "acc": "x to the power of negative 1 end exponent"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>e</mi><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msup></math>": {
+  "acc": "e to the power of x plus 1 end exponent"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><msup><mn>2</mn><mn>3</mn></msup></msup></math>": {
+  "acc": "x to the power of 2 cubed end exponent"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mfenced><mi>a</mi></mfenced><mn>2</mn></msup></math>": {
+  "acc": "open parentheses a close parentheses squared"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>x</mi><mn>1</mn></msub></math>": {
+  "acc": "x subscript 1"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>x</mi><mi>i</mi></msub></math>": {
+  "acc": "x subscript i"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>a</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></math>": {
+  "acc": "a subscript i j end subscript"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></math>": {
+  "acc": "x subscript i plus 1 end subscript"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>x</mi><mn>1</mn><mn>2</mn></msubsup></math>": {
+  "acc": "x subscript 1 superscript 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>a</mi><mi>i</mi><mi>n</mi></msubsup></math>": {
+  "acc": "a subscript i superscript n"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>x</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></msubsup></math>": {
+  "acc": "x subscript i plus 1 end subscript superscript 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>x</mi></msqrt></math>": {
+  "acc": "square root of x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msqrt></math>": {
+  "acc": "square root of x plus 1 end root"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><msup><mi>x</mi><mn>2</mn></msup></msqrt></math>": {
+  "acc": "square root of x squared end root"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mfrac><mi>a</mi><mi>b</mi></mfrac></msqrt></math>": {
+  "acc": "square root of a over b end root"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>x</mi><mi>y</mi></msqrt></math>": {
+  "acc": "square root of x y end root"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></math>": {
+  "acc": "sum from i equals 1 to n of"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x220F;</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mi>n</mi></munderover></math>": {
+  "acc": "product from k equals 0 to n of"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mo>&#x2211;</mo><mi>i</mi></munder></math>": {
+  "acc": "sum for i of"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>lim</mi><mrow><mi>x</mi><mo>&#x2192;</mo><mn>0</mn></mrow></munder></math>": {
+  "acc": "limit as x rightwards arrow 0 of"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mo>&#x222B;</mo><mn>0</mn><mn>1</mn></msubsup></math>": {
+  "acc": "integral subscript 0 superscript 1"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mo>&#x222B;</mo><mi>a</mi><mi>b</mi></msubsup></math>": {
+  "acc": "integral subscript a superscript b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mo>&#x222B;</mo><mi>C</mi></msub></math>": {
+  "acc": "integral subscript C"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x222B;</mo></math>": {
+  "acc": "integral"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x222C;</mo></math>": {
+  "acc": "double integral"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x222E;</mo></math>": {
+  "acc": "contour integral"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#x2C6;</mo></mover></math>": {
+  "acc": "x with ˆ on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#xAF;</mo></mover></math>": {
+  "acc": "x with bar on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#x2192;</mo></mover></math>": {
+  "acc": "x with rightwards arrow on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#x2DC;</mo></mover></math>": {
+  "acc": "x with ˜ on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#x2D9;</mo></mover></math>": {
+  "acc": "x with dot on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#xA8;</mo></mover></math>": {
+  "acc": "x with ¨ on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo>&#xAF;</mo></mover></math>": {
+  "acc": "stack a plus b with bar on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>a</mi><mi>b</mi></mrow><mo>&#x2192;</mo></mover></math>": {
+  "acc": "stack a b with rightwards arrow on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>x</mi><mo>_</mo></munder></math>": {
+  "acc": "x with _ below"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo>&#x23DF;</mo></munder></math>": {
+  "acc": "stack a plus b with underbrace below"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo>&#x23DE;</mo></mover></math>": {
+  "acc": "stack a plus b with overbrace on top"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"[\" close=\")\"><mi>a</mi><mi>b</mi></mfenced></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mrow><mi>a</mi><mo>,</mo><mi>b</mi></mrow></mfenced></math>": {
+  "acc": "open parentheses a comma b close parentheses"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced open=\"{\" close=\"}\"><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mfenced></math>": {
+  "acc": "open curly brackets a plus b close curly brackets"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced separators=\",\"><mi>a</mi><mi>b</mi><mi>c</mi></mfenced></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced separators=\";\"><mi>a</mi><mi>b</mi></mfenced></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced separators=\".\"><mi>a</mi><mi>b</mi></mfenced></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced separators=\":\"><mi>a</mi><mi>b</mi></mfenced></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced separators=\" \"><mi>a</mi><mi>b</mi></mfenced></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></math>": {
+  "acc": "table row 1 2 row 3 4 end table"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>": {
+  "acc": "open parentheses table row a b row c d end table close parentheses"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mi>a</mi><mo>+</mo><mi>b</mi></mtd><mtd><mi>c</mi></mtd></mtr></mtable></math>": {
+  "acc": "table row cell a plus b end cell c end table"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable frame=\"solid\"><mtr><mtd><mi>a</mi></mtd></mtr></mtable></math>": {
+  "acc": "\n\n<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\"><title>Error 500</title></head>\n<body>\n<h1>Error 500</h1>\n\n<!--\njava.lang.Error: Invalid MathML.\n\tat com.wiris.wirisnet.servlets.wrapper.StatisticsRequestWrapper.initParameters(StatisticsRequestWrapper.java:232)\n\tat com.wiris.wirisnet.servlets.wrapper.StatisticsRequestWrapper.getParameter(StatisticsRequestWrapper.java:203)\n\tat com.wiris.servlet.Dispatcher.getParam(Unknown Source)\n\tat com.wiris.servlet.Dispatcher.getParam(Unknown Source)\n\tat com.wiris.servlet.MathMLToAccessibleDispatcher.dispatch(Unknown Source)\n\tat com.wiris.servlet.MathMLToAccessibleDispatcher.doPost(Unknown Source)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:661)\n\tat javax.servlet.http.HttpServlet.service(HttpServlet.java:742)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat com.wiris.servlet.filters.AccessFilter.doFilter(Unknown Source)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat com.wiris.servlet.filters.MainFilter.doFilter(Unknown Source)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:728)\n\tat org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:470)\n\tat org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:395)\n\tat org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:316)\n\tat com.wiris.wirisnet.RequestDispatcherWrapper.forward(RequestDispatcherWrapper.java:100)\n\tat com.wiris.wirisnet.servlets.ContextFilter.dispatchContext(ContextFilter.java:227)\n\tat com.wiris.wirisnet.servlets.ContextFilter.doFilter(ContextFilter.java:112)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat com.wiris.wirisnet.servlets.StatisticsFilter.doFilter(StatisticsFilter.java:120)\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:493)\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:137)\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)\n\tat org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:660)\n\tat org.apache.catalina.valves.StuckThreadDetectionValve.invoke(StuckThreadDetectionValve.java:206)\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:798)\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:806)\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1498)\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)\n\tat java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)\n\tat java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)\n\tat java.lang.Thread.run(Thread.java:748)\n\n\n-->\n\n\n\n</body>\n</html>\n"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable rowlines=\"none solid none\"><mtr><mtd><mi>a</mi></mtd></mtr><mtr><mtd><mi>b</mi></mtd></mtr></mtable></math>": {
+  "acc": "table row a row b end table"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable align=\"top\"><mtr><mtd><mi>a</mi></mtd></mtr></mtable></math>": {
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable equalrows=\"true\"><mtr><mtd><mi>a</mi></mtd></mtr></mtable></math>": {
+  "acc": "table row a end table"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>hello</mtext></math>": {
+  "acc": "text hello end text"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>hello&#xA0;world</mtext></math>": {
+  "acc": "text hello world end text"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>a</mtext><mi>x</mi></math>": {
+  "acc": "text a end text x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"bold\">x</mi></math>": {
+  "acc": "bold x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"bold-italic\">x</mi></math>": {
+  "acc": "bold italic x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn mathvariant=\"bold\">12</mn></math>": {
+  "acc": "bold 12"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn mathvariant=\"italic\">12</mn></math>": {
+  "acc": "italic 12"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo mathvariant=\"bold\">+</mo></math>": {
+  "acc": "bold plus"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"italic\">x</mi></math>": {
+  "acc": "x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathcolor=\"#FF0000\">x</mi></math>": {
+  "acc": "x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3.14</mn></math>": {
+  "acc": "3.14"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1,000</mn></math>": {
+  "acc": "1000"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn><mo>,</mo><mn>000</mn></math>": {
+  "acc": "1 comma 000"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn><mo>.</mo><mn>14</mn></math>": {
+  "acc": "3.14"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>12345</mn></math>": {
+  "acc": "12345"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn><mo>.</mo></math>": {
+  "acc": "1."
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>.</mo><mn>5</mn></math>": {
+  "acc": ".5"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>sin</mi><mi>x</mi></math>": {
+  "acc": "sin x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>log</mi><mn>2</mn></math>": {
+  "acc": "log 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>ln</mi><mi>x</mi></math>": {
+  "acc": "ln x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>lim</mi></math>": {
+  "acc": "lim"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>sin</mi><mo>(</mo><mi>x</mi><mo>)</mo></math>": {
+  "acc": "sin left parenthesis x right parenthesis"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>=</mo><mi>b</mi></math>": {
+  "acc": "a equals b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2260;</mo><mi>b</mi></math>": {
+  "acc": "a not equal to b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2264;</mo><mi>b</mi></math>": {
+  "acc": "a less or equal than b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2265;</mo><mi>b</mi></math>": {
+  "acc": "a greater or equal than b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xB1;</mo><mi>b</mi></math>": {
+  "acc": "a plus-or-minus b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xD7;</mo><mi>b</mi></math>": {
+  "acc": "a cross times b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xF7;</mo><mi>b</mi></math>": {
+  "acc": "a divided by b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>/</mo><mi>b</mi></math>": {
+  "acc": "a divided by b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x22C5;</mo><mi>b</mi></math>": {
+  "acc": "a times b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>*</mo><mi>b</mi></math>": {
+  "acc": "a asterisk times b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>-</mo><mi>x</mi></math>": {
+  "acc": "negative x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>-</mo><mi>b</mi></math>": {
+  "acc": "a minus b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>+</mo><mo>-</mo><mi>b</mi></math>": {
+  "acc": "a plus negative b"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>-</mo><mn>1</mn></math>": {
+  "acc": "negative 1"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>+</mo><mn>1</mn></math>": {
+  "acc": "plus 1"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mo>-</mo><mi>b</mi></mrow><mn>2</mn></mfrac></math>": {
+  "acc": "fraction numerator negative b over denominator 2 end fraction"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mrow><mo>-</mo><mn>1</mn></mrow></mfenced></math>": {
+  "acc": "open parentheses negative 1 close parentheses"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mo>=</mo><mo>-</mo><mn>2</mn></math>": {
+  "acc": "x equals negative 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x3B1;</mi><mi>&#x3B2;</mi><mi>&#x3B3;</mi><mi>&#x3B8;</mi><mi>&#x3C6;</mi><mi>&#x3D5;</mi><mi>&#x3C9;</mi></math>": {
+  "acc": "alpha beta gamma theta phi ϕ omega"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x393;</mi><mi>&#x394;</mi><mi>&#x3A9;</mi><mi>&#x3A3;</mi></math>": {
+  "acc": "capital gamma capital delta capital omega capital sigma"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace linebreak=\"newline\"/></math>": {
+  "acc": "\n"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mspace linebreak=\"newline\"/><mi>b</mi></math>": {
+  "acc": "a\nb"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace width=\"1em\"/></math>": {
+  "acc": "space of 1em"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace width=\"2px\"/></math>": {
+  "acc": "space of 2px"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace height=\"3ex\"/></math>": {
+  "acc": "blank"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mspace width=\"1ex\" height=\"1ex\" depth=\"1ex\"/></math>": {
+  "acc": "space of 1ex"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mpadded lspace=\"+1px\"><mi>x</mi></mpadded></math>": {
+  "acc": "x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mpadded voffset=\"-1px\"><mi>x</mi></mpadded></math>": {
+  "acc": "x"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>x</mi><mn>1</mn><mn>2</mn></mmultiscripts></math>": {
+  "acc": "x subscript 1 superscript 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>x</mi><mprescripts/><mn>1</mn><mn>2</mn></mmultiscripts></math>": {
+  "acc": "x presubscript 1 presuperscript 2"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mmultiscripts><mi>x</mi><mn>1</mn><none/><mprescripts/><none/><mn>2</mn></mmultiscripts></math>": {
+  "acc": "x presuperscript 2 subscript 1"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"box\"><mi>a</mi><mo>+</mo><mi>b</mi></menclose></math>": {
+  "acc": "box enclose a plus b end enclose"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"circle\"><mi>a</mi></menclose></math>": {
+  "acc": "circle enclose a"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><menclose notation=\"updiagonalstrike\"><mi>a</mi><mi>b</mi></menclose></math>": {
+  "acc": "up diagonal strike a b end strike"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle mathsize=\"24px\"><mi>x</mi></mstyle></math>": {
+  "acc": "begin mathsize 24px style x end style"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mstyle displaystyle=\"true\"><mi>x</mi></mstyle></math>": {
+  "acc": "begin display style x end style"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></math>": {
+  "acc": "1 half plus 1 third"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></math>": {
+  "acc": "x plus 1 half"
+ },
+ "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>2</mn><mfrac><mn>1</mn><mn>2</mn></mfrac></math>": {
+  "acc": "2 1 half"
+ }
+}

@@ -1,0 +1,662 @@
+{
+ "12": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>12</mn></math>",
+  "back": "12",
+  "acc": "12"
+ },
+ "x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi></math>",
+  "back": "x",
+  "acc": "x"
+ },
+ "x+1": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mo>+</mo><mn>1</mn></math>",
+  "back": "x+1",
+  "acc": "x plus 1"
+ },
+ "a+b=c": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mi>c</mi></math>",
+  "back": "a+b=c",
+  "acc": "a plus b equals c"
+ },
+ "\\frac{a}{b}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+  "back": "\\frac ab",
+  "acc": "a over b"
+ },
+ "\\frac12": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><mn>2</mn></mfrac></math>",
+  "back": "\\frac12",
+  "acc": "1 half"
+ },
+ "\\frac{x+1}{y-2}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mrow><mi>y</mi><mo>-</mo><mn>2</mn></mrow></mfrac></math>",
+  "back": "\\frac{x+1}{y-2}",
+  "acc": "fraction numerator x plus 1 over denominator y minus 2 end fraction"
+ },
+ "\\sqrt{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>x</mi></msqrt></math>",
+  "back": "\\sqrt x",
+  "acc": "square root of x"
+ },
+ "\\sqrt x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mi>x</mi></msqrt></math>",
+  "back": "\\sqrt x",
+  "acc": "square root of x"
+ },
+ "\\sqrt{x^2+1}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></msqrt></math>",
+  "back": "\\sqrt{x^2+1}",
+  "acc": "square root of x squared plus 1 end root"
+ },
+ "\\sqrt[3]{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mi>x</mi><mn>3</mn></mroot></math>",
+  "back": "\\sqrt[3]x",
+  "acc": "cube root of x"
+ },
+ "\\sqrt[n]{x+1}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mroot><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mi>n</mi></mroot></math>",
+  "back": "\\sqrt[n]{x+1}",
+  "acc": "n-th root of x plus 1 end root"
+ },
+ "x^2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mn>2</mn></msup></math>",
+  "back": "x^2",
+  "acc": "x squared"
+ },
+ "x_1": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>x</mi><mn>1</mn></msub></math>",
+  "back": "x_1",
+  "acc": "x subscript 1"
+ },
+ "x_i^2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup></math>",
+  "back": "x_i^2",
+  "acc": "x subscript i superscript 2"
+ },
+ "x^{2^3}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><msup><mn>2</mn><mn>3</mn></msup></msup></math>",
+  "back": "x^{2^3}",
+  "acc": "x to the power of 2 cubed end exponent"
+ },
+ "x^{a+b}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>x</mi><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></msup></math>",
+  "back": "x^{a+b}",
+  "acc": "x to the power of a plus b end exponent"
+ },
+ "a_{ij}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>a</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></math>",
+  "back": "a_{ij}",
+  "acc": "a subscript i j end subscript"
+ },
+ "\\sum_{i=1}^{n} i": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>i</mi></math>",
+  "back": "\\sum_{i=1}^ni",
+  "acc": "sum from i equals 1 to n of i"
+ },
+ "\\sum_{i=1}^n i^2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msup><mi>i</mi><mn>2</mn></msup></math>",
+  "back": "\\sum_{i=1}^ni^2",
+  "acc": "sum from i equals 1 to n of i squared"
+ },
+ "\\prod_{k=1}^{n} k": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x220F;</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mi>k</mi></math>",
+  "back": "\\prod_{k=1}^nk",
+  "acc": "product from k equals 1 to n of k"
+ },
+ "\\int_0^1 x\\,dx": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msubsup><mo>&#x222B;</mo><mn>0</mn><mn>1</mn></msubsup><mi>x</mi><mo>&#x200A;</mo><mi>d</mi><mi>x</mi></math>",
+  "back": "\\int_0^1x\\,dx",
+  "acc": "integral subscript 0 superscript 1 x   d x"
+ },
+ "\\int f(x)\\,dx": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x222B;</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>&#x200A;</mo><mi>d</mi><mi>x</mi></math>",
+  "back": "\\int f(x)\\,dx",
+  "acc": "integral f left parenthesis x right parenthesis   d x"
+ },
+ "\\oint_C F": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mo>&#x222E;</mo><mi>C</mi></msub><mi>F</mi></math>",
+  "back": "\\oint_CF",
+  "acc": "contour integral subscript C F"
+ },
+ "\\lim_{x\\to 0} f(x)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>lim</mi><mrow><mi>x</mi><mo>&#x2192;</mo><mn>0</mn></mrow></munder><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></math>",
+  "back": "\\lim_{x\\rightarrow0}f(x)",
+  "acc": "limit as x rightwards arrow 0 of f left parenthesis x right parenthesis"
+ },
+ "\\lim_{n\\to\\infty} a_n": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>lim</mi><mrow><mi>n</mi><mo>&#x2192;</mo><mo>&#x221E;</mo></mrow></munder><msub><mi>a</mi><mi>n</mi></msub></math>",
+  "back": "\\lim_{n\\rightarrow\\infty}a_n",
+  "acc": "limit as n rightwards arrow infinity of a subscript n"
+ },
+ "\\sin x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>sin</mi><mi>x</mi></math>",
+  "back": "\\sin x",
+  "acc": "sin x"
+ },
+ "\\cos(2x)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>cos</mi><mo>(</mo><mn>2</mn><mi>x</mi><mo>)</mo></math>",
+  "back": "\\cos(2x)",
+  "acc": "cos left parenthesis 2 x right parenthesis"
+ },
+ "\\tan\\theta": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>tan</mi><mi>&#x3B8;</mi></math>",
+  "back": "\\tan\\theta",
+  "acc": "tan theta"
+ },
+ "\\log_2 x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>log</mi><mn>2</mn></msub><mi>x</mi></math>",
+  "back": "\\log_2x",
+  "acc": "log subscript 2 x"
+ },
+ "\\ln x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>ln</mi><mi>x</mi></math>",
+  "back": "\\ln x",
+  "acc": "ln x"
+ },
+ "\\alpha+\\beta": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x3B1;</mi><mo>+</mo><mi>&#x3B2;</mi></math>",
+  "back": "\\alpha+\\beta",
+  "acc": "alpha plus beta"
+ },
+ "\\Gamma(z)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x393;</mi><mo>(</mo><mi>z</mi><mo>)</mo></math>",
+  "back": "\\Gamma(z)",
+  "acc": "capital gamma left parenthesis z right parenthesis"
+ },
+ "\\pi r^2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x3C0;</mi><msup><mi>r</mi><mn>2</mn></msup></math>",
+  "back": "\\pi r^2",
+  "acc": "pi r squared"
+ },
+ "\\infty": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x221E;</mo></math>",
+  "back": "\\infty",
+  "acc": "infinity"
+ },
+ "\\partial f": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2202;</mo><mi>f</mi></math>",
+  "back": "\\partial f",
+  "acc": "partial differential f"
+ },
+ "\\nabla\\cdot F": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2207;</mo><mo>&#xB7;</mo><mi>F</mi></math>",
+  "back": "\\nabla\\cdot F",
+  "acc": "nabla times F"
+ },
+ "a\\cdot b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xB7;</mo><mi>b</mi></math>",
+  "back": "a\\cdot b",
+  "acc": "a times b"
+ },
+ "a\\times b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xD7;</mo><mi>b</mi></math>",
+  "back": "a\\times b",
+  "acc": "a cross times b"
+ },
+ "a\\pm b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xB1;</mo><mi>b</mi></math>",
+  "back": "a\\pm b",
+  "acc": "a plus-or-minus b"
+ },
+ "a\\mp b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2213;</mo><mi>b</mi></math>",
+  "back": "a\\mp b",
+  "acc": "a minus-or-plus b"
+ },
+ "a\\leq b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2264;</mo><mi>b</mi></math>",
+  "back": "a\\leq b",
+  "acc": "a less or equal than b"
+ },
+ "a\\geq b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2265;</mo><mi>b</mi></math>",
+  "back": "a\\geq b",
+  "acc": "a greater or equal than b"
+ },
+ "a\\neq b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2260;</mo><mi>b</mi></math>",
+  "back": "a\\neq b",
+  "acc": "a not equal to b"
+ },
+ "a\\approx b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2248;</mo><mi>b</mi></math>",
+  "back": "a\\approx b",
+  "acc": "a almost equal to b"
+ },
+ "a\\equiv b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2261;</mo><mi>b</mi></math>",
+  "back": "a\\equiv b",
+  "acc": "a identical to b"
+ },
+ "a\\in A": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2208;</mo><mi>A</mi></math>",
+  "back": "a\\in A",
+  "acc": "a element of A"
+ },
+ "A\\subset B": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>&#x2282;</mo><mi>B</mi></math>",
+  "back": "A\\subset B",
+  "acc": "A subset of B"
+ },
+ "A\\cup B": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>&#x222A;</mo><mi>B</mi></math>",
+  "back": "A\\cup B",
+  "acc": "A union B"
+ },
+ "A\\cap B": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>A</mi><mo>&#x2229;</mo><mi>B</mi></math>",
+  "back": "A\\cap B",
+  "acc": "A intersection B"
+ },
+ "\\emptyset": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2205;</mo></math>",
+  "back": "\\varnothing",
+  "acc": "empty set"
+ },
+ "\\forall x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2200;</mo><mi>x</mi></math>",
+  "back": "\\forall x",
+  "acc": "for all x"
+ },
+ "\\exists y": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2203;</mo><mi>y</mi></math>",
+  "back": "\\exists y",
+  "acc": "there exists y"
+ },
+ "a\\to b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2192;</mo><mi>b</mi></math>",
+  "back": "a\\rightarrow b",
+  "acc": "a rightwards arrow b"
+ },
+ "a\\Rightarrow b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x21D2;</mo><mi>b</mi></math>",
+  "back": "a\\Rightarrow b",
+  "acc": "a rightwards double arrow b"
+ },
+ "a\\leftrightarrow b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x2194;</mo><mi>b</mi></math>",
+  "back": "a\\leftrightarrow b",
+  "acc": "a left right arrow b"
+ },
+ "\\left(\\frac{a}{b}\\right)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mfrac><mi>a</mi><mi>b</mi></mfrac></mfenced></math>",
+  "back": "\\left(\\frac ab\\right)",
+  "acc": "open parentheses a over b close parentheses"
+ },
+ "\\left[x\\right]": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced close=\"]\" open=\"[\"><mi>x</mi></mfenced></math>",
+  "back": "\\left[x\\right]",
+  "acc": "open square brackets x close square brackets"
+ },
+ "\\left\\{x\\right\\}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced close=\"}\" open=\"{\"><mi>x</mi></mfenced></math>",
+  "back": "\\left\\{x\\right\\}",
+  "acc": "open curly brackets x close curly brackets"
+ },
+ "\\left|x\\right|": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced close=\"|\" open=\"|\"><mi>x</mi></mfenced></math>",
+  "back": "\\left|x\\right|",
+  "acc": "open vertical bar x close vertical bar"
+ },
+ "\\left\\langle x\\right\\rangle": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced close=\"&gt;\" open=\"&lt;\"><mi>x</mi></mfenced></math>",
+  "back": "\\left\\langle x\\right\\rangle",
+  "acc": "open angle brackets x close angle brackets"
+ },
+ "\\begin{matrix}a&b\\\\c&d\\end{matrix}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+  "back": "\\begin{array}{cc}a&b\\\\c&d\\end{array}",
+  "acc": "table row a b row c d end table"
+ },
+ "\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+  "back": "\\begin{pmatrix}a&b\\\\c&d\\end{pmatrix}",
+  "acc": "open parentheses table row a b row c d end table close parentheses"
+ },
+ "\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced close=\"]\" open=\"[\"><mtable><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mfenced></math>",
+  "back": "\\begin{bmatrix}1&2\\\\3&4\\end{bmatrix}",
+  "acc": "open square brackets table row 1 2 row 3 4 end table close square brackets"
+ },
+ "\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced close=\"|\" open=\"|\"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+  "back": "\\begin{vmatrix}a&b\\\\c&d\\end{vmatrix}",
+  "acc": "open vertical bar table row a b row c d end table close vertical bar"
+ },
+ "\\begin{cases}x&x>0\\\\-x&x\\le 0\\end{cases}": {
+  "mml": "Error converting from LaTeX to MathML",
+  "back": "Error converting from MathML to LaTeX",
+  "acc": "\n\n<!DOCTYPE html>\n<html>\n<head><meta charset=\"UTF-8\"><title>Error 500</title></head>\n<body>\n<h1>Error 500</h1>\n\n<!--\n\n-->\n\n\n\n</body>\n</html>\n"
+ },
+ "\\overline{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#xAF;</mo></mover></math>",
+  "back": "\\overline x",
+  "acc": "x with bar on top"
+ },
+ "\\underline{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mi>x</mi><mo>&#xAF;</mo></munder></math>",
+  "back": "\\underline x",
+  "acc": "x with bar below"
+ },
+ "\\hat{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>^</mo></mover></math>",
+  "back": "\\widehat x",
+  "acc": "x with hat on top"
+ },
+ "\\vec{v}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover accent=\"true\"><mi>v</mi><mo>&#x2192;</mo></mover></math>",
+  "back": "\\vec v",
+  "acc": "v with rightwards arrow on top"
+ },
+ "\\bar{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#xAF;</mo></mover></math>",
+  "back": "\\overline x",
+  "acc": "x with bar on top"
+ },
+ "\\tilde{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>~</mo></mover></math>",
+  "back": "\\widetilde x",
+  "acc": "x with tilde on top"
+ },
+ "\\dot{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#x2D9;</mo></mover></math>",
+  "back": "\\dot x",
+  "acc": "x with dot on top"
+ },
+ "\\ddot{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mover><mi>x</mi><mo>&#x2025;</mo></mover></math>",
+  "back": "\\ddot x",
+  "acc": "x with two dots on top"
+ },
+ "\\overbrace{a+b}^{n}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mover><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo>&#x23DE;</mo></mover><mi>n</mi></msup></math>",
+  "back": "\\overbrace{a+b}^n",
+  "acc": "stack a plus b with overbrace on top to the power of n"
+ },
+ "\\underbrace{a+b}_{n}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><munder><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow><mo>&#x23DF;</mo></munder><mi>n</mi></munder></math>",
+  "back": "\\underbrace{a+b}_n",
+  "acc": "stack stack a plus b with underbrace below with n below"
+ },
+ "\\text{hello world}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mtext>hello world</mtext></math>",
+  "back": "\\text{hello world}",
+  "acc": "text hello world end text"
+ },
+ "\\mathbb{R}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"normal\">&#x211D;</mi></math>",
+  "back": "\\mathbb{R}",
+  "acc": "straight real numbers"
+ },
+ "\\mathcal{L}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2112;</mo></math>",
+  "back": "\\mathcal{L}",
+  "acc": "script capital l"
+ },
+ "\\mathbf{x}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"bold\">x</mi></math>",
+  "back": "\\mathbf x",
+  "acc": "bold x"
+ },
+ "\\mathrm{d}x": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"normal\">d</mi><mi>x</mi></math>",
+  "back": "\\mathrm dx",
+  "acc": "straight d x"
+ },
+ "\\mathit{abc}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi mathvariant=\"italic\">abc</mi></math>",
+  "back": "\\mathit{abc}",
+  "acc": "italic abc"
+ },
+ "\\binom{n}{k}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mfrac linethickness=\"0\"><mi>n</mi><mi>k</mi></mfrac></mfenced></math>",
+  "back": "\\binom nk",
+  "acc": "open parentheses n over k close parentheses"
+ },
+ "{n \\choose k}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfenced><mfrac linethickness=\"0\"><mi>n</mi><mi>k</mi></mfrac></mfenced></math>",
+  "back": "\\binom nk",
+  "acc": "open parentheses n over k close parentheses"
+ },
+ "a\\,b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#x200A;</mo><mi>b</mi></math>",
+  "back": "a\\,b",
+  "acc": "a   b"
+ },
+ "a\\;b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xA0;</mo><mi>b</mi></math>",
+  "back": "a\\;b",
+  "acc": "a space b"
+ },
+ "a\\quad b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>&#xA0;&#xA0;</mo><mi>b</mi></math>",
+  "back": "a\\quad b",
+  "acc": "a    b"
+ },
+ "\\frac{\\frac{a}{b}}{c}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mfrac><mi>a</mi><mi>b</mi></mfrac><mi>c</mi></mfrac></math>",
+  "back": "\\frac{\\frac ab}c",
+  "acc": "fraction numerator a over b over denominator c end fraction"
+ },
+ "\\frac{a}{b+\\frac{c}{d}}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mi>a</mi><mrow><mi>b</mi><mo>+</mo><mfrac><mi>c</mi><mi>d</mi></mfrac></mrow></mfrac></math>",
+  "back": "\\frac a{b+\\frac cd}",
+  "acc": "fraction numerator a over denominator b plus c over d end fraction"
+ },
+ "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mo>=</mo><mfrac><mrow><mo>-</mo><mi>b</mi><mo>&#xB1;</mo><msqrt><msup><mi>b</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn><mi>a</mi><mi>c</mi></msqrt></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></math>",
+  "back": "x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}",
+  "acc": "x equals fraction numerator negative b plus-or-minus square root of b squared minus 4 a c end root over denominator 2 a end fraction"
+ },
+ "e^{i\\pi}+1=0": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msup><mi>e</mi><mrow><mi>i</mi><mi>&#x3C0;</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></math>",
+  "back": "e^{i\\pi}+1=0",
+  "acc": "e to the power of i pi end exponent plus 1 equals 0"
+ },
+ "\\sum_{n=0}^{\\infty}\\frac{x^n}{n!}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x2211;</mo><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><mo>&#x221E;</mo></munderover><mfrac><msup><mi>x</mi><mi>n</mi></msup><mrow><mi>n</mi><mo>!</mo></mrow></mfrac></math>",
+  "back": "\\sum_{n=0}^\\infty\\frac{x^n}{n!}",
+  "acc": "sum from n equals 0 to infinity of fraction numerator x to the power of n over denominator n factorial end fraction"
+ },
+ "3.14": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>3</mn><mo>.</mo><mn>14</mn></math>",
+  "back": "3.14",
+  "acc": "3.14"
+ },
+ "1,000": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mn>1</mn><mo>,</mo><mn>000</mn></math>",
+  "back": "1,000",
+  "acc": "1 comma 000"
+ },
+ "a'": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>'</mo></math>",
+  "back": "a'",
+  "acc": "a apostrophe"
+ },
+ "f'(x)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>f</mi><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo></math>",
+  "back": "f'(x)",
+  "acc": "f apostrophe left parenthesis x right parenthesis"
+ },
+ "f''(x)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>f</mi><mo>'</mo><mo>'</mo><mo>(</mo><mi>x</mi><mo>)</mo></math>",
+  "back": "f''(x)",
+  "acc": "f apostrophe apostrophe left parenthesis x right parenthesis"
+ },
+ "\\ldots": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2026;</mo></math>",
+  "back": "\\dots",
+  "acc": "horizontal ellipsis"
+ },
+ "\\cdots": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x22EF;</mo></math>",
+  "back": "\\cdots",
+  "acc": "midline horizontal ellipsis"
+ },
+ "\\vdots": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x22EE;</mo></math>",
+  "back": "\\vdots",
+  "acc": "vertical ellipsis"
+ },
+ "x\\%": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mo>%</mo></math>",
+  "back": "x\\%",
+  "acc": "x percent sign"
+ },
+ "\\angle ABC": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2220;</mo><mi>A</mi><mi>B</mi><mi>C</mi></math>",
+  "back": "\\angle ABC",
+  "acc": "angle A B C"
+ },
+ "\\triangle": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2206;</mo></math>",
+  "back": "\\triangle",
+  "acc": "increment"
+ },
+ "\\degree": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>\\degree</mi></math>",
+  "back": "Error converting from MathML to LaTeX",
+  "acc": "Error converting from MathML to accessible text."
+ },
+ "a \\bmod b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mi>mod</mi><mi>b</mi></math>",
+  "back": "a\\mod b",
+  "acc": "a mod b"
+ },
+ "\\operatorname{sgn}(x)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>sgn</mo><mo>(</mo><mi>x</mi><mo>)</mo></math>",
+  "back": "\\operatorname{sgn}(x)",
+  "acc": "sgn left parenthesis x right parenthesis"
+ },
+ "\\max(a,b)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>max</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></math>",
+  "back": "\\max(a,b)",
+  "acc": "max left parenthesis a comma b right parenthesis"
+ },
+ "\\min\\{a,b\\}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>min</mi><mo>{</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>}</mo></math>",
+  "back": "\\min\\{a,b\\}",
+  "acc": "min left curly bracket a comma b right curly bracket"
+ },
+ "\\det A": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>det</mi><mi>A</mi></math>",
+  "back": "\\det A",
+  "acc": "det A"
+ },
+ "\\gcd(a,b)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>gcd</mi><mo>(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></math>",
+  "back": "\\gcd(a,b)",
+  "acc": "gcd left parenthesis a comma b right parenthesis"
+ },
+ "a_1+a_2+\\cdots+a_n": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mi>a</mi><mn>1</mn></msub><mo>+</mo><msub><mi>a</mi><mn>2</mn></msub><mo>+</mo><mo>&#x22EF;</mo><mo>+</mo><msub><mi>a</mi><mi>n</mi></msub></math>",
+  "back": "a_1+a_2+\\cdots+a_n",
+  "acc": "a subscript 1 plus a subscript 2 plus midline horizontal ellipsis plus a subscript n"
+ },
+ "\\left.\\frac{df}{dx}\\right|_{x=0}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msub><mfenced close=\"|\" open=\"\"><mfrac><mrow><mi>d</mi><mi>f</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mfenced><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></msub></math>",
+  "back": "{\\left.\\frac{df}{dx}\\right|}_{x=0}",
+  "acc": "open fraction numerator d f over denominator d x end fraction close vertical bar subscript x equals 0 end subscript"
+ },
+ "x\\in\\mathbb{N}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mo>&#x2208;</mo><mi mathvariant=\"normal\">&#x2115;</mi></math>",
+  "back": "x\\in\\mathbb{N}",
+  "acc": "x element of straight natural numbers"
+ },
+ "\\sqrt{\\frac{a}{b}}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mfrac><mi>a</mi><mi>b</mi></mfrac></msqrt></math>",
+  "back": "\\sqrt{\\frac ab}",
+  "acc": "square root of a over b end root"
+ },
+ "\\frac{1}{\\sqrt{2\\pi}}e^{-x^2/2}": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mfrac><mn>1</mn><msqrt><mn>2</mn><mi>&#x3C0;</mi></msqrt></mfrac><msup><mi>e</mi><mrow><mo>-</mo><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></msup></math>",
+  "back": "\\frac1{\\sqrt{2\\pi}}e^{-x^2/2}",
+  "acc": "fraction numerator 1 over denominator square root of 2 pi end root end fraction e to the power of negative x squared divided by 2 end exponent"
+ },
+ "(a+b)^2": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><msup><mo>)</mo><mn>2</mn></msup></math>",
+  "back": "(a+b)^2",
+  "acc": "left parenthesis a plus b right parenthesis squared"
+ },
+ "[a,b)": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo>)</mo></math>",
+  "back": "\\lbrack a,b)",
+  "acc": "left square bracket a comma b right parenthesis"
+ },
+ "a!": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>a</mi><mo>!</mo></math>",
+  "back": "a!",
+  "acc": "a factorial"
+ },
+ "\\neg p": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#xAC;</mo><mi>p</mi></math>",
+  "back": "\\neg p",
+  "acc": "not p"
+ },
+ "p\\land q": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>p</mi><mo>&#x2227;</mo><mi>q</mi></math>",
+  "back": "p\\wedge q",
+  "acc": "p logical and q"
+ },
+ "p\\lor q": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>p</mi><mo>&#x2228;</mo><mi>q</mi></math>",
+  "back": "p\\vee q",
+  "acc": "p logical or q"
+ },
+ "\\prime": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>'</mo></math>",
+  "back": "'",
+  "acc": "apostrophe"
+ },
+ "\\hbar": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x210F;</mi></math>",
+  "back": "\\hslash",
+  "acc": "ℏ"
+ },
+ "\\ell": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>&#x2113;</mi></math>",
+  "back": "\\ell",
+  "acc": "ell"
+ },
+ "\\Re z": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x211C;</mo><mi>z</mi></math>",
+  "back": "\\Re z",
+  "acc": "real part z"
+ },
+ "\\Im z": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x2111;</mo><mi>z</mi></math>",
+  "back": "\\Im z",
+  "acc": "imaginary part z"
+ },
+ "\\sum\\limits_{i}x_i": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mo>&#x2211;</mo><mi>i</mi></munder><msub><mi>x</mi><mi>i</mi></msub></math>",
+  "back": "\\sum_ix_i",
+  "acc": "sum for i of x subscript i"
+ },
+ "\\int\\limits_a^b": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munderover><mo>&#x222B;</mo><mi>a</mi><mi>b</mi></munderover></math>",
+  "back": "\\int\\limits_a^b",
+  "acc": "integral from a to b of"
+ },
+ "\\iint": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x222C;</mo></math>",
+  "back": "\\iint",
+  "acc": "double integral"
+ },
+ "\\iiint": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mo>&#x222D;</mo></math>",
+  "back": "\\iiint",
+  "acc": "triple integral"
+ },
+ "\\bigcup_{i}A_i": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mo largeop=\"true\">&#x222A;</mo><mi>i</mi></munder><msub><mi>A</mi><mi>i</mi></msub></math>",
+  "back": "\\bigcup_iA_i",
+  "acc": "large union for i of A subscript i"
+ },
+ "\\bigcap_{i}A_i": {
+  "mml": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><munder><mo largeop=\"true\">&#x2229;</mo><mi>i</mi></munder><msub><mi>A</mi><mi>i</mi></msub></math>",
+  "back": "\\bigcap_iA_i",
+  "acc": "large intersection for i of A subscript i"
+ }
+}

@@ -1,0 +1,1279 @@
+{
+ "name": "s10b_ctx_aligned",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT aligned: controls shown in the Contextual tab (39)",
+   "shot": "sc/s10b_ctx_aligned_01.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "BUTTON",
+     "title": "Left spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 1,
+     "tag": "BUTTON",
+     "title": "Right spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 2,
+     "tag": "BUTTON",
+     "title": "Align with axis",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Align with top",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Align with baseline",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Align with center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 6,
+     "tag": "BUTTON",
+     "title": "Align to row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 7,
+     "tag": "BUTTON",
+     "title": "Align with bottom",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 8,
+     "tag": "BUTTON",
+     "title": "Insert row below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 9,
+     "tag": "BUTTON",
+     "title": "Insert row above",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 10,
+     "tag": "BUTTON",
+     "title": "Insert column at right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 11,
+     "tag": "BUTTON",
+     "title": "Insert column at left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 12,
+     "tag": "BUTTON",
+     "title": "Remove row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 13,
+     "tag": "BUTTON",
+     "title": "Remove column",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 14,
+     "tag": "BUTTON",
+     "title": "Insert frame",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 15,
+     "tag": "BUTTON",
+     "title": "Remove frame",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 16,
+     "tag": "BUTTON",
+     "title": "Activate solid lines",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 17,
+     "tag": "BUTTON",
+     "title": "Insert line below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 18,
+     "tag": "BUTTON",
+     "title": "Insert right line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 19,
+     "tag": "BUTTON",
+     "title": "Activate dash lines",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 20,
+     "tag": "BUTTON",
+     "title": "Remove line below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 21,
+     "tag": "BUTTON",
+     "title": "Remove right line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 22,
+     "tag": "BUTTON",
+     "title": "Align left",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 23,
+     "tag": "BUTTON",
+     "title": "Align center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 24,
+     "tag": "BUTTON",
+     "title": "Align right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 25,
+     "tag": "BUTTON",
+     "title": "Decimal align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 26,
+     "tag": "SELECT",
+     "title": "Decimal align symbol",
+     "cls": "",
+     "val": "dot",
+     "opts": [
+      "dot",
+      "comma",
+      "apostrophe",
+      "space"
+     ]
+    },
+    {
+     "i": 27,
+     "tag": "BUTTON",
+     "title": "Align rows to top",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 28,
+     "tag": "BUTTON",
+     "title": "Align rows to center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 29,
+     "tag": "BUTTON",
+     "title": "Align rows to bottom",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 30,
+     "tag": "BUTTON",
+     "title": "Relation align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 31,
+     "tag": "BUTTON",
+     "title": "Align rows to baseline",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 32,
+     "tag": "BUTTON",
+     "title": "Align rows to axis",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 33,
+     "tag": "BUTTON",
+     "title": "Force equal row heights",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 34,
+     "tag": "BUTTON",
+     "title": "Force equal column widths",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 35,
+     "tag": "BUTTON",
+     "title": "Column spacing at right",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 36,
+     "tag": "BUTTON",
+     "title": "Horizontal frame spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 37,
+     "tag": "BUTTON",
+     "title": "Row spacing below",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 38,
+     "tag": "BUTTON",
+     "title": "Vertical frame spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "aligned / Left spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_aligned_02.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 3,
+   "desc": "aligned / Left spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_03.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi><mn>2</mn><mi>p</mi><mi>x</mi></mtd></mtr><mtr><mtd/><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "aligned / Left spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_04.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo lspace=\"0.5em\">=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "aligned / Left spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_05.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo lspace=\"5\">=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "aligned / Right spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_aligned_06.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "aligned / Right spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_07.jpg",
+   "mathml": "<math><mtable align=\"top\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi><mn>2</mn><mi>p</mi><mi>x</mi></mtd></mtr><mtr><mtd/><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20align%3D%22top%22%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd"
+   ],
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 500 ()"
+   ],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "aligned / Right spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_08.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo rspace=\"0.5em\">=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "aligned / Right spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_09.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo rspace=\"5\">=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "aligned / Align with axis (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_aligned_10.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 11,
+   "desc": "aligned / Align with top (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_11.jpg",
+   "mathml": "<math><mtable align=\"top\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with top",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 12,
+   "desc": "aligned / Align with baseline (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_12.jpg",
+   "mathml": "<math><mtable align=\"baseline\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with baseline",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 13,
+   "desc": "aligned / Align with center (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_13.jpg",
+   "mathml": "<math><mtable align=\"center\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with center",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 14,
+   "desc": "aligned / Align to row (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_14.jpg",
+   "mathml": "<math><mtable align=\"axis 2\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Align to row",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 15,
+   "desc": "aligned / Align with bottom (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_15.jpg",
+   "mathml": "<math><mtable align=\"bottom\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with bottom",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 16,
+   "desc": "aligned / Insert row below (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_16.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr><mtr><mtd/><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 17,
+   "desc": "aligned / Insert row above (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_17.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd/><mtd/></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 18,
+   "desc": "aligned / Insert column at right (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_18.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd><mtd/></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 19,
+   "desc": "aligned / Insert column at left (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_19.jpg",
+   "mathml": "<math><mtable columnalign=\"right right left\"><mtr><mtd><mi>a</mi></mtd><mtd/><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd/><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align right",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 20,
+   "desc": "aligned / Remove row (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_20.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 21,
+   "desc": "aligned / Remove column (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_21.jpg",
+   "mathml": "<math><mtable columnalign=\"right\"><mtr><mtd><mi>a</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align right",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 22,
+   "desc": "aligned / Insert frame (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_22.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\" frame=\"solid\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 23,
+   "desc": "aligned / Remove frame (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_23.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 24,
+   "desc": "aligned / Activate solid lines (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_aligned_24.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 25,
+   "desc": "aligned / Insert line below (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_25.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\" rowlines=\"none solid none\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 26,
+   "desc": "aligned / Insert right line (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_26.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\" columnlines=\"none solid none\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 27,
+   "desc": "aligned / Activate dash lines (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_27.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate dash lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 28,
+   "desc": "aligned / Remove line below (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_28.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 29,
+   "desc": "aligned / Remove right line (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_29.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 30,
+   "desc": "aligned / Align left (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_aligned_30.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 31,
+   "desc": "aligned / Align center (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_31.jpg",
+   "mathml": "<math><mtable columnalign=\"right center\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 32,
+   "desc": "aligned / Align right (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_32.jpg",
+   "mathml": "<math><mtable columnalign=\"right right\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align right",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 33,
+   "desc": "aligned / Decimal align (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_33.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mtable wrs:columnalign=\"right decimal\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Decimal align",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 34,
+   "desc": "aligned / Decimal align symbol (select) -> option \"dot\"",
+   "shot": "sc/s10b_ctx_aligned_34.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mtable wrs:columnalign=\"right decimal\" wrs:decimalseparators=\"dot dot\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "aligned / Decimal align symbol (select) -> option \"comma\"",
+   "shot": "sc/s10b_ctx_aligned_35.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mtable wrs:columnalign=\"right decimal\" wrs:decimalseparators=\"dot comma\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 36,
+   "desc": "aligned / Decimal align symbol (select) -> option \"apostrophe\"",
+   "shot": "sc/s10b_ctx_aligned_36.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mtable wrs:columnalign=\"right decimal\" wrs:decimalseparators=\"dot apostrophe\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "aligned / Decimal align symbol (select) -> option \"space\"",
+   "shot": "sc/s10b_ctx_aligned_37.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mtable wrs:columnalign=\"right decimal\" wrs:decimalseparators=\"dot space\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 38,
+   "desc": "aligned / Align rows to top (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_38.jpg",
+   "mathml": "<math><mtable rowalign=\"baseline top\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to top"
+   ]
+  },
+  {
+   "n": 39,
+   "desc": "aligned / Align rows to center (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_39.jpg",
+   "mathml": "<math><mtable rowalign=\"baseline center\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to center"
+   ]
+  },
+  {
+   "n": 40,
+   "desc": "aligned / Align rows to bottom (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_40.jpg",
+   "mathml": "<math><mtable rowalign=\"baseline bottom\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to bottom"
+   ]
+  },
+  {
+   "n": 41,
+   "desc": "aligned / Relation align (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_41.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mtable wrs:columnalign=\"right relation\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Relation align",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 42,
+   "desc": "aligned / Align rows to baseline (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_aligned_42.jpg",
+   "mathml": "<math><mtable rowalign=\"baseline baseline\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 43,
+   "desc": "aligned / Align rows to axis (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_43.jpg",
+   "mathml": "<math><mtable rowalign=\"baseline axis\" columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to axis"
+   ]
+  },
+  {
+   "n": 44,
+   "desc": "aligned / Force equal row heights (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_44.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\" equalrows=\"true\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline",
+    "Force equal row heights"
+   ]
+  },
+  {
+   "n": 45,
+   "desc": "aligned / Force equal column widths (button) -> click",
+   "shot": "sc/s10b_ctx_aligned_45.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\" equalcolumns=\"true\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline",
+    "Force equal column widths"
+   ]
+  },
+  {
+   "n": 46,
+   "desc": "aligned / Column spacing at right (button, length) -> click",
+   "shot": "sc/s10b_ctx_aligned_46.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.4em"
+   ]
+  },
+  {
+   "n": 47,
+   "desc": "aligned / Column spacing at right (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_47.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 48,
+   "desc": "aligned / Column spacing at right (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_48.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 49,
+   "desc": "aligned / Column spacing at right (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_49.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 50,
+   "desc": "aligned / Horizontal frame spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_aligned_50.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.4em"
+   ]
+  },
+  {
+   "n": 51,
+   "desc": "aligned / Horizontal frame spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_51.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 52,
+   "desc": "aligned / Horizontal frame spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_52.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 53,
+   "desc": "aligned / Horizontal frame spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_53.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 54,
+   "desc": "aligned / Row spacing below (button, length) -> click",
+   "shot": "sc/s10b_ctx_aligned_54.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.25em2px"
+   ]
+  },
+  {
+   "n": 55,
+   "desc": "aligned / Row spacing below (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_55.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 56,
+   "desc": "aligned / Row spacing below (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_56.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 57,
+   "desc": "aligned / Row spacing below (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_57.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 58,
+   "desc": "aligned / Vertical frame spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_aligned_58.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.5ex2px"
+   ]
+  },
+  {
+   "n": 59,
+   "desc": "aligned / Vertical frame spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_59.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 60,
+   "desc": "aligned / Vertical frame spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_60.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 61,
+   "desc": "aligned / Vertical frame spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_aligned_61.jpg",
+   "mathml": "<math><mtable columnalign=\"right left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo><mi>d</mi></mtd></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%20columnalign%3D%22right%20left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2F"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

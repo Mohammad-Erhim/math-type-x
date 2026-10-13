@@ -1,0 +1,116 @@
+{
+ "name": "s28_numsep_merge",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "<mn>1</mn><mo>.</mo><mn>5</mn> with all selected (Ctrl+A): click “Merge/unmerge separators in <mn>”",
+   "shot": "sc/s28_numsep_merge_01.jpg",
+   "mathml": "<math><mn>1.5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-edit",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E.%3C%2Fmo%3E%3Cmn%3E5%3C%2Fmn%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "  → click again (toggle back)",
+   "shot": "sc/s28_numsep_merge_02.jpg",
+   "mathml": "<math><mn>1.5</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Merge/unmerge separators in <mn>\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 3,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> caret before “000” (ArrowLeft ×1): click “Merge/unmerge separators in <mn>”",
+   "shot": "sc/s28_numsep_merge_03.jpg",
+   "mathml": "<math><mn>1</mn><mo>,</mo><mn>000</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "  → click again (toggle back)",
+   "shot": "sc/s28_numsep_merge_04.jpg",
+   "mathml": "<math><mn>1</mn><mo>,</mo><mn>000</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "<mn>1</mn><mo>,</mo><mn>000</mn> all selected: click “Merge/unmerge separators in <mn>”",
+   "shot": "sc/s28_numsep_merge_05.jpg",
+   "mathml": "<math><mn>1,000</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%3C%2Fmn%3E%3Cmo%3E%2C%3C%2Fmo%3E%3Cmn%3E000%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "  → click again (toggle back)",
+   "shot": "sc/s28_numsep_merge_06.jpg",
+   "mathml": "<math><mn>1,000</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Merge/unmerge separators in <mn>\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 7,
+   "desc": "<mn>1.5</mn> caret inside (ArrowLeft ×1): click “Merge/unmerge separators in <mn>”",
+   "shot": "sc/s28_numsep_merge_07.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1.5%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "  → click again (toggle back)",
+   "shot": "sc/s28_numsep_merge_08.jpg",
+   "mathml": "<math><mn>1</mn><mo>.</mo><mn>5</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Merge/unmerge separators in <mn>\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 9,
+   "desc": "<mn>1,000.25</mn> caret inside: click “Merge/unmerge separators in <mn>”",
+   "shot": "sc/s28_numsep_merge_09.jpg",
+   "mathml": "<math><mn>1</mn><mo>,</mo><mn>000</mn><mo>.</mo><mn>25</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmn%3E1%2C000.25%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "  → click again (toggle back)",
+   "shot": "sc/s28_numsep_merge_10.jpg",
+   "mathml": "<math><mn>1</mn><mo>,</mo><mn>000</mn><mo>.</mo><mn>25</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Merge/unmerge separators in <mn>\"]:visible').first()\u001b[22m\n"
+  }
+ ]
+}

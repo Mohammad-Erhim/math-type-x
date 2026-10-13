@@ -1,0 +1,10001 @@
+{
+ "fx_paren": {
+  "mml": "<mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      127,
+      59,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      11,
+      123,
+      9,
+      1
+     ],
+     [
+      11,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "setOpenBracket=": {
+      "mml": "<math><mfenced open=\"\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setOpenBracket=)": {
+      "mml": "<math><mfenced open=\")\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setOpenBracket=[": {
+      "mml": "<math><mfenced open=\"[\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "[",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setOpenBracket=]": {
+      "mml": "<math><mfenced open=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "]",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setOpenBracket=⟨": {
+      "mml": "<math><mfenced open=\"&lt;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "⟨",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setCloseBracket=": {
+      "mml": "<math><mfenced close=\"\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setCloseBracket=(": {
+      "mml": "<math><mfenced close=\"(\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setCloseBracket=[": {
+      "mml": "<math><mfenced close=\"[\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "[",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setCloseBracket=]": {
+      "mml": "<math><mfenced close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "]",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setCloseBracket=⟨": {
+      "mml": "<math><mfenced close=\"&lt;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "⟨",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setSeparator=.": {
+      "mml": "<math><mfenced separators=\".\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ".",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setSeparator=;": {
+      "mml": "<math><mfenced separators=\";\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ";",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setSeparator=:": {
+      "mml": "<math><mfenced separators=\":\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ":",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "setSeparator= ": {
+      "mml": "<math><mfenced separators=\"&#xA0;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": " ",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Baseline": {
+      "mml": "<math><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Middle": {
+      "mml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced wrs:valign=\"middle\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Middle-baseline": {
+      "mml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced wrs:valign=\"middle-baseline\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      11,
+      123,
+      9,
+      1
+     ],
+     [
+      20,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      29,
+      123,
+      13,
+      1
+     ],
+     [
+      29,
+      105,
+      1,
+      18
+     ]
+    ],
+    "fx": {
+     "setOpenBracket=": {
+      "mml": "<math><mfenced open=\"\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setOpenBracket=)": {
+      "mml": "<math><mfenced open=\")\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setOpenBracket=[": {
+      "mml": "<math><mfenced open=\"[\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "[",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setOpenBracket=]": {
+      "mml": "<math><mfenced open=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "]",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setOpenBracket=⟨": {
+      "mml": "<math><mfenced open=\"&lt;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "⟨",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setCloseBracket=": {
+      "mml": "<math><mfenced close=\"\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setCloseBracket=(": {
+      "mml": "<math><mfenced close=\"(\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setCloseBracket=[": {
+      "mml": "<math><mfenced close=\"[\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "[",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setCloseBracket=]": {
+      "mml": "<math><mfenced close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "]",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setCloseBracket=⟨": {
+      "mml": "<math><mfenced close=\"&lt;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": "⟨",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setSeparator=.": {
+      "mml": "<math><mfenced separators=\".\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ".",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setSeparator=;": {
+      "mml": "<math><mfenced separators=\";\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ";",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setSeparator=:": {
+      "mml": "<math><mfenced separators=\":\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ":",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "setSeparator= ": {
+      "mml": "<math><mfenced separators=\"&#xA0;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": " ",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "Baseline": {
+      "mml": "<math><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "Middle": {
+      "mml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced wrs:valign=\"middle\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     },
+     "Middle-baseline": {
+      "mml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced wrs:valign=\"middle-baseline\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+      "sig": [
+       {
+        "k": "s",
+        "t": "setOpenBracket",
+        "v": "(",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setCloseBracket",
+        "v": ")",
+        "o": [
+         "",
+         "(",
+         ")",
+         "[",
+         "]",
+         "⟨",
+         "⟩",
+         "{",
+         "}",
+         "⌊",
+         "⌋",
+         "⌈",
+         "⌉",
+         "⟦",
+         "⟧",
+         "|",
+         "‖"
+        ]
+       },
+       {
+        "k": "s",
+        "t": "setSeparator",
+        "v": ",",
+        "o": [
+         ",",
+         ".",
+         ";",
+         ":",
+         " "
+        ]
+       },
+       {
+        "k": "b",
+        "t": "Baseline",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Middle-baseline",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "fx_numdot": {
+  "mml": "<mn>12.5</mn>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      123,
+      30,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mn>12.5</mn></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      30,
+      1
+     ],
+     [
+      15,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Merge/unmerge separators in <mn>": {
+      "mml": "<math><mn>12</mn><mo>.</mo><mn>5</mn></math>",
+      "sig": []
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      30,
+      1
+     ],
+     [
+      24,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      30,
+      1
+     ],
+     [
+      27,
+      105,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ },
+ "fx_stack": {
+  "mml": "<mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      170,
+      33,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      67
+     ]
+    ],
+    "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      123,
+      21,
+      1
+     ],
+     [
+      10,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Insert line": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msline/><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Join the selected digits in a single column": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Up diagonal strike": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow><menclose notation=\"updiagonalstrike\"/><mn>12</mn></msrow><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Prepend row": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Append row": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow/><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Set carries location at north-west": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at north": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at north-east": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at west": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Insert carries in this row": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mscarries><none/><none/></mscarries><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Set carries location at east": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at south-west": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at south": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at south-east": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Move to left": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow><mn>12</mn><none/></msrow><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Move to right": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn><none/></msrow><msline length=\"3\" position=\"1\"/><msrow><mn>46</mn><none/></msrow></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=0px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"0px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "0px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=1px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"1px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "1px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=2px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"2px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "2px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=3px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"3px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "3px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=4px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"4px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "4px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      123,
+      21,
+      1
+     ],
+     [
+      27,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Merge/unmerge separators in <mn>": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Insert line": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msline/><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Join the selected digits in a single column": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Up diagonal strike": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow><mn>1</mn><menclose notation=\"updiagonalstrike\"/><mn>2</mn></msrow><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Prepend row": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Append row": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow/><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Set carries location at north-west": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at north": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at north-east": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at west": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Insert carries in this row": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mscarries><none/></mscarries><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Set carries location at east": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at south-west": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at south": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Set carries location at south-east": {
+      "err": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting "
+     },
+     "Move to left": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow><mn>12</mn><none/></msrow><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Move to right": {
+      "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn><none/></msrow><msline length=\"3\" position=\"1\"/><msrow><mn>46</mn><none/></msrow></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "medium",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=0px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"0px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "0px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=1px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"1px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "1px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=2px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"2px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "2px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=3px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"3px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "3px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     },
+     "Spacing between digits=4px": {
+      "mml": "<math><mstack charalign=\"center\" charspacing=\"4px\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Merge/unmerge separators in <mn>",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert line",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Join the selected digits in a single column",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Up diagonal strike",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Prepend row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Append row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north",
+        "on": true,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at north-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Insert carries in this row",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-west",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Set carries location at south-east",
+        "on": false,
+        "dis": true,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Move to right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "s",
+        "t": "Spacing between digits",
+        "v": "4px",
+        "o": [
+         "medium",
+         "0px",
+         "1px",
+         "2px",
+         "3px",
+         "4px",
+         "5px",
+         "6px",
+         "7px",
+         "8px",
+         "9px",
+         "10px",
+         "12px",
+         "15px",
+         "20px",
+         "25px",
+         "30px"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      123,
+      21,
+      1
+     ],
+     [
+      39,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      6,
+      143,
+      30,
+      1
+     ],
+     [
+      6,
+      125,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      6,
+      143,
+      30,
+      1
+     ],
+     [
+      15,
+      125,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      143,
+      21,
+      1
+     ],
+     [
+      27,
+      125,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      6,
+      143,
+      30,
+      1
+     ],
+     [
+      39,
+      125,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      6,
+      147,
+      33,
+      1
+     ],
+     [
+      6,
+      145,
+      1,
+      7
+     ]
+    ]
+   },
+   {
+    "i": 9,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      6,
+      147,
+      33,
+      1
+     ],
+     [
+      39,
+      145,
+      1,
+      7
+     ]
+    ]
+   },
+   {
+    "i": 10,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      170,
+      21,
+      1
+     ],
+     [
+      10,
+      152,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 11,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      170,
+      21,
+      1
+     ],
+     [
+      27,
+      152,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 12,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Insert line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Join the selected digits in a single column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Up diagonal strike",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Prepend row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Append row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north",
+      "on": true,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at north-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert carries in this row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-west",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Set carries location at south-east",
+      "on": false,
+      "dis": true,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Move to right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Spacing between digits",
+      "v": "medium",
+      "o": [
+       "medium",
+       "0px",
+       "1px",
+       "2px",
+       "3px",
+       "4px",
+       "5px",
+       "6px",
+       "7px",
+       "8px",
+       "9px",
+       "10px",
+       "12px",
+       "15px",
+       "20px",
+       "25px",
+       "30px"
+      ]
+     }
+    ],
+    "caret": [
+     [
+      18,
+      170,
+      21,
+      1
+     ],
+     [
+      39,
+      152,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ },
+ "fx_multiline": {
+  "mml": "<mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      37,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></math>",
+    "fx": {
+     "Align left": {
+      "mml": "<math><mstyle indentalign=\"left\"><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></mstyle></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Relation align": {
+      "mml": "<math><mtable columnspacing=\"0px\" columnalign=\"right center left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Align center": {
+      "mml": "<math><mstyle indentalign=\"center\"><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></mstyle></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Align right": {
+      "mml": "<math><mstyle indentalign=\"right\"><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></mstyle></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": true,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      37,
+      1
+     ],
+     [
+      16,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Align left": {
+      "mml": "<math><mstyle indentalign=\"left\"><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></mstyle></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Relation align": {
+      "mml": "<math><mtable columnspacing=\"0px\" columnalign=\"right center left\"><mtr><mtd><mi>a</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mo>=</mo></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Align center": {
+      "mml": "<math><mstyle indentalign=\"center\"><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></mstyle></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": true,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Align right": {
+      "mml": "<math><mstyle indentalign=\"right\"><mi>a</mi><mo>=</mo><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mo>=</mo><mi>d</mi></mstyle></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Align left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Relation align",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align center",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Align right",
+        "on": true,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      37,
+      1
+     ],
+     [
+      33,
+      105,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      37,
+      1
+     ],
+     [
+      43,
+      105,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ }
+}

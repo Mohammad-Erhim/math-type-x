@@ -1,0 +1,593 @@
+{
+ "name": "s08_keyboard_edit",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Build composite \"x+1 a/b =2\"",
+   "shot": "sc/s08_keyboard_edit_01.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Key ArrowLeft - move left over \"2\"",
+   "shot": "sc/s08_keyboard_edit_02.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Key ArrowLeft - move left over \"=\"",
+   "shot": "sc/s08_keyboard_edit_03.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "Key ArrowLeft - move left: enters/leaves the fraction (denominator)",
+   "shot": "sc/s08_keyboard_edit_04.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "Key ArrowUp - denominator -> numerator",
+   "shot": "sc/s08_keyboard_edit_05.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Key ArrowDown - numerator -> denominator",
+   "shot": "sc/s08_keyboard_edit_06.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "Key Home - start of editing context (inside denominator)",
+   "shot": "sc/s08_keyboard_edit_07.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Key End - end of editing context",
+   "shot": "sc/s08_keyboard_edit_08.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Key Shift+ArrowLeft - extend selection left",
+   "shot": "sc/s08_keyboard_edit_09.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "Key Shift+ArrowLeft - extend selection left again",
+   "shot": "sc/s08_keyboard_edit_10.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "Key Shift+ArrowRight - shrink selection",
+   "shot": "sc/s08_keyboard_edit_11.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "Key Shift+Home - select to start",
+   "shot": "sc/s08_keyboard_edit_12.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Key Shift+End - select to end",
+   "shot": "sc/s08_keyboard_edit_13.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Key Control+a - select all",
+   "shot": "sc/s08_keyboard_edit_14.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "Key Delete - delete selection",
+   "shot": "sc/s08_keyboard_edit_15.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "Smart delete setup: composite, caret right after the fraction",
+   "shot": "sc/s08_keyboard_edit_16.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "Key Backspace - first press at fraction boundary (should highlight)",
+   "shot": "sc/s08_keyboard_edit_17.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "Key Backspace - second press (confirm delete)",
+   "shot": "sc/s08_keyboard_edit_18.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mo>=</mo><mn>2</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "Smart delete from inside denominator: caret at start of empty slot, Backspace",
+   "shot": "sc/s08_keyboard_edit_19.jpg",
+   "mathml": "<math><mi>x</mi><mfrac><mrow/><mrow/></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Key Backspace - again",
+   "shot": "sc/s08_keyboard_edit_20.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Delete key at fraction boundary (forward delete)",
+   "shot": "sc/s08_keyboard_edit_21.jpg",
+   "mathml": "<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "Backspace on a single char \"abc\"",
+   "shot": "sc/s08_keyboard_edit_22.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "Backspace on empty editor",
+   "shot": "sc/s08_keyboard_edit_23.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "Delete on empty editor",
+   "shot": "sc/s08_keyboard_edit_24.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "Enter in editor after \"ab\"",
+   "shot": "sc/s08_keyboard_edit_25.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mi>d</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "Enter twice",
+   "shot": "sc/s08_keyboard_edit_26.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mi>d</mi><mspace linebreak=\"newline\"/><mi>e</mi><mi>f</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "ArrowUp / ArrowDown between lines",
+   "shot": "sc/s08_keyboard_edit_27.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mspace linebreak=\"newline\"/><mi>c</mi><mi>d</mi><mn>1</mn><mspace linebreak=\"newline\"/><mi>e</mi><mi>f</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "Space key typed twice",
+   "shot": "sc/s08_keyboard_edit_28.jpg",
+   "mathml": "<math><mi>a</mi><mo>&#xA0;</mo><mo>&#xA0;</mo><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 29,
+   "desc": "Tab key in editor",
+   "shot": "sc/s08_keyboard_edit_29.jpg",
+   "mathml": "<math><mi>a</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "Escape key in editor",
+   "shot": "sc/s08_keyboard_edit_30.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "Ctrl+/ creates fraction",
+   "shot": "sc/s08_keyboard_edit_31.jpg",
+   "mathml": "<math><mi>x</mi><mfrac><mn>1</mn><mrow/></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "Ctrl+ArrowUp creates superscript",
+   "shot": "sc/s08_keyboard_edit_32.jpg",
+   "mathml": "<math><msup><mi>x</mi><mn>2</mn></msup></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "Ctrl+ArrowDown creates subscript",
+   "shot": "sc/s08_keyboard_edit_33.jpg",
+   "mathml": "<math><msub><mi>x</mi><mi>i</mi></msub></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "Ctrl+Up then Ctrl+Down (sub and super)",
+   "shot": "sc/s08_keyboard_edit_34.jpg",
+   "mathml": "<math><msub><msup><mi>x</mi><mn>2</mn></msup><mi>i</mi></msub></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "Shortcut Control+0 ",
+   "shot": "sc/s08_keyboard_edit_35.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 36,
+   "desc": "Shortcut Control+9 parentheses?",
+   "shot": "sc/s08_keyboard_edit_36.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "Shortcut Control+Shift+9 ",
+   "shot": "sc/s08_keyboard_edit_37.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 38,
+   "desc": "Shortcut Control+[ brackets?",
+   "shot": "sc/s08_keyboard_edit_38.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 39,
+   "desc": "Shortcut Control+{ ",
+   "shot": "sc/s08_keyboard_edit_39.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 40,
+   "desc": "Shortcut Control+r root?",
+   "shot": "sc/s08_keyboard_edit_40.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "Shortcut Control+Shift+L LaTeX window (not in web playground?)",
+   "shot": "sc/s08_keyboard_edit_41.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2latex?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=equation_popup"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 42,
+   "desc": "Shortcut Control+Shift+X MathML window",
+   "shot": "sc/s08_keyboard_edit_42.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 43,
+   "desc": "Shortcut Control+Enter confirm",
+   "shot": "sc/s08_keyboard_edit_43.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 44,
+   "desc": "Shortcut Control+Shift+ArrowRight nudge selected element",
+   "shot": "sc/s08_keyboard_edit_44.jpg",
+   "mathml": "<math><mpadded lspace=\"+1px\"><mi>x</mi></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 45,
+   "desc": "Shortcut Control+Shift+ArrowUp nudge up",
+   "shot": "sc/s08_keyboard_edit_45.jpg",
+   "mathml": "<math><mpadded voffset=\"-1px\"><mi>x</mi></mpadded></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 46,
+   "desc": "Shortcut Alt+Enter ",
+   "shot": "sc/s08_keyboard_edit_46.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 47,
+   "desc": "Shortcut F1 help",
+   "shot": "sc/s08_keyboard_edit_47.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 48,
+   "desc": "Shortcut F2 ",
+   "shot": "sc/s08_keyboard_edit_48.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 49,
+   "desc": "Select fraction by Shift+Left across it, then type \"9\" (replace)",
+   "shot": "sc/s08_keyboard_edit_49.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>19</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 50,
+   "desc": "Typing over a selection replaces it",
+   "shot": "sc/s08_keyboard_edit_50.jpg",
+   "mathml": "<math><mi>a</mi><mi>Z</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 51,
+   "desc": "Selecting and pressing a toolbar template wraps selection (sqrt)",
+   "shot": "sc/s08_keyboard_edit_51.jpg",
+   "mathml": "<math><msqrt><mi>a</mi><mi>b</mi><mi>c</mi></msqrt></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 52,
+   "desc": "Ctrl+A in nested slot selects only that slot",
+   "shot": "sc/s08_keyboard_edit_52.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>=</mo><mn>2</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

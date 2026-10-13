@@ -1,0 +1,4851 @@
+{
+ "word_arcsin": [
+  {
+   "type": "arcsin"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_asin": [
+  {
+   "type": "asin"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_sinh": [
+  {
+   "type": "sinh"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_cosec": [
+  {
+   "type": "cosec"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_xsin": [
+  {
+   "type": "xsin"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_Sin": [
+  {
+   "type": "Sin"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_lnx": [
+  {
+   "type": "lnx"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_lg": [
+  {
+   "type": "lg"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_sinsin": [
+  {
+   "type": "sinsin"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_logn": [
+  {
+   "type": "logn"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_tanx": [
+  {
+   "type": "tanx"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_ssin": [
+  {
+   "type": "ssin"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_lln": [
+  {
+   "type": "lln"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "word_cos2x": [
+  {
+   "type": "cos2x"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "typed_digit_after_fraction": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "12"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 2
+  },
+  {
+   "type": "34"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "underscore_and_misc": [
+  {
+   "type": "a_b$c"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "unicode_text_types": [
+  {
+   "text": "éα∑ℝ中文שלום😀x²½"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "greek_typed": [
+  {
+   "text": "αβ"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "digit_after_letter": [
+  {
+   "type": "a12b"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bold_italic_both": [
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "press": "Control+i",
+   "n": 1
+  },
+  {
+   "type": "a1+"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bold_then_off": [
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "italic_sel_letters": [
+  {
+   "type": "xy"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 2
+  },
+  {
+   "press": "Control+i",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bold_sel_ops": [
+  {
+   "type": "x+1"
+  },
+  {
+   "press": "Control+a",
+   "n": 1
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bold_twice_sel": [
+  {
+   "type": "x+1"
+  },
+  {
+   "press": "Control+a",
+   "n": 1
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "italic_on_sel_sin": [
+  {
+   "type": "sin"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 1
+  },
+  {
+   "press": "Control+i",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bold_on_sin": [
+  {
+   "type": "sin"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 1
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_letters": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "type": "xsin1abc"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_bold": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "type": "ab1"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_italic": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "press": "Control+i",
+   "n": 1
+  },
+  {
+   "type": "ab1"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_greek_text": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "text": "αβx"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_upper": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "type": "ABC"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_then_on": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "type": "cd"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_space": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "type": "ab cd"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "ai_off_digits_letters": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Automatic italic"
+  },
+  {
+   "type": "a1b2"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_basic": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "hello world 12+x"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_then_off_type": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "c"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_then_arrow": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_after_letters_typed_before": [
+  {
+   "type": "xy"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_sel": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 2
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_sel_then_type": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 2
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_fraction": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "c"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "rt_bold": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Regular text"
+  },
+  {
+   "press": "Control+b",
+   "n": 1
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "enter_in_fraction": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "enter_in_sqrt": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "enter_in_script": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "c"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "enter_start": [
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "a"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "enter_mid": [
+  {
+   "type": "abcd"
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_mn_multi": [
+  {
+   "type": "123"
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_sin": [
+  {
+   "type": "sin"
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_sin_x": [
+  {
+   "type": "sinx"
+  },
+  {
+   "press": "Backspace",
+   "n": 2
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_start_slot_nonempty": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_in_empty_num": [
+  {
+   "type": "x"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_in_empty_sqrt": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_after_fence": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_inside_fence_start": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Home",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_after_script": [
+  {
+   "type": "x"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "2"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_empty_base": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_in_exponent_empty": [
+  {
+   "type": "x"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "bs_sel_struct": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 3
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 1
+  },
+  {
+   "press": "Backspace",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "del_before_fraction": [
+  {
+   "type": "x"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Home",
+   "n": 1
+  },
+  {
+   "press": "Delete",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Delete",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "del_end": [
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Delete",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "del_in_numerator_end": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Delete",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "del_at_end_of_slot_with_next_slot": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "press": "Delete",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Fraction (Ctrl+/)_0": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Fraction (Ctrl+/)_1": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Fraction (Ctrl+/)_2": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Fraction (Ctrl+/)_3": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Fraction (Ctrl+/)_4": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Fraction (Ctrl+/)_5": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Square root_0": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Square root_1": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Square root_2": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Square root_3": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Square root_4": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Square root_5": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Root_0": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Root_1": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Root_2": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Root_3": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Root_4": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Root_5": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript (Ctrl+Up)_0": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript (Ctrl+Up)_1": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript (Ctrl+Up)_2": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript (Ctrl+Up)_3": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript (Ctrl+Up)_4": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript (Ctrl+Up)_5": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Subscript (Ctrl+Down)_0": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Subscript (Ctrl+Down)_1": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Subscript (Ctrl+Down)_2": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Subscript (Ctrl+Down)_3": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Subscript (Ctrl+Down)_4": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Subscript (Ctrl+Down)_5": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Parentheses_0": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Parentheses_1": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Parentheses_2": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Parentheses_3": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Parentheses_4": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Parentheses_5": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript and subscript_0": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript and subscript_1": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript and subscript_2": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript and subscript_3": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript and subscript_4": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Superscript and subscript_5": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left superscript_0": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left superscript_1": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left superscript_2": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left superscript_3": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left superscript_4": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left superscript_5": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left subscript and superscript_0": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left subscript and superscript_1": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left subscript and superscript_2": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left subscript and superscript_3": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left subscript and superscript_4": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Left subscript and superscript_5": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element over_0": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element over_1": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element over_2": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element over_3": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element over_4": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element over_5": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element under_0": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element under_1": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element under_2": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element under_3": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element under_4": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Element under_5": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Elements under and over_0": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 0
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Elements under and over_1": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Elements under and over_2": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 2
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Elements under and over_3": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Elements under and over_4": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 4
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navL_Elements under and over_5": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "p"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 5
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Fraction (Ctrl+/)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Fraction (Ctrl+/)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Fraction (Ctrl+/)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Square root": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Square root": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Square root": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Square root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Root": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Root": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Root": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Root"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Superscript (Ctrl+Up)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Superscript (Ctrl+Up)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Superscript (Ctrl+Up)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Superscript (Ctrl+Up)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Subscript (Ctrl+Down)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Subscript (Ctrl+Down)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Subscript (Ctrl+Down)": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Subscript (Ctrl+Down)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Parentheses": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Parentheses": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Parentheses": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Superscript and subscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Superscript and subscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Superscript and subscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Superscript and subscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Left superscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Left superscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Left superscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left superscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Left subscript and superscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Left subscript and superscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Left subscript and superscript": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Left subscript and superscript"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Element over": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Element over": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Element over": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element over"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Element under": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Element under": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Element under": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Element under"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUp_Elements under and over": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navDown_Elements under and over": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "navUpDown_Elements under and over": [
+  {
+   "tab": 5
+  },
+  {
+   "click": "Elements under and over"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "b"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "home_end_lines": [
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "cd"
+  },
+  {
+   "press": "Home",
+   "n": 1
+  },
+  {
+   "type": "1"
+  },
+  {
+   "press": "End",
+   "n": 1
+  },
+  {
+   "type": "2"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "3"
+  },
+  {
+   "press": "Home",
+   "n": 1
+  },
+  {
+   "type": "4"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "up_down_lines": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "de"
+  },
+  {
+   "press": "Enter",
+   "n": 1
+  },
+  {
+   "type": "f"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "1"
+  },
+  {
+   "press": "ArrowUp",
+   "n": 1
+  },
+  {
+   "type": "2"
+  },
+  {
+   "press": "ArrowDown",
+   "n": 1
+  },
+  {
+   "type": "3"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_shift_right_over_fraction": [
+  {
+   "type": "x"
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Home",
+   "n": 1
+  },
+  {
+   "press": "Shift+ArrowRight",
+   "n": 2
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_in_slot": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_out_of_slot": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 3
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_home_end": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Home",
+   "n": 1
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "press": "Shift+End",
+   "n": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_collapse_left": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 2
+  },
+  {
+   "press": "ArrowLeft",
+   "n": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_collapse_right": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 2
+  },
+  {
+   "press": "ArrowRight",
+   "n": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_all_type": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Control+a",
+   "n": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_all_in_slot": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Control+a",
+   "n": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_toolbar_template_multi": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 2
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Parentheses"
+  },
+  {
+   "mml": 1
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_template_caret_after": [
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 1
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "sel_symbol_replace_caret": [
+  {
+   "type": "ab"
+  },
+  {
+   "press": "Shift+ArrowLeft",
+   "n": 1
+  },
+  {
+   "tab": 0
+  },
+  {
+   "click": "Plus sign"
+  },
+  {
+   "type": "Z"
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "undo_chain": [
+  {
+   "type": "abc"
+  },
+  {
+   "press": "Control+z",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Control+z",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Control+y",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "type": "Q"
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Control+y",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ],
+ "undo_template": [
+  {
+   "tab": 0
+  },
+  {
+   "click": "Fraction (Ctrl+/)"
+  },
+  {
+   "type": "a"
+  },
+  {
+   "press": "Control+z",
+   "n": 1
+  },
+  {
+   "mml": 1
+  },
+  {
+   "press": "Control+z",
+   "n": 1
+  },
+  {
+   "mml": 1
+  }
+ ]
+}

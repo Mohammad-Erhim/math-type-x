@@ -1,0 +1,34 @@
+const { scenario } = require('./sc');
+scenario('s07_clipboard_undo', async (H) => {
+  const { p, ctx } = H;
+  await ctx.grantPermissions(['clipboard-read', 'clipboard-write'], { origin: process.env.ORIGIN || 'https://www.wiris.com' }).catch(e => console.log('perm', e.message));
+  const st = async () => p.evaluate(() => Object.fromEntries([...document.querySelectorAll('#editorContainer button.wrs_button')].filter(b => b.getBoundingClientRect().width > 0 && /Ctrl\+C|Ctrl\+X|Ctrl\+V|Undo|Redo/.test(b.title)).map(b => [b.title.slice(0, 22), b.classList.contains('wrs_disabled') ? 'disabled' : 'enabled'])));
+  const clip = async () => p.evaluate(() => navigator.clipboard.readText().catch(e => 'ERR ' + e)); 
+  await H.step('Initial: clipboard & undo/redo button states', null, { extra: st });
+  await H.focusEdit();
+  await H.step('Typed "xy" (no selection)', async () => { await p.keyboard.type('xy'); }, { extra: st });
+  await H.step('Shift+Left selects "y" - clipboard buttons enable', async () => { await p.keyboard.press('Shift+ArrowLeft'); }, { extra: st });
+  await H.step('Click Copy toolbar button with selection', async () => { await H.click('Press Ctrl+C to copy the selection'); await H.sleep(600); }, { clip: 'full', extra: async () => ({ clip: await clip(), st: await st() }) });
+  await H.step('Press Ctrl+C with selection', async () => { await p.keyboard.press('Control+c'); await H.sleep(400); }, { extra: async () => ({ clip: await clip() }) });
+  await H.step('Click Cut toolbar button', async () => { await H.click('Press Ctrl+X to cut the selection'); await H.sleep(600); }, { clip: 'full', extra: async () => ({ clip: await clip(), st: await st() }) });
+  await H.step('Click Paste toolbar button', async () => { await H.click('Press Ctrl+V to paste the content of the clipboard'); await H.sleep(800); }, { clip: 'full', extra: st });
+  await H.step('Press Ctrl+V', async () => { await p.keyboard.press('Control+v'); await H.sleep(600); }, { extra: st });
+  await H.step('Press Ctrl+A then Ctrl+C (select all, copy)', async () => { await p.keyboard.press('Control+a'); await p.keyboard.press('Control+c'); await H.sleep(400); }, { extra: async () => ({ clip: await clip() }) });
+  await H.step('Press Ctrl+X (cut all)', async () => { await p.keyboard.press('Control+x'); await H.sleep(400); }, { extra: async () => ({ clip: await clip(), st: await st() }) });
+  await H.step('Press Ctrl+V (paste back)', async () => { await p.keyboard.press('Control+v'); await H.sleep(500); }, { extra: st });
+  await H.step('Paste plain text "a+b" from the system clipboard', async () => { await p.evaluate(() => navigator.clipboard.writeText('a+b')); await H.focusEdit(); await p.keyboard.press('Control+v'); await H.sleep(500); });
+  await H.step('Paste MathML text from the system clipboard', async () => { await p.evaluate(() => navigator.clipboard.writeText('<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>')); await H.reset(); await H.focusEdit(); await p.keyboard.press('Control+v'); await H.sleep(700); });
+  await H.step('Paste LaTeX text \\frac{a}{b}', async () => { await p.evaluate(() => navigator.clipboard.writeText('\\frac{a}{b}')); await H.reset(); await H.focusEdit(); await p.keyboard.press('Control+v'); await H.sleep(700); });
+  await H.step('Paste HTML (text/html) with MathML', async () => { await H.reset(); await H.focusEdit(); await p.evaluate(() => { const ta = document.querySelector('.wrs_clipboardTextarea'); }); await p.keyboard.press('Control+v'); await H.sleep(400); });
+  // UNDO / REDO
+  await H.step('Undo/redo: fresh, type "abc"', async () => { await H.reset(); await H.focusEdit(); await p.keyboard.type('abc'); }, { extra: st });
+  await H.step('Click Undo', async () => { await H.click('Undo'); await H.sleep(300); }, { extra: st });
+  await H.step('Click Undo again', async () => { await H.click('Undo'); await H.sleep(300); }, { extra: st });
+  await H.step('Click Redo', async () => { await H.click('Redo'); await H.sleep(300); }, { extra: st });
+  await H.step('Ctrl+Z', async () => { await p.keyboard.press('Control+z'); await H.sleep(300); }, { extra: st });
+  await H.step('Ctrl+Y', async () => { await p.keyboard.press('Control+y'); await H.sleep(300); }, { extra: st });
+  await H.step('Ctrl+Shift+Z', async () => { await p.keyboard.press('Control+Shift+z'); await H.sleep(300); }, { extra: st });
+  await H.step('Undo past the beginning (click Undo x10)', async () => { for (let i = 0; i < 10; i++) await H.click('Undo'); }, { extra: st });
+  await H.step('New edit after undo clears redo: type "q"', async () => { await H.focusEdit(); await p.keyboard.type('q'); }, { extra: st });
+  await H.step('Undo a structure insert: click Fraction then Undo', async () => { await H.click('Fraction (Ctrl+/)'); await H.click('Undo'); }, { extra: st });
+}, {});

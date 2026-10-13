@@ -1,0 +1,53 @@
+{
+ "editor": {
+  "x": 597.5,
+  "y": 665.0625,
+  "w": 725,
+  "h": 415,
+  "bg": "rgba(0, 0, 0, 0)",
+  "font": "sans-serif"
+ },
+ "toolbar": {
+  "x": 597.5,
+  "y": 665.0625,
+  "w": 725,
+  "h": 97,
+  "bg": "rgba(0, 0, 0, 0)",
+  "font": "sans-serif"
+ },
+ "header": {
+  "x": 597.5,
+  "y": 666.0625,
+  "w": 725,
+  "h": 25,
+  "bg": "rgba(0, 0, 0, 0)",
+  "font": "sans-serif"
+ },
+ "formula": {
+  "x": 597.5,
+  "y": 764.0625,
+  "w": 695,
+  "h": 316,
+  "bg": "rgb(255, 255, 255)",
+  "font": "sans-serif"
+ },
+ "hand": {
+  "x": 597.5,
+  "y": 665.0625,
+  "w": 725,
+  "h": 415,
+  "bg": "rgba(0, 0, 0, 0)",
+  "font": "sans-serif"
+ },
+ "all": [
+  "DIV.wrs_editor wrs_flexEditor wrs_withHand wrs_animated",
+  "DIV.wrs_toolbar",
+  "DIV.wrs_formulaDisplayWrapper",
+  "DIV.wrs_caretPrecisionController",
+  "DIV.wrs_caretPrecisionController wrs_forSelection",
+  "DIV.wrs_caretPrecisionController wrs_forSelection",
+  "DIV.wrs_contextPanel wrs_hidden",
+  "TEXTAREA.wrs_clipboardTextarea",
+  "DIV.wrs_handWrapper"
+ ]
+}

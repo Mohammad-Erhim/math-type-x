@@ -1,0 +1,140 @@
+{
+ "name": "s10b_ctx_sum",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT sum: controls shown in the Contextual tab (2)",
+   "shot": "sc/s10b_ctx_sum_01.jpg",
+   "mathml": "<math><munderover><mo>&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&l"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "BUTTON",
+     "title": "Left spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 1,
+     "tag": "BUTTON",
+     "title": "Right spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "sum / Left spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_sum_02.jpg",
+   "mathml": "<math><munderover><mo>&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 3,
+   "desc": "sum / Left spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_sum_03.jpg",
+   "mathml": "<math><munderover><mo lspace=\"2px\">&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "sum / Left spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_sum_04.jpg",
+   "mathml": "<math><munderover><mo lspace=\"0.5em\">&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "sum / Left spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_sum_05.jpg",
+   "mathml": "<math><munderover><mo lspace=\"5\">&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "sum / Right spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_sum_06.jpg",
+   "mathml": "<math><munderover><mo>&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "sum / Right spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_sum_07.jpg",
+   "mathml": "<math><munderover><mo rspace=\"2px\">&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "sum / Right spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_sum_08.jpg",
+   "mathml": "<math><munderover><mo rspace=\"0.5em\">&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "sum / Right spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_sum_09.jpg",
+   "mathml": "<math><munderover><mo rspace=\"5\">&#x2211;</mo><mi>i</mi><mi>n</mi></munderover></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

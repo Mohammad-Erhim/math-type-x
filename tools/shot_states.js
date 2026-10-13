@@ -1,0 +1,33 @@
+// screenshots of pop-ups/dialogs: URL=… node tools/shot_states.js outdir  (works for the reference and for our build)
+const { chromium } = require('playwright');
+const fs = require('fs');
+(async () => {
+  const out = process.argv[2] || 'evidence/ui/states';
+  fs.mkdirSync(out, { recursive: true });
+  const b = await chromium.launch({ channel: 'chrome' });
+  const ctx = await b.newContext({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 2 });
+  const p = await ctx.newPage();
+  const url = process.env.URL || 'http://localhost:8099/?output=0';
+  await p.goto(url, { waitUntil: 'load', timeout: 120000 });
+  await p.addStyleTag({ content: '#onetrust-consent-sdk,#onetrust-banner-sdk,.onetrust-pc-dark-filter{display:none !important}' });
+  await p.waitForFunction(() => window.editor && document.querySelector('#editorContainer .wrs_toolbar button.wrs_button'), null, { timeout: 60000 });
+  await p.waitForTimeout(1500);
+  await p.locator('#editorContainer').scrollIntoViewIfNeeded();
+  const box = async () => p.locator('#editorContainer').boundingBox();
+  const shot = async (name) => { await p.waitForTimeout(500); const bx = await box(); await p.screenshot({ path: `${out}/${name}.png`, clip: { x: bx.x, y: bx.y, width: 725, height: 414 } }); };
+  const tab = async (i) => { await p.locator('#editorContainer .wrs_header button').nth(i).click(); await p.waitForTimeout(350); };
+  const reset = async () => { await p.evaluate(() => editor.setMathML('<math/>')); await p.waitForTimeout(500); const bx = await box(); await p.mouse.click(bx.x + 600, bx.y + 330); await p.waitForTimeout(250); };
+  await reset();
+  await tab(1); await p.locator('#editorContainer .wrs_expandButton:visible').nth(0).click(); await shot('popup_symbols'); await p.keyboard.press('Escape');
+  await tab(3); await p.locator('#editorContainer .wrs_expandButton:visible').nth(5).click(); await shot('popup_greek_last'); await p.keyboard.press('Escape');
+  await tab(3); await p.locator('#editorContainer .wrs_expandButton:visible').nth(0).click(); await shot('popup_greek_first'); await p.keyboard.press('Escape');
+  await reset(); await tab(4); await p.locator('#editorContainer button[title="Table"]:visible').first().click(); await shot('picker_open');
+  await reset(); await tab(0); await p.locator('#editorContainer button[title="Color"]:visible').first().click(); await shot('palette');
+  await reset(); await p.locator('#editorContainer button[title="Insert special characters"]:visible').first().click(); await shot('special');
+  await reset(); await tab(4); await p.locator('#editorContainer button[title="Table"]:visible').first().click();
+  await p.locator('.wrs_matrixButtonPanel div.wrs_matrixButton').nth(7).click(); await p.waitForTimeout(500);
+  await p.keyboard.press('Alt+0'); await shot('contextual_matrix');
+  await reset(); await p.locator('#editorContainer input[type=button][title="Go to handwritten mode"], #editorContainer input[type=button][aria-label="Go to handwritten mode"]').first().click({ force: true });
+  await shot('hand_open');
+  await b.close();
+})();

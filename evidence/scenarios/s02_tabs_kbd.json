@@ -1,0 +1,503 @@
+{
+ "name": "s02_tabs_kbd",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Press Alt+1 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     0
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Fraction (Ctrl+/)|role=null"
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Press Alt+2 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_02.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     1
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Negate operator|role=null"
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Press Alt+3 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_03.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Leftwards arrow|role=null"
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Press Alt+4 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_04.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     3
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Alpha|role=null"
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Press Alt+5 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_05.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     4
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button wrs_matrixButton|Table|role=null"
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Press Alt+6 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_06.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     5
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Big fraction|role=null"
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Press Alt+7 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_07.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     6
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Parentheses|role=null"
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Press Alt+8 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_08.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     7
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Summation with under and over scripts|role=null"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Press Alt+9 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_09.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     8
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Definite integral|role=null"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Press Alt+0 with caret in the editing area",
+   "shot": "sc/s02_tabs_kbd_10.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     9
+    ],
+    "active": "INPUT|wrs_focusElement|Math input|role=null"
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Alt+ArrowRight from last (Contextual) tab",
+   "shot": "sc/s02_tabs_kbd_11.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     9
+    ],
+    "active": "INPUT|wrs_focusElement|Math input|role=null"
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Press Alt+1 then Alt+ArrowLeft from first tab",
+   "shot": "sc/s02_tabs_kbd_12.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     0
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Fraction (Ctrl+/)|role=null"
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Alt+ArrowRight x3 from General",
+   "shot": "sc/s02_tabs_kbd_13.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     3
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Alpha|role=null"
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Click toolbar tab #1",
+   "shot": "sc/s02_tabs_kbd_14.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     0
+    ],
+    "active": "BUTTON|wrs_selected|General tab (Alt+1)|role=tab"
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Click toolbar tab #2",
+   "shot": "sc/s02_tabs_kbd_15.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     1
+    ],
+    "active": "BUTTON|wrs_selected|Symbols (Alt+2)|role=tab"
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Click toolbar tab #3",
+   "shot": "sc/s02_tabs_kbd_16.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "BUTTON|wrs_selected|Arrows tab (Alt+3)|role=tab"
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Click toolbar tab #4",
+   "shot": "sc/s02_tabs_kbd_17.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     3
+    ],
+    "active": "BUTTON|wrs_selected|Greek, letters and numbers tab (Alt+4)|role=tab"
+   }
+  },
+  {
+   "n": 18,
+   "desc": "Click toolbar tab #5",
+   "shot": "sc/s02_tabs_kbd_18.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     4
+    ],
+    "active": "BUTTON|wrs_selected|Matrices and elementary tab (Alt+5)|role=tab"
+   }
+  },
+  {
+   "n": 19,
+   "desc": "Click toolbar tab #6",
+   "shot": "sc/s02_tabs_kbd_19.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     5
+    ],
+    "active": "BUTTON|wrs_selected|Scripts and layout tab (Alt+6)|role=tab"
+   }
+  },
+  {
+   "n": 20,
+   "desc": "Click toolbar tab #7",
+   "shot": "sc/s02_tabs_kbd_20.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     6
+    ],
+    "active": "BUTTON|wrs_selected|Decorations tab (Alt+7)|role=tab"
+   }
+  },
+  {
+   "n": 21,
+   "desc": "Click toolbar tab #8",
+   "shot": "sc/s02_tabs_kbd_21.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     7
+    ],
+    "active": "BUTTON|wrs_selected|Big operators tab (Alt+8)|role=tab"
+   }
+  },
+  {
+   "n": 22,
+   "desc": "Click toolbar tab #9",
+   "shot": "sc/s02_tabs_kbd_22.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     8
+    ],
+    "active": "BUTTON|wrs_selected|Calculus tab (Alt+9)|role=tab"
+   }
+  },
+  {
+   "n": 23,
+   "desc": "Click toolbar tab #10",
+   "shot": "sc/s02_tabs_kbd_23.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     9
+    ],
+    "active": "BUTTON|wrs_context wrs_selected|Contextual tab (Alt+0)|role=tab"
+   }
+  },
+  {
+   "n": 24,
+   "desc": "Focus toolbar tab list: click General tab, then press ArrowRight",
+   "shot": "sc/s02_tabs_kbd_24.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     1
+    ],
+    "active": "BUTTON|wrs_selected|Symbols (Alt+2)|role=tab"
+   }
+  },
+  {
+   "n": 25,
+   "desc": "ArrowRight again",
+   "shot": "sc/s02_tabs_kbd_25.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "BUTTON|wrs_selected|Arrows tab (Alt+3)|role=tab"
+   }
+  },
+  {
+   "n": 26,
+   "desc": "Tab (moves into symbol grid?)",
+   "shot": "sc/s02_tabs_kbd_26.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Leftwards arrow|role=null"
+   }
+  },
+  {
+   "n": 27,
+   "desc": "ArrowRight in grid",
+   "shot": "sc/s02_tabs_kbd_27.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Rightwards arrow|role=null"
+   }
+  },
+  {
+   "n": 28,
+   "desc": "ArrowDown in grid",
+   "shot": "sc/s02_tabs_kbd_28.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Rightwards double arrow|role=null"
+   }
+  },
+  {
+   "n": 29,
+   "desc": "Enter on focused symbol (should insert it)",
+   "shot": "sc/s02_tabs_kbd_29.jpg",
+   "mathml": "<math><mo>&#x21D2;</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     2
+    ],
+    "active": "INPUT|wrs_focusElement|Math input|role=null"
+   }
+  },
+  {
+   "n": 30,
+   "desc": "Alt+2 then ArrowDown/Enter on an expandable group",
+   "shot": "sc/s02_tabs_kbd_30.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     1
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Negate operator|role=null"
+   }
+  },
+  {
+   "n": 31,
+   "desc": "Escape",
+   "shot": "sc/s02_tabs_kbd_31.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "selectedTabs": [
+     1
+    ],
+    "active": "BUTTON|wrs_imageContainer wrs_button|Negate operator|role=null"
+   }
+  }
+ ]
+}

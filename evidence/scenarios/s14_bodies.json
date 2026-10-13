@@ -1,0 +1,32 @@
+[
+ {
+  "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+  "status": 200,
+  "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+ },
+ {
+  "url": "https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true",
+  "status": 200,
+  "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+  "body": "blank"
+ },
+ {
+  "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+  "status": 200,
+  "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+ },
+ {
+  "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+  "status": 200,
+  "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+  "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+ },
+ {
+  "url": "https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true",
+  "status": 200,
+  "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsup%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmn%3E2%3C%2Fmn%3E%3C%2Fmsup%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+  "body": "x squared"
+ }
+]
