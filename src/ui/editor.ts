@@ -15,7 +15,7 @@ import { Toolbar, ToolbarHost } from './toolbar';
 import { injectStyles, injectBundledFonts, BUNDLED_FACES } from './styles';
 import { getAssetsBase } from '../render/client';
 import { resetMeasuredAdvances } from '../layout/metrics';
-import { arabicCssFamily } from '../layout/arfonts';
+import { arabicCssFamily, arabicFontOf } from '../layout/arfonts';
 import { h } from './dom';
 import { Services, ServicesOptions } from './services';
 import { SWATCHES, FONT_FAMILIES } from './messages';
@@ -175,7 +175,11 @@ export class MathEditor implements ToolbarHost {
     if (m) {
       const t = this.core.modes as any;
       for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (m[k] !== undefined) t[k] = m[k];
-      if (m.digits && sameLang) t.digits = m.digits;
+      // digits the person chose themselves come back; the default follows the language / direction / Arabic font
+      if (m.digits && sameLang && m.digitsChosen) {
+        t.digits = m.digits;
+        this.digitsChosen = true;
+      }
       if (m.color !== undefined) t.color = m.color;
     }
     this.restoredTab = s.tab;
@@ -193,7 +197,7 @@ export class MathEditor implements ToolbarHost {
   private persistNow(mml: string): void {
     if (!this.store) return;
     const m = this.core.modes as any;
-    this.store.set({ mml, lang: this.lang, modes: { bold: !!m.bold, italic: !!m.italic, autoItalic: !!m.autoItalic, text: !!m.text, arabicLigature: !!m.arabicLigature, digits: m.digits, color: m.color ?? null } });
+    this.store.set({ mml, lang: this.lang, modes: { bold: !!m.bold, italic: !!m.italic, autoItalic: !!m.autoItalic, text: !!m.text, arabicLigature: !!m.arabicLigature, digits: m.digits, digitsChosen: this.digitsChosen, color: m.color ?? null } });
   }
 
   static newInstance(o: EditorOptions = {}): MathEditor {
@@ -482,7 +486,20 @@ export class MathEditor implements ToolbarHost {
   }
 
   /* ------------------------------------------------------------ rendering */
+  /** the person set the digits themselves (toolbar toggles): the default no longer follows the language / font */
+  private digitsChosen = false;
+  /** Arabic-Indic digits by default as soon as the formula is Arabic: an Arabic language, the toolbar's right-to-left or
+   * Arabic-ligature button, or an Arabic font; Western again when none of them applies (unless the person chose) */
+  private syncDigits(): void {
+    if (this.digitsChosen) return;
+    const lang = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
+    const arabic = this.core.rtl || this.core.modes.arabicLigature || !!arabicFontOf(this.core.getFontFamily());
+    const want = lang !== 'western' ? lang : arabic ? 'arabicIndic' : 'western';
+    if (this.core.modes.digits !== want) this.core.modes.digits = want;
+  }
+
   private onCoreChange(): void {
+    this.syncDigits();
     if (!this.root) return;
     this.normalizeRoot();
     this.render();
@@ -670,11 +687,13 @@ export class MathEditor implements ToolbarHost {
       return;
     }
     if (b === 'digits-arabic') {
+      this.digitsChosen = true;
       core.setDigits(core.modes.digits === 'arabicIndic' ? 'western' : 'arabicIndic');
       this.focusEditor();
       return;
     }
     if (b === 'digits-eastern') {
+      this.digitsChosen = true;
       core.setDigits(core.modes.digits === 'easternArabicIndic' ? 'western' : 'easternArabicIndic');
       this.focusEditor();
       return;

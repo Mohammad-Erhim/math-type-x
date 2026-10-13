@@ -10,6 +10,8 @@ export interface Modes {
   text?: boolean;
   arabicLigature?: boolean;
   digits?: 'western' | 'arabicIndic' | 'easternArabicIndic';
+  /** the digits were chosen with the toolbar (not the default of the language / direction / font) */
+  digitsChosen?: boolean;
   color?: string | null;
 }
 
@@ -40,7 +42,7 @@ export function sanitize(raw: unknown): Saved | null {
   if (r.modes && typeof r.modes === 'object') {
     const m = r.modes as Record<string, unknown>;
     const o: Modes = {};
-    for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (typeof m[k] === 'boolean') o[k] = m[k] as boolean;
+    for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature', 'digitsChosen'] as const) if (typeof m[k] === 'boolean') o[k] = m[k] as boolean;
     if (typeof m.digits === 'string' && DIGITS.includes(m.digits)) o.digits = m.digits as Modes['digits'];
     if (m.color === null || (typeof m.color === 'string' && /^#[0-9a-fA-F]{3,8}$|^[a-zA-Z]{3,20}$/.test(m.color))) o.color = m.color as string | null;
     out.modes = o;
