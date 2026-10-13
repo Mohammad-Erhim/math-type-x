@@ -29,24 +29,6 @@ import { serializeMathML, parseMathML } from '../core/mathml';
 import { mathml2latex } from '../convert/tex';
 import unicodeData from '../data/unicode.json';
 
-/** which code points the special-characters panel shows for a typed Code value (null: the category list) */
-export function unicodeCandidates(v: string): number[] | null {
-  if (v.length < 2) return null;
-  const m = /^[0-9a-f]+/i.exec(v);
-  if (m) {
-    const p = m[0];
-    const hex = parseInt(p, 16);
-    if (hex > 0x10ffff) return [p.length >= 7 ? 0xfffff : 0x10ffff];
-    const out = [hex];
-    if (/^\d+$/.test(p)) out.push(parseInt(p, 10));
-    return out;
-  }
-  if (/^u\+/i.test(v) && v.length > 2) return [0];
-  const neg = /^-(\d+)$/.exec(v);
-  if (neg) return [0, -parseInt(neg[1], 10) & 0xffff];
-  return [0, 0];
-}
-
 export const VERSION = '7.25.6.804ace-x';
 
 export interface EditorOptions {
@@ -1055,27 +1037,26 @@ export class MathEditor implements ToolbarHost {
     this.closePopup();
     this.dropHidden('wrs_unicodeChooserPanel');
     const el = h('div', { class: 'wrs_unicodeChooserPanel wrs_panel', id: 'wrs_unicodeChooserPanelId', role: 'dialog', 'aria-label': 'Insert special characters' });
-    const code = h('input', { type: 'text', title: 'Code', id: 'customUnicodeInput' }) as HTMLInputElement;
-    const cat = h('select') as HTMLSelectElement;
+    // (the hexadecimal "Code" field of the reference dialog is not offered: nobody knows code points by heart, the
+    // categories and the shapes are the way in)
+    const cat = h('select', { 'aria-label': 'Category' }) as HTMLSelectElement;
     const CATS: [string, keyof typeof unicodeData][] = [['S', 'Symbol'], ['P', 'Punctuation'], ['L', 'Letter'], ['M', 'Mark'], ['N', 'Number'], ['F', 'Phonetical'], ['C', 'Other']];
     // the Arabic mathematical symbols (the symbol tables of the Zulfi keyboard maps) are lists of their own: first in an
     // Arabic editor, after the Unicode categories otherwise
     const arabicUi = /^ar/i.test(this.lang) || this.core.rtl;
-    const zGroup = h('optgroup', { label: arabicUi ? 'رموز رياضية عربية' : 'Arabic math symbols' });
-    ZULFI_GROUPS.forEach((g) => zGroup.append(h('option', { value: 'Z:' + g.id, text: arabicUi ? g.ar : g.en })));
-    if (arabicUi) cat.append(zGroup);
+    // one entry per shape list, in the same flat list as the Unicode categories (a group heading would not be clickable)
+    const zOptions = ZULFI_GROUPS.map((g) => h('option', { value: 'Z:' + g.id, text: arabicUi ? 'الحروف الرياضية العربية' : 'Arabic math letters' }));
+    if (arabicUi) zOptions.forEach((o) => cat.append(o));
     CATS.forEach(([v, n]) => cat.append(h('option', { value: v, text: n })));
-    if (!arabicUi) cat.append(zGroup);
+    if (!arabicUi) zOptions.forEach((o) => cat.append(o));
     const container = h('div', { class: 'wrs_unicodeChooserTableContainer' });
-    el.append(h('div', {}, document.createTextNode('Code: '), code, cat), container);
+    el.append(h('div', {}, cat), container);
     const pick = (cp: number) => {
       this.closePopup();
       this.core.typeText(String.fromCodePoint(cp));
       this.focusEditor();
     };
-    let current: number[] = [];
     const fill = (cps: number[]) => {
-      current = cps;
       container.textContent = '';
       const tb = h('tbody');
       // the shapes are 40 px cells: as many columns as the panel is wide
@@ -1120,25 +1101,7 @@ export class MathEditor implements ToolbarHost {
       if (cat.value.startsWith('Z:')) fill(ZULFI_GROUPS.find((g) => g.id === cat.value.slice(2))?.items ?? []);
       else fill((unicodeData as any)[CATS.find((c) => c[0] === cat.value)![1]]);
     };
-    cat.addEventListener('change', () => {
-      code.value = '';
-      showCategory();
-    });
-    code.addEventListener('input', () => {
-      const cps = unicodeCandidates(code.value);
-      if (cps === null) showCategory();
-      else fill(cps);
-    });
-    code.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        if (current.length) pick(current[0]);
-      } else if (e.key === 'Escape') {
-        e.preventDefault();
-        this.closePopup();
-        btn.focus();
-      }
-    });
+    cat.addEventListener('change', () => showCategory());
     el.addEventListener('keydown', (e) => {
       if ((e as KeyboardEvent).key === 'Escape') {
         this.closePopup();
@@ -1150,7 +1113,7 @@ export class MathEditor implements ToolbarHost {
     cat.selectedIndex = 0;
     showCategory();
     this.popup = { el, kind: 'unicode', owner: btn, close: () => undefined };
-    this.focusField(code);
+    this.focusField(cat);
   }
 
   /* --------------------------------------------------------- length field */
