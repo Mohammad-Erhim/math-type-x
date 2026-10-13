@@ -267,6 +267,7 @@ export class MathEditor implements ToolbarHost {
   /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
    * script, down to the denominator, to the next line) like the arrow keys do. */
   private navClear: HTMLButtonElement | null = null;
+  private navKeyboard: HTMLButtonElement | null = null;
   private navHistory: HTMLButtonElement[] = [];
   private buildNavPad(): void {
     // built always; shown on touch screens and in narrow windows (CSS)
@@ -386,7 +387,7 @@ export class MathEditor implements ToolbarHost {
     // the phone's own keyboard: shown while typing, put away with this key (the formula, the toolbar and the pad get its room
     // back); the formula keeps its caret and the pad keeps working
     const kb = h('button', { type: 'button', class: 'wrs_navKey wrs_navKeyboard', title: 'Keyboard', 'aria-label': 'Keyboard', 'aria-pressed': 'true', tabindex: '-1' }) as HTMLButtonElement;
-    kb.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.8" fill="none" stroke="#324d5b" stroke-width="1.7"/><path d="M6 10h1.6M10 10h1.6M14 10h1.6M18 10h.2M6 13.5h.2M8.5 14h7M18 13.5h.2" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Keys</span>';
+    kb.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M6 10h1.6M10 10h1.6M14 10h1.6M18 10h.2M6 13.5h.2M8.5 14h7M18 13.5h.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Keys</span>';
     kb.addEventListener('pointerdown', (e) => e.preventDefault());
     kb.addEventListener('mousedown', (e) => e.preventDefault());
     kb.addEventListener('click', (e) => {
@@ -400,7 +401,12 @@ export class MathEditor implements ToolbarHost {
       input.blur();
       input.focus({ preventScroll: true });
     });
-    kb.classList.add('wrs_navOn');
+    // on a touch screen the keyboard stays away until the formula is tapped (or this key is pressed)
+    const touchKb = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+    if (touchKb) this.display.input.inputMode = 'none';
+    kb.setAttribute('aria-pressed', String(!touchKb));
+    kb.classList.toggle('wrs_navOn', !touchKb);
+    this.navKeyboard = kb;
     pad.prepend(kb);
     pad.prepend(clear);
     // the history group sits right before the arrows
@@ -1290,6 +1296,7 @@ export class MathEditor implements ToolbarHost {
     const p = this.contentPoint(e);
     const hit = this.display.hitTest(p.x, p.y);
     if (!hit) {
+      this.wantKeyboard();
       this.focusEditor();
       e.preventDefault();
       return;
@@ -1303,8 +1310,20 @@ export class MathEditor implements ToolbarHost {
       this.core.selectRun(hit);
       this.lastDblAt = Date.now();
     }
+    this.wantKeyboard();
     this.focusEditor();
     e.preventDefault();
+  }
+
+  /** a tap on the formula is the one thing that brings the phone's keyboard up */
+  private wantKeyboard(): void {
+    const input = this.display.input;
+    if (input.inputMode !== 'none') return;
+    input.inputMode = 'text';
+    this.navKeyboard?.setAttribute('aria-pressed', 'true');
+    this.navKeyboard?.classList.add('wrs_navOn');
+    // the mode counts when the field is focused (again)
+    input.blur();
   }
 
   private onMouseMove = (e: MouseEvent): void => {
