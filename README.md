@@ -31,6 +31,18 @@ The page is static files plus an optional services server, so there are two ways
   (`npm run build:static`), the output directory (`dist/public`) and cache / security headers.
   `node tools/static_e2e.js` checks the static build in a real browser against the server's images.
 
+## Responsive layout
+
+* **Wide screens** (container ≥ 725 px and window ≥ 480 px high): the classic 725 × 415 widget, pixel for pixel as before.
+* **Narrow or low screens** (phones, portrait tablets, a phone held sideways): the *fluid* layout — the widget fills its
+  container (the demo page makes that the whole window), the tab strip and the panel are scrolling strips, controls are
+  scaled up on touch devices (≥ 44 px targets; less when the window is low), pop-ups are kept inside the screen, the
+  handwriting surface fills the window and follows rotation, inputs are 16 px (no zoom on focus), hover styles do not
+  stick on touch.
+* **Full screen** button on every size (Fullscreen API, CSS fallback where it is missing, e.g. iPhone).
+* API: `layout: 'auto' | 'classic' | 'fluid'` option, `editor.setLayout(mode)`, `editor.getLayout()`; a container can also
+  say `data-wrs-layout="fluid"`. `node tools/responsive_shots.js` / `tools/responsive_touch.js` check the sizes in a browser.
+
 ## Layout
 
 | path | content |

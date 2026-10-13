@@ -193,6 +193,7 @@ export class HandMode {
     this.lastMml = null;
     this.redraw();
     this.preview.style.display = 'none';
+    this.resize();
     const empty = /^<math[^>]*\/>$/.test(currentMathML.replace(/ xmlns="[^"]*"/, ''));
     this.root.querySelector('.wrs_canvasContainer')?.classList.toggle('wrs_empty', empty);
     this.hint.style.display = empty ? '' : 'none';
@@ -204,7 +205,7 @@ export class HandMode {
   private async regenerate(mml: string): Promise<void> {
     try {
       const { simulateStrokes } = await import('../hand/simulate');
-      const strokes = simulateStrokes(mml, 684, 415);
+      const strokes = simulateStrokes(mml, this.canvas.width, this.canvas.height);
       this.strokes = strokes.map((s) => ({ ...s, t: s.x.map((_, i) => i) }));
       this.redraw();
       this.root.querySelector('.wrs_canvasContainer')?.classList.remove('wrs_empty');
@@ -213,6 +214,27 @@ export class HandMode {
       // the document is untouched until the user edits the strokes
     } catch {
       /* simulation is optional */
+    }
+  }
+
+  /** the drawing surface follows the size of its box (the fluid layout); strokes keep their pixel coordinates */
+  resize(): void {
+    const box = this.canvas.parentElement as HTMLElement | null;
+    if (!box) return;
+    const w = Math.round(box.clientWidth);
+    const h = Math.round(box.clientHeight);
+    if (w < 40 || h < 40) return; // hidden
+    if (this.canvas.width !== w || this.canvas.height !== h) {
+      this.canvas.width = w;
+      this.canvas.height = h;
+      this.ctx.lineCap = 'round';
+      this.ctx.lineJoin = 'round';
+      this.redraw();
+    }
+    const svg = this.hint.querySelector('svg') as SVGElement | null;
+    if (svg) {
+      svg.style.left = Math.round((w - HI.empty.w) / 2) + 'px';
+      svg.style.top = Math.round((h - HI.empty.h) / 2) + 'px';
     }
   }
 
@@ -229,7 +251,7 @@ export class HandMode {
 
   private redraw(): void {
     const g = this.ctx;
-    g.clearRect(0, 0, 684, 415);
+    g.clearRect(0, 0, this.canvas.width, this.canvas.height);
     g.lineWidth = 3;
     for (const s of this.strokes) {
       g.strokeStyle = s.red ? '#d22' : INK;
@@ -328,7 +350,7 @@ export class HandMode {
     this.preview.style.display = 'none';
     this.updateButtons();
     const { simulateStrokes } = await import('../hand/simulate');
-    const demo = simulateStrokes('<math><mi>x</mi><mo>=</mo><mi>y</mi></math>', 684, 415);
+    const demo = simulateStrokes('<math><mi>x</mi><mo>=</mo><mi>y</mi></math>', this.canvas.width, this.canvas.height);
     const g = this.ctx;
     g.lineWidth = 3;
     g.strokeStyle = INK;

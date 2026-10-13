@@ -40,5 +40,10 @@ All notable changes are documented here. The format follows
   `tools/static_e2e.js`, `tests/static.test.ts`.
 - `editor.getPDF()` / `editor.getEPS()`; shared SVG / PDF code in `src/render`.
 
+### Added (responsive)
+- Fluid layout for narrow / low screens and touch (scrolling tab and panel strips, touch-sized controls, full-window
+  editor and handwriting surface, pop-ups kept on screen), full-screen button, `layout` option and `setLayout()`;
+  the wide-screen layout is unchanged.
+
 ### Known deviations
 See *Known deviations* in the [README](README.md).

@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,interactive-widget=resizes-content">
+<meta name="theme-color" content="#778e9a">
 <title>MathType Playground</title>
 <meta name="description" content="See MathType in action! Type or handwrite a formula and copy it as MathML, LaTeX, SVG or PNG.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23778e9a'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='700'%3E%E2%88%91%3C/text%3E%3C/svg%3E">
@@ -10,9 +11,16 @@
 </head>
 <body>
 <main class="page">
-  <h1>See MathType in action!</h1>
-  <p class="lead">Try the editor below: use the toolbar, type with the keyboard or switch to handwriting mode.</p>
-  <!-- always visible: on narrow viewports the page scrolls horizontally instead of hiding the playground -->
+  <header class="page-head">
+    <div class="page-titles">
+      <h1>See MathType in action!</h1>
+      <p class="lead">Try the editor below: use the toolbar, type with the keyboard or switch to handwriting mode.</p>
+    </div>
+    <button type="button" id="fsBtn" class="fsbtn" aria-pressed="false" title="Full screen" aria-label="Full screen">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 7V3h4M13 3h4v4M17 13v4h-4M7 17H3v-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span class="fslabel">Full screen</span>
+    </button>
+  </header>
   <div class="wp-block-columns is-layout-flex">
     <div class="wp-block-column">
       <div id="editorContainer"></div>

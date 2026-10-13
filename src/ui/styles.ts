@@ -134,6 +134,37 @@ export const CSS = `
 .wrs_caretPrecisionController.wrs_forSelection{width:24px;height:36px}
 .wrs_snackbar{position:absolute;left:10px;bottom:10px;padding:6px 10px;background:#333;color:#fff;font:12px sans-serif;border-radius:3px}
 .wrs_hidden{display:none!important}
+/* fluid layout (narrow containers, touch): the widget fills its container, the toolbar is a pair of scrolling strips at touch size */
+.wrs_editor{touch-action:manipulation}
+.wrs_editor.wrs_fluid{width:100%;height:100%;min-width:0;min-height:240px;display:flex;flex-direction:column;overflow:hidden;--wrs-strip:44px}
+.wrs_fluid .wrs_toolbar.wrs_main{position:relative;left:auto;top:auto;flex:none;width:100%;height:auto;display:flex;flex-direction:column}
+.wrs_fluid .wrs_header{position:relative;left:auto;top:auto;flex:none;width:calc(100% - 26px * var(--wrs-k));height:calc(25px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.wrs_fluid .wrs_header::-webkit-scrollbar,.wrs_fluid .wrs_panelContainer::-webkit-scrollbar{display:none}
+.wrs_fluid .wrs_header>button[role=tab]{zoom:var(--wrs-k)}
+.wrs_fluid .wrs_linksContainer{left:auto;right:calc(4px * var(--wrs-k));top:calc(4px * var(--wrs-k));zoom:var(--wrs-k)}
+.wrs_fluid .wrs_panelContainer{position:relative;left:auto;top:auto;flex:none;width:100%;height:calc(72px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:url(${skin.panel}) no-repeat 0 0 / auto 100%,linear-gradient(#f6f9fa,#e3eaed)}
+.wrs_fluid .wrs_multipleRowPanel{zoom:var(--wrs-k)}
+.wrs_fluid .wrs_formulaDisplayWrapper{position:relative;left:auto;top:auto;flex:1 1 0;width:auto;height:auto;min-height:0;margin-right:var(--wrs-strip)}
+.wrs_fluid .wrs_formulaDisplay{width:100%;height:100%;font-size:16px}
+.wrs_fluid.wrs_noHand .wrs_formulaDisplayWrapper{margin-right:0}
+.wrs_fluid.wrs_noHand .wrs_formulaDisplay{width:100%}
+.wrs_fluid .wrs_handWrapper{left:auto;right:0;top:calc(25px * var(--wrs-k) + 72px * var(--wrs-k));bottom:0;width:var(--wrs-strip);height:auto}
+.wrs_fluid .wrs_handWrapper .wrs_handStrip{width:100%;height:100%}
+.wrs_fluid .wrs_handWrapper .wrs_handStrip svg{position:absolute;left:50%;top:50%;margin-left:-15px;margin-top:-158px}
+.wrs_fluid .wrs_handWrapper input[type=button]{width:100%;height:100%}
+.wrs_fluid .wrs_popup,.wrs_fluid .wrs_panel,.wrs_fluid .wrs_lengthButtonPanel{zoom:var(--wrs-k);max-width:calc(100% / var(--wrs-k))}
+.wrs_fluid .wrs_panel input,.wrs_fluid .wrs_panel select,.wrs_fluid .wrs_lengthButtonPanel input{font-size:16px}
+.wrs_fluid .wrs_snackbar{left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px))}
+.wrs_fluid .wrs_hand{width:100%;height:100%}
+.wrs_fluid .wrs_hand .wrs_toolbar{height:100%;zoom:var(--wrs-hk)}
+.wrs_fluid .wrs_hand .wrs_canvasContainer{left:calc(41px * var(--wrs-hk));right:0;bottom:0;width:auto;height:auto}
+.wrs_fluid .wrs_hand canvas{width:100%;height:100%}
+.wrs_fluid .wrs_hand .wrs_helpText{font-size:16px;padding:0 12px}
+/* touch devices have no hover: a tapped control must not stay highlighted */
+@media (hover:none){
+.wrs_editor .wrs_button:hover:not(.wrs_pressed):not(.wrs_toggled):not(:focus),.wrs_editor .wrs_expandButton:hover:not([aria-expanded=true]):not(:focus){border-color:transparent;background:none;box-shadow:none}
+.wrs_header>button[role=tab]:hover:not(.wrs_selected){background-image:url(${skin.tab})}
+}
 @media (prefers-reduced-motion:reduce){.wrs_hand .wrs_hint{animation:none!important}}
 `;
 

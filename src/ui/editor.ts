@@ -48,6 +48,11 @@ export interface EditorOptions {
   language?: string;
   autoformat?: boolean;
   toolbarSize?: 1 | 1.5 | 2;
+  /**
+   * 'classic': the fixed 725 × 415 px widget; 'fluid': fills its container (toolbar scrolls sideways, touch sized controls);
+   * 'auto' (default): classic while the container is at least 725 px wide and the window 480 px high, fluid below that
+   */
+  layout?: 'auto' | 'classic' | 'fluid';
   detectHand?: boolean;
   fontStyle?: 'initial' | 'normal' | 'italic';
   reservedWords?: string[];
@@ -67,6 +72,7 @@ type Ev = 'ready' | 'change' | 'focus' | 'blur' | 'tabchange' | 'handstart' | 'h
 
 const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'manualUrl' | 'fontsUrl'>> = {
   language: 'en',
+  layout: 'auto',
   autoformat: false,
   toolbarSize: 1,
   detectHand: true,
@@ -106,10 +112,18 @@ export class MathEditor implements ToolbarHost {
   private clipboardArea!: HTMLTextAreaElement;
   private lastMml = '';
   private dashLines = false;
+  /** zoom of the toolbar and its pop-ups (1 in the classic layout) */
+  private zoomK = 1;
+  private layoutMode: 'auto' | 'classic' | 'fluid' = 'auto';
+  private fluid = false;
+  private host: HTMLElement | null = null;
+  private resizeObs: ResizeObserver | null = null;
+  private onWinResize = (): void => this.applyLayout();
 
   constructor(options: EditorOptions = {}) {
     this.opts = { ...DEFAULTS, ...options } as any;
     this.lang = this.opts.language;
+    this.layoutMode = this.opts.layout;
     this.services = new Services(options.services ?? { baseUrl: '/editor-services/' });
     this.core.parity = this.opts.parity;
     this.core.autoformat = !!this.opts.autoformat;
@@ -142,6 +156,7 @@ export class MathEditor implements ToolbarHost {
     }
     this.build(container);
     this.attach();
+    this.setupLayout(container);
     this.render();
     this.ready = true;
     queueMicrotask(() => this.emitEv('ready', {}));
@@ -161,6 +176,7 @@ export class MathEditor implements ToolbarHost {
     this.clipboardArea = h('textarea', { class: 'wrs_clipboardTextarea', tabindex: '-1', 'aria-hidden': 'true', readOnly: true }) as HTMLTextAreaElement;
     this.hand = new HandMode(this);
     const k = this.opts.toolbarSize;
+    this.zoomK = k;
     this.root = h('div', { class: 'wrs_editor wrs_flexEditor wrs_animated' + (this.opts.detectHand ? ' wrs_withHand' : ' wrs_noHand'), role: 'application', translate: 'no' }, this.toolbar.root, this.display.wrapper, handWrapper, this.clipboardArea, this.hand.root);
     this.root.style.setProperty('--wrs-k', String(k));
     if (k !== 1) this.root.classList.add('wrs_scaled');
@@ -222,7 +238,57 @@ export class MathEditor implements ToolbarHost {
     document.removeEventListener('mousemove', this.onMouseMove);
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
+    this.resizeObs?.disconnect();
+    window.removeEventListener('resize', this.onWinResize);
+    window.removeEventListener('orientationchange', this.onWinResize);
     this.root?.remove();
+  }
+
+  /* ------------------------------------------------------------- layout */
+  private setupLayout(container: HTMLElement): void {
+    this.host = container;
+    if (typeof ResizeObserver !== 'undefined') {
+      this.resizeObs = new ResizeObserver(() => this.applyLayout());
+      this.resizeObs.observe(container);
+    }
+    window.addEventListener('resize', this.onWinResize);
+    window.addEventListener('orientationchange', this.onWinResize);
+    this.applyLayout();
+  }
+
+  /** the classic widget needs 725 px; a narrower container gets the fluid layout (or when asked for) */
+  private applyLayout(): void {
+    if (!this.root || !this.host) return;
+    const w = this.host.clientWidth;
+    const attr = this.host.dataset.wrsLayout as 'classic' | 'fluid' | 'auto' | undefined;
+    const mode = this.layoutMode !== 'auto' ? this.layoutMode : attr ?? 'auto';
+    // a low window (a phone held sideways) has no room for the 415 px widget either
+    const fluid = mode === 'fluid' || (mode === 'auto' && w > 0 && (w < 725 || window.innerHeight < 480));
+    const coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+    const h = this.host.clientHeight;
+    // touch: controls of at least 44 px (the big buttons are 33 px); a low window gets less zoom to leave room for the formula
+    let k: number = this.opts.toolbarSize;
+    if (fluid && k === 1 && coarse) k = h > 0 && h < 480 ? 1.25 : 1.5;
+    const hk = fluid && coarse ? 1.35 : 1;
+    const changed = fluid !== this.fluid || k !== this.zoomK;
+    this.fluid = fluid;
+    this.zoomK = k;
+    this.root.classList.toggle('wrs_fluid', fluid);
+    this.root.classList.toggle('wrs_scaled', !fluid && k !== 1);
+    this.root.classList.toggle('wrs_touch', coarse);
+    this.root.style.setProperty('--wrs-k', String(k));
+    this.root.style.setProperty('--wrs-hk', String(hk));
+    if (changed) this.closePopup();
+    this.hand.resize();
+  }
+
+  setLayout(mode: 'auto' | 'classic' | 'fluid'): void {
+    this.layoutMode = mode;
+    this.applyLayout();
+  }
+
+  getLayout(): 'classic' | 'fluid' {
+    return this.fluid ? 'fluid' : 'classic';
   }
 
   /* ------------------------------------------------------------ rendering */
@@ -471,6 +537,15 @@ export class MathEditor implements ToolbarHost {
     // measured on the reference: 1px border + 2px padding around a grid of cells, 1px extra on the right
     el.style.left = minX - 3 + 'px';
     el.style.top = minY - 3 + 'px';
+    if (this.fluid) {
+      // the toolbar is zoomed and scrolled: put the pop-up where its arrow's panel is on the screen
+      const tb = this.toolbar.root.getBoundingClientRect();
+      const rr0 = this.root.getBoundingClientRect();
+      const kz = this.zoomK;
+      const strip = this.toolbar.root.querySelector('.wrs_panelContainer') as HTMLElement | null;
+      el.style.left = (tb.left - rr0.left - (strip?.scrollLeft ?? 0) + (minX - 3) * kz) / kz + 'px';
+      el.style.top = (tb.top - rr0.top + (minY - 3) * kz) / kz + 'px';
+    }
     el.style.width = maxX - minX + 7 + 'px';
     el.style.height = maxY - minY + 6 + 'px';
     const btns: HTMLButtonElement[] = [];
@@ -485,6 +560,7 @@ export class MathEditor implements ToolbarHost {
       btns.push(b);
     });
     this.root.append(el);
+    this.fitInside(el);
     btn.setAttribute('aria-expanded', 'true');
     btn.classList.add('wrs_pressed');
     this.popup = { el, kind: 'group', owner: btn, close: () => undefined };
@@ -525,9 +601,27 @@ export class MathEditor implements ToolbarHost {
   private placePanel(el: HTMLElement, btn: HTMLElement, dx = 0): void {
     const r = btn.getBoundingClientRect();
     const rr = this.root.getBoundingClientRect();
-    const k = this.opts.toolbarSize;
+    const k = this.zoomK;
     el.style.left = Math.round((r.left - rr.left + dx) / k) + 'px';
     el.style.top = Math.round((r.bottom - rr.top - k) / k) + 'px';
+    this.fitInside(el);
+  }
+
+  /** keep a pop-up inside the widget (a narrow screen would cut it off): shift it left / up, never past the top-left */
+  private fitInside(el: HTMLElement): void {
+    if (!this.fluid) return;
+    // the element is placed in the zoomed coordinates of the pop-ups (left / top are divided by the zoom)
+    const k = this.zoomK;
+    const rr = this.root.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    let dx = 0;
+    let dy = 0;
+    if (r.right > rr.right - 4) dx = rr.right - 4 - r.right;
+    if (r.left + dx < rr.left + 4) dx = rr.left + 4 - r.left;
+    if (r.bottom > rr.bottom - 4) dy = rr.bottom - 4 - r.bottom;
+    if (r.top + dy < rr.top + 4) dy = rr.top + 4 - r.top;
+    if (dx) el.style.left = parseFloat(el.style.left || '0') + dx / k + 'px';
+    if (dy) el.style.top = parseFloat(el.style.top || '0') + dy / k + 'px';
   }
 
   private openPicker(c: Control, btn: HTMLElement): void {
@@ -765,8 +859,8 @@ export class MathEditor implements ToolbarHost {
     const el = h('div', { class: 'wrs_lengthButtonPanel', role: 'dialog', 'aria-label': ctl?.title ?? id });
     const r = btn.getBoundingClientRect();
     const rr = this.root.getBoundingClientRect();
-    el.style.left = Math.round(r.left - rr.left - 2 + 2) + 'px';
-    el.style.top = Math.round(r.top - rr.top + 21) + 'px';
+    el.style.left = Math.round((r.left - rr.left) / this.zoomK) + 'px';
+    el.style.top = Math.round((r.top - rr.top + 21 * this.zoomK) / this.zoomK) + 'px';
     const input = h('input', { type: 'text', value: cur, title: 'Value', 'aria-label': 'Value', spellcheck: 'false' }) as HTMLInputElement;
     const table = h('table', {}, h('tr', {}, h('td', { colspan: '2', text: ctl?.title ?? id })), h('tr', {}, h('td', { text: 'Value:' }), h('td', { class: 'wrs_inputCell' }, input)));
     el.append(table);
@@ -786,6 +880,7 @@ export class MathEditor implements ToolbarHost {
       }
     });
     this.root.append(el);
+    this.fitInside(el);
     this.popup = { el, kind: 'length', owner: btn, close: () => undefined };
     input.focus();
     input.setSelectionRange(0, 0);

@@ -1,11 +1,45 @@
 @font-face{font-family:'STIX Two Math';src:url(fonts/stix-two-math.woff2) format('woff2');font-display:swap}
-html,body{margin:0;padding:0;background:#fff;color:#18212f;font-family:Arial,'Liberation Sans',Helvetica,sans-serif}
+html,body{margin:0;padding:0;background:#fff;color:#18212f;font-family:Arial,'Liberation Sans',Helvetica,sans-serif;-webkit-text-size-adjust:100%}
+/* wide screens: the playground exactly as the reference page shows it (a 725 px widget) */
 .page{width:725px;margin:32px auto 48px}
+.page-head{position:relative;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 h1{font-size:28px;font-weight:700;margin:0 0 8px}
 .lead{margin:0 0 20px;color:#5d727d;font-size:15px}
 #editorContainer{width:725px;height:415px}
-/* narrow viewports: keep the 725 px widget fully usable, the page scrolls sideways */
-@media (max-width:760px){.page{width:auto;margin:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}}
-
 .wp-block-columns{display:flex;flex-wrap:nowrap}
 .wp-block-column{flex:1 1 auto;min-width:0}
+.fsbtn{position:absolute;right:0;top:0;flex:none;display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border:1px solid #778e9a;border-radius:4px;background:#fff;color:#324d5b;font:700 13px Arial,sans-serif;cursor:pointer;touch-action:manipulation}
+.fsbtn:hover{background:#f1f5f6}
+.fsbtn:focus-visible{outline:2px solid #1b6ef3;outline-offset:2px}
+.fsbtn[aria-pressed=true]{background:#778e9a;color:#fff}
+
+/* narrow screens and phones: the editor fills the screen, the page header shrinks to a title bar */
+@media (max-width:724px),(max-height:480px){
+  .page{width:auto;margin:0;padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left)}
+  .page-head{align-items:center;min-height:48px;padding:6px 12px;box-sizing:border-box;background:#f3f6f7;border-bottom:1px solid #d5dde1}
+  h1{font-size:17px;margin:0}
+  .lead{display:none}
+  .fslabel{display:none}
+  .fsbtn{position:static;width:44px;min-height:44px;padding:0;justify-content:center}
+  .wp-block-columns,.wp-block-column{display:block}
+  #editorContainer{width:100%;height:calc(100vh - 48px);height:calc(100dvh - 48px);min-height:360px}
+  #outputContainer{padding:0 12px 24px}
+}
+/* a low landscape screen: no title bar at all, only the editor (and the button over its corner) */
+@media (max-height:480px){
+  .page-head{position:fixed;right:0;bottom:env(safe-area-inset-bottom,0px);top:auto;z-index:50;min-height:0;padding:0;background:none;border:0}
+  .page-titles{display:none}
+  .fsbtn{opacity:.85;border-radius:6px 0 0 0;width:40px;min-height:40px}
+  #editorContainer{height:100vh;height:100dvh;min-height:0}
+}
+/* full screen (the button, or any size): the editor takes the whole window */
+html.fs,html.fs body{height:100%;overflow:hidden}
+html.fs .page{position:fixed;inset:0;width:auto;margin:0;padding:0;display:flex;flex-direction:column;background:#fff;z-index:100}
+html.fs .page-head{flex:none;align-items:center;min-height:44px;padding:4px 10px;box-sizing:border-box;background:#f3f6f7;border-bottom:1px solid #d5dde1}
+html.fs h1{font-size:16px;margin:0}
+html.fs .lead{display:none}
+html.fs .fsbtn{position:static}
+html.fs .wp-block-columns,html.fs .wp-block-column{flex:1 1 auto;display:flex;flex-direction:column;min-height:0}
+html.fs #editorContainer{width:100%;height:auto;flex:1 1 auto;min-height:0}
+html.fs #outputContainer{display:none}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
