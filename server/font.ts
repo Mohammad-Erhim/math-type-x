@@ -3,6 +3,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { inflateSync } from 'node:zlib';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ARABIC_FONTS } from '../src/layout/arfonts';
 
 const here = dirname(fileURLToPath(import.meta.url));
 /** project root: the module lives in server/ (sources) or in a bundle directory next to it */
@@ -66,9 +67,20 @@ export function mathFontPath(): string {
   return target;
 }
 
+/** directory of the bundled font files (Liberation Sans, the Arabic faces) */
+export function fontDir(): string {
+  return join(root, 'server/fonts');
+}
+
+/** the font files of the Font list's Arabic faces for one family (the CSS name of the bundled face), or none */
+export function arabicFacePaths(family: string): string[] {
+  const f = ARABIC_FONTS.find((x) => x.family === family);
+  return f ? ['Regular', 'Bold'].map((n) => join(fontDir(), `${f.stem}-${n}.ttf`)) : [];
+}
+
 /** Liberation Sans (OFL) files bundled for the sans-serif letters and digits */
 export function sansFontPaths(): string[] {
-  const dir = join(root, 'server/fonts');
+  const dir = fontDir();
   return [
     ...['Regular', 'Italic', 'Bold', 'BoldItalic'].map((n) => join(dir, `LiberationSans-${n}.ttf`)),
     // Arabic letters (the layout's Arabic advance widths are the ones of this face)

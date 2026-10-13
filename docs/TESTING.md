@@ -21,6 +21,7 @@ from it lives in `evidence/` (and `tests/oracle/`), so the suites run offline an
 | `ctxsets`, `ctxeffects` | Contextual tab against crawls of the real playground: the control set (and toggles) at every caret / selection stop of ~400 formulas, and the MathML of every control clicked at every stop (stacks, long division, fences, operators, multi-line) |
 | `stack`, `stacklayout`, `stackstrike` | elementary-maths stacks and long division: structure, geometry, strike-through |
 | `layout`, `roundtrip`, `templates`, `autoformat`, `rtl` | layout metrics, MathML round trip, templates, autoformat, right-to-left UI |
+| `arfonts`, `export` | the Arabic faces of the Font list (metrics, SVG / PNG / browser export), editor ↔ export details |
 | `services`, `content`, `server` | converters against reference corpora and the HTTP contract |
 | `hand` | handwriting recogniser: accuracy on three synthetic stroke corpora with the intended MathML as truth (digits, letters, operators, fractions, radicals, scripts, big operators), scribbles give no output |
 | `fuzz` | random sessions (typing, keys, controls, undo / redo, modes); after every step caret, selection, MathML round trip, layout and speech must stay valid |
@@ -73,7 +74,8 @@ tests `ctxsets` / `ctxeffects` replay them through the engine (`tools/gen/ctx_se
   (`METRIC=pix` counts differing pixels, `icon_ink.py` the ink ratio).
 * `tools/ctx_shots.js`: contextual-panel screenshots at every caret stop for a formula list (compare with a diff tool).
 * `tools/png_vs_ref.py`: our PNG export against the reference's own image service for the MathML of a crawl.
-* `tools/gen/subset_arabic.py` rebuilds the bundled Arabic face; `tools/gen/trace_rtl.py` / `trace_controls.py` re-trace the
+* `tools/font_check.js` (`NOLCD=1`): the Arabic faces of the Font list, editor canvas vs PNG export (LTR and RTL).
+* `tools/gen/subset_arabic.py` rebuilds the bundled default Arabic face, `tools/gen/subset_arabic_fonts.py` the faces of the Font list; `tools/gen/trace_rtl.py` / `trace_controls.py` re-trace the
   toolbar art (`tracelib.split_dots` keeps the dots of letters).
 
 ## Recording new evidence

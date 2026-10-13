@@ -1,3 +1,4 @@
+import { ARABIC_FONTS, ArabicFont } from '../layout/arfonts';
 /** UI message catalogue (NFR-008). Keys are the English tooltips; other languages can extend the table. */
 export const MESSAGES: Record<string, Record<string, string>> = {
   en: {
@@ -36,7 +37,14 @@ export const TAB_TITLES = [
   'Contextual tab (Alt+0)',
 ];
 
-export const FONT_FAMILIES: { label: string; value: string }[] = [
+export interface FontOption {
+  label: string;
+  value: string;
+  /** set for the Arabic faces: listed in their own group, drawn in the face, with the name in Arabic script */
+  arabic?: ArabicFont;
+}
+
+export const FONT_FAMILIES: FontOption[] = [
   { label: '— Font —', value: 'inherit' },
   { label: 'Arial', value: 'Arial' },
   { label: 'Classic', value: 'stix' },
@@ -44,7 +52,11 @@ export const FONT_FAMILIES: { label: string; value: string }[] = [
   { label: 'Tahoma', value: 'Tahoma' },
   { label: 'Times New Roman', value: 'Times New Roman' },
   { label: 'Verdana', value: 'Verdana' },
+  ...ARABIC_FONTS.map((f): FontOption => ({ label: f.label, value: f.value, arabic: f })),
 ];
+
+/** heading of the group of Arabic faces in the Font list */
+export const ARABIC_FONTS_GROUP = 'Arabic fonts';
 
 export const FONT_SIZES = ['inherit', '8px', '9px', '10px', '11px', '12px', '14px', '16px', '18px', '20px', '22px', '24px', '26px', '28px', '36px', '48px', '72px'];
 

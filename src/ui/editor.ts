@@ -13,6 +13,7 @@ import { Toolbar, ToolbarHost } from './toolbar';
 import { injectStyles, injectBundledFonts, BUNDLED_FACES } from './styles';
 import { getAssetsBase } from '../render/client';
 import { resetMeasuredAdvances } from '../layout/metrics';
+import { arabicCssFamily } from '../layout/arfonts';
 import { h } from './dom';
 import { Services, ServicesOptions } from './services';
 import { SWATCHES, FONT_FAMILIES } from './messages';
@@ -411,12 +412,30 @@ export class MathEditor implements ToolbarHost {
     }
   }
 
+  /** faces of the Font list are fetched when a formula first uses one; the formula is measured and drawn again then */
+  private arabicFaces = new Set<string>();
+  private ensureArabicFace(family: string): void {
+    if (!family || this.arabicFaces.has(family) || (!this.opts.fontsUrl && !getAssetsBase())) return;
+    this.arabicFaces.add(family);
+    const doc = this.root?.ownerDocument ?? document;
+    void doc.fonts
+      .load(`16px "${family}"`)
+      .then(() => {
+        resetMeasuredAdvances();
+        this.render();
+      })
+      // a face that cannot be fetched: the default Arabic face is used, try again on the next choice
+      .catch(() => this.arabicFaces.delete(family));
+  }
+
   render(): void {
     const core = this.core;
-    this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl);
+    const arabic = arabicCssFamily(core.getFontFamily());
+    this.ensureArabicFace(arabic);
+    this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl, arabic);
     const rtl = core.rtl;
     this.root.classList.toggle('wrs_rtl', rtl);
-    this.display.render(this.lastLayout, { caret: core.caret, sel: core.sel, focused: this.focused, rtl, showCaret: true });
+    this.display.render(this.lastLayout, { caret: core.caret, sel: core.sel, focused: this.focused, rtl, showCaret: true, arabic });
     // font family of letters
     const fam = core.getFontFamily();
     this.display.view.style.fontFamily = fam === 'stix' ? "'STIX Two Math',serif" : fam || '';
@@ -468,7 +487,12 @@ export class MathEditor implements ToolbarHost {
       const fam = c.getFontFamily();
       sel.font.value = FONT_FAMILIES.some((f) => f.value === fam && fam) ? fam : 'inherit';
       const fl = FONT_FAMILIES.find((f) => f.value === (fam || 'inherit'));
-      sel.fontLabel.textContent = fl ? fl.label : fam;
+      // an Arabic face shows its name in Arabic script, drawn in the face (short, and flags it as an Arabic font)
+      const ar = fl?.arabic;
+      sel.fontLabel.textContent = ar ? ar.arLabel : fl ? fl.label : fam;
+      sel.fontLabel.style.fontFamily = ar ? `'${ar.family}'` : '';
+      sel.fontLabel.classList.toggle('wrs_arabicFont', !!ar);
+      sel.fontBox.title = ar ? ar.label : '';
       sel.fontBox.classList.toggle('wrs_active', !!fam);
       const fs = c.getFontSize();
       sel.size.value = fs ? fs + 'px' : 'inherit';

@@ -10,7 +10,7 @@ import { controlIcon, tracedPaths, DRAWN_ICONS } from './icons';
 import CTX_LAYOUT from '../data/ctx-layout.json';
 import CTX_ICONS from '../data/ctx-icons.json';
 import { ART, TAB_ICONS } from './art';
-import { TAB_TITLES, FONT_FAMILIES, FONT_SIZES } from './messages';
+import { TAB_TITLES, FONT_FAMILIES, FONT_SIZES, ARABIC_FONTS_GROUP } from './messages';
 
 interface CtxCell {
   x: number;
@@ -188,15 +188,28 @@ export class Toolbar {
   }
 
   private addSelects(panel: HTMLElement): void {
-    const mk = (y: number, title: string, opts: { v: string; l: string }[]) => {
+    const mk = (y: number, title: string, opts: { v: string; l: string; ar?: { family: string; name: string } }[]) => {
       const sel = h('select', { title, 'aria-label': title, tabindex: '-1' }) as HTMLSelectElement;
-      opts.forEach((o) => sel.append(h('option', { value: o.v, text: o.l })));
+      let group: HTMLElement | null = null;
+      opts.forEach((o) => {
+        const opt = h('option', { value: o.v, text: o.ar ? `${o.l} — ${o.ar.name}` : o.l });
+        if (o.ar) {
+          // the Arabic faces form their own group, each entry drawn in its face (a preview of the letters)
+          if (!group) {
+            group = h('optgroup', { label: ARABIC_FONTS_GROUP });
+            sel.append(group);
+          }
+          opt.style.fontFamily = `'${o.ar.family}'`;
+          opt.setAttribute('data-arabic', '');
+          group.append(opt);
+        } else sel.append(opt);
+      });
       const label = h('div', { class: 'wrs_label', text: opts[0].l });
       const box = h('div', { class: 'wrs_select', style: { left: 417 - 3 + 'px', top: y - 28 + 'px' } }, label, sel);
       panel.append(box);
       return { sel, label, box };
     };
-    const f = mk(36.5, 'Font family', FONT_FAMILIES.map((o) => ({ v: o.value, l: o.label })));
+    const f = mk(36.5, 'Font family', FONT_FAMILIES.map((o) => ({ v: o.value, l: o.label, ar: o.arabic ? { family: o.arabic.family, name: o.arabic.arLabel } : undefined })));
     const s = mk(67.5, 'Font size', FONT_SIZES.map((v) => ({ v, l: v === 'inherit' ? '— Size —' : v })));
     (this as any).selects = { font: f.sel, size: s.sel, fontLabel: f.label, sizeLabel: s.label, fontBox: f.box, sizeBox: s.box };
   }

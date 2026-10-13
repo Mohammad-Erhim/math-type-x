@@ -1,5 +1,6 @@
 /** Editor stylesheet (scoped under .wrs_editor, NFR-004). Values follow SRS Appendix H / the measured reference. */
 import skin from '../data/skin.json';
+import { ARABIC_FONTS } from '../layout/arfonts';
 
 export const CSS = `
 .wrs_editor{position:relative;width:725px;height:415px;margin:0;padding:0;font:16px sans-serif;color:#000;background:transparent;text-align:left;direction:ltr;line-height:normal;overflow:visible;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -48,6 +49,8 @@ export const CSS = `
 .wrs_select .wrs_label{position:absolute;left:0;top:0;width:71px;height:18px;line-height:18px;padding:0 15px 0 5px;box-sizing:border-box;text-overflow:ellipsis;font-size:11px;font-weight:700;color:#b1b3b4;white-space:nowrap;overflow:hidden;pointer-events:none}
 .wrs_select select{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:12px}
 .wrs_select.wrs_active .wrs_label{color:#3b4a53}
+.wrs_select .wrs_label.wrs_arabicFont{font-size:13px;font-weight:400;direction:rtl;text-align:left}
+.wrs_select option[data-arabic]{font-size:15px}
 .wrs_editor .wrs_button.wrs_toggled.wrs_big{background:url(${skin.btnActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
 .wrs_editor .wrs_button.wrs_toggled.wrs_small{background:url(${skin.btnSmallActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
 .wrs_editor .wrs_button.wrs_big.wrs_disabled svg,.wrs_editor .wrs_button.wrs_small.wrs_disabled svg{opacity:.3}
@@ -231,6 +234,11 @@ export function bundledFontCss(base: string): string {
     face('Liberation Sans', 'LiberationSans-BoldItalic.ttf', 'truetype', 700, 'italic'),
     face('MTX Arabic', 'MtxArabic-Regular.ttf', 'truetype'),
     face('MTX Arabic', 'MtxArabic-Bold.ttf', 'truetype', 700),
+    // the Arabic faces of the Font list: declared here, fetched only when a formula (or the list) uses one
+    ...ARABIC_FONTS.flatMap((f) => [
+      face(f.family, `${f.stem}-Regular.woff2`, 'woff2').replace('font-display:block', 'font-display:swap'),
+      face(f.family, `${f.stem}-Bold.woff2`, 'woff2', 700).replace('font-display:block', 'font-display:swap'),
+    ]),
   ].join('\n');
 }
 

@@ -28,6 +28,7 @@ const OUTPUT_AR: Record<string, string> = {
   'Clear the whole formula?': 'هل تريد مسح المعادلة بالكامل؟',
   Clear: 'مسح',
   Cancel: 'إلغاء',
+  'Arabic fonts': 'خطوط عربية',
 };
 
 const TABLES: Record<string, Record<string, string>> = { ar: { ...ar, ...OUTPUT_AR } };
@@ -52,7 +53,7 @@ export function translate(table: Record<string, string> | undefined, s: string):
   return s;
 }
 
-const ATTRS = ['title', 'aria-label', 'placeholder', 'alt'];
+const ATTRS = ['title', 'aria-label', 'placeholder', 'alt', 'label'];
 const EN_PREFIX = 'data-en-';
 
 export class Localizer {

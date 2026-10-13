@@ -65,5 +65,14 @@ All notable changes are documented here. The format follows
   the limit of a right-to-left formula is the Arabic word نها.
 - Brand-neutral naming: no third-party site links or names in the product, help page shipped with the editor.
 
+### Added (Arabic fonts)
+- The Font list has a group of Arabic fonts (Amiri, Scheherazade New, Noto Naskh Arabic, Noto Kufi Arabic; SIL OFL):
+  entries are drawn in their face with their name in Arabic script, the closed list shows that name in the face.
+  Arabic letters, digits and punctuation are set in the chosen face in the editor and in the PNG / SVG / PDF / EPS
+  exports (browser and server); Latin letters, digits and operators keep their faces, so nothing else moves.
+- Subset fonts (woff2 for browsers, loaded only when used; ttf for the image services) from
+  `tools/gen/subset_arabic_fonts.py`; the image services measure Arabic runs with HarfBuzz (`harfbuzzjs`) in each face.
+- `tools/font_check.js` compares editor and PNG for every face, `tests/arfonts.test.ts`.
+
 ### Known deviations
 See *Known deviations* in the [README](README.md).

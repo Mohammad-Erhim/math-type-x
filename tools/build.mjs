@@ -49,7 +49,7 @@ await build({
   format: 'esm',
   target: 'node22',
   outfile: `${OUT}/server.mjs`,
-  external: ['@resvg/resvg-js'],
+  external: ['@resvg/resvg-js', 'harfbuzzjs'],
   banner: { js: "import { createRequire as __cr } from 'node:module'; const require = __cr(import.meta.url);" },
   logLevel: 'info',
 });

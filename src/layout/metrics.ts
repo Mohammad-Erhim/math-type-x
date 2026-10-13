@@ -6,6 +6,7 @@
 import stix from '../data/metrics.json';
 import ref from '../data/ref-metrics.json';
 import arWidths from '../data/ar-widths.json';
+import { ARABIC_SCRIPT as ARABIC_BLOCKS } from './arfonts';
 
 export interface Variant { adv: number; y1: number; y2: number; x1: number; x2: number; d: string }
 export const raw = stix as unknown as { upm: number; cps: Record<string, number[]>; variants: Record<string, Variant> };
@@ -39,6 +40,18 @@ const KIND: Record<string, FontKind> = { '': 'sans', wrs_italic: 'sans', wrs_mat
 
 const AR_WIDTHS = arWidths as Record<string, number>;
 const ADV_CACHE = new Map<string, number | null>();
+/** CSS family of the chosen Arabic face ('' = the default face): set for the duration of one layout */
+let arabicFamily = '';
+/** run `fn` (a layout) with Arabic letters measured in the bundled face `family` ('' = the default one) */
+export function withArabicFont<T>(family: string, fn: () => T): T {
+  const prev = arabicFamily;
+  arabicFamily = family;
+  try {
+    return fn();
+  } finally {
+    arabicFamily = prev;
+  }
+}
 let measureCtx: CanvasRenderingContext2D | null | undefined;
 
 /** advance (em) of a letter of a script without a metrics table: measured by the browser in the font the text is drawn in
@@ -47,11 +60,15 @@ let measureCtx: CanvasRenderingContext2D | null | undefined;
 export function resetMeasuredAdvances(): void {
   ADV_CACHE.clear();
   RUN_CACHE.clear();
+  epoch++;
 }
+let epoch = 0;
+/** changes whenever measured advances were forgotten: layouts kept from before are stale */
+export const measureEpoch = (): number => epoch;
 
 /** advance of a run of Arabic text as the bundled Arabic face shapes it (joined forms, ligatures), in px at `size`;
  * null when it cannot be measured (the sum of the isolated letters is used then) */
-export type RunShaper = (text: string, size: number) => number | null;
+export type RunShaper = (text: string, size: number, family: string) => number | null;
 let runShaper: RunShaper | null = null;
 const RUN_CACHE = new Map<string, number | null>();
 /** the server installs the measurement of its font file; the browser measures with a canvas */
@@ -60,7 +77,7 @@ export function setRunShaper(fn: RunShaper | null): void {
   RUN_CACHE.clear();
 }
 let runCtx: CanvasRenderingContext2D | null | undefined;
-function browserRunWidth(text: string, size: number): number | null {
+function browserRunWidth(text: string, size: number, family: string): number | null {
   if (runCtx === undefined) {
     try {
       runCtx = typeof document !== 'undefined' ? document.createElement('canvas').getContext('2d') : null;
@@ -68,32 +85,43 @@ function browserRunWidth(text: string, size: number): number | null {
       runCtx = null;
     }
   }
-  if (!runCtx || typeof document === 'undefined' || !document.fonts?.check("16px 'MTX Arabic'")) return null;
-  runCtx.font = `${size}px 'MTX Arabic'`;
+  const face = family || 'MTX Arabic';
+  // a face that has not arrived yet cannot be measured: the caller falls back to the table and measures again later
+  if (!runCtx || typeof document === 'undefined' || !document.fonts?.check(`16px '${face}'`)) return null;
+  // the stack the text is drawn with: glyphs the face does not hold (Latin letters in a mixed run) come from Liberation Sans
+  runCtx.font = `${size}px '${face}','Liberation Sans',Arial,sans-serif`;
   const w = runCtx.measureText(text).width;
   return w > 0 ? w : null;
 }
 function runWidth(text: string, size: number): number | null {
-  const key = size + '|' + text;
+  const key = arabicFamily + '|' + size + '|' + text;
   const hit = RUN_CACHE.get(key);
   if (hit !== undefined) return hit;
-  const w = runShaper ? runShaper(text, size) : browserRunWidth(text, size);
+  const w = runShaper ? runShaper(text, size, arabicFamily) : browserRunWidth(text, size, arabicFamily);
   // a browser that has not loaded the face yet answers null: do not remember that
   if (w !== null || runShaper) RUN_CACHE.set(key, w);
   return w;
 }
 
-const ARABIC_BLOCKS = /[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff\ufb50-\ufdff\ufe70-\ufeff]/;
-
 function measuredAdv(ch: string): number | null {
-  const hit = ADV_CACHE.get(ch);
+  const key = arabicFamily + '|' + ch;
+  const hit = ADV_CACHE.get(key);
   if (hit !== undefined) return hit;
   let w: number | null = null;
+  // a chosen Arabic face: its own (shaped) advance of the letter, while it is loaded or on the server
+  if (arabicFamily && ARABIC_BLOCKS.test(ch)) {
+    const m = runWidth(ch, 100);
+    if (m !== null) {
+      ADV_CACHE.set(key, m / 100);
+      return m / 100;
+    }
+  }
   // Arabic letters have a table: the layout must not depend on the font a machine falls back to
   if (ARABIC_BLOCKS.test(ch)) {
     const t = AR_WIDTHS[(ch.codePointAt(0) ?? 0).toString(16)];
     if (t !== undefined) {
-      ADV_CACHE.set(ch, t);
+      // not remembered while a chosen face may still arrive
+      if (!arabicFamily) ADV_CACHE.set(key, t);
       return t;
     }
   }
@@ -110,7 +138,7 @@ function measuredAdv(ch: string): number | null {
     if (m > 0) w = m / 100;
   }
   if (w === null) w = AR_WIDTHS[(ch.codePointAt(0) ?? 0).toString(16)] ?? null;
-  ADV_CACHE.set(ch, w);
+  ADV_CACHE.set(key, w);
   return w;
 }
 

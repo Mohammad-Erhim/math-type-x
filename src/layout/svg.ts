@@ -2,6 +2,7 @@
 import { Item } from './layout';
 import { pickVariant, raw } from './metrics';
 import { K } from './layout';
+import { ARABIC_SCRIPT } from './arfonts';
 
 /** the faces bundled with the editor and the image services (STIX Two Math, Liberation Sans, MTX Arabic): the editor
  * canvas, the icons and the PNG / SVG / PDF exports all draw with these, so they come out the same everywhere */
@@ -244,8 +245,8 @@ function horizontalSvg(it: Extract<Item, { k: 'h' }>, color: string): string {
 }
 
 /** `ui`: editor-only marks too (stack frames, empty cells); `slots`: the boxes of empty slots (editor and toolbar icons) –
- * exported images (PNG, SVG, PDF, EPS) draw neither */
-export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sans?: string; ui?: boolean; slots?: boolean } = {}): string {
+ * exported images (PNG, SVG, PDF, EPS) draw neither; `arabic`: CSS family of the chosen bundled Arabic face */
+export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sans?: string; ui?: boolean; slots?: boolean; arabic?: string } = {}): string {
   const fg = opts.fg ?? '#000';
   let o = '';
   for (const it of items) {
@@ -254,7 +255,9 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
     switch (it.k) {
       case 'g': {
         const fill = it.color ?? fg;
-        const fam = it.font === 'sans' ? opts.sans ?? SANS : KIND_FONT[it.font] ?? FONT;
+        let fam = it.font === 'sans' ? opts.sans ?? SANS : KIND_FONT[it.font] ?? FONT;
+        // the chosen Arabic face first: it holds the Arabic blocks only, Latin glyphs fall through to the next family
+        if (opts.arabic && ARABIC_SCRIPT.test(it.text)) fam = `'${opts.arabic}',${fam}`;
         // the reference sets text in HTML boxes: its baseline sits on a whole pixel, one above the layout's
         // (measured on 16 px letters and digits: box top + 13; the smaller script sizes line up with the layout
         // baseline, so do the operator glyphs of its symbol font, except the 24 px summation sign)

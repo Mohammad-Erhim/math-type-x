@@ -9,7 +9,7 @@
 import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr } from '../core/model';
 import { glyphText } from './glyphs';
-import { tokenInfo, FontKind, isBigOp, isIntegral } from './metrics';
+import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont } from './metrics';
 import rtlMirror from '../data/rtl-mirror.json';
 
 /* ---------------------------------------------------------------- items */
@@ -1865,7 +1865,12 @@ export function mirrorBox(b: Box): Box {
   return out;
 }
 
-export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false): DocLayout {
+/** `arabicFont`: CSS family of the bundled Arabic face the letters of the Arabic blocks are measured in ('' = default) */
+export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false, arabicFont = ''): DocLayout {
+  return withArabicFont(arabicFont, () => layoutDocumentIn(row, size, rtl));
+}
+
+function layoutDocumentIn(row: Row, size: number, rtl: boolean): DocLayout {
   const env: Env = { size, level: 0, display: true, rtl };
   const lines: { from: number; to: number }[] = [];
   let from = 0;
