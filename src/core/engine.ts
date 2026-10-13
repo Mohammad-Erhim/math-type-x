@@ -199,6 +199,8 @@ export class EditorCore {
   private mergeTarget: El | null = null;
   /** the contextual tab's "dash lines" choice for new table lines (not part of the document) */
   ctxDash = false;
+  /** carries location last used in the session (shown as current when the row has no carries row); survives setMathML */
+  ctxCarry: string | null = null;
 
   private modeStyle(): ModeStyle | null {
     const m = this.modes;
@@ -217,6 +219,7 @@ export class EditorCore {
   /** delete current selection (caret goes to its start); returns removed elements */
   private takeSelection(): Row | null {
     if (!this.sel) return null;
+    if (this.sel.cells) return this.clearSelectedCells();
     const r = rowAt(this.row, this.sel.path);
     const [from, to] = [Math.min(this.sel.from, this.sel.to), Math.max(this.sel.from, this.sel.to)];
     const removed = r.splice(from, to - from);
@@ -227,6 +230,26 @@ export class EditorCore {
 
   hasSelection(): boolean {
     return !!this.sel && this.sel.from !== this.sel.to;
+  }
+
+  /** the cells of a table selection: their slot indices, row major */
+  selectedCells(): { table: El; slots: number[]; path: Step[] } | null {
+    const s = this.sel;
+    if (!s || !s.cells) return null;
+    const table = rowAt(this.row, s.path)[s.from];
+    if (!table || table.t !== 'mtable' || !table.c) return null;
+    return { table, slots: s.cells.slots.filter((k) => k < table.c!.length), path: s.path };
+  }
+
+  /** Delete / Backspace / typing over a range of cells empties the cells; the table stays */
+  private clearSelectedCells(): Row {
+    const info = this.selectedCells()!;
+    const s = this.sel!;
+    for (const k of info.slots) info.table.c![k] = [];
+    this.caret = { path: [...s.path, [s.from, info.slots[0] ?? 0]], index: 0 };
+    this.sel = null;
+    this.anchor = null;
+    return [];
   }
 
   /* -------------------------------------------------------- insertion */
@@ -585,6 +608,12 @@ export class EditorCore {
   typeChar(ch: string): void {
     this.checkpoint();
     this.clearTransient();
+    if (this.sel?.cells) {
+      // the reference empties the selected cells and ignores the character
+      this.takeSelection();
+      this.emit();
+      return;
+    }
     if (this.hasSelection()) this.takeSelection();
     this.sel = null;
     this.settleStackCaret();
@@ -856,11 +885,29 @@ export class EditorCore {
   private stepRight(): void {
     this.stepRightRaw();
     if (this.atScriptBaseStart()) this.stepRightRaw();
+    // the place between a placeholder and the element next to it is no stop (the reference jumps over it)
+    for (let guard = 0; guard < 2 && this.betweenPlaceholder(); guard++) this.stepRightRaw();
   }
 
   private stepLeft(): void {
     this.stepLeftRaw();
     if (this.atScriptBaseStart()) this.stepLeftRaw();
+    for (let guard = 0; guard < 2 && this.betweenPlaceholder(); guard++) this.stepLeftRaw();
+  }
+
+  /** a caret position next to an argument placeholder: the reference has one stop for it, inside the placeholder */
+  private betweenPlaceholder(): boolean {
+    const row = this.currentRow();
+    const i = this.caret.index;
+    const ph = (e?: El) => !!e && e.t === 'maction' && getAttr(e, 'actiontype') === 'argument';
+    if (ph(row[i - 1]) || ph(row[i])) return true;
+    // the edges of a style wrapper (mstyle) coincide with the positions outside it: no stops of their own
+    const { path } = this.caret;
+    if (path.length && (i === 0 || i === row.length)) {
+      const owner = tryRowAt(this.row, path.slice(0, -1))?.[path[path.length - 1][0]];
+      if (owner && owner.t === 'mstyle' && row.length > 0) return true;
+    }
+    return false;
   }
 
   /** the start of the base of a script structure is not a caret stop (the base box is one stop) */
@@ -1026,6 +1073,21 @@ export class EditorCore {
         return;
       }
     }
+    // a selection that started inside a table goes on cell by cell (a cell is selected as a whole)
+    if (path.length && ((dir === 1 && index === row.length) || (dir === -1 && index === 0))) {
+      const cellPath = path.slice(0, -1);
+      const [ti, slot] = path[path.length - 1];
+      const owner = tryRowAt(this.row, cellPath)?.[ti];
+      if (owner && owner.t === 'mtable' && owner.c && this.anchor.path.length >= path.length && samePath(this.anchor.path.slice(0, path.length - 1), cellPath) && this.anchor.path[path.length - 1][0] === ti) {
+        const next = slot + dir;
+        if (next >= 0 && next < owner.c.length) {
+          this.caret = { path: [...cellPath, [ti, next]], index: dir === 1 ? owner.c[next].length : 0 };
+          this.updateSelectionFromAnchor();
+          this.emit();
+          return;
+        }
+      }
+    }
     // inside a stack row an empty cell (none) is selected together with the element before it
     const inStackRow = path.length > 0 && tryRowAt(this.row, path.slice(0, -1))?.[path[path.length - 1][0]]?.t === 'msrow' && this.isStackLevel(path.slice(0, -1));
     if (dir === 1) {
@@ -1052,9 +1114,23 @@ export class EditorCore {
     let from: number;
     let to: number;
     if (ai === hi && aLift && hLift) {
-      // both inside the same structure but different slots: select the structure
+      // both inside the same structure but different slots: select the structure (a table: the range of cells they span)
       from = ai;
       to = ai + 1;
+      const owner = rowAt(this.row, a.path.slice(0, k))[ai];
+      if (owner && owner.t === 'mtable' && owner.c) {
+        const cols = owner.cols ?? 1;
+        const sa = a.path[k][1];
+        const sh = h.path[k][1];
+        const r0 = Math.min(Math.floor(sa / cols), Math.floor(sh / cols));
+        const r1 = Math.max(Math.floor(sa / cols), Math.floor(sh / cols));
+        const c0 = Math.min(sa % cols, sh % cols);
+        const c1 = Math.max(sa % cols, sh % cols);
+        const slots: number[] = [];
+        for (let r = r0; r <= r1; r++) for (let c = c0; c <= c1; c++) if (r * cols + c < owner.c.length) slots.push(r * cols + c);
+        this.sel = { path: a.path.slice(0, k), from, to, cells: { r0, c0, r1, c1, slots } };
+        return;
+      }
     } else if (aFirst) {
       from = ai;
       to = hLift ? hi + 1 : hi;
@@ -1400,7 +1476,26 @@ export class EditorCore {
   /** ArrowUp / ArrowDown: nearest caret position above / below (geometry), otherwise structural */
   moveVertical(dir: 1 | -1, extend = false): void {
     this.clearTransient();
-    if (extend) return;
+    if (extend) {
+      // inside a table the selection grows by a row of cells
+      const { path } = this.caret;
+      if (path.length) {
+        const cellPath = path.slice(0, -1);
+        const [ti, slot] = path[path.length - 1];
+        const owner = tryRowAt(this.row, cellPath)?.[ti];
+        if (owner && owner.t === 'mtable' && owner.c) {
+          const cols = owner.cols ?? 1;
+          const next = slot + dir * cols;
+          if (next >= 0 && next < owner.c.length) {
+            if (!this.anchor) this.anchor = this.pos();
+            this.caret = { path: [...cellPath, [ti, next]], index: dir === 1 ? owner.c[next].length : 0 };
+            this.updateSelectionFromAnchor();
+            this.emit();
+          }
+        }
+      }
+      return;
+    }
     this.sel = null;
     this.anchor = null;
     const g = this.geometry;

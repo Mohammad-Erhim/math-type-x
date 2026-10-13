@@ -338,7 +338,14 @@ export function layoutRow(row: Row, env: Env, path: [number, number][] = [], bas
 
 /** caret rectangle next to an element: [top relative to the baseline, height] (measured on the reference) */
 function elementCaret(el: El, box: Box, env: Env, lift: number): [number, number] {
-  if (el.c !== undefined) return [-box.a, box.a + box.d];
+  if (el.c !== undefined) {
+    // the placeholder of an empty argument: the caret is as tall as its green box
+    if (el.t === 'maction' && box.items && box.items.some((q) => q.k === 's')) {
+      const s = env.size / 16;
+      return [-box.a + 1 * s, box.a + box.d - 3 * s];
+    }
+    return [-box.a, box.a + box.d];
+  }
   const size = env.size;
   const whole = size >= 15.5;
   const g = box.items && box.items[0] && box.items[0].k === 'g' ? box.items[0] : null;
@@ -878,34 +885,39 @@ function fenced(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
 
 function enclose(el: El, env: Env, body: Box): Box {
   const notation = (getAttr(el, 'notation') ?? 'longdiv').trim().split(/\s+/);
-  const w = round(body.w) + 4;
-  const top = body.a;
-  const bot = body.d;
+  const has = (n: string) => notation.includes(n);
+  // room the reference leaves on each side (measured with tools/ctx_matrix.js on every notation): a side that carries a
+  // line has 2 px (left / right) or 1 px (top / bottom); the strikes alone need none; the long division sign 7 px on the left
+  const boxed = has('box') || has('roundedbox');
+  const circle = has('circle');
+  const padL = circle ? 6 : has('longdiv') ? 7 : boxed || has('left') || has('horizontalstrike') ? 2 : 0;
+  const padR = circle ? 6 : boxed || has('right') || has('horizontalstrike') || has('madruwb') || has('actuarial') ? 2 : 0;
+  const padT = circle ? 5 : boxed || has('top') || has('verticalstrike') || has('actuarial') || has('longdiv') ? 1 : 0;
+  const padB = circle ? 5 : boxed || has('bottom') || has('verticalstrike') || has('madruwb') ? 1 : 0;
+  const w = round(body.w) + padL + padR;
+  const top = body.a + padT;
+  const bot = body.d + padB;
+  const h = top + bot;
   const items: Item[] = [];
   const R = (x: number, y: number, ww: number, hh: number): Item => ({ k: 'r', x, y, w: ww, h: hh, color: env.color });
-  for (const nn of notation) {
-    if (nn === 'box') items.push(R(0, -top, w, 1), R(0, bot - 1, w, 1), R(0, -top, 1, top + bot), R(w - 1, -top, 1, top + bot));
-    else if (nn === 'roundedbox') items.push({ k: 'p', x: 0, y: -top, d: roundedRect(w - 1, top + bot - 1, 4), sw: 1, color: env.color });
-    else if (nn === 'top') items.push(R(0, -top, w, 1));
-    else if (nn === 'bottom') items.push(R(0, bot - 1, w, 1));
-    else if (nn === 'left') items.push(R(0, -top, 1, top + bot));
-    else if (nn === 'right') items.push(R(w - 1, -top, 1, top + bot));
-    else if (nn === 'updiagonalstrike') items.push({ k: 'p', x: 0, y: -top, d: `M0 ${top + bot} L${w} 0`, sw: 1, color: env.color });
-    else if (nn === 'downdiagonalstrike') items.push({ k: 'p', x: 0, y: -top, d: `M0 0 L${w} ${top + bot}`, sw: 1, color: env.color });
-    else if (nn === 'horizontalstrike') items.push(R(0, -(top - (top + bot) / 2), w, 1));
-    else if (nn === 'verticalstrike') items.push(R(Math.floor(w / 2), -top, 1, top + bot));
-    else if (nn === 'circle') items.push({ k: 'p', x: 0, y: -top, d: ellipsePath(w, top + bot), sw: 1, color: env.color });
-    else if (nn === 'actuarial') items.push(R(0, -top, w, 1), R(w - 1, -top, 1, top + bot));
-    else if (nn === 'longdiv') items.push(R(0, -top, w, 1), { k: 'p', x: 0, y: -top, d: `M0 0 Q${-5} ${(top + bot) / 2} 0 ${top + bot}`, sw: 1, color: env.color });
-  }
-  const circle = notation.includes('circle');
-  const pad = circle ? 6 : 2;
-  const ww = circle ? round(body.w) + 12 : w;
-  if (circle) {
-    items.length = 0;
-    items.push({ k: 'p', x: 0, y: -(top + 3), d: ellipsePath(ww, top + bot + 6), sw: 1, color: env.color });
-  }
-  return mk(ww, top + (circle ? 3 : 0), bot + (circle ? 3 : 0), items, [{ b: body, x: pad, y: 0 }]);
+  if (circle) items.push({ k: 'p', x: 0, y: -top, d: ellipsePath(w, h), sw: 1, color: env.color });
+  else
+    for (const nn of notation) {
+      if (nn === 'box') items.push(R(0, -top, w, 1), R(0, bot - 1, w, 1), R(0, -top, 1, h), R(w - 1, -top, 1, h));
+      else if (nn === 'roundedbox') items.push({ k: 'p', x: 0, y: -top, d: roundedRect(w - 1, h - 1, 4), sw: 1, color: env.color });
+      else if (nn === 'top') items.push(R(0, -top, w, 1));
+      else if (nn === 'bottom') items.push(R(0, bot - 1, w, 1));
+      else if (nn === 'left') items.push(R(0, -top, 1, h));
+      else if (nn === 'right') items.push(R(w - 1, -top, 1, h));
+      else if (nn === 'madruwb') items.push(R(0, bot - 1, w, 1), R(w - 1, -top, 1, h));
+      else if (nn === 'updiagonalstrike') items.push({ k: 'p', x: 0, y: -top, d: `M0 ${h} L${w} 0`, sw: 1, color: env.color });
+      else if (nn === 'downdiagonalstrike') items.push({ k: 'p', x: 0, y: -top, d: `M0 0 L${w} ${h}`, sw: 1, color: env.color });
+      else if (nn === 'horizontalstrike') items.push(R(0, -(top - h / 2), w, 1));
+      else if (nn === 'verticalstrike') items.push(R(Math.floor(w / 2), -top, 1, h));
+      else if (nn === 'actuarial') items.push(R(0, -top, w, 1), R(w - 1, -top, 1, h));
+      else if (nn === 'longdiv') items.push(R(0, -top, w, 1), { k: 'p', x: 0, y: -top, d: `M${padL - 2} 0 Q${padL - 7} ${h / 2} ${padL - 2} ${h}`, sw: 1, color: env.color });
+    }
+  return mk(w, top, bot, items, [{ b: body, x: padL, y: 0 }]);
 }
 
 function roundedRect(w: number, h: number, r: number): string {

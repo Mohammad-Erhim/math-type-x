@@ -98,7 +98,16 @@ export class FormulaDisplay {
     this.selLayer.textContent = '';
     if (st.sel && st.sel.from !== st.sel.to && this.touch) this.addHandles(st.sel, lay);
     else this.hideHandles();
-    if (st.sel && st.sel.from !== st.sel.to) {
+    if (st.sel && st.sel.cells && st.sel.from !== st.sel.to) {
+      // a range of table cells: each selected cell is highlighted on its own
+      for (const slot of st.sel.cells.slots) {
+        const g = lay.rows.get(pathKey([...st.sel.path, [st.sel.from, slot]]));
+        if (!g || g.xs.length < 2) continue;
+        const x1 = g.xs[0];
+        const x2 = g.xs[g.xs.length - 1];
+        if (x2 !== x1) this.selLayer.append(h('div', { class: 'wrs_selection', style: { left: Math.min(x1, x2) + 'px', top: g.y - g.a + 'px', width: Math.abs(x2 - x1) + 'px', height: g.a + g.d + 'px' } }));
+      }
+    } else if (st.sel && st.sel.from !== st.sel.to) {
       const g = lay.rows.get(pathKey(st.sel.path));
       if (g) {
         const from = Math.min(st.sel.from, st.sel.to);

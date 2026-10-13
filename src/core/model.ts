@@ -106,6 +106,8 @@ export interface Selection {
   path: Step[];
   from: number;
   to: number;
+  /** a range of table cells (the table is the element `from`): rows r0..r1, columns c0..c1 */
+  cells?: { r0: number; c0: number; r1: number; c1: number; slots: number[] };
 }
 
 export function samePath(a: Step[], b: Step[]): boolean {
