@@ -46,6 +46,8 @@ export class OutputPanel {
   private blob: Blob | null = null;
   private tabEls = new Map<Kind, HTMLButtonElement>();
   private imgUrl: string | null = null;
+  /** right-to-left interface: images and text follow it, source code (MathML, LaTeX) stays left to right */
+  private rtlUi = false;
 
   constructor(private ed: MathEditor, container: HTMLElement) {
     if (!container.ownerDocument.getElementById('mtx-output-style')) {
@@ -85,6 +87,7 @@ export class OutputPanel {
       new Localizer(table, (el) => el.classList.contains('mtx_body')).attach(this.root);
       if (ed.opts.rtlLanguages.includes(ed.lang.toLowerCase())) {
         this.root.setAttribute('dir', 'rtl');
+        this.rtlUi = true;
         this.body.setAttribute('dir', 'ltr');
       }
     }
@@ -156,6 +159,7 @@ export class OutputPanel {
   }
 
   private paint(k: Kind, value: string, blob: Blob | null): void {
+    if (this.rtlUi) this.body.setAttribute('dir', k === 'mathml' || k === 'latex' ? 'ltr' : 'rtl');
     if (this.imgUrl) {
       URL.revokeObjectURL(this.imgUrl);
       this.imgUrl = null;

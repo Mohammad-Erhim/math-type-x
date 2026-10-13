@@ -18,6 +18,7 @@ writeFileSync(indexFile, readFileSync(indexFile, 'utf8').replace(/__BUILD__/g, S
 copyFileSync('node_modules/@fontsource/stix-two-math/files/stix-two-math-latin-400-normal.woff2', `${OUT}/public/fonts/stix-two-math.woff2`);
 // the fonts of the PNG / PDF export in the browser (the server uses the same files)
 for (const f of ['Regular', 'Bold', 'Italic', 'BoldItalic']) copyFileSync(`server/fonts/LiberationSans-${f}.ttf`, `${OUT}/public/fonts/LiberationSans-${f}.ttf`);
+for (const f of ['Regular', 'Bold']) copyFileSync(`server/fonts/MtxArabic-${f}.ttf`, `${OUT}/public/fonts/MtxArabic-${f}.ttf`);
 
 await build({
   entryPoints: ['src/main.ts'],

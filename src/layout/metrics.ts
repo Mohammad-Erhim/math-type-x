@@ -43,14 +43,64 @@ let measureCtx: CanvasRenderingContext2D | null | undefined;
 
 /** advance (em) of a letter of a script without a metrics table: measured by the browser in the font the text is drawn in
  * (like the reference, which lays out what the browser measures), tables of the Arabic blocks without a canvas */
+/** forget the measured advances (the bundled faces arrived after the first ones were measured) */
+export function resetMeasuredAdvances(): void {
+  ADV_CACHE.clear();
+  RUN_CACHE.clear();
+}
+
+/** advance of a run of Arabic text as the bundled Arabic face shapes it (joined forms, ligatures), in px at `size`;
+ * null when it cannot be measured (the sum of the isolated letters is used then) */
+export type RunShaper = (text: string, size: number) => number | null;
+let runShaper: RunShaper | null = null;
+const RUN_CACHE = new Map<string, number | null>();
+/** the server installs the measurement of its font file; the browser measures with a canvas */
+export function setRunShaper(fn: RunShaper | null): void {
+  runShaper = fn;
+  RUN_CACHE.clear();
+}
+let runCtx: CanvasRenderingContext2D | null | undefined;
+function browserRunWidth(text: string, size: number): number | null {
+  if (runCtx === undefined) {
+    try {
+      runCtx = typeof document !== 'undefined' ? document.createElement('canvas').getContext('2d') : null;
+    } catch {
+      runCtx = null;
+    }
+  }
+  if (!runCtx || typeof document === 'undefined' || !document.fonts?.check("16px 'MTX Arabic'")) return null;
+  runCtx.font = `${size}px 'MTX Arabic'`;
+  const w = runCtx.measureText(text).width;
+  return w > 0 ? w : null;
+}
+function runWidth(text: string, size: number): number | null {
+  const key = size + '|' + text;
+  const hit = RUN_CACHE.get(key);
+  if (hit !== undefined) return hit;
+  const w = runShaper ? runShaper(text, size) : browserRunWidth(text, size);
+  // a browser that has not loaded the face yet answers null: do not remember that
+  if (w !== null || runShaper) RUN_CACHE.set(key, w);
+  return w;
+}
+
+const ARABIC_BLOCKS = /[\u0600-\u06ff\u0750-\u077f\u08a0-\u08ff\ufb50-\ufdff\ufe70-\ufeff]/;
+
 function measuredAdv(ch: string): number | null {
   const hit = ADV_CACHE.get(ch);
   if (hit !== undefined) return hit;
   let w: number | null = null;
+  // Arabic letters have a table: the layout must not depend on the font a machine falls back to
+  if (ARABIC_BLOCKS.test(ch)) {
+    const t = AR_WIDTHS[(ch.codePointAt(0) ?? 0).toString(16)];
+    if (t !== undefined) {
+      ADV_CACHE.set(ch, t);
+      return t;
+    }
+  }
   if (measureCtx === undefined) {
     try {
       measureCtx = typeof document !== 'undefined' ? document.createElement('canvas').getContext('2d') : null;
-      if (measureCtx) measureCtx.font = "100px Arial,'Liberation Sans',Helvetica,sans-serif";
+      if (measureCtx) measureCtx.font = "100px 'Liberation Sans','MTX Arabic',Arial,Helvetica,sans-serif";
     } catch {
       measureCtx = null;
     }
@@ -100,6 +150,11 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
       if (i === 0) lp = t.lpad;
       if (i === chars.length - 1) rp = t.rpad;
     });
+    // Arabic letters join inside a run: the reference lays out what the browser measures for the whole run
+    if (chars.filter((c) => ARABIC_BLOCKS.test(c)).length >= 2) {
+      const sw = runWidth(text, size);
+      if (sw !== null) w = sw;
+    }
     return { w, lpad: lp, rpad: rp, font };
   }
   const ch = chars[0] ?? '';

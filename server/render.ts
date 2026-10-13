@@ -1,6 +1,7 @@
 /** Server-side formula rendering: the shared SVG (src/render) rasterised with resvg. */
 import { Resvg } from '@resvg/resvg-js';
 import { mathFontPath, sansFontPaths } from './font';
+import './arabic';
 import { renderSvg, safeColor } from '../src/render/svg';
 import type { RenderOptions, Rendered } from '../src/render/svg';
 

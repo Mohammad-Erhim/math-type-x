@@ -6,6 +6,7 @@ const GREEN = '#2e9e2e';
 const DARK = '#18212f';
 const GREY = '#9aa7b0';
 
+import { tracedPaths } from './icons';
 import traced from '../data/traced-icons.json';
 
 type Traced = Record<string, { w: number; h: number; layers: { fill: string; d: string }[] }>;
@@ -14,7 +15,7 @@ const TR = traced as unknown as Traced;
 function tracedArt(name: string): string {
   const ic = TR[name];
   if (!ic) return '';
-  return ic.layers.map((l) => `<path d="${l.d}" fill="${l.fill}"${(l as any).op ? ` fill-opacity="${(l as any).op}"` : ''} fill-rule="evenodd"/>`).join('');
+  return tracedPaths(ic.layers as any);
 }
 
 export type Art = (w: number, h: number, o?: { rtl?: boolean }) => string;
@@ -61,9 +62,8 @@ export const ART: Record<string, Art> = {
     `<circle cx="9" cy="17.5" r="1.1" fill="${DARK}"/><circle cx="13" cy="17.5" r="1.1" fill="${DARK}"/>`,
   help: () =>
     `<circle cx="9" cy="9" r="8.2" fill="#fff" stroke="#18212f" stroke-width="1.4"/><text x="9" y="13.4" text-anchor="middle" font-size="13" font-weight="700" font-family="Arial,sans-serif" fill="#18212f">?</text>`,
-  hand: () =>
-    `<path d="M8 3c2-1 4 0 3 2.2-.7 1.6-3 2-3 3.8s2.2 1.5 2.2 3.2" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>` +
-    `<path d="M6 21c0-3 2.6-3 3.4-5.2.8-2.2 1.8-1.6 2.2-.6h1.4c.6-.9 1.7-.7 2 .2 1.1-.2 1.7.4 1.8 1.2 1 .1 1.5.9 1.5 2V22c0 2-1 3-3 3H11c-2.4 0-5-1.5-5-4z" fill="#fff"/>`,
+  /** the handwriting strip: a squiggle and an open hand (28 x 40) */
+  hand: () => `<g transform="translate(-29.726514,-319.53237)"> <g transform="matrix(0.14561515,0,0,0.14561515,29.656496,300.17917)"> <path d="m 64.488011,320.34222 c -1.327238,-3.61737 4.592207,0.69216 2.54074,-23.9592 -1.858151,-22.32838 -7.73228,-21.20244 -7.619871,-31.75393 0.272968,-25.62275 80.51434,-22.94691 80.68046,-49.11886 0.14561,-22.94119 -99.720743,-7.05061 -99.868852,-35.89922 C 40.080622,152.36772 155.2224,139.55965 155.2224,139.55965" style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#f0f0f0;stroke-width:8.58427162;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /> <path d="m 75.927824,321.03128 0,0 0,0 c 0,-0.15464 0,0 0,0 m 25.998046,0 0,0 c 0,0 0,-0.15464 0,0 z m 39.10755,-1.1913 c -4.91478,-1.31691 -11.82187,3.17032 -11.82187,10.26421 0,-7.26817 -3.45065,-17.96848 -14.28665,-17.96848 -7.1877,0 -12.99903,5.72177 -12.99903,12.98993 0,-7.26816 -5.811325,-17.39357 -12.999016,-17.39357 -7.187697,0 -12.99903,5.87641 -12.99903,13.14457 l 0,-46.23794 c 0,-7.26816 -5.811335,-13.14456 -12.999032,-13.14456 -7.187697,0 -12.99903,5.8764 -12.99903,13.14456 l 0,79.17666 0,0 c 0.458788,29.07267 24.009971,52.26896 52.760738,51.80503 28.13909,-0.30928 46.45152,-23.4523 48.87081,-51.80503 0,-18.11515 1.32088,-29.92703 -10.52789,-33.97538 z" style="fill:#f4f4f4;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" /> </g> </g>`,
   expand: () => `<path d="M2 18L5 21L2 24" fill="none" stroke="#fff"/>`,
 };
 

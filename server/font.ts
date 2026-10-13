@@ -69,5 +69,9 @@ export function mathFontPath(): string {
 /** Liberation Sans (OFL) files bundled for the sans-serif letters and digits */
 export function sansFontPaths(): string[] {
   const dir = join(root, 'server/fonts');
-  return ['Regular', 'Italic', 'Bold', 'BoldItalic'].map((n) => join(dir, `LiberationSans-${n}.ttf`));
+  return [
+    ...['Regular', 'Italic', 'Bold', 'BoldItalic'].map((n) => join(dir, `LiberationSans-${n}.ttf`)),
+    // Arabic letters (the layout's Arabic advance widths are the ones of this face)
+    ...['Regular', 'Bold'].map((n) => join(dir, `MtxArabic-${n}.ttf`)),
+  ];
 }

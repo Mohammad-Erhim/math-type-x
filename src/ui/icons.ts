@@ -15,12 +15,24 @@ export { itemsToSvg, ICON_FONT };
 export const SLOT_COLOR = '#2e9e2e';
 const r = (n: number) => Math.round(n * 100) / 100;
 
+/** The traced artwork is thinned a little by the vectorising (the sprites are anti-aliased bitmaps): a hairline stroke in
+ * the fill colour gives back the weight of the original (measured: median ink 0.88 of the sprite without it). */
+const TRACE_STROKE = 0.2;
+export function tracedPaths(layers: { fill: string; d: string; op?: number }[], fill?: string): string {
+  return layers
+    .map((l) => {
+      const f = fill ?? l.fill;
+      return `<path d="${l.d}" fill="${f}"${l.op ? ` fill-opacity="${l.op}"` : ` stroke="${f}" stroke-width="${TRACE_STROKE}" stroke-linejoin="round"`} fill-rule="evenodd"/>`;
+    })
+    .join('');
+}
+
 /** SVG markup (inner) of a catalogue control icon fitted into a w×h box */
 export function controlIcon(c: Control, w: number, h: number): string {
   // vector re-drawing of the reference artwork (tools/gen/trace_controls.py)
   const t = TRACED[c.id];
   if (t) {
-    const body = t.layers.map((l) => `<path d="${l.d}" fill="${l.fill}"${(l as any).op ? ` fill-opacity="${(l as any).op}"` : ''} fill-rule="evenodd"/>`).join('');
+    const body = tracedPaths(t.layers as any);
     return t.w === w && t.w === h ? body : `<g transform="scale(${w / t.w} ${h / t.w})">${body}</g>`;
   }
   const mml = c.A ?? '<math/>';
@@ -46,5 +58,5 @@ export function controlIcon(c: Control, w: number, h: number): string {
   }
   const x0 = (w - lay.w) / 2;
   const y0 = (h - (lay.a + lay.d)) / 2;
-  return `<g transform="translate(${r(x0)} ${r(y0)})">${itemsToSvg(lay.items)}</g>`;
+  return `<g transform="translate(${r(x0)} ${r(y0)})">${itemsToSvg(lay.items, { slots: true })}</g>`;
 }

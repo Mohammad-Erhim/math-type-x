@@ -899,7 +899,8 @@ export class EditorCore {
   private betweenPlaceholder(): boolean {
     const row = this.currentRow();
     const i = this.caret.index;
-    const ph = (e?: El) => !!e && e.t === 'maction' && getAttr(e, 'actiontype') === 'argument';
+    // (the text slot of a big operator, an mo that holds a row, is such a placeholder too)
+    const ph = (e?: El) => !!e && ((e.t === 'maction' && getAttr(e, 'actiontype') === 'argument') || (e.t === 'mo' && e.c !== undefined && getAttr(e, 'largeop') === 'true'));
     if (ph(row[i - 1]) || ph(row[i])) return true;
     // the edges of a style wrapper (mstyle) coincide with the positions outside it: no stops of their own
     const { path } = this.caret;
@@ -1161,8 +1162,26 @@ export class EditorCore {
   home(extend = false): void {
     this.clearTransient();
     if (extend && !this.anchor) this.anchor = this.pos();
-    this.caret = { path: [], index: 0 };
+    this.caret = this.homeCaret();
     this.finishHomeEnd(extend);
+  }
+
+  /** the start of the document: a script structure (sup / sub) whose base is an empty placeholder, or the text slot of a
+   * big operator, is entered at once – the reference has no stop in front of it (limits / accents do) */
+  private homeCaret(): Caret {
+    const el = this.row[0];
+    if (!el || !el.c || !['msup', 'msub', 'msubsup'].includes(el.t)) return { path: [], index: 0 };
+    const path: Step[] = [[0, 0] as Step];
+    let row: Row = el.c[0] ?? [];
+    // the placeholders of the base: argument wrappers and the text slot of a big operator
+    for (let guard = 0; guard < 4 && row.length === 1 && row[0].c !== undefined; guard++) {
+      const e = row[0];
+      const holder = (e.t === 'maction' && getAttr(e, 'actiontype') === 'argument') || (e.t === 'mo' && getAttr(e, 'largeop') === 'true');
+      if (!holder) break;
+      path.push([0, 0] as Step);
+      row = e.c![0] ?? [];
+    }
+    return row.length === 0 ? { path, index: 0 } : { path: [], index: 0 };
   }
   end(extend = false): void {
     this.clearTransient();

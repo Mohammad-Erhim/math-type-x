@@ -39,7 +39,6 @@ elementary-maths stacks to LaTeX) this service answers the same text; the record
 | `SERVICES_BASE` | `/editor-services/` | service path prefix |
 | `STATIC_DIR` | `dist/public` | static files |
 | `CORS_ORIGINS` | `*` | comma-separated allowed origins |
-| `FONT_SRC` | `https://www.wiris.net` | extra origin the page may load the reference symbol fonts from (CSP) |
 | `RATE_LIMIT` | `120` | requests / minute / IP |
 | `MAX_BODY` | `1048576` | maximum body bytes |
 | `LOG` | on | `off` silences the access log |

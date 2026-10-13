@@ -42,8 +42,23 @@ All notable changes are documented here. The format follows
 
 ### Added (responsive)
 - Fluid layout for narrow / low screens and touch (scrolling tab and panel strips, touch-sized controls, full-window
-  editor and handwriting surface, pop-ups kept on screen), full-screen button, `layout` option and `setLayout()`;
+  editor and handwriting surface, pop-ups kept on screen), `layout` option and `setLayout()`;
   the wide-screen layout is unchanged.
+
+### Changed (editor ↔ export consistency pass)
+- One bundled font set (STIX Two Math, Liberation Sans, an Arabic face) for the formula canvas, the toolbar icons and
+  every export; the editor no longer loads fonts from another site, so the canvas and the PNG / SVG / PDF agree and
+  the browser-side export no longer falls back to wrong glyphs.
+- Exported images contain no empty-slot placeholder boxes. Arabic runs are measured as joined text (editor and image
+  services alike). Stretched arrows are drawn on the pixel grid (no clipped or stretched heads).
+- Fence vertical alignment (contextual tab: Baseline / Middle / Middle-baseline) now changes the layout.
+- Arabic / right-to-left toolbar art for the pop-up items, dots of Arabic letters kept in traced icons, real
+  handwriting-strip icon, reference grid and keyboard button in handwriting mode, reference hover / pressed / focus
+  states of buttons and expanders, toolbar selects.
+- The demo page is exactly as high as the window (no page scroll, output panel always visible); no full-screen button.
+- Touch screens get a small ◀ ▲ ▼ ▶ pad in the formula area (soft keyboards have no arrow keys, so a numerator could not
+  be left for the denominator, a script exited, …).
+- Brand-neutral naming: no third-party site links or names in the product, help page shipped with the editor.
 
 ### Known deviations
 See *Known deviations* in the [README](README.md).

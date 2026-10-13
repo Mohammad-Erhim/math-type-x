@@ -22,9 +22,11 @@ for t in range(9):
             y = -int(it['mt'].replace('px', ''))
             size = it['w'] - 4
             img = SPR[it['sprite']]
-            cell = img[y:y + size, x:x + size].copy()
+            cell, dots = split_dots(img[y:y + size, x:x + size].copy())
             a = cell[..., 3]
             if a.max() < 0.05:
+                if dots:
+                    out[c['id']] = {'w': size, 'layers': dots}
                 continue
             opaque = a > 0.5
             if opaque.sum() < 1:
@@ -58,7 +60,7 @@ for t in range(9):
                 layers.sort(key=lambda l: -l['area'])
                 for l in layers:
                     del l['area']
-            out[c['id']] = {'w': size, 'layers': layers}
+            out[c['id']] = {'w': size, 'layers': layers + dots}
             n += 1
 json.dump(out, open('src/data/control-icons.json', 'w'), separators=(',', ':'))
 print('traced', n)

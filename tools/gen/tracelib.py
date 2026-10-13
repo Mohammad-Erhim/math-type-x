@@ -71,19 +71,49 @@ def path_of(mask):
     cs, hier = cv2.findContours(mask, cv2.RETR_CCOMP, cv2.CHAIN_APPROX_NONE)
     d = []
     for c in cs:
-        if len(c) < 6:
-            continue
+        n = len(c)
         pts = c[:, 0, :].astype(np.float32)
-        pts = smooth(pts, 9).astype(np.float32)
-        ap = cv2.approxPolyDP(pts.reshape(-1, 1, 2), 1.0, True)[:, 0, :]
+        if n < 6:
+            # dots of letters, full stops, hairline ends: kept as the box they cover (they used to be dropped)
+            if n < 2:
+                continue
+            x0, y0 = pts.min(axis=0)
+            x1, y1 = pts.max(axis=0)
+            q = np.array([[x0, y0], [x1 + 1, y0], [x1 + 1, y1 + 1], [x0, y1 + 1]], np.float32) / S
+            d.append('M' + ' '.join(f'{x:.2f} {y:.2f}' for x, y in q) + 'Z')
+            continue
+        # small shapes (dots, serifs) are smoothed less so that they keep their size
+        pts = smooth(pts, 9 if n >= 40 else 3 if n >= 12 else 1).astype(np.float32)
+        ap = cv2.approxPolyDP(pts.reshape(-1, 1, 2), 1.0 if n >= 40 else 0.5, True)[:, 0, :]
         if len(ap) < 3:
             continue
         # contour pixel centres → pixel edges: shift by +0.5 then scale
         pts = (ap + 0.5) / S
-        d.append('M' + ' '.join(f'{x:.2f} {y:.2f}'.rstrip('0').rstrip('.') if False else f'{x:.2f} {y:.2f}' for x, y in pts) + 'Z')
+        d.append('M' + ' '.join(f'{x:.2f} {y:.2f}' for x, y in pts) + 'Z')
     return ''.join(d)
 
 
+
+
+def split_dots(cell, max_px=4):
+    """Isolated specks of at most `max_px` pixels (the dots of Arabic letters, full stops) cannot be vectorised by a
+    threshold at 8x: they are cut out of the cell and returned as exact pixel squares with their opacity."""
+    a = cell[..., 3]
+    m = (a > 0.06).astype(np.uint8)
+    n, lab, stats, _ = cv2.connectedComponentsWithStats(m, connectivity=8)
+    layers = {}
+    out = cell.copy()
+    for i in range(1, n):
+        if stats[i, cv2.CC_STAT_AREA] > max_px:
+            continue
+        ys, xs = np.nonzero(lab == i)
+        for y, x in zip(ys, xs):
+            col = tuple(int(round(v * 255)) for v in cell[y, x, :3])
+            op = round(float(a[y, x]), 2)
+            layers.setdefault((col, op), []).append(f'M{x} {y}h1v1h-1z')
+            out[y, x, 3] = 0
+    res = [{'fill': '#%02x%02x%02x' % col, 'op': op, 'd': ''.join(d)} for (col, op), d in layers.items()]
+    return out, res
 
 
 def pixel_layers(cell, levels=6):

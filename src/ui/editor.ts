@@ -10,8 +10,9 @@ import { layoutDocument, DocLayout } from '../layout/layout';
 import { DocGeometry } from '../layout/geometry';
 import { FormulaDisplay } from './display';
 import { Toolbar, ToolbarHost } from './toolbar';
-import { injectStyles, injectVendorFonts } from './styles';
-import { setVendorFonts } from '../layout/svg';
+import { injectStyles, injectBundledFonts, BUNDLED_FACES } from './styles';
+import { getAssetsBase } from '../render/client';
+import { resetMeasuredAdvances } from '../layout/metrics';
 import { h } from './dom';
 import { Services, ServicesOptions } from './services';
 import { SWATCHES, FONT_FAMILIES } from './messages';
@@ -141,16 +142,15 @@ export class MathEditor implements ToolbarHost {
   /* ---------------------------------------------------------- lifecycle */
   insertInto(container: HTMLElement): void {
     injectStyles(container.ownerDocument);
-    if (this.opts.fontsUrl) {
-      injectVendorFonts(this.opts.fontsUrl, container.ownerDocument);
+    // the faces the formulas are drawn with come with the editor; the canvas is drawn again once they are in
+    const fontBase = this.opts.fontsUrl ?? getAssetsBase();
+    if (fontBase) {
       const doc = container.ownerDocument;
-      const want = ['Conv_math1', 'Conv_brackets', 'Conv_brack_sm', 'Conv_roundBrackets1854', 'Conv_horizontal'];
-      void Promise.all(want.map((f) => doc.fonts.load(`16px ${f}`)))
-        .then((r) => {
-          if (r.every((faces) => faces.length > 0)) {
-            setVendorFonts(true);
-            this.render();
-          }
+      injectBundledFonts(fontBase, doc);
+      void Promise.all(BUNDLED_FACES.map((f) => doc.fonts.load(f)))
+        .then(() => {
+          resetMeasuredAdvances();
+          this.render();
         })
         .catch(() => undefined);
     }
@@ -165,12 +165,12 @@ export class MathEditor implements ToolbarHost {
 
   private build(container: HTMLElement): void {
     this.display = new FormulaDisplay();
-    this.toolbar = new Toolbar(this, this.opts.manualUrl ?? `https://www.wiris.net/demo/editor/resources/help.html?lang=${this.lang}&v=${VERSION}`);
+    this.toolbar = new Toolbar(this, this.opts.manualUrl ?? helpUrl(this.lang));
     this.geom = new DocGeometry(this.core);
     this.core.geometry = this.geom;
     const handWrapper = h('div', { class: 'wrs_handWrapper' });
     const strip = h('div', { class: 'wrs_handStrip' });
-    strip.innerHTML = `<svg width="30" height="316" viewBox="0 0 30 316" aria-hidden="true"><g transform="translate(3 140) scale(1.15)">${ART.hand(30, 30)}</g></svg>`;
+    strip.innerHTML = `<svg width="30" height="316" viewBox="0 0 30 316" aria-hidden="true"><g transform="translate(1 138)">${ART.hand(28, 40)}</g></svg>`;
     const handBtn = h('input', { type: 'button', title: 'Go to handwritten mode', 'aria-label': 'Go to handwritten mode' });
     handWrapper.append(strip, handBtn);
     this.clipboardArea = h('textarea', { class: 'wrs_clipboardTextarea', tabindex: '-1', 'aria-hidden': 'true', readOnly: true }) as HTMLTextAreaElement;
@@ -186,6 +186,48 @@ export class MathEditor implements ToolbarHost {
     this.localizer.attach(this.root);
     handBtn.addEventListener('click', () => this.openHand());
     strip.addEventListener('click', () => this.openHand());
+    this.buildNavPad();
+  }
+
+  /** Touch screens have no arrow keys on their keyboards: a small pad moves the caret (into the next slot, out of a
+   * script, down to the denominator, to the next line) like the arrow keys do. */
+  private buildNavPad(): void {
+    const touch = (typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches) || (typeof window !== 'undefined' && 'ontouchstart' in window);
+    if (!touch) return;
+    const keys: [string, string, string][] = [
+      ['ArrowLeft', 'Move left', '◀'],
+      ['ArrowUp', 'Move up', '▲'],
+      ['ArrowDown', 'Move down', '▼'],
+      ['ArrowRight', 'Move right', '▶'],
+    ];
+    const pad = h('div', { class: 'wrs_navPad', role: 'group', 'aria-label': 'Move the cursor' });
+    for (const [key, label, glyph] of keys) {
+      const b = h('button', { type: 'button', class: 'wrs_navKey wrs_nav' + key.slice(5), title: label, 'aria-label': label, tabindex: '-1', text: glyph }) as HTMLButtonElement;
+      // a press must not take the focus (and so the soft keyboard) away from the formula
+      b.addEventListener('pointerdown', (e) => e.preventDefault());
+      b.addEventListener('mousedown', (e) => e.preventDefault());
+      let timer: ReturnType<typeof setTimeout> | null = null;
+      const step = () => {
+        const host = { ed: this.core, runGeneral: (title: string) => this.runGeneral(title) };
+        handleKey(host, key, { ctrl: false, alt: false, shift: false, meta: false });
+        this.display.poke();
+        this.focusEditor();
+      };
+      const stop = () => {
+        if (timer) clearTimeout(timer);
+        timer = null;
+      };
+      b.addEventListener('click', (e) => {
+        e.preventDefault();
+        step();
+      });
+      b.addEventListener('contextmenu', (e) => e.preventDefault());
+      b.addEventListener('pointerup', stop);
+      b.addEventListener('pointerleave', stop);
+      pad.append(b);
+    }
+    this.display.wrapper.append(pad);
+    this.root.classList.add('wrs_hasNavPad');
   }
 
   private attach(): void {
@@ -259,6 +301,13 @@ export class MathEditor implements ToolbarHost {
   /** the classic widget needs 725 px; a narrower container gets the fluid layout (or when asked for) */
   private applyLayout(): void {
     if (!this.root || !this.host) return;
+    // a field of a dialog / picker has the focus: on a phone its soft keyboard shrinks the window, which must not change
+    // the layout (and with it close the dialog the person is filling in)
+    const ae = this.root.ownerDocument.activeElement as HTMLElement | null;
+    if (ae && this.root.contains(ae) && ae.matches('input:not(.wrs_focusElement), textarea:not(.wrs_clipboardTextarea), select') && this.popup) {
+      this.hand.resize();
+      return;
+    }
     const w = this.host.clientWidth;
     const attr = this.host.dataset.wrsLayout as 'classic' | 'fluid' | 'auto' | undefined;
     const mode = this.layoutMode !== 'auto' ? this.layoutMode : attr ?? 'auto';
@@ -270,7 +319,8 @@ export class MathEditor implements ToolbarHost {
     let k: number = this.opts.toolbarSize;
     if (fluid && k === 1 && coarse) k = h > 0 && h < 480 ? 1.25 : 1.5;
     const hk = fluid && coarse ? 1.35 : 1;
-    const changed = fluid !== this.fluid || k !== this.zoomK;
+    // only a change of the layout mode closes a pop-up; a new zoom (a different window height) keeps it
+    const changed = fluid !== this.fluid;
     this.fluid = fluid;
     this.zoomK = k;
     this.root.classList.toggle('wrs_fluid', fluid);
@@ -412,6 +462,12 @@ export class MathEditor implements ToolbarHost {
       if (this.toolbar.selected === 9) this.renderContextPanel();
     }
     this.focusEditor();
+  }
+
+  /** focus the field of a dialog – not on touch screens, where that would only raise the soft keyboard over it */
+  private focusField(el: HTMLElement): void {
+    if (typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches) return;
+    el.focus();
   }
 
   /* ------------------------------------------------------- toolbar host */
@@ -679,7 +735,8 @@ export class MathEditor implements ToolbarHost {
     this.root.append(el);
     this.placePanel(el, btn);
     this.popup = { el, kind: 'picker', owner: btn as HTMLElement, close: () => undefined };
-    rows.focus();
+    // on a touch screen the squares are tapped; focusing a number field would only raise the soft keyboard
+    this.focusField(rows);
   }
 
   private insertTable(rows: number, cols: number, title: string): void {
@@ -763,7 +820,7 @@ export class MathEditor implements ToolbarHost {
     this.root.append(el);
     this.placePanel(el, btn);
     this.popup = { el, kind: 'palette', owner: btn, close: () => undefined };
-    hex.focus();
+    this.focusField(hex);
     hex.select();
   }
 
@@ -846,7 +903,7 @@ export class MathEditor implements ToolbarHost {
     this.placePanel(el, btn);
     showCategory();
     this.popup = { el, kind: 'unicode', owner: btn, close: () => undefined };
-    code.focus();
+    this.focusField(code);
   }
 
   /* --------------------------------------------------------- length field */
@@ -882,7 +939,7 @@ export class MathEditor implements ToolbarHost {
     this.root.append(el);
     this.fitInside(el);
     this.popup = { el, kind: 'length', owner: btn, close: () => undefined };
-    input.focus();
+    this.focusField(input);
     input.setSelectionRange(0, 0);
   }
 
@@ -1248,7 +1305,14 @@ export class MathEditor implements ToolbarHost {
   }
 }
 
-/** the vendor-compatible entry point: com.wiris.jsEditor.JsEditor.newInstance(...) */
+/** the help page ships next to editor.js (fonts/ is the assets directory) */
+function helpUrl(lang: string): string {
+  const base = getAssetsBase();
+  const root = base ? new URL('../', new URL(base, document.baseURI)).href : '';
+  return `${root}help.html?lang=${encodeURIComponent(lang)}&v=${VERSION}`;
+}
+
+/** the entry point: MathTypeX.JsEditor.newInstance(...) */
 export const JsEditor = { newInstance: (o: EditorOptions = {}) => MathEditor.newInstance(o) };
 void serializeMathML;
 void parseMathML;

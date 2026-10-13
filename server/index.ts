@@ -25,7 +25,6 @@ export interface Config {
   rateLimit: number;
   maxBody: number;
   /** extra origins the page may load fonts from (the reference symbol fonts) */
-  fontSrc: string;
 }
 export function loadConfig(): Config {
   return {
@@ -36,7 +35,6 @@ export function loadConfig(): Config {
     corsOrigins: (env.CORS_ORIGINS ?? '*').split(',').map((s) => s.trim()).filter(Boolean),
     rateLimit: Number(env.RATE_LIMIT ?? 120),
     maxBody: Number(env.MAX_BODY ?? 1_048_576),
-    fontSrc: env.FONT_SRC ?? 'https://www.wiris.net',
   };
 }
 
@@ -229,7 +227,6 @@ function handleService(name: string, p: Record<string, string>): Reply | Promise
 
 export function createApp(cfg: Config) {
   const staticRoot = cfg.staticDir;
-  const fontSrc = cfg.fontSrc;
   return createServer(async (req, res) => {
     const t0 = Date.now();
     let status = 500;
@@ -290,7 +287,7 @@ export function createApp(cfg: Config) {
       return send(200, type, data, {
         ETag: etag,
         'Cache-Control': cc,
-        'Content-Security-Policy': `default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self' ${fontSrc}; frame-ancestors 'self'`,
+        'Content-Security-Policy': `default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; font-src 'self'; frame-ancestors 'self'`,
       });
     } catch (e) {
       const he = e instanceof HttpError ? e : new HttpError(500, 'internal error');

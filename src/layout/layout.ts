@@ -33,6 +33,8 @@ export interface Box {
   w: number;
   a: number;
   d: number;
+  /** the text slot of a big operator ("Big operator with …" controls): empty (a black box) or holding text */
+  largeOp?: 'empty' | 'text';
   items?: Item[];
   kids?: Placed[];
   row?: {
@@ -220,7 +222,14 @@ export function layoutRow(row: Row, env: Env, path: [number, number][] = [], bas
   if (row.length === 0) {
     const e = emptySlot(env);
     const b = mk(e.w, e.a, e.d, e.items);
-    b.row = { key: pathKey(path), path, xs: [e.w / 2, e.w / 2], a: e.a, d: e.d, size: env.size };
+    // the caret inside an empty slot: 3 px in, as tall as the slot's box (17 px at 16 px text), with the underline mark
+    // under the whole slot (measured on the reference)
+    const q = env.size / 16;
+    const cx = Math.floor((e.w - 1) / 2);
+    const top = -e.a + 1 * q;
+    const hh = e.a + e.d - 3 * q;
+    const ul = { x0: 0, x1: e.w, y: e.d - 3 };
+    b.row = { key: pathKey(path), path, xs: [cx, cx], a: e.a, d: e.d, size: env.size, ct: [top, top], ch: [hh, hh], ul: [ul, ul] };
     return b;
   }
   // a line holding an operator glyph of the symbol font is a pixel taller above its baseline (see tokenAtom)
@@ -411,7 +420,9 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   const info = tokenInfo(tag, mv, text, size);
   const italicDefault = tag === 'mi' && (variant === '' || variant === 'italic') && to - from >= 1 && Array.from(text).length === 1;
   const bold = variant === 'bold' || variant === 'bold-italic';
-  const italicFlag = tag === 'mi' ? (variant === '' ? Array.from(text).length === 1 : variant === 'italic' || variant === 'bold-italic') : variant === 'italic';
+  // letters of scripts that have no italic (Hebrew, Arabic, Thai, kana, CJK, Hangul) stay upright, like the reference
+  const noItalic = /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff\u0e00-\u0eff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(text);
+  const italicFlag = !noItalic && (tag === 'mi' ? (variant === '' ? Array.from(text).length === 1 : variant === 'italic' || variant === 'bold-italic') : variant === 'italic');
   let font = info.font;
   let drawn = tag === 'mo' ? text.replace(/-/g, '\u2212') : text;
   if (font === 'fraktur' || font === 'script' || font === 'double' || (font === 'math' && mv && mv !== 'normal' && mv !== 'italic' && mv !== 'bold' && mv !== 'bold-italic')) {
@@ -523,9 +534,31 @@ export function layoutEl(el: El, envIn: Env, path: [number, number][], index: nu
     }
     case 'mpadded':
       return padded(el, env, R(0));
-    case 'mo':
-      if (el.c && el.c.length === 1) return R(0, env); // empty big-operator text slot
-      return mk(0, 0, 0);
+    case 'mo': {
+      if (!(el.c && el.c.length === 1)) return mk(0, 0, 0);
+      // the text slot of a big operator ("Big operator with …" controls): its content is set at the operator size, an
+      // empty one is a 16 x 23 px black box (editor only; measured on the reference)
+      if (getAttr(el, 'largeop') === 'true') {
+        if (el.c[0].length === 0) {
+          const s = sc(env);
+          const w = 16 * s;
+          const top = -21 * s;
+          const hgt = 23 * s;
+          const black = '#000';
+          const rule = (x: number, y: number, rw: number, rh: number): Item => ({ k: 'r', x, y, w: rw, h: rh, color: black, ui: true });
+          // the layout of the (empty) row keeps the caret positions; the box is the black frame instead of the green slot
+          const inner = R(0, env);
+          const box: Box = { ...inner, w, a: 24 * s, d: 2 * s, items: [rule(0, top, w, 1), rule(0, top + hgt - 1, w, 1), rule(0, top, 1, hgt), rule(w - 1, top, 1, hgt)], largeOp: 'empty' };
+          if (inner.row) box.row = { ...inner.row, xs: [w / 2 - 1, w / 2 - 1], a: 24 * s, d: 2 * s };
+          return box;
+        }
+        if (env.level === 0) {
+          const inner = R(0, { ...env, size: env.size * 1.5 });
+          return { ...inner, a: Math.max(inner.a, 24 * sc(env)), largeOp: 'text' };
+        }
+      }
+      return R(0, env);
+    }
     default:
       return R(0);
   }
@@ -637,6 +670,19 @@ function opSizeOf(base: Box): number {
   return singleGlyph(base)?.size ?? 16;
 }
 
+/** the big-operator text slot a row consists of, if any */
+function largeOpOf(b: Box): 'empty' | 'text' | undefined {
+  if (b.largeOp) return b.largeOp;
+  const ks = b.kids?.filter((k) => k.b.w > 0);
+  return ks && ks.length === 1 ? largeOpOf(ks[0].b) : undefined;
+}
+
+/** distance from the baseline of an (empty) script box to the top of its placeholder */
+function slotTop(b: Box): number {
+  const it = b.items?.find((q) => q.k === 's');
+  return it ? -it.y : b.a;
+}
+
 function bigOpBase(base: Box): boolean {
   const it = singleGlyph(base);
   return !!it && isBigOp(it.text.codePointAt(0) ?? 0);
@@ -651,6 +697,7 @@ function scripts(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const sub = hasSub ? R(1, se) : null;
   const sup = hasSup ? R(el.t === 'msup' ? 1 : 2, se) : null;
   const big = bigOpBase(base);
+  const slotOp = largeOpOf(base);
   const bx = round(base.w); // the base row already carries its italic correction
   const kids: Placed[] = [{ b: base, x: 0, y: 0 }];
   let a = base.a;
@@ -660,7 +707,13 @@ function scripts(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   // whole-pixel script offsets keep nested scripts on the pixel grid like the reference
   let supY = -Math.round(K.supShift * s);
   let subY = Math.round(K.subShift * s + (sup ? K.subSupExtra * s : 0));
-  if (big) {
+  if (slotOp) {
+    // the scripts of a big operator's text slot: placeholders 3 px above / 25 px above the baseline (measured on the reference)
+    subX = bx;
+    supX = bx;
+    if (sub) subY = -3 * s + slotTop(sub);
+    if (sup) supY = -25 * s + slotTop(sup);
+  } else if (big) {
     const os = opSizeOf(base);
     subX = Math.round(base.w * 0.64);
     supX = Math.round(base.w * 1.15);
@@ -674,7 +727,8 @@ function scripts(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const ll = 0; // (a lifted line keeps the scripts where the base row puts them)
   if (sup) {
     kids.push({ b: sup, x: supX, y: supY - ll });
-    a = Math.max(a, -(supY - ll) + sup.a);
+    // a big operator's text slot: the container reaches 3 px above the superscript's placeholder
+    a = Math.max(a, slotOp ? 28 * s : -(supY - ll) + sup.a);
   }
   if (sub) {
     kids.push({ b: sub, x: subX, y: subY - ll });
@@ -970,6 +1024,22 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const kids: Placed[] = [{ b: base, x: Math.floor((w - bw) / 2), y: 0 }];
   let a = base.a;
   let d = base.d;
+  const slotOp = largeOpOf(base);
+  if (slotOp) {
+    // limits of a big operator's text slot: placeholders 36 px above the baseline (10 below the black box's top edge
+    // minus its height ...) and 10 px (7 under a letter) below it, centred; measured on the reference
+    if (over) {
+      const y = -36 * s + slotTop(over);
+      kids.push({ b: over, x: Math.floor((w - round(over.w)) / 2), y });
+      a = Math.max(a, 41 * s);
+    }
+    if (under) {
+      const y = (slotOp === 'empty' ? 10 : 7) * s + slotTop(under);
+      kids.push({ b: under, x: Math.floor((w - round(under.w)) / 2), y });
+      d = Math.max(d, y + under.d);
+    }
+    return mk(w, a, d, undefined, kids);
+  }
   // a base of letters / digits: the scripts keep a constant distance from the ink of the base (measured on the reference)
   const baseText = leafText(el.c![0]);
   const tok = !big && !!baseText && !el.c![0].some((e) => e.c !== undefined && e.t !== 'mrow');
@@ -1019,6 +1089,21 @@ function fenced(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   for (let k = 0; k < n; k++) inner.push(R(k));
   let a = Math.max(...inner.map((b) => b.a));
   let d = Math.max(...inner.map((b) => b.d));
+  // vertical alignment of the fence (contextual tab: Baseline / Middle / Middle-baseline)
+  //  baseline (default): the content sits on the baseline of the line;
+  //  middle: the middle of the fence is on the middle of the line (where tables are centred);
+  //  middle-baseline: the fence is as high above the baseline as it is deep below it, the content stays put.
+  const valign = getAttr(el, 'wrs:valign');
+  let drop = 0;
+  if (valign === 'middle') {
+    drop = (a - d) / 2 - K.axis * s;
+    a -= drop;
+    d += drop;
+  } else if (valign === 'middle-baseline') {
+    const m = Math.max(a, d);
+    a = m;
+    d = m;
+  }
   const tall = a + d > textAsc(env.size) + textDesc(env.size) + 2;
   const gw = tall ? 4.69 * s : open === '|' || close === '|' ? 3.75 * s : open === '{' || close === '{' ? 5.34 * s : 4.25 * s;
   const dyTable = el.c!.length === 1 && el.c![0].length === 1 && el.c![0][0].t === 'mtable' ? 1 : 0;
@@ -1029,7 +1114,7 @@ function fenced(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   kids.push({ b: fo, x, y: 0 });
   x += Math.round(fo.w);
   inner.forEach((b, k) => {
-    kids.push({ b, x, y: 0 });
+    kids.push({ b, x, y: drop });
     x += round(b.w);
     if (k < n - 1) {
       const sepc = seps.length ? seps[Math.min(k, seps.length - 1)] : '';
@@ -1038,7 +1123,7 @@ function fenced(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
         const lift = info.font === 'math' && env.size >= 15.5 ? 1 : 0;
         const sbox = mk(info.w, textAsc(env.size) + lift, textDesc(env.size), [{ k: 'g', x: 0, y: -lift, text: sepc, size: env.size, font: info.font }]);
         x += 2;
-        kids.push({ b: sbox, x, y: 0 });
+        kids.push({ b: sbox, x, y: drop });
         x += round(info.w) + 2;
       }
     }

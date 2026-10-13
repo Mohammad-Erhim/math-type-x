@@ -6,7 +6,7 @@ import rtlIcons from '../data/rtl-icons.json';
 import { catalogue, Control, behaviorOf } from '../core/catalogue';
 import layoutData from '../data/toolbar-layout.json';
 import { h, svg } from './dom';
-import { controlIcon } from './icons';
+import { controlIcon, tracedPaths } from './icons';
 import CTX_LAYOUT from '../data/ctx-layout.json';
 import CTX_ICONS from '../data/ctx-icons.json';
 import { ART, TAB_ICONS } from './art';
@@ -195,7 +195,7 @@ export class Toolbar {
     const [gx, gy, gw, gh] = c.geom;
     const small = gw <= 22;
     const extra = behaviorOf(c) === 'picker' ? ' wrs_matrixButton' : c.title === 'Color' ? ' wrs_colorChooser' : c.title === 'Insert special characters' ? ' wrs_unicodeChooser' : '';
-    const btn = h('button', { type: 'button', class: 'wrs_imageContainer wrs_button' + extra, title: c.title, 'aria-label': c.title, tabindex: '-1' });
+    const btn = h('button', { type: 'button', class: 'wrs_imageContainer wrs_button ' + (gw > 22 ? 'wrs_big' : 'wrs_small') + extra, title: c.title, 'aria-label': c.title, tabindex: '-1' });
     btn.style.width = gw + 'px';
     btn.style.height = gh + 'px';
     if (abs) {
@@ -205,7 +205,9 @@ export class Toolbar {
     const inner = gw - 4;
     const key = c.special ? specialKey(c.title) : null;
     let body = '';
-    if (key && ART[key]) body = ART[key](inner, gh - 4);
+    const alt = this.rtlOn ? RTL_ICONS.controls[c.id] : undefined;
+    if (alt) body = tracedPaths(alt.layers as any);
+    else if (key && ART[key]) body = ART[key](inner, gh - 4);
     else if (behaviorOf(c) === 'digits-arabic' || behaviorOf(c) === 'digits-eastern') body = controlIcon(c, inner, gh - 4) || `<text x="${inner / 2}" y="${inner * 0.75}" font-size="13" text-anchor="middle" fill="#000" font-family="Arial">${behaviorOf(c) === 'digits-arabic' ? '٣٢١' : '۳۲۱'}</text>`;
     else body = controlIcon(c, inner, gh - 4);
     btn.innerHTML = `<svg width="${inner}" height="${gh - 4}" viewBox="0 0 ${inner} ${gh - 4}" aria-hidden="true">${body}</svg>`;
@@ -264,8 +266,12 @@ export class Toolbar {
     }
   }
 
+  /** right-to-left editing is on: controls built from now on (the pop-ups) use the mirrored artwork too */
+  private rtlOn = false;
+
   /** right-to-left editing swaps the directional icons for their mirrored artwork (positions stay) */
   setRtlIcons(on: boolean): void {
+    this.rtlOn = on;
     for (const c of catalogue.controls) {
       if (c.group !== 0) continue;
       const btn = this.buttons.get(c.id);
@@ -274,7 +280,7 @@ export class Toolbar {
       if (!svgEl) continue;
       const alt = on ? RTL_ICONS.controls[c.id] : undefined;
       const [w, hh] = [c.geom[2] - 4, c.geom[3] - 4];
-      if (alt) svgEl.innerHTML = alt.layers.map((l) => `<path d="${l.d}" fill="${l.fill}"${(l as any).op ? ` fill-opacity="${(l as any).op}"` : ''} fill-rule="evenodd"/>`).join('');
+      if (alt) svgEl.innerHTML = tracedPaths(alt.layers as any);
       else {
         const key = c.special ? specialKey(c.title) : null;
         svgEl.innerHTML = key && ART[key] ? ART[key](w, hh) : controlIcon(c, w, hh);
@@ -284,7 +290,7 @@ export class Toolbar {
       const sv = t.querySelector('svg');
       if (!sv) return;
       const alt = on ? RTL_ICONS.tabs[String(i)] : undefined;
-      sv.innerHTML = alt ? alt.layers.map((l) => `<path d="${l.d}" fill="currentColor"${(l as any).op ? ` fill-opacity="${(l as any).op}"` : ''} fill-rule="evenodd"/>`).join('') : TAB_ICONS[i];
+      sv.innerHTML = alt ? tracedPaths(alt.layers as any, 'currentColor') : TAB_ICONS[i];
     });
   }
 
@@ -358,7 +364,7 @@ export class Toolbar {
             // a select that shows an icon instead of its current text (spacing between digits)
             box.classList.add('wrs_withIcon');
             label.style.paddingLeft = '1px';
-            label.innerHTML = `<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">${art.layers.map((l) => `<path d="${l.d}" fill="${l.fill}"${l.op ? ` fill-opacity="${l.op}"` : ''} fill-rule="evenodd"/>`).join('')}</svg>`;
+            label.innerHTML = `<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">${tracedPaths(art.layers as any)}</svg>`;
           } else label.textContent = el.options[el.selectedIndex]?.text ?? '';
           el.addEventListener('change', () => {
             if (!art) label.textContent = el.options[el.selectedIndex]?.text ?? '';
@@ -375,7 +381,7 @@ export class Toolbar {
         btn.style.top = top + 'px';
         const size = cell.w - 4;
         const art = cell.icon ? (CTX_ICONS as Record<string, { w: number; layers: { fill: string; d: string; op?: number }[] }>)[cell.icon] : undefined;
-        const body = art ? art.layers.map((l) => `<path d="${l.d}" fill="${l.fill}"${l.op ? ` fill-opacity="${l.op}"` : ''} fill-rule="evenodd"/>`).join('') : '';
+        const body = art ? tracedPaths(art.layers as any) : '';
         btn.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" aria-hidden="true">${body}</svg>`;
         btn.classList.add(cell.w > 22 ? 'wrs_big' : 'wrs_small');
         const v = valueOf(c.id);

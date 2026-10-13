@@ -25,21 +25,23 @@ export const CSS = `
 .wrs_multipleRowPanel.wrs_selected{display:block}
 .wrs_editor button.wrs_button,.wrs_editor .wrs_button{position:absolute;display:block;border:2px solid transparent;border-radius:0;background:transparent;overflow:hidden;padding:0;margin:0}
 .wrs_button svg{pointer-events:none}
-.wrs_editor .wrs_button:hover,.wrs_editor .wrs_button:focus,.wrs_editor .wrs_button.wrs_pressed{border-color:#778e9a;border-radius:3px;background:linear-gradient(#ffffff,#fffbe0);box-shadow:0 0 10px rgba(52,64,84,.2)}
+.wrs_editor .wrs_button:hover,.wrs_editor .wrs_button:focus,.wrs_editor .wrs_button.wrs_pressed{border-color:#778e9a;border-radius:3px;box-shadow:0 0 10px rgba(52,64,84,.2)}
 .wrs_editor .wrs_button:focus{box-shadow:none}
 .wrs_editor .wrs_button.wrs_toggled{background:url(${skin.btnSmallActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
-.wrs_editor .wrs_button.wrs_toggled:hover,.wrs_editor .wrs_button.wrs_toggled:focus{border-color:#778e9a;border-radius:3px;background:linear-gradient(#ebefe9 0,#edecdc 50%,#faf3d7 100%)}
+.wrs_editor .wrs_button.wrs_toggled:hover,.wrs_editor .wrs_button.wrs_toggled:focus{border-color:#778e9a;border-radius:3px}
+.wrs_editor .wrs_button.wrs_small:active:not(.wrs_disabled){background:url(${skin.btnSmallActive}) no-repeat -2px -2px}
+.wrs_editor .wrs_button.wrs_big:active:not(.wrs_disabled){background:url(${skin.btnActive}) no-repeat -2px -2px}
 .wrs_editor .wrs_button.wrs_disabled{cursor:default;opacity:.45}
 .wrs_editor .wrs_button.wrs_disabled:hover{border-color:transparent;background:none;box-shadow:none}
 .wrs_editor .wrs_button.wrs_disabled:focus{outline:2px solid rgba(119,142,154,.3)}
 .wrs_line{position:absolute;display:block;width:1px;height:60px;background:#bbbdbe}
-.wrs_expandButton{position:absolute;width:7px;height:60px;border:0;border-radius:3px;background:transparent;padding:0}
+.wrs_expandButton{position:absolute;width:7px;height:60px;border:0;border-radius:2px;background:transparent;padding:0}
 .wrs_expandButton::after{content:"";position:absolute;left:2px;top:50px;width:0;height:0;border-style:solid;border-width:3.5px 0 3.5px 3px;border-color:transparent transparent transparent #b1b3b4}
-.wrs_expandButton:hover,.wrs_expandButton:focus,.wrs_expandButton.wrs_pressed,.wrs_expandButton[aria-expanded=true]{background:linear-gradient(#ffffff,#fffbe0);box-shadow:inset 0 0 0 1px #778e9a;outline:0}
-.wrs_expandButton:hover::after,.wrs_expandButton.wrs_pressed::after{border-left-color:#778e9a}
-.wrs_select{position:absolute;width:73px;height:18px;border:1px solid #b1b3b4;border-radius:2px;background:#fff linear-gradient(#fff,#eef1f3);overflow:hidden}
-.wrs_select .wrs_label{position:absolute;left:1px;top:0;width:55px;text-overflow:ellipsis;height:16px;line-height:16px;font-size:11px;font-weight:700;color:#b1b3b4;white-space:nowrap;overflow:hidden;pointer-events:none;text-indent:3px}
-.wrs_select::after{content:"";position:absolute;right:5px;top:6px;border:4px solid transparent;border-top:5px solid #b1b3b4;border-bottom:0}
+.wrs_expandButton:hover,.wrs_expandButton:focus,.wrs_expandButton.wrs_pressed,.wrs_expandButton[aria-expanded=true]{background:#778e9a;box-shadow:0 0 10px rgba(52,64,84,.2);outline:0}
+.wrs_expandButton:focus{box-shadow:none}
+.wrs_expandButton:hover::after,.wrs_expandButton:focus::after,.wrs_expandButton.wrs_pressed::after,.wrs_expandButton[aria-expanded=true]::after{border-left-color:#fff}
+.wrs_select{position:absolute;width:73px;height:18px;border:1px solid #b1b3b4;border-radius:0;background:url(${skin.selBg}) no-repeat 100% 50%;overflow:hidden;box-sizing:border-box;font:700 11px sans-serif}
+.wrs_select .wrs_label{position:absolute;left:0;top:0;width:71px;height:18px;line-height:18px;padding:0 15px 0 5px;box-sizing:border-box;text-overflow:ellipsis;font-size:11px;font-weight:700;color:#b1b3b4;white-space:nowrap;overflow:hidden;pointer-events:none}
 .wrs_select select{position:absolute;left:0;top:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:12px}
 .wrs_select.wrs_active .wrs_label{color:#3b4a53}
 .wrs_editor .wrs_button.wrs_toggled.wrs_big{background:url(${skin.btnActive}) no-repeat -2px -2px;border-color:transparent;border-radius:0}
@@ -76,9 +78,10 @@ export const CSS = `
 .wrs_scaled .wrs_popup,.wrs_scaled .wrs_panel{zoom:var(--wrs-k)}
 .wrs_noHand .wrs_handWrapper{display:none}
 .wrs_noHand .wrs_formulaDisplay,.wrs_noHand .wrs_formulaDisplayWrapper{width:725px}
-.wrs_handWrapper{position:absolute;left:695px;top:99px;width:30px;height:316px;background:#778e9a;overflow:hidden}
-.wrs_handWrapper .wrs_handStrip{position:absolute;left:0;top:0;width:30px;height:316px;cursor:pointer}
-.wrs_handWrapper input[type=button]{position:absolute;left:0;top:0;width:30px;height:316px;opacity:0;cursor:pointer;margin:0;padding:0;border:0}
+.wrs_handWrapper{position:absolute;left:697px;top:99px;width:28px;height:316px;box-sizing:border-box;border:1px solid #4f5e66;background:#778e9a;overflow:hidden}
+.wrs_handWrapper .wrs_handStrip{position:absolute;left:-1px;top:-1px;width:30px;height:316px;cursor:pointer}
+.wrs_handWrapper .wrs_handStrip svg{position:absolute;left:-1px;top:0}
+.wrs_handWrapper input[type=button]{position:absolute;left:-1px;top:-1px;width:28px;height:316px;opacity:0;cursor:pointer;margin:0;padding:0;border:0}
 .wrs_handWrapper input[type=button]:focus-visible{opacity:1;background:rgba(255,255,255,.25);outline:2px solid #fff;outline-offset:-3px}
 .wrs_popup{position:absolute;z-index:20;padding:2px;background:#f3f5f6 url(${skin.bodyBg}) no-repeat 0 100%;background-size:auto 100%;border:1px solid #778e9a;border-radius:0 0 5px 5px}
 .wrs_popup.wrs_periodic::before{content:"";position:absolute;left:1px;top:1px;width:399px;height:200px;background:url(${skin.periodic}) no-repeat 50% 50%;background-size:100% 100%;pointer-events:none}
@@ -91,9 +94,9 @@ export const CSS = `
 .wrs_hand{position:absolute;left:0;top:0;width:725px;height:415px;background:#fff;display:none;z-index:40}
 .wrs_hand .wrs_toolbar{position:absolute;left:0;top:0;width:39px;height:415px;background:#e6edf0;border-right:1px solid #778e9a}
 .wrs_hand .wrs_button{position:absolute;left:3px;width:33px;height:33px}
-.wrs_hand .wrs_key2edit{position:absolute;left:0;bottom:0;width:39px;height:39px;margin:0;padding:0;border:0;background:#4e5861 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='39' height='39' viewBox='0 0 39 39'%3E%3Crect x='7' y='12' width='25' height='15' rx='2' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3Cpath d='M10.5 16h2M15 16h2M19.5 16h2M24 16h2M28 16h1M11 20h1.5M15.5 20h8M27 20h1M12 24h15' stroke='%23fff' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") no-repeat center;cursor:pointer;appearance:none;-webkit-appearance:none}
+.wrs_hand .wrs_key2edit{position:absolute;left:0;bottom:0;width:39px;height:39px;margin:0;padding:0;border:0;background:#4e5861 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='39' height='39' viewBox='0 0 39 39'%3E%3Crect x='8.5' y='11.5' width='23' height='16' fill='%23fff'/%3E%3Cg fill='%234e5861'%3E%3Crect x='10.5' y='13.5' width='3' height='3'/%3E%3Crect x='14.5' y='13.5' width='3' height='3'/%3E%3Crect x='18.5' y='13.5' width='3' height='3'/%3E%3Crect x='22.5' y='13.5' width='3' height='3'/%3E%3Crect x='26.5' y='13.5' width='3' height='3'/%3E%3Crect x='10.5' y='17.5' width='3' height='3'/%3E%3Crect x='14.5' y='17.5' width='3' height='3'/%3E%3Crect x='18.5' y='17.5' width='3' height='3'/%3E%3Crect x='22.5' y='17.5' width='3' height='3'/%3E%3Crect x='26.5' y='17.5' width='3' height='3'/%3E%3Crect x='14.5' y='22.5' width='11' height='3'/%3E%3C/g%3E%3C/svg%3E") no-repeat center;cursor:pointer;appearance:none;-webkit-appearance:none}
 .wrs_hand .wrs_canvasContainer{position:absolute;left:41px;top:0;width:684px;height:415px;background:#fff;touch-action:none;border-left:1px solid #969696;border-top:1px solid #969696;box-shadow:inset 3px 3px 5px -2px rgba(150,150,150,.5)}
-.wrs_hand canvas{position:absolute;left:0;top:0;width:684px;height:415px;touch-action:none;cursor:crosshair;background:linear-gradient(to right,transparent 19px,rgba(150,150,150,.4) 19px,rgba(150,150,150,.4) 20px) 1px 1px/20px 20px,linear-gradient(to bottom,transparent 19px,rgba(150,150,150,.4) 19px,rgba(150,150,150,.4) 20px) 1px 1px/20px 20px}
+.wrs_hand canvas{position:absolute;left:0;top:0;width:684px;height:415px;touch-action:none;cursor:crosshair;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QAAAAAAAD5Q7t/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wcPDQ0P6DY4kwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAKklEQVQ4y2NgoCKYNm1aPRMDlcGogaMGjho4auCogTQykHHatGn11DQQAMKqBKjiJFgoAAAAAElFTkSuQmCC) 0 0 repeat}
 .wrs_hand .wrs_button svg{position:absolute;left:0;top:0}
 .wrs_hand .wrs_line{background:#bbbdbe}
 .wrs_hand .wrs_helpText{position:absolute;left:0;right:0;top:60%;text-align:center;font:18px Arial,sans-serif;color:#425a66;pointer-events:none}
@@ -142,16 +145,16 @@ export const CSS = `
 .wrs_fluid .wrs_header::-webkit-scrollbar,.wrs_fluid .wrs_panelContainer::-webkit-scrollbar{display:none}
 .wrs_fluid .wrs_header>button[role=tab]{zoom:var(--wrs-k)}
 .wrs_fluid .wrs_linksContainer{left:auto;right:calc(4px * var(--wrs-k));top:calc(4px * var(--wrs-k));zoom:var(--wrs-k)}
-.wrs_fluid .wrs_panelContainer{position:relative;left:auto;top:auto;flex:none;width:100%;height:calc(72px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:url(${skin.panel}) no-repeat 0 0 / auto 100%,linear-gradient(#f6f9fa,#e3eaed)}
+.wrs_fluid .wrs_panelContainer{position:relative;left:auto;top:auto;flex:none;width:100%;height:calc(72px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:url(${skin.panel}) no-repeat 0 0 / auto 100%,url(${skin.panel}) no-repeat 100% 0 / 20000% 100%,linear-gradient(#f6f9fa,#e3eaed)}
 .wrs_fluid .wrs_multipleRowPanel{zoom:var(--wrs-k)}
 .wrs_fluid .wrs_formulaDisplayWrapper{position:relative;left:auto;top:auto;flex:1 1 0;width:auto;height:auto;min-height:0;margin-right:var(--wrs-strip)}
 .wrs_fluid .wrs_formulaDisplay{width:100%;height:100%;font-size:16px}
 .wrs_fluid.wrs_noHand .wrs_formulaDisplayWrapper{margin-right:0}
 .wrs_fluid.wrs_noHand .wrs_formulaDisplay{width:100%}
-.wrs_fluid .wrs_handWrapper{left:auto;right:0;top:calc(25px * var(--wrs-k) + 72px * var(--wrs-k));bottom:0;width:var(--wrs-strip);height:auto}
-.wrs_fluid .wrs_handWrapper .wrs_handStrip{width:100%;height:100%}
+.wrs_fluid .wrs_handWrapper{left:auto;right:0;top:calc(25px * var(--wrs-k) + 72px * var(--wrs-k));bottom:0;width:var(--wrs-strip);height:auto;border:0}
+.wrs_fluid .wrs_handWrapper .wrs_handStrip{left:0;top:0;width:100%;height:100%}
 .wrs_fluid .wrs_handWrapper .wrs_handStrip svg{position:absolute;left:50%;top:50%;margin-left:-15px;margin-top:-158px}
-.wrs_fluid .wrs_handWrapper input[type=button]{width:100%;height:100%}
+.wrs_fluid .wrs_handWrapper input[type=button]{left:0;top:0;width:100%;height:100%}
 .wrs_fluid .wrs_popup,.wrs_fluid .wrs_panel,.wrs_fluid .wrs_lengthButtonPanel{zoom:var(--wrs-k);max-width:calc(100% / var(--wrs-k))}
 .wrs_fluid .wrs_panel input,.wrs_fluid .wrs_panel select,.wrs_fluid .wrs_lengthButtonPanel input{font-size:16px}
 .wrs_fluid .wrs_snackbar{left:8px;right:8px;bottom:calc(8px + env(safe-area-inset-bottom,0px))}
@@ -160,6 +163,10 @@ export const CSS = `
 .wrs_fluid .wrs_hand .wrs_canvasContainer{left:calc(41px * var(--wrs-hk));right:0;bottom:0;width:auto;height:auto}
 .wrs_fluid .wrs_hand canvas{width:100%;height:100%}
 .wrs_fluid .wrs_hand .wrs_helpText{font-size:16px;padding:0 12px}
+.wrs_navPad{position:absolute;right:8px;bottom:8px;z-index:6;display:grid;grid-template-columns:repeat(4,40px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.wrs_navKey{width:40px;height:40px;padding:0;border:1px solid #778e9a;border-radius:6px;background:rgba(255,255,255,.92);color:#324d5b;font:700 16px/1 Arial,sans-serif;box-shadow:0 1px 4px rgba(52,64,84,.25);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.wrs_navKey:active{background:#dfe8ec}
+.wrs_hasNavPad .wrs_formulaDisplay{padding-bottom:56px;box-sizing:border-box}
 /* touch devices have no hover: a tapped control must not stay highlighted */
 @media (hover:none){
 .wrs_editor .wrs_button:hover:not(.wrs_pressed):not(.wrs_toggled):not(:focus),.wrs_editor .wrs_expandButton:hover:not([aria-expanded=true]):not(:focus){border-color:transparent;background:none;box-shadow:none}
@@ -178,22 +185,29 @@ export function injectStyles(doc: Document = document): void {
   injected = true;
 }
 
-/** @font-face rules of the reference symbol fonts served from `base` (an absolute or relative directory URL) */
-export function vendorFontCss(base: string): string {
+/** @font-face rules of the faces bundled with the editor, served from `base` (an absolute or relative directory URL):
+ * the formula canvas, the icons and the image exports all draw with these, wherever the editor is embedded */
+export function bundledFontCss(base: string): string {
   const b = base.replace(/\/?$/, '/');
-  const face = (family: string, file: string) => `@font-face{font-family:'${family}';src:url('${b}${file}') format('truetype');font-display:swap}`;
+  const face = (family: string, file: string, format: string, weight = 400, style = 'normal') =>
+    `@font-face{font-family:'${family}';font-style:${style};font-weight:${weight};src:url('${b}${file}') format('${format}');font-display:block}`;
   return [
-    ['Conv_math1', 'math1.ttf'], ['Conv_math1RTL', 'math1_rtl.ttf'], ['Conv_horizontal', 'horizontal.ttf'], ['Conv_brackets', 'brackets.ttf'],
-    ['Conv_brack_sm', 'brack_sm.ttf'], ['Conv_script', 'script.ttf'], ['Conv_fraktur', 'fraktur.ttf'], ['Conv_doubleStruck', 'double-struck.ttf'],
-    ['Conv_roundBrackets1854', 'round_brackets1854.ttf'], ['Conv_roundBrackets2254', 'round_brackets2254.ttf'], ['Conv_roundBrackets2654', 'round_brackets2654.ttf'],
-    ['Conv_roundBrackets3054', 'round_brackets3054.ttf'], ['Conv_roundBrackets3454', 'round_brackets3454.ttf'],
-  ].map(([f, u]) => face(f, u)).join('\n');
+    face('STIX Two Math', 'stix-two-math.woff2', 'woff2'),
+    face('Liberation Sans', 'LiberationSans-Regular.ttf', 'truetype'),
+    face('Liberation Sans', 'LiberationSans-Bold.ttf', 'truetype', 700),
+    face('Liberation Sans', 'LiberationSans-Italic.ttf', 'truetype', 400, 'italic'),
+    face('Liberation Sans', 'LiberationSans-BoldItalic.ttf', 'truetype', 700, 'italic'),
+    face('MTX Arabic', 'MtxArabic-Regular.ttf', 'truetype'),
+    face('MTX Arabic', 'MtxArabic-Bold.ttf', 'truetype', 700),
+  ].join('\n');
 }
 
-export function injectVendorFonts(base: string, doc: Document = document): void {
-  if (doc.getElementById('wrs-editor-fonts')) return;
+export const BUNDLED_FACES = ['16px "STIX Two Math"', '16px "Liberation Sans"', 'bold 16px "Liberation Sans"', 'italic 16px "Liberation Sans"', '16px "MTX Arabic"', 'bold 16px "MTX Arabic"'];
+
+export function injectBundledFonts(base: string, doc: Document = document): void {
+  if (doc.getElementById('mtx-editor-fonts')) return;
   const st = doc.createElement('style');
-  st.id = 'wrs-editor-fonts';
-  st.textContent = vendorFontCss(base);
+  st.id = 'mtx-editor-fonts';
+  st.textContent = bundledFontCss(base);
   doc.head.appendChild(st);
 }
