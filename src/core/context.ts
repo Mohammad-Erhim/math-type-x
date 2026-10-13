@@ -210,7 +210,29 @@ function locateRaw(core: EditorCore): Located | null {
     if (sel && sel.els.length === 1 && sel.els[0].c !== undefined && VALIGN_TAGS.has(sel.els[0].t)) {
       return { kind: 'structure', fence: { row: sel.row, index: sel.from, el: sel.els[0], path: core.sel!.path as Step[], slot: 0 } };
     }
-    if (!sel && chain.length && chain[0].el.c !== undefined && VALIGN_TAGS.has(chain[0].el.t)) return { kind: 'structure', fence: chain[0] };
+    if (!sel) {
+      // the innermost structure of the caret: wrappers of an input (the argument placeholder, a big operator's text slot)
+      // are looked through; a fence / table / stack keeps its own controls
+      const WRAP = new Set(['maction', 'mrow', 'mstyle', 'mpadded', 'mo']);
+      let last: Hit | null = null;
+      for (const h of chain) {
+        if (VALIGN_TAGS.has(h.el.t) && h.el.c !== undefined) return { kind: 'structure', fence: h };
+        if (!WRAP.has(h.el.t)) {
+          last = null;
+          break;
+        }
+        last = h;
+      }
+      // an input of the formula's own row (the integrand after an integral): the structure just before it
+      if (last) {
+        const nb = [last.row[last.index - 1], last.row[last.index + 1]];
+        const k = nb.findIndex((e) => !!e && e.c !== undefined && VALIGN_TAGS.has(e.t));
+        if (k >= 0) {
+          const i = k === 0 ? last.index - 1 : last.index + 1;
+          return { kind: 'structure', fence: { row: last.row, index: i, el: last.row[i], path: last.path, slot: 0 } };
+        }
+      }
+    }
   }
   const row = core.currentRow();
   const idx = core.caret.index;
@@ -284,6 +306,14 @@ function locateRaw(core: EditorCore): Located | null {
   const ml = multilineCtx();
   if (ml) return ml;
   if (isOp(left) || isOp(right) || isOpScript(right)) return { kind: 'operator', tokens: [{ row, index: isOp(left) ? idx - 1 : idx }], op: opNextTo() };
+  // extension: the caret stands right behind (or in front of) a structure with inputs – the one just inserted, say
+  if (core.contextExtras) {
+    const nb = [left, right].findIndex((e) => !!e && e.c !== undefined && VALIGN_TAGS.has(e.t));
+    if (nb >= 0) {
+      const i = nb === 0 ? idx - 1 : idx;
+      return { kind: 'structure', fence: { row, index: i, el: row[i], path: core.caret.path as Step[], slot: 0 } };
+    }
+  }
   return null;
 }
 
