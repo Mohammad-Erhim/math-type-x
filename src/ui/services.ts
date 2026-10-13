@@ -88,7 +88,7 @@ export class Services {
     return { body: await res.blob() };
   }
 
-  async recognize(strokes: { x: number[][]; y: number[][] }): Promise<{ mathml: string; score: number }> {
+  async recognize(strokes: { x: number[][]; y: number[][]; t?: number[][] }): Promise<{ mathml: string; score: number }> {
     const base = this.opts.baseUrl.replace(/\/?$/, '/');
     const res = await fetch(base + 'hand/recognize?httpstatus=true', {
       method: 'POST',

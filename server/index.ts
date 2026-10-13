@@ -184,14 +184,14 @@ function handleService(name: string, p: Record<string, string>): Reply {
     case 'hand/recognize': {
       const raw = p.input ?? (p.x !== undefined ? JSON.stringify({ x: JSON.parse(p.x), y: JSON.parse(p.y ?? '[]') }) : undefined);
       if (raw === undefined) throw new HttpError(400, 'missing strokes');
-      let j: { x?: number[][]; y?: number[][] };
+      let j: { x?: number[][]; y?: number[][]; t?: number[][] };
       try {
         j = JSON.parse(raw);
       } catch {
         throw new HttpError(400, 'invalid strokes');
       }
       if (!Array.isArray(j.x) || !Array.isArray(j.y) || j.x.length > 200) throw new HttpError(400, 'invalid strokes');
-      const r = recognize({ x: j.x, y: j.y });
+      const r = recognize({ x: j.x, y: j.y, t: Array.isArray(j.t) && j.t.length === j.x.length ? j.t : undefined });
       return { type: 'application/json; charset=UTF-8', body: JSON.stringify({ result: r, status: 'ok' }) };
     }
     case 'tick':

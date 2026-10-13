@@ -297,7 +297,8 @@ export class HandMode {
       return;
     }
     try {
-      const r = await this.ed.services.recognize({ x: this.strokes.map((s) => s.x), y: this.strokes.map((s) => s.y) });
+      const t0 = Math.min(...this.strokes.map((s) => s.t[0] ?? 0));
+      const r = await this.ed.services.recognize({ x: this.strokes.map((s) => s.x), y: this.strokes.map((s) => s.y), t: this.strokes.map((s) => s.t.map((v) => v - t0)) });
       if (seq !== this.recSeq) return;
       this.lastMml = r.mathml;
       this.ed.applyRecognized(r.mathml);
