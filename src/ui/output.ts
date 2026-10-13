@@ -22,6 +22,7 @@ export const OUTPUT_CSS = `
 .mtx_body{flex:1;min-height:0;position:relative;padding:8px 10px;overflow:auto}
 .mtx_body pre{margin:0;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all}
 .mtx_body img{max-width:100%;max-height:100%;background:#fff;border:1px solid #d3dce1}
+.mtx_body.mtx_image{display:flex;align-items:center;justify-content:center}
 .mtx_body .mtx_text{font-size:14px}
 .mtx_body.mtx_stale{opacity:.5;transition:opacity .15s .1s}
 .mtx_skeleton{height:14px;margin:4px 0;border-radius:3px;background:linear-gradient(90deg,#e3eaee,#f5f8f9,#e3eaee);background-size:200% 100%;animation:mtx_sk 1.2s linear infinite}
@@ -184,6 +185,7 @@ export class OutputPanel {
     const ac = (this.abort = new AbortController());
     const signal = ac.signal;
     // the output of another format has nothing to show for this one: a skeleton; the same format stays visible (dimmed)
+    if (this.shownKind !== k) this.body.classList.remove('mtx_image');
     if (this.shownKind !== k) this.body.replaceChildren(h('div', { class: 'mtx_skeleton' }), h('div', { class: 'mtx_skeleton', style: { width: '70%' } }));
     this.body.classList.add('mtx_stale');
     this.status.textContent = 'Updating…';
@@ -228,6 +230,7 @@ export class OutputPanel {
       this.abort = null;
       const retry = h('button', { type: 'button', text: 'Retry' });
       retry.addEventListener('click', () => void this.refresh());
+      this.body.classList.remove('mtx_image');
       this.body.replaceChildren(h('div', { class: 'mtx_err', role: 'alert', text: 'Could not load this output: ' + (e as Error).message }), retry);
       this.body.classList.remove('mtx_stale');
       this.body.removeAttribute('aria-busy');
@@ -259,6 +262,8 @@ export class OutputPanel {
       URL.revokeObjectURL(this.imgUrl);
       this.imgUrl = null;
     }
+    // an image sits in the middle of the panel
+    this.body.classList.toggle('mtx_image', (k === 'svg' || k === 'png') && !!blob);
     if ((k === 'svg' || k === 'png') && blob) {
       this.imgUrl = URL.createObjectURL(blob);
       this.body.replaceChildren(h('img', { src: this.imgUrl, alt: 'Rendered formula' }));
