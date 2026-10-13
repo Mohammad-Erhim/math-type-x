@@ -9,7 +9,8 @@
 import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr } from '../core/model';
 import { glyphText } from './glyphs';
-import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont } from './metrics';
+import { zulfiSymbol } from './zulfi';
+import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont, joinedPrefixWidth, isJoinedRun } from './metrics';
 import rtlMirror from '../data/rtl-mirror.json';
 
 /* ---------------------------------------------------------------- items */
@@ -421,7 +422,7 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   const italicDefault = tag === 'mi' && (variant === '' || variant === 'italic') && to - from >= 1 && Array.from(text).length === 1;
   const bold = variant === 'bold' || variant === 'bold-italic';
   // letters of scripts that have no italic (Hebrew, Arabic, Thai, kana, CJK, Hangul) stay upright, like the reference
-  const noItalic = /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff\u0e00-\u0eff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af]/.test(text);
+  const noItalic = /[\u0590-\u08ff\ufb1d-\ufdff\ufe70-\ufeff\u0e00-\u0eff\u3040-\u30ff\u3400-\u9fff\uac00-\ud7af\ue100-\uefff]/.test(text);
   const italicFlag = !noItalic && (tag === 'mi' ? (variant === '' ? Array.from(text).length === 1 : variant === 'italic' || variant === 'bold-italic') : variant === 'italic');
   let font = info.font;
   let drawn = tag === 'mo' ? text.replace(/-/g, '\u2212') : text;
@@ -438,18 +439,40 @@ function tokenAtom(row: Row, from: number, to: number, env: Env, noLift = false)
   // operator glyphs of the symbol font have a one pixel taller box above the baseline (measured on the reference):
   // letters of a line holding one sit a pixel lower; the glyph itself keeps its place
   const lift = !noLift && font === 'math' && !big && env.size >= 15.5 && size <= env.size * 1.01 ? 1 : 0;
-  const asc = K.asc * size + padOf(size) - drop + lift;
-  const desc = h - K.asc * size + drop;
+  let asc = K.asc * size + padOf(size) - drop + lift;
+  let desc = h - K.asc * size + drop;
+  // tall Arabic math symbols (integral and derivative blocks, brackets) reach beyond the line's box
+  for (const ch of text) {
+    const zs = zulfiSymbol(ch.codePointAt(0) ?? 0);
+    if (zs) {
+      asc = Math.max(asc, (-zs.t / 1000) * size + K.asc * size * 0.08 + 1);
+      desc = Math.max(desc, (zs.b / 1000) * size + 1);
+    }
+  }
   const items: Item[] = [{ k: 'g', x: 0, y: drop - lift, text: drawn, size, font, italic: italicFlag && font === 'sans', bold, color, w: info.w }];
-  // caret positions inside a merged run
+  // caret positions inside a merged run (x of the boundary after each letter but the last)
   let inner: number[] | undefined;
   if (to - from > 1) {
-    inner = [];
-    let acc = 0;
     const chars = Array.from(text);
+    // letters of a run advance as they are joined: boundaries come from the shaped prefixes, else from the isolated
+    // advances scaled so that the last boundary meets the end of the run
+    const iso: number[] = [];
+    let acc = 0;
     for (let k = 0; k < chars.length - 1; k++) {
       acc += tokenInfo(tag, mv, chars[k], size).w;
-      inner.push(acc);
+      iso.push(acc);
+    }
+    let sum = acc + tokenInfo(tag, mv, chars[chars.length - 1], size).w;
+    sum = sum > 0 ? sum : 1;
+    inner = iso.map((v) => (v * info.w) / sum);
+    if (isJoinedRun(text)) {
+      const sh: number[] = [];
+      for (let k = 0; k < chars.length - 1; k++) {
+        const w = joinedPrefixWidth(chars.slice(0, k + 1).join(''), size);
+        if (w === null || w <= (sh[k - 1] ?? 0) || w >= info.w) break;
+        sh.push(w);
+      }
+      if (sh.length === chars.length - 1) inner = sh;
     }
   }
   void italicDefault;

@@ -1,5 +1,6 @@
 /** Classification of typed characters into MathML tokens (SRS EDT-003…007, Appendix E). */
 import { El, Attr } from './model';
+import { zulfiSymbol } from '../layout/zulfi';
 
 export type DigitSet = 'western' | 'arabicIndic' | 'easternArabicIndic';
 
@@ -49,6 +50,9 @@ export function classify(ch: string): CharClass {
   // U+0600–060F and every presentation form are operators (recorded with tools/probe_ar_classify.js)
   const cp = ch.codePointAt(0)!;
   if ((cp >= 0x610 && cp <= 0x6ff) || (cp >= 0x750 && cp <= 0x77f) || (cp >= 0x8a0 && cp <= 0x8ff)) return 'arabic';
+  // the Arabic mathematical symbols (private use): identifiers or operators as their table says
+  const zs = zulfiSymbol(cp);
+  if (zs) return zs.m === 'mi' ? 'arabic' : 'op';
   if (cp >= 0x600 && cp <= 0x60f) return 'op';
   if ((cp >= 0xfb50 && cp <= 0xfdff) || (cp >= 0xfe70 && cp <= 0xfeff) || (cp >= 0x1ee00 && cp <= 0x1eeff)) return 'op';
   if (reArabic.test(ch) && reLetter.test(ch)) return 'arabic';

@@ -22,29 +22,12 @@ import { SWATCHES, FONT_FAMILIES } from './messages';
 import { contextState, locate, applyContext, ctxValue, CtxState, parseLength } from '../core/context';
 import { ctxIcon } from './ctxart';
 import { ART } from './art';
+import { ZULFI_GROUPS, zulfiSvg, zulfiSymbol } from '../layout/zulfi';
 import { controlIcon } from './icons';
 import { HandMode } from './hand';
 import { serializeMathML, parseMathML } from '../core/mathml';
 import { mathml2latex } from '../convert/tex';
 import unicodeData from '../data/unicode.json';
-
-/** which code points the special-characters panel shows for a typed Code value (null: the category list) */
-export function unicodeCandidates(v: string): number[] | null {
-  if (v.length < 2) return null;
-  const m = /^[0-9a-f]+/i.exec(v);
-  if (m) {
-    const p = m[0];
-    const hex = parseInt(p, 16);
-    if (hex > 0x10ffff) return [p.length >= 7 ? 0xfffff : 0x10ffff];
-    const out = [hex];
-    if (/^\d+$/.test(p)) out.push(parseInt(p, 10));
-    return out;
-  }
-  if (/^u\+/i.test(v) && v.length > 2) return [0];
-  const neg = /^-(\d+)$/.exec(v);
-  if (neg) return [0, -parseInt(neg[1], 10) & 0xffff];
-  return [0, 0];
-}
 
 export const VERSION = '7.25.6.804ace-x';
 
@@ -186,6 +169,11 @@ export class MathEditor implements ToolbarHost {
     return formula;
   }
 
+  /** true while the editor's state is kept in the browser (the persist option, and storage that works) */
+  isPersisted(): boolean {
+    return !!this.store && this.store.ok;
+  }
+
   /** what is saved for this editor (output panel: the chosen format) */
   readState(): Saved | null {
     return this.store ? this.store.read() : null;
@@ -254,6 +242,7 @@ export class MathEditor implements ToolbarHost {
     if (k !== 1) this.root.classList.add('wrs_scaled');
     container.appendChild(this.root);
     // translated tooltips / labels (the handwriting panel stays English, like the reference)
+    this.display.wrapper.append(h('div', { class: 'wrs_hint', 'aria-hidden': 'true', text: 'Type here, or pick a symbol above' }));
     this.localizer = new Localizer(tableFor(this.lang), (el) => el.classList.contains('wrs_hand'));
     this.localizer.attach(this.root);
     handBtn.addEventListener('click', () => this.openHand());
@@ -281,7 +270,7 @@ export class MathEditor implements ToolbarHost {
       if (glyph) b.innerHTML = `<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="${glyph}" fill="#324d5b"/></svg>`;
       if (key === 'Backspace') {
         // the key's own sign: it points the way the text is deleted (mirrored in right-to-left formulas by the style)
-        b.innerHTML = '<svg width="30" height="30" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg>';
+        b.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5h10.5a1.5 1.5 0 0 1 1.5 1.5v11a1.5 1.5 0 0 1-1.5 1.5H9l-6.2-7z" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linejoin="round"/><path d="M12.5 9.5l5 5m0-5l-5 5" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Delete</span>';
       }
       // a press must not take the focus (and so the soft keyboard) away from the formula
       b.addEventListener('pointerdown', (e) => e.preventDefault());
@@ -322,7 +311,7 @@ export class MathEditor implements ToolbarHost {
     }
     // clear the whole formula – after a confirmation
     const clear = h('button', { type: 'button', class: 'wrs_navKey wrs_navClear', title: 'Clear the formula', 'aria-label': 'Clear the formula', tabindex: '-1' }) as HTMLButtonElement;
-    clear.innerHTML = '<svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    clear.innerHTML = '<svg width="24" height="24" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="wrs_navCap">Clear</span>';
     clear.addEventListener('pointerdown', (e) => e.preventDefault());
     clear.addEventListener('mousedown', (e) => e.preventDefault());
     const confirmBox = h('div', { class: 'wrs_confirm', role: 'alertdialog', 'aria-label': 'Clear the whole formula?' });
@@ -356,6 +345,25 @@ export class MathEditor implements ToolbarHost {
         this.focusEditor();
       }
     });
+    // the phone's own keyboard: shown while typing, put away with this key (the formula, the toolbar and the pad get its room
+    // back); the formula keeps its caret and the pad keeps working
+    const kb = h('button', { type: 'button', class: 'wrs_navKey wrs_navKeyboard', title: 'Keyboard', 'aria-label': 'Keyboard', 'aria-pressed': 'true', tabindex: '-1' }) as HTMLButtonElement;
+    kb.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.8" fill="none" stroke="#324d5b" stroke-width="1.7"/><path d="M6 10h1.6M10 10h1.6M14 10h1.6M18 10h.2M6 13.5h.2M8.5 14h7M18 13.5h.2" fill="none" stroke="#324d5b" stroke-width="1.8" stroke-linecap="round"/></svg><span class="wrs_navCap">Keys</span>';
+    kb.addEventListener('pointerdown', (e) => e.preventDefault());
+    kb.addEventListener('mousedown', (e) => e.preventDefault());
+    kb.addEventListener('click', (e) => {
+      e.preventDefault();
+      const input = this.display.input;
+      const on = input.inputMode === 'none';
+      input.inputMode = on ? 'text' : 'none';
+      kb.setAttribute('aria-pressed', String(on));
+      kb.classList.toggle('wrs_navOn', on);
+      // a changed input mode takes effect when the field is focused again
+      input.blur();
+      input.focus({ preventScroll: true });
+    });
+    kb.classList.add('wrs_navOn');
+    pad.prepend(kb);
     pad.prepend(clear);
     // a bar of its own below the formula area (fluid layout) so that it is never covered or scrolled away
     this.display.wrapper.after(pad, confirmBox);
@@ -468,7 +476,7 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_reflow', narrow);
     // the panel never takes the room the formula needs (tabs 40 px, touch pad 56 px, at least 120 px of formula): it
     // scrolls up and down inside itself instead
-    this.root.style.setProperty('--wrs-panel-max', Math.max(110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
+    this.root.style.setProperty('--wrs-panel-max', Math.max(h < 360 ? 84 : 110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
@@ -539,6 +547,7 @@ export class MathEditor implements ToolbarHost {
   render(): void {
     const core = this.core;
     this.navClear?.classList.toggle('wrs_navOff', core.isEmpty());
+    this.root.classList.toggle('wrs_emptyDoc', core.isEmpty());
     const arabic = arabicCssFamily(core.getFontFamily());
     this.ensureArabicFace(arabic);
     this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl, arabic);
@@ -1028,23 +1037,30 @@ export class MathEditor implements ToolbarHost {
     this.closePopup();
     this.dropHidden('wrs_unicodeChooserPanel');
     const el = h('div', { class: 'wrs_unicodeChooserPanel wrs_panel', id: 'wrs_unicodeChooserPanelId', role: 'dialog', 'aria-label': 'Insert special characters' });
-    const code = h('input', { type: 'text', title: 'Code', id: 'customUnicodeInput' }) as HTMLInputElement;
-    const cat = h('select') as HTMLSelectElement;
+    // (the hexadecimal "Code" field of the reference dialog is not offered: nobody knows code points by heart, the
+    // categories and the shapes are the way in)
+    const cat = h('select', { 'aria-label': 'Category' }) as HTMLSelectElement;
     const CATS: [string, keyof typeof unicodeData][] = [['S', 'Symbol'], ['P', 'Punctuation'], ['L', 'Letter'], ['M', 'Mark'], ['N', 'Number'], ['F', 'Phonetical'], ['C', 'Other']];
+    // the Arabic mathematical symbols (the symbol tables of the Zulfi keyboard maps) are lists of their own: first in an
+    // Arabic editor, after the Unicode categories otherwise
+    const arabicUi = /^ar/i.test(this.lang) || this.core.rtl;
+    // one entry per shape list, in the same flat list as the Unicode categories (a group heading would not be clickable)
+    const zOptions = ZULFI_GROUPS.map((g) => h('option', { value: 'Z:' + g.id, text: arabicUi ? 'الحروف الرياضية العربية' : 'Arabic math letters' }));
+    if (arabicUi) zOptions.forEach((o) => cat.append(o));
     CATS.forEach(([v, n]) => cat.append(h('option', { value: v, text: n })));
+    if (!arabicUi) zOptions.forEach((o) => cat.append(o));
     const container = h('div', { class: 'wrs_unicodeChooserTableContainer' });
-    el.append(h('div', {}, document.createTextNode('Code: '), code, cat), container);
+    el.append(h('div', {}, cat), container);
     const pick = (cp: number) => {
       this.closePopup();
       this.core.typeText(String.fromCodePoint(cp));
       this.focusEditor();
     };
-    let current: number[] = [];
     const fill = (cps: number[]) => {
-      current = cps;
       container.textContent = '';
       const tb = h('tbody');
-      const COLS = 9;
+      // the shapes are 40 px cells: as many columns as the panel is wide
+      const COLS = el.classList.contains('wrs_zulfiMode') ? Math.max(4, Math.min(8, Math.floor((container.clientWidth || 320) / 40))) : 9;
       const max = Math.min(cps.length, 3600);
       for (let i = 0; i < max; i += COLS) {
         const tr = h('tr');
@@ -1052,7 +1068,13 @@ export class MathEditor implements ToolbarHost {
           const td = h('td');
           const cp = cps[i + k];
           if (i + k < max && cp !== undefined) {
-            const d = h('div', { class: 'wrs_unicodeButton wrs_mathChar wrs_font_stix', tabindex: '0', title: 'U+' + cp.toString(16).toUpperCase().padStart(4, '0') + '\n &#' + cp + ';', text: String.fromCodePoint(cp) });
+            const zs = zulfiSymbol(cp);
+            const d = h('div', { class: 'wrs_unicodeButton wrs_mathChar wrs_font_stix' + (zs ? ' wrs_zulfiButton' : ''), tabindex: '0', title: zs ? `${zs.k}\n U+${cp.toString(16).toUpperCase()}` : 'U+' + cp.toString(16).toUpperCase().padStart(4, '0') + '\n &#' + cp + ';' });
+            if (zs) {
+              d.innerHTML = zulfiSvg(cp, 26);
+              d.setAttribute('role', 'button');
+              d.setAttribute('aria-label', zs.k);
+            } else d.textContent = String.fromCodePoint(cp);
             d.addEventListener('click', () => pick(cp));
             d.addEventListener('keydown', (e) => {
               if (e.key === 'Enter' || e.key === ' ') {
@@ -1071,26 +1093,15 @@ export class MathEditor implements ToolbarHost {
       }
       container.append(h('table', { class: 'wrs_unicodeTable' }, tb));
     };
-    const showCategory = () => fill((unicodeData as any)[CATS.find((c) => c[0] === cat.value)![1]]);
-    cat.addEventListener('change', () => {
-      code.value = '';
-      showCategory();
-    });
-    code.addEventListener('input', () => {
-      const cps = unicodeCandidates(code.value);
-      if (cps === null) showCategory();
-      else fill(cps);
-    });
-    code.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') {
-        e.preventDefault();
-        if (current.length) pick(current[0]);
-      } else if (e.key === 'Escape') {
-        e.preventDefault();
-        this.closePopup();
-        btn.focus();
-      }
-    });
+    const showCategory = () => {
+      // the Arabic math symbols are bigger shapes: the panel grows for them
+      el.classList.toggle('wrs_zulfiMode', cat.value.startsWith('Z:'));
+      // the bigger panel must stay on the screen
+      this.fitInside(el);
+      if (cat.value.startsWith('Z:')) fill(ZULFI_GROUPS.find((g) => g.id === cat.value.slice(2))?.items ?? []);
+      else fill((unicodeData as any)[CATS.find((c) => c[0] === cat.value)![1]]);
+    };
+    cat.addEventListener('change', () => showCategory());
     el.addEventListener('keydown', (e) => {
       if ((e as KeyboardEvent).key === 'Escape') {
         this.closePopup();
@@ -1099,9 +1110,10 @@ export class MathEditor implements ToolbarHost {
     });
     this.root.append(el);
     this.placePanel(el, btn);
+    cat.selectedIndex = 0;
     showCategory();
     this.popup = { el, kind: 'unicode', owner: btn, close: () => undefined };
-    this.focusField(code);
+    this.focusField(cat);
   }
 
   /* --------------------------------------------------------- length field */

@@ -88,5 +88,15 @@ All notable changes are documented here. The format follows
 - Bold / Italic on a joined Arabic word keeps the word one run (the letters stay joined).
 - Touch pad: backspace key (repeats while held, mirrored in right-to-left formulas), clear is a separate red button.
 
+### Added (Arabic math symbols, mobile)
+- **Arabic math letters** (الحروف): the letters of the Zulfi Math symbol tables are in the *Insert special characters* dialog
+  (category "Arabic math symbols → Letters"; first in an Arabic editor). They are vector shapes extracted from the fonts
+  (`tools/gen/zulfi/extract.py`, data in `src/data/zulfi.json`), private-use characters U+E100… in the formula, drawn as
+  paths in the editor and in every export: no font is shipped for them. The other tables (operations, relations, …) were
+  extracted too and removed again at the owner's request (`tools/gen/zulfi/categories.json` lists what ships).
+- Phones: the export section sits behind an "Export" bar at the bottom (remembered); a low window (soft keyboard) keeps
+  tabs, panel, formula, pad and export visible; "Keys" button puts the phone keyboard away; labelled pad keys; tab name above
+  the panel; hint in an empty formula; Share (system share sheet); caret positions inside joined Arabic words.
+
 ### Known deviations
 See *Known deviations* in the [README](README.md).

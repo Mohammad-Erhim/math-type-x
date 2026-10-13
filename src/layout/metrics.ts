@@ -7,6 +7,7 @@ import stix from '../data/metrics.json';
 import ref from '../data/ref-metrics.json';
 import arWidths from '../data/ar-widths.json';
 import { ARABIC_SCRIPT as ARABIC_BLOCKS } from './arfonts';
+import { zulfiSymbol } from './zulfi';
 
 export interface Variant { adv: number; y1: number; y2: number; x1: number; x2: number; d: string }
 export const raw = stix as unknown as { upm: number; cps: Record<string, number[]>; variants: Record<string, Variant> };
@@ -147,6 +148,19 @@ function stixAdv(ch: string): number {
   return m ? m[0] / raw.upm : 0.6;
 }
 
+/** where the next letter of a joined Arabic run starts: the advance of the first letters followed by a joiner (the last
+ * one then takes its joining form, as it does inside the whole run); null while the face cannot be measured */
+export function joinedPrefixWidth(prefix: string, size: number): number | null {
+  return runWidth(prefix + '\u200d', size);
+}
+
+/** true for a run of two or more letters of Arabic script (the ones that join) */
+export function isJoinedRun(text: string): boolean {
+  let n = 0;
+  for (const c of text) if (ARABIC_BLOCKS.test(c) && ++n >= 2) return true;
+  return false;
+}
+
 export function isBigOp(cp: number): boolean {
   return BIG.has(cp) || INT.has(cp);
 }
@@ -191,6 +205,9 @@ export function tokenInfo(tag: string, mathvariant: string, text: string, size: 
     const isOp = tag === 'mo';
     return { w: (ARIAL[ch] / 1000) * size, lpad: isOp ? 1 : 0, rpad: isOp ? 1 : 0, font: 'sans' };
   }
+  // the Arabic mathematical symbols (private-use characters drawn as shapes)
+  const zs = zulfiSymbol(cp);
+  if (zs) return { w: (zs.a / 1000) * size, lpad: tag === 'mo' ? 2 * (size / 16) : 0, rpad: tag === 'mo' ? 1 * (size / 16) : 0, font: 'sans' };
   // letters of other scripts: sans-serif approximation
   if (/\p{L}|\p{M}|\p{Nd}/u.test(ch) && tag !== 'mo') return { w: (measuredAdv(ch) ?? 0.58) * size, lpad: 0, rpad: 0, font: 'sans' };
   const mv = mathvariant;

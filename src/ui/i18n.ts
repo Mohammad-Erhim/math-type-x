@@ -31,6 +31,21 @@ const OUTPUT_AR: Record<string, string> = {
   'Arabic fonts': 'خطوط عربية',
   'Updating…': 'جارٍ التحديث…',
   'Delete backward': 'حذف إلى الخلف',
+  Keyboard: 'لوحة المفاتيح',
+  Keys: 'مفاتيح',
+  General: 'عام',
+  Symbols: 'الرموز',
+  Arrows: 'الأسهم',
+  'Greek & letters': 'اليونانية والأحرف',
+  Matrices: 'المصفوفات',
+  'Scripts & layout': 'الأس والتخطيط',
+  Decorations: 'الزخارف',
+  'Big operators': 'المعاملات الكبيرة',
+  Calculus: 'التفاضل والتكامل',
+  Contextual: 'سياقية',
+  Share: 'مشاركة',
+  'Type here, or pick a symbol above': 'اكتب هنا أو اختر رمزاً من الأعلى',
+  Delete: 'حذف',
 };
 
 const TABLES: Record<string, Record<string, string>> = { ar: { ...ar, ...OUTPUT_AR } };
