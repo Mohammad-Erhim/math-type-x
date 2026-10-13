@@ -353,6 +353,7 @@ export class Toolbar {
         el.style.left = el.dataset.ol ?? '';
         el.style.top = el.dataset.ot ?? '';
       }
+      for (const el of kids) if (el.classList.contains('wrs_expandButton')) el.style.height = '';
       panel.style.width = '';
       panel.style.height = '';
       return;
@@ -398,7 +399,15 @@ export class Toolbar {
           u.h = Math.max(u.h, q.y - minY + q.h);
         } else units.push({ x0: q.x, w: q.w, h: q.y - minY + q.h, items: [q] });
       }
-      for (const u of units) if (u.ex) { u.h = Math.max(u.h, u.ex.h); }
+      // the arrow of a group is as tall as the group's columns
+      const partH = Math.max(...units.map((u) => u.h));
+      for (const u of units) {
+        if (u.ex) {
+          u.ex.h = partH;
+          u.ex.el.style.height = partH + 'px';
+          u.h = partH;
+        }
+      }
       if (cx > PAD) cx += 12;
       for (const u of units) {
         const full = u.w + (u.ex ? 4 + u.ex.w : 0);

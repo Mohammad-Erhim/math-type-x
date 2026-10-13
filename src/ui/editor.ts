@@ -266,7 +266,8 @@ export class MathEditor implements ToolbarHost {
       }
     });
     pad.prepend(clear);
-    this.display.wrapper.append(pad, confirmBox);
+    // a bar of its own below the formula area (fluid layout) so that it is never covered or scrolled away
+    this.display.wrapper.after(pad, confirmBox);
     this.root.classList.add('wrs_hasNavPad');
   }
 
@@ -371,6 +372,9 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_scaled', !fluid && k !== 1);
     this.root.classList.toggle('wrs_touch', coarse);
     this.root.classList.toggle('wrs_reflow', narrow);
+    // the panel never takes the room the formula needs (tabs 40 px, touch pad 56 px, at least 120 px of formula): it
+    // scrolls up and down inside itself instead
+    this.root.style.setProperty('--wrs-panel-max', Math.max(110, h - 40 - (this.root.classList.contains('wrs_hasNavPad') ? 56 : 0) - 120) + 'px');
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
