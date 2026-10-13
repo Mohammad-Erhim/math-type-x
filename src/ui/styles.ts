@@ -172,7 +172,7 @@ export const CSS = `
 .wrs_reflow .wrs_header>button[role=tab]{position:relative;left:auto!important;top:auto;zoom:1;flex:1 1 0;min-width:0;width:auto;height:36px;background-size:100% 100%;margin-top:3px}
 .wrs_reflow .wrs_header>button[role=tab].wrs_selected{top:auto;height:40px;margin-top:0;background-size:100% 100%}
 .wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
-.wrs_reflow .wrs_toolbar.wrs_main{margin-bottom:10px}
+.wrs_fluid .wrs_toolbar.wrs_main{margin-bottom:10px}
 .wrs_reflow .wrs_linksContainer{top:8px;right:6px;zoom:1}
 .wrs_reflow .wrs_panelContainer{height:auto;max-height:var(--wrs-panel-max,54vh);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain}
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
