@@ -1,0 +1,417 @@
+{
+ "name": "s07_clipboard_undo",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Initial: clipboard & undo/redo button states",
+   "shot": "sc/s07_clipboard_undo_01.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Typed \"xy\" (no selection)",
+   "shot": "sc/s07_clipboard_undo_02.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Shift+Left selects \"y\" - clipboard buttons enable",
+   "shot": "sc/s07_clipboard_undo_03.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "enabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "enabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Click Copy toolbar button with selection",
+   "shot": "sc/s07_clipboard_undo_04.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "clip": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math>",
+    "st": {
+     "Press Ctrl+C to copy t": "enabled",
+     "Undo": "enabled",
+     "Press Ctrl+X to cut th": "enabled",
+     "Redo": "disabled",
+     "Press Ctrl+V to paste ": "enabled"
+    }
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Press Ctrl+C with selection",
+   "shot": "sc/s07_clipboard_undo_05.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "clip": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math>"
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Click Cut toolbar button",
+   "shot": "sc/s07_clipboard_undo_06.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "clip": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>y</mi></math>",
+    "st": {
+     "Press Ctrl+C to copy t": "disabled",
+     "Undo": "enabled",
+     "Press Ctrl+X to cut th": "disabled",
+     "Redo": "disabled",
+     "Press Ctrl+V to paste ": "enabled"
+    }
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Click Paste toolbar button",
+   "shot": "sc/s07_clipboard_undo_07.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Press Ctrl+V",
+   "shot": "sc/s07_clipboard_undo_08.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Press Ctrl+A then Ctrl+C (select all, copy)",
+   "shot": "sc/s07_clipboard_undo_09.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "clip": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mi>y</mi></math>"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Press Ctrl+X (cut all)",
+   "shot": "sc/s07_clipboard_undo_10.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "clip": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><mi>x</mi><mi>y</mi></math>",
+    "st": {
+     "Press Ctrl+C to copy t": "disabled",
+     "Undo": "enabled",
+     "Press Ctrl+X to cut th": "disabled",
+     "Redo": "disabled",
+     "Press Ctrl+V to paste ": "enabled"
+    }
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Press Ctrl+V (paste back)",
+   "shot": "sc/s07_clipboard_undo_11.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Paste plain text \"a+b\" from the system clipboard",
+   "shot": "sc/s07_clipboard_undo_12.jpg",
+   "mathml": "<math><mi>x</mi><mi>y</mi><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Paste MathML text from the system clipboard",
+   "shot": "sc/s07_clipboard_undo_13.jpg",
+   "mathml": "<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Paste LaTeX text \\frac{a}{b}",
+   "shot": "sc/s07_clipboard_undo_14.jpg",
+   "mathml": "<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/latex2mathml?httpstatus=true BODY=latex=%5Cfrac%7Ba%7D%7Bb%7D&pasteformat=auto&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=paste"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "Paste HTML (text/html) with MathML",
+   "shot": "sc/s07_clipboard_undo_15.jpg",
+   "mathml": "<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/latex2mathml?httpstatus=true BODY=latex=%5Cfrac%7Ba%7D%7Bb%7D&pasteformat=auto&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=paste"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "Undo/redo: fresh, type \"abc\"",
+   "shot": "sc/s07_clipboard_undo_16.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Click Undo",
+   "shot": "sc/s07_clipboard_undo_17.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 18,
+   "desc": "Click Undo again",
+   "shot": "sc/s07_clipboard_undo_18.jpg",
+   "mathml": "<math><mi>a</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 19,
+   "desc": "Click Redo",
+   "shot": "sc/s07_clipboard_undo_19.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 20,
+   "desc": "Ctrl+Z",
+   "shot": "sc/s07_clipboard_undo_20.jpg",
+   "mathml": "<math><mi>a</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 21,
+   "desc": "Ctrl+Y",
+   "shot": "sc/s07_clipboard_undo_21.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 22,
+   "desc": "Ctrl+Shift+Z",
+   "shot": "sc/s07_clipboard_undo_22.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 23,
+   "desc": "Undo past the beginning (click Undo x10)",
+   "shot": "sc/s07_clipboard_undo_23.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Undo\"]:visible').first()\u001b[22m\n\u001b[2m    - locator resolved to <button title=\"Undo\" aria-label=\"Undo\" aria-disabled=\"true\" class=\"wrs_imageContainer wrs_button wrs_disabled\">…</b",
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "disabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 24,
+   "desc": "New edit after undo clears redo: type \"q\"",
+   "shot": "sc/s07_clipboard_undo_24.jpg",
+   "mathml": "<math><mi>q</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "disabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  },
+  {
+   "n": 25,
+   "desc": "Undo a structure insert: click Fraction then Undo",
+   "shot": "sc/s07_clipboard_undo_25.jpg",
+   "mathml": "<math><mi>q</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Press Ctrl+C to copy t": "disabled",
+    "Undo": "enabled",
+    "Press Ctrl+X to cut th": "disabled",
+    "Redo": "enabled",
+    "Press Ctrl+V to paste ": "enabled"
+   }
+  }
+ ]
+}

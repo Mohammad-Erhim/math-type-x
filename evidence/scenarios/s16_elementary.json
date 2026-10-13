@@ -1,0 +1,589 @@
+{
+ "name": "s16_elementary",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Insert \"3 rows stack with line and plus sign\" on empty editor",
+   "shot": "sc/s16_elementary_01.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_02.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_03.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west [disabled]",
+    "Set carries location at north [disabled]",
+    "Set carries location at north-east [disabled]",
+    "Set carries location at west [disabled]",
+    "Insert carries in this row",
+    "Set carries location at east [disabled]",
+    "Set carries location at south-west [disabled]",
+    "Set carries location at south [disabled]",
+    "Set carries location at south-east [disabled]",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 4,
+   "desc": "Insert \"3 rows stack with line\" on empty editor",
+   "shot": "sc/s16_elementary_04.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow/><msline/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_05.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow/><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_06.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west [disabled]",
+    "Set carries location at north [disabled]",
+    "Set carries location at north-east [disabled]",
+    "Set carries location at west [disabled]",
+    "Insert carries in this row",
+    "Set carries location at east [disabled]",
+    "Set carries location at south-west [disabled]",
+    "Set carries location at south [disabled]",
+    "Set carries location at south-east [disabled]",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 7,
+   "desc": "Insert \"3 rows stack with line and minus sign\" on empty editor",
+   "shot": "sc/s16_elementary_07.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow><mo>-</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_08.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>-</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_09.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west [disabled]",
+    "Set carries location at north [disabled]",
+    "Set carries location at north-east [disabled]",
+    "Set carries location at west [disabled]",
+    "Insert carries in this row",
+    "Set carries location at east [disabled]",
+    "Set carries location at south-west [disabled]",
+    "Set carries location at south [disabled]",
+    "Set carries location at south-east [disabled]",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 10,
+   "desc": "Insert \"3 rows stack with line and multiplication sign\" on empty editor",
+   "shot": "sc/s16_elementary_10.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow/><msrow><mo>&#xD7;</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_11.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>&#xD7;</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_12.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west [disabled]",
+    "Set carries location at north [disabled]",
+    "Set carries location at north-east [disabled]",
+    "Set carries location at west [disabled]",
+    "Insert carries in this row",
+    "Set carries location at east [disabled]",
+    "Set carries location at south-west [disabled]",
+    "Set carries location at south [disabled]",
+    "Set carries location at south-east [disabled]",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 13,
+   "desc": "Insert \"Long division (used in the United States, Great Britain, and elsewhere)\" on empty editor",
+   "shot": "sc/s16_elementary_13.jpg",
+   "mathml": "<math><mlongdiv charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><msrow/></msgroup></mlongdiv></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_14.jpg",
+   "mathml": "<math><mlongdiv charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mn>12</mn><mrow/><msgroup><msrow/></msgroup></mlongdiv></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_15.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 16,
+   "desc": "Insert \"Long division (used in Spain, Brazil and elsewhere)\" on empty editor",
+   "shot": "sc/s16_elementary_16.jpg",
+   "mathml": "<math><mlongdiv longdivstyle=\"shortstackedrightright\" charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><msrow/></msgroup></mlongdiv></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_17.jpg",
+   "mathml": "<math><mlongdiv longdivstyle=\"shortstackedrightright\" charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><mn>12</mn></msgroup></mlongdiv></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_18.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west [disabled]",
+    "Set carries location at north [disabled]",
+    "Set carries location at north-east [disabled]",
+    "Set carries location at west [disabled]",
+    "Insert carries in this row",
+    "Set carries location at east [disabled]",
+    "Set carries location at south-west [disabled]",
+    "Set carries location at south [disabled]",
+    "Set carries location at south-east [disabled]",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 19,
+   "desc": "Insert \"Long division with remainder (used in Spain, Brazil and elsewhere)\" on empty editor",
+   "shot": "sc/s16_elementary_19.jpg",
+   "mathml": "<math><mlongdiv longdivstyle=\"shortstackedrightright\" charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><msrow/><msrow/></msgroup></mlongdiv></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_20.jpg",
+   "mathml": "<math><mlongdiv longdivstyle=\"shortstackedrightright\" charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><mn>12</mn><msrow/></msgroup></mlongdiv></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_21.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west [disabled]",
+    "Set carries location at north [disabled]",
+    "Set carries location at north-east [disabled]",
+    "Set carries location at west [disabled]",
+    "Insert carries in this row",
+    "Set carries location at east [disabled]",
+    "Set carries location at south-west [disabled]",
+    "Set carries location at south [disabled]",
+    "Set carries location at south-east [disabled]",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 22,
+   "desc": "Insert \"Long division with remainder (used in the United States, Great Britain, and elsewhere)\" on empty editor",
+   "shot": "sc/s16_elementary_22.jpg",
+   "mathml": "<math><mlongdiv charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mrow/><mrow/><msgroup><msrow/><msrow/></msgroup></mlongdiv></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "  → type \"12\" in first slot",
+   "shot": "sc/s16_elementary_23.jpg",
+   "mathml": "<math><mlongdiv charalign=\"center\" charspacing=\"0px\" stackalign=\"left\"><mn>12</mn><mrow/><msgroup><msrow/><msrow/></msgroup></mlongdiv></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "  → Contextual tab controls for this structure",
+   "shot": "sc/s16_elementary_24.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": []
+  },
+  {
+   "n": 25,
+   "desc": "Stack: insert 3-row stack and type 12, Enter, 34",
+   "shot": "sc/s16_elementary_25.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "Stack: Enter again adds row?",
+   "shot": "sc/s16_elementary_26.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mn>5</mn><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "Stack: Space adds indentation",
+   "shot": "sc/s16_elementary_27.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "Stack: Contextual → Insert carries in this row",
+   "shot": "sc/s16_elementary_28.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Insert line",
+    "Join the selected digits in a single column",
+    "Up diagonal strike",
+    "Prepend row",
+    "Append row",
+    "Set carries location at north-west",
+    "Set carries location at north",
+    "Set carries location at north-east",
+    "Set carries location at west",
+    "Insert carries in this row",
+    "Set carries location at east",
+    "Set carries location at south-west",
+    "Set carries location at south",
+    "Set carries location at south-east",
+    "Move to left",
+    "Move to right",
+    "Spacing between digits"
+   ]
+  },
+  {
+   "n": 29,
+   "desc": "Stack carries → Set carries location at north-west",
+   "shot": "sc/s16_elementary_29.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"nw\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "Stack carries → Set carries location at north",
+   "shot": "sc/s16_elementary_30.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "Stack carries → Set carries location at north-east",
+   "shot": "sc/s16_elementary_31.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"ne\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "Stack carries → Set carries location at west",
+   "shot": "sc/s16_elementary_32.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"w\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "Stack carries → Set carries location at east",
+   "shot": "sc/s16_elementary_33.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"e\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "Stack carries → Set carries location at south-west",
+   "shot": "sc/s16_elementary_34.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"sw\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "Stack carries → Set carries location at south",
+   "shot": "sc/s16_elementary_35.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"s\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 36,
+   "desc": "Stack carries → Set carries location at south-east",
+   "shot": "sc/s16_elementary_36.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "Stack: Prepend row",
+   "shot": "sc/s16_elementary_37.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow/><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 38,
+   "desc": "Stack: Append row",
+   "shot": "sc/s16_elementary_38.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow/><msrow/><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 39,
+   "desc": "Stack: Insert line",
+   "shot": "sc/s16_elementary_39.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow/><msline/><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 40,
+   "desc": "Stack: Move to right",
+   "shot": "sc/s16_elementary_40.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><msrow><mn>12</mn><none/></msrow><msrow><mn>34</mn><none/></msrow><none/><msline/><mscarries location=\"se\"><none/></mscarries><msrow><mn>5</mn><none/><mn>6</mn><none/></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction><none/></msrow><msline length=\"3\" position=\"1\"/><none/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "Stack: Move to left",
+   "shot": "sc/s16_elementary_41.jpg",
+   "mathml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow/><msline/><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction><none/></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 42,
+   "desc": "Stack: Spacing between digits 15px",
+   "shot": "sc/s16_elementary_42.jpg",
+   "mathml": "<math><mstack charalign=\"center\" charspacing=\"15px\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow/><msline/><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction><none/></msrow><msline/><msrow/></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 43,
+   "desc": "Stack: Up diagonal strike (with a digit selected)",
+   "shot": "sc/s16_elementary_43.jpg",
+   "mathml": "<math><mstack charalign=\"center\" charspacing=\"15px\" stackalign=\"right\"><mn>12</mn><mn>34</mn><msrow/><msline/><mscarries location=\"se\"/><msrow><mn>5</mn><none/><mn>6</mn></msrow><msline/><menclose notation=\"updiagonalstrike\"><mstack stackalign=\"right\"><msrow><mo>+</mo><maction actiontype=\"argument\"><mrow/></maction><none/></msrow></mstack></menclose></mstack></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

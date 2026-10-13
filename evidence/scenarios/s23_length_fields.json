@@ -1,0 +1,1287 @@
+{
+ "name": "s23_length_fields",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "[matrix] \"Column spacing at right\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_01.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "0.4em",
+    "focused": true
+   }
+  },
+  {
+   "n": 2,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_02.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Column spacing at right\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 3,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_03.jpg",
+   "mathml": "<math><mfenced><mtable columnspacing=\"0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_04.jpg",
+   "mathml": "<math><mfenced><mtable columnspacing=\"1ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_05.jpg",
+   "mathml": "<math><mfenced><mtable columnspacing=\"5\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_06.jpg",
+   "mathml": "<math><mfenced><mtable columnspacing=\"2px\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_07.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_08.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Column spacing at right\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 9,
+   "desc": "[matrix] \"Column spacing at right\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_09.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "[matrix] \"Horizontal frame spacing\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_10.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Horizontal frame spacing\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 11,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_11.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"2px 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_12.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"0.5em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_13.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"1ex 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_14.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"5 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_15.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"2px 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_16.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_17.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Horizontal frame spacing\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 18,
+   "desc": "[matrix] \"Horizontal frame spacing\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_18.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "[matrix] \"Row spacing below\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_19.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Row spacing below\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 20,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_20.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_21.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_22.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_23.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_24.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_25.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_26.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Row spacing below\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 27,
+   "desc": "[matrix] \"Row spacing below\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_27.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "[matrix] \"Vertical frame spacing\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_28.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Vertical frame spacing\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 29,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_29.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"0.4em 2px\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_30.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"0.4em 0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_31.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"0.4em 1ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_32.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"0.4em 5\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_33.jpg",
+   "mathml": "<math><mfenced><mtable framespacing=\"0.4em 2px\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_34.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_35.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Vertical frame spacing\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 36,
+   "desc": "[matrix] \"Vertical frame spacing\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_36.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "[operator] \"Left spacing\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_37.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Left spacing\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 38,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_38.jpg",
+   "mathml": "<math><mi>x</mi><mo lspace=\"2px\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-license=null&wrs-deployment=mathtyp"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 39,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_39.jpg",
+   "mathml": "<math><mi>x</mi><mo lspace=\"0.5em\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 40,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_40.jpg",
+   "mathml": "<math><mi>x</mi><mo lspace=\"1ex\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_41.jpg",
+   "mathml": "<math><mi>x</mi><mo lspace=\"5\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 42,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_42.jpg",
+   "mathml": "<math><mi>x</mi><mo lspace=\"2px\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 43,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_43.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 44,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_44.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Left spacing\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 45,
+   "desc": "[operator] \"Left spacing\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_45.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 46,
+   "desc": "[operator] \"Right spacing\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_46.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Right spacing\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 47,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_47.jpg",
+   "mathml": "<math><mi>x</mi><mo rspace=\"2px\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 48,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_48.jpg",
+   "mathml": "<math><mi>x</mi><mo rspace=\"0.5em\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 49,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_49.jpg",
+   "mathml": "<math><mi>x</mi><mo rspace=\"1ex\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 50,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_50.jpg",
+   "mathml": "<math><mi>x</mi><mo rspace=\"5\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 51,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_51.jpg",
+   "mathml": "<math><mi>x</mi><mo rspace=\"2px\">+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 52,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_52.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 53,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_53.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Right spacing\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 54,
+   "desc": "[operator] \"Right spacing\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_54.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web-ed"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 55,
+   "desc": "[mspace] \"Space width\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_55.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Space width\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 56,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_56.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"2px\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 57,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_57.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"0.5em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 58,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_58.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1ex\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 59,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_59.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"5\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 60,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_60.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"2px\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 61,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_61.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 62,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_62.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Space width\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 63,
+   "desc": "[mspace] \"Space width\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_63.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 64,
+   "desc": "[mspace] \"Space height\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_64.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Space height\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 65,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_65.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"2px\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 66,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_66.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"0.5em\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 67,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_67.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"1ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 68,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_68.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"5\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 69,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_69.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"2px\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 70,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_70.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 71,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_71.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Space height\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 72,
+   "desc": "[mspace] \"Space height\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_72.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 73,
+   "desc": "[mspace] \"Space depth\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_73.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Space depth\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 74,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_74.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2px\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 75,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_75.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"0.5em\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 76,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_76.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"1ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 77,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_77.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"5\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 78,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_78.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2px\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 79,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_79.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 80,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_80.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Space depth\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 81,
+   "desc": "[mspace] \"Space depth\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_81.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace%20width%3D%221em%22%20height%3D%223ex%22%20depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fm"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 82,
+   "desc": "[fence_in] \"Left spacing\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_82.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Left spacing\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 83,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_83.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"2px\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 500 ()"
+   ],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 84,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_84.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"0.5em\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 85,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_85.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"1ex\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 86,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_86.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"5\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 87,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_87.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"2px\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 88,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_88.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 89,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_89.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Left spacing\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 90,
+   "desc": "[fence_in] \"Left spacing\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_90.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 91,
+   "desc": "[fence_in] \"Right spacing\": click → opens a small “Value” input (shows current value)",
+   "shot": "sc/s23_length_fields_91.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Right spacing\"]:visible').first()\u001b[22m\n",
+   "extra": {
+    "value": "",
+    "focused": false
+   }
+  },
+  {
+   "n": 92,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"2px\", Enter",
+   "shot": "sc/s23_length_fields_92.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"2px\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 93,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"0.5em\", Enter",
+   "shot": "sc/s23_length_fields_93.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"0.5em\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 94,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"1ex\", Enter",
+   "shot": "sc/s23_length_fields_94.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"1ex\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 95,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"5\", Enter",
+   "shot": "sc/s23_length_fields_95.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"5\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 96,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"2 px\", Enter",
+   "shot": "sc/s23_length_fields_96.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"2px\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 97,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"abc\", Enter",
+   "shot": "sc/s23_length_fields_97.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  },
+  {
+   "n": 98,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"-2px\", Enter",
+   "shot": "sc/s23_length_fields_98.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#editorContainer button[title=\"Right spacing\"]:visible').first()\u001b[22m\n"
+  },
+  {
+   "n": 99,
+   "desc": "[fence_in] \"Right spacing\": Ctrl+A, type \"\", Enter",
+   "shot": "sc/s23_length_fields_99.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [
+    "Uncaught TypeError: Cannot read properties of null (reading 'length')"
+   ],
+   "err": null
+  }
+ ]
+}

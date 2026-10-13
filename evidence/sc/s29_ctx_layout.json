@@ -1,0 +1,147 @@
+{
+ "name": "s29_ctx_layout",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "matrix ArrowLeft x2",
+   "shot": "sc/s29_ctx_layout_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "matrix ArrowLeft x1",
+   "shot": "sc/s29_ctx_layout_02.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "table ArrowLeft x0",
+   "shot": "sc/s29_ctx_layout_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3E%",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3E%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "aligned ArrowLeft x1",
+   "shot": "sc/s29_ctx_layout_04.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable+columnalign%3D%22right+left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2Fmo%3E%",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable+columnalign%3D%22right+left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmo%3E%3D%3C%2Fmo%3E%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "fence ArrowLeft x3",
+   "shot": "sc/s29_ctx_layout_05.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced+open%3D%22%5B%22+close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfenced%3",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced+open%3D%22%5B%22+close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfenced%3"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "operator ArrowLeft x1",
+   "shot": "sc/s29_ctx_layout_06.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "mspace ArrowLeft x1",
+   "shot": "sc/s29_ctx_layout_07.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace+width%3D%221em%22+height%3D%223ex%22+depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&l",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace+width%3D%221em%22+height%3D%223ex%22+depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&l"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "sum ArrowLeft x0",
+   "shot": "sc/s29_ctx_layout_08.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&lan",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmunderover%3E%3Cmo%3E%26%23x2211%3B%3C%2Fmo%3E%3Cmi%3Ei%3C%2Fmi%3E%3Cmi%3En%3C%2Fmi%3E%3C%2Fmunderover%3E%3C%2Fmath%3E&lan"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "stack ArrowLeft x3",
+   "shot": "sc/s29_ctx_layout_09.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fmst",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmstack%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmsrow%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E34%3C%2Fmn%3E%3C%2Fmsrow%3E%3Cmsline%2F%3E%3C%2Fmst"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "longdiv ArrowLeft x1",
+   "shot": "sc/s29_ctx_layout_10.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmlongdiv+longdivstyle%3D%22lefttop%22%3E%3Cmn%3E3%3C%2Fmn%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmlongdiv%3E%3C%",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmlongdiv+longdivstyle%3D%22lefttop%22%3E%3Cmn%3E3%3C%2Fmn%3E%3Cmn%3E12%3C%2Fmn%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmlongdiv%3E%3C%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "multiline ArrowLeft x1",
+   "shot": "sc/s29_ctx_layout_11.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace+linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-cause=editor_scree",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace+linebreak%3D%22newline%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-cause=editor_scree"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

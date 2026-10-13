@@ -1,0 +1,27 @@
+{
+ "name": "t8_ctx",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Matrix inserted; which tab is active? (Contextual tab appearance)",
+   "shot": "sc/t8_ctx_01.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Contextual tab opened inside a matrix",
+   "shot": "sc/t8_ctx_02.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

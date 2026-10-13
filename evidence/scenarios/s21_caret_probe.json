@@ -1,0 +1,396 @@
+{
+ "name": "s21_caret_probe",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Caret probe: (initial caret after typing =2)",
+   "shot": "sc/s21_caret_probe_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) = 2 Z"
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Caret probe: ArrowLeft",
+   "shot": "sc/s21_caret_probe_02.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) = Z 2"
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Caret probe: ArrowLeft ×2",
+   "shot": "sc/s21_caret_probe_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) Z = 2"
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Caret probe: ArrowLeft ×3",
+   "shot": "sc/s21_caret_probe_04.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ (b Z)) = 2"
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Caret probe: ArrowLeft ×4",
+   "shot": "sc/s21_caret_probe_05.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ (Z b)) = 2"
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Caret probe: ArrowLeft ×5",
+   "shot": "sc/s21_caret_probe_06.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac((a Z) ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Caret probe: ArrowLeft ×6",
+   "shot": "sc/s21_caret_probe_07.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac((Z a) ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Caret probe: ArrowLeft ×7",
+   "shot": "sc/s21_caret_probe_08.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 Z frac(a ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Caret probe: ArrowLeft ×8",
+   "shot": "sc/s21_caret_probe_09.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + Z 1 frac(a ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Caret probe: Home",
+   "shot": "sc/s21_caret_probe_10.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "Z x + 1 frac(a ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Caret probe: Home then ArrowRight ×1",
+   "shot": "sc/s21_caret_probe_11.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x Z + 1 frac(a ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Caret probe: Home then ArrowRight ×3",
+   "shot": "sc/s21_caret_probe_12.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 Z frac(a ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Caret probe: Home then ArrowRight ×4",
+   "shot": "sc/s21_caret_probe_13.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac((Z a) ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Caret probe: Home then ArrowRight ×5",
+   "shot": "sc/s21_caret_probe_14.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac((a Z) ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Caret probe: ArrowLeft ×3 then ArrowUp",
+   "shot": "sc/s21_caret_probe_15.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac((a Z) ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Caret probe: ArrowLeft ×3 then ArrowDown",
+   "shot": "sc/s21_caret_probe_16.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ (b Z)) = 2"
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Caret probe: ArrowLeft ×3, ArrowUp, ArrowDown",
+   "shot": "sc/s21_caret_probe_17.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ (b Z)) = 2"
+   }
+  },
+  {
+   "n": 18,
+   "desc": "Caret probe: ArrowLeft ×3, ArrowUp, Home",
+   "shot": "sc/s21_caret_probe_18.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "Z x + 1 frac(a ⁄ b) = 2"
+   }
+  },
+  {
+   "n": 19,
+   "desc": "Caret probe: ArrowLeft ×3, ArrowUp, End",
+   "shot": "sc/s21_caret_probe_19.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) = 2 Z"
+   }
+  },
+  {
+   "n": 20,
+   "desc": "Caret probe: ArrowLeft ×3, ArrowUp, ArrowRight",
+   "shot": "sc/s21_caret_probe_20.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ (Z b)) = 2"
+   }
+  },
+  {
+   "n": 21,
+   "desc": "Caret probe: ArrowLeft ×3, ArrowDown, ArrowRight (leave fraction)",
+   "shot": "sc/s21_caret_probe_21.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) Z = 2"
+   }
+  },
+  {
+   "n": 22,
+   "desc": "Caret probe: ArrowLeft ×3, ArrowDown, ArrowLeft",
+   "shot": "sc/s21_caret_probe_22.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ (Z b)) = 2"
+   }
+  },
+  {
+   "n": 23,
+   "desc": "Caret probe: Ctrl+ArrowLeft",
+   "shot": "sc/s21_caret_probe_23.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) = 2 Z"
+   }
+  },
+  {
+   "n": 24,
+   "desc": "Caret probe: Ctrl+ArrowLeft ×2",
+   "shot": "sc/s21_caret_probe_24.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) = 2 Z"
+   }
+  },
+  {
+   "n": 25,
+   "desc": "Caret probe: Ctrl+Home",
+   "shot": "sc/s21_caret_probe_25.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "x + 1 frac(a ⁄ b) = 2 Z"
+   }
+  },
+  {
+   "n": 26,
+   "desc": "Caret probe: Ctrl+End after Home",
+   "shot": "sc/s21_caret_probe_26.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "typedZ_result": "Z x + 1 frac(a ⁄ b) = 2"
+   }
+  }
+ ]
+}

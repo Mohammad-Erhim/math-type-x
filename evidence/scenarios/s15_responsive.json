@@ -1,0 +1,454 @@
+{
+ "name": "s15_responsive",
+ "res": [
+  {
+   "w": 1920,
+   "h": 1080,
+   "rect": [
+    598,
+    665,
+    725,
+    415
+   ],
+   "visible": true,
+   "hiddenBy": null,
+   "colDisplay": "flex",
+   "tabs": 10,
+   "docW": 1920,
+   "shot": "sc/s15_1920.jpg"
+  },
+  {
+   "w": 1600,
+   "h": 900,
+   "rect": [
+    438,
+    665,
+    725,
+    415
+   ],
+   "visible": true,
+   "hiddenBy": null,
+   "colDisplay": "flex",
+   "tabs": 10,
+   "docW": 1600,
+   "shot": "sc/s15_1600.jpg"
+  },
+  {
+   "w": 1440,
+   "h": 900,
+   "rect": [
+    358,
+    485,
+    725,
+    415
+   ],
+   "visible": true,
+   "hiddenBy": null,
+   "colDisplay": "flex",
+   "tabs": 10,
+   "docW": 1440,
+   "shot": "sc/s15_1440.jpg"
+  },
+  {
+   "w": 1366,
+   "h": 768,
+   "rect": [
+    321,
+    485,
+    725,
+    415
+   ],
+   "visible": true,
+   "hiddenBy": null,
+   "colDisplay": "flex",
+   "tabs": 10,
+   "docW": 1366,
+   "shot": "sc/s15_1366.jpg"
+  },
+  {
+   "w": 1280,
+   "h": 800,
+   "rect": [
+    278,
+    351,
+    725,
+    415
+   ],
+   "visible": true,
+   "hiddenBy": null,
+   "colDisplay": "flex",
+   "tabs": 10,
+   "docW": 1280,
+   "shot": "sc/s15_1280.jpg"
+  },
+  {
+   "w": 1200,
+   "h": 800,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 1200,
+   "shot": "sc/s15_1200.jpg"
+  },
+  {
+   "w": 1100,
+   "h": 800,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 1100,
+   "shot": "sc/s15_1100.jpg"
+  },
+  {
+   "w": 1024,
+   "h": 768,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 1024,
+   "shot": "sc/s15_1024.jpg"
+  },
+  {
+   "w": 900,
+   "h": 700,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 900,
+   "shot": "sc/s15_900.jpg"
+  },
+  {
+   "w": 800,
+   "h": 600,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 800,
+   "shot": "sc/s15_800.jpg"
+  },
+  {
+   "w": 768,
+   "h": 1024,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 768,
+   "shot": "sc/s15_768.jpg"
+  },
+  {
+   "w": 600,
+   "h": 800,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 600,
+   "shot": "sc/s15_600.jpg"
+  },
+  {
+   "w": 375,
+   "h": 700,
+   "rect": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "visible": false,
+   "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+   "colDisplay": "none",
+   "tabs": 0,
+   "docW": 375,
+   "shot": "sc/s15_375.jpg"
+  },
+  {
+   "breakpoint": 1275,
+   "note": "editor visible from 1275px viewport width, hidden at 1274px"
+  }
+ ],
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Viewport 1920×1080: playground visible",
+   "shot": "sc/s15_1920.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     598,
+     665,
+     725,
+     415
+    ],
+    "hiddenBy": null,
+    "colDisplay": "flex",
+    "docWidth": 1920
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Viewport 1600×900: playground visible",
+   "shot": "sc/s15_1600.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     438,
+     665,
+     725,
+     415
+    ],
+    "hiddenBy": null,
+    "colDisplay": "flex",
+    "docWidth": 1600
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Viewport 1440×900: playground visible",
+   "shot": "sc/s15_1440.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     358,
+     485,
+     725,
+     415
+    ],
+    "hiddenBy": null,
+    "colDisplay": "flex",
+    "docWidth": 1440
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Viewport 1366×768: playground visible",
+   "shot": "sc/s15_1366.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     321,
+     485,
+     725,
+     415
+    ],
+    "hiddenBy": null,
+    "colDisplay": "flex",
+    "docWidth": 1366
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Viewport 1280×800: playground visible",
+   "shot": "sc/s15_1280.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     278,
+     351,
+     725,
+     415
+    ],
+    "hiddenBy": null,
+    "colDisplay": "flex",
+    "docWidth": 1280
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Viewport 1200×800: playground HIDDEN",
+   "shot": "sc/s15_1200.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 1200
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Viewport 1100×800: playground HIDDEN",
+   "shot": "sc/s15_1100.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 1100
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Viewport 1024×768: playground HIDDEN",
+   "shot": "sc/s15_1024.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 1024
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Viewport 900×700: playground HIDDEN",
+   "shot": "sc/s15_900.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 900
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Viewport 800×600: playground HIDDEN",
+   "shot": "sc/s15_800.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 800
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Viewport 768×1024: playground HIDDEN",
+   "shot": "sc/s15_768.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 768
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Viewport 600×800: playground HIDDEN",
+   "shot": "sc/s15_600.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 600
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Viewport 375×700: playground HIDDEN",
+   "shot": "sc/s15_375.jpg",
+   "mathml": null,
+   "net": [],
+   "extra": {
+    "rect": [
+     0,
+     0,
+     0,
+     0
+    ],
+    "hiddenBy": "DIV.wp-block-columns is-style-hidden-mobile is-layout-flex wp-co display=none",
+    "colDisplay": "none",
+    "docWidth": 375
+   }
+  }
+ ],
+ "breakpoint": 1275
+}

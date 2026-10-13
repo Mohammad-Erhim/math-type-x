@@ -1,0 +1,745 @@
+{
+ "name": "s10b_ctx_fence_in",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT fence_in: controls shown in the Contextual tab (8)",
+   "shot": "sc/s10b_ctx_fence_in_01.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 500 ()"
+   ],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "SELECT",
+     "title": "setOpenBracket",
+     "cls": "",
+     "val": "[",
+     "opts": [
+      "",
+      "(",
+      ")",
+      "[",
+      "]",
+      "⟨",
+      "⟩",
+      "{",
+      "}",
+      "⌊",
+      "⌋",
+      "⌈",
+      "⌉",
+      "⟦",
+      "⟧",
+      "|",
+      "‖"
+     ]
+    },
+    {
+     "i": 1,
+     "tag": "SELECT",
+     "title": "setCloseBracket",
+     "cls": "",
+     "val": "]",
+     "opts": [
+      "",
+      "(",
+      ")",
+      "[",
+      "]",
+      "⟨",
+      "⟩",
+      "{",
+      "}",
+      "⌊",
+      "⌋",
+      "⌈",
+      "⌉",
+      "⟦",
+      "⟧",
+      "|",
+      "‖"
+     ]
+    },
+    {
+     "i": 2,
+     "tag": "SELECT",
+     "title": "setSeparator",
+     "cls": "",
+     "val": ",",
+     "opts": [
+      ",",
+      ".",
+      ";",
+      ":",
+      " "
+     ]
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Baseline",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Middle",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Middle-baseline",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 6,
+     "tag": "BUTTON",
+     "title": "Left spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 7,
+     "tag": "BUTTON",
+     "title": "Right spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "fence_in / setOpenBracket (select) -> option \"\"",
+   "shot": "sc/s10b_ctx_fence_in_02.jpg",
+   "mathml": "<math><mfenced open=\"\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "fence_in / setOpenBracket (select) -> option \"(\"",
+   "shot": "sc/s10b_ctx_fence_in_03.jpg",
+   "mathml": "<math><mfenced close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "fence_in / setOpenBracket (select) -> option \")\"",
+   "shot": "sc/s10b_ctx_fence_in_04.jpg",
+   "mathml": "<math><mfenced open=\")\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "fence_in / setOpenBracket (select) -> option \"[\"",
+   "shot": "sc/s10b_ctx_fence_in_05.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "fence_in / setOpenBracket (select) -> option \"]\"",
+   "shot": "sc/s10b_ctx_fence_in_06.jpg",
+   "mathml": "<math><mfenced open=\"]\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⟨\"",
+   "shot": "sc/s10b_ctx_fence_in_07.jpg",
+   "mathml": "<math><mfenced open=\"&lt;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⟩\"",
+   "shot": "sc/s10b_ctx_fence_in_08.jpg",
+   "mathml": "<math><mfenced open=\"&gt;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "fence_in / setOpenBracket (select) -> option \"{\"",
+   "shot": "sc/s10b_ctx_fence_in_09.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "fence_in / setOpenBracket (select) -> option \"}\"",
+   "shot": "sc/s10b_ctx_fence_in_10.jpg",
+   "mathml": "<math><mfenced open=\"}\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⌊\"",
+   "shot": "sc/s10b_ctx_fence_in_11.jpg",
+   "mathml": "<math><mfenced open=\"&#x230A;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⌋\"",
+   "shot": "sc/s10b_ctx_fence_in_12.jpg",
+   "mathml": "<math><mfenced open=\"&#x230B;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⌈\"",
+   "shot": "sc/s10b_ctx_fence_in_13.jpg",
+   "mathml": "<math><mfenced open=\"&#x2308;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⌉\"",
+   "shot": "sc/s10b_ctx_fence_in_14.jpg",
+   "mathml": "<math><mfenced open=\"&#x2309;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⟦\"",
+   "shot": "sc/s10b_ctx_fence_in_15.jpg",
+   "mathml": "<math><mfenced open=\"&#x27E6;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "fence_in / setOpenBracket (select) -> option \"⟧\"",
+   "shot": "sc/s10b_ctx_fence_in_16.jpg",
+   "mathml": "<math><mfenced open=\"&#x27E7;\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "fence_in / setOpenBracket (select) -> option \"|\"",
+   "shot": "sc/s10b_ctx_fence_in_17.jpg",
+   "mathml": "<math><mfenced open=\"|\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "fence_in / setOpenBracket (select) -> option \"‖\"",
+   "shot": "sc/s10b_ctx_fence_in_18.jpg",
+   "mathml": "<math><mfenced open=\"||\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "fence_in / setCloseBracket (select) -> option \"\"",
+   "shot": "sc/s10b_ctx_fence_in_19.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "fence_in / setCloseBracket (select) -> option \"(\"",
+   "shot": "sc/s10b_ctx_fence_in_20.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"(\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "fence_in / setCloseBracket (select) -> option \")\"",
+   "shot": "sc/s10b_ctx_fence_in_21.jpg",
+   "mathml": "<math><mfenced open=\"[\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "fence_in / setCloseBracket (select) -> option \"[\"",
+   "shot": "sc/s10b_ctx_fence_in_22.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"[\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "fence_in / setCloseBracket (select) -> option \"]\"",
+   "shot": "sc/s10b_ctx_fence_in_23.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⟨\"",
+   "shot": "sc/s10b_ctx_fence_in_24.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&lt;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⟩\"",
+   "shot": "sc/s10b_ctx_fence_in_25.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&gt;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "fence_in / setCloseBracket (select) -> option \"{\"",
+   "shot": "sc/s10b_ctx_fence_in_26.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"{\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "fence_in / setCloseBracket (select) -> option \"}\"",
+   "shot": "sc/s10b_ctx_fence_in_27.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"}\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⌊\"",
+   "shot": "sc/s10b_ctx_fence_in_28.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&#x230A;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 29,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⌋\"",
+   "shot": "sc/s10b_ctx_fence_in_29.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&#x230B;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⌈\"",
+   "shot": "sc/s10b_ctx_fence_in_30.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&#x2308;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⌉\"",
+   "shot": "sc/s10b_ctx_fence_in_31.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&#x2309;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⟦\"",
+   "shot": "sc/s10b_ctx_fence_in_32.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&#x27E6;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "fence_in / setCloseBracket (select) -> option \"⟧\"",
+   "shot": "sc/s10b_ctx_fence_in_33.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"&#x27E7;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "fence_in / setCloseBracket (select) -> option \"|\"",
+   "shot": "sc/s10b_ctx_fence_in_34.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"|\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "fence_in / setCloseBracket (select) -> option \"‖\"",
+   "shot": "sc/s10b_ctx_fence_in_35.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"||\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 36,
+   "desc": "fence_in / setSeparator (select) -> option \",\"",
+   "shot": "sc/s10b_ctx_fence_in_36.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "fence_in / setSeparator (select) -> option \".\"",
+   "shot": "sc/s10b_ctx_fence_in_37.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\" separators=\".\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 38,
+   "desc": "fence_in / setSeparator (select) -> option \";\"",
+   "shot": "sc/s10b_ctx_fence_in_38.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\" separators=\";\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 39,
+   "desc": "fence_in / setSeparator (select) -> option \":\"",
+   "shot": "sc/s10b_ctx_fence_in_39.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\" separators=\":\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 40,
+   "desc": "fence_in / setSeparator (select) -> option \" \"",
+   "shot": "sc/s10b_ctx_fence_in_40.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\" separators=\"&#xA0;\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "fence_in / Baseline (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_fence_in_41.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline"
+   ]
+  },
+  {
+   "n": 42,
+   "desc": "fence_in / Middle (button) -> click",
+   "shot": "sc/s10b_ctx_fence_in_42.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"[\" close=\"]\" wrs:valign=\"middle\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Middle"
+   ]
+  },
+  {
+   "n": 43,
+   "desc": "fence_in / Middle-baseline (button) -> click",
+   "shot": "sc/s10b_ctx_fence_in_43.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"[\" close=\"]\" wrs:valign=\"middle-baseline\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Middle-baseline"
+   ]
+  },
+  {
+   "n": 44,
+   "desc": "fence_in / Left spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_fence_in_44.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 45,
+   "desc": "fence_in / Left spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_fence_in_45.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 46,
+   "desc": "fence_in / Left spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_fence_in_46.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"0.5em\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 47,
+   "desc": "fence_in / Left spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_fence_in_47.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo lspace=\"5\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 48,
+   "desc": "fence_in / Right spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_fence_in_48.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|"
+   ]
+  },
+  {
+   "n": 49,
+   "desc": "fence_in / Right spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_fence_in_49.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 50,
+   "desc": "fence_in / Right spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_fence_in_50.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"0.5em\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 51,
+   "desc": "fence_in / Right spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_fence_in_51.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo rspace=\"5\">+</mo><mn>1</mn></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%5B%22%20close%3D%22%5D%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmfe"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

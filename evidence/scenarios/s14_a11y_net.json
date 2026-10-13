@@ -1,0 +1,140 @@
+{
+ "name": "s14_a11y_net",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Accessible text for: x+1",
+   "shot": "sc/s14_a11y_net_01.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "live": [
+     "end expression"
+    ],
+    "lastBodies": [
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+      "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+     },
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+      "body": "blank"
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "desc": "Accessible text for: Fraction a/b",
+   "shot": "sc/s14_a11y_net_02.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "live": [
+     "denominator end"
+    ],
+    "lastBodies": [
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+      "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+     },
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+      "body": "blank"
+     }
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Accessible text for: Square root of 2",
+   "shot": "sc/s14_a11y_net_03.jpg",
+   "mathml": "<math><msqrt><mn>2</mn></msqrt></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "live": [
+     "square root end"
+    ],
+    "lastBodies": [
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+      "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+     },
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+      "body": "blank"
+     },
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+      "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+     }
+    ]
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Accessible text for: x squared",
+   "shot": "sc/s14_a11y_net_04.jpg",
+   "mathml": "<math><msup><mi>x</mi><mn>2</mn></msup></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "live": [
+     "superscript end"
+    ],
+    "lastBodies": [
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+      "body": "blank"
+     },
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+      "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+     },
+     {
+      "url": "https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true",
+      "status": 200,
+      "req": "mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+      "body": "<math xmlns=\"http://www.w3.org/1998/Math/MathML\"/>"
+     }
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,293 @@
+{
+ "name": "s20_matrix_nav",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Insert 2×2 parenthesis matrix with the picker; focus lost, so click in the editing area (caret goes after the matrix)",
+   "shot": "sc/s20_matrix_nav_01.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%2F%3E%3Cmtd%2F%3E%3C%2Fmtr%3E%3Cmtr%3E%3Cmtd%2F%3E%3Cmtd%2F%3E%3C%2Fmtr%3E%3C%2Fmt"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "ArrowLeft ×1 from the end, then type \"a\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_02.jpg",
+   "mathml": "<math><mfenced><mrow><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable><mi>a</mi></mrow></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "ArrowLeft ×2 from the end, then type \"b\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_03.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "ArrowLeft ×3 from the end, then type \"c\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_04.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd><mi>c</mi></mtd><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "ArrowLeft ×4 from the end, then type \"d\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_05.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd><mi>d</mi></mtd></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "ArrowLeft ×5 from the end, then type \"e\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_06.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>e</mi></mtd><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "ArrowLeft ×6 from the end, then type \"f\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_07.jpg",
+   "mathml": "<math><mfenced><mrow><mi>f</mi><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mrow></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "ArrowLeft ×7 from the end, then type \"g\" → shows where the caret is",
+   "shot": "sc/s20_matrix_nav_08.jpg",
+   "mathml": "<math><mi>g</mi><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key ArrowLeft (move to previous cell / out of cell), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_09.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>z</mi><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key ArrowRight (move to next cell / out), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_10.jpg",
+   "mathml": "<math><mfenced><mrow><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr></mtable><mi>z</mi></mrow></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key ArrowUp (row above), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_11.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd><mi>z</mi></mtd></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key ArrowDown (row below), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_12.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>y</mi><mi>z</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key Home (start of context), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_13.jpg",
+   "mathml": "<math><mi>z</mi><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key End (end of context), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_14.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr></mtable></mfenced><mi>z</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key Enter (new line inside cell?), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_15.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr><mtr><mtd/><mtd><mi>z</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key Tab (leaves editor), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_16.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key Backspace (delete in empty cell), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_17.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd><mi>z</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "Caret in last cell (ArrowLeft ×2 from end): key Delete (forward delete in empty cell), then type \"z\"",
+   "shot": "sc/s20_matrix_nav_18.jpg",
+   "mathml": "<math><mfenced><mi>z</mi></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "Mouse: click directly on first cell of the matrix and type \"9\"",
+   "shot": "sc/s20_matrix_nav_19.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd><mn>9</mn></mtd></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Mouse: click on second cell of the first row and type \"8\"",
+   "shot": "sc/s20_matrix_nav_20.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced><mn>8</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Fill 2×2 (typing a, →, b, ↓, d, ←, c) starting in first cell",
+   "shot": "sc/s20_matrix_nav_21.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd><mi>a</mi></mtd></mtr><mtr><mtd><mi>b</mi><mi>c</mi><mi>d</mi></mtd><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "Smart delete: caret right after the matrix, Backspace (first press)",
+   "shot": "sc/s20_matrix_nav_22.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "Backspace again (second press)",
+   "shot": "sc/s20_matrix_nav_23.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "Ctrl+A then Delete clears matrix",
+   "shot": "sc/s20_matrix_nav_24.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

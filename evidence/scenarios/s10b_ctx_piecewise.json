@@ -1,0 +1,1803 @@
+{
+ "name": "s10b_ctx_piecewise",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "CONTEXT piecewise: controls shown in the Contextual tab (43)",
+   "shot": "sc/s10b_ctx_piecewise_01.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    {
+     "i": 0,
+     "tag": "SELECT",
+     "title": "setOpenBracket",
+     "cls": "",
+     "val": "{",
+     "opts": [
+      "",
+      "(",
+      ")",
+      "[",
+      "]",
+      "⟨",
+      "⟩",
+      "{",
+      "}",
+      "⌊",
+      "⌋",
+      "⌈",
+      "⌉",
+      "⟦",
+      "⟧",
+      "|",
+      "‖"
+     ]
+    },
+    {
+     "i": 1,
+     "tag": "SELECT",
+     "title": "setCloseBracket",
+     "cls": "",
+     "val": "",
+     "opts": [
+      "",
+      "(",
+      ")",
+      "[",
+      "]",
+      "⟨",
+      "⟩",
+      "{",
+      "}",
+      "⌊",
+      "⌋",
+      "⌈",
+      "⌉",
+      "⟦",
+      "⟧",
+      "|",
+      "‖"
+     ]
+    },
+    {
+     "i": 2,
+     "tag": "SELECT",
+     "title": "setSeparator",
+     "cls": "",
+     "val": ",",
+     "opts": [
+      ",",
+      ".",
+      ";",
+      ":",
+      " "
+     ]
+    },
+    {
+     "i": 3,
+     "tag": "BUTTON",
+     "title": "Baseline",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 4,
+     "tag": "BUTTON",
+     "title": "Middle",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 5,
+     "tag": "BUTTON",
+     "title": "Middle-baseline",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 6,
+     "tag": "BUTTON",
+     "title": "Align with axis",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 7,
+     "tag": "BUTTON",
+     "title": "Align with top",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 8,
+     "tag": "BUTTON",
+     "title": "Align with baseline",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 9,
+     "tag": "BUTTON",
+     "title": "Align with center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 10,
+     "tag": "BUTTON",
+     "title": "Align to row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 11,
+     "tag": "BUTTON",
+     "title": "Align with bottom",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 12,
+     "tag": "BUTTON",
+     "title": "Insert row below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 13,
+     "tag": "BUTTON",
+     "title": "Insert row above",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 14,
+     "tag": "BUTTON",
+     "title": "Insert column at right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 15,
+     "tag": "BUTTON",
+     "title": "Insert column at left",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 16,
+     "tag": "BUTTON",
+     "title": "Remove row",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 17,
+     "tag": "BUTTON",
+     "title": "Remove column",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 18,
+     "tag": "BUTTON",
+     "title": "Insert frame",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 19,
+     "tag": "BUTTON",
+     "title": "Remove frame",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 20,
+     "tag": "BUTTON",
+     "title": "Activate solid lines",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 21,
+     "tag": "BUTTON",
+     "title": "Insert line below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 22,
+     "tag": "BUTTON",
+     "title": "Insert right line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 23,
+     "tag": "BUTTON",
+     "title": "Activate dash lines",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 24,
+     "tag": "BUTTON",
+     "title": "Remove line below",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 25,
+     "tag": "BUTTON",
+     "title": "Remove right line",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 26,
+     "tag": "BUTTON",
+     "title": "Align left",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 27,
+     "tag": "BUTTON",
+     "title": "Align center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 28,
+     "tag": "BUTTON",
+     "title": "Align right",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 29,
+     "tag": "BUTTON",
+     "title": "Decimal align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 30,
+     "tag": "SELECT",
+     "title": "Decimal align symbol",
+     "cls": "",
+     "val": "dot",
+     "opts": [
+      "dot",
+      "comma",
+      "apostrophe",
+      "space"
+     ]
+    },
+    {
+     "i": 31,
+     "tag": "BUTTON",
+     "title": "Align rows to top",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 32,
+     "tag": "BUTTON",
+     "title": "Align rows to center",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 33,
+     "tag": "BUTTON",
+     "title": "Align rows to bottom",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 34,
+     "tag": "BUTTON",
+     "title": "Relation align",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 35,
+     "tag": "BUTTON",
+     "title": "Align rows to baseline",
+     "cls": "wrs_imageContainer wrs_button wrs_toggled",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 36,
+     "tag": "BUTTON",
+     "title": "Align rows to axis",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 37,
+     "tag": "BUTTON",
+     "title": "Force equal row heights",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 38,
+     "tag": "BUTTON",
+     "title": "Force equal column widths",
+     "cls": "wrs_imageContainer wrs_button",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 39,
+     "tag": "BUTTON",
+     "title": "Column spacing at right",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 40,
+     "tag": "BUTTON",
+     "title": "Horizontal frame spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 41,
+     "tag": "BUTTON",
+     "title": "Row spacing below",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    },
+    {
+     "i": 42,
+     "tag": "BUTTON",
+     "title": "Vertical frame spacing",
+     "cls": "wrs_imageContainer wrs_button wrs_lengthButton",
+     "val": "",
+     "opts": null
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "piecewise / setOpenBracket (select) -> option \"\"",
+   "shot": "sc/s10b_ctx_piecewise_02.jpg",
+   "mathml": "<math><mfenced open=\"\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "piecewise / setOpenBracket (select) -> option \"(\"",
+   "shot": "sc/s10b_ctx_piecewise_03.jpg",
+   "mathml": "<math><mfenced close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "piecewise / setOpenBracket (select) -> option \")\"",
+   "shot": "sc/s10b_ctx_piecewise_04.jpg",
+   "mathml": "<math><mfenced open=\")\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "piecewise / setOpenBracket (select) -> option \"[\"",
+   "shot": "sc/s10b_ctx_piecewise_05.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "piecewise / setOpenBracket (select) -> option \"]\"",
+   "shot": "sc/s10b_ctx_piecewise_06.jpg",
+   "mathml": "<math><mfenced open=\"]\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⟨\"",
+   "shot": "sc/s10b_ctx_piecewise_07.jpg",
+   "mathml": "<math><mfenced open=\"&lt;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⟩\"",
+   "shot": "sc/s10b_ctx_piecewise_08.jpg",
+   "mathml": "<math><mfenced open=\"&gt;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "piecewise / setOpenBracket (select) -> option \"{\"",
+   "shot": "sc/s10b_ctx_piecewise_09.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "piecewise / setOpenBracket (select) -> option \"}\"",
+   "shot": "sc/s10b_ctx_piecewise_10.jpg",
+   "mathml": "<math><mfenced open=\"}\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⌊\"",
+   "shot": "sc/s10b_ctx_piecewise_11.jpg",
+   "mathml": "<math><mfenced open=\"&#x230A;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⌋\"",
+   "shot": "sc/s10b_ctx_piecewise_12.jpg",
+   "mathml": "<math><mfenced open=\"&#x230B;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⌈\"",
+   "shot": "sc/s10b_ctx_piecewise_13.jpg",
+   "mathml": "<math><mfenced open=\"&#x2308;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⌉\"",
+   "shot": "sc/s10b_ctx_piecewise_14.jpg",
+   "mathml": "<math><mfenced open=\"&#x2309;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⟦\"",
+   "shot": "sc/s10b_ctx_piecewise_15.jpg",
+   "mathml": "<math><mfenced open=\"&#x27E6;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "piecewise / setOpenBracket (select) -> option \"⟧\"",
+   "shot": "sc/s10b_ctx_piecewise_16.jpg",
+   "mathml": "<math><mfenced open=\"&#x27E7;\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "piecewise / setOpenBracket (select) -> option \"|\"",
+   "shot": "sc/s10b_ctx_piecewise_17.jpg",
+   "mathml": "<math><mfenced open=\"|\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 18,
+   "desc": "piecewise / setOpenBracket (select) -> option \"‖\"",
+   "shot": "sc/s10b_ctx_piecewise_18.jpg",
+   "mathml": "<math><mfenced open=\"||\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "piecewise / setCloseBracket (select) -> option \"\"",
+   "shot": "sc/s10b_ctx_piecewise_19.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "piecewise / setCloseBracket (select) -> option \"(\"",
+   "shot": "sc/s10b_ctx_piecewise_20.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"(\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "piecewise / setCloseBracket (select) -> option \")\"",
+   "shot": "sc/s10b_ctx_piecewise_21.jpg",
+   "mathml": "<math><mfenced open=\"{\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "piecewise / setCloseBracket (select) -> option \"[\"",
+   "shot": "sc/s10b_ctx_piecewise_22.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"[\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "piecewise / setCloseBracket (select) -> option \"]\"",
+   "shot": "sc/s10b_ctx_piecewise_23.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"]\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⟨\"",
+   "shot": "sc/s10b_ctx_piecewise_24.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&lt;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⟩\"",
+   "shot": "sc/s10b_ctx_piecewise_25.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&gt;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 26,
+   "desc": "piecewise / setCloseBracket (select) -> option \"{\"",
+   "shot": "sc/s10b_ctx_piecewise_26.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"{\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 27,
+   "desc": "piecewise / setCloseBracket (select) -> option \"}\"",
+   "shot": "sc/s10b_ctx_piecewise_27.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"}\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 28,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⌊\"",
+   "shot": "sc/s10b_ctx_piecewise_28.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&#x230A;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 29,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⌋\"",
+   "shot": "sc/s10b_ctx_piecewise_29.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&#x230B;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⌈\"",
+   "shot": "sc/s10b_ctx_piecewise_30.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&#x2308;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⌉\"",
+   "shot": "sc/s10b_ctx_piecewise_31.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&#x2309;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⟦\"",
+   "shot": "sc/s10b_ctx_piecewise_32.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&#x27E6;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "piecewise / setCloseBracket (select) -> option \"⟧\"",
+   "shot": "sc/s10b_ctx_piecewise_33.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"&#x27E7;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 34,
+   "desc": "piecewise / setCloseBracket (select) -> option \"|\"",
+   "shot": "sc/s10b_ctx_piecewise_34.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"|\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 35,
+   "desc": "piecewise / setCloseBracket (select) -> option \"‖\"",
+   "shot": "sc/s10b_ctx_piecewise_35.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"||\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 36,
+   "desc": "piecewise / setSeparator (select) -> option \",\"",
+   "shot": "sc/s10b_ctx_piecewise_36.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 37,
+   "desc": "piecewise / setSeparator (select) -> option \".\"",
+   "shot": "sc/s10b_ctx_piecewise_37.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\" separators=\".\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 38,
+   "desc": "piecewise / setSeparator (select) -> option \";\"",
+   "shot": "sc/s10b_ctx_piecewise_38.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\" separators=\";\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 39,
+   "desc": "piecewise / setSeparator (select) -> option \":\"",
+   "shot": "sc/s10b_ctx_piecewise_39.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\" separators=\":\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 40,
+   "desc": "piecewise / setSeparator (select) -> option \" \"",
+   "shot": "sc/s10b_ctx_piecewise_40.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\" separators=\"&#xA0;\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 41,
+   "desc": "piecewise / Baseline (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_piecewise_41.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 42,
+   "desc": "piecewise / Middle (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_42.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\" wrs:valign=\"middle\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Middle",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 43,
+   "desc": "piecewise / Middle-baseline (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_43.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\" wrs:valign=\"middle-baseline\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Middle-baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 44,
+   "desc": "piecewise / Align with axis (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_piecewise_44.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 45,
+   "desc": "piecewise / Align with top (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_45.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable align=\"top\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with top",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 46,
+   "desc": "piecewise / Align with baseline (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_46.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable align=\"baseline\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with baseline",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 47,
+   "desc": "piecewise / Align with center (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_47.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable align=\"center\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with center",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 48,
+   "desc": "piecewise / Align to row (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_48.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable align=\"axis 2\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Align to row",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 49,
+   "desc": "piecewise / Align with bottom (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_49.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable align=\"bottom\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with bottom",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 50,
+   "desc": "piecewise / Insert row below (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_50.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 51,
+   "desc": "piecewise / Insert row above (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_51.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd/></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 52,
+   "desc": "piecewise / Insert column at right (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_52.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd><mtd/></mtr><mtr><mtd><mi>y</mi></mtd><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 53,
+   "desc": "piecewise / Insert column at left (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_53.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left left\"><mtr><mtd/><mtd><mi>x</mi></mtd></mtr><mtr><mtd/><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 54,
+   "desc": "piecewise / Remove row (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_54.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 55,
+   "desc": "piecewise / Remove column (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_55.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 56,
+   "desc": "piecewise / Insert frame (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_56.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\" frame=\"solid\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 57,
+   "desc": "piecewise / Remove frame (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_57.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 58,
+   "desc": "piecewise / Activate solid lines (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_piecewise_58.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 59,
+   "desc": "piecewise / Insert line below (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_59.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\" rowlines=\"none solid none\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 60,
+   "desc": "piecewise / Insert right line (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_60.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\" columnlines=\"solid none\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 61,
+   "desc": "piecewise / Activate dash lines (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_61.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate dash lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 62,
+   "desc": "piecewise / Remove line below (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_62.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 63,
+   "desc": "piecewise / Remove right line (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_63.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 64,
+   "desc": "piecewise / Align left (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_piecewise_64.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 65,
+   "desc": "piecewise / Align center (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_65.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"center\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align center",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 66,
+   "desc": "piecewise / Align right (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_66.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"right\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align right",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 67,
+   "desc": "piecewise / Decimal align (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_67.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\"><mtable wrs:columnalign=\"decimal\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Decimal align",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 68,
+   "desc": "piecewise / Decimal align symbol (select) -> option \"dot\"",
+   "shot": "sc/s10b_ctx_piecewise_68.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\"><mtable wrs:columnalign=\"decimal\" wrs:decimalseparators=\"dot\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 69,
+   "desc": "piecewise / Decimal align symbol (select) -> option \"comma\"",
+   "shot": "sc/s10b_ctx_piecewise_69.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\"><mtable wrs:columnalign=\"decimal\" wrs:decimalseparators=\"comma\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 70,
+   "desc": "piecewise / Decimal align symbol (select) -> option \"apostrophe\"",
+   "shot": "sc/s10b_ctx_piecewise_70.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\"><mtable wrs:columnalign=\"decimal\" wrs:decimalseparators=\"apostrophe\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 71,
+   "desc": "piecewise / Decimal align symbol (select) -> option \"space\"",
+   "shot": "sc/s10b_ctx_piecewise_71.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\"><mtable wrs:columnalign=\"decimal\" wrs:decimalseparators=\"space\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 72,
+   "desc": "piecewise / Align rows to top (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_72.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable rowalign=\"baseline top\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to top"
+   ]
+  },
+  {
+   "n": 73,
+   "desc": "piecewise / Align rows to center (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_73.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable rowalign=\"baseline center\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to center"
+   ]
+  },
+  {
+   "n": 74,
+   "desc": "piecewise / Align rows to bottom (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_74.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable rowalign=\"baseline bottom\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to bottom"
+   ]
+  },
+  {
+   "n": 75,
+   "desc": "piecewise / Relation align (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_75.jpg",
+   "mathml": "<math xmlns:wrs=\"http://www.wiris.com/xml/mathml-extension\"><mfenced open=\"{\" close=\"\"><mtable wrs:columnalign=\"relation\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Relation align",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 76,
+   "desc": "piecewise / Align rows to baseline (button, toggle) -> click",
+   "shot": "sc/s10b_ctx_piecewise_76.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable rowalign=\"baseline baseline\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline"
+   ]
+  },
+  {
+   "n": 77,
+   "desc": "piecewise / Align rows to axis (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_77.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable rowalign=\"baseline axis\" columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to axis"
+   ]
+  },
+  {
+   "n": 78,
+   "desc": "piecewise / Force equal row heights (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_78.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\" equalrows=\"true\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline",
+    "Force equal row heights"
+   ]
+  },
+  {
+   "n": 79,
+   "desc": "piecewise / Force equal column widths (button) -> click",
+   "shot": "sc/s10b_ctx_piecewise_79.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\" equalcolumns=\"true\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Baseline",
+    "Align with axis",
+    "Activate solid lines",
+    "Align left",
+    "Align rows to baseline",
+    "Force equal column widths"
+   ]
+  },
+  {
+   "n": 80,
+   "desc": "piecewise / Column spacing at right (button, length) -> click",
+   "shot": "sc/s10b_ctx_piecewise_80.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.4em"
+   ]
+  },
+  {
+   "n": 81,
+   "desc": "piecewise / Column spacing at right (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_81.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 82,
+   "desc": "piecewise / Column spacing at right (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_82.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 83,
+   "desc": "piecewise / Column spacing at right (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_83.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 84,
+   "desc": "piecewise / Horizontal frame spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_piecewise_84.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.4em"
+   ]
+  },
+  {
+   "n": 85,
+   "desc": "piecewise / Horizontal frame spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_85.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 86,
+   "desc": "piecewise / Horizontal frame spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_86.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 87,
+   "desc": "piecewise / Horizontal frame spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_87.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 88,
+   "desc": "piecewise / Row spacing below (button, length) -> click",
+   "shot": "sc/s10b_ctx_piecewise_88.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.25em"
+   ]
+  },
+  {
+   "n": 89,
+   "desc": "piecewise / Row spacing below (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_89.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 90,
+   "desc": "piecewise / Row spacing below (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_90.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 91,
+   "desc": "piecewise / Row spacing below (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_91.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 92,
+   "desc": "piecewise / Vertical frame spacing (button, length) -> click",
+   "shot": "sc/s10b_ctx_piecewise_92.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "wrs_focusElement||",
+    "|Value|0.5ex"
+   ]
+  },
+  {
+   "n": 93,
+   "desc": "piecewise / Vertical frame spacing (button, length) -> type \"2px\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_93.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "TypeError: Cannot read properties of null (reading 'click')"
+  },
+  {
+   "n": 94,
+   "desc": "piecewise / Vertical frame spacing (button, length) -> type \"0.5em\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_94.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 95,
+   "desc": "piecewise / Vertical frame spacing (button, length) -> type \"5\" + Enter",
+   "shot": "sc/s10b_ctx_piecewise_95.jpg",
+   "mathml": "<math><mfenced open=\"{\" close=\"\"><mtable columnalign=\"left\"><mtr><mtd><mi>x</mi></mtd></mtr><mtr><mtd><mi>y</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfenced%20open%3D%22%7B%22%20close%3D%22%22%3E%3Cmtable%20columnalign%3D%22left%22%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ex%3C%2Fmi"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

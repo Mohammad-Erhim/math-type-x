@@ -1,0 +1,246 @@
+{
+ "name": "s13_mouse_scroll",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Type \"abcdef\"",
+   "shot": "sc/s13_mouse_scroll_01.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>f</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Click between \"c\" and \"d\" (x≈ 41px in editing area), type X",
+   "shot": "sc/s13_mouse_scroll_02.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Click far to the right on same line, type Y (caret at end)",
+   "shot": "sc/s13_mouse_scroll_03.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "Click far below (empty area), type Z",
+   "shot": "sc/s13_mouse_scroll_04.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "Click far left of first char (x=3), type W",
+   "shot": "sc/s13_mouse_scroll_05.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Double-click on a character",
+   "shot": "sc/s13_mouse_scroll_06.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "Triple-click on content",
+   "shot": "sc/s13_mouse_scroll_07.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Drag-select from first to last char",
+   "shot": "sc/s13_mouse_scroll_08.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Shift+click extends selection",
+   "shot": "sc/s13_mouse_scroll_09.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 10,
+   "desc": "Right-click on content (context menu?)",
+   "shot": "sc/s13_mouse_scroll_10.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "Press Escape after right-click",
+   "shot": "sc/s13_mouse_scroll_11.jpg",
+   "mathml": "<math><mi>W</mi><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi><mi>X</mi><mi>f</mi><mi>Y</mi><mi>Z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 12,
+   "desc": "Fraction: build a/b, click numerator then type 1",
+   "shot": "sc/s13_mouse_scroll_12.jpg",
+   "mathml": "<math><mfrac><mrow><mi>a</mi><mn>1</mn></mrow><mi>b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Fraction: click denominator then type 2",
+   "shot": "sc/s13_mouse_scroll_13.jpg",
+   "mathml": "<math><mfrac><mrow><mi>a</mi><mn>1</mn></mrow><mrow><mn>2</mn><mi>b</mi></mrow></mfrac></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "Selection with caret precision controllers (touch handles)",
+   "shot": "sc/s13_mouse_scroll_14.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "Long expression: 60 characters on one line",
+   "shot": "sc/s13_mouse_scroll_15.jpg",
+   "mathml": "<math><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>7</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>9</mn><mo>+</mo><mn>10</mn><mo>+</mo><mn>11</mn><mo>+</mo><mn>12</mn><mo>+</mo><mn>13</mn><mo>+</mo><mn>14</mn><mo>+</mo><mn>15</mn><mo>+</mo><mn>16</mn><mo>+</mo><mn>17</mn><mo>+</mo><mn>18</mn><mo>+</mo><mn>19</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>21</mn><mo>+</mo><mn>22</mn><mo>+</mo><mn>23</mn><mo>+</mo><mn>24</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>26</mn><mo>+</mo><mn>27</mn><mo>+</mo><mn>28</mn><mo>+</mo><mn>29</mn><mo>+</mo><mn>30</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "Very long expression: 200 characters",
+   "shot": "sc/s13_mouse_scroll_16.jpg",
+   "mathml": "<math><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mn>4</mn><mo>+</mo><mn>5</mn><mo>+</mo><mn>6</mn><mo>+</mo><mn>7</mn><mo>+</mo><mn>8</mn><mo>+</mo><mn>9</mn><mo>+</mo><mn>10</mn><mo>+</mo><mn>11</mn><mo>+</mo><mn>12</mn><mo>+</mo><mn>13</mn><mo>+</mo><mn>14</mn><mo>+</mo><mn>15</mn><mo>+</mo><mn>16</mn><mo>+</mo><mn>17</mn><mo>+</mo><mn>18</mn><mo>+</mo><mn>19</mn><mo>+</mo><mn>20</mn><mo>+</mo><mn>21</mn><mo>+</mo><mn>22</mn><mo>+</mo><mn>23</mn><mo>+</mo><mn>24</mn><mo>+</mo><mn>25</mn><mo>+</mo><mn>26</mn><mo>+</mo><mn>27</mn><mo>+</mo><mn>28</mn><mo>+</mo><mn>29</mn><mo>+</mo><mn>30</mn><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi><mi>x</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "Scroll position info (formula display scrollWidth/Height)",
+   "shot": "sc/s13_mouse_scroll_17.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "f": [
+     1865,
+     693,
+     314,
+     314
+    ],
+    "w": [
+     695,
+     695,
+     316,
+     316
+    ],
+    "overflowX": "auto",
+    "overflowY": "auto"
+   }
+  },
+  {
+   "n": 18,
+   "desc": "20 lines via Enter",
+   "shot": "sc/s13_mouse_scroll_18.jpg",
+   "mathml": "<math><mn>1</mn><mspace linebreak=\"newline\"/><mn>2</mn><mspace linebreak=\"newline\"/><mn>3</mn><mspace linebreak=\"newline\"/><mn>4</mn><mspace linebreak=\"newline\"/><mn>5</mn><mspace linebreak=\"newline\"/><mn>6</mn><mspace linebreak=\"newline\"/><mn>7</mn><mspace linebreak=\"newline\"/><mn>8</mn><mspace linebreak=\"newline\"/><mn>9</mn><mspace linebreak=\"newline\"/><mn>10</mn><mspace linebreak=\"newline\"/><mn>11</mn><mspace linebreak=\"newline\"/><mn>12</mn><mspace linebreak=\"newline\"/><mn>13</mn><mspace linebreak=\"newline\"/><mn>14</mn><mspace linebreak=\"newline\"/><mn>15</mn><mspace linebreak=\"newline\"/><mn>16</mn><mspace linebreak=\"newline\"/><mn>17</mn><mspace linebreak=\"newline\"/><mn>18</mn><mspace linebreak=\"newline\"/><mn>19</mn><mspace linebreak=\"newline\"/><mn>20</mn><mspace linebreak=\"newline\"/></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "Mouse wheel scroll down in editing area",
+   "shot": "sc/s13_mouse_scroll_19.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Tall structure: nested fractions 4 levels",
+   "shot": "sc/s13_mouse_scroll_20.jpg",
+   "mathml": "<math><mfrac><mstyle displaystyle=\"true\"><mfrac><mstyle displaystyle=\"true\"><mfrac><mstyle displaystyle=\"true\"><mfrac><mn>1</mn><mrow/></mfrac></mstyle><mrow/></mfrac></mstyle><mrow/></mfrac></mstyle><mrow/></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Large font size 72px with 5 characters",
+   "shot": "sc/s13_mouse_scroll_21.jpg",
+   "mathml": "<math><mstyle mathsize=\"72px\"><mi>a</mi><mi>b</mi><mi>c</mi><mi>d</mi><mi>e</mi></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

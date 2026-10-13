@@ -1,0 +1,38 @@
+{
+ "roles": [
+  "DIV|application|||",
+  "DIV|tablist|||",
+  "BUTTON|tab|General tab (Alt+1)||",
+  "BUTTON|tab|Symbols (Alt+2)||",
+  "BUTTON|tab|Arrows tab (Alt+3)||",
+  "BUTTON|tab|Greek, letters and numbers tab (Alt+4)||",
+  "BUTTON|tab|Matrices and elementary tab (Alt+5)||",
+  "BUTTON|tab|Scripts and layout tab (Alt+6)||",
+  "BUTTON|tab|Decorations tab (Alt+7)||",
+  "BUTTON|tab|Big operators tab (Alt+8)||",
+  "BUTTON|tab|Calculus tab (Alt+9)||",
+  "BUTTON|tab|Contextual tab (Alt+0)||",
+  "DIV|button|Undo||",
+  "DIV|button|Redo||",
+  "DIV|button|Clear||",
+  "DIV|button|Edit||",
+  "DIV|button|Remove point||",
+  "DIV|button|Insert before||",
+  "DIV|button|Insert after||",
+  "DIV|button|Add stroke||",
+  "DIV|button|Move up||",
+  "DIV|button|Move down||",
+  "DIV|button|Help||"
+ ],
+ "live": [
+  "DIV|||polite|"
+ ],
+ "tabindex": [
+  "TEXTAREA||||-1"
+ ],
+ "inputs": [
+  "INPUT||Math input||",
+  "TEXTAREA||||-1",
+  "INPUT||Go to handwritten mode||"
+ ]
+}

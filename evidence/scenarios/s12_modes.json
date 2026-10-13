@@ -1,0 +1,336 @@
+{
+ "name": "s12_modes",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "RTL: click \"Right to left editing\" on empty editor",
+   "shot": "sc/s12_modes_01.jpg",
+   "mathml": "<math dir=\"rtl\"/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "wrs_toggled",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 2,
+   "desc": "RTL: type \"abc\"",
+   "shot": "sc/s12_modes_02.jpg",
+   "mathml": "<math dir=\"rtl\"><mi>a</mi><mi>b</mi><mi>c</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "wrs_toggled",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 3,
+   "desc": "RTL: ArrowLeft once (caret direction)",
+   "shot": "sc/s12_modes_03.jpg",
+   "mathml": "<math dir=\"rtl\"><mi>a</mi><mi>b</mi><mi>c</mi><mi>X</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "RTL: insert fraction then type \"1\"",
+   "shot": "sc/s12_modes_04.jpg",
+   "mathml": "<math dir=\"rtl\"><mi>a</mi><mi>b</mi><mi>c</mi><mi>X</mi><mfrac><mn>1</mn><mrow/></mfrac></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "RTL: type Arabic letters via insertText",
+   "shot": "sc/s12_modes_05.jpg",
+   "mathml": "<math><mi>&#x645;</mi><mi>&#x631;</mi><mi>&#x62D;</mi><mi>&#x628;</mi><mi>&#x627;</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "RTL: type digits 123 and operators 1+2",
+   "shot": "sc/s12_modes_06.jpg",
+   "mathml": "<math><mn>1</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>3</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "RTL toggled OFF again",
+   "shot": "sc/s12_modes_07.jpg",
+   "mathml": "<math dir=\"rtl\"><mn>1</mn><mo>+</mo><mn>2</mn><mo>=</mo><mn>3</mn><mi>q</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "wrs_toggled",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Arabic ligature: click button on empty editor",
+   "shot": "sc/s12_modes_08.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "wrs_toggled"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Arabic ligature: type Arabic text \"سمع\"",
+   "shot": "sc/s12_modes_09.jpg",
+   "mathml": "<math><mi>&#x633;&#x645;&#x639;</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "wrs_toggled"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Arabic ligature toggled off",
+   "shot": "sc/s12_modes_10.jpg",
+   "mathml": "<math><mi>&#x633;&#x645;&#x639;</mi><mi>&#x633;</mi><mi>&#x645;</mi><mi>&#x639;</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Automatic italic OFF then click Greek tab > Alpha",
+   "shot": "sc/s12_modes_11.jpg",
+   "mathml": "<math><mi mathvariant=\"normal\">&#x3B1;</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {}
+  },
+  {
+   "n": 12,
+   "desc": "Automatic italic OFF then Number pi (General tab)",
+   "shot": "sc/s12_modes_12.jpg",
+   "mathml": "<math><mi>&#x3B1;&#x3C0;x</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Automatic italic OFF + bold: type \"ab\"",
+   "shot": "sc/s12_modes_13.jpg",
+   "mathml": "<math><mi>&#x3B1;&#x3C0;x</mi><mi mathvariant=\"bold\">ab</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "wrs_toggled",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "normal",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Italic ON + typed digits and letters",
+   "shot": "sc/s12_modes_14.jpg",
+   "mathml": "<math><mi>x</mi><mn mathvariant=\"italic\">2</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "wrs_toggled",
+    "Automatic italic": "normal",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Bold ON then insert Fraction and type \"ab\" and click Greek Beta",
+   "shot": "sc/s12_modes_15.jpg",
+   "mathml": "<math><mfrac><mi mathvariant=\"bold\">a</mi><mi mathvariant=\"bold\">b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "wrs_toggled",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Regular text ON then click Fraction",
+   "shot": "sc/s12_modes_16.jpg",
+   "mathml": "<math><mfrac><mrow><mi>h</mi><mi>i</mi></mrow><mrow/></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "Bold (Ctrl+B)": "normal",
+    "Italic (Ctrl+I)": "normal",
+    "Automatic italic": "wrs_toggled",
+    "Regular text": "normal",
+    "Right to left editing": "normal",
+    "Arabic ligature": "normal"
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Regular text ON then Alpha (Greek tab)",
+   "shot": "sc/s12_modes_17.jpg",
+   "mathml": "<math><mtext>&#x3B1;&#xA0;text</mtext></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {}
+  },
+  {
+   "n": 18,
+   "desc": "Color red chosen then insert Fraction and type",
+   "shot": "sc/s12_modes_18.jpg",
+   "mathml": "<math><mfrac mathcolor=\"#FF0000\"><mi>a</mi><mi>b</mi></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 19,
+   "desc": "Font size 36px selected then type \"ab\" then Fraction",
+   "shot": "sc/s12_modes_19.jpg",
+   "mathml": "<math><mstyle mathsize=\"36px\"><mi>a</mi><mi>b</mi><mfrac><mrow/><mrow/></mfrac></mstyle></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Font Courier New then Square root",
+   "shot": "sc/s12_modes_20.jpg",
+   "mathml": "<math style=\"font-family:'Courier New'\"><mi>x</mi><msqrt><mi>y</mi></msqrt></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Select \"x+1\" and apply bold: operators and numbers",
+   "shot": "sc/s12_modes_21.jpg",
+   "mathml": "<math><mi mathvariant=\"bold-italic\">x</mi><mo mathvariant=\"bold\">+</mo><mn mathvariant=\"bold\">1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "Select fraction content and apply Italic",
+   "shot": "sc/s12_modes_22.jpg",
+   "mathml": "<math><mfrac><mn mathvariant=\"italic\">12</mn><mrow/></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

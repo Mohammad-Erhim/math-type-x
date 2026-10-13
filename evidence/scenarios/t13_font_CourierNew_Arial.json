@@ -1,0 +1,47 @@
+{
+ "name": "t13_font_CourierNew_Arial",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "select Courier New (selection: none, caret after xy)",
+   "shot": "sc/t13_font_CourierNew_Arial_01.jpg",
+   "mathml": "<math style=\"font-family:'Courier New'\"><mi>x</mi><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "type z after Courier New",
+   "shot": "sc/t13_font_CourierNew_Arial_02.jpg",
+   "mathml": "<math style=\"font-family:'Courier New'\"><mi>x</mi><mi>y</mi><mi>z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "select Arial (selection: none, caret after xy)",
+   "shot": "sc/t13_font_CourierNew_Arial_03.jpg",
+   "mathml": "<math style=\"font-family:Arial\"><mi>x</mi><mi>y</mi><mi>z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "type z after Arial",
+   "shot": "sc/t13_font_CourierNew_Arial_04.jpg",
+   "mathml": "<math style=\"font-family:Arial\"><mi>x</mi><mi>y</mi><mi>z</mi><mi>z</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

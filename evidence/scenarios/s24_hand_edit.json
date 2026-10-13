@@ -1,0 +1,294 @@
+{
+ "name": "s24_hand_edit",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Handwriting open: toolbar buttons incl. those hidden in DOM",
+   "shot": "sc/s24_hand_edit_01.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:disabled",
+    "Redo:visible:disabled",
+    "Clear:visible:disabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 2,
+   "desc": "Wrote x + 1",
+   "shot": "sc/s24_hand_edit_02.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%5D%2C%22y%22%3A%5B%5B149.9375%2C164.9375%2C179.9375%2C194.9375%2C209.9375%5D%2C%5B149.9375",
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B189.5%2C204.5%2C219.5%2C234.5%2C249.5%5D%2C%5B219.5%2C219.5%2C219.5%2C219.5%2C219.5%5",
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B189.5%2C204.5%2C219.5%2C234.5%2C249.5%5D%2C%5B219.5%2C219.5%2C219.5%2C219.5%2C219.5%5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmath%3E&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 3,
+   "desc": "Double-click on a stroke",
+   "shot": "sc/s24_hand_edit_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B189.5%2C204.5%2C219.5%2C234.5%2C249.5%5D%2C%5B219.5%2C219.5%2C219.5%2C219.5%2C219.5%5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmath%3E&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 4,
+   "desc": "Right-click on a stroke",
+   "shot": "sc/s24_hand_edit_04.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B189.5%2C204.5%2C219.5%2C234.5%2C249.5%5D%2C%5B219.5%2C219.5%2C219.5%2C219.5%2C219.5%5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmath%3E&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 5,
+   "desc": "Scribble (long zig-zag) over \"+\": capture right after the gesture",
+   "shot": "sc/s24_hand_edit_05.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B299.5%2C304.5%2C309.5%2C314.5%2C319.5%2C319.5%2C319.5%2C319.5%2C319.5%5D%5D%2C%22y%22",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 6,
+   "desc": "0.6 s later (strokes should be red)",
+   "shot": "sc/s24_hand_edit_06.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "2 s later (erased?)",
+   "shot": "sc/s24_hand_edit_07.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Write \"2\" in the freed place",
+   "shot": "sc/s24_hand_edit_08.jpg",
+   "mathml": "<math><mo>&#xD7;</mo><mn>21</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B299.5%2C304.5%2C309.5%2C314.5%2C319.5%2C319.5%2C319.5%2C319.5%2C319.5%5D%2C%5B199.5%2",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmo%3E%26%23xD7%3B%3C%2Fmo%3E%3Cmn%3E21%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license="
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 9,
+   "desc": "Write a fraction: x over 2",
+   "shot": "sc/s24_hand_edit_09.jpg",
+   "mathml": "<math><mfrac><mi>x</mi><mn>2</mn></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C124.5%2C149.5%2C174.5%2C199.5%5D%2C%5B129.5%2C139.5%2C149.5%2C159.5%2C169.5%5D%2C%5B169.5%2C159.5%2C149.5%2C139.5%2C129.5%5D%2C%5B129.5%2C139.5%2C149.5%2C159.5%2C169.5%",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmn%3E2%3C%2Fmn%3E%3C%2Fmfrac%3E%3C%2Fmath%3E"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 10,
+   "desc": "Write a square root sign with 4 inside",
+   "shot": "sc/s24_hand_edit_10.jpg",
+   "mathml": "<math><msqrt><mn>4</mn></msqrt></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C103.5%2C107.5%2C110.5%2C114.5%2C119.5%2C124.5%2C129.5%2C134.5%2C158.5%2C182.5%2C205.5%2C229.5%5D%2C%5B159.5%2C159.5%2C159.5%2C159.5%2C159.5%2C167.5%2C174.5%2C182.5%2C18",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsqrt%3E%3Cmn%3E4%3C%2Fmn%3E%3C%2Fmsqrt%3E%3C%2Fmath%3E&wrs-license=null&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 11,
+   "desc": "Write a superscript 2 after x",
+   "shot": "sc/s24_hand_edit_11.jpg",
+   "mathml": "<math><msup><mi>X</mi><mn>2</mn></msup></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C109.5%2C119.5%2C129.5%2C139.5%5D%2C%5B139.5%2C129.5%2C119.5%2C109.5%2C99.5%5D%2C%5B164.5%2C169.5%2C174.5%2C179.5%2C184.5%2C184.5%2C184.5%2C184.5%2C184.5%2C179.5%2C174.5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsup%3E%3Cmi%3EX%3C%2Fmi%3E%3Cmn%3E2%3C%2Fmn%3E%3C%2Fmsup%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:enabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  },
+  {
+   "n": 12,
+   "desc": "Back to keyboard: formula transferred to classic editor",
+   "shot": "sc/s24_hand_edit_12.jpg",
+   "mathml": "<math><msup><mi>X</mi><mn>2</mn></msup></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 13,
+   "desc": "Handwriting again (formula re-drawn as simulated strokes)",
+   "shot": "sc/s24_hand_edit_13.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B4%2C22%2C36%5D%2C%5B6%2C35%5D%2C%5B48%2C48%2C53%2C60%2C62%2C58%2C52%2C47%2C47%2C62%5D%5D%2C%22y%22%3A%5B%5B9%2C59%2C116%5D%2C%5B115%2C9%5D%2C%5B17%2C10%2C6%2C8%2C15%2C27%2C44%",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmsup%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmn%3E2%3C%2Fmn%3E%3C%2Fmsup%3E%3C%2Fmath%3E&w"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": [
+    "Undo:visible:disabled",
+    "Redo:visible:disabled",
+    "Clear:visible:enabled",
+    "Edit:hidden:enabled",
+    "Remove point:hidden:enabled",
+    "Insert before:hidden:enabled",
+    "Insert after:hidden:enabled",
+    "Add stroke:hidden:enabled",
+    "Move up:hidden:enabled",
+    "Move down:hidden:enabled",
+    "Help:visible:enabled"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,439 @@
+{
+ "name": "s11_handwriting",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Handwriting closed: initial",
+   "shot": "sc/s11_handwriting_01.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Hover over the handwriting strip (right edge)",
+   "shot": "sc/s11_handwriting_02.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Handwriting mode opened (empty canvas, hint animation)",
+   "shot": "sc/s11_handwriting_03.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:disabled",
+     "Redo:disabled",
+     "Clear:disabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": true,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Wrote \"x\" with two strokes",
+   "shot": "sc/s11_handwriting_04.jpg",
+   "mathml": "<math><mi>x</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C106.5%2C112.5%2C119.5%2C126.5%2C132.5%2C139.5%5D%2C%5B139.5%2C132.5%2C126.5%2C119.5%2C112.5%2C106.5%2C99.5%5D%5D%2C%22y%22%3A%5B%5B149.9375%2C159.9375%2C169.9375%2C179.",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3C%2Fmath%3E&wrs-license=null&wrs-deployment=mathtype-web"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Wrote \"+\" (two strokes)",
+   "shot": "sc/s11_handwriting_05.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C106.5%2C112.5%2C119.5%2C126.5%2C132.5%2C139.5%5D%2C%5B139.5%2C132.5%2C126.5%2C119.5%2C112.5%2C106.5%2C99.5%5D%2C%5B189.5%2C199.5%2C209.5%2C219.5%2C229.5%2C239.5%2C249.5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3C%2Fmath%3E&wrs-license=null&wrs-d"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Wrote \"1\"",
+   "shot": "sc/s11_handwriting_06.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C106.5%2C112.5%2C119.5%2C126.5%2C132.5%2C139.5%5D%2C%5B139.5%2C132.5%2C126.5%2C119.5%2C112.5%2C106.5%2C99.5%5D%2C%5B189.5%2C199.5%2C209.5%2C219.5%2C229.5%2C239.5%2C249.5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmath%3E&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Click Undo (hand toolbar)",
+   "shot": "sc/s11_handwriting_07.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C106.5%2C112.5%2C119.5%2C126.5%2C132.5%2C139.5%5D%2C%5B139.5%2C132.5%2C126.5%2C119.5%2C112.5%2C106.5%2C99.5%5D%2C%5B189.5%2C199.5%2C209.5%2C219.5%2C229.5%2C239.5%2C249.5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3C%2Fmath%3E&wrs-license=null&wrs-d"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:enabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Click Redo",
+   "shot": "sc/s11_handwriting_08.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mn>1</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C106.5%2C112.5%2C119.5%2C126.5%2C132.5%2C139.5%5D%2C%5B139.5%2C132.5%2C126.5%2C119.5%2C112.5%2C106.5%2C99.5%5D%2C%5B189.5%2C199.5%2C209.5%2C219.5%2C229.5%2C239.5%2C249.5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmn%3E1%3C%2Fmn%3E%3C%2Fmath%3E&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Scribble over the \"+\" to erase it (zig-zag)",
+   "shot": "sc/s11_handwriting_09.jpg",
+   "mathml": "<math><mo>&#xD7;</mo><mn>31</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B99.5%2C106.5%2C112.5%2C119.5%2C126.5%2C132.5%2C139.5%5D%2C%5B139.5%2C132.5%2C126.5%2C119.5%2C112.5%2C106.5%2C99.5%5D%2C%5B189.5%2C199.5%2C209.5%2C219.5%2C229.5%2C239.5%2C249.5",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmo%3E%26%23xD7%3B%3C%2Fmo%3E%3Cmn%3E31%3C%2Fmn%3E%3C%2Fmath%3E&wrs-license="
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Wait; strokes red then erased",
+   "shot": "sc/s11_handwriting_10.jpg",
+   "mathml": "<math><mo>&#xD7;</mo><mn>31</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 11,
+   "desc": "Click Clear",
+   "shot": "sc/s11_handwriting_11.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:disabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": true,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Wrote something fraction-like (^ over bar over box)",
+   "shot": "sc/s11_handwriting_12.jpg",
+   "mathml": "<math><mfrac><mo>=</mo><mn>0</mn></mfrac></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B119.5%2C124.5%2C129.5%2C134.5%2C139.5%2C144.5%2C149.5%2C154.5%2C159.5%2C164.5%2C169.5%2C174.5%2C179.5%5D%2C%5B99.5%2C117.5%2C136.5%2C154.5%2C172.5%2C191.5%2C209.5%5D%2C%5B119.",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmo%3E%3D%3C%2Fmo%3E%3Cmn%3E0%3C%2Fmn%3E%3C%2Fmfrac%3E%3C%2Fmath%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Click Help button in hand toolbar",
+   "shot": "sc/s11_handwriting_13.jpg",
+   "mathml": "<math><mi>x</mi><mo>=</mo><mi>y</mi></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B4%2C16%5D%2C%5B4%2C17%5D%2C%5B45%2C58%5D%2C%5B45%2C59%5D%2C%5B94%2C94%2C96%2C103%2C108%2C108%2C109%2C109%2C109%2C106%2C97%2C94%5D%5D%2C%22y%22%3A%5B%5B30%2C62%5D%2C%5B62%2C30%",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%3D%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&wr"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "helpPage": null
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Switch to keyboard (Use keyboard toggle at bottom)",
+   "shot": "sc/s11_handwriting_14.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/hand/recognize?httpstatus=true BODY=input=%7B%22x%22%3A%5B%5B119.5%2C124.5%2C129.5%2C134.5%2C139.5%2C144.5%2C149.5%2C154.5%2C159.5%2C164.5%2C169.5%2C174.5%2C179.5%5D%2C%5B99.5%2C117.5%2C136.5%2C154.5%2C172.5%2C191.5%2C209.5%5D%2C%5B119.",
+    "POST https://www.wiris.net/demo/editor/render.png BODY=zoom=1.5&centerbaseline=false&stats-app=hand&mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmfrac%3E%3Cmo%3E%3D%3C%2Fmo%3E%3Cmn%3E0%3C%2Fmn%3E%3C%2Fmfrac%3E%3C%2Fmath%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:enabled",
+     "Redo:disabled",
+     "Clear:enabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": false,
+    "handOpen": false,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Back in classic editor: recognized formula inserted into the editing area",
+   "shot": "sc/s11_handwriting_15.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "Reopen handwriting via strip: expression regenerated as simulated strokes",
+   "shot": "sc/s11_handwriting_16.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:disabled",
+     "Redo:disabled",
+     "Clear:disabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": true,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Resize: Escape key in handwriting",
+   "shot": "sc/s11_handwriting_17.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "btns": [
+     "Undo:disabled",
+     "Redo:disabled",
+     "Clear:disabled",
+     "Edit:enabled",
+     "Remove point:enabled",
+     "Insert before:enabled",
+     "Insert after:enabled",
+     "Add stroke:enabled",
+     "Move up:enabled",
+     "Move down:enabled",
+     "Help:enabled"
+    ],
+    "canvasEmpty": true,
+    "handOpen": true,
+    "preview": "wrs_previewImage"
+   }
+  }
+ ]
+}

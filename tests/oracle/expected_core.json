@@ -1,0 +1,573 @@
+{
+ "word_arcsin": [
+  "<math><mi>a</mi><mi>r</mi><mi>c</mi><mi>sin</mi></math>"
+ ],
+ "word_asin": [
+  "<math><mi>a</mi><mi>sin</mi></math>"
+ ],
+ "word_sinh": [
+  "<math><mi>sin</mi><mi>h</mi></math>"
+ ],
+ "word_cosec": [
+  "<math><mi>cos</mi><mi>e</mi><mi>c</mi></math>"
+ ],
+ "word_xsin": [
+  "<math><mi>x</mi><mi>sin</mi></math>"
+ ],
+ "word_Sin": [
+  "<math><mi>S</mi><mi>i</mi><mi>n</mi></math>"
+ ],
+ "word_lnx": [
+  "<math><mi>ln</mi><mi>x</mi></math>"
+ ],
+ "word_lg": [
+  "<math><mi>l</mi><mi>g</mi></math>"
+ ],
+ "word_sinsin": [
+  "<math><mi>sin</mi><mi>sin</mi></math>"
+ ],
+ "word_logn": [
+  "<math><mi>log</mi><mi>n</mi></math>"
+ ],
+ "word_tanx": [
+  "<math><mi>tan</mi><mi>x</mi></math>"
+ ],
+ "word_ssin": [
+  "<math><mi>s</mi><mi>sin</mi></math>"
+ ],
+ "word_lln": [
+  "<math><mi>l</mi><mi>ln</mi></math>"
+ ],
+ "word_cos2x": [
+  "<math><mi>cos</mi><mn>2</mn><mi>x</mi></math>"
+ ],
+ "typed_digit_after_fraction": [
+  "<math><mfrac><mn>12</mn><mrow/></mfrac><mn>34</mn></math>"
+ ],
+ "underscore_and_misc": [
+  "<math><mi>a</mi><mi>_</mi><mi>b</mi><mo>$</mo><mi>c</mi></math>"
+ ],
+ "unicode_text_types": [
+  "<math><mi>&#xE9;</mi><mi>&#x3B1;</mi><mo>&#x2211;</mo><mi mathvariant=\"normal\">&#x211D;</mi><mi>&#x4E2D;&#x6587;</mi><mi>&#x5E9;&#x5DC;&#x5D5;&#x5DD;</mi><mo>&#x1F600;</mo><mi>x</mi><mo>&#xB2;</mo><mo>&#xBD;</mo></math>"
+ ],
+ "greek_typed": [
+  "<math><mi>&#x3B1;</mi><mi>&#x3B2;</mi></math>"
+ ],
+ "digit_after_letter": [
+  "<math><mi>a</mi><mn>12</mn><mi>b</mi></math>"
+ ],
+ "bold_italic_both": [
+  "<math><mi mathvariant=\"bold-italic\">a</mi><mn mathvariant=\"bold-italic\">1</mn><mo mathvariant=\"bold-italic\">+</mo></math>"
+ ],
+ "bold_then_off": [
+  "<math><mi mathvariant=\"bold-italic\">a</mi><mi>b</mi></math>"
+ ],
+ "italic_sel_letters": [
+  "<math><mi>x</mi><mi>y</mi></math>"
+ ],
+ "bold_sel_ops": [
+  "<math><mi mathvariant=\"bold-italic\">x</mi><mo mathvariant=\"bold\">+</mo><mn mathvariant=\"bold\">1</mn></math>"
+ ],
+ "bold_twice_sel": [
+  "<math/>"
+ ],
+ "italic_on_sel_sin": [
+  "<math><mi>si</mi><mi>n</mi></math>"
+ ],
+ "bold_on_sin": [
+  "<math><mi>si</mi><mi mathvariant=\"bold-italic\">n</mi></math>"
+ ],
+ "ai_off_letters": [
+  "<math><mi>xsin</mi><mn>1</mn><mi>abc</mi></math>"
+ ],
+ "ai_off_bold": [
+  "<math><mi mathvariant=\"bold\">ab</mi><mn mathvariant=\"bold\">1</mn></math>"
+ ],
+ "ai_off_italic": [
+  "<math><mi>a</mi><mi>b</mi><mn mathvariant=\"italic\">1</mn></math>"
+ ],
+ "ai_off_greek_text": [
+  "<math><mi>&#x3B1;&#x3B2;x</mi></math>"
+ ],
+ "ai_off_upper": [
+  "<math><mi>ABC</mi></math>"
+ ],
+ "ai_off_then_on": [
+  "<math><mi>ab</mi><mi>c</mi><mi>d</mi></math>"
+ ],
+ "ai_off_space": [
+  "<math><mi>ab</mi><mo>&#xA0;</mo><mi>cd</mi></math>"
+ ],
+ "ai_off_digits_letters": [
+  "<math><mi mathvariant=\"normal\">a</mi><mn>1</mn><mi mathvariant=\"normal\">b</mi><mn>2</mn></math>"
+ ],
+ "rt_basic": [
+  "<math><mtext>hello&#xA0;world&#xA0;12+x</mtext></math>"
+ ],
+ "rt_then_off_type": [
+  "<math><mtext>ab</mtext><mi>c</mi></math>"
+ ],
+ "rt_then_arrow": [
+  "<math><mtext>aZb</mtext></math>"
+ ],
+ "rt_after_letters_typed_before": [
+  "<math><mi>x</mi><mi>y</mi><mtext>ab</mtext></math>"
+ ],
+ "rt_sel": [
+  "<math><mi>a</mi><mtext>bc</mtext></math>"
+ ],
+ "rt_sel_then_type": [
+  "<math><mi>a</mi><mtext>Q</mtext></math>"
+ ],
+ "rt_fraction": [
+  "<math><mtext>ab</mtext><mfrac><mi>c</mi><mrow/></mfrac></math>"
+ ],
+ "rt_bold": [
+  "<math><mtext mathvariant=\"bold\">ab</mtext></math>"
+ ],
+ "enter_in_fraction": [
+  "<math><mfrac><mi>a</mi><mrow/></mfrac><mspace linebreak=\"newline\"/><mi>b</mi></math>"
+ ],
+ "enter_in_sqrt": [
+  "<math><msqrt><mi>a</mi></msqrt><mspace linebreak=\"newline\"/><mi>b</mi></math>"
+ ],
+ "enter_in_script": [
+  "<math><msup><mi>a</mi><mi>b</mi></msup><mspace linebreak=\"newline\"/><mi>c</mi></math>"
+ ],
+ "enter_start": [
+  "<math><mspace linebreak=\"newline\"/><mi>a</mi></math>"
+ ],
+ "enter_mid": [
+  "<math><mi>a</mi><mi>b</mi><mspace linebreak=\"newline\"/><mi>Z</mi><mi>c</mi><mi>d</mi></math>"
+ ],
+ "bs_mn_multi": [
+  "<math><mn>12</mn></math>"
+ ],
+ "bs_sin": [
+  "<math><mi>si</mi></math>"
+ ],
+ "bs_sin_x": [
+  "<math><mi>si</mi></math>"
+ ],
+ "bs_start_slot_nonempty": [
+  "<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>",
+  "<math><mi>Z</mi></math>"
+ ],
+ "bs_in_empty_num": [
+  "<math><mi>x</mi><mfrac><mrow/><mrow/></mfrac></math>",
+  "<math><mi>x</mi></math>"
+ ],
+ "bs_in_empty_sqrt": [
+  "<math><msqrt/></math>",
+  "<math/>"
+ ],
+ "bs_after_fence": [
+  "<math><mfenced><mrow><mi>a</mi><mi>b</mi></mrow></mfenced></math>",
+  "<math/>"
+ ],
+ "bs_inside_fence_start": [
+  "<math><mfenced><mrow><mi>a</mi><mi>b</mi></mrow></mfenced></math>"
+ ],
+ "bs_after_script": [
+  "<math><msup><mi>x</mi><mn>2</mn></msup></math>",
+  "<math><mi>x</mi></math>"
+ ],
+ "bs_empty_base": [
+  "<math><msup><maction actiontype=\"argument\"><mrow/></maction><mrow/></msup></math>"
+ ],
+ "bs_in_exponent_empty": [
+  "<math><msup><mi>x</mi><mrow/></msup></math>"
+ ],
+ "bs_sel_struct": [
+  "<math/>"
+ ],
+ "del_before_fraction": [
+  "<math><mfrac><mi>a</mi><mrow/></mfrac></math>",
+  "<math><mfrac><mi>a</mi><mrow/></mfrac></math>"
+ ],
+ "del_end": [
+  "<math><mi>a</mi><mi>b</mi></math>"
+ ],
+ "del_in_numerator_end": [
+  "<math><mfrac><mi>a</mi><mrow/></mfrac></math>",
+  "<math><mi>Z</mi></math>"
+ ],
+ "del_at_end_of_slot_with_next_slot": [
+  "<math><mfrac><mi>a</mi><mi>b</mi></mfrac></math>"
+ ],
+ "navL_Fraction (Ctrl+/)_0": [
+  "<math><mfrac><mi>p</mi><mi>Z</mi></mfrac></math>"
+ ],
+ "navL_Fraction (Ctrl+/)_1": [
+  "<math><mfrac><mi>p</mi><mi>Z</mi></mfrac></math>"
+ ],
+ "navL_Fraction (Ctrl+/)_2": [
+  "<math><mfrac><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/></mfrac></math>"
+ ],
+ "navL_Fraction (Ctrl+/)_3": [
+  "<math><mfrac><mrow><mi>Z</mi><mi>p</mi></mrow><mrow/></mfrac></math>"
+ ],
+ "navL_Fraction (Ctrl+/)_4": [
+  "<math><mi>Z</mi><mfrac><mi>p</mi><mrow/></mfrac></math>"
+ ],
+ "navL_Fraction (Ctrl+/)_5": [
+  "<math><mi>Z</mi><mfrac><mi>p</mi><mrow/></mfrac></math>"
+ ],
+ "navL_Square root_0": [
+  "<math><msqrt><mi>p</mi><mi>Z</mi></msqrt></math>"
+ ],
+ "navL_Square root_1": [
+  "<math><msqrt><mi>p</mi><mi>Z</mi></msqrt></math>"
+ ],
+ "navL_Square root_2": [
+  "<math><msqrt><mi>Z</mi><mi>p</mi></msqrt></math>"
+ ],
+ "navL_Square root_3": [
+  "<math><mi>Z</mi><msqrt><mi>p</mi></msqrt></math>"
+ ],
+ "navL_Square root_4": [
+  "<math><mi>Z</mi><msqrt><mi>p</mi></msqrt></math>"
+ ],
+ "navL_Square root_5": [
+  "<math><mi>Z</mi><msqrt><mi>p</mi></msqrt></math>"
+ ],
+ "navL_Root_0": [
+  "<math><mroot><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/></mroot></math>"
+ ],
+ "navL_Root_1": [
+  "<math><mroot><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/></mroot></math>"
+ ],
+ "navL_Root_2": [
+  "<math><mroot><mrow><mi>Z</mi><mi>p</mi></mrow><mrow/></mroot></math>"
+ ],
+ "navL_Root_3": [
+  "<math><mroot><mi>p</mi><mi>Z</mi></mroot></math>"
+ ],
+ "navL_Root_4": [
+  "<math><mi>Z</mi><mroot><mi>p</mi><mrow/></mroot></math>"
+ ],
+ "navL_Root_5": [
+  "<math><mi>Z</mi><mroot><mi>p</mi><mrow/></mroot></math>"
+ ],
+ "navL_Superscript (Ctrl+Up)_0": [
+  "<math><msup><mi>p</mi><mi>Z</mi></msup></math>"
+ ],
+ "navL_Superscript (Ctrl+Up)_1": [
+  "<math><msup><mi>p</mi><mi>Z</mi></msup></math>"
+ ],
+ "navL_Superscript (Ctrl+Up)_2": [
+  "<math><mi>p</mi><msup><mi>Z</mi><mrow/></msup></math>"
+ ],
+ "navL_Superscript (Ctrl+Up)_3": [
+  "<math><mi>Z</mi><msup><mi>p</mi><mrow/></msup></math>"
+ ],
+ "navL_Superscript (Ctrl+Up)_4": [
+  "<math><mi>Z</mi><msup><mi>p</mi><mrow/></msup></math>"
+ ],
+ "navL_Superscript (Ctrl+Up)_5": [
+  "<math><mi>Z</mi><msup><mi>p</mi><mrow/></msup></math>"
+ ],
+ "navL_Subscript (Ctrl+Down)_0": [
+  "<math><msub><mi>p</mi><mi>Z</mi></msub></math>"
+ ],
+ "navL_Subscript (Ctrl+Down)_1": [
+  "<math><mi>Z</mi><mi>p</mi></math>"
+ ],
+ "navL_Subscript (Ctrl+Down)_2": [
+  "<math><mi>p</mi><msub><mi>Z</mi><mrow/></msub></math>"
+ ],
+ "navL_Subscript (Ctrl+Down)_3": [
+  "<math><mi>Z</mi><msub><mi>p</mi><mrow/></msub></math>"
+ ],
+ "navL_Subscript (Ctrl+Down)_4": [
+  "<math><mi>Z</mi><msub><mi>p</mi><mrow/></msub></math>"
+ ],
+ "navL_Subscript (Ctrl+Down)_5": [
+  "<math><mi>Z</mi><msub><mi>p</mi><mrow/></msub></math>"
+ ],
+ "navL_Parentheses_0": [
+  "<math><mfenced><mrow><mi>p</mi><mi>Z</mi></mrow></mfenced></math>"
+ ],
+ "navL_Parentheses_1": [
+  "<math><mfenced><mrow><mi>p</mi><mi>Z</mi></mrow></mfenced></math>"
+ ],
+ "navL_Parentheses_2": [
+  "<math><mfenced><mrow><mi>Z</mi><mi>p</mi></mrow></mfenced></math>"
+ ],
+ "navL_Parentheses_3": [
+  "<math><mi>Z</mi><mfenced><mi>p</mi></mfenced></math>"
+ ],
+ "navL_Parentheses_4": [
+  "<math><mi>Z</mi><mfenced><mi>p</mi></mfenced></math>"
+ ],
+ "navL_Parentheses_5": [
+  "<math><mi>Z</mi><mfenced><mi>p</mi></mfenced></math>"
+ ],
+ "navL_Superscript and subscript_0": [
+  "<math><msubsup><mi>p</mi><mrow/><mi>Z</mi></msubsup></math>"
+ ],
+ "navL_Superscript and subscript_1": [
+  "<math><msubsup><mi>p</mi><mrow/><mi>Z</mi></msubsup></math>"
+ ],
+ "navL_Superscript and subscript_2": [
+  "<math><msubsup><mi>p</mi><mi>Z</mi><mrow/></msubsup></math>"
+ ],
+ "navL_Superscript and subscript_3": [
+  "<math><mi>p</mi><msubsup><mi>Z</mi><mrow/><mrow/></msubsup></math>"
+ ],
+ "navL_Superscript and subscript_4": [
+  "<math><mi>Z</mi><msubsup><mi>p</mi><mrow/><mrow/></msubsup></math>"
+ ],
+ "navL_Superscript and subscript_5": [
+  "<math><mi>Z</mi><msubsup><mi>p</mi><mrow/><mrow/></msubsup></math>"
+ ],
+ "navL_Left superscript_0": [
+  "<math><mmultiscripts><mi>Z</mi><mprescripts/><none/><mrow/></mmultiscripts><mi>p</mi></math>"
+ ],
+ "navL_Left superscript_1": [
+  "<math><mmultiscripts><mi>Z</mi><mprescripts/><none/><mrow/></mmultiscripts><mi>p</mi></math>"
+ ],
+ "navL_Left superscript_2": [
+  "<math><mmultiscripts><mi>p</mi><mprescripts/><none/><mi>Z</mi></mmultiscripts></math>"
+ ],
+ "navL_Left superscript_3": [
+  "<math><mi>Z</mi><mmultiscripts><mi>p</mi><mprescripts/><none/><mrow/></mmultiscripts></math>"
+ ],
+ "navL_Left superscript_4": [
+  "<math><mi>Z</mi><mmultiscripts><mi>p</mi><mprescripts/><none/><mrow/></mmultiscripts></math>"
+ ],
+ "navL_Left superscript_5": [
+  "<math><mi>Z</mi><mmultiscripts><mi>p</mi><mprescripts/><none/><mrow/></mmultiscripts></math>"
+ ],
+ "navL_Left subscript and superscript_0": [
+  "<math><mmultiscripts><mi>Z</mi><mprescripts/><mrow/><mrow/></mmultiscripts><mi>p</mi></math>"
+ ],
+ "navL_Left subscript and superscript_1": [
+  "<math><mmultiscripts><mi>Z</mi><mprescripts/><mrow/><mrow/></mmultiscripts><mi>p</mi></math>"
+ ],
+ "navL_Left subscript and superscript_2": [
+  "<math><mmultiscripts><mi>p</mi><mprescripts/><mrow/><mi>Z</mi></mmultiscripts></math>"
+ ],
+ "navL_Left subscript and superscript_3": [
+  "<math><mmultiscripts><mi>p</mi><mprescripts/><mi>Z</mi><mrow/></mmultiscripts></math>"
+ ],
+ "navL_Left subscript and superscript_4": [
+  "<math><mi>Z</mi><mmultiscripts><mi>p</mi><mprescripts/><mrow/><mrow/></mmultiscripts></math>"
+ ],
+ "navL_Left subscript and superscript_5": [
+  "<math><mi>Z</mi><mmultiscripts><mi>p</mi><mprescripts/><mrow/><mrow/></mmultiscripts></math>"
+ ],
+ "navL_Element over_0": [
+  "<math><mover><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/></mover></math>"
+ ],
+ "navL_Element over_1": [
+  "<math><mover><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/></mover></math>"
+ ],
+ "navL_Element over_2": [
+  "<math><mover><mrow><mi>Z</mi><mi>p</mi></mrow><mrow/></mover></math>"
+ ],
+ "navL_Element over_3": [
+  "<math><mover><mi>p</mi><mi>Z</mi></mover></math>"
+ ],
+ "navL_Element over_4": [
+  "<math><mi>Z</mi><mover><mi>p</mi><mrow/></mover></math>"
+ ],
+ "navL_Element over_5": [
+  "<math><mi>Z</mi><mover><mi>p</mi><mrow/></mover></math>"
+ ],
+ "navL_Element under_0": [
+  "<math><munder><mi>p</mi><mi>Z</mi></munder></math>"
+ ],
+ "navL_Element under_1": [
+  "<math><munder><mi>p</mi><mi>Z</mi></munder></math>"
+ ],
+ "navL_Element under_2": [
+  "<math><munder><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/></munder></math>"
+ ],
+ "navL_Element under_3": [
+  "<math><munder><mrow><mi>Z</mi><mi>p</mi></mrow><mrow/></munder></math>"
+ ],
+ "navL_Element under_4": [
+  "<math><mi>Z</mi><munder><mi>p</mi><mrow/></munder></math>"
+ ],
+ "navL_Element under_5": [
+  "<math><mi>Z</mi><mi>p</mi></math>"
+ ],
+ "navL_Elements under and over_0": [
+  "<math><munderover><mi>p</mi><mi>Z</mi><mrow/></munderover></math>"
+ ],
+ "navL_Elements under and over_1": [
+  "<math><munderover><mi>p</mi><mi>Z</mi><mrow/></munderover></math>"
+ ],
+ "navL_Elements under and over_2": [
+  "<math><munderover><mrow><mi>p</mi><mi>Z</mi></mrow><mrow/><mrow/></munderover></math>"
+ ],
+ "navL_Elements under and over_3": [
+  "<math><munderover><mrow><mi>Z</mi><mi>p</mi></mrow><mrow/><mrow/></munderover></math>"
+ ],
+ "navL_Elements under and over_4": [
+  "<math><munderover><mi>p</mi><mrow/><mi>Z</mi></munderover></math>"
+ ],
+ "navL_Elements under and over_5": [
+  "<math><mi>Z</mi><munderover><mi>p</mi><mrow/><mrow/></munderover></math>"
+ ],
+ "navUp_Fraction (Ctrl+/)": [
+  "<math><mfrac><mrow><mi>a</mi><mi>Z</mi></mrow><mi>b</mi></mfrac></math>"
+ ],
+ "navDown_Fraction (Ctrl+/)": [
+  "<math><mfrac><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow></mfrac></math>"
+ ],
+ "navUpDown_Fraction (Ctrl+/)": [
+  "<math><mfrac><mrow><mi>a</mi><mi>Z</mi></mrow><mi>b</mi></mfrac></math>"
+ ],
+ "navUp_Square root": [
+  "<math><msqrt><mi>a</mi></msqrt><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navDown_Square root": [
+  "<math><msqrt><mi>a</mi></msqrt><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUpDown_Square root": [
+  "<math><msqrt><mi>a</mi></msqrt><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUp_Root": [
+  "<math><mroot><mi>a</mi><mi>Z</mi></mroot><mi>b</mi></math>"
+ ],
+ "navDown_Root": [
+  "<math><mroot><mi>a</mi><mrow/></mroot><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUpDown_Root": [
+  "<math><mroot><mi>a</mi><mi>Z</mi></mroot><mi>b</mi></math>"
+ ],
+ "navUp_Superscript (Ctrl+Up)": [
+  "<math><msup><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow></msup></math>"
+ ],
+ "navDown_Superscript (Ctrl+Up)": [
+  "<math><msup><mi>a</mi><mi>b</mi></msup><mi>Z</mi></math>"
+ ],
+ "navUpDown_Superscript (Ctrl+Up)": [
+  "<math><msup><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow></msup></math>"
+ ],
+ "navUp_Subscript (Ctrl+Down)": [
+  "<math><msub><mi>a</mi><mi>b</mi></msub><mi>Z</mi></math>"
+ ],
+ "navDown_Subscript (Ctrl+Down)": [
+  "<math><msub><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow></msub></math>"
+ ],
+ "navUpDown_Subscript (Ctrl+Down)": [
+  "<math><msub><mi>a</mi><mi>b</mi></msub><mi>Z</mi></math>"
+ ],
+ "navUp_Parentheses": [
+  "<math><mfenced><mi>a</mi></mfenced><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navDown_Parentheses": [
+  "<math><mfenced><mi>a</mi></mfenced><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUpDown_Parentheses": [
+  "<math><mfenced><mi>a</mi></mfenced><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUp_Superscript and subscript": [
+  "<math><msubsup><mi>a</mi><mi>b</mi><mi>Z</mi></msubsup></math>"
+ ],
+ "navDown_Superscript and subscript": [
+  "<math><msubsup><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow><mrow/></msubsup></math>"
+ ],
+ "navUpDown_Superscript and subscript": [
+  "<math><msubsup><mi>a</mi><mi>b</mi><mi>Z</mi></msubsup></math>"
+ ],
+ "navUp_Left superscript": [
+  "<math><mmultiscripts><mi>a</mi><mprescripts/><none/><mi>Z</mi></mmultiscripts><mi>b</mi></math>"
+ ],
+ "navDown_Left superscript": [
+  "<math><mmultiscripts><mi>a</mi><mprescripts/><none/><mrow/></mmultiscripts><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUpDown_Left superscript": [
+  "<math><mmultiscripts><mi>a</mi><mprescripts/><none/><mi>Z</mi></mmultiscripts><mi>b</mi></math>"
+ ],
+ "navUp_Left subscript and superscript": [
+  "<math><mmultiscripts><mi>a</mi><mprescripts/><mrow/><mi>Z</mi></mmultiscripts><mi>b</mi></math>"
+ ],
+ "navDown_Left subscript and superscript": [
+  "<math><mmultiscripts><mi>a</mi><mprescripts/><mi>Z</mi><mrow/></mmultiscripts><mi>b</mi></math>"
+ ],
+ "navUpDown_Left subscript and superscript": [
+  "<math><mmultiscripts><mi>a</mi><mprescripts/><mrow/><mi>Z</mi></mmultiscripts><mi>b</mi></math>"
+ ],
+ "navUp_Element over": [
+  "<math><mover><mi>a</mi><mi>Z</mi></mover><mi>b</mi></math>"
+ ],
+ "navDown_Element over": [
+  "<math><mover><mi>a</mi><mrow/></mover><mi>b</mi><mi>Z</mi></math>"
+ ],
+ "navUpDown_Element over": [
+  "<math><mover><mi>a</mi><mi>Z</mi></mover><mi>b</mi></math>"
+ ],
+ "navUp_Element under": [
+  "<math><munder><mrow><mi>a</mi><mi>Z</mi></mrow><mi>b</mi></munder></math>"
+ ],
+ "navDown_Element under": [
+  "<math><munder><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow></munder></math>"
+ ],
+ "navUpDown_Element under": [
+  "<math><munder><mrow><mi>a</mi><mi>Z</mi></mrow><mi>b</mi></munder></math>"
+ ],
+ "navUp_Elements under and over": [
+  "<math><munderover><mrow><mi>a</mi><mi>Z</mi></mrow><mi>b</mi><mrow/></munderover></math>"
+ ],
+ "navDown_Elements under and over": [
+  "<math><munderover><mi>a</mi><mrow><mi>b</mi><mi>Z</mi></mrow><mrow/></munderover></math>"
+ ],
+ "navUpDown_Elements under and over": [
+  "<math><munderover><mrow><mi>a</mi><mi>Z</mi></mrow><mi>b</mi><mrow/></munderover></math>"
+ ],
+ "home_end_lines": [
+  "<math><mn>41</mn><mi>a</mi><mi>b</mi><mn>3</mn><mspace linebreak=\"newline\"/><mi>c</mi><mi>d</mi><mn>2</mn></math>"
+ ],
+ "up_down_lines": [
+  "<math><mi>a</mi><mi>b</mi><mn>2</mn><mi>c</mi><mspace linebreak=\"newline\"/><mi>d</mi><mn>1</mn><mi>e</mi><mn>3</mn><mspace linebreak=\"newline\"/><mi>f</mi></math>"
+ ],
+ "sel_shift_right_over_fraction": [
+  "<math><mi>Q</mi></math>"
+ ],
+ "sel_in_slot": [
+  "<math><mfrac><mrow><mi>a</mi><mi>Q</mi></mrow><mrow/></mfrac></math>"
+ ],
+ "sel_out_of_slot": [
+  "<math><mi>Q</mi></math>"
+ ],
+ "sel_home_end": [
+  "<math><mi>a</mi><mi>Q</mi></math>"
+ ],
+ "sel_collapse_left": [
+  "<math><mi>Q</mi><mi>a</mi><mi>b</mi><mi>c</mi></math>"
+ ],
+ "sel_collapse_right": [
+  "<math><mi>a</mi><mi>b</mi><mi>Q</mi><mi>c</mi></math>"
+ ],
+ "sel_all_type": [
+  "<math><mi>Q</mi></math>"
+ ],
+ "sel_all_in_slot": [
+  "<math><mi>Q</mi></math>"
+ ],
+ "sel_toolbar_template_multi": [
+  "<math><mi>a</mi><mfenced><mrow><mi>b</mi><mi>c</mi></mrow></mfenced></math>",
+  "<math><mi>a</mi><mfenced><mrow><mi>Z</mi><mi>b</mi><mi>c</mi></mrow></mfenced></math>"
+ ],
+ "sel_template_caret_after": [
+  "<math><mi>a</mi><mfrac><mrow><mi>Z</mi><mi>b</mi></mrow><mrow/></mfrac></math>"
+ ],
+ "sel_symbol_replace_caret": [
+  "<math><mi>a</mi><mo>+</mo><mi>Z</mi></math>"
+ ],
+ "undo_chain": [
+  "<math><mi>a</mi><mi>b</mi></math>",
+  "<math><mi>a</mi></math>",
+  "<math><mi>a</mi><mi>b</mi></math>",
+  "<math><mi>a</mi><mi>b</mi><mi>Q</mi></math>",
+  "<math><mi>a</mi><mi>b</mi><mi>Q</mi></math>"
+ ],
+ "undo_template": [
+  "<math><mfrac><mrow/><mrow/></mfrac></math>",
+  "<math/>"
+ ]
+}

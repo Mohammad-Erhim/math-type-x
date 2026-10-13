@@ -1,0 +1,106 @@
+{
+ "name": "s25_digit_modes",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Greek tab: click “Arabic-Indic numerals” on an empty editor, then type 123",
+   "shot": "sc/s25_digit_modes_01.jpg",
+   "mathml": "<math><mn>&#x661;&#x662;&#x663;</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Document reset via API (not UI) then type 456: does the digit style persist?",
+   "shot": "sc/s25_digit_modes_02.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "Click “Eastern Arabic-Indic numerals”, type 789",
+   "shot": "sc/s25_digit_modes_03.jpg",
+   "mathml": "<math><mn>&#x6F7;&#x6F8;&#x6F9;</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 4,
+   "desc": "Click “Arabic-Indic numerals” again (toggle?), type 123",
+   "shot": "sc/s25_digit_modes_04.jpg",
+   "mathml": "<math><mn>&#x6F7;&#x6F8;&#x6F9;&#x661;&#x662;&#x663;</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 5,
+   "desc": "Click the same button once more, type 123",
+   "shot": "sc/s25_digit_modes_05.jpg",
+   "mathml": "<math><mn>&#x6F7;&#x6F8;&#x6F9;&#x661;&#x662;&#x663;123</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "Existing western digits \"123\" selected, then click “Arabic-Indic numerals” (does it convert?)",
+   "shot": "sc/s25_digit_modes_06.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "Type 4 after that",
+   "shot": "sc/s25_digit_modes_07.jpg",
+   "mathml": "<math><mn>&#x664;</mn></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "Hydrogen (chemical element) then type 2",
+   "shot": "sc/s25_digit_modes_08.jpg",
+   "mathml": "<math><mi mathvariant=\"normal\">H</mi><mn>&#x662;</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "Typing 0123456789 on the plain keyboard in the same session",
+   "shot": "sc/s25_digit_modes_09.jpg",
+   "mathml": "<math><mn>&#x660;&#x661;&#x662;&#x663;&#x664;&#x665;&#x666;&#x667;&#x668;&#x669;</mn></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

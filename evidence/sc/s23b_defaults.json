@@ -1,0 +1,161 @@
+{
+ "name": "s23b_defaults",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "[matrix] \"Column spacing at right\": open → current value",
+   "shot": "sc/s23b_defaults_01.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "0.4em",
+    "focused": true
+   }
+  },
+  {
+   "n": 2,
+   "desc": "[matrix] \"Horizontal frame spacing\": open → current value",
+   "shot": "sc/s23b_defaults_02.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "0.4em",
+    "focused": true
+   }
+  },
+  {
+   "n": 3,
+   "desc": "[matrix] \"Row spacing below\": open → current value",
+   "shot": "sc/s23b_defaults_03.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "0.25em",
+    "focused": true
+   }
+  },
+  {
+   "n": 4,
+   "desc": "[matrix] \"Vertical frame spacing\": open → current value",
+   "shot": "sc/s23b_defaults_04.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "0.5ex",
+    "focused": true
+   }
+  },
+  {
+   "n": 5,
+   "desc": "[operator] \"Left spacing\": open → current value",
+   "shot": "sc/s23b_defaults_05.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "",
+    "focused": true
+   }
+  },
+  {
+   "n": 6,
+   "desc": "[operator] \"Right spacing\": open → current value",
+   "shot": "sc/s23b_defaults_06.jpg",
+   "mathml": "<math><mi>x</mi><mo>+</mo><mi>y</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "",
+    "focused": true
+   }
+  },
+  {
+   "n": 7,
+   "desc": "[mspace] \"Space width\": open → current value",
+   "shot": "sc/s23b_defaults_07.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "1em",
+    "focused": true
+   }
+  },
+  {
+   "n": 8,
+   "desc": "[mspace] \"Space height\": open → current value",
+   "shot": "sc/s23b_defaults_08.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "3ex",
+    "focused": true
+   }
+  },
+  {
+   "n": 9,
+   "desc": "[mspace] \"Space depth\": open → current value",
+   "shot": "sc/s23b_defaults_09.jpg",
+   "mathml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "2ex",
+    "focused": true
+   }
+  },
+  {
+   "n": 10,
+   "desc": "[fence_in] \"Left spacing\": open → current value",
+   "shot": "sc/s23b_defaults_10.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [],
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 500 ()"
+   ],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "",
+    "focused": true
+   }
+  },
+  {
+   "n": 11,
+   "desc": "[fence_in] \"Right spacing\": open → current value",
+   "shot": "sc/s23b_defaults_11.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "value": "",
+    "focused": true
+   }
+  }
+ ]
+}

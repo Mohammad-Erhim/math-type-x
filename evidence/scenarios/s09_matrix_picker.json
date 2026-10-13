@@ -1,0 +1,930 @@
+{
+ "name": "s09_matrix_picker",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "[Table] click opens size picker (no insertion yet)",
+   "shot": "sc/s09_matrix_picker_01.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 2,
+   "desc": "[Table] hover cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_02.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "1|number",
+     "1|number"
+    ],
+    "hl": 1,
+    "visible": true
+   }
+  },
+  {
+   "n": 3,
+   "desc": "[Table] hover cell row 3 col 4",
+   "shot": "sc/s09_matrix_picker_03.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "3|number",
+     "4|number"
+    ],
+    "hl": 12,
+    "visible": true
+   }
+  },
+  {
+   "n": 4,
+   "desc": "[Table] hover cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_04.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "6|number",
+     "6|number"
+    ],
+    "hl": 36,
+    "visible": true
+   }
+  },
+  {
+   "n": 5,
+   "desc": "[Table] click cell row 2 col 3",
+   "shot": "sc/s09_matrix_picker_05.jpg",
+   "mathml": "<math><mtable><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 6,
+   "desc": "[Table] click cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_06.jpg",
+   "mathml": "<math><mtable><mtr><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 7,
+   "desc": "[Table] click cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_07.jpg",
+   "mathml": "<math><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 8,
+   "desc": "[Table] Rows=3, Columns=4 then Enter",
+   "shot": "sc/s09_matrix_picker_08.jpg",
+   "mathml": "<math><mtable><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr></mtable></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 9,
+   "desc": "[Matrix with vertical bars] click opens size picker (no insertion yet)",
+   "shot": "sc/s09_matrix_picker_09.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 10,
+   "desc": "[Matrix with vertical bars] hover cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_10.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "1|number",
+     "1|number"
+    ],
+    "hl": 1,
+    "visible": true
+   }
+  },
+  {
+   "n": 11,
+   "desc": "[Matrix with vertical bars] hover cell row 3 col 4",
+   "shot": "sc/s09_matrix_picker_11.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "3|number",
+     "4|number"
+    ],
+    "hl": 12,
+    "visible": true
+   }
+  },
+  {
+   "n": 12,
+   "desc": "[Matrix with vertical bars] hover cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_12.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "6|number",
+     "6|number"
+    ],
+    "hl": 36,
+    "visible": true
+   }
+  },
+  {
+   "n": 13,
+   "desc": "[Matrix with vertical bars] click cell row 2 col 3",
+   "shot": "sc/s09_matrix_picker_13.jpg",
+   "mathml": "<math><mfenced open=\"|\" close=\"|\"><mtable><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 14,
+   "desc": "[Matrix with vertical bars] click cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_14.jpg",
+   "mathml": "<math><mfenced open=\"|\" close=\"|\"><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 15,
+   "desc": "[Matrix with vertical bars] click cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_15.jpg",
+   "mathml": "<math><mfenced open=\"|\" close=\"|\"><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 16,
+   "desc": "[Matrix with vertical bars] Rows=3, Columns=4 then Enter",
+   "shot": "sc/s09_matrix_picker_16.jpg",
+   "mathml": "<math><mfenced open=\"|\" close=\"|\"><mtable><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 17,
+   "desc": "[Matrix with square brackets] click opens size picker (no insertion yet)",
+   "shot": "sc/s09_matrix_picker_17.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 18,
+   "desc": "[Matrix with square brackets] hover cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_18.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "1|number",
+     "1|number"
+    ],
+    "hl": 1,
+    "visible": true
+   }
+  },
+  {
+   "n": 19,
+   "desc": "[Matrix with square brackets] hover cell row 3 col 4",
+   "shot": "sc/s09_matrix_picker_19.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "3|number",
+     "4|number"
+    ],
+    "hl": 12,
+    "visible": true
+   }
+  },
+  {
+   "n": 20,
+   "desc": "[Matrix with square brackets] hover cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_20.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "6|number",
+     "6|number"
+    ],
+    "hl": 36,
+    "visible": true
+   }
+  },
+  {
+   "n": 21,
+   "desc": "[Matrix with square brackets] click cell row 2 col 3",
+   "shot": "sc/s09_matrix_picker_21.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mtable><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "[Matrix with square brackets] click cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_22.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 23,
+   "desc": "[Matrix with square brackets] click cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_23.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 24,
+   "desc": "[Matrix with square brackets] Rows=3, Columns=4 then Enter",
+   "shot": "sc/s09_matrix_picker_24.jpg",
+   "mathml": "<math><mfenced open=\"[\" close=\"]\"><mtable><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 25,
+   "desc": "[Matrix with parenthesis] click opens size picker (no insertion yet)",
+   "shot": "sc/s09_matrix_picker_25.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 26,
+   "desc": "[Matrix with parenthesis] hover cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_26.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "1|number",
+     "1|number"
+    ],
+    "hl": 1,
+    "visible": true
+   }
+  },
+  {
+   "n": 27,
+   "desc": "[Matrix with parenthesis] hover cell row 3 col 4",
+   "shot": "sc/s09_matrix_picker_27.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "3|number",
+     "4|number"
+    ],
+    "hl": 12,
+    "visible": true
+   }
+  },
+  {
+   "n": 28,
+   "desc": "[Matrix with parenthesis] hover cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_28.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "6|number",
+     "6|number"
+    ],
+    "hl": 36,
+    "visible": true
+   }
+  },
+  {
+   "n": 29,
+   "desc": "[Matrix with parenthesis] click cell row 2 col 3",
+   "shot": "sc/s09_matrix_picker_29.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 30,
+   "desc": "[Matrix with parenthesis] click cell row 1 col 1",
+   "shot": "sc/s09_matrix_picker_30.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 31,
+   "desc": "[Matrix with parenthesis] click cell row 6 col 6",
+   "shot": "sc/s09_matrix_picker_31.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 32,
+   "desc": "[Matrix with parenthesis] Rows=3, Columns=4 then Enter",
+   "shot": "sc/s09_matrix_picker_32.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 33,
+   "desc": "[Matrix with parenthesis] Rows=\"1\" Columns=\"1\" + Enter ",
+   "shot": "sc/s09_matrix_picker_33.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "1|number",
+     "1|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 34,
+   "desc": "[Matrix with parenthesis] Rows=\"0\" Columns=\"0\" + Enter (zero)",
+   "shot": "sc/s09_matrix_picker_34.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "0|number",
+     "0|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 35,
+   "desc": "[Matrix with parenthesis] Rows=\"-1\" Columns=\"-1\" + Enter (negative)",
+   "shot": "sc/s09_matrix_picker_35.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "-1|number",
+     "-1|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 36,
+   "desc": "[Matrix with parenthesis] Rows=\"abc\" Columns=\"xyz\" + Enter (non-numeric)",
+   "shot": "sc/s09_matrix_picker_36.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": "Error: locator.fill: Error: Cannot type text into input[type=number]\nCall log:\n\u001b[2m  - waiting for locator('.wrs_matrixButtonPanel .wrs_inputCell input').first()\u001b[22m\n\u001b[2m    - locator resolved to <input title=\"Rows\" type=\"number\"/>\u001b[22m\n\u001b[2m    - fill(\"abc\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m",
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 37,
+   "desc": "[Matrix with parenthesis] Rows=\"\" Columns=\"\" + Enter (empty)",
+   "shot": "sc/s09_matrix_picker_37.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 38,
+   "desc": "[Matrix with parenthesis] Rows=\"2.5\" Columns=\"3.5\" + Enter (decimal)",
+   "shot": "sc/s09_matrix_picker_38.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "2.5|number",
+     "3.5|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 39,
+   "desc": "[Matrix with parenthesis] Rows=\"7\" Columns=\"7\" + Enter ",
+   "shot": "sc/s09_matrix_picker_39.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "7|number",
+     "7|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 40,
+   "desc": "[Matrix with parenthesis] Rows=\"10\" Columns=\"10\" + Enter ",
+   "shot": "sc/s09_matrix_picker_40.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "10|number",
+     "10|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 41,
+   "desc": "[Matrix with parenthesis] Rows=\"20\" Columns=\"20\" + Enter (large)",
+   "shot": "sc/s09_matrix_picker_41.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "20|number",
+     "20|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 42,
+   "desc": "[Matrix with parenthesis] Rows=\"50\" Columns=\"50\" + Enter (very large)",
+   "shot": "sc/s09_matrix_picker_42.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "50|number",
+     "50|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 43,
+   "desc": "[Matrix with parenthesis] Rows=\"100\" Columns=\"3\" + Enter (100 rows)",
+   "shot": "sc/s09_matrix_picker_43.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr><mtr><mtd/><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "100|number",
+     "3|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 44,
+   "desc": "[Matrix with parenthesis] Rows=\"2\" Columns=\"\" + Enter (columns empty)",
+   "shot": "sc/s09_matrix_picker_44.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "2|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 45,
+   "desc": "[Matrix with parenthesis] spinner: focus Rows, ArrowUp x3",
+   "shot": "sc/s09_matrix_picker_45.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "3|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 46,
+   "desc": "[Matrix with parenthesis] spinner: ArrowDown x5 from empty",
+   "shot": "sc/s09_matrix_picker_46.jpg",
+   "mathml": "<math/>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "-2|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 47,
+   "desc": "[Matrix with parenthesis] Enter in Rows field only",
+   "shot": "sc/s09_matrix_picker_47.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/></mtr><mtr><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 48,
+   "desc": "[Matrix with parenthesis] Escape closes picker without inserting",
+   "shot": "sc/s09_matrix_picker_48.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 49,
+   "desc": "[Matrix with parenthesis] click outside (editing area) closes picker",
+   "shot": "sc/s09_matrix_picker_49.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": false
+   }
+  },
+  {
+   "n": 50,
+   "desc": "[Matrix with parenthesis] click the same button again (toggle)",
+   "shot": "sc/s09_matrix_picker_50.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "rows": 8,
+    "inputVals": [
+     "|number",
+     "|number"
+    ],
+    "hl": 0,
+    "visible": true
+   }
+  },
+  {
+   "n": 51,
+   "desc": "[Matrix with parenthesis] with \"x\" selected: click cell 2x2 (selection goes into matrix?)",
+   "shot": "sc/s09_matrix_picker_51.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 52,
+   "desc": "[Matrix with parenthesis] with \"x\" typed (caret after): insert 2x2",
+   "shot": "sc/s09_matrix_picker_52.jpg",
+   "mathml": "<math><mi>x</mi><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML",
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 53,
+   "desc": "[Matrix with parenthesis] type in each matrix cell with Tab/arrows: 1 2 / 3 4",
+   "shot": "sc/s09_matrix_picker_53.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 54,
+   "desc": "Keyboard: Tab key inside matrix moves to next cell?",
+   "shot": "sc/s09_matrix_picker_54.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 55,
+   "desc": "Keyboard: Enter inside matrix cell",
+   "shot": "sc/s09_matrix_picker_55.jpg",
+   "mathml": "<math><mfenced><mtable><mtr><mtd/><mtd/></mtr><mtr><mtd/><mtd/></mtr></mtable></mfenced></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

@@ -1,0 +1,338 @@
+{
+ "name": "s06_unicode",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "Special characters panel opened (default category Symbol)",
+   "shot": "sc/s06_unicode_01.jpg",
+   "mathml": "<math/>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2accessible?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 2,
+   "desc": "Category \"S\"",
+   "shot": "sc/s06_unicode_02.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1461
+   }
+  },
+  {
+   "n": 3,
+   "desc": "Category \"P\"",
+   "shot": "sc/s06_unicode_03.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 158
+   }
+  },
+  {
+   "n": 4,
+   "desc": "Category \"L\"",
+   "shot": "sc/s06_unicode_04.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 3398
+   }
+  },
+  {
+   "n": 5,
+   "desc": "Category \"M\"",
+   "shot": "sc/s06_unicode_05.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 273
+   }
+  },
+  {
+   "n": 6,
+   "desc": "Category \"N\"",
+   "shot": "sc/s06_unicode_06.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 155
+   }
+  },
+  {
+   "n": 7,
+   "desc": "Category \"F\"",
+   "shot": "sc/s06_unicode_07.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 294
+   }
+  },
+  {
+   "n": 8,
+   "desc": "Category \"C\"",
+   "shot": "sc/s06_unicode_08.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 22
+   }
+  },
+  {
+   "n": 9,
+   "desc": "Click the first character in the grid",
+   "shot": "sc/s06_unicode_09.jpg",
+   "mathml": "<math><mo>$</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "panelVisible": false
+   }
+  },
+  {
+   "n": 10,
+   "desc": "Reopen; click the 10th character (typed \"ab\" first)",
+   "shot": "sc/s06_unicode_10.jpg",
+   "mathml": "<math><mi>a</mi><mi>b</mi><mo>&#xA2;</mo></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 11,
+   "desc": "Code field: \"210F\" (hex, reduced Planck constant)",
+   "shot": "sc/s06_unicode_11.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1
+   }
+  },
+  {
+   "n": 12,
+   "desc": "Code field: \"198\" (ambiguous hex/decimal)",
+   "shot": "sc/s06_unicode_12.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 2
+   }
+  },
+  {
+   "n": 13,
+   "desc": "Code field: \"03B1\" (Greek alpha, leading zero)",
+   "shot": "sc/s06_unicode_13.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1
+   }
+  },
+  {
+   "n": 14,
+   "desc": "Code field: \"u+03b1\" (with U+ prefix, lowercase)",
+   "shot": "sc/s06_unicode_14.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1
+   }
+  },
+  {
+   "n": 15,
+   "desc": "Code field: \"zzzz\" (invalid)",
+   "shot": "sc/s06_unicode_15.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 2
+   }
+  },
+  {
+   "n": 16,
+   "desc": "Code field: \"\" (empty)",
+   "shot": "sc/s06_unicode_16.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1461
+   }
+  },
+  {
+   "n": 17,
+   "desc": "Code field: \"10FFFF\" (max code point)",
+   "shot": "sc/s06_unicode_17.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1
+   }
+  },
+  {
+   "n": 18,
+   "desc": "Code field: \"1F600\" (emoji)",
+   "shot": "sc/s06_unicode_18.jpg",
+   "mathml": null,
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "chars": 1
+   }
+  },
+  {
+   "n": 19,
+   "desc": "Code 210F then click first result to insert",
+   "shot": "sc/s06_unicode_19.jpg",
+   "mathml": "<math><mo>&#x210F;</mo></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 20,
+   "desc": "Code 210F, press Enter",
+   "shot": "sc/s06_unicode_20.jpg",
+   "mathml": "<math><mo>&#x210F;</mo></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 21,
+   "desc": "Open panel with selection \"x\": click a char (replace?)",
+   "shot": "sc/s06_unicode_21.jpg",
+   "mathml": "<math><mo>=</mo></math>",
+   "net": [
+    "POST https://www.wiris.net/demo/editor/mathml2internal?httpstatus=true BODY=mml=%3Cmath%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&wrs-license=null&wrs-deployment=mathtype-web-editor&wrs-cause=setMathML"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 22,
+   "desc": "Open panel then Escape",
+   "shot": "sc/s06_unicode_22.jpg",
+   "mathml": "<math><mo>=</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "panelVisible": false
+   }
+  },
+  {
+   "n": 23,
+   "desc": "Open panel then click inside editing area",
+   "shot": "sc/s06_unicode_23.jpg",
+   "mathml": "<math><mo>=</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "panelVisible": false
+   }
+  },
+  {
+   "n": 24,
+   "desc": "Open panel then click the button again (toggle)",
+   "shot": "sc/s06_unicode_24.jpg",
+   "mathml": "<math><mo>=</mo></math>",
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "panelVisible": true
+   }
+  },
+  {
+   "n": 25,
+   "desc": "Open panel, scroll grid to bottom",
+   "shot": "sc/s06_unicode_25.jpg",
+   "mathml": null,
+   "net": [],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}

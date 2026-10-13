@@ -1,0 +1,318 @@
+{
+ "name": "s31_length_dialog",
+ "steps": [
+  {
+   "n": 1,
+   "desc": "table: Column spacing at right",
+   "shot": "sc/s31_length_dialog_01.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3E%",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmtable%3E%3Cmtr%3E%3Cmtd%3E%3Cmi%3Ea%3C%2Fmi%3E%3C%2Fmtd%3E%3Cmtd%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmtd%3E%3C%2Fmtr%3E%3Cmtr%3E%"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null,
+   "extra": {
+    "topHtml": "<div class=\"wrs_lengthButtonPanel\" role=\"dialog\" aria-label=\"Column spacing at right\" style=\"left: 323px; top: 49px;\"><table><tr><td colspan=\"2\">Column spacing at right</td></tr><tr><td>Value:</td><td class=\"wrs_inputCell\"><input type=\"text\" title=\"Value\" aria-label=\"Value\" spellcheck=\"true\" style=\"\"></td></tr></table></div>",
+    "all": [
+     {
+      "d": 0,
+      "tag": "DIV",
+      "cls": "wrs_lengthButtonPanel",
+      "text": "",
+      "rect": [
+       323,
+       49,
+       133.90625,
+       43.5
+      ],
+      "css": {
+       "position": "absolute",
+       "left": "323px",
+       "top": "49px",
+       "width": "133.906px",
+       "height": "43.5px",
+       "padding": "1px",
+       "margin": "0px",
+       "border": "1px solid rgb(177, 179, 180)",
+       "borderRadius": "0px",
+       "background": "rgb(237, 242, 244) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "baseline",
+       "display": "block",
+       "zIndex": "6",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 1,
+      "tag": "TABLE",
+      "cls": "",
+      "text": "",
+      "rect": [
+       325,
+       51,
+       129.90625,
+       39.5
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "129.906px",
+       "height": "39.5px",
+       "padding": "0px",
+       "margin": "0px",
+       "border": "0px none rgb(119, 142, 154)",
+       "borderRadius": "0px",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "baseline",
+       "display": "table",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 2,
+      "tag": "TR",
+      "cls": "",
+      "text": "",
+      "rect": [
+       327,
+       53,
+       125.90625,
+       17.5
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "125.906px",
+       "height": "17.5px",
+       "padding": "0px",
+       "margin": "0px",
+       "border": "0px none rgb(119, 142, 154)",
+       "borderRadius": "0px",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "middle",
+       "display": "table-row",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 3,
+      "tag": "TD",
+      "cls": "",
+      "text": "Column spacing at right",
+      "rect": [
+       327,
+       53,
+       125.90625,
+       17.5
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "125.906px",
+       "height": "17.5px",
+       "padding": "0px 0px 5.5px",
+       "margin": "0px",
+       "border": "0px none rgb(119, 142, 154)",
+       "borderRadius": "0px",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "middle",
+       "display": "table-cell",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 2,
+      "tag": "TR",
+      "cls": "",
+      "text": "",
+      "rect": [
+       327,
+       72.5,
+       125.90625,
+       16
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "125.906px",
+       "height": "16px",
+       "padding": "0px",
+       "margin": "0px",
+       "border": "0px none rgb(119, 142, 154)",
+       "borderRadius": "0px",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "middle",
+       "display": "table-row",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 3,
+      "tag": "TD",
+      "cls": "",
+      "text": "Value:",
+      "rect": [
+       327,
+       72.5,
+       37.375,
+       16
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "37.375px",
+       "height": "16px",
+       "padding": "0px",
+       "margin": "0px",
+       "border": "0px none rgb(119, 142, 154)",
+       "borderRadius": "0px",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "middle",
+       "display": "table-cell",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 3,
+      "tag": "TD",
+      "cls": "wrs_inputCell",
+      "text": "",
+      "rect": [
+       366.375,
+       72.5,
+       86.53125,
+       16
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "86.5312px",
+       "height": "16px",
+       "padding": "0px",
+       "margin": "0px",
+       "border": "0px none rgb(119, 142, 154)",
+       "borderRadius": "0px",
+       "background": "rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(119, 142, 154)",
+       "lineHeight": "normal",
+       "textAlign": "left",
+       "verticalAlign": "middle",
+       "display": "table-cell",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     },
+     {
+      "d": 4,
+      "tag": "INPUT",
+      "cls": "",
+      "text": "",
+      "rect": [
+       371.375,
+       72.5,
+       70,
+       16
+      ],
+      "css": {
+       "position": "static",
+       "left": "auto",
+       "top": "auto",
+       "width": "70px",
+       "height": "16px",
+       "padding": "1px",
+       "margin": "0px 0px 0px 5px",
+       "border": "1px solid rgb(177, 179, 180)",
+       "borderRadius": "10px",
+       "background": "rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box",
+       "boxShadow": "none",
+       "font": "700 11px sans-serif",
+       "color": "rgb(0, 0, 0)",
+       "lineHeight": "normal",
+       "textAlign": "start",
+       "verticalAlign": "baseline",
+       "display": "inline-block",
+       "zIndex": "auto",
+       "boxSizing": "border-box"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "n": 2,
+   "desc": "operator: Left spacing",
+   "shot": "sc/s31_length_dialog_02.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ex%3C%2Fmi%3E%3Cmo%3E%2B%3C%2Fmo%3E%3Cmi%3Ey%3C%2Fmi%3E%3C%2Fmath%3E&lang=en&wrs-cause=editor_screen_reader"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  },
+  {
+   "n": 3,
+   "desc": "mspace: Space width",
+   "shot": "sc/s31_length_dialog_03.jpg",
+   "mathml": null,
+   "net": [
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%2F%3E&lang=en&wrs-cause=editor_screen_reader",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace+width%3D%221em%22+height%3D%223ex%22+depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&l",
+    "POST http://localhost:8099/editor-services/mathml2accessible?httpstatus=true BODY=mml=%3Cmath+xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1998%2FMath%2FMathML%22%3E%3Cmi%3Ea%3C%2Fmi%3E%3Cmspace+width%3D%221em%22+height%3D%223ex%22+depth%3D%222ex%22%2F%3E%3Cmi%3Eb%3C%2Fmi%3E%3C%2Fmath%3E&l"
+   ],
+   "console": [],
+   "errors": [],
+   "err": null
+  }
+ ]
+}
