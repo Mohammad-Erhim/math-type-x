@@ -17,6 +17,8 @@ FONTS = {'ksor': os.path.join(HERE, 'AlKsorZulfiMath.ttf'), 'tkamol': os.path.jo
 HBFONT = {k: hb.Font(hb.Face(hb.Blob.from_file_path(p))) for k, p in FONTS.items()}
 TT = {k: TTFont(p) for k, p in FONTS.items()}
 DPI = 300
+# the owner asked for larger letters: 1.3 times the size they have in the fonts
+SYMBOL_SCALE = 1.3
 
 
 def shape(font, text):
@@ -306,33 +308,38 @@ if len(sys.argv) > 2:
         """glyph run -> (advance, path d, ymin, ymax) in 1/1000 em, y down from the baseline"""
         tt = TT[font]
         upm = tt['head'].unitsPerEm
-        k = 1000 / upm
+        # the shapes are drawn small for their em: set 1.3 times larger (SYMBOL_SCALE), they read as letters of the size
+        # of the text around them
+        k = 1000 / upm * SYMBOL_SCALE
         gs = tt.getGlyphSet()
-        spen = SVGPathPen(None, ntos=lambda v: str(int(round(v))))
-        bpen = BoundsPen(None)
-        # shaped for right-to-left: the buffer is in visual order, left to right
-        x = 0
-        for gid, adv, xo, yo in glyphs:
-            name = tt.getGlyphName(gid)
-            t = (k, 0, 0, -k, (x + xo) * k, -yo * k)
-            gs[name].draw(TransformPen(spen, t))
-            gs[name].draw(TransformPen(bpen, t))
-            x += adv
-        b = bpen.bounds or (0, 0, 0, 0)
-        adv = round(x * k)
-        d = spen.getCommands()
+
+        def draw(shift_x, shift_y):
+            spen = SVGPathPen(None, ntos=lambda v: str(int(round(v))))
+            bpen = BoundsPen(None)
+            x = 0
+            # shaped for right-to-left: the buffer is in visual order, left to right
+            for gid, adv, xo, yo in glyphs:
+                name = tt.getGlyphName(gid)
+                t = (k, 0, 0, -k, (x + xo) * k + shift_x, -yo * k + shift_y)
+                gs[name].draw(TransformPen(spen, t))
+                gs[name].draw(TransformPen(bpen, t))
+                x += adv
+            return x * k, spen.getCommands(), bpen.bounds or (0, 0, 0, 0)
+
+        adv, d, b = draw(0, 0)
+        shift_x = shift_y = 0
+        # the raised forms of the tables (letters that sit as exponents inside the printed fractions) are brought down
+        # onto the baseline: as symbols of a formula they stand where the letters of the text stand
+        if b[3] < -120:
+            shift_y = -b[3]
         # marks (zero advance, ink to the left of the origin) become spaced shapes of their own
         if adv < 1 or b[0] < -10:
-            spen = SVGPathPen(None, ntos=lambda v: str(int(round(v))))
-            x = 0
-            shift = 30 - b[0]
-            for gid, a, xo, yo in glyphs:
-                name = tt.getGlyphName(gid)
-                gs[name].draw(TransformPen(spen, (k, 0, 0, -k, (x + xo) * k + shift, -yo * k)))
-                x += a
-            d = spen.getCommands()
-            adv = round(max(b[2] - b[0], 1)) + 60
-        return adv, d, round(b[1]), round(b[3])
+            shift_x = 30 - b[0]
+        if shift_x or shift_y:
+            adv2, d, b = draw(shift_x, shift_y)
+            if adv < 1 or shift_x:
+                adv = max(b[2] - b[0], 1) + 60
+        return round(adv), d, round(b[1]), round(b[3])
 
     symbols = {}
     seen = {}

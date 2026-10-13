@@ -23,8 +23,8 @@ export interface TypeModes {
   lock?: { v: string | null };
 }
 
-/** typed letters that form one function name: the Latin names and their Arabic counterparts (جا جتا ظل لو طا) */
-export const RESERVED_WORDS = ['sin', 'cos', 'tan', 'log', 'ln', '\u062C\u0627', '\u062C\u062A\u0627', '\u0638\u0644', '\u0644\u0648', '\u0637\u0627'];
+/** typed letters that form one function name: the Latin names and their Arabic counterparts (جا جتا ظل لو) */
+export const RESERVED_WORDS = ['sin', 'cos', 'tan', 'log', 'ln', '\u062C\u0627', '\u062C\u062A\u0627', '\u0638\u0644', '\u0644\u0648'];
 
 const DIGIT_BASE: Record<DigitSet, number> = { western: 0x30, arabicIndic: 0x660, easternArabicIndic: 0x6f0 };
 

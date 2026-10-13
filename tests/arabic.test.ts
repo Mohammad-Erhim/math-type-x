@@ -5,9 +5,9 @@ import { join } from 'node:path';
 import { EditorCore } from '../src/core/engine';
 
 const NS = ' xmlns="http://www.w3.org/1998/Math/MathML"';
-/** a deliberate deviation from the recordings: there is no function "لط" – the natural logarithm is طا (typed ط ا merges,
- * typed ل ط does not) */
-const deviate = (w: string) => w.replace(/<mi>&#x644;&#x637;<\/mi>/g, '<mi>&#x644;</mi><mi>&#x637;</mi>').replace(/<mi>&#x637;<\/mi><mi>&#x627;<\/mi>/g, '<mi>&#x637;&#x627;</mi>');
+/** a deliberate deviation from the recordings: "لط" is no function of Arabic mathematics (the natural logarithm has no
+ * Arabic name here): typed ل ط stays two letters */
+const deviate = (w: string) => w.replace(/<mi>&#x644;&#x637;<\/mi>/g, '<mi>&#x644;</mi><mi>&#x637;</mi>');
 const strip = (s: string) => s.replace(NS, '');
 
 function typed(s: string, rtl: boolean): string {
