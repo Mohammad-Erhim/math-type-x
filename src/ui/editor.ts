@@ -232,7 +232,7 @@ export class MathEditor implements ToolbarHost {
     }
     // clear the whole formula – after a confirmation
     const clear = h('button', { type: 'button', class: 'wrs_navKey wrs_navClear', title: 'Clear the formula', 'aria-label': 'Clear the formula', tabindex: '-1' }) as HTMLButtonElement;
-    clear.innerHTML = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#a12020" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    clear.innerHTML = '<svg width="28" height="28" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 6h10M8 6V4h4v2M6.5 6l.7 10h5.6l.7-10M9 9v5M11 9v5" fill="none" stroke="#51636d" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     clear.addEventListener('pointerdown', (e) => e.preventDefault());
     clear.addEventListener('mousedown', (e) => e.preventDefault());
     const confirmBox = h('div', { class: 'wrs_confirm', role: 'alertdialog', 'aria-label': 'Clear the whole formula?' });

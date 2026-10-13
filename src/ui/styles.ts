@@ -184,13 +184,16 @@ export const CSS = `
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true]),.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true]){background:#f3f6f7;box-shadow:none}
 .wrs_reflow .wrs_expandButton:hover:not(.wrs_pressed):not([aria-expanded=true])::after,.wrs_reflow .wrs_expandButton:focus:not(.wrs_pressed):not([aria-expanded=true])::after{border-color:#51636d transparent transparent transparent}
 .wrs_navPad{position:absolute;right:8px;bottom:8px;z-index:6;display:grid;grid-template-columns:repeat(5,48px);gap:4px;direction:ltr;touch-action:manipulation;-webkit-user-select:none;user-select:none}
-.wrs_navKey{width:48px;height:48px;padding:0;border:1px solid #778e9a;border-radius:6px;background:rgba(255,255,255,.92);color:#324d5b;font:700 19px/1 Arial,sans-serif;box-shadow:0 1px 4px rgba(52,64,84,.25);touch-action:manipulation;-webkit-tap-highlight-color:transparent}
-.wrs_navKey:active{background:#dfe8ec}
-.wrs_navClear{border-color:#c9a0a0;display:flex;align-items:center;justify-content:center}
-.wrs_confirm{position:absolute;right:8px;bottom:68px;z-index:7;width:min(260px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:1px solid #778e9a;border-radius:8px;background:#fff;box-shadow:0 4px 16px rgba(52,64,84,.35);font:14px/1.35 Arial,sans-serif;color:#18212f;direction:ltr}
+/* the pad follows the toolbar's look: slate frame, light blue-grey face, cream when pressed */
+.wrs_editor .wrs_navKey{width:48px;height:48px;padding:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);color:#324d5b;font:700 19px/1 Arial,sans-serif;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.wrs_editor .wrs_navKey:active{background:linear-gradient(#fffdf2,#f6efd0);border-color:#5f7681}
+.wrs_editor .wrs_navClear{display:flex;align-items:center;justify-content:center}
+.wrs_navClear svg path{stroke:#51636d}
+.wrs_confirm{position:absolute;right:8px;bottom:68px;z-index:7;width:min(280px,calc(100% - 16px));box-sizing:border-box;padding:12px;border:2px solid #778e9a;border-radius:5px;background:linear-gradient(#f6f9fa,#e3eaed);box-shadow:0 0 10px rgba(52,64,84,.3);font:700 14px/1.35 Arial,sans-serif;color:#324d5b;direction:ltr}
 .wrs_confirmText{margin:0 0 10px}
-.wrs_confirm button{height:48px;min-width:96px;margin-right:8px;border:1px solid #778e9a;border-radius:6px;background:#f4f7f8;font:700 14px Arial,sans-serif;color:#18212f}
-.wrs_confirm .wrs_confirmYes{background:#a12020;border-color:#7d1818;color:#fff}
+.wrs_editor .wrs_confirm button{height:48px;min-width:104px;margin-right:8px;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);font:700 14px Arial,sans-serif;color:#324d5b}
+.wrs_editor .wrs_confirm button:active{background:linear-gradient(#fffdf2,#f6efd0)}
+.wrs_editor .wrs_confirm .wrs_confirmYes{background:linear-gradient(#8aa0ab,#66808d);border-color:#51636d;color:#fff}
 .wrs_hasNavPad .wrs_formulaDisplay{padding-bottom:64px;box-sizing:border-box}
 /* touch devices have no hover: a tapped control must not stay highlighted */
 @media (hover:none){
