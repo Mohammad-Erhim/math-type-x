@@ -364,7 +364,10 @@ if len(sys.argv) > 2:
             symbols[c]['m'] = 'mo' if g['id'] in ('operators', 'relations', 'sets', 'arrows', 'brackets', 'marks') else 'mi'
         glist.append(dict(id=g['id'], en=g['en'], ar=g['ar'], items=[f'{c:04X}' for c in items]))
     rest = [c for c in sorted(symbols) if c not in placed and c not in drop]
-    if rest:
+    for c in rest:
+        if not cat.get('other'):
+            symbols.pop(c)  # symbols of no palette are not shipped
+    if rest and cat.get('other'):
         o = cat['other']
         glist.append(dict(id=o['id'], en=o['en'], ar=o['ar'], items=[f'{c:04X}' for c in rest]))
     for c in drop:

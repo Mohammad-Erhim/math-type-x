@@ -10,7 +10,7 @@ const N = 'xmlns="http://www.w3.org/1998/Math/MathML"';
 const cp = (c: number) => String.fromCodePoint(c);
 
 test('the symbol lists hold the symbols of the tables, each with a shape and an advance', () => {
-  assert.deepEqual(ZULFI_GROUPS.map((g) => g.id), ['operators', 'relations', 'sets', 'arrows', 'brackets', 'letters', 'functions', 'geometry', 'calculus', 'forms', 'marks', 'other']);
+  assert.deepEqual(ZULFI_GROUPS.map((g) => g.id), ['letters']);
   let n = 0;
   for (const g of ZULFI_GROUPS) {
     assert.ok(g.items.length >= 4, g.id);
@@ -20,12 +20,12 @@ test('the symbol lists hold the symbols of the tables, each with a shape and an 
       n++;
     }
   }
-  assert.ok(n >= 140, 'about 150 list entries: ' + n);
-  assert.match(zulfiSvg(ZULFI_GROUPS[1].items[0]), /<path d="M/);
+  assert.ok(n >= 40, 'about 40 letters: ' + n);
+  assert.match(zulfiSvg(ZULFI_GROUPS[0].items[0]), /<path d="M/);
 });
 
 test('a symbol is drawn as a shape (no text, no font) in the SVG export, with the advance of its glyph', () => {
-  const c = ZULFI_GROUPS[1].items[0];
+  const c = ZULFI_GROUPS[0].items[0];
   const s = zulfiSymbol(c)!;
   const r = renderSvg(`<math ${N}><mi>x</mi><mo>${cp(c)}</mo><mi>y</mi></math>`);
   assert.ok(r.svg.includes(`d="${s.d}"`));
@@ -34,20 +34,19 @@ test('a symbol is drawn as a shape (no text, no font) in the SVG export, with th
   assert.ok(r.width >= without.width + Math.floor((s.a / 1000) * 16), `${r.width} vs ${without.width} + ${s.a / 62.5}`);
 });
 
-test('letters of the tables are identifiers, signs are operators; a typed symbol enters the formula as one token', () => {
+test('the letters of the tables are identifiers; a typed symbol enters the formula as one token', () => {
   const letters = ZULFI_GROUPS.find((g) => g.id === 'letters')!.items[0];
-  const sign = ZULFI_GROUPS.find((g) => g.id === 'operators')!.items[0];
+  const sign = ZULFI_GROUPS.find((g) => g.id === 'letters')!.items[1];
   assert.equal(classify(cp(letters)), 'arabic');
-  assert.equal(classify(cp(sign)), 'op');
-  const ed = new EditorCore();
+    const ed = new EditorCore();
   ed.typeText(cp(sign) + cp(letters));
   const m = ed.getMathML();
-  assert.match(m, /<mo>&#x[Ee]1[0-9A-Fa-f]{2};<\/mo><mi>&#x[Ee]1[0-9A-Fa-f]{2};<\/mi>/);
+  assert.match(m, /<mi>&#x[Ee]1[0-9A-Fa-f]{2};<\/mi><mi>&#x[Ee]1[0-9A-Fa-f]{2};<\/mi>/);
   assert.ok(isZulfiChar(cp(sign)));
 });
 
 test('the PNG of a formula with symbols draws them (image services need no font for it)', () => {
-  const items = ZULFI_GROUPS.find((g) => g.id === 'calculus')!.items;
+  const items = ZULFI_GROUPS.find((g) => g.id === 'letters')!.items;
   const mml = `<math ${N}>${items.slice(0, 3).map((c) => `<mi>${cp(c)}</mi>`).join('')}</math>`;
   const a = renderPng(mml);
   const b = renderPng(`<math ${N}><mi>x</mi></math>`);
