@@ -173,6 +173,8 @@ export interface Located {
   nudge?: boolean;
   /** stacks: the caret sits inside a number of several digits */
   inNumber?: boolean;
+  /** the selection holds a line break: it cannot be nudged */
+  noNudge?: boolean;
   /** stacks: the current row has a carries row above it (carry-location buttons enabled) */
   carries?: boolean;
   /** multiline: the lines are aligned at their relation symbols (a table of three columns) */
@@ -189,7 +191,13 @@ export function locate(core: EditorCore): Located | null {
   const loc = locateRaw(core);
   if (loc && loc.op && stretchDefault(loc.op) !== null) loc.stretchy = true;
   // a selection shows the nudge buttons in front of everything else
-  if (loc && core.hasSelection() && loc.kind !== 'structure') loc.nudge = true;
+  if (loc && core.hasSelection()) {
+    loc.nudge = true;
+    const srow = tryRowAt(core.row, core.sel!.path);
+    const a = Math.min(core.sel!.from, core.sel!.to);
+    const z = Math.max(core.sel!.from, core.sel!.to);
+    if (srow && srow.slice(a, z).some((e) => e.t === 'mspace' && getAttr(e, 'linebreak') === 'newline')) loc.noNudge = true;
+  }
   // between two digits of one number the reference adds the merge / unmerge button in front of the structure's controls
   if (loc && !core.hasSelection() && MERGE_KINDS.has(loc.kind)) {
     const row = core.currentRow();
@@ -443,7 +451,35 @@ export function controlsFor(loc: Located): CtxControl[] {
   if (loc.inNumber && MERGE_KINDS.has(loc.kind)) {
     own = [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0, disabled: !numberHasSeparator(loc) }, ...own.map((c) => ({ ...c, group: c.group + 1 }))];
   }
-  return loc.nudge ? [...NUDGES(), ...own] : own;
+  const all = loc.nudge ? [...NUDGES(), ...own] : own;
+  return all.map((c) => (!c.disabled && unavailable(loc, c.id) ? { ...c, disabled: true } : c));
+}
+
+/** a control that cannot do anything where the caret / selection is (shown disabled instead of doing nothing) */
+function unavailable(loc: Located, id: string): boolean {
+  const t = tableOf(loc);
+  const pos = cellPos(loc);
+  const entry = (name: string, k: number) => (getAttr(t!, name) ?? '').split(/\s+/).filter(Boolean)[k];
+  switch (id) {
+    case 'row_remove':
+      return !pos || pos.rows <= 1;
+    case 'col_remove':
+      return !pos || pos.cols <= 1;
+    case 'frame_remove':
+      return !t || !getAttr(t, 'frame');
+    case 'line_below_remove':
+      return !t || !pos || !/^(solid|dashed)$/.test(entry('rowlines', pos.r) ?? '');
+    case 'line_right_remove':
+      return !t || !pos || !/^(solid|dashed)$/.test(entry('columnlines', pos.c) ?? '');
+    case 'st_join':
+      return !loc.nudge; // digits are joined where some are selected
+    case 'nudge_up':
+    case 'nudge_down':
+    case 'nudge_left':
+    case 'nudge_right':
+      return !!loc.noNudge;
+  }
+  return false;
 }
 
 function ownControls(loc: Located): CtxControl[] {
