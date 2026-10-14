@@ -201,7 +201,8 @@ export const CSS = `
 .wrs_reflow .wrs_panelContainer::-webkit-scrollbar-thumb{background:#6f8793;border-radius:3px}
 .wrs_scrollCue{display:none}
 .wrs_reflow .wrs_toolbar.wrs_main{position:relative}
-.wrs_reflow .wrs_scrollCue{display:flex;position:absolute;left:0;right:6px;height:28px;align-items:center;justify-content:center;gap:4px;margin:0;padding:0;border:0;z-index:4;color:#324d5b;font:700 12px Arial,sans-serif;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .15s}
+.wrs_reflow .wrs_scrollCue{display:flex;position:absolute;left:0;right:6px;width:calc(100% - 6px);box-sizing:border-box;text-align:center;height:28px;align-items:center;justify-content:center;gap:4px;margin:0;padding:0;border:0;z-index:4;color:#324d5b;font:700 12px Arial,sans-serif;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .15s}
+.wrs_cueInner{display:inline-flex;align-items:center;justify-content:center;gap:4px;margin:0 auto;vertical-align:middle;line-height:1}
 .wrs_reflow .wrs_scrollCue{pointer-events:none!important}
 .wrs_reflow .wrs_moreBelow .wrs_cueDown>*,.wrs_reflow.wrs_moreBelow .wrs_cueDown>*,.wrs_reflow .wrs_moreAbove .wrs_cueUp>*{pointer-events:auto}
 .wrs_reflow .wrs_cueDown{bottom:1px;background:linear-gradient(rgba(214,224,229,0),rgba(214,224,229,.97) 65%)}

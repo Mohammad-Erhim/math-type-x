@@ -96,7 +96,9 @@ export class Toolbar {
     // narrow windows: the panel is a short window onto its controls; arrows at its edges tell when there is more to see
     const cue = (dir: 'up' | 'down') => {
       const b = h('button', { type: 'button', class: 'wrs_scrollCue wrs_cue' + (dir === 'up' ? 'Up' : 'Down'), tabindex: '-1', 'aria-label': dir === 'up' ? 'Scroll up' : 'Scroll down' }) as HTMLButtonElement;
-      b.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${dir === 'up' ? 'M3 10l5-5 5 5' : 'M3 6l5 5 5-5'}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${dir === 'down' ? '<span>More</span>' : ''}`;
+      // an inner box that centres itself: older Android WebViews / Samsung Internet do not lay out the children of a button
+      // as a flex container, and a positioned button shrinks to its content there – the width is explicit, the content centred
+      b.innerHTML = `<span class="wrs_cueInner"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${dir === 'up' ? 'M3 10l5-5 5 5' : 'M3 6l5 5 5-5'}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${dir === 'down' ? '<span>More</span>' : ''}</span>`;
       b.addEventListener('pointerdown', (e) => e.preventDefault());
       b.addEventListener('click', () => this.container.scrollBy({ top: (dir === 'up' ? -1 : 1) * Math.max(40, this.container.clientHeight * 0.75), behavior: 'smooth' }));
       return b;
