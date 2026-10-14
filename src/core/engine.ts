@@ -3,7 +3,7 @@
  * All behaviour is implemented against the model of ./model.ts; rendering is separate.
  */
 import { El, Row, Step, Caret, Selection, Attr, cloneRow, cloneEl, rowAt, tryRowAt, samePath, getAttr, setAttr, newGroup } from './model';
-import { parseMathML, serializeMathML, MathMLError } from './mathml';
+import { parseMathML, serializeMathML, MathMLError, DOC_STYLE_PREFIX } from './mathml';
 import { InsertSpec, Slot, deriveSpec, isPlaceholder } from './templates';
 import { styleSpec, joinsTyped, plainAfter, textTokens, ModeStyle, StyleLock } from './modestyle';
 import { TypeModes, classify, isLetterlike, mapDigit, RESERVED_WORDS, sameStyle, styleAttrs, DigitSet } from './typing';
@@ -775,8 +775,12 @@ export class EditorCore {
     const el = parentRow?.[i];
     if (!parentRow || !el || !el.c || el.c[0].length < 2) return;
     const base = el.c[0];
+    // the base is one element, or one whole number / word (digits typed into it stay together)
+    let runStart = base.length - 1;
+    while (runStart > 0 && base[runStart].c === undefined && base[runStart - 1].c === undefined && base[runStart].g !== undefined && base[runStart - 1].g === base[runStart].g && base[runStart - 1].t === base[runStart].t) runStart--;
+    if (runStart === 0 && base[0].c === undefined && (base[0].t === 'mn' || base[0].t === 'mi')) return;
     if (el.t === 'msup' || el.t === 'msub' || el.t === 'msubsup') {
-      const spill = base.splice(0, base.length - 1);
+      const spill = base.splice(0, runStart);
       parentRow.splice(i, 0, ...spill);
       this.caret = { path: [...outer, [i + spill.length, 0]], index: 1 };
       return;
@@ -791,13 +795,17 @@ export class EditorCore {
       const out: Row = [];
       const preHasContent = preSlots.some((r) => r.length > 0) || preSlots.length > 0;
       let caretIdx = 0;
+      // the positions written as <none/> follow their slots into the parts
+      const nones = (el.x ?? '').split(',').filter(Boolean).map(Number);
+      const preNone = nones.filter((n) => n > post).map((n) => n - post);
+      const postNone = nones.filter((n) => n >= 1 && n <= post);
       if (preSlots.length && preHasContent) {
-        out.push({ t: 'mmultiscripts', a: [], c: [[first], ...preSlots], cols: 0 });
+        out.push({ t: 'mmultiscripts', a: [], c: [[first], ...preSlots], cols: 0, ...(preNone.length ? { x: preNone.join(',') } : {}) });
         caretIdx = 0;
       } else out.push(first);
       out.push(...middle);
       if (postSlots.length === 2) out.push({ t: 'msubsup', a: [], c: [[last], postSlots[0], postSlots[1]] });
-      else if (postSlots.length) out.push({ t: 'mmultiscripts', a: [], c: [[last], ...postSlots], cols: post });
+      else if (postSlots.length) out.push({ t: 'mmultiscripts', a: [], c: [[last], ...postSlots], cols: post, ...(postNone.length ? { x: postNone.join(',') } : {}) });
       else out.push(last);
       parentRow.splice(i, 1, ...out);
       this.caret = out[0].c ? { path: [...outer, [i, 0]], index: 1 } : { path: outer, index: i + 1 };
@@ -1428,34 +1436,21 @@ export class EditorCore {
     return m ? m[1].trim() : '';
   }
 
-  /** Font size of the whole equation: <mstyle mathsize="Npx"> wrapper */
+  /** Font size of the whole equation: the document's `mathsize` style (written as an <mstyle mathsize="Npx"> wrapper) */
   setFontSize(px: number | null): void {
     this.checkpoint();
-    const wrapped = this.row.length === 1 && this.row[0].t === 'mstyle' && getAttr(this.row[0], 'mathsize') !== undefined;
+    const key = DOC_STYLE_PREFIX + 'mathsize';
+    const i = this.attrs.findIndex(([k]) => k === key);
     if (px === null) {
-      if (wrapped) {
-        const inner = this.row[0].c![0];
-        // caret path loses its first step
-        if (this.caret.path.length && this.caret.path[0][0] === 0 && this.caret.path[0][1] === 0) this.caret = { path: this.caret.path.slice(1), index: this.caret.index };
-        else this.caret = { path: [], index: inner.length };
-        this.row = inner;
-        this.sel = null;
-      }
-    } else if (wrapped) setAttr(this.row[0], 'mathsize', px + 'px');
-    else {
-      const w: El = { t: 'mstyle', a: [['mathsize', px + 'px']], c: [this.row] };
-      this.caret = { path: [[0, 0], ...this.caret.path], index: this.caret.index };
-      if (this.sel) this.sel = { ...this.sel, path: [[0, 0], ...this.sel.path] };
-      this.row = [w];
-    }
+      if (i >= 0) this.attrs.splice(i, 1);
+    } else if (i >= 0) this.attrs[i][1] = px + 'px';
+    else this.attrs.push([key, px + 'px']);
     this.emit();
   }
 
   getFontSize(): number | null {
-    if (this.row.length === 1 && this.row[0].t === 'mstyle') {
-      const v = getAttr(this.row[0], 'mathsize');
-      if (v && /px$/.test(v)) return parseFloat(v);
-    }
+    const v = getAttrList(this.attrs, DOC_STYLE_PREFIX + 'mathsize');
+    if (v && /px$/.test(v)) return parseFloat(v);
     return null;
   }
 

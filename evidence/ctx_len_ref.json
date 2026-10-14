@@ -1,0 +1,1112 @@
+{
+"op_spacing|Left spacing|\"1em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"1em\">+</mo><mi>b</mi></math>",
+"reopened": "1em"
+},
+"op_spacing|Left spacing|\"2\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"2\">+</mo><mi>b</mi></math>",
+"reopened": "2"
+},
+"op_spacing|Left spacing|\"0\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"0\">+</mo><mi>b</mi></math>",
+"reopened": "0"
+},
+"op_spacing|Left spacing|\"0.5em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"0.5em\">+</mo><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"op_spacing|Left spacing|\".5em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"0.5em\">+</mo><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"op_spacing|Left spacing|\"10px\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"10px\">+</mo><mi>b</mi></math>",
+"reopened": "10px"
+},
+"op_spacing|Left spacing|\"3ex\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"3ex\">+</mo><mi>b</mi></math>",
+"reopened": "3ex"
+},
+"op_spacing|Left spacing|\"1.5\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"1.5\">+</mo><mi>b</mi></math>",
+"reopened": "1.5"
+},
+"op_spacing|Left spacing|\"-1em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"-1em\">+</mo><mi>b</mi></math>",
+"reopened": "-1em"
+},
+"op_spacing|Left spacing|\"-2\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"-2\">+</mo><mi>b</mi></math>",
+"reopened": "-2"
+},
+"op_spacing|Left spacing|\"2cm\"": {
+"shownBefore": "",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Left spacing|\"50%\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": "50%"
+},
+"op_spacing|Left spacing|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"1em\">+</mo><mi>b</mi></math>",
+"reopened": "1em"
+},
+"op_spacing|Left spacing|\" 2em \"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"2em\">+</mo><mi>b</mi></math>",
+"reopened": "2em"
+},
+"op_spacing|Left spacing|\"1EM\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"1em\">+</mo><mi>b</mi></math>",
+"reopened": "1em"
+},
+"op_spacing|Left spacing|\"abc\"": {
+"shownBefore": "",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Left spacing|\"\"": {
+"shownBefore": "",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Left spacing|\"1,5em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo lspace=\"1.5em\">+</mo><mi>b</mi></math>",
+"reopened": "1.5em"
+},
+"op_spacing|Left spacing|\"1e2em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": "1e2em"
+},
+"op_spacing|Left spacing|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Left spacing|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Right spacing|\"1em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"1em\">+</mo><mi>b</mi></math>",
+"reopened": "1em"
+},
+"op_spacing|Right spacing|\"2\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"2\">+</mo><mi>b</mi></math>",
+"reopened": "2"
+},
+"op_spacing|Right spacing|\"0\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"0\">+</mo><mi>b</mi></math>",
+"reopened": "0"
+},
+"op_spacing|Right spacing|\"0.5em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"0.5em\">+</mo><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"op_spacing|Right spacing|\".5em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"0.5em\">+</mo><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"op_spacing|Right spacing|\"10px\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"10px\">+</mo><mi>b</mi></math>",
+"reopened": "10px"
+},
+"op_spacing|Right spacing|\"3ex\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"3ex\">+</mo><mi>b</mi></math>",
+"reopened": "3ex"
+},
+"op_spacing|Right spacing|\"1.5\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"1.5\">+</mo><mi>b</mi></math>",
+"reopened": "1.5"
+},
+"op_spacing|Right spacing|\"-1em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"-1em\">+</mo><mi>b</mi></math>",
+"reopened": "-1em"
+},
+"op_spacing|Right spacing|\"-2\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"-2\">+</mo><mi>b</mi></math>",
+"reopened": "-2"
+},
+"op_spacing|Right spacing|\"2cm\"": {
+"shownBefore": "",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Right spacing|\"50%\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": "50%"
+},
+"op_spacing|Right spacing|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"1em\">+</mo><mi>b</mi></math>",
+"reopened": "1em"
+},
+"op_spacing|Right spacing|\" 2em \"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"2em\">+</mo><mi>b</mi></math>",
+"reopened": "2em"
+},
+"op_spacing|Right spacing|\"1EM\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"1em\">+</mo><mi>b</mi></math>",
+"reopened": "1em"
+},
+"op_spacing|Right spacing|\"abc\"": {
+"shownBefore": "",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Right spacing|\"\"": {
+"shownBefore": "",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Right spacing|\"1,5em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo rspace=\"1.5em\">+</mo><mi>b</mi></math>",
+"reopened": "1.5em"
+},
+"op_spacing|Right spacing|\"1e2em\"": {
+"shownBefore": "",
+"open": false,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": "1e2em"
+},
+"op_spacing|Right spacing|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"op_spacing|Right spacing|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space width|\"1em\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space width|\"2\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"2\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "2"
+},
+"mspace|Space width|\"0\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "0"
+},
+"mspace|Space width|\"0.5em\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"0.5em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"mspace|Space width|\".5em\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"0.5em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"mspace|Space width|\"10px\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"10px\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "10px"
+},
+"mspace|Space width|\"3ex\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"3ex\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "3ex"
+},
+"mspace|Space width|\"1.5\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1.5\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1.5"
+},
+"mspace|Space width|\"-1em\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"-1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "-1em"
+},
+"mspace|Space width|\"-2\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"-2\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "-2"
+},
+"mspace|Space width|\"2cm\"": {
+"shownBefore": "1em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space width|\"50%\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "50%"
+},
+"mspace|Space width|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space width|\" 2em \"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"2em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "2em"
+},
+"mspace|Space width|\"1EM\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space width|\"abc\"": {
+"shownBefore": "1em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space width|\"\"": {
+"shownBefore": "1em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space width|\"1,5em\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1.5em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1.5em"
+},
+"mspace|Space width|\"1e2em\"": {
+"shownBefore": "1em",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1e2em"
+},
+"mspace|Space width|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space width|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space height|\"1em\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"1em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space height|\"2\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"2\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "2"
+},
+"mspace|Space height|\"0\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "0"
+},
+"mspace|Space height|\"0.5em\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"0.5em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"mspace|Space height|\".5em\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"0.5em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"mspace|Space height|\"10px\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"10px\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "10px"
+},
+"mspace|Space height|\"3ex\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "3ex"
+},
+"mspace|Space height|\"1.5\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"1.5\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1.5"
+},
+"mspace|Space height|\"-1em\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"-1em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "-1em"
+},
+"mspace|Space height|\"-2\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"-2\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "-2"
+},
+"mspace|Space height|\"2cm\"": {
+"shownBefore": "3ex",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space height|\"50%\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "50%"
+},
+"mspace|Space height|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"1em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space height|\" 2em \"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"2em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "2em"
+},
+"mspace|Space height|\"1EM\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"1em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space height|\"abc\"": {
+"shownBefore": "3ex",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space height|\"\"": {
+"shownBefore": "3ex",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space height|\"1,5em\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"1.5em\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1.5em"
+},
+"mspace|Space height|\"1e2em\"": {
+"shownBefore": "3ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1e2em"
+},
+"mspace|Space height|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space height|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space depth|\"1em\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"1em\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space depth|\"2\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2\"/><mi>b</mi></math>",
+"reopened": "2"
+},
+"mspace|Space depth|\"0\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\"/><mi>b</mi></math>",
+"reopened": "0"
+},
+"mspace|Space depth|\"0.5em\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"0.5em\"/><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"mspace|Space depth|\".5em\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"0.5em\"/><mi>b</mi></math>",
+"reopened": "0.5em"
+},
+"mspace|Space depth|\"10px\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"10px\"/><mi>b</mi></math>",
+"reopened": "10px"
+},
+"mspace|Space depth|\"3ex\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"3ex\"/><mi>b</mi></math>",
+"reopened": "3ex"
+},
+"mspace|Space depth|\"1.5\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"1.5\"/><mi>b</mi></math>",
+"reopened": "1.5"
+},
+"mspace|Space depth|\"-1em\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"-1em\"/><mi>b</mi></math>",
+"reopened": "-1em"
+},
+"mspace|Space depth|\"-2\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"-2\"/><mi>b</mi></math>",
+"reopened": "-2"
+},
+"mspace|Space depth|\"50%\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "50%"
+},
+"mspace|Space depth|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"1em\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space depth|\" 2em \"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2em\"/><mi>b</mi></math>",
+"reopened": "2em"
+},
+"mspace|Space depth|\"1EM\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"1em\"/><mi>b</mi></math>",
+"reopened": "1em"
+},
+"mspace|Space depth|\"abc\"": {
+"shownBefore": "2ex",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space depth|\"\"": {
+"shownBefore": "2ex",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space depth|\"1,5em\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"1.5em\"/><mi>b</mi></math>",
+"reopened": "1.5em"
+},
+"mspace|Space depth|\"1e2em\"": {
+"shownBefore": "2ex",
+"open": false,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": "1e2em"
+},
+"mspace|Space depth|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"mspace|Space depth|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mi>a</mi><mspace width=\"1em\" height=\"3ex\" depth=\"2ex\"/><mi>b</mi></math>",
+"reopened": null
+},
+"table|Column spacing at right|\"1em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Column spacing at right|\"2\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2"
+},
+"table|Column spacing at right|\"0\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"0\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0"
+},
+"table|Column spacing at right|\"0.5em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Column spacing at right|\"10px\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"10px\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "10px"
+},
+"table|Column spacing at right|\"1.5\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"1.5\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5"
+},
+"table|Column spacing at right|\"-1em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"-1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-1em"
+},
+"table|Column spacing at right|\"-2\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"-2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-2"
+},
+"table|Column spacing at right|\"2cm\"": {
+"shownBefore": "0.4em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Column spacing at right|\"50%\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "50%"
+},
+"table|Column spacing at right|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mtable columnspacing=\"1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Column spacing at right|\" 2em \"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"2em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2em"
+},
+"table|Column spacing at right|\"1EM\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Column spacing at right|\"abc\"": {
+"shownBefore": "0.4em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Column spacing at right|\"\"": {
+"shownBefore": "0.4em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Column spacing at right|\"1,5em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable columnspacing=\"1.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5em"
+},
+"table|Column spacing at right|\"1e2em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1e2em"
+},
+"table|Column spacing at right|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Row spacing below|\"1em\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Row spacing below|\"2\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2"
+},
+"table|Row spacing below|\"0\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"0\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0"
+},
+"table|Row spacing below|\"0.5em\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Row spacing below|\".5em\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Row spacing below|\"10px\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"10px\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "10px"
+},
+"table|Row spacing below|\"3ex\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"3ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "3ex"
+},
+"table|Row spacing below|\"1.5\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"1.5\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5"
+},
+"table|Row spacing below|\"-1em\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"-1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-1em"
+},
+"table|Row spacing below|\"-2\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"-2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-2"
+},
+"table|Row spacing below|\"2cm\"": {
+"shownBefore": "0.25em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Row spacing below|\"50%\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "50%"
+},
+"table|Row spacing below|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mtable rowspacing=\"1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Row spacing below|\" 2em \"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"2em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2em"
+},
+"table|Row spacing below|\"1EM\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Row spacing below|\"abc\"": {
+"shownBefore": "0.25em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Row spacing below|\"\"": {
+"shownBefore": "0.25em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Row spacing below|\"1,5em\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable rowspacing=\"1.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5em"
+},
+"table|Row spacing below|\"1e2em\"": {
+"shownBefore": "0.25em",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1e2em"
+},
+"table|Row spacing below|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Row spacing below|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Horizontal frame spacing|\"1em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"1em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Horizontal frame spacing|\"2\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"2 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2"
+},
+"table|Horizontal frame spacing|\"0\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"0 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0"
+},
+"table|Horizontal frame spacing|\"0.5em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.5em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Horizontal frame spacing|\".5em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.5em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Horizontal frame spacing|\"10px\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"10px 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "10px"
+},
+"table|Horizontal frame spacing|\"3ex\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"3ex 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "3ex"
+},
+"table|Horizontal frame spacing|\"1.5\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"1.5 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5"
+},
+"table|Horizontal frame spacing|\"-1em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"-1em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-1em"
+},
+"table|Horizontal frame spacing|\"-2\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"-2 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-2"
+},
+"table|Horizontal frame spacing|\"2cm\"": {
+"shownBefore": "0.4em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Horizontal frame spacing|\"50%\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "50%"
+},
+"table|Horizontal frame spacing|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mtable framespacing=\"1em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Horizontal frame spacing|\" 2em \"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"2em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2em"
+},
+"table|Horizontal frame spacing|\"1EM\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"1em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Horizontal frame spacing|\"abc\"": {
+"shownBefore": "0.4em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Horizontal frame spacing|\"\"": {
+"shownBefore": "0.4em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Horizontal frame spacing|\"1,5em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable framespacing=\"1.5em 0.5ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5em"
+},
+"table|Horizontal frame spacing|\"1e2em\"": {
+"shownBefore": "0.4em",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1e2em"
+},
+"table|Horizontal frame spacing|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Horizontal frame spacing|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Vertical frame spacing|\"1em\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Vertical frame spacing|\"2\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2"
+},
+"table|Vertical frame spacing|\"0\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 0\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0"
+},
+"table|Vertical frame spacing|\"0.5em\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Vertical frame spacing|\".5em\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 0.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "0.5em"
+},
+"table|Vertical frame spacing|\"10px\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 10px\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "10px"
+},
+"table|Vertical frame spacing|\"3ex\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 3ex\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "3ex"
+},
+"table|Vertical frame spacing|\"1.5\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 1.5\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5"
+},
+"table|Vertical frame spacing|\"-1em\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em -1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-1em"
+},
+"table|Vertical frame spacing|\"-2\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em -2\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "-2"
+},
+"table|Vertical frame spacing|\"2cm\"": {
+"shownBefore": "0.5ex",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Vertical frame spacing|\"50%\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "50%"
+},
+"table|Vertical frame spacing|\"1 em\"": {
+"shownBefore": "50%",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Vertical frame spacing|\" 2em \"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 2em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "2em"
+},
+"table|Vertical frame spacing|\"1EM\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 1em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1em"
+},
+"table|Vertical frame spacing|\"abc\"": {
+"shownBefore": "0.5ex",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Vertical frame spacing|\"\"": {
+"shownBefore": "0.5ex",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Vertical frame spacing|\"1,5em\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable framespacing=\"0.4em 1.5em\"><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1.5em"
+},
+"table|Vertical frame spacing|\"1e2em\"": {
+"shownBefore": "0.5ex",
+"open": false,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": "1e2em"
+},
+"table|Vertical frame spacing|\"thin\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+},
+"table|Vertical frame spacing|\"+1em\"": {
+"shownBefore": "1e2em",
+"open": true,
+"mml": "<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></math>",
+"reopened": null
+}
+}

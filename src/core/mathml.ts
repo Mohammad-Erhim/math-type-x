@@ -351,8 +351,15 @@ export function parseMathML(src: string, limits: Limits = DEFAULT_LIMITS): MathD
   if (name !== 'math') throw new MathMLError('root element must be <math>');
   const row: Row = [];
   parseRowChildren(root, row);
-  // a single wrapping mstyle with mathsize is document level style, kept as element
-  return { attrs: parseAttrs(root), row };
+  // a whole-equation mstyle (font size, alignment of the lines) is a style of the document, not an element: the lines of
+  // the formula stay lines of the document. It is kept as pseudo attributes of the root (see serializeMathML)
+  const attrs = parseAttrs(root);
+  let r = row;
+  while (r.length === 1 && r[0].t === 'mstyle' && r[0].c && r[0].c.length === 1 && r[0].a.length > 0 && r[0].a.every(([k]) => DOC_STYLE_KEYS.includes(k)) && !r[0].a.some(([k]) => attrs.some(([q]) => q === DOC_STYLE_PREFIX + k))) {
+    for (const [k, v] of r[0].a) attrs.push([DOC_STYLE_PREFIX + k, v]);
+    r = r[0].c[0];
+  }
+  return { attrs, row: r };
 }
 
 /* ----------------------------------------------------------- serialiser */
@@ -484,8 +491,23 @@ export function serializeRow(r: Row): string {
  * Serialise a document.
  * @param attrs root attributes (style, dir …); xmlns declarations are generated.
  */
+/** pseudo attributes of the root: the whole equation's `mstyle` (mathsize, indentalign) as a style of the document */
+export const DOC_STYLE_PREFIX = 'wrs-doc:';
+export const DOC_STYLE_KEYS = ['mathsize', 'indentalign'];
+export function docStyleOf(attrs: Attr[] | undefined): { mathsize?: string; indentalign?: string } {
+  const out: { mathsize?: string; indentalign?: string } = {};
+  for (const [k, v] of attrs ?? []) if (k.startsWith(DOC_STYLE_PREFIX)) (out as Record<string, string>)[k.slice(DOC_STYLE_PREFIX.length)] = v;
+  return out;
+}
+
 export function serializeMathML(row: Row, attrs: Attr[] = [], opts: { xmlns?: boolean } = {}): string {
   const xmlns = opts.xmlns !== false;
+  // the document style is written back as the wrapping mstyle (one element holding all of its attributes)
+  const doc = attrs.filter(([k]) => k.startsWith(DOC_STYLE_PREFIX));
+  if (doc.length) {
+    row = [{ t: 'mstyle', a: doc.map(([k, v]) => [k.slice(DOC_STYLE_PREFIX.length), v] as Attr), c: [row] }];
+    attrs = attrs.filter(([k]) => !k.startsWith(DOC_STYLE_PREFIX));
+  }
   const body = serRow(row);
   const hasWrs = attrs.some(([k]) => k.startsWith('wrs:')) || /\bwrs:[a-z]+="/.test(body);
   const head =

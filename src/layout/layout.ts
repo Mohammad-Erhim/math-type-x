@@ -8,6 +8,7 @@
  */
 import ARROW_PIECES from '../data/arrow-pieces.json';
 import { El, Row, getAttr, VALIGN_TAGS } from '../core/model';
+import { docStyleOf } from '../core/mathml';
 import { glyphText } from './glyphs';
 import { zulfiSymbol } from './zulfi';
 import { tokenInfo, FontKind, isBigOp, isIntegral, withArabicFont, joinedPrefixWidth, isJoinedRun } from './metrics';
@@ -1002,6 +1003,8 @@ function arrowLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | nu
   if ((el.t !== 'mover' && el.t !== 'munder' && el.t !== 'munderover') || !el.c) return null;
   const row = el.c[0];
   if (row.length !== 1 || row[0].c !== undefined || row[0].t !== 'mo') return null;
+  // Stretchy switched off: the arrow stays a plain glyph with its scripts over / under it
+  if (getAttr(row[0], 'stretchy') === 'false') return null;
   const ch = row[0].x ?? '';
   const cp = ch.codePointAt(0);
   const info = cp === undefined || [...ch].length !== 1 ? undefined : (ARROW_PIECES as Record<string, { l: number; m: number; r: number; min: number; two: boolean }>)[cp.toString(16).toUpperCase().padStart(4, '0')];
@@ -1122,12 +1125,16 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
 /** one delimiter of height a + d: a plain glyph when short, an assembled stretchy piece set when tall */
 function fenceBox(ch: string, isClose: boolean, a: number, d: number, env: Env, tall: boolean, gw: number, dy = 0): Box {
   const s = sc(env);
-  if (ch === '') return mk(0, 0, 0);
+  // an empty bracket still keeps its place (measured on the reference)
+  if (ch === '') return mk((tall ? 3 : 3.5) * s, 0, 0);
   // tall bars are assembled from narrow pieces, braces from wider ones (measured on the reference)
   const tallAdv = ch === '|' ? (isClose ? 3 : 2) : ch === '||' ? (isClose ? 6 : 5) : ch === '{' ? 7 : ch === '}' ? 8 : 6;
   // angle brackets are a pair of diagonal strokes: 9 px in front of the content, 11 behind it (measured on the reference)
   const angle = ch === '\u27e8' || ch === '\u27e9' || ch === '\u2329' || ch === '\u232a' || ch === '<' || ch === '>';
-  const adv = angle ? (isClose ? 11 : 9) * s : tall ? tallAdv * s : Math.round(gw);
+  // one line high: the symbol font's square brackets, floors, ceilings and bars are one pixel wider than the round ones,
+  // double bars two, braces as wide as parentheses (measured on the reference)
+  const flatAdv = ch === '||' ? 6 : /^[\[\]|\u230a\u230b\u2308\u2309]$/.test(ch) ? 5 : 4;
+  const adv = angle ? (isClose ? 11 : 9) * s : tall ? tallAdv * s : Math.round(flatAdv * s) + (isClose ? 0 : 1);
   // delimiters around a table hang one pixel lower than around other content (measured on the reference)
   return mk(adv, a, d, [{ k: 'f', x: 0, y: 0, ch, w: gw, a: a - 1, d, size: env.size, color: env.color, close: isClose, dy }]);
 }
@@ -1178,7 +1185,7 @@ function fenced(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
         x += 2;
         kids.push({ b: sbox, x, y: drop });
         x += round(info.w) + 2;
-      }
+      } else x += 5 * s; // an empty separator still keeps its place (measured on the reference)
     }
   });
   if (tall && !/^(\||\|\||\{|\})$/.test(open) && !/^(\||\|\||\{|\})$/.test(close)) x += 1;
@@ -1195,10 +1202,15 @@ function enclose(el: El, env: Env, body: Box): Box {
   // line has 2 px (left / right) or 1 px (top / bottom); the strikes alone need none; the long division sign 7 px on the left
   const boxed = has('box') || has('roundedbox');
   const circle = has('circle');
-  const padL = circle ? 6 : has('longdiv') ? 7 : boxed || has('left') || has('horizontalstrike') ? 2 : 0;
-  const padR = circle ? 6 : boxed || has('right') || has('horizontalstrike') || has('madruwb') || has('actuarial') ? 2 : 0;
-  const padT = circle ? 5 : boxed || has('top') || has('verticalstrike') || has('actuarial') || has('longdiv') ? 1 : 0;
-  const padB = circle ? 5 : boxed || has('bottom') || has('verticalstrike') || has('madruwb') ? 1 : 0;
+  // a circle is drawn round the content: it grows with it (the ellipse through the corners, a little tighter sideways,
+  // and at least 21 px wide – measured on the reference with contents of every size)
+  const bodyH = body.a + body.d;
+  const circV = Math.round(0.2071 * bodyH) + 1;
+  const circH = Math.max(Math.round(0.202 * round(body.w) + 1), Math.ceil((21 * sc(env) - round(body.w)) / 2));
+  const padL = circle ? circH : has('longdiv') ? 7 : boxed || has('left') || has('horizontalstrike') ? 2 : 0;
+  const padR = circle ? circH : boxed || has('right') || has('horizontalstrike') || has('madruwb') || has('actuarial') ? 2 : 0;
+  const padT = circle ? circV : boxed || has('top') || has('verticalstrike') || has('actuarial') || has('longdiv') ? 1 : 0;
+  const padB = circle ? circV : boxed || has('bottom') || has('verticalstrike') || has('madruwb') ? 1 : 0;
   const w = round(body.w) + padL + padR;
   const top = body.a + padT;
   const bot = body.d + padB;
@@ -1235,18 +1247,39 @@ function ellipsePath(w: number, h: number): string {
   return `M0.5 ${h / 2} A${rx} ${ry} 0 1 0 ${w - 0.5} ${h / 2} A${rx} ${ry} 0 1 0 0.5 ${h / 2}Z`;
 }
 
-function padded(el: El, env: Env, body: Box): Box {
-  const len = (v: string | undefined) => {
-    if (!v) return 0;
-    const m = /^([+-]?[\d.]+)\s*(px|em|ex)?$/.exec(v.trim());
-    return m && m[2] ? parseFloat(m[1]) * (m[2] === 'em' ? env.size * 1.25 : m[2] === 'ex' ? env.size * 0.625 : 1) : 0;
+function padded(el: El, _env: Env, body: Box): Box {
+  // the reference moves the content by the number in lspace (+ right, - left) and in voffset (+ down, - up) – whatever the
+  // unit says – and leaves its neighbours where they are (measured with its editor; width / height / depth are not drawn).
+  // The line grows when the content moves up or down, so nothing is cut off.
+  const num = (v: string | undefined) => {
+    const m = v ? /^\s*([+-]?(?:\d+(?:\.\d+)?|\.\d+))/.exec(v) : null;
+    return m ? parseFloat(m[1]) : 0;
   };
-  const dx = len(getAttr(el, 'lspace'));
-  const dy = len(getAttr(el, 'voffset'));
-  // the reference's convention (measured with its image service: voffset="+6px" sets the content 6 px lower, "-6px"
-  // higher – the opposite of the MathML specification), so that the Nudge buttons, which write -1px for "up", move the
-  // content the way their arrows point
-  return mk(body.w + Math.max(dx, 0), body.a + Math.max(-dy, 0), body.d + Math.max(dy, 0), undefined, [{ b: body, x: Math.max(dx, 0), y: dy }]);
+  const dx = num(getAttr(el, 'lspace'));
+  const dy = num(getAttr(el, 'voffset'));
+  return mk(body.w, body.a + Math.max(-dy, 0), body.d + Math.max(dy, 0), undefined, [{ b: body, x: dx, y: dy }]);
+}
+
+/** the reference's editor draws mtable attributes like this (measured with its image of the editor):
+ *  - columnspacing / rowspacing: the gap between columns (negative values pull them over each other);
+ *    default 0.4em / 0.25em; a list gives one value per gap and its last value repeats; a value without unit is ignored
+ *  - framespacing: the space between the table and its cells (default 4 px / 2.5 px); applies without a frame
+ *  - align: top / bottom / center / baseline (= center) put that part of the table on the baseline of the line;
+ *    axis (default) the centre on the math axis; `baseline n` / `axis n` the baseline of row n; anything else = axis
+ *  - rowalign: the cells of a row are put on its baseline (default) / top / bottom / centre / axis (6 px lower)
+ *  - equalrows: every row is as high as the highest one;  equalcolumns is not drawn by the reference. */
+function tableLen(v: string | undefined, env: Env): number | null {
+  if (!v) return null;
+  const t = v.trim();
+  if (/^-?0+(?:\.0+)?$/.test(t)) return 0; // a bare zero is a length
+  const m = /^(-?(?:\d+(?:\.\d+)?|\.\d+))\s*(px|em|ex)$/.exec(t);
+  if (!m) return null;
+  const n = parseFloat(m[1]);
+  return m[2] === 'em' ? (n * env.size * 5) / 4 : m[2] === 'ex' ? (n * env.size * 5) / 8 : n;
+}
+
+function tableList(v: string | undefined, env: Env): (number | null)[] {
+  return (v ?? '').split(/\s+/).filter(Boolean).map((t) => tableLen(t, env));
 }
 
 function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
@@ -1254,51 +1287,132 @@ function table(el: El, env: Env, here: (s: number) => [number, number][]): Box {
   const cols = el.cols ?? 1;
   const rows = Math.ceil(el.c!.length / cols);
   const cells = el.c!.map((r, k) => layoutRow(r, env, here(k)));
-  const colW = Array.from({ length: cols }, (_, c) => Math.max(...Array.from({ length: rows }, (_, r) => round(cells[r * cols + c].w))));
-  const rowA = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.a)));
-  const rowD = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.d)));
-  const align = (getAttr(el, 'columnalign') ?? 'center').split(/\s+/);
+  let colW = Array.from({ length: cols }, (_, c) => Math.max(...Array.from({ length: rows }, (_, r) => round(cells[r * cols + c].w))));
+  let rowA = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.a)));
+  let rowD = Array.from({ length: rows }, (_, r) => Math.max(...cells.slice(r * cols, r * cols + cols).map((b) => b.d)));
+  if (getAttr(el, 'equalrows') === 'true') {
+    rowA = rowA.map(() => Math.max(...rowA));
+    rowD = rowD.map(() => Math.max(...rowD));
+  }
+  if (getAttr(el, 'equalcolumns') === 'true') colW = colW.map(() => Math.max(...colW));
+  // wrs:columnalign (decimal / relation next to left / center / right) replaces columnalign when it is there
+  const align = (getAttr(el, 'wrs:columnalign') ?? getAttr(el, 'columnalign') ?? 'center').split(/\s+/);
+  const alignOf = (c: number) => align[Math.min(c, align.length - 1)];
+  const sepNames = (getAttr(el, 'wrs:decimalseparators') ?? '').split(/\s+/).filter(Boolean);
+  const SEPS: Record<string, string> = { dot: '.', comma: ',', apostrophe: "'\u2019", space: ' \u00a0\u2009' };
+  /** where a cell is split at its decimal separator / first relation: the width in front of it (null: none in the cell) */
+  const splitAt = (c: number, k: number): number | null => {
+    const row = el.c![k];
+    const mode = alignOf(c);
+    const chars = SEPS[sepNames.length ? sepNames[Math.min(c, sepNames.length - 1)] : 'dot'] ?? '.';
+    const i = row.findIndex((e) => e.c === undefined && (mode === 'decimal' ? e.x !== undefined && e.x.length === 1 && chars.includes(e.x) : e.t === 'mo' && /^[=<>\u2264\u2265\u2260\u2248\u2261\u223c\u2243\u2245\u221d\u226a\u226b\u227a\u227b\u2282\u2283\u2286\u2287\u2208\u220b\u2209\u2192\u2190\u2194\u21d2\u21d0\u21d4]$/.test(e.x ?? '')));
+    const xs = cells[k].row?.xs;
+    return i >= 0 && xs ? xs[i] : null;
+  };
+  const maxI: number[] = new Array(cols).fill(0);
+  const maxF: number[] = new Array(cols).fill(0);
+  const parts: (number | null)[] = new Array(cells.length).fill(null);
+  for (let c = 0; c < cols; c++) {
+    if (alignOf(c) !== 'decimal' && alignOf(c) !== 'relation') continue;
+    for (let r = 0; r < rows; r++) {
+      const k = r * cols + c;
+      const at = splitAt(c, k);
+      parts[k] = at;
+      if (at !== null) {
+        maxI[c] = Math.max(maxI[c], at);
+        maxF[c] = Math.max(maxF[c], round(cells[k].w) - at);
+      }
+    }
+    colW[c] = Math.max(colW[c], Math.round(maxI[c] + maxF[c]));
+  }
+  const rowAlign = (getAttr(el, 'rowalign') ?? 'baseline').split(/\s+/);
+  const colGaps = tableList(getAttr(el, 'columnspacing'), env);
+  const rowGaps = tableList(getAttr(el, 'rowspacing'), env);
+  const gap = (list: (number | null)[], k: number, def: number): number => {
+    if (!list.length) return def;
+    const v = list[Math.min(k, list.length - 1)];
+    return v === null ? def : v;
+  };
+  const fs = tableList(getAttr(el, 'framespacing'), env);
+  const padX = fs.length && fs[0] !== null ? Math.max(0, fs[0]!) : 4 * s;
+  const padY = fs.length && (fs[1] ?? fs[0]) !== null ? (fs[1] ?? fs[0])! : 2.5 * s;
   const kids: Placed[] = [];
-  const cellPadX = 4 * s;
-  const cellPadY = 2.5 * s;
-  let x = 0;
+  let x = padX;
   const colX: number[] = [];
   for (let c = 0; c < cols; c++) {
     colX.push(x);
-    x += colW[c] + cellPadX * 2;
+    x += colW[c];
+    if (c < cols - 1) x += gap(colGaps, c, 8 * s);
   }
-  let y = 0;
+  x += padX;
+  let y = padY;
   const rowBase: number[] = [];
   for (let r = 0; r < rows; r++) {
-    y += cellPadY + rowA[r];
+    y += rowA[r];
     rowBase.push(y);
-    y += rowD[r] + cellPadY;
+    y += rowD[r];
+    if (r < rows - 1) y += gap(rowGaps, r, 5 * s);
   }
+  y += padY;
   const totalH = y;
   for (let r = 0; r < rows; r++) {
+    const ra = rowAlign[Math.min(r, rowAlign.length - 1)];
     for (let c = 0; c < cols; c++) {
       const b = cells[r * cols + c];
-      const al = align[Math.min(c, align.length - 1)];
+      const al = alignOf(c);
       const cw = colW[c];
-      const dx = al === 'left' ? 0 : al === 'right' ? cw - round(b.w) : Math.floor((cw - round(b.w)) / 2);
-      kids.push({ b, x: Math.floor(colX[c] + cellPadX) + dx, y: rowBase[r] });
+      let dx = al === 'left' ? 0 : al === 'right' ? cw - round(b.w) : Math.floor((cw - round(b.w)) / 2);
+      if (al === 'decimal' || al === 'relation') {
+        const at = parts[r * cols + c];
+        if (at !== null) dx = Math.floor((cw - Math.round(maxI[c] + maxF[c])) / 2) + Math.round(maxI[c] - at);
+        else dx = al === 'decimal' ? cw - round(b.w) : 0; // a number without a separator ends at the column's edge
+      }
+      const rowTop = rowBase[r] - rowA[r];
+      const rowH = rowA[r] + rowD[r];
+      let by = rowBase[r];
+      if (ra === 'top') by = rowTop + b.a;
+      else if (ra === 'bottom') by = rowTop + rowH - b.d;
+      else if (ra === 'center') by = rowTop + (rowH - (b.a + b.d)) / 2 + b.a;
+      else if (ra === 'axis') by = rowBase[r] + 6 * s;
+      kids.push({ b, x: Math.floor(colX[c]) + dx, y: by });
     }
   }
   const items: Item[] = [];
   const frame = getAttr(el, 'frame');
   const rl = (getAttr(el, 'rowlines') ?? 'none').split(/\s+/);
   const cl = (getAttr(el, 'columnlines') ?? 'none').split(/\s+/);
-  const shift = totalH / 2 - K.axis * s; // centre the table on the math axis
-  const lift = totalH - shift; // the table's top sits this far above the baseline (its centre on the math axis)
+  // where the table sits on the line: `a` = the table's top above the baseline
+  const aAxis = totalH / 2 + K.axis * s;
+  let a = aAxis;
+  const av = (getAttr(el, 'align') ?? '').trim().split(/\s+/);
+  const n = av.length > 1 && /^\d+$/.test(av[1]) ? parseInt(av[1], 10) : 0;
+  if (av.length === 1 && av[0] === 'top') a = 2 * s;
+  else if (av.length === 1 && av[0] === 'bottom') a = totalH + 2 * s;
+  else if (av.length === 1 && (av[0] === 'center' || av[0] === 'baseline')) a = totalH / 2 + 2 * s;
+  else if (av.length === 2 && (av[0] === 'baseline' || av[0] === 'axis') && n >= 1) {
+    const r = n > rows ? 0 : n - 1; // a row that does not exist: the first one
+    a = rowBase[r];
+  }
+  const lift = a;
   kids.forEach((k) => (k.y -= lift));
   const top = -lift;
-  if (frame && frame !== 'none') {
-    items.push({ k: 'r', x: 0, y: top, w: x, h: 1 }, { k: 'r', x: 0, y: top + totalH - 1, w: x, h: 1 }, { k: 'r', x: 0, y: top, w: 1, h: totalH }, { k: 'r', x: x - 1, y: top, w: 1, h: totalH });
+  // the reference draws only solid lines (dashed ones are not drawn at all); the frame is one pixel bigger than the cells'
+  // box all around (1 px above / below and to the right), the lines between rows / columns run from
+  // the frame's left edge to 2 px short of its right edge / between the first and the last row of cells
+  if (frame === 'solid') {
+    const x0 = 0;
+    const x1 = x + 1;
+    const y0 = top - 1;
+    const y1 = top + totalH + 1;
+    items.push({ k: 'r', x: x0, y: y0, w: x1 - x0, h: 1 }, { k: 'r', x: x0, y: y1 - 1, w: x1 - x0, h: 1 }, { k: 'r', x: x0, y: y0, w: 1, h: y1 - y0 }, { k: 'r', x: x1 - 1, y: y0, w: 1, h: y1 - y0 });
   }
-  for (let r = 0; r < rows - 1; r++) if (rl[Math.min(r, rl.length - 1)] !== 'none') items.push({ k: 'r', x: 0, y: top + rowBase[r] + rowD[r] + cellPadY, w: x, h: 1 });
-  for (let c = 0; c < cols - 1; c++) if (cl[Math.min(c, cl.length - 1)] !== 'none') items.push({ k: 'r', x: colX[c + 1], y: top, w: 1, h: totalH });
-  const box = mk(x, totalH - shift, shift, items, kids);
-  return box;
+  for (let r = 0; r < rows - 1; r++) {
+    if (rl[Math.min(r, rl.length - 1)] === 'solid') items.push({ k: 'r', x: 0, y: top + rowBase[r] + rowD[r] + gap(rowGaps, r, 5 * s) / 2, w: x - 1, h: 1 });
+  }
+  for (let c = 0; c < cols - 1; c++) {
+    if (cl[Math.min(c, cl.length - 1)] === 'solid') items.push({ k: 'r', x: colX[c + 1] - gap(colGaps, c, 8 * s) / 2, y: top + 2, w: 1, h: totalH - 5 });
+  }
+  return mk(Math.max(0, x), a, Math.max(0, totalH - a), items, kids);
 }
 
 /* ------------------------------------------------------ elementary stacks */
@@ -1368,7 +1482,7 @@ interface StackLevel {
 
 type SEntry =
   | { k: 'row'; cells: SCell[]; path: [number, number][]; n: number; level: StackLevel | null; item: number; env: Env; src: Row }
-  | { k: 'line'; level: StackLevel; item: number }
+  | { k: 'line'; level: StackLevel; item: number; el?: El }
   | { k: 'carry'; cells: SCell[]; path: [number, number][]; n: number; loc: string; level: StackLevel; item: number; env: Env };
 
 /** flatten the items (rows, lines, carries, groups) of a stack slot into entries */
@@ -1384,7 +1498,7 @@ function stackEntries(items: Row, slotPath: [number, number][], env: Env, levels
         break;
       case 'msline':
         level.entryOf.set(k, out.length);
-        out.push({ k: 'line', level, item: k });
+        out.push({ k: 'line', level, item: k, el: it });
         break;
       case 'mscarries': {
         const e2 = scriptEnv(env);
@@ -1602,8 +1716,29 @@ function stackBlock(entries: SEntry[], levels: StackLevel[], env: Env, o: StackO
     if (e.k === 'row') place(e, idx);
   });
   // lines
+  // (`length` columns counted from the right end, moved `position` columns to the left; a negative length draws nothing;
+  // a negative position gives a stub 4 px wide the columns to the right – measured on the reference)
+  const colLeft = (c: number) => (c < 0 ? colX[0] + c * (9 * s + o.spacing) : c < ncols ? colX[c] : W + o.spacing + (c - ncols) * (9 * s + o.spacing));
+  const colRight = (c: number) => (c >= 0 && c < ncols ? colX[c] + colW[c] : colLeft(c) + 9 * s);
   entries.forEach((e) => {
-    if (e.k === 'line') items.push({ k: 'r', x: 0, y: lineY.get(e)! + 4 * s, w: W, h: 1 });
+    if (e.k !== 'line') return;
+    const y0 = lineY.get(e)! + 4 * s;
+    const len = e.el ? parseInt(getAttr(e.el, 'length') ?? '0', 10) || 0 : 0;
+    const pos = e.el ? parseInt(getAttr(e.el, 'position') ?? '0', 10) || 0 : 0;
+    if (len < 0) return;
+    if (len === 0) {
+      items.push({ k: 'r', x: 0, y: y0, w: W, h: 1 });
+      return;
+    }
+    const leftAligned = o.stackalign === 'left';
+    let first = leftAligned ? (pos > 0 ? -pos : 0) : ncols - len - pos;
+    if (pos < 0) {
+      if (first > ncols) first = 0;
+      items.push({ k: 'r', x: colLeft(first), y: y0, w: 4 * s, h: 1 });
+      return;
+    }
+    const x0 = colLeft(first);
+    items.push({ k: 'r', x: x0, y: y0, w: colRight(first + len - 1) - x0, h: 1 });
   });
   // carries
   entries.forEach((e, idx) => {
@@ -1922,11 +2057,14 @@ export function mirrorBox(b: Box): Box {
 }
 
 /** `arabicFont`: CSS family of the bundled Arabic face the letters of the Arabic blocks are measured in ('' = default) */
-export function layoutDocument(row: Row, _m?: unknown, size = 16, rtl = false, arabicFont = ''): DocLayout {
-  return withArabicFont(arabicFont, () => layoutDocumentIn(row, size, rtl));
+/** `attrs`: the root attributes of the document – its whole-equation style (font size, alignment of the lines) is in them */
+export function layoutDocument(row: Row, attrs?: [string, string][], size = 16, rtl = false, arabicFont = ''): DocLayout {
+  const st = docStyleOf(attrs);
+  const px = st.mathsize && /px$/.test(st.mathsize) ? parseFloat(st.mathsize) : size;
+  return withArabicFont(arabicFont, () => layoutDocumentIn(row, px, rtl, st.indentalign));
 }
 
-function layoutDocumentIn(row: Row, size: number, rtl: boolean): DocLayout {
+function layoutDocumentIn(row: Row, size: number, rtl: boolean, indentalign?: string): DocLayout {
   const env: Env = { size, level: 0, display: true, rtl };
   const lines: { from: number; to: number }[] = [];
   let from = 0;
@@ -1957,7 +2095,10 @@ function layoutDocumentIn(row: Row, size: number, rtl: boolean): DocLayout {
     const piece = row.slice(ln.from, ln.to);
     const b = boxes[li];
     const baseY = y + b.a;
-    const fl = flatten(b, rtl ? width - b.w : 0, baseY);
+    // the lines are aligned at the left (default), centred or at the right of the widest one; right-to-left mirrors the sides
+    const side = indentalign === 'center' || indentalign === 'right' || indentalign === 'left' ? indentalign : rtl ? 'right' : 'left';
+    const dx = side === 'right' ? width - b.w : side === 'center' ? Math.round((width - b.w) / 2) : 0;
+    const fl = flatten(b, dx, baseY);
     items.push(...fl.items);
     fl.rows.forEach((v, k) => {
       if (k !== '') rowsMap.set(k, v);

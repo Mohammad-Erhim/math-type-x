@@ -1,0 +1,5100 @@
+{
+ "sel_plain": {
+  "mml": "<mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>12</mn>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      123,
+      70,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>12</mn></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      70,
+      0
+     ],
+     [
+      16,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mi>a</mi></mpadded><mo>+</mo><mi>b</mi><mo>=</mo><mn>12</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mi>a</mi></mpadded><mo>+</mo><mi>b</mi><mo>=</mo><mn>12</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mi>a</mi></mpadded><mo>+</mo><mi>b</mi><mo>=</mo><mn>12</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mi>a</mi></mpadded><mo>+</mo><mi>b</mi><mo>=</mo><mn>12</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      70,
+      0
+     ],
+     [
+      31,
+      105,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      70,
+      0
+     ],
+     [
+      41,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      70,
+      0
+     ],
+     [
+      58,
+      105,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      70,
+      0
+     ],
+     [
+      67,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mpadded><mn>2</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mpadded><mn>2</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mpadded><mn>2</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mi>a</mi><mo>+</mo><mi>b</mi><mo>=</mo><mn>1</mn></mpadded><mn>2</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      70,
+      0
+     ],
+     [
+      76,
+      105,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ },
+ "sel_num": {
+  "mml": "<mn>12.5</mn><mo>+</mo><mn>1,000</mn>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      123,
+      86,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mn>12.5</mn><mo>+</mo><mn>1,000</mn></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      86,
+      1
+     ],
+     [
+      15,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mn>1</mn></mpadded><mn>2.5</mn><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mn>1</mn></mpadded><mn>2.5</mn><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mn>1</mn></mpadded><mn>2.5</mn><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mn>1</mn></mpadded><mn>2.5</mn><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      86,
+      1
+     ],
+     [
+      24,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      86,
+      1
+     ],
+     [
+      27,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      86,
+      0
+     ],
+     [
+      36,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mn>12.5</mn></mpadded><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mn>12.5</mn></mpadded><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mn>12.5</mn></mpadded><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mn>12.5</mn></mpadded><mo>+</mo><mn>1,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      86,
+      0
+     ],
+     [
+      51,
+      105,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      86,
+      0
+     ],
+     [
+      60,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      86,
+      0
+     ],
+     [
+      65,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      86,
+      0
+     ],
+     [
+      74,
+      105,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ },
+ "sel_numsep": {
+  "mml": "<mn>1</mn><mo>.</mo><mn>5</mn><mo>,</mo><mn>000</mn>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      123,
+      55,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mn>1</mn><mo>.</mo><mn>5</mn><mo>,</mo><mn>000</mn></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      15,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mn>1</mn></mpadded><mo>.</mo><mn>5</mn><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mn>1</mn></mpadded><mo>.</mo><mn>5</mn><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mn>1</mn></mpadded><mo>.</mo><mn>5</mn><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mn>1</mn></mpadded><mo>.</mo><mn>5</mn><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      20,
+      105,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      29,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mn>1</mn><mo>.</mo><mn>5</mn></mpadded><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mn>1</mn><mo>.</mo><mn>5</mn></mpadded><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mn>1</mn><mo>.</mo><mn>5</mn></mpadded><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mn>1</mn><mo>.</mo><mn>5</mn></mpadded><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Merge/unmerge separators in <mn>": {
+      "mml": "<math><mn>1.5</mn><mo>,</mo><mn>000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Left spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       },
+       {
+        "k": "b",
+        "t": "Right spacing",
+        "on": false,
+        "dis": false,
+        "len": true
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      34,
+      105,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      43,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mn>1</mn><mo>.</mo><mn>5</mn><mo>,</mo><mn>0</mn></mpadded><mn>00</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mn>1</mn><mo>.</mo><mn>5</mn><mo>,</mo><mn>0</mn></mpadded><mn>00</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mn>1</mn><mo>.</mo><mn>5</mn><mo>,</mo><mn>0</mn></mpadded><mn>00</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mn>1</mn><mo>.</mo><mn>5</mn><mo>,</mo><mn>0</mn></mpadded><mn>00</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Merge/unmerge separators in <mn>": {
+      "mml": "<math><mn>1.5,000</mn></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      52,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      61,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Merge/unmerge separators in <mn>",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      55,
+      0
+     ],
+     [
+      61,
+      105,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ },
+ "sel_frac": {
+  "mml": "<mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      147,
+      49,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      44
+     ]
+    ],
+    "mml": "<math><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      49,
+      0
+     ],
+     [
+      24,
+      105,
+      1,
+      44
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac></mpadded><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac></mpadded><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac></mpadded><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac></mpadded><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Left spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Right spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      49,
+      0
+     ],
+     [
+      39,
+      117,
+      1,
+      18
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      49,
+      0
+     ],
+     [
+      48,
+      117,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><msup><mpadded voffset=\"-1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mi>x</mi></mpadded><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><msup><mpadded lspace=\"+1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mi>x</mi></mpadded><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><msup><mpadded lspace=\"-1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mi>x</mi></mpadded><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><msup><mpadded voffset=\"+1px\"><mfrac><mi>a</mi><mi>b</mi></mfrac><mo>+</mo><mi>x</mi></mpadded><mn>2</mn></msup></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      49,
+      0
+     ],
+     [
+      55,
+      113,
+      1,
+      24
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      49,
+      0
+     ],
+     [
+      55,
+      113,
+      1,
+      24
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      49,
+      0
+     ],
+     [
+      55,
+      113,
+      1,
+      24
+     ]
+    ]
+   }
+  ]
+ },
+ "sel_fence": {
+  "mml": "<mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced><mi>y</mi>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      127,
+      68,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced><mi>y</mi></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      68,
+      0
+     ],
+     [
+      65,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></mpadded><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></mpadded><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></mpadded><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mfenced><mi>x</mi><mo>+</mo><mn>1</mn></mfenced></mpadded><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      68,
+      0
+     ],
+     [
+      74,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      68,
+      0
+     ],
+     [
+      74,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      68,
+      0
+     ],
+     [
+      74,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      68,
+      0
+     ],
+     [
+      74,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      68,
+      0
+     ],
+     [
+      74,
+      105,
+      1,
+      20
+     ]
+    ]
+   }
+  ]
+ },
+ "sel_text": {
+  "mml": "<mtext>hello</mtext><mi>x</mi><mspace width=\"1em\"/><mi>y</mi>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      123,
+      72,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      20
+     ]
+    ],
+    "mml": "<math><mtext>hello</mtext><mi>x</mi><mspace width=\"1em\"/><mi>y</mi></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      72,
+      1
+     ],
+     [
+      15,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mtext>h</mtext></mpadded><mtext>ello</mtext><mi>x</mi><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mtext>h</mtext></mpadded><mtext>ello</mtext><mi>x</mi><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mtext>h</mtext></mpadded><mtext>ello</mtext><mi>x</mi><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mtext>h</mtext></mpadded><mtext>ello</mtext><mi>x</mi><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      72,
+      1
+     ],
+     [
+      24,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      72,
+      1
+     ],
+     [
+      27,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      6,
+      123,
+      72,
+      1
+     ],
+     [
+      31,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      72,
+      0
+     ],
+     [
+      40,
+      105,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Space width",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Space height",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Space depth",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      72,
+      0
+     ],
+     [
+      49,
+      105,
+      1,
+      20
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mtext>hello</mtext><mi>x</mi></mpadded><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mtext>hello</mtext><mi>x</mi></mpadded><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mtext>hello</mtext><mi>x</mi></mpadded><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mtext>hello</mtext><mi>x</mi></mpadded><mspace width=\"1em\"/><mi>y</mi></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "sel_stack": {
+  "mml": "<mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      170,
+      33,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      67
+     ]
+    ],
+    "mml": "<math><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mstack charalign=\"center\" stackalign=\"right\"><mn>12</mn><msrow><mo>+</mo><mn>34</mn></msrow><msline/><mn>46</mn></mstack></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 9,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   },
+   {
+    "i": 10,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      33,
+      0
+     ],
+     [
+      39,
+      105,
+      1,
+      67
+     ]
+    ]
+   }
+  ]
+ },
+ "sel_matrix": {
+  "mml": "<mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      158,
+      50,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      51
+     ]
+    ],
+    "mml": "<math><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ],
+    "fx": {
+     "Nudge up": {
+      "mml": "<math><mpadded voffset=\"-1px\"><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge right": {
+      "mml": "<math><mpadded lspace=\"+1px\"><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge left": {
+      "mml": "<math><mpadded lspace=\"-1px\"><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     },
+     "Nudge down": {
+      "mml": "<math><mpadded voffset=\"+1px\"><mfenced><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr><mtr><mtd><mi>c</mi></mtd><mtd><mi>d</mi></mtd></mtr></mtable></mfenced></mpadded></math>",
+      "sig": [
+       {
+        "k": "b",
+        "t": "Nudge up",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge right",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge left",
+        "on": false,
+        "dis": false,
+        "len": false
+       },
+       {
+        "k": "b",
+        "t": "Nudge down",
+        "on": false,
+        "dis": false,
+        "len": false
+       }
+      ]
+     }
+    }
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Nudge up",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Nudge down",
+      "on": false,
+      "dis": false,
+      "len": false
+     }
+    ],
+    "caret": [
+     [
+      -994,
+      -895,
+      50,
+      0
+     ],
+     [
+      56,
+      105,
+      1,
+      51
+     ]
+    ]
+   }
+  ]
+ }
+}

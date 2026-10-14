@@ -15,7 +15,7 @@ export class DocGeometry implements Geometry {
     const fam = arabicCssFamily(this.core.getFontFamily());
     const json = (this.core.rtl ? 'R' : 'L') + fam + '|' + measureEpoch() + JSON.stringify(this.core.row);
     if (!this.lay || json !== this.cacheJson) {
-      this.lay = layoutDocument(this.core.row, undefined, this.size, this.core.rtl, fam);
+      this.lay = layoutDocument(this.core.row, this.core.attrs, this.size, this.core.rtl, fam);
       this.cacheJson = json;
     }
     return this.lay;

@@ -4,6 +4,7 @@
  */
 import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup, VALIGN_TAGS } from './model';
 import { EditorCore } from './engine';
+import { DOC_STYLE_PREFIX, docStyleOf } from './mathml';
 import STRETCHY from '../data/stretchy.json';
 
 export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep' | 'structure';
@@ -41,7 +42,7 @@ export function stretchDefault(el?: El): boolean | null {
 
 /** which recorded arrangement of the contextual tab shows the controls of `loc` */
 export function ctxLayoutKey(loc: Located): string {
-  const key = caretLayoutKey(loc);
+  const key = caretLayoutKey(loc) + (loc.inNumber && MERGE_KINDS.has(loc.kind) ? '_merge' : '');
   if (!loc.nudge) return key;
   // nudge buttons, a separator, then the controls of the context (derived and checked in tools/gen/ctx_layout.py)
   switch (loc.kind) {
@@ -128,14 +129,25 @@ export function enclosing(core: EditorCore): Hit[] {
 
 function tableCtx(h: Hit, chain: Hit[]): { kind: CtxKind; fence?: Hit } | null {
   if (h.el.t !== 'mtable') return null;
-  const outer = chain[chain.indexOf(h) + 1];
-  // fence immediately wrapping the table (single child)
-  if (outer && outer.el.t === 'mfenced' && outer.el.c![0].length === 1 && outer.el.c![0][0] === h.el) {
-    const open = getAttr(outer.el, 'open');
-    const close = getAttr(outer.el, 'close');
+  const at = chain.indexOf(h);
+  const outer = chain[at + 1];
+  // a fence around the table – directly, or further out (a table in a fraction in a fence, a table next to other
+  // things in a fence) as long as no other table comes in between – gives the fence's controls too
+  let fence: Hit | undefined;
+  for (let k = at + 1; k < chain.length; k++) {
+    if (chain[k].el.t === 'mfenced') {
+      fence = chain[k];
+      break;
+    }
+    if (chain[k].el.t === 'mtable') break;
+  }
+  if (fence) {
+    const direct = !!outer && outer === fence && fence.el.c![0].length === 1 && fence.el.c![0][0] === h.el;
+    const open = getAttr(fence.el, 'open');
+    const close = getAttr(fence.el, 'close');
     const ca = (getAttr(h.el, 'columnalign') ?? '').split(/\s+/).filter(Boolean);
-    if (open === '{' && close === '' && ca[0] === 'left' && ca.length === 1) return { kind: 'piecewise', fence: outer };
-    return { kind: 'matrix', fence: outer };
+    if (direct && open === '{' && close === '' && ca[0] === 'left' && ca.length === 1) return { kind: 'piecewise', fence };
+    return { kind: 'matrix', fence };
   }
   const ca = (getAttr(h.el, 'columnalign') ?? '').split(/\s+/).filter(Boolean);
   if (ca.length === 2 && ca[0] === 'right' && ca[1] === 'left') return { kind: 'aligned' };
@@ -177,8 +189,20 @@ export function locate(core: EditorCore): Located | null {
   if (loc && loc.op && stretchDefault(loc.op) !== null) loc.stretchy = true;
   // a selection shows the nudge buttons in front of everything else
   if (loc && core.hasSelection() && loc.kind !== 'structure') loc.nudge = true;
+  // between two digits of one number the reference adds the merge / unmerge button in front of the structure's controls
+  if (loc && !core.hasSelection() && MERGE_KINDS.has(loc.kind)) {
+    const row = core.currentRow();
+    const l = row[core.caret.index - 1];
+    const r = row[core.caret.index];
+    if (l && r && l.t === 'mn' && r.t === 'mn' && l.c === undefined && r.c === undefined && l.g !== undefined && l.g === r.g) {
+      loc.inNumber = true;
+      loc.tokens = [{ row, index: core.caret.index }];
+    }
+  }
   return loc;
 }
+
+const MERGE_KINDS = new Set<CtxKind>(['matrix', 'piecewise', 'table', 'aligned', 'fence_in']);
 
 function locateRaw(core: EditorCore): Located | null {
   const chain = enclosing(core);
@@ -204,13 +228,26 @@ function locateRaw(core: EditorCore): Located | null {
       }
     }
   }
+  // the caret in the text slot of a big operator: the operator's own spacing controls
+  const slotOp = !sel && chain.length > 0 && chain[0].el.t === 'mo' && chain[0].el.c !== undefined ? chain[0] : null;
   // extension (not in the reference): the vertical alignment of a structure with inputs – the one selected, or the
   // innermost one the caret is in
-  if (core.contextExtras) {
+  if (core.contextExtras && !slotOp) {
     if (sel && sel.els.length === 1 && sel.els[0].c !== undefined && VALIGN_TAGS.has(sel.els[0].t)) {
       return { kind: 'structure', fence: { row: sel.row, index: sel.from, el: sel.els[0], path: core.sel!.path as Step[], slot: 0 } };
     }
-    if (!sel) {
+    // next to an operator, a line break or a space the reference's own controls (spacing, width…) are the context
+    const here = core.currentRow();
+    const at = [here[core.caret.index - 1], here[core.caret.index]];
+    const refContext = at.some(
+      (e) =>
+        isOpEl(e) ||
+        isNlEl(e) ||
+        (!!e && e.t === 'mspace') ||
+        (!!e && e.t === 'mn' && e.c === undefined && !!e.g && here[core.caret.index - 1]?.g === here[core.caret.index]?.g && here[core.caret.index - 1]?.t === 'mn' && here[core.caret.index]?.t === 'mn') ||
+        (!!e && (e.t === 'msub' || e.t === 'msup' || e.t === 'msubsup') && e.c![0].length === 1 && isOpEl(e.c![0][0])),
+    );
+    if (!sel && !refContext) {
       // the innermost structure of the caret: wrappers of an input (the argument placeholder, a big operator's text slot)
       // are looked through; a fence / table / stack keeps its own controls
       const WRAP = new Set(['maction', 'mrow', 'mstyle', 'mpadded', 'mo']);
@@ -243,13 +280,11 @@ function locateRaw(core: EditorCore): Located | null {
   // a script structure whose base is an operator (an integral with limits): the caret in front of it is next to that operator
   const isOpScript = (e?: El) => !!e && (e.t === 'msub' || e.t === 'msup' || e.t === 'msubsup') && e.c![0].length === 1 && isOp(e.c![0][0]);
   /** the operator token the spacing / stretchy controls refer to */
-  const opNextTo = (): El | undefined => (sel ? sel.op : isOp(left) ? left : isOp(right) ? right : isOpScript(right) ? right!.c![0][0] : undefined);
-  const spacingHere = sel ? sel.spacing : isOp(left) || isOp(right) || isOpScript(right);
+  const opNextTo = (): El | undefined => (sel ? sel.op : slotOp ? slotOp.el : isOp(left) ? left : isOp(right) ? right : isOpScript(right) ? right!.c![0][0] : undefined);
+  const spacingHere = sel ? sel.spacing : !!slotOp || isOp(left) || isOp(right) || isOpScript(right);
   const multilineCtx = (): Located | null => {
-    // a formula aligned as a whole sits in a group (mstyle indentalign): the lines are still the document's lines
-    const group = core.row.length === 1 && core.row[0].t === 'mstyle' && getAttr(core.row[0], 'indentalign') !== undefined ? core.row[0] : null;
-    const lines = group && group.c ? group.c[0] : core.row;
-    const outer = group ? chain.filter((h) => h.el !== group) : chain;
+    const lines = core.row;
+    const outer = chain;
     if (lines.some((e) => isNl(e)) && outer.length === 0) {
       return { kind: 'multiline', spacing: sel ? sel.spacing : isNl(left) || isNl(right) || spacingHere, op: opNextTo() };
     }
@@ -281,7 +316,17 @@ function locateRaw(core: EditorCore): Located | null {
         return withCarries(core, { kind: 'stack', hit: st, inNumber: between });
       }
     }
-    if (h.el.t === 'mfenced') return { kind: 'fence_in', fence: h, spacing: spacingHere, op: opNextTo() };
+    if (h.el.t === 'mfenced' && !chain.slice(chain.indexOf(h) + 1).some((x) => x.el.t === 'mstack' || x.el.t === 'mlongdiv')) {
+      // a fence inside a table cell: the fence's controls come with the table's
+      const k = chain.indexOf(h);
+      const tb = chain.slice(k + 1).find((x) => x.el.t === 'mtable');
+      if (tb) {
+        const cs = core.sel?.cells;
+        const hit = cs && cs.slots.length && tb.el === rowAt(core.row, core.sel!.path)[core.sel!.from] ? { ...tb, slot: cs.slots[0] } : tb;
+        return { kind: 'matrix', table: hit, fence: h, spacing: spacingHere, op: opNextTo() };
+      }
+      return { kind: 'fence_in', fence: h, spacing: spacingHere, op: opNextTo() };
+    }
   }
   if (sel) {
     const { els, from } = sel;
@@ -297,6 +342,8 @@ function locateRaw(core: EditorCore): Located | null {
     if (ml) return ml;
     return { kind: 'symbol_sel', tokens: els.map((_, k) => ({ row: sel!.row, index: from + k })), spacing: sel.spacing, op: sel.op };
   }
+  // the caret in the text slot of a big operator (nothing around it that has controls of its own): the operator's spacing
+  if (slotOp) return { kind: 'operator', tokens: [{ row: slotOp.row, index: slotOp.index }], op: slotOp.el };
   for (const e of [left, right]) {
     if (e && e.t === 'mspace' && getAttr(e, 'linebreak') !== 'newline') return { kind: 'mspace', el: e };
   }
@@ -391,7 +438,10 @@ function operatorControls(loc: Located, group: number): CtxControl[] {
 }
 
 export function controlsFor(loc: Located): CtxControl[] {
-  const own = ownControls(loc);
+  let own = ownControls(loc);
+  if (loc.inNumber && MERGE_KINDS.has(loc.kind)) {
+    own = [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0 }, ...own.map((c) => ({ ...c, group: c.group + 1 }))];
+  }
   return loc.nudge ? [...NUDGES(), ...own] : own;
 }
 
@@ -515,10 +565,11 @@ function cellPos(loc: Located): { r: number; c: number; rows: number; cols: numb
   return { r: Math.floor(s / cols), c: s % cols, rows, cols };
 }
 
-function list(el: El, name: string, n: number, def: string): string[] {
+/** the n entries of a list attribute; entries beyond it repeat the last one (how it is read) or, when written, are the default */
+function list(el: El, name: string, n: number, def: string, repeat = true): string[] {
   const v = (getAttr(el, name) ?? '').split(/\s+/).filter(Boolean);
   const out: string[] = [];
-  for (let i = 0; i < n; i++) out.push(v[i] ?? v[v.length - 1] ?? def);
+  for (let i = 0; i < n; i++) out.push(v[i] ?? (repeat ? v[v.length - 1] : undefined) ?? def);
   return out;
 }
 
@@ -602,9 +653,8 @@ export function ctxValue(core: EditorCore, loc: Located, id: string): CtxValue {
     case 'ml_center':
     case 'ml_right': {
       if (loc.relation) return { toggled: false };
-      // lines are left aligned unless the formula sits in a group with an indentalign
-      const row = core.row;
-      const al = row.length === 1 && row[0].t === 'mstyle' ? getAttr(row[0], 'indentalign') : undefined;
+      // lines are left aligned unless the document has an indentalign style
+      const al = docStyleOf(core.attrs).indentalign;
       return { toggled: (al ?? 'left') === id.slice(3) };
     }
     case 'left_spacing':
@@ -653,7 +703,7 @@ function displayBracket(v: string): string {
 
 /* -------------------------------------------------------------- apply */
 
-const TABLE_ORDER = ['align', 'rowalign', 'columnspacing', 'columnalign', 'wrs:columnalign', 'wrs:decimalseparators', 'frame', 'rowlines', 'columnlines', 'equalrows', 'equalcolumns', 'rowspacing', 'framespacing'];
+const TABLE_ORDER = ['align', 'columnspacing', 'rowalign', 'columnalign', 'wrs:columnalign', 'wrs:decimalseparators', 'frame', 'rowlines', 'columnlines', 'equalrows', 'equalcolumns', 'rowspacing', 'framespacing'];
 const FENCE_ORDER = ['open', 'close', 'separators', 'wrs:valign'];
 
 function setOrdered(e: El, name: string, v: string | null, order: string[]): void {
@@ -661,25 +711,39 @@ function setOrdered(e: El, name: string, v: string | null, order: string[]): voi
 }
 
 /** parse a length: "2px", "0.5em", "1.5ex", "2 px", bare numbers; returns canonical or null */
+/** the text of a length field → the attribute value the reference writes: optional minus, decimal point or comma, unit
+ *  px / em / ex (any case) or none; ".5em" is written "0.5em", "1,5 em" "1.5em"; anything else (cm, %, +1em, words) is rejected */
 export function parseLength(raw: string): string | null {
-  const s = raw.trim();
-  const m = /^(\d+(?:\.\d+)?|\.\d+)\s*(px|em|ex)?$/i.exec(s);
+  const m = /^(-)?(\d+(?:[.,]\d+)?|[.,]\d+)\s*(px|em|ex)?$/i.exec(raw.trim());
   if (!m) return null;
-  return m[2] ? m[1] + m[2].toLowerCase() : m[1];
+  let num = m[2].replace(',', '.');
+  if (num.startsWith('.')) num = '0' + num;
+  return (m[1] ?? '') + num + (m[3] ? m[3].toLowerCase() : '');
+}
+
+/** whatever is changed on a fence, the reference writes both brackets in its own spelling (angle brackets as < >, ‖ as ||) */
+function normFence(f: El): void {
+  for (const side of ['open', 'close'] as const) {
+    const cur = getAttr(f, side);
+    if (cur !== undefined && cur !== '' && bracketAttr(cur) !== cur) setOrdered(f, side, bracketAttr(cur), FENCE_ORDER);
+  }
 }
 
 function bracketAttr(v: string): string {
   return v === '⟨' ? '<' : v === '⟩' ? '>' : v === '‖' ? '||' : v;
 }
 
-function insertCols(t: El, at: number, n: number, dupAlign = false): void {
+function insertCols(t: El, at: number, n: number, dupAlign: false | 'left' | 'right' = false): void {
   const cols = t.cols ?? 1;
-  for (const name of ['columnalign', 'wrs:columnalign']) {
-    const v = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
-    if (v.length && dupAlign) {
-      const arr = Array.from({ length: cols }, (_, i) => v[i] ?? v[v.length - 1]);
-      arr.splice(at, 0, arr[Math.max(at - 1, 0)]);
-      setAttr(t, name, arr.join(' '), TABLE_ORDER);
+  // a list attribute grows by a copy of the entry in front of the new column – only when the column comes inside the
+  // entries the list has (a short list is read with its last entry repeated and stays as it is)
+  if (dupAlign) {
+    for (const name of ['columnalign', 'wrs:columnalign', 'columnspacing']) {
+      const v = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
+      if (v.length && at < v.length) {
+        v.splice(at, 0, v[Math.max(at - 1, 0)]);
+        setAttr(t, name, v.join(' '), TABLE_ORDER);
+      }
     }
   }
   const rows = Math.ceil(t.c!.length / cols);
@@ -741,6 +805,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       setOrdered(f, name, v === def && name !== 'separators' ? null : v === def ? null : bracketAttr(v), FENCE_ORDER);
       if (name === 'separators' && v === ',') setOrdered(f, name, null, FENCE_ORDER);
       if (name !== 'separators' && v === '') setOrdered(f, name, '', FENCE_ORDER);
+      normFence(f);
     });
   };
   switch (id) {
@@ -754,13 +819,14 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       fenceAttr('separators', value ?? ',');
       break;
     case 'valign_baseline':
-      if (f) withUndo(() => setOrdered(f, 'wrs:valign', null, FENCE_ORDER));
-      break;
     case 'valign_middle':
-      if (f) withUndo(() => setOrdered(f, 'wrs:valign', 'middle', FENCE_ORDER));
-      break;
     case 'valign_middle_baseline':
-      if (f) withUndo(() => setOrdered(f, 'wrs:valign', 'middle-baseline', FENCE_ORDER));
+      if (f) {
+        withUndo(() => {
+          setOrdered(f, 'wrs:valign', id === 'valign_baseline' ? null : id === 'valign_middle' ? 'middle' : 'middle-baseline', FENCE_ORDER);
+          if (f.t === 'mfenced') normFence(f);
+        });
+      }
       break;
     case 'align_axis':
       if (t) withUndo(() => setOrdered(t, 'align', null, TABLE_ORDER));
@@ -772,7 +838,8 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       if (t) withUndo(() => setOrdered(t, 'align', id.slice(6), TABLE_ORDER));
       break;
     case 'align_row':
-      if (t) withUndo(() => setOrdered(t, 'align', 'axis 2', TABLE_ORDER));
+      // the axis of the row the caret is in
+      if (t) withUndo(() => setOrdered(t, 'align', `axis ${(pos?.r ?? 0) + 1}`, TABLE_ORDER));
       break;
     case 'row_below':
     case 'row_above':
@@ -787,7 +854,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'col_right':
     case 'col_left':
       if (t && pos) {
-        withUndo(() => insertCols(t, id === 'col_right' ? pos.c + 1 : pos.c, 1, id === 'col_left'));
+        withUndo(() => insertCols(t, id === 'col_right' ? pos.c + 1 : pos.c, 1, id === 'col_left' ? 'left' : 'right'));
         keepCell(pos.r, pos.c, pos.cols + 1); // inserting at the left: the caret is in the new column
       }
       break;
@@ -822,10 +889,10 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       if (!t || !pos) break;
       const horizontal = id.startsWith('line_below');
       const name = horizontal ? 'rowlines' : 'columnlines';
-      const n = horizontal ? pos.rows : pos.cols;
       const at = (horizontal ? pos.r : pos.c);
       const cur = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
-      const arr = Array.from({ length: n + 1 }, (_, i) => cur[i] ?? 'none');
+      // one entry per line up to the one written, and a last 'none' (the reference's list is never shorter than the lines it keeps)
+      const arr = Array.from({ length: Math.max(cur.length, at + 2) }, (_, i) => cur[i] ?? 'none');
       const remove = id.endsWith('_remove');
       if (remove && !cur.length) break;
       withUndo(() => {
@@ -839,7 +906,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'colalign_right':
       if (t && pos) {
         withUndo(() => {
-          const arr = list(t, 'columnalign', pos.cols, 'center');
+          const arr = list(t, 'columnalign', pos.cols, 'center', false);
           arr[pos.c] = id.slice(9);
           setOrdered(t, 'columnalign', arr.join(' '), TABLE_ORDER);
         });
@@ -849,7 +916,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'colalign_relation':
       if (t && pos) {
         withUndo(() => {
-          const arr = list(t, getAttr(t, 'wrs:columnalign') ? 'wrs:columnalign' : 'columnalign', pos.cols, 'center');
+          const arr = list(t, getAttr(t, 'wrs:columnalign') ? 'wrs:columnalign' : 'columnalign', pos.cols, 'center', false);
           arr[pos.c] = id === 'colalign_decimal' ? 'decimal' : 'relation';
           setOrdered(t, 'columnalign', null, TABLE_ORDER);
           setOrdered(t, 'wrs:columnalign', arr.join(' '), TABLE_ORDER);
@@ -859,11 +926,11 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'decimal_symbol':
       if (t && pos) {
         withUndo(() => {
-          const arr = list(t, 'wrs:decimalseparators', pos.cols, 'dot');
+          const arr = list(t, 'wrs:decimalseparators', pos.cols, 'dot', false);
           arr[pos.c] = value ?? 'dot';
           setOrdered(t, 'wrs:decimalseparators', arr.join(' '), TABLE_ORDER);
           if (!getAttr(t, 'wrs:columnalign')) {
-            const ca = list(t, 'columnalign', pos.cols, 'center');
+            const ca = list(t, 'columnalign', pos.cols, 'center', false);
             ca[pos.c] = 'decimal';
             setOrdered(t, 'columnalign', null, TABLE_ORDER);
             setOrdered(t, 'wrs:columnalign', ca.join(' '), TABLE_ORDER);
@@ -938,7 +1005,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       }
       // the operator next to the caret / selection when the context found one
       const e = loc.op ?? (tk ? tk.row[tk.index] : undefined);
-      if (!e || e.c !== undefined) break;
+      if (!e || (e.c !== undefined && e.t !== 'mo')) break;
       withUndo(() => setAttr(e, id === 'left_spacing' ? 'lspace' : 'rspace', v));
       break;
     }
@@ -957,8 +1024,8 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'sp_depth': {
       const v = parseLength(value ?? '');
       if (v === null || !loc.el) return false;
-      // reference: only some units are written (spec examples)
-      withUndo(() => setAttr(loc.el!, id.slice(3), v));
+      // a zero is the default of a space: the reference drops the attribute
+      withUndo(() => setAttr(loc.el!, id.slice(3), parseFloat(v) === 0 ? null : v));
       break;
     }
     case 'nudge_up':
@@ -974,7 +1041,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       core.nudge('right');
       break;
     case 'numsep_merge':
-      mergeNumSep(core, loc);
+      withUndo(() => mergeNumSep(core, loc));
       break;
     case 'ml_relation':
       if (!loc.relation) withUndo(() => relationTable(core));
@@ -1025,8 +1092,7 @@ function isRelationTable(row: Row): boolean {
 
 /** the lines of the document become the rows of a table: left of the relation, the relation, the rest */
 function relationTable(core: EditorCore): void {
-  const group = core.row.length === 1 && core.row[0].t === 'mstyle' && core.row[0].c ? core.row[0] : null;
-  const src = group ? group.c![0] : core.row;
+  const src = core.row;
   const lines: Row[] = [[]];
   for (const e of src) {
     if (e.t === 'mspace' && getAttr(e, 'linebreak') === 'newline') lines.push([]);
@@ -1039,6 +1105,8 @@ function relationTable(core: EditorCore): void {
     else cells.push(ln.slice(0, k), [ln[k]], ln.slice(k + 1));
   }
   const t: El = { t: 'mtable', a: [['columnspacing', '0px'], ['columnalign', 'right center left']], c: cells, cols: 3 };
+  // the table has its own alignment: the document's indentalign goes
+  core.attrs = core.attrs.filter(([k]) => k !== DOC_STYLE_PREFIX + 'indentalign');
   core.row = [t];
   core.sel = null;
   core.caret = { path: [[0, 2]], index: cells[2].length };
@@ -1058,16 +1126,12 @@ function linesFromTable(core: EditorCore): void {
   core.caret = { path: [], index: out.length };
 }
 
+/** a style of the whole equation (the lines' alignment): written as the wrapping mstyle, kept as a style of the document */
 function wrapRootStyle(core: EditorCore, attr: string, v: string): void {
-  if (core.row.length === 1 && core.row[0].t === 'mstyle') {
-    setAttr(core.row[0], attr, v);
-    return;
-  }
-  const w: El = { t: 'mstyle', a: [[attr, v]], c: [core.row] };
-  core.row = [w];
-  core.caret = { path: [[0, 0], ...core.caret.path], index: core.caret.index };
-  // a selection moves into the group with the content
-  if (core.sel) core.sel = { ...core.sel, path: [[0, 0], ...core.sel.path] };
+  const key = DOC_STYLE_PREFIX + attr;
+  const i = core.attrs.findIndex(([k]) => k === key);
+  if (i >= 0) core.attrs[i][1] = v;
+  else core.attrs.push([key, v]);
 }
 
 function mergeNumSep(core: EditorCore, loc: Located): void {
@@ -1076,9 +1140,13 @@ function mergeNumSep(core: EditorCore, loc: Located): void {
   const row = tk[0].row;
   if (loc.kind === 'numsep_sel') {
     // merge the selected mn / mo / mn … into one number
-    const from = tk[0].index;
+    let from = tk[0].index;
+    let to = from + tk.length;
+    // a number the selection only touches is merged whole (the reference takes the digits left of / right of the selection too)
+    while (from > 0 && row[from - 1].t === 'mn' && row[from].t === 'mn' && row[from - 1].g !== undefined && row[from - 1].g === row[from].g) from--;
+    while (to < row.length && row[to - 1].t === 'mn' && row[to].t === 'mn' && row[to].g !== undefined && row[to].g === row[to - 1].g) to++;
     const g = newGroup();
-    for (let k = 0; k < tk.length; k++) {
+    for (let k = 0; k < to - from; k++) {
       const e = row[from + k];
       if (e.t === 'mo') {
         e.t = 'mn';
@@ -1089,7 +1157,7 @@ function mergeNumSep(core: EditorCore, loc: Located): void {
     core.touch();
     return;
   }
-  if (loc.kind === 'numsep') {
+  if (loc.kind === 'numsep' || loc.inNumber) {
     // caret inside a number: split it at its separators ("1,000.25" → 1 , 000 . 25)
     const at = tk[0].index;
     const g0 = row[at - 1].g;
@@ -1186,7 +1254,11 @@ function resultRowOp(core: EditorCore, info: StackInfo, id: string, value?: stri
     case 'st_line': {
       const line: El = { t: 'msline', a: [], x: '' };
       if (row.length > 0 && row.length < W) setAttr(line, 'length', String(row.length));
-      if (idx === 0 && row.length > 0) {
+      if (row.length === 0) {
+        // an empty quotient takes the line itself
+        row.push(line);
+        core.caret = { path: info.result!.path, index: 0 };
+      } else if (idx === 0 && row.length > 0) {
         // in front of the result: the line takes the result's place and the result joins the rows
         const first = row.splice(0, row.length);
         items.unshift(asRow(first));

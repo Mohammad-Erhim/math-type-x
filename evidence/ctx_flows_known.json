@@ -1,0 +1,22 @@
+{
+ "rnd05": "caret-stop navigation differs by one stop after a big operator slot (known gap, see project notes)",
+ "rnd25": "caret-stop navigation differs by one stop around a left script inside a table cell (known gap)",
+ "rnd26": "caret-stop navigation differs by one stop after the big operator slot (known gap)",
+ "rnd41": "in nested tables the reference shows the OUTER table's column alignment as pressed while the buttons act on the inner one (evidence/ctx_nest2_ref.json); ours shows the state of the table the buttons act on",
+ "rnd34": "caret-stop navigation differs by one stop around a left script (known gap)",
+ "rnd30": "caret-stop navigation differs at the end of a long division inside a big operator slot (known gap)",
+ "rb05": "the reference loads this nested aligned-equation flow as an empty formula (its editor refused the structure)",
+ "rb07": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb09": "caret-stop navigation differs by one stop at the end of a table cell holding a left script (known gap)",
+ "rb12": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb26": "fence / operator inside a long division: the reference shows the fence, spacing and stack controls together (needs the reference panel layout of that combination)",
+ "rb30": "fence / operator inside a long division: the reference shows the fence, spacing and stack controls together (needs the reference panel layout of that combination)",
+ "rb44": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb47": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb48": "fence / operator inside a long division: the reference shows the fence, spacing and stack controls together (needs the reference panel layout of that combination)",
+ "rb52": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb53": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb61": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb70": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)",
+ "rb78": "caret-stop navigation differs by one stop around a left script / big-operator slot (known gap)"
+}

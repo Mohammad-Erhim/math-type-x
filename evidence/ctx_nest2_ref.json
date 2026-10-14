@@ -1,0 +1,9908 @@
+{
+ "tt": {
+  "mml": "<mtable columnalign=\"left left\"><mtr><mtd><mtable columnalign=\"right right\"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mtd><mtd><mi>y</mi></mtd></mtr></mtable>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      154,
+      59,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      57
+     ]
+    ],
+    "mml": "<math><mtable columnalign=\"left left\"><mtr><mtd><mtable columnalign=\"right right\"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mtd><mtd><mi>y</mi></mtd></mtr></mtable></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      10,
+      154,
+      34,
+      1
+     ],
+     [
+      10,
+      108,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      129,
+      9,
+      1
+     ],
+     [
+      14,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      129,
+      9,
+      1
+     ],
+     [
+      23,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      129,
+      9,
+      1
+     ],
+     [
+      31,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      129,
+      9,
+      1
+     ],
+     [
+      40,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      154,
+      9,
+      1
+     ],
+     [
+      14,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      154,
+      9,
+      1
+     ],
+     [
+      23,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      154,
+      9,
+      1
+     ],
+     [
+      31,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 9,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      154,
+      9,
+      1
+     ],
+     [
+      40,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 10,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      10,
+      154,
+      34,
+      1
+     ],
+     [
+      44,
+      108,
+      1,
+      51
+     ]
+    ]
+   }
+  ]
+ },
+ "ft": {
+  "mml": "<mtable columnalign=\"left left\"><mtr><mtd><mfenced><mtable columnalign=\"right right\"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mfenced></mtd><mtd><mi>y</mi></mtd></mtr></mtable>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      161,
+      73,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      57
+     ]
+    ],
+    "mml": "<math><mtable columnalign=\"left left\"><mtr><mtd><mfenced><mtable columnalign=\"right right\"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mfenced></mtd><mtd><mi>y</mi></mtd></mtr></mtable></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      10,
+      161,
+      48,
+      1
+     ],
+     [
+      10,
+      108,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      17,
+      154,
+      34,
+      1
+     ],
+     [
+      17,
+      108,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      21,
+      129,
+      9,
+      1
+     ],
+     [
+      21,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      21,
+      129,
+      9,
+      1
+     ],
+     [
+      30,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      38,
+      129,
+      9,
+      1
+     ],
+     [
+      38,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      38,
+      129,
+      9,
+      1
+     ],
+     [
+      47,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      21,
+      154,
+      9,
+      1
+     ],
+     [
+      21,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      21,
+      154,
+      9,
+      1
+     ],
+     [
+      30,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 9,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      38,
+      154,
+      9,
+      1
+     ],
+     [
+      38,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 10,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      38,
+      154,
+      9,
+      1
+     ],
+     [
+      47,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 11,
+    "sig": [
+     {
+      "k": "s",
+      "t": "setOpenBracket",
+      "v": "(",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setCloseBracket",
+      "v": ")",
+      "o": [
+       "",
+       "(",
+       ")",
+       "[",
+       "]",
+       "⟨",
+       "⟩",
+       "{",
+       "}",
+       "⌊",
+       "⌋",
+       "⌈",
+       "⌉",
+       "⟦",
+       "⟧",
+       "|",
+       "‖"
+      ]
+     },
+     {
+      "k": "s",
+      "t": "setSeparator",
+      "v": ",",
+      "o": [
+       ",",
+       ".",
+       ";",
+       ":",
+       " "
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Middle-baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      17,
+      154,
+      34,
+      1
+     ],
+     [
+      51,
+      108,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 12,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      10,
+      161,
+      48,
+      1
+     ],
+     [
+      58,
+      108,
+      1,
+      51
+     ]
+    ]
+   }
+  ]
+ },
+ "ttr": {
+  "mml": "<mtable><mtr><mtd><mtable columnalign=\"right right\"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mtd><mtd><mi>y</mi></mtd></mtr></mtable>",
+  "stops": [
+   {
+    "i": 0,
+    "sig": [],
+    "caret": [
+     [
+      6,
+      154,
+      59,
+      1
+     ],
+     [
+      6,
+      105,
+      1,
+      57
+     ]
+    ],
+    "mml": "<math><mtable><mtr><mtd><mtable columnalign=\"right right\"><mtr><mtd><mn>1</mn></mtd><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>3</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable></mtd><mtd><mi>y</mi></mtd></mtr></mtable></math>"
+   },
+   {
+    "i": 1,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      10,
+      154,
+      34,
+      1
+     ],
+     [
+      10,
+      108,
+      1,
+      51
+     ]
+    ]
+   },
+   {
+    "i": 2,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      129,
+      9,
+      1
+     ],
+     [
+      14,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 3,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      129,
+      9,
+      1
+     ],
+     [
+      23,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 4,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      129,
+      9,
+      1
+     ],
+     [
+      31,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 5,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      129,
+      9,
+      1
+     ],
+     [
+      40,
+      111,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 6,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      154,
+      9,
+      1
+     ],
+     [
+      14,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 7,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      14,
+      154,
+      9,
+      1
+     ],
+     [
+      23,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 8,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      154,
+      9,
+      1
+     ],
+     [
+      31,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 9,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      31,
+      154,
+      9,
+      1
+     ],
+     [
+      40,
+      136,
+      1,
+      20
+     ]
+    ]
+   },
+   {
+    "i": 10,
+    "sig": [
+     {
+      "k": "b",
+      "t": "Align with axis",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with baseline",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align to row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align with bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert row above",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert column at left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove row",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove column",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove frame",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate solid lines",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Insert right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Activate dash lines",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove line below",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Remove right line",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align left",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align center",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align right",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Decimal align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "s",
+      "t": "Decimal align symbol",
+      "v": "dot",
+      "o": [
+       "dot",
+       "comma",
+       "apostrophe",
+       "space"
+      ]
+     },
+     {
+      "k": "b",
+      "t": "Align rows to top",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to center",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to bottom",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Relation align",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to baseline",
+      "on": true,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Align rows to axis",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal row heights",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Force equal column widths",
+      "on": false,
+      "dis": false,
+      "len": false
+     },
+     {
+      "k": "b",
+      "t": "Column spacing at right",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Horizontal frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Row spacing below",
+      "on": false,
+      "dis": false,
+      "len": true
+     },
+     {
+      "k": "b",
+      "t": "Vertical frame spacing",
+      "on": false,
+      "dis": false,
+      "len": true
+     }
+    ],
+    "caret": [
+     [
+      10,
+      154,
+      34,
+      1
+     ],
+     [
+      44,
+      108,
+      1,
+      51
+     ]
+    ]
+   }
+  ]
+ }
+}

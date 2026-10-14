@@ -8,6 +8,7 @@ const fs = require('fs');
 const { chromium } = require('playwright');
 const cases = process.env.CASES ? JSON.parse(fs.readFileSync(process.env.CASES, 'utf8')) : require('./ctx_cases').cases;
 const MODE = process.env.MODE || 'discover';
+const SEL = MODE === 'select' || !!process.env.SELECT; // extend a selection instead of moving the caret (SELECT=1 with MODE=effects)
 const URL = process.env.URL || 'https://www.wiris.com/en/mathtype/';
 const OUT = process.env.OUT || `/tmp/ctx_${MODE}.json`;
 const only = process.env.ONLY ? process.env.ONLY.split(',') : null;
@@ -97,7 +98,7 @@ const SIG = () => {
             const opts = ctl.k === 's' ? ctl.o.filter((o) => o !== ctl.v).slice(0, 5) : [null];
             for (const o of opts) {
               await open(c);
-              for (let j = 0; j < i; j++) await key(MODE === 'select' ? 'Shift+ArrowRight' : 'ArrowRight');
+              for (let j = 0; j < i; j++) await key(SEL ? 'Shift+ArrowRight' : 'ArrowRight');
               const label = ctl.t + (o !== null ? '=' + o : '');
               try {
                 if (ctl.k === 's') await p.locator(`#editorContainer select[title="${ctl.t}"]:visible`).first().selectOption(o, { timeout: 4000 });
@@ -109,12 +110,12 @@ const SIG = () => {
             }
           }
           await open(c);
-          for (let j = 0; j < i; j++) await key(MODE === 'select' ? 'Shift+ArrowRight' : 'ArrowRight');
+          for (let j = 0; j < i; j++) await key(SEL ? 'Shift+ArrowRight' : 'ArrowRight');
         }
         rec.stops.push(st);
         const before = JSON.stringify(caret);
-        if (before === prev && i > 1 && MODE !== 'select') break;
-        await key(MODE === 'select' ? 'Shift+ArrowRight' : 'ArrowRight');
+        if (before === prev && i > 1 && !SEL) break;
+        await key(SEL ? 'Shift+ArrowRight' : 'ArrowRight');
         prev = before;
       }
     } catch (e) { rec.err = String(e).slice(0, 200); }

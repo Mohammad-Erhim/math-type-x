@@ -597,7 +597,7 @@ export class MathEditor implements ToolbarHost {
   private onCoreChange(): void {
     this.syncDigits();
     if (!this.root) return;
-    this.normalizeRoot();
+    
     this.render();
     // what is not needed to answer a tap (the MathML text, the saved copy, the change event) waits until the taps pause:
     // a slow phone spends the tap on the drawing, not on bookkeeping
@@ -613,14 +613,6 @@ export class MathEditor implements ToolbarHost {
     if (mml !== this.lastMml) {
       this.lastMml = mml;
       this.emitEv('change', { mathml: this.getMathML(), empty: this.isEmpty() });
-    }
-  }
-
-  /** keep typing inside a whole-equation mstyle wrapper */
-  private normalizeRoot(): void {
-    const c = this.core;
-    if (c.row.length === 1 && c.row[0].t === 'mstyle' && c.row[0].a.some(([k]) => k === 'mathsize') && c.caret.path.length === 0) {
-      c.caret = { path: [[0, 0]], index: c.row[0].c![0].length };
     }
   }
 
@@ -653,7 +645,7 @@ export class MathEditor implements ToolbarHost {
     this.root.classList.toggle('wrs_emptyDoc', core.isEmpty());
     const arabic = arabicCssFamily(core.getFontFamily());
     this.ensureArabicFace(arabic);
-    this.lastLayout = layoutDocument(core.row, undefined, 16, core.rtl, arabic);
+    this.lastLayout = layoutDocument(core.row, core.attrs, 16, core.rtl, arabic);
     const rtl = core.rtl;
     this.root.classList.toggle('wrs_rtl', rtl);
     this.display.render(this.lastLayout, { caret: core.caret, sel: core.sel, focused: this.focused, rtl, showCaret: true, arabic });
@@ -1234,11 +1226,21 @@ export class MathEditor implements ToolbarHost {
     const input = h('input', { type: 'text', value: cur, title: 'Value', 'aria-label': 'Value', spellcheck: 'false' }) as HTMLInputElement;
     const table = h('table', {}, h('tr', {}, h('td', { colspan: '2', text: ctl?.title ?? id })), h('tr', {}, h('td', { text: 'Value:' }), h('td', { class: 'wrs_inputCell' }, input)));
     el.append(table);
+    input.addEventListener('input', () => {
+      input.classList.remove('wrs_invalid');
+      input.removeAttribute('aria-invalid');
+    });
     input.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         e.preventDefault();
         const v = parseLength(input.value);
-        if (v === null) return; // rejected: the panel stays open (Q-05)
+        if (v === null) {
+          // rejected: the panel stays open (Q-05) and the field is marked, so the refusal is not silent
+          input.classList.add('wrs_invalid');
+          input.setAttribute('aria-invalid', 'true');
+          input.select();
+          return;
+        }
         this.closePopup();
         applyContext(this.core, id, v);
         this.refreshContext();
