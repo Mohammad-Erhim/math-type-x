@@ -444,6 +444,7 @@ export class MathEditor implements ToolbarHost {
         const hit = this.display.hitTest(p.x, p.y);
         if (!hit) {
           this.longPressedAt = Date.now();
+          this.wantKeyboard();
           this.focusEditor();
           this.openClipboardMenu(pressAt.x, pressAt.y);
           return;
@@ -1606,6 +1607,7 @@ export class MathEditor implements ToolbarHost {
     const act = (fn: () => void) => () => {
       this.closeClipboardMenu();
       fn();
+      this.wantKeyboard();
       this.focusEditor();
     };
     const items: [string, boolean, () => void][] = [
@@ -1613,6 +1615,7 @@ export class MathEditor implements ToolbarHost {
       ['Copy', sel, act(() => this.copySelection(false))],
       ['Paste', true, () => {
         this.closeClipboardMenu();
+        this.wantKeyboard();
         this.pasteFromClipboard({ x: clientX, y: clientY });
       }],
       ['Select all', true, act(() => this.core.selectAll())],
