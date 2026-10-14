@@ -271,7 +271,6 @@ function locateRaw(core: EditorCore): Located | null {
       }
     }
   }
-  if (slotOp) return { kind: 'operator', tokens: [{ row: slotOp.row, index: slotOp.index }], op: slotOp.el };
   const row = core.currentRow();
   const idx = core.caret.index;
   const left = row[idx - 1];
@@ -281,8 +280,8 @@ function locateRaw(core: EditorCore): Located | null {
   // a script structure whose base is an operator (an integral with limits): the caret in front of it is next to that operator
   const isOpScript = (e?: El) => !!e && (e.t === 'msub' || e.t === 'msup' || e.t === 'msubsup') && e.c![0].length === 1 && isOp(e.c![0][0]);
   /** the operator token the spacing / stretchy controls refer to */
-  const opNextTo = (): El | undefined => (sel ? sel.op : isOp(left) ? left : isOp(right) ? right : isOpScript(right) ? right!.c![0][0] : undefined);
-  const spacingHere = sel ? sel.spacing : isOp(left) || isOp(right) || isOpScript(right);
+  const opNextTo = (): El | undefined => (sel ? sel.op : slotOp ? slotOp.el : isOp(left) ? left : isOp(right) ? right : isOpScript(right) ? right!.c![0][0] : undefined);
+  const spacingHere = sel ? sel.spacing : !!slotOp || isOp(left) || isOp(right) || isOpScript(right);
   const multilineCtx = (): Located | null => {
     const lines = core.row;
     const outer = chain;
@@ -317,7 +316,7 @@ function locateRaw(core: EditorCore): Located | null {
         return withCarries(core, { kind: 'stack', hit: st, inNumber: between });
       }
     }
-    if (h.el.t === 'mfenced') {
+    if (h.el.t === 'mfenced' && !chain.slice(chain.indexOf(h) + 1).some((x) => x.el.t === 'mstack' || x.el.t === 'mlongdiv')) {
       // a fence inside a table cell: the fence's controls come with the table's
       const k = chain.indexOf(h);
       const tb = chain.slice(k + 1).find((x) => x.el.t === 'mtable');
@@ -343,6 +342,8 @@ function locateRaw(core: EditorCore): Located | null {
     if (ml) return ml;
     return { kind: 'symbol_sel', tokens: els.map((_, k) => ({ row: sel!.row, index: from + k })), spacing: sel.spacing, op: sel.op };
   }
+  // the caret in the text slot of a big operator (nothing around it that has controls of its own): the operator's spacing
+  if (slotOp) return { kind: 'operator', tokens: [{ row: slotOp.row, index: slotOp.index }], op: slotOp.el };
   for (const e of [left, right]) {
     if (e && e.t === 'mspace' && getAttr(e, 'linebreak') !== 'newline') return { kind: 'mspace', el: e };
   }

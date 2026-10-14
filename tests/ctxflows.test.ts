@@ -31,7 +31,7 @@ function runFlow(e: EditorCore, host: any, flow: string[]): boolean {
 const cases = (f: string): Record<string, any> => (existsSync(join(process.cwd(), f)) ? JSON.parse(readFileSync(join(process.cwd(), f), 'utf8')) : {});
 const known: Record<string, string> = existsSync(join(process.cwd(), 'evidence/ctx_flows_known.json')) ? JSON.parse(readFileSync(join(process.cwd(), 'evidence/ctx_flows_known.json'), 'utf8')) : {};
 
-for (const file of ['evidence/ctx_flows_ref.json', 'evidence/ctx_rand_ref.json']) {
+for (const file of ['evidence/ctx_flows_ref.json', 'evidence/ctx_rand_ref.json', 'evidence/ctx_rand2_ref.json']) {
   const data = cases(file);
   if (!Object.keys(data).length) continue;
   test(`contextual controls per caret stop equal the reference: ${file.replace(/^evidence\/ctx_|_ref\.json$/g, '')}`, () => {
@@ -61,6 +61,6 @@ for (const file of ['evidence/ctx_flows_ref.json', 'evidence/ctx_rand_ref.json']
       });
     }
     assert.ok(ok > 0, `nothing compared (${skipped} skipped)`);
-    assert.equal(bad.length, 0, `${bad.length} stops differ (${ok} equal, ${skipped} flows skipped):\n${bad.slice(0, 10).join('\n')}`);
+    assert.equal(bad.length, 0, `${bad.length} stops differ (${ok} equal, ${skipped} flows skipped):\n${bad.slice(0, process.env.ALL ? 999 : 10).join('\n')}`);
   });
 }
