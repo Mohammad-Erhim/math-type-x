@@ -130,7 +130,26 @@ export class Toolbar {
     );
     io.observe(top);
     io.observe(bottom);
+    // the first state is measured at once (the observer answers a frame or two later): the cue is there – or not – in the
+    // first frame it can be seen, and it does not fade in as a flash after the editor appeared
+    const measure = () => {
+      const c = this.container;
+      if (!c.clientHeight) return;
+      this.root.classList.toggle('wrs_moreBelow', c.scrollHeight - c.scrollTop - c.clientHeight > 2);
+      this.root.classList.toggle('wrs_moreAbove', c.scrollTop > 2);
+    };
+    this.measureCues = measure;
+    this.root.classList.add('wrs_cueInit');
+    requestAnimationFrame(() => {
+      measure();
+      requestAnimationFrame(() => {
+        measure();
+        this.root.classList.remove('wrs_cueInit');
+      });
+    });
   }
+
+  private measureCues: (() => void) | null = null;
 
   private buildTabs(): void {
     TAB_TITLES.forEach((title, i) => {
@@ -500,6 +519,7 @@ export class Toolbar {
     this.caption.textContent = TAB_CAPTIONS[i] ?? '';
     this.container.scrollTop = 0;
     this.placeCues();
+    this.measureCues?.();
     this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
     this.root.classList.toggle('wrs_folded', this.container.classList.contains('wrs_collapsed'));
     // the first control of the selected tab is the single tab stop

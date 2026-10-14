@@ -208,6 +208,7 @@ export const CSS = `
 .wrs_reflow .wrs_cueUp{top:var(--wrs-cue-top,66px);background:linear-gradient(rgba(214,224,229,.97) 35%,rgba(214,224,229,0))}
 .wrs_reflow.wrs_toolbar.wrs_moreBelow .wrs_cueDown,.wrs_reflow .wrs_toolbar.wrs_moreBelow .wrs_cueDown,.wrs_reflow .wrs_toolbar.wrs_moreAbove .wrs_cueUp{opacity:1;pointer-events:auto}
 @media (prefers-reduced-motion:reduce){.wrs_reflow .wrs_scrollCue{transition:none}}
+.wrs_cueInit .wrs_scrollCue{transition:none!important}
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
 .wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}
 .wrs_reflow .wrs_line{display:none}
