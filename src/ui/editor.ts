@@ -467,18 +467,11 @@ export class MathEditor implements ToolbarHost {
     disp.view.addEventListener('touchend', (e) => {
       if (Date.now() - this.longPressedAt < 800 && e.cancelable) e.preventDefault();
     });
-    // a long press can make the system hide the soft keyboard (the browser's own selection takes the text input away
-    // from the field) without the focus going anywhere: put the keyboard back when the finger lifts and while the
-    // selection of the page changes right after the press
-    const reopenKeyboard = () => {
-      if (!this.kbOn || !this.coarse() || Date.now() - this.longPressedAt > 1500) return;
-      const input = this.display.input;
-      input.inputMode = 'text';
-      // the soft keyboard follows a field that is focused anew (the user's touch is the gesture that allows it)
-      input.blur();
-      input.focus({ preventScroll: true });
-    };
-    for (const t of ['pointerup', 'touchend']) disp.view.addEventListener(t, () => setTimeout(reopenKeyboard, 80));
+    // a long press can put the focus on the display itself (it is focusable) – and with it the keyboard goes away. The
+    // formula field takes the focus back at once, in the same task, so that the keyboard never has to leave
+    disp.view.addEventListener('focus', () => {
+      if (this.coarse() && this.kbOn) input.focus({ preventScroll: true });
+    });
     document.addEventListener('selectionchange', this.keepKeyboard);
     disp.view.addEventListener('selectstart', (e) => e.preventDefault());
     // keyboard
@@ -1601,7 +1594,11 @@ export class MathEditor implements ToolbarHost {
   }
 
   /** a small menu at the touch / click point: Cut, Copy, Paste, Select all */
+  private ctxOpenedAt = 0;
   private openClipboardMenu(clientX: number, clientY: number): void {
+    // the long press itself and the contextmenu event that follows it are one gesture: one menu
+    if (this.ctxMenu && Date.now() - this.ctxOpenedAt < 700) return;
+    this.ctxOpenedAt = Date.now();
     this.closeClipboardMenu();
     const sel = this.core.hasSelection();
     const act = (fn: () => void) => () => {
@@ -1626,17 +1623,26 @@ export class MathEditor implements ToolbarHost {
       b.disabled = !enabled;
       // the formula keeps the focus (and the keyboard state) while the menu is used
       b.addEventListener('mousedown', (e) => e.preventDefault());
-      b.addEventListener('click', (e) => {
+      // the action runs when the finger lifts on the button (pointerup) – a tap that the page would otherwise have to
+      // wait for the browser to turn into a click – and on click (keyboard, assistive technology), once
+      let done = false;
+      const run = (e: Event) => {
         e.preventDefault();
         e.stopPropagation();
+        if (done) return;
+        done = true;
         fn();
-      });
+      };
+      b.addEventListener('pointerup', run);
+      b.addEventListener('click', run);
       menu.append(b);
     }
     this.mountFloating(menu, clientX, clientY);
     this.ctxMenu = menu;
     const away = (e: Event) => {
       if (menu.contains(e.target as Node)) return;
+      // the keyboard of a phone sends keys of its own (composition) when it comes up: only Escape closes
+      if (e.type === 'keydown' && (e as KeyboardEvent).key !== 'Escape') return;
       this.closeClipboardMenu();
       document.removeEventListener('pointerdown', away, true);
       document.removeEventListener('keydown', away, true);
