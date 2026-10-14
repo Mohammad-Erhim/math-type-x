@@ -1,0 +1,724 @@
+[
+{
+"name": "rnd00",
+"flow": [
+"Top parenthesis",
+"type:x",
+"Diaeresis",
+"type:12",
+"Left subscript and superscript",
+"type:n",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd01",
+"flow": [
+"Top parenthesis",
+"type:12",
+"Product with under and over scripts",
+"type:12",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd02",
+"flow": [
+"Root",
+"type:n",
+"key:ArrowDown",
+"Integral with subscript",
+"type:2",
+"Up diagonal strike",
+"type:x"
+],
+"steps": 10
+},
+{
+"name": "rnd03",
+"flow": [
+"Left subscript and superscript",
+"type:x",
+"key:ArrowRight",
+"Alpha",
+"type:n",
+"key:ArrowUp",
+"Number pi",
+"type:a"
+],
+"steps": 10
+},
+{
+"name": "rnd04",
+"flow": [
+"Big union",
+"type:x",
+"Derivative",
+"type:n"
+],
+"steps": 10
+},
+{
+"name": "rnd05",
+"flow": [
+"Logarithm to base n",
+"type:a",
+"key:ArrowLeft",
+"Big operator with subscript",
+"type:x",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd06",
+"flow": [
+"Up and down diagonal strike",
+"type:a",
+"key:ArrowUp",
+"Big union",
+"type:2",
+"Summation with subscript",
+"type:n",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd07",
+"flow": [
+"Enclose right",
+"type:a",
+"key:ArrowDown",
+"Angle brackets",
+"type:x",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd08",
+"flow": [
+"Under script with brace",
+"type:2",
+"Long division (used in the United States, Great Britain, and elsewhere)",
+"type:2",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd09",
+"flow": [
+"Vertical bars",
+"type:y",
+"key:ArrowRight",
+"Element under",
+"type:2"
+],
+"steps": 10
+},
+{
+"name": "rnd10",
+"flow": [
+"Superscript and subscript",
+"type:x",
+"Element under",
+"type:x",
+"key:ArrowDown"
+],
+"steps": 10
+},
+{
+"name": "rnd11",
+"flow": [
+"Thinner space",
+"type:12",
+"key:ArrowDown",
+"Alpha",
+"type:12",
+"Sine",
+"type:2",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd12",
+"flow": [
+"Number pi",
+"type:12",
+"key:ArrowLeft",
+"Piecewise function",
+"type:12",
+"key:ArrowDown"
+],
+"steps": 10
+},
+{
+"name": "rnd13",
+"flow": [
+"Number pi",
+"type:y",
+"key:ArrowDown",
+"Infinity",
+"type:2",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd14",
+"flow": [
+"Sine",
+"type:y",
+"Dot accent",
+"type:x",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd15",
+"flow": [
+"Left subscript",
+"type:2",
+"key:ArrowDown",
+"Natural logarithm",
+"type:a",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd16",
+"flow": [
+"Superscript and subscript",
+"type:a",
+"key:ArrowLeft",
+"Digit space",
+"type:12",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd17",
+"flow": [
+"Elements under and over",
+"type:n",
+"key:ArrowRight",
+"Hat accent",
+"type:x",
+"Long division (used in the United States, Great Britain, and elsewhere)",
+"type:x",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd18",
+"flow": [
+"Curl",
+"type:y",
+"Back space",
+"type:n",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd19",
+"flow": [
+"Bottom curly bracket",
+"type:n",
+"key:ArrowDown",
+"Dot accent",
+"type:2",
+"key:ArrowDown",
+"Down diagonal strike",
+"type:y",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd20",
+"flow": [
+"Plus sign",
+"type:2",
+"Bottom curly bracket",
+"type:12",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd21",
+"flow": [
+"Digit space",
+"type:y",
+"key:ArrowRight",
+"Product with under and over scripts",
+"type:y",
+"Logarithm to base n",
+"type:n"
+],
+"steps": 10
+},
+{
+"name": "rnd22",
+"flow": [
+"Superscript (Ctrl+Up)",
+"type:y",
+"key:ArrowUp",
+"Root",
+"type:x",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd23",
+"flow": [
+"Digit space",
+"type:x",
+"Superscript (Ctrl+Up)",
+"type:y",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd24",
+"flow": [
+"Enclose bottom",
+"type:y",
+"Limit to infinity",
+"type:12",
+"key:ArrowUp",
+"Summation with under and over scripts",
+"type:a"
+],
+"steps": 10
+},
+{
+"name": "rnd25",
+"flow": [
+"Aligned equations",
+"type:y",
+"key:ArrowUp",
+"Left superscript",
+"type:n",
+"key:ArrowDown"
+],
+"steps": 10
+},
+{
+"name": "rnd26",
+"flow": [
+"Big operator with under script",
+"type:x",
+"Bevelled fraction",
+"type:a",
+"key:ArrowDown",
+"Root",
+"type:2",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd27",
+"flow": [
+"Down diagonal strike",
+"type:x",
+"Vertical bars",
+"type:12",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd28",
+"flow": [
+"Top parenthesis",
+"type:x",
+"key:ArrowLeft",
+"Fraction (Ctrl+/)",
+"type:12"
+],
+"steps": 10
+},
+{
+"name": "rnd29",
+"flow": [
+"Natural logarithm",
+"type:n",
+"key:ArrowDown",
+"Differential",
+"type:y",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd30",
+"flow": [
+"Big operator with subscript",
+"type:y",
+"Long division (used in the United States, Great Britain, and elsewhere)",
+"type:12",
+"key:ArrowUp",
+"Digit space",
+"type:y",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd31",
+"flow": [
+"Infinity",
+"type:2",
+"Big intersection",
+"type:12"
+],
+"steps": 10
+},
+{
+"name": "rnd32",
+"flow": [
+"Enclose top",
+"type:2",
+"key:ArrowDown",
+"Definite integral",
+"type:2",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd33",
+"flow": [
+"Number pi",
+"type:12",
+"Infinity",
+"type:n",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd34",
+"flow": [
+"Double integral",
+"type:a",
+"Left subscript",
+"type:12",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd35",
+"flow": [
+"Plus sign",
+"type:y",
+"key:ArrowUp",
+"Big union",
+"type:12"
+],
+"steps": 10
+},
+{
+"name": "rnd36",
+"flow": [
+"Curl",
+"type:2",
+"Down diagonal strike",
+"type:12"
+],
+"steps": 10
+},
+{
+"name": "rnd37",
+"flow": [
+"Elements under and over",
+"type:a",
+"key:ArrowUp",
+"Root",
+"type:x",
+"Partial derivative",
+"type:n",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd38",
+"flow": [
+"Under script with brace",
+"type:y",
+"key:ArrowUp",
+"Aligned equations",
+"type:a"
+],
+"steps": 10
+},
+{
+"name": "rnd39",
+"flow": [
+"Double vertical bars",
+"type:12",
+"key:ArrowDown",
+"Logarithm to base n",
+"type:n",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd40",
+"flow": [
+"Down diagonal strike",
+"type:12",
+"Bottom curly bracket",
+"type:12",
+"key:ArrowLeft",
+"Square root",
+"type:y"
+],
+"steps": 10
+},
+{
+"name": "rnd41",
+"flow": [
+"Double vertical bars",
+"type:x",
+"key:ArrowUp",
+"Aligned equations",
+"type:y",
+"key:ArrowRight",
+"Piecewise function",
+"type:n"
+],
+"steps": 10
+},
+{
+"name": "rnd42",
+"flow": [
+"Enclose top",
+"type:n",
+"Curly brackets",
+"type:a",
+"key:ArrowLeft",
+"Square brackets",
+"type:y",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd43",
+"flow": [
+"Curl",
+"type:a",
+"Sine",
+"type:12",
+"key:ArrowLeft"
+],
+"steps": 10
+},
+{
+"name": "rnd44",
+"flow": [
+"Piecewise function",
+"type:a",
+"key:ArrowDown",
+"Infinity",
+"type:2",
+"Thinner space",
+"type:y"
+],
+"steps": 10
+},
+{
+"name": "rnd45",
+"flow": [
+"Tilde",
+"type:n",
+"Left subscript and superscript",
+"type:12",
+"Curly brackets",
+"type:y"
+],
+"steps": 10
+},
+{
+"name": "rnd46",
+"flow": [
+"Back space",
+"type:n",
+"Subscript (Ctrl+Down)",
+"type:x",
+"Angle brackets",
+"type:2"
+],
+"steps": 10
+},
+{
+"name": "rnd47",
+"flow": [
+"Contour integral",
+"type:x",
+"key:ArrowUp",
+"Element under",
+"type:12"
+],
+"steps": 10
+},
+{
+"name": "rnd48",
+"flow": [
+"Dot accent",
+"type:x",
+"Top curly bracket",
+"type:2",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd49",
+"flow": [
+"Curl",
+"type:a",
+"Curly brackets",
+"type:a"
+],
+"steps": 10
+},
+{
+"name": "rnd50",
+"flow": [
+"Big operator with subscript and superscript",
+"type:12",
+"key:ArrowDown",
+"Element over",
+"type:x"
+],
+"steps": 10
+},
+{
+"name": "rnd51",
+"flow": [
+"Infinity",
+"type:y",
+"Element under",
+"type:x",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd52",
+"flow": [
+"Double integral",
+"type:a",
+"Partial derivative",
+"type:x",
+"key:ArrowDown"
+],
+"steps": 10
+},
+{
+"name": "rnd53",
+"flow": [
+"Root",
+"type:n",
+"key:ArrowLeft",
+"Root",
+"type:a"
+],
+"steps": 10
+},
+{
+"name": "rnd54",
+"flow": [
+"Square root",
+"type:2",
+"Double vertical bars",
+"type:y"
+],
+"steps": 10
+},
+{
+"name": "rnd55",
+"flow": [
+"Bottom curly bracket",
+"type:y",
+"Thinner space",
+"type:n",
+"key:ArrowRight",
+"Derivative",
+"type:n",
+"key:ArrowRight"
+],
+"steps": 10
+},
+{
+"name": "rnd56",
+"flow": [
+"Summation with subscript",
+"type:2",
+"key:ArrowLeft",
+"Left subscript",
+"type:2",
+"key:ArrowLeft",
+"Limit with under script",
+"type:2",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd57",
+"flow": [
+"Bottom curly bracket",
+"type:12",
+"key:ArrowUp",
+"Over script with brace",
+"type:n",
+"key:ArrowLeft",
+"Left subscript and superscript",
+"type:x",
+"key:ArrowUp"
+],
+"steps": 10
+},
+{
+"name": "rnd58",
+"flow": [
+"Up and down diagonal strike",
+"type:y",
+"key:ArrowLeft",
+"Alpha",
+"type:a"
+],
+"steps": 10
+},
+{
+"name": "rnd59",
+"flow": [
+"Product with under and over scripts",
+"type:a",
+"Down diagonal strike",
+"type:2",
+"key:ArrowDown"
+],
+"steps": 10
+}
+]

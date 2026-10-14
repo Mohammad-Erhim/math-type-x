@@ -11,3 +11,5 @@ run adj evidence/ctx_cases_adj.json
 run enc evidence/ctx_cases_enc.json
 run sel evidence/ctx_cases_sel.json 1
 run sel2 evidence/ctx_cases_sel2.json 1
+# toolbar flows (structures inserted with the toolbar, then typed into): effects of every control
+run flows evidence/ctx_cases_flows_sub.json

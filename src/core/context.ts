@@ -205,9 +205,11 @@ function locateRaw(core: EditorCore): Located | null {
       }
     }
   }
+  // the caret in the text slot of a big operator: the operator's own spacing controls
+  const slotOp = !sel && chain.length > 0 && chain[0].el.t === 'mo' && chain[0].el.c !== undefined ? chain[0] : null;
   // extension (not in the reference): the vertical alignment of a structure with inputs – the one selected, or the
   // innermost one the caret is in
-  if (core.contextExtras) {
+  if (core.contextExtras && !slotOp) {
     if (sel && sel.els.length === 1 && sel.els[0].c !== undefined && VALIGN_TAGS.has(sel.els[0].t)) {
       return { kind: 'structure', fence: { row: sel.row, index: sel.from, el: sel.els[0], path: core.sel!.path as Step[], slot: 0 } };
     }
@@ -245,6 +247,7 @@ function locateRaw(core: EditorCore): Located | null {
       }
     }
   }
+  if (slotOp) return { kind: 'operator', tokens: [{ row: slotOp.row, index: slotOp.index }], op: slotOp.el };
   const row = core.currentRow();
   const idx = core.caret.index;
   const left = row[idx - 1];
@@ -964,7 +967,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
       }
       // the operator next to the caret / selection when the context found one
       const e = loc.op ?? (tk ? tk.row[tk.index] : undefined);
-      if (!e || e.c !== undefined) break;
+      if (!e || (e.c !== undefined && e.t !== 'mo')) break;
       withUndo(() => setAttr(e, id === 'left_spacing' ? 'lspace' : 'rspace', v));
       break;
     }
@@ -1099,9 +1102,13 @@ function mergeNumSep(core: EditorCore, loc: Located): void {
   const row = tk[0].row;
   if (loc.kind === 'numsep_sel') {
     // merge the selected mn / mo / mn … into one number
-    const from = tk[0].index;
+    let from = tk[0].index;
+    let to = from + tk.length;
+    // a number the selection only touches is merged whole (the reference takes the digits left of / right of the selection too)
+    while (from > 0 && row[from - 1].t === 'mn' && row[from].t === 'mn' && row[from - 1].g !== undefined && row[from - 1].g === row[from].g) from--;
+    while (to < row.length && row[to - 1].t === 'mn' && row[to].t === 'mn' && row[to].g !== undefined && row[to].g === row[to - 1].g) to++;
     const g = newGroup();
-    for (let k = 0; k < tk.length; k++) {
+    for (let k = 0; k < to - from; k++) {
       const e = row[from + k];
       if (e.t === 'mo') {
         e.t = 'mn';

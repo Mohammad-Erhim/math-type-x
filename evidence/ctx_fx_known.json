@@ -1,0 +1,6 @@
+{
+ "sel_frac|3|Nudge up": "the reference's selection ends inside the base of the following script (it wraps part of the formula into the script's base); ours moves the whole selected elements",
+ "sel_frac|3|Nudge down": "the reference's selection ends inside the base of the following script (it wraps part of the formula into the script's base); ours moves the whole selected elements",
+ "sel_frac|3|Nudge left": "the reference's selection ends inside the base of the following script (it wraps part of the formula into the script's base); ours moves the whole selected elements",
+ "sel_frac|3|Nudge right": "the reference's selection ends inside the base of the following script (it wraps part of the formula into the script's base); ours moves the whole selected elements"
+}
