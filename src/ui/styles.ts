@@ -203,6 +203,8 @@ export const CSS = `
 .wrs_reflow .wrs_multipleRowPanel{position:relative;left:auto;top:auto}
 .wrs_reflow .wrs_panelContainer.wrs_collapsed{display:none}
 .wrs_reflow .wrs_line{display:none}
+/* a folded panel has nothing to scroll: no cues */
+.wrs_toolbar.wrs_folded .wrs_scrollCue{display:none!important}
 .wrs_reflow .wrs_expandButton{width:26px;box-sizing:border-box;border:0;border-radius:2px;background:transparent}
 .wrs_reflow .wrs_expandButton::after{left:8px;top:calc(50% - 3px);border-width:7px 5px 0 5px;border-color:#51636d transparent transparent transparent}
 .wrs_reflow .wrs_expandButton.wrs_pressed,.wrs_reflow .wrs_expandButton[aria-expanded=true]{background:#778e9a;box-shadow:0 0 10px rgba(52,64,84,.2)}

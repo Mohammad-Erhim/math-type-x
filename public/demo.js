@@ -94,6 +94,7 @@
       var open = !outBox.classList.contains('mtx_open');
       // opening the export section puts the phone's keyboard away
       if (open) {
+        if (editor.closeKeyboard) editor.closeKeyboard();
         var a = document.activeElement;
         if (a && a.classList && a.classList.contains('wrs_focusElement')) a.blur();
       }
