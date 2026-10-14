@@ -77,6 +77,12 @@ export const CSS = `
 .wrs_focusElement{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;border:0;padding:0;margin:0;background:transparent;color:transparent;caret-color:transparent;font-size:16px}
 .wrs_ariaLiveRegion{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}
 .wrs_hiddenButDisplayed{clip-path:inset(50%)}
+.wrs_ctxMenu{position:absolute;z-index:60;display:flex;gap:1px;background:#fff;border:1px solid #6f8793;border-radius:8px;box-shadow:0 4px 16px rgba(30,50,60,.35);padding:3px;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+.wrs_ctxItem{min-width:56px;min-height:40px;padding:0 14px;white-space:nowrap;border:0;border-radius:6px;background:transparent;color:#1f3b48;font:600 14px Arial,sans-serif;cursor:pointer}
+.wrs_ctxItem:hover:not(:disabled),.wrs_ctxItem:active:not(:disabled){background:#dbe8ee}
+.wrs_ctxItem:disabled{color:#9aaab3;cursor:default}
+.wrs_pasteBox{padding:6px}
+.wrs_pasteField{width:210px;max-width:60vw;box-sizing:border-box;border:1px solid #6f8793;border-radius:6px;padding:6px 8px;font:16px Arial,sans-serif;resize:none}
 .wrs_clipboardTextarea{position:absolute;left:-9999px;top:0;width:1px;height:1px;opacity:0}
 .wrs_scaled{height:calc(415px + (var(--wrs-k) - 1) * 97px)}
 .wrs_scaled .wrs_toolbar.wrs_main{zoom:var(--wrs-k)}
@@ -196,6 +202,8 @@ export const CSS = `
 .wrs_scrollCue{display:none}
 .wrs_reflow .wrs_toolbar.wrs_main{position:relative}
 .wrs_reflow .wrs_scrollCue{display:flex;position:absolute;left:0;right:6px;height:28px;align-items:center;justify-content:center;gap:4px;margin:0;padding:0;border:0;z-index:4;color:#324d5b;font:700 12px Arial,sans-serif;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .15s}
+.wrs_reflow .wrs_scrollCue{pointer-events:none!important}
+.wrs_reflow .wrs_moreBelow .wrs_cueDown>*,.wrs_reflow.wrs_moreBelow .wrs_cueDown>*,.wrs_reflow .wrs_moreAbove .wrs_cueUp>*{pointer-events:auto}
 .wrs_reflow .wrs_cueDown{bottom:1px;background:linear-gradient(rgba(214,224,229,0),rgba(214,224,229,.97) 65%)}
 .wrs_reflow .wrs_cueUp{top:var(--wrs-cue-top,66px);background:linear-gradient(rgba(214,224,229,.97) 35%,rgba(214,224,229,0))}
 .wrs_reflow.wrs_toolbar.wrs_moreBelow .wrs_cueDown,.wrs_reflow .wrs_toolbar.wrs_moreBelow .wrs_cueDown,.wrs_reflow .wrs_toolbar.wrs_moreAbove .wrs_cueUp{opacity:1;pointer-events:auto}
