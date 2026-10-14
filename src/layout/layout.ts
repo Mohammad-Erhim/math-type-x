@@ -696,11 +696,10 @@ function radical(body: Box, index: Box | null, env: Env): Box {
   if (idxGlyph && /^[0-9.]+$/.test(idxGlyph.text) && idxGlyph.size === 12) {
     idxW = Array.from(idxGlyph.text).reduce((w, c) => w + (c === '.' ? 2 : 7), 0);
   }
-  // a wide index stretches the sign (a flat tick under the index), it does not push it to the right (measured on the reference)
+  // a wide index moves the sign to the right by its width beyond the 8 px the sign leaves for it: the sign keeps its
+  // shape (no line is drawn under the index) and the radicand sits where the reference puts it
   const ext = idxW > 8 * s ? idxW - 8 * s : 0;
-  const x0 = 0;
   const barW = contentW + 4;
-  const bodyX = x0 + ext + signW + 2;
   const asc = top + body.a;
   const items: Item[] = [];
   // radical sign: small tick, long down stroke, up stroke to the bar
@@ -708,31 +707,43 @@ function radical(body: Box, index: Box | null, env: Env): Box {
   // a radicand with operator glyphs: the bar and the sign sit one more pixel up (measured on the reference)
   // an empty radicand: its placeholder is half a pixel taller above than a letter, the bar stays where a letter's is
   const y0 = -body.a - (body.lift ? 1 : 0) + (onlySlot(body) ? 0.5 : 0);
-  // measured on the reference: the small tick (or the flat one under a wide index) sits at about 0.55 of the sign's height
-  // and the tip of the down stroke is 1.5 px above the descent of the radicand
+  // a tall index (fraction, root) rises: its bottom stays where the bottom of a line of digits is ...
+  const rise = index ? Math.max(0, index.d - 3.14 * s) : 0;
+  // ... and it always stays 2 px above the small tick of the sign, however tall the radicand is
+  const tickHeight = -y0 - 0.55 * h;
+  const iy = Math.min(-(K.rootIndexShift * s) - rise, -tickHeight - 2 * s - rise);
+  // the index never touches the long stroke: where the reference leaves less than 1 px the sign moves on
+  let x0 = ext;
+  if (index) {
+    const vx = (env.rtl ? 8 : 6.2) * s;
+    const yp = Math.min(Math.max(-y0 + iy, 0), h - 1);
+    const strokeX = signW - 0.5 * s - (signW - 0.5 * s - vx) * (yp / (h - 1));
+    const right = (ext === 0 ? Math.max(0, Math.round(8 * s - index.w)) : 0) + index.w - 0.5 * s;
+    x0 = Math.max(ext, Math.ceil(right + 2 * s - strokeX));
+  }
+  const bodyX = x0 + signW + 2;
+  // measured on the reference: the small tick sits at about 0.55 of the sign's height and the tip of the down stroke is
+  // 1.5 px above the descent of the radicand
   items.push({
     k: 'p',
     x: x0,
     y: y0,
-    d: ext
-      ? `M${1 * s} ${0.56 * h + 0.75} L${ext + 2.7 * s} ${0.56 * h + 0.75} L${ext + 6.7 * s} ${h - 1} L${ext + signW - 0.5 * s} 0`
-      : env.rtl
-        ? // the mirrored sign of a right-to-left document is narrower on its far side (measured on the reference)
-          `M${3 * s} ${0.58 * h} L${4.6 * s} ${0.5 * h} L${8 * s} ${h - 1} L${signW - 0.5 * s} 0`
-        : `M${1 * s} ${0.61 * h} L${3.2 * s} ${0.55 * h} L${6.2 * s} ${h - 1} L${signW - 0.5 * s} 0`,
+    d: env.rtl
+      ? // the mirrored sign of a right-to-left document is narrower on its far side (measured on the reference)
+        `M${3 * s} ${0.58 * h} L${4.6 * s} ${0.5 * h} L${8 * s} ${h - 1} L${signW - 0.5 * s} 0`
+      : `M${1 * s} ${0.61 * h} L${3.2 * s} ${0.55 * h} L${6.2 * s} ${h - 1} L${signW - 0.5 * s} 0`,
     sw: 1,
     color: env.color,
   });
-  items.push({ k: 'r', x: x0 + ext + signW, y: y0, w: barW, h: 1, color: env.color });
+  items.push({ k: 'r', x: x0 + signW, y: y0, w: barW, h: 1, color: env.color });
   const kids: Placed[] = [{ b: body, x: bodyX, y: 0 }];
   let a = asc;
   if (index) {
-    // a tall index (fraction, root) rises: its bottom stays where the bottom of a line of digits is
-    const iy = -(K.rootIndexShift * s) - Math.max(0, index.d - 3.14 * s);
-    kids.push({ b: index, x: 0, y: iy });
+    // a narrow index is right-aligned to the 8 px the sign leaves for it (measured on the reference, both directions)
+    kids.push({ b: index, x: ext === 0 ? Math.max(0, Math.round(8 * s - index.w)) : 0, y: iy });
     a = Math.max(a, -iy + index.a);
   }
-  return mk(x0 + ext + signW + barW, a, body.d, items, kids);
+  return mk(x0 + signW + barW, a, body.d, items, kids);
 }
 
 /** does the box hold nothing but an empty placeholder? */
