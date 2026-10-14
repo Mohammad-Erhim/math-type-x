@@ -527,10 +527,11 @@ function cellPos(loc: Located): { r: number; c: number; rows: number; cols: numb
   return { r: Math.floor(s / cols), c: s % cols, rows, cols };
 }
 
-function list(el: El, name: string, n: number, def: string): string[] {
+/** the n entries of a list attribute; entries beyond it repeat the last one (how it is read) or, when written, are the default */
+function list(el: El, name: string, n: number, def: string, repeat = true): string[] {
   const v = (getAttr(el, name) ?? '').split(/\s+/).filter(Boolean);
   const out: string[] = [];
-  for (let i = 0; i < n; i++) out.push(v[i] ?? v[v.length - 1] ?? def);
+  for (let i = 0; i < n; i++) out.push(v[i] ?? (repeat ? v[v.length - 1] : undefined) ?? def);
   return out;
 }
 
@@ -664,7 +665,7 @@ function displayBracket(v: string): string {
 
 /* -------------------------------------------------------------- apply */
 
-const TABLE_ORDER = ['align', 'rowalign', 'columnspacing', 'columnalign', 'wrs:columnalign', 'wrs:decimalseparators', 'frame', 'rowlines', 'columnlines', 'equalrows', 'equalcolumns', 'rowspacing', 'framespacing'];
+const TABLE_ORDER = ['align', 'columnspacing', 'rowalign', 'columnalign', 'wrs:columnalign', 'wrs:decimalseparators', 'frame', 'rowlines', 'columnlines', 'equalrows', 'equalcolumns', 'rowspacing', 'framespacing'];
 const FENCE_ORDER = ['open', 'close', 'separators', 'wrs:valign'];
 
 function setOrdered(e: El, name: string, v: string | null, order: string[]): void {
@@ -696,16 +697,15 @@ function bracketAttr(v: string): string {
 
 function insertCols(t: El, at: number, n: number, dupAlign: false | 'left' | 'right' = false): void {
   const cols = t.cols ?? 1;
-  for (const name of ['columnalign', 'wrs:columnalign']) {
-    const v = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
-    if (v.length && dupAlign === 'left') {
-      const arr = Array.from({ length: cols }, (_, i) => v[i] ?? v[v.length - 1]);
-      arr.splice(at, 0, arr[Math.max(at - 1, 0)]);
-      setAttr(t, name, arr.join(' '), TABLE_ORDER);
-    } else if (v.length && dupAlign === 'right' && at < v.length) {
-      // a column added inside the listed ones repeats its left neighbour's entry; at the end the list is left alone
-      v.splice(at, 0, v[at - 1]);
-      setAttr(t, name, v.join(' '), TABLE_ORDER);
+  // a list attribute grows by a copy of the entry in front of the new column – only when the column comes inside the
+  // entries the list has (a short list is read with its last entry repeated and stays as it is)
+  if (dupAlign) {
+    for (const name of ['columnalign', 'wrs:columnalign', 'columnspacing']) {
+      const v = (getAttr(t, name) ?? '').split(/\s+/).filter(Boolean);
+      if (v.length && at < v.length) {
+        v.splice(at, 0, v[Math.max(at - 1, 0)]);
+        setAttr(t, name, v.join(' '), TABLE_ORDER);
+      }
     }
   }
   const rows = Math.ceil(t.c!.length / cols);
@@ -868,7 +868,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'colalign_right':
       if (t && pos) {
         withUndo(() => {
-          const arr = list(t, 'columnalign', pos.cols, 'center');
+          const arr = list(t, 'columnalign', pos.cols, 'center', false);
           arr[pos.c] = id.slice(9);
           setOrdered(t, 'columnalign', arr.join(' '), TABLE_ORDER);
         });
@@ -878,7 +878,7 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'colalign_relation':
       if (t && pos) {
         withUndo(() => {
-          const arr = list(t, getAttr(t, 'wrs:columnalign') ? 'wrs:columnalign' : 'columnalign', pos.cols, 'center');
+          const arr = list(t, getAttr(t, 'wrs:columnalign') ? 'wrs:columnalign' : 'columnalign', pos.cols, 'center', false);
           arr[pos.c] = id === 'colalign_decimal' ? 'decimal' : 'relation';
           setOrdered(t, 'columnalign', null, TABLE_ORDER);
           setOrdered(t, 'wrs:columnalign', arr.join(' '), TABLE_ORDER);
@@ -888,11 +888,11 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'decimal_symbol':
       if (t && pos) {
         withUndo(() => {
-          const arr = list(t, 'wrs:decimalseparators', pos.cols, 'dot');
+          const arr = list(t, 'wrs:decimalseparators', pos.cols, 'dot', false);
           arr[pos.c] = value ?? 'dot';
           setOrdered(t, 'wrs:decimalseparators', arr.join(' '), TABLE_ORDER);
           if (!getAttr(t, 'wrs:columnalign')) {
-            const ca = list(t, 'columnalign', pos.cols, 'center');
+            const ca = list(t, 'columnalign', pos.cols, 'center', false);
             ca[pos.c] = 'decimal';
             setOrdered(t, 'columnalign', null, TABLE_ORDER);
             setOrdered(t, 'wrs:columnalign', ca.join(' '), TABLE_ORDER);
@@ -1216,7 +1216,11 @@ function resultRowOp(core: EditorCore, info: StackInfo, id: string, value?: stri
     case 'st_line': {
       const line: El = { t: 'msline', a: [], x: '' };
       if (row.length > 0 && row.length < W) setAttr(line, 'length', String(row.length));
-      if (idx === 0 && row.length > 0) {
+      if (row.length === 0) {
+        // an empty quotient takes the line itself
+        row.push(line);
+        core.caret = { path: info.result!.path, index: 0 };
+      } else if (idx === 0 && row.length > 0) {
         // in front of the result: the line takes the result's place and the result joins the rows
         const first = row.splice(0, row.length);
         items.unshift(asRow(first));

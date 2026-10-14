@@ -30,6 +30,11 @@ function runFlow(e: EditorCore, host: any, flow: string[]): boolean {
 }
 const known: Record<string, string> = existsSync(join(process.cwd(), 'evidence/ctx_fx_known.json')) ? JSON.parse(readFileSync(join(process.cwd(), 'evidence/ctx_fx_known.json'), 'utf8')) : {};
 const dir = join(process.cwd(), 'evidence');
+/** the caret / selection of a case starts after `start` ArrowRight presses (formulas of the case files) */
+const starts: Record<string, number> = {};
+for (const f of readdirSync(dir).filter((x) => /^ctx_cases_.*\.json$/.test(x))) {
+  for (const c of JSON.parse(readFileSync(join(dir, f), 'utf8')) as { name: string; start?: number }[]) if (c.start) starts[c.name] = c.start;
+}
 const files = readdirSync(dir).filter((f) => /^ctx_fx_all_.*_ref\.json$/.test(f));
 
 for (const file of files) {
@@ -53,6 +58,7 @@ for (const file of files) {
             if (!runFlow(e, host, rec.flow)) continue;
           } else e.setMathML(`<math${NS}>${rec.mml}</math>`);
           handleKey(host as any, 'Home', {} as any);
+          for (let i = 0; i < (starts[name] ?? 0); i++) handleKey(host as any, 'ArrowRight', {} as any);
           for (let i = 0; i < st.i; i++) handleKey(host as any, 'ArrowRight', select ? { shift: true } as any : {} as any);
           const eq = label.indexOf('=');
           const title = eq > 0 ? label.slice(0, eq) : label;
@@ -68,7 +74,7 @@ for (const file of files) {
           if (got !== norm(f.mml)) bad.push(`stop ${st.i} ${label}\n   want ${norm(f.mml)}\n   got  ${got}`);
         }
       }
-      assert.equal(bad.length, 0, `${bad.length}/${n} differ:\n${bad.slice(0, 8).join('\n')}`);
+      assert.equal(bad.length, 0, `${bad.length}/${n} differ:\n${bad.slice(0, process.env.ALL ? 999 : 8).join('\n')}`);
     });
   }
 }
