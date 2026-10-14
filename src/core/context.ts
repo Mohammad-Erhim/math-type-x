@@ -262,7 +262,13 @@ function locateRaw(core: EditorCore): Located | null {
       const WRAP = new Set(['maction', 'mrow', 'mstyle', 'mpadded', 'mo']);
       let last: Hit | null = null;
       for (const h of chain) {
-        if (VALIGN_TAGS.has(h.el.t) && h.el.c !== undefined) return { kind: 'structure', fence: h };
+        // the alignment of a structure is offered in its main input (the base, the radicand, the cells), not in its
+        // secondary ones – the index of a root, the script of a power – whose context is theirs, not the structure's
+        if (VALIGN_TAGS.has(h.el.t) && h.el.c !== undefined) {
+          if (h.slot === 0 || h.el.t === 'mfrac') return { kind: 'structure', fence: h };
+          last = null;
+          break;
+        }
         if (!WRAP.has(h.el.t)) {
           last = null;
           break;
