@@ -667,8 +667,10 @@ export class MathEditor implements ToolbarHost {
       if (dis) b.setAttribute('aria-disabled', 'true');
       else b.removeAttribute('aria-disabled');
     };
-    setDis('Press Ctrl+C', !hasSel);
-    setDis('Press Ctrl+X', !hasSel);
+    // with nothing selected Copy / Cut act on the whole formula: they are off only for an empty one
+    const emptyDoc = c.row.length === 0;
+    setDis('Press Ctrl+C', !hasSel && emptyDoc);
+    setDis('Press Ctrl+X', !hasSel && emptyDoc);
     setDis('Redo', !c.canRedo());
     setDis('Undo', !c.canUndo());
     const tog = (prefix: string, on: boolean) => by(prefix)?.classList.toggle('wrs_toggled', on);
@@ -1507,14 +1509,35 @@ export class MathEditor implements ToolbarHost {
   }
 
   private onCopy(e: ClipboardEvent, cut: boolean): void {
-    if (!this.core.hasSelection()) return;
+    if (!this.core.hasSelection()) {
+      // nothing selected: the whole formula (the key press of a hardware keyboard acts like the buttons)
+      const all = this.core.getMathML();
+      if (!all || this.core.row.length === 0) return;
+      e.preventDefault();
+      this.writeClipboard(all, e);
+      if (cut) {
+        this.core.selectAll();
+        this.core.backspace();
+      }
+      return;
+    }
     e.preventDefault();
     this.writeClipboard(this.selectionMathML(), e);
     if (cut) this.core.backspace();
   }
 
   private copySelection(cut: boolean): void {
-    if (!this.core.hasSelection()) return;
+    // with nothing selected the buttons act on the whole formula (a touch screen has no select-all key)
+    if (!this.core.hasSelection()) {
+      const all = this.core.getMathML();
+      if (!all || this.core.row.length === 0) return;
+      this.writeClipboard(all);
+      if (cut) {
+        this.core.selectAll();
+        this.core.backspace();
+      }
+      return;
+    }
     this.writeClipboard(this.selectionMathML());
     if (cut) this.core.backspace();
   }
