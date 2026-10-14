@@ -466,6 +466,19 @@ export class MathEditor implements ToolbarHost {
     disp.view.addEventListener('touchend', (e) => {
       if (Date.now() - this.longPressedAt < 800 && e.cancelable) e.preventDefault();
     });
+    // a long press can make the system hide the soft keyboard (the browser's own selection takes the text input away
+    // from the field) without the focus going anywhere: put the keyboard back when the finger lifts and while the
+    // selection of the page changes right after the press
+    const reopenKeyboard = () => {
+      if (!this.kbOn || !this.coarse() || Date.now() - this.longPressedAt > 1500) return;
+      const input = this.display.input;
+      input.inputMode = 'text';
+      // the soft keyboard follows a field that is focused anew (the user's touch is the gesture that allows it)
+      input.blur();
+      input.focus({ preventScroll: true });
+    };
+    for (const t of ['pointerup', 'touchend']) disp.view.addEventListener(t, () => setTimeout(reopenKeyboard, 80));
+    document.addEventListener('selectionchange', this.keepKeyboard);
     disp.view.addEventListener('selectstart', (e) => e.preventDefault());
     // keyboard
     input.addEventListener('keydown', (e) => this.onKeyDown(e));
@@ -520,6 +533,7 @@ export class MathEditor implements ToolbarHost {
     document.removeEventListener('mousemove', this.onMouseMove);
     document.removeEventListener('mouseup', this.onMouseUp);
     document.removeEventListener('mousedown', this.onDocDown, true);
+    document.removeEventListener('selectionchange', this.keepKeyboard);
     this.resizeObs?.disconnect();
     this.onPageHide();
     document.removeEventListener('visibilitychange', this.onHide);
@@ -1348,6 +1362,14 @@ export class MathEditor implements ToolbarHost {
   }
 
   private longPressedAt = 0;
+
+  /** the page's selection changed right after a long press: the field keeps the focus and the input mode (keyboard) */
+  private keepKeyboard = (): void => {
+    if (!this.kbOn || !this.coarse() || Date.now() - this.longPressedAt > 3000) return;
+    const input = this.display.input;
+    if (input.inputMode !== 'text') input.inputMode = 'text';
+    if (document.activeElement !== input) input.focus({ preventScroll: true });
+  };
   private onMouseDown(e: MouseEvent): void {
     if (e.button !== 0) return;
     if (Date.now() - this.longPressedAt < 1200) {
