@@ -510,25 +510,33 @@ function withColor(el: El, env: Env): Env {
 
 /* ------------------------------------------------------------- elements */
 
-/** vertical alignment of a structure with inputs (contextual tab; the attribute `wrs:valign`, like the fence's):
- *  baseline (default, the reference's position): unchanged;
- *  middle: the middle of the structure sits on the middle of the line (the math axis);
- *  middle-baseline: as high above the baseline as it is deep below it, the content stays put. */
+/** vertical alignment of a structure with inputs (contextual tab; the attribute `wrs:valign`; the fence has its own):
+ *  absent: the structure sits where its kind puts it (a fraction, a root … centred on the math axis, a script on its base);
+ *  baseline: it does not hang below the line (what reaches deeper than a line of text is lifted);
+ *  middle: its middle sits on the middle of the line (the math axis);
+ *  middle-baseline: its middle sits on the baseline. */
 function alignBox(b: Box, valign: string, s: number): Box {
-  let drop = 0;
-  let a = b.a;
-  let d = b.d;
-  if (valign === 'middle') {
-    drop = (a - d) / 2 - K.axis * s;
-    a -= drop;
-    d += drop;
-  } else if (valign === 'middle-baseline') {
-    const m = Math.max(a, d);
-    a = m;
-    d = m;
-  } else return b;
-  if (drop === 0 && a === b.a && d === b.d) return b;
-  return { w: b.w, a, d, kids: [{ b, x: 0, y: drop }] };
+  let drop: number;
+  if (valign === 'baseline') drop = -Math.max(0, b.d - textDesc(16 * s));
+  else if (valign === 'middle') drop = (b.a - b.d) / 2 - K.axis * s;
+  else if (valign === 'middle-baseline') drop = (b.a - b.d) / 2;
+  else return b;
+  if (Math.abs(drop) < 0.01) return b;
+  return { w: b.w, a: b.a - drop, d: b.d + drop, kids: [{ b, x: 0, y: drop }] };
+}
+
+/** which of the three vertical alignments the structure shows without the attribute (the nearest one to how it is drawn) */
+export function valignNatural(el: El, size = 16): 'baseline' | 'middle' | 'middle-baseline' {
+  const env: Env = { size, level: 0, display: true, rtl: false };
+  const bare: El = { ...el, a: el.a.filter(([k]) => k !== 'wrs:valign') };
+  const base = layoutElBase(bare, env, [], 0);
+  const s = sc(env);
+  const dist = (v: string) => {
+    const b = alignBox(base, v, s);
+    return Math.abs(b.a - base.a) + Math.abs(b.d - base.d);
+  };
+  const c = (['middle', 'baseline', 'middle-baseline'] as const).map((v) => [v, dist(v)] as const).sort((x, y) => x[1] - y[1]);
+  return c[0][0];
 }
 
 export function layoutEl(el: El, envIn: Env, path: [number, number][], index: number): Box {

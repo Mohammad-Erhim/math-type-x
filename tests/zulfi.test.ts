@@ -119,6 +119,18 @@ test('contextual extension: structures with inputs have a vertical alignment (no
   const mid = h(ed.getMathML());
   assert.notDeepEqual(mid, base, 'the structure moved');
   applyContext(ed, 'valign_baseline');
-  assert.ok(!/valign/.test(ed.getMathML()));
-  assert.deepEqual(h(ed.getMathML()), base, 'baseline is the default position again');
+  assert.match(ed.getMathML(), /<msup wrs:valign="baseline">/);
+  assert.deepEqual(h(ed.getMathML()), base, 'a power sits on its baseline anyway');
+  // a fraction hangs below the line: Baseline lifts it, Middle / Middle-baseline are other places
+  const fr = new EditorCore();
+  fr.setMathML(`<math ${N}><mi>x</mi><mfrac><mi>a</mi><mi>b</mi></mfrac></math>`);
+  fr.contextExtras = true;
+  fr.caret = { path: [[1, 0]], index: 0 };
+  const ys: Record<string, number[]> = {};
+  for (const id of ['valign_baseline', 'valign_middle', 'valign_middle_baseline']) {
+    applyContext(fr, id);
+    ys[id] = h(fr.getMathML());
+  }
+  assert.notDeepEqual(ys.valign_baseline, ys.valign_middle_baseline);
+  assert.notDeepEqual(ys.valign_middle, ys.valign_middle_baseline);
 });

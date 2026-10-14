@@ -5,6 +5,7 @@
 import { El, Row, Step, getAttr, setAttr, cloneRow, tryRowAt, rowAt, newGroup, VALIGN_TAGS } from './model';
 import { EditorCore } from './engine';
 import { DOC_STYLE_PREFIX, docStyleOf } from './mathml';
+import { valignNatural } from '../layout/layout';
 import STRETCHY from '../data/stretchy.json';
 
 export type CtxKind = 'matrix' | 'table' | 'piecewise' | 'aligned' | 'fence_in' | 'operator' | 'multiline' | 'stack' | 'longdiv' | 'mspace' | 'sum' | 'symbol_sel' | 'numsep_sel' | 'numsep' | 'structure';
@@ -440,7 +441,7 @@ function operatorControls(loc: Located, group: number): CtxControl[] {
 export function controlsFor(loc: Located): CtxControl[] {
   let own = ownControls(loc);
   if (loc.inNumber && MERGE_KINDS.has(loc.kind)) {
-    own = [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0 }, ...own.map((c) => ({ ...c, group: c.group + 1 }))];
+    own = [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0, disabled: !numberHasSeparator(loc) }, ...own.map((c) => ({ ...c, group: c.group + 1 }))];
   }
   return loc.nudge ? [...NUDGES(), ...own] : own;
 }
@@ -524,7 +525,8 @@ function ownControls(loc: Located): CtxControl[] {
     case 'numsep_sel':
       return [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 1 }, ...operatorControls(loc, 2)];
     case 'numsep':
-      return [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0 }];
+      // digits without a separator: nothing to merge or split
+      return [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0, disabled: !numberHasSeparator(loc) }];
   }
 }
 
@@ -588,11 +590,15 @@ export function ctxValue(core: EditorCore, loc: Located, id: string): CtxValue {
       return { value: sp === ' ' ? '\u00A0' : sp };
     }
     case 'valign_baseline':
-      return { toggled: !f || !getAttr(f, 'wrs:valign') };
     case 'valign_middle':
-      return { toggled: getAttr(f ?? ({ a: [] } as any), 'wrs:valign') === 'middle' };
-    case 'valign_middle_baseline':
-      return { toggled: getAttr(f ?? ({ a: [] } as any), 'wrs:valign') === 'middle-baseline' };
+    case 'valign_middle_baseline': {
+      const want = id === 'valign_baseline' ? 'baseline' : id === 'valign_middle' ? 'middle' : 'middle-baseline';
+      const cur = f ? getAttr(f, 'wrs:valign') : undefined;
+      if (!f) return { toggled: want === 'baseline' };
+      // a fence: the attribute alone (absent = baseline); any other structure: absent = how it is drawn by itself
+      if (f.t === 'mfenced') return { toggled: want === 'baseline' ? !cur : cur === want };
+      return { toggled: (cur ?? valignNatural(f)) === want };
+    }
     case 'align_axis':
       return { toggled: !!t && (!getAttr(t, 'align') || /^axis\b/.test(getAttr(t, 'align')!)) };
     case 'align_top':
@@ -823,7 +829,9 @@ export function applyContext(core: EditorCore, id: string, value?: string): bool
     case 'valign_middle_baseline':
       if (f) {
         withUndo(() => {
-          setOrdered(f, 'wrs:valign', id === 'valign_baseline' ? null : id === 'valign_middle' ? 'middle' : 'middle-baseline', FENCE_ORDER);
+          const want = id === 'valign_baseline' ? 'baseline' : id === 'valign_middle' ? 'middle' : 'middle-baseline';
+          // a fence: baseline = no attribute; the other structures keep the choice as an attribute
+          setOrdered(f, 'wrs:valign', f.t === 'mfenced' && want === 'baseline' ? null : want, FENCE_ORDER);
           if (f.t === 'mfenced') normFence(f);
         });
       }
@@ -1132,6 +1140,16 @@ function wrapRootStyle(core: EditorCore, attr: string, v: string): void {
   const i = core.attrs.findIndex(([k]) => k === key);
   if (i >= 0) core.attrs[i][1] = v;
   else core.attrs.push([key, v]);
+}
+
+/** is there anything for the merge / unmerge button to do with the number next to the caret (a separator in it)? */
+function numberHasSeparator(loc: Located): boolean {
+  const tk = loc.tokens?.[0];
+  if (!tk) return true;
+  const row = tk.row;
+  const g = row[tk.index - 1]?.g;
+  if (g === undefined) return true;
+  return row.some((e) => e.c === undefined && e.g === g && e.t === 'mn' && /^[.,]$/.test(e.x ?? ''));
 }
 
 function mergeNumSep(core: EditorCore, loc: Located): void {
