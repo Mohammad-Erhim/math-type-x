@@ -432,6 +432,7 @@ export class MathEditor implements ToolbarHost {
       const pe = e as PointerEvent;
       if (pe.pointerType !== 'touch' || !pe.isPrimary) return;
       this.lastTouchAt = Date.now();
+      this.touchPt = { x: pe.clientX, y: pe.clientY, t: this.lastTouchAt };
       cancelPress();
       pressAt = { x: pe.clientX, y: pe.clientY };
       press = setTimeout(() => {
@@ -1343,8 +1344,17 @@ export class MathEditor implements ToolbarHost {
 
   /* ---------------------------------------------------------------- mouse */
   private contentPoint(e: MouseEvent): { x: number; y: number } {
+    // the mouse events a browser sends for a tap carry a "touch adjusted" position (snapped to the nearest clickable
+    // thing, a few pixels away from the finger): the caret goes where the finger touched, not where the browser moved it
+    const tp = this.touchPt;
+    if ((e.type === 'mousedown' || e.type === 'dblclick') && Date.now() - tp.t < 1000 && Math.hypot(e.clientX - tp.x, e.clientY - tp.y) < 48) {
+      return this.display.toContent(tp.x, tp.y);
+    }
     return this.display.toContent(e.clientX, e.clientY);
   }
+
+  /** where the last finger went down (client px) and when */
+  private touchPt = { x: 0, y: 0, t: 0 };
 
   private longPressedAt = 0;
   private lastTouchAt = 0;
