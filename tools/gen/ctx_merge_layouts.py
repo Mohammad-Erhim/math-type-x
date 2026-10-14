@@ -19,5 +19,14 @@ for k in ['matrix', 'matrix_sp', 'matrix_st', 'piecewise_sp', 'table', 'table_sp
         groups.append(g)
     d[k + '_merge'] = {'w': src['w'], 'h': h, 'groups': groups}
     # with selected text (nudges first) the structure is the same: not offered together with a selection
+# a whole structure selected (extension): the nudge buttons, a separator, then its vertical alignment
+nud = copy.deepcopy(d['sel_fence']['groups'][0])
+st = d['structure']
+groups = [nud, {'line': True, 'x': 67, 'y': 3, 'h': st['h'] - 6}]
+for g in st['groups']:
+    g = copy.deepcopy(g)
+    g['x'] = g['x'] + 69
+    groups.append(g)
+d['sel_structure'] = {'w': st['w'], 'h': st['h'], 'groups': groups}
 json.dump(d, open(p, 'w'))
 print('ok', len(d))
