@@ -77,8 +77,8 @@ export const CSS = `
 .wrs_focusElement{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;border:0;padding:0;margin:0;background:transparent;color:transparent;caret-color:transparent;font-size:16px}
 .wrs_ariaLiveRegion{position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden}
 .wrs_hiddenButDisplayed{clip-path:inset(50%)}
-.wrs_ctxMenu{position:absolute;z-index:60;display:flex;gap:1px;background:#fff;border:1px solid #6f8793;border-radius:8px;box-shadow:0 4px 16px rgba(30,50,60,.35);padding:3px;-webkit-user-select:none;user-select:none;touch-action:manipulation}
-.wrs_ctxItem{min-width:56px;min-height:40px;padding:0 14px;white-space:nowrap;border:0;border-radius:6px;background:transparent;color:#1f3b48;font:600 14px Arial,sans-serif;cursor:pointer}
+.wrs_ctxMenu{position:absolute;z-index:60;display:flex;flex-wrap:nowrap;width:max-content;max-width:calc(100vw - 8px);box-sizing:border-box;gap:2px;background:#fff;border:1px solid #6f8793;border-radius:8px;box-shadow:0 4px 16px rgba(30,50,60,.35);padding:6px;-webkit-user-select:none;user-select:none;touch-action:manipulation}
+.wrs_ctxItem{flex:0 0 auto;min-width:56px;min-height:40px;padding:0 14px;white-space:nowrap;pointer-events:auto;border:0;border-radius:6px;background:transparent;color:#1f3b48;font:600 14px Arial,sans-serif;cursor:pointer}
 .wrs_ctxItem:hover:not(:disabled),.wrs_ctxItem:active:not(:disabled){background:#dbe8ee}
 .wrs_ctxItem:disabled{color:#9aaab3;cursor:default}
 .wrs_pasteBox{padding:6px}
