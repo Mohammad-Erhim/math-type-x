@@ -775,8 +775,12 @@ export class EditorCore {
     const el = parentRow?.[i];
     if (!parentRow || !el || !el.c || el.c[0].length < 2) return;
     const base = el.c[0];
+    // the base is one element, or one whole number / word (digits typed into it stay together)
+    let runStart = base.length - 1;
+    while (runStart > 0 && base[runStart].c === undefined && base[runStart - 1].c === undefined && base[runStart].g !== undefined && base[runStart - 1].g === base[runStart].g && base[runStart - 1].t === base[runStart].t) runStart--;
+    if (runStart === 0 && base[0].c === undefined && (base[0].t === 'mn' || base[0].t === 'mi')) return;
     if (el.t === 'msup' || el.t === 'msub' || el.t === 'msubsup') {
-      const spill = base.splice(0, base.length - 1);
+      const spill = base.splice(0, runStart);
       parentRow.splice(i, 0, ...spill);
       this.caret = { path: [...outer, [i + spill.length, 0]], index: 1 };
       return;
@@ -791,13 +795,17 @@ export class EditorCore {
       const out: Row = [];
       const preHasContent = preSlots.some((r) => r.length > 0) || preSlots.length > 0;
       let caretIdx = 0;
+      // the positions written as <none/> follow their slots into the parts
+      const nones = (el.x ?? '').split(',').filter(Boolean).map(Number);
+      const preNone = nones.filter((n) => n > post).map((n) => n - post);
+      const postNone = nones.filter((n) => n >= 1 && n <= post);
       if (preSlots.length && preHasContent) {
-        out.push({ t: 'mmultiscripts', a: [], c: [[first], ...preSlots], cols: 0 });
+        out.push({ t: 'mmultiscripts', a: [], c: [[first], ...preSlots], cols: 0, ...(preNone.length ? { x: preNone.join(',') } : {}) });
         caretIdx = 0;
       } else out.push(first);
       out.push(...middle);
       if (postSlots.length === 2) out.push({ t: 'msubsup', a: [], c: [[last], postSlots[0], postSlots[1]] });
-      else if (postSlots.length) out.push({ t: 'mmultiscripts', a: [], c: [[last], ...postSlots], cols: post });
+      else if (postSlots.length) out.push({ t: 'mmultiscripts', a: [], c: [[last], ...postSlots], cols: post, ...(postNone.length ? { x: postNone.join(',') } : {}) });
       else out.push(last);
       parentRow.splice(i, 1, ...out);
       this.caret = out[0].c ? { path: [...outer, [i, 0]], index: 1 } : { path: outer, index: i + 1 };

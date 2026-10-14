@@ -21,6 +21,7 @@ const RUNS: { file: string; mode: 'discover' | 'select'; cases?: string; skip?: 
   { file: 'evidence/ctx_adj_ref.json', mode: 'discover', skip: ['longdiv_us'] },
   { file: 'evidence/ctx_ops_ref.json', mode: 'discover', skip: ['o_2208'] },
   { file: 'evidence/ctx_ops2_ref.json', mode: 'discover' },
+  { file: 'evidence/ctx_nest_ref.json', mode: 'discover', skip: ['n3'] },
   { file: 'evidence/ctx_sel_ref.json', mode: 'select' },
   { file: 'evidence/ctx_sel2_ref.json', mode: 'select', cases: 'evidence/ctx_cases_sel2.json' },
 ];

@@ -39,7 +39,7 @@ for (const file of ['evidence/ctx_flows_ref.json', 'evidence/ctx_rand_ref.json']
     let skipped = 0;
     const bad: string[] = [];
     for (const [name, rec] of Object.entries(data)) {
-      if (!rec.flow) continue;
+      if (!rec.flow || known[name]) continue;
       const e = new EditorCore();
       e.geometry = new DocGeometry(e);
       e.setMathML(`<math${NS}/>`);

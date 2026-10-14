@@ -42,7 +42,7 @@ export function stretchDefault(el?: El): boolean | null {
 
 /** which recorded arrangement of the contextual tab shows the controls of `loc` */
 export function ctxLayoutKey(loc: Located): string {
-  const key = caretLayoutKey(loc);
+  const key = caretLayoutKey(loc) + (loc.inNumber && MERGE_KINDS.has(loc.kind) ? '_merge' : '');
   if (!loc.nudge) return key;
   // nudge buttons, a separator, then the controls of the context (derived and checked in tools/gen/ctx_layout.py)
   switch (loc.kind) {
@@ -129,14 +129,25 @@ export function enclosing(core: EditorCore): Hit[] {
 
 function tableCtx(h: Hit, chain: Hit[]): { kind: CtxKind; fence?: Hit } | null {
   if (h.el.t !== 'mtable') return null;
-  const outer = chain[chain.indexOf(h) + 1];
-  // fence immediately wrapping the table (single child)
-  if (outer && outer.el.t === 'mfenced' && outer.el.c![0].length === 1 && outer.el.c![0][0] === h.el) {
-    const open = getAttr(outer.el, 'open');
-    const close = getAttr(outer.el, 'close');
+  const at = chain.indexOf(h);
+  const outer = chain[at + 1];
+  // a fence around the table – directly, or further out (a table in a fraction in a fence, a table next to other
+  // things in a fence) as long as no other table comes in between – gives the fence's controls too
+  let fence: Hit | undefined;
+  for (let k = at + 1; k < chain.length; k++) {
+    if (chain[k].el.t === 'mfenced') {
+      fence = chain[k];
+      break;
+    }
+    if (chain[k].el.t === 'mtable') break;
+  }
+  if (fence) {
+    const direct = !!outer && outer === fence && fence.el.c![0].length === 1 && fence.el.c![0][0] === h.el;
+    const open = getAttr(fence.el, 'open');
+    const close = getAttr(fence.el, 'close');
     const ca = (getAttr(h.el, 'columnalign') ?? '').split(/\s+/).filter(Boolean);
-    if (open === '{' && close === '' && ca[0] === 'left' && ca.length === 1) return { kind: 'piecewise', fence: outer };
-    return { kind: 'matrix', fence: outer };
+    if (direct && open === '{' && close === '' && ca[0] === 'left' && ca.length === 1) return { kind: 'piecewise', fence };
+    return { kind: 'matrix', fence };
   }
   const ca = (getAttr(h.el, 'columnalign') ?? '').split(/\s+/).filter(Boolean);
   if (ca.length === 2 && ca[0] === 'right' && ca[1] === 'left') return { kind: 'aligned' };
@@ -178,8 +189,20 @@ export function locate(core: EditorCore): Located | null {
   if (loc && loc.op && stretchDefault(loc.op) !== null) loc.stretchy = true;
   // a selection shows the nudge buttons in front of everything else
   if (loc && core.hasSelection() && loc.kind !== 'structure') loc.nudge = true;
+  // between two digits of one number the reference adds the merge / unmerge button in front of the structure's controls
+  if (loc && !core.hasSelection() && MERGE_KINDS.has(loc.kind)) {
+    const row = core.currentRow();
+    const l = row[core.caret.index - 1];
+    const r = row[core.caret.index];
+    if (l && r && l.t === 'mn' && r.t === 'mn' && l.c === undefined && r.c === undefined && l.g !== undefined && l.g === r.g) {
+      loc.inNumber = true;
+      loc.tokens = [{ row, index: core.caret.index }];
+    }
+  }
   return loc;
 }
+
+const MERGE_KINDS = new Set<CtxKind>(['matrix', 'piecewise', 'table', 'aligned', 'fence_in']);
 
 function locateRaw(core: EditorCore): Located | null {
   const chain = enclosing(core);
@@ -221,6 +244,7 @@ function locateRaw(core: EditorCore): Located | null {
         isOpEl(e) ||
         isNlEl(e) ||
         (!!e && e.t === 'mspace') ||
+        (!!e && e.t === 'mn' && e.c === undefined && !!e.g && here[core.caret.index - 1]?.g === here[core.caret.index]?.g && here[core.caret.index - 1]?.t === 'mn' && here[core.caret.index]?.t === 'mn') ||
         (!!e && (e.t === 'msub' || e.t === 'msup' || e.t === 'msubsup') && e.c![0].length === 1 && isOpEl(e.c![0][0])),
     );
     if (!sel && !refContext) {
@@ -293,7 +317,17 @@ function locateRaw(core: EditorCore): Located | null {
         return withCarries(core, { kind: 'stack', hit: st, inNumber: between });
       }
     }
-    if (h.el.t === 'mfenced') return { kind: 'fence_in', fence: h, spacing: spacingHere, op: opNextTo() };
+    if (h.el.t === 'mfenced') {
+      // a fence inside a table cell: the fence's controls come with the table's
+      const k = chain.indexOf(h);
+      const tb = chain.slice(k + 1).find((x) => x.el.t === 'mtable');
+      if (tb) {
+        const cs = core.sel?.cells;
+        const hit = cs && cs.slots.length && tb.el === rowAt(core.row, core.sel!.path)[core.sel!.from] ? { ...tb, slot: cs.slots[0] } : tb;
+        return { kind: 'matrix', table: hit, fence: h, spacing: spacingHere, op: opNextTo() };
+      }
+      return { kind: 'fence_in', fence: h, spacing: spacingHere, op: opNextTo() };
+    }
   }
   if (sel) {
     const { els, from } = sel;
@@ -403,7 +437,10 @@ function operatorControls(loc: Located, group: number): CtxControl[] {
 }
 
 export function controlsFor(loc: Located): CtxControl[] {
-  const own = ownControls(loc);
+  let own = ownControls(loc);
+  if (loc.inNumber && MERGE_KINDS.has(loc.kind)) {
+    own = [{ id: 'numsep_merge', title: 'Merge/unmerge separators in <mn>', kind: 'button', icon: 'numsep_merge', group: 0 }, ...own.map((c) => ({ ...c, group: c.group + 1 }))];
+  }
   return loc.nudge ? [...NUDGES(), ...own] : own;
 }
 
@@ -1119,7 +1156,7 @@ function mergeNumSep(core: EditorCore, loc: Located): void {
     core.touch();
     return;
   }
-  if (loc.kind === 'numsep') {
+  if (loc.kind === 'numsep' || loc.inNumber) {
     // caret inside a number: split it at its separators ("1,000.25" → 1 , 000 . 25)
     const at = tk[0].index;
     const g0 = row[at - 1].g;
