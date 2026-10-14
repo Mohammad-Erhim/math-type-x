@@ -419,53 +419,11 @@ export class MathEditor implements ToolbarHost {
     document.addEventListener('mousemove', this.onMouseMove);
     document.addEventListener('mouseup', this.onMouseUp);
     disp.view.addEventListener('dblclick', (e) => this.onDblClick(e as MouseEvent));
-    // the menu of the formula (Cut / Copy / Paste / Select all): right click, and the end of a long press on a touch screen
-    disp.view.addEventListener('contextmenu', (e) => {
-      e.preventDefault();
-      const me = e as MouseEvent;
-      this.openClipboardMenu(me.clientX, me.clientY);
-    });
-    // a long press on a touch screen selects the word / run under the finger (the native selection of the browser would
-    // take the focus, and with it the keyboard, away from the formula)
-    let press: ReturnType<typeof setTimeout> | null = null;
-    let pressAt = { x: 0, y: 0 };
-    const cancelPress = () => {
-      if (press) clearTimeout(press);
-      press = null;
-    };
+    disp.view.addEventListener('contextmenu', (e) => e.preventDefault());
+    // a long press on a touch screen does nothing of its own (no selection, no menu): the browser's native long-press
+    // behaviour would take the focus - and the keyboard - away from the formula
     disp.view.addEventListener('pointerdown', (e) => {
-      const pe = e as PointerEvent;
-      if (pe.pointerType !== 'touch' || !pe.isPrimary) return;
-      cancelPress();
-      pressAt = { x: pe.clientX, y: pe.clientY };
-      press = setTimeout(() => {
-        press = null;
-        const p = this.display.toContent(pressAt.x, pressAt.y);
-        const hit = this.display.hitTest(p.x, p.y);
-        if (!hit) {
-          this.longPressedAt = Date.now();
-          this.wantKeyboard();
-          this.focusEditor();
-          this.openClipboardMenu(pressAt.x, pressAt.y);
-          return;
-        }
-        this.closePopup();
-        this.core.setCaret(hit);
-        this.core.selectRun(hit);
-        // the browser may still send the mouse events of a tap when the finger lifts: they must not undo the selection
-        this.longPressedAt = Date.now();
-        this.wantKeyboard();
-        this.focusEditor();
-        this.openClipboardMenu(pressAt.x, pressAt.y);
-      }, 450);
-    });
-    disp.view.addEventListener('pointermove', (e) => {
-      if (press && Math.hypot((e as PointerEvent).clientX - pressAt.x, (e as PointerEvent).clientY - pressAt.y) > 10) cancelPress();
-    });
-    for (const t of ['pointerup', 'pointercancel', 'pointerleave']) disp.view.addEventListener(t, cancelPress);
-    // the touch that ended a long press must not start the browser's own selection / callout
-    disp.view.addEventListener('touchend', (e) => {
-      if (Date.now() - this.longPressedAt < 800 && e.cancelable) e.preventDefault();
+      if ((e as PointerEvent).pointerType === 'touch') this.lastTouchAt = Date.now();
     });
     // a long press can put the focus on the display itself (it is focusable) – and with it the keyboard goes away. The
     // formula field takes the focus back at once, in the same task, so that the keyboard never has to leave
@@ -1356,10 +1314,11 @@ export class MathEditor implements ToolbarHost {
   }
 
   private longPressedAt = 0;
+  private lastTouchAt = 0;
 
   /** the page's selection changed right after a long press: the field keeps the focus and the input mode (keyboard) */
   private keepKeyboard = (): void => {
-    if (!this.kbOn || !this.coarse() || Date.now() - this.longPressedAt > 3000) return;
+    if (!this.kbOn || !this.coarse() || Date.now() - this.lastTouchAt > 3000) return;
     const input = this.display.input;
     if (input.inputMode !== 'text') input.inputMode = 'text';
     if (document.activeElement !== input) input.focus({ preventScroll: true });
@@ -1477,9 +1436,8 @@ export class MathEditor implements ToolbarHost {
     setTimeout(() => {
       const a = this.root?.ownerDocument.activeElement as HTMLElement | null;
       if (!a || a === this.root.ownerDocument.body) {
-        // a long press (selection, the menu) can make the browser drop the focus: the formula takes it back and the
-        // keyboard stays
-        if (Date.now() - this.longPressedAt < 2500 && this.display.input.isConnected) {
+        // a long press can make the browser drop the focus: the formula takes it back and the keyboard stays
+        if (Date.now() - this.lastTouchAt < 2500 && this.display.input.isConnected) {
           this.display.input.focus({ preventScroll: true });
           return;
         }
@@ -1562,19 +1520,12 @@ export class MathEditor implements ToolbarHost {
   }
 
   private pasteButton(): void {
-    this.pasteFromClipboard(null);
+    this.pasteFromClipboard();
   }
 
-  /**
-   * Paste the clipboard. The browser asks for permission (a "Paste" bubble on phones) and only answers to a tap; when it
-   * does not allow reading, a field to paste into is offered – the native long-press menu of the field pastes.
-   */
-  private pasteFromClipboard(at: { x: number; y: number } | null): void {
-    const fallback = () => this.openPasteField(at);
-    if (!navigator.clipboard?.readText) {
-      fallback();
-      return;
-    }
+  /** Paste the clipboard (the browser asks for permission – a "Paste" bubble on phones – and only answers to a tap) */
+  private pasteFromClipboard(): void {
+    if (!navigator.clipboard?.readText) return;
     navigator.clipboard
       .readText()
       .then((t) => {
@@ -1582,123 +1533,8 @@ export class MathEditor implements ToolbarHost {
           this.focusEditor();
           return this.pasteText(t);
         }
-        return fallback();
       })
-      .catch(fallback);
-  }
-
-  private ctxMenu: HTMLElement | null = null;
-  private closeClipboardMenu(): void {
-    this.ctxMenu?.remove();
-    this.ctxMenu = null;
-  }
-
-  /** a small menu at the touch / click point: Cut, Copy, Paste, Select all */
-  private ctxOpenedAt = 0;
-  private openClipboardMenu(clientX: number, clientY: number): void {
-    // the long press itself and the contextmenu event that follows it are one gesture: one menu
-    if (this.ctxMenu && Date.now() - this.ctxOpenedAt < 700) return;
-    this.ctxOpenedAt = Date.now();
-    this.closeClipboardMenu();
-    const sel = this.core.hasSelection();
-    const act = (fn: () => void) => () => {
-      this.closeClipboardMenu();
-      fn();
-      this.wantKeyboard();
-      this.focusEditor();
-    };
-    const items: [string, boolean, () => void][] = [
-      ['Cut', sel, act(() => this.copySelection(true))],
-      ['Copy', sel, act(() => this.copySelection(false))],
-      ['Paste', true, () => {
-        this.closeClipboardMenu();
-        this.wantKeyboard();
-        this.pasteFromClipboard({ x: clientX, y: clientY });
-      }],
-      ['Select all', true, act(() => this.core.selectAll())],
-    ];
-    const menu = h('div', { class: 'wrs_ctxMenu', role: 'menu', 'aria-label': 'Edit' });
-    for (const [label, enabled, fn] of items) {
-      const b = h('button', { type: 'button', role: 'menuitem', class: 'wrs_ctxItem', tabindex: '-1' }, label) as HTMLButtonElement;
-      b.disabled = !enabled;
-      // the formula keeps the focus (and the keyboard state) while the menu is used
-      b.addEventListener('mousedown', (e) => e.preventDefault());
-      // the action runs when the finger lifts on the button (pointerup) – a tap that the page would otherwise have to
-      // wait for the browser to turn into a click – and on click (keyboard, assistive technology), once
-      let done = false;
-      const run = (e: Event) => {
-        e.preventDefault();
-        e.stopPropagation();
-        if (done) return;
-        done = true;
-        fn();
-      };
-      b.addEventListener('pointerup', run);
-      b.addEventListener('click', run);
-      menu.append(b);
-    }
-    this.mountFloating(menu, clientX, clientY);
-    this.ctxMenu = menu;
-    const away = (e: Event) => {
-      if (menu.contains(e.target as Node)) return;
-      // the keyboard of a phone sends keys of its own (composition) when it comes up: only Escape closes
-      if (e.type === 'keydown' && (e as KeyboardEvent).key !== 'Escape') return;
-      this.closeClipboardMenu();
-      document.removeEventListener('pointerdown', away, true);
-      document.removeEventListener('keydown', away, true);
-    };
-    // not on the pointerdown that is still going on (the long press itself)
-    setTimeout(() => {
-      document.addEventListener('pointerdown', away, true);
-      document.addEventListener('keydown', away, true);
-    }, 0);
-  }
-
-  /** a field to paste into, when the page may not read the clipboard (phones: its long-press menu has Paste) */
-  private openPasteField(at: { x: number; y: number } | null): void {
-    this.closeClipboardMenu();
-    const ta = h('textarea', { class: 'wrs_pasteField', rows: '2', placeholder: 'Paste here', 'aria-label': 'Paste here', dir: 'auto' }) as HTMLTextAreaElement;
-    const box = h('div', { class: 'wrs_ctxMenu wrs_pasteBox', role: 'dialog' }, ta);
-    const finish = () => {
-      const v = ta.value;
-      this.closeClipboardMenu();
-      if (v.trim()) {
-        this.focusEditor();
-        void this.pasteText(v);
-      } else this.focusEditor();
-    };
-    ta.addEventListener('paste', () => setTimeout(finish, 0));
-    ta.addEventListener('input', () => {
-      if (ta.value.length > 0) setTimeout(finish, 0);
-    });
-    ta.addEventListener('keydown', (e) => {
-      if ((e as KeyboardEvent).key === 'Escape') {
-        this.closeClipboardMenu();
-        this.focusEditor();
-      }
-    });
-    const r = this.display.view.getBoundingClientRect();
-    this.mountFloating(box, at ? at.x : r.left + 20, at ? at.y : r.top + 20);
-    this.ctxMenu = box;
-    ta.focus();
-  }
-
-  /** put `el` into the editor, near the client point and inside the window */
-  private mountFloating(el: HTMLElement, clientX: number, clientY: number): void {
-    const root = this.root;
-    root.append(el);
-    const rb = root.getBoundingClientRect();
-    el.style.position = 'absolute';
-    el.style.visibility = 'hidden';
-    const w = el.offsetWidth;
-    const hgt = el.offsetHeight;
-    let x = clientX - rb.left - w / 2;
-    let y = clientY - rb.top - hgt - 14;
-    if (y < 4) y = clientY - rb.top + 22;
-    x = Math.max(4, Math.min(x, rb.width - w - 4));
-    el.style.left = `${Math.round(x)}px`;
-    el.style.top = `${Math.round(y)}px`;
-    el.style.visibility = '';
+      .catch(() => this.focusEditor());
   }
 
   private onPaste(e: ClipboardEvent): void {
