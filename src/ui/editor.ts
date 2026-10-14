@@ -420,10 +420,41 @@ export class MathEditor implements ToolbarHost {
     document.addEventListener('mouseup', this.onMouseUp);
     disp.view.addEventListener('dblclick', (e) => this.onDblClick(e as MouseEvent));
     disp.view.addEventListener('contextmenu', (e) => e.preventDefault());
-    // a long press on a touch screen does nothing of its own (no selection, no menu): the browser's native long-press
-    // behaviour would take the focus - and the keyboard - away from the formula
+    // a long press on a touch screen selects the line under the finger (the native selection of the browser would take the
+    // focus, and with it the keyboard, away from the formula); the handles then move either end – in either direction
+    let press: ReturnType<typeof setTimeout> | null = null;
+    let pressAt = { x: 0, y: 0 };
+    const cancelPress = () => {
+      if (press) clearTimeout(press);
+      press = null;
+    };
     disp.view.addEventListener('pointerdown', (e) => {
-      if ((e as PointerEvent).pointerType === 'touch') this.lastTouchAt = Date.now();
+      const pe = e as PointerEvent;
+      if (pe.pointerType !== 'touch' || !pe.isPrimary) return;
+      this.lastTouchAt = Date.now();
+      cancelPress();
+      pressAt = { x: pe.clientX, y: pe.clientY };
+      press = setTimeout(() => {
+        press = null;
+        const p = this.display.toContent(pressAt.x, pressAt.y);
+        const hit = this.display.hitTest(p.x, p.y);
+        if (!hit) return;
+        this.closePopup();
+        this.core.setCaret(hit);
+        this.core.selectRun(hit);
+        // the browser may still send the mouse events of a tap when the finger lifts: they must not undo the selection
+        this.longPressedAt = Date.now();
+        this.wantKeyboard();
+        this.focusEditor();
+      }, 450);
+    });
+    disp.view.addEventListener('pointermove', (e) => {
+      if (press && Math.hypot((e as PointerEvent).clientX - pressAt.x, (e as PointerEvent).clientY - pressAt.y) > 10) cancelPress();
+    });
+    for (const t of ['pointerup', 'pointercancel', 'pointerleave']) disp.view.addEventListener(t, cancelPress);
+    // the touch that ended a long press must not start the browser's own selection / callout
+    disp.view.addEventListener('touchend', (e) => {
+      if (Date.now() - this.longPressedAt < 800 && e.cancelable) e.preventDefault();
     });
     // a long press can put the focus on the display itself (it is focusable) – and with it the keyboard goes away. The
     // formula field takes the focus back at once, in the same task, so that the keyboard never has to leave

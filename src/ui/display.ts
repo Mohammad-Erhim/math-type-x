@@ -52,9 +52,14 @@ export class FormulaDisplay {
       el.addEventListener('pointerdown', (ev) => {
         ev.preventDefault();
         ev.stopPropagation();
+        // the handle may sit beside the edge it belongs to (kept inside the window): the drag moves the edge by what
+        // the finger moved, not to where the finger is
+        const ax = Number(el.dataset.ax ?? NaN);
+        const start = this.toContent(ev.clientX, ev.clientY - 18);
+        const off = Number.isFinite(ax) ? start.x - ax : 0;
         const move = (e2: PointerEvent) => {
           const q = this.toContent(e2.clientX, e2.clientY - 18);
-          this.onHandle?.(end, q.x, q.y);
+          this.onHandle?.(end, q.x - off, q.y);
         };
         const up = () => {
           document.removeEventListener('pointermove', move);
@@ -220,6 +225,17 @@ export class FormulaDisplay {
       el.style.height = '36px';
       el.style.overflow = 'visible';
       el.style.display = '';
+      el.dataset.ax = String(x);
+      // a handle at the edge of the formula (the start of a right-to-left line is its right edge) would be cut off by
+      // the window: it is moved inward, whole, where a finger can take it
+      const vr = this.view.getBoundingClientRect();
+      const hr = el.getBoundingClientRect();
+      if (vr.width > 0 && hr.width > 0) {
+        let dx = 0;
+        if (hr.left < vr.left + 2) dx = vr.left + 2 - hr.left;
+        else if (hr.right > vr.right - 2) dx = vr.right - 2 - hr.right;
+        if (dx) el.style.left = Math.round(x - 12 + dx) + 'px';
+      }
     }
   }
 
