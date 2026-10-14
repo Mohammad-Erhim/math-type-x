@@ -43,15 +43,24 @@ test('the limits of an integral keep clear of the sign', () => {
   }
 });
 
-test('a wide index of a root rests on a flat tick instead of sitting on the stroke', () => {
+test('the index of a root never touches the sign: no line under it, always above the tick', () => {
+  const idxs = ['<mn>3</mn>', '<mn>12</mn>', '<mn>46</mn>', '<mi>n</mi>', '<mfrac><mi>a</mi><mi>b</mi></mfrac>', '<msqrt><mi>x</mi></msqrt>'];
+  const rads = ['<mi>r</mi>', '<msup><mi>r</mi><mn>9</mn></msup>', '<mfrac><mi>p</mi><mi>q</mi></mfrac>', '<mrow/>'];
   for (const rtl of [false, true]) {
-    const l = lay('<mroot><mi>x</mi><mn>12</mn></mroot>', rtl);
-    const p = l.items.find((i) => i.k === 'p') as { x: number; y: number; d: string };
-    const nums = p.d.match(/-?[\d.]+/g)!.map(Number);
-    const [, y1, , y2] = nums; // M x y L x y …
-    assert.equal(y1, y2, 'the tick is flat');
-    const idx = l.items.find((i) => i.k === 'g' && (i as { text: string }).text === '12') as { y: number };
-    assert.ok(idx.y < p.y + y1, 'the index stays above the tick');
+    for (const idx of idxs) {
+      for (const rad of rads) {
+        const l = lay(`<mroot><mrow>${rad}</mrow>${idx}</mroot>`, rtl);
+        const p = l.items.find((i) => i.k === 'p' && /^M/.test((i as { d: string }).d)) as { x: number; y: number; d: string };
+        const n = p.d.match(/-?[\d.]+/g)!.map(Number); // M x y L x y L x y L x y
+        assert.notEqual(n[1], n[3], 'no flat line under the index');
+        const tickY = p.y + n[3]; // the peak of the small tick
+        // the lowest ink of the index (its baseline, or of the placeholder) is above the tick
+        const gl = l.items.filter((i) => i.k === 'g') as { y: number; x: number; text: string }[];
+        for (const g of gl.filter((q) => !['r', '9', 'p', 'q'].includes(q.text))) {
+          assert.ok(g.y <= tickY + 0.5, `${idx} over ${rad} rtl=${rtl}: index glyph ${g.text} baseline ${g.y} below the tick ${tickY}`);
+        }
+      }
+    }
   }
 });
 
@@ -76,7 +85,7 @@ test('a tall index of a root is raised so that its bottom stays above the tick',
   const l = lay('<mroot><mi>x</mi><mfrac><mi>a</mi><mi>b</mi></mfrac></mroot>');
   const p = l.items.find((i) => i.k === 'p') as { y: number; d: string };
   const nums = p.d.match(/-?[\d.]+/g)!.map(Number);
-  const tickY = p.y + nums[1];
+  const tickY = p.y + nums[3];
   const b = l.items.find((i) => i.k === 'g' && (i as { text: string }).text === 'b') as { y: number; size: number };
   assert.ok(b.y + 0.25 * b.size <= tickY + 1, 'the denominator ends above the tick');
 });
