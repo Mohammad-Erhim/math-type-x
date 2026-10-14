@@ -1396,6 +1396,10 @@ export class MathEditor implements ToolbarHost {
     const input = this.display.input;
     this.kbOn = on;
     this.kbOpenedAt = Date.now();
+    this.kbSeen = false;
+    // the height of the window before the keyboard takes room from it
+    const vv = window.visualViewport;
+    this.kbPeak = Math.max(window.innerHeight, vv ? vv.height + vv.offsetTop : 0, on ? 0 : this.kbPeak);
     input.inputMode = on ? 'text' : 'none';
     this.paintKeyboardKey();
     // a changed input mode takes effect when the field is focused again
@@ -1415,13 +1419,24 @@ export class MathEditor implements ToolbarHost {
     this.paintKeyboardKey();
   }
 
+  /** the keyboard has been seen (the window got lower): only then a window that is high again means it went away */
+  private kbSeen = false;
+
   private onViewport = (): void => {
     const vv = window.visualViewport;
     if (!vv || !this.kbOn || !this.coarse()) return;
-    this.kbPeak = Math.max(this.kbPeak, window.innerHeight, vv.height + vv.offsetTop);
-    const shrunk = this.kbPeak - (vv.height + vv.offsetTop) > 100;
-    // right after it was asked for the keyboard is still sliding in
-    if (!shrunk && Date.now() - this.kbOpenedAt > 700 && this.display.input === this.root.ownerDocument.activeElement) this.keyboardGone();
+    const h = vv.height + vv.offsetTop;
+    this.kbPeak = Math.max(this.kbPeak, window.innerHeight, h);
+    const shrunk = this.kbPeak - h > 100;
+    if (shrunk) {
+      this.kbSeen = true;
+      return;
+    }
+    // the window is high again after it had been low: the system closed the keyboard (Back, a gesture)
+    if (this.kbSeen && Date.now() - this.kbOpenedAt > 300 && this.display.input === this.root.ownerDocument.activeElement) {
+      this.kbSeen = false;
+      this.keyboardGone();
+    }
   };
 
   /** the focus went somewhere that is not a text field: the keyboard is gone with it */
