@@ -709,9 +709,11 @@ function radical(body: Box, index: Box | null, env: Env): Box {
   const y0 = -body.a - (body.lift ? 1 : 0) + (onlySlot(body) ? 0.5 : 0);
   // a tall index (fraction, root) rises: its bottom stays where the bottom of a line of digits is ...
   const rise = index ? Math.max(0, index.d - 3.14 * s) : 0;
-  // ... and it always stays 2 px above the small tick of the sign, however tall the radicand is
-  const tickHeight = -y0 - 0.55 * h;
-  const iy = Math.min(-(K.rootIndexShift * s) - rise, -tickHeight - 2 * s - rise);
+  // ... and it always keeps a safe area above the small tick of the sign, however tall the radicand is (more for glyphs
+  // that hang below their baseline: Arabic-Indic digits, letters with a descender)
+  const tickHeight = -y0 - (env.rtl ? 0.5 : 0.55) * h;
+  const hangs = !!index && anyGlyph(index, /[\u0600-\u06ff\u0750-\u077fgjpqy,;]/);
+  const iy = Math.min(-(K.rootIndexShift * s) - rise, -tickHeight - (hangs ? 4.5 : 3) * s - rise);
   // the index never touches the long stroke: where the reference leaves less than 1 px the sign moves on
   let x0 = ext;
   if (index) {
@@ -719,7 +721,7 @@ function radical(body: Box, index: Box | null, env: Env): Box {
     const yp = Math.min(Math.max(-y0 + iy, 0), h - 1);
     const strokeX = signW - 0.5 * s - (signW - 0.5 * s - vx) * (yp / (h - 1));
     const right = (ext === 0 ? Math.max(0, Math.round(8 * s - index.w)) : 0) + index.w - 0.5 * s;
-    x0 = Math.max(ext, Math.ceil(right + 2 * s - strokeX));
+    x0 = Math.max(ext, Math.ceil(right + 2.75 * s - strokeX));
   }
   const bodyX = x0 + signW + 2;
   // measured on the reference: the small tick sits at about 0.55 of the sign's height and the tip of the down stroke is
@@ -744,6 +746,12 @@ function radical(body: Box, index: Box | null, env: Env): Box {
     a = Math.max(a, -iy + index.a);
   }
   return mk(x0 + signW + barW, a, body.d, items, kids);
+}
+
+/** does a text item of the box (or of its children) match? */
+function anyGlyph(b: Box, re: RegExp): boolean {
+  if (b.items?.some((i) => i.k === 'g' && re.test(i.text))) return true;
+  return !!b.kids?.some((k) => anyGlyph(k.b, re));
 }
 
 /** does the box hold nothing but an empty placeholder? */
