@@ -25,6 +25,16 @@ export const SMALL_SLOT_COLOR = '#6aa46a';
 const r = (n: number) => Math.round(n * 100) / 100;
 export const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 
+/** integral signs: [horizontal scale, centre of the ink from the glyph origin at 32 px, shift of the centre at 32 px, lift at 32 px] */
+const INTEGRAL_NARROW: Record<string, [number, number, number, number]> = {
+  '\u222b': [0.7, 11, -1.5, -3.25],
+  '\u222c': [0.7, 16.25, -3.1, -3.25],
+  '\u222d': [0.7, 21.5, -4.65, -3.25],
+  '\u222e': [0.7, 12.75, -2.25, -3.25],
+  '\u222f': [0.705, 16.25, -3, -3.25],
+  '\u2230': [0.707, 21.5, -4.5, -3.25],
+};
+
 const NAMES: Record<string, string> = { '(': 'parenleft', ')': 'parenright', '[': 'bracketleft', ']': 'bracketright', '{': 'braceleft', '}': 'braceright' };
 
 function fenceSvg(it: Extract<Item, { k: 'f' }>, fg: string): string {
@@ -316,7 +326,22 @@ export function itemsToSvg(items: Item[], opts: { slot?: string; fg?: string; sa
         const base = Math.round(it.y - asc) + Math.round(asc) - (up ? 1 : 0);
         // the mirrored symbols of right-to-left formulas: the regular glyph flipped around the middle of its advance
         const flipGlyph = it.flip && it.w !== undefined;
-        const tx = flipGlyph ? ` transform="translate(${r(2 * it.x + it.w!)} 0) scale(-1 1)"` : '';
+        let tx = flipGlyph ? ` transform="translate(${r(2 * it.x + it.w!)} 0) scale(-1 1)"` : '';
+        // the integral signs of the font are 20 px wide (21 and 41 for the multiple ones) at 32 px where the reference's are 14 (21, 29): narrowed about its centre, so
+        // that the limits, which sit where the reference puts them, do not touch it
+        const nar = INTEGRAL_NARROW[it.text];
+        if (nar) {
+          const k32 = it.size / 32;
+          if (flipGlyph) {
+            // the mirrored sign: first flipped around the middle of its advance, then narrowed about its (mirrored) centre
+            const cx = it.x + it.w! - nar[1] * k32;
+            const to = it.x + it.w! - (nar[1] + nar[2]) * k32;
+            tx = ` transform="translate(${r(to)} ${r(nar[3] * k32)}) scale(${nar[0]} 1) translate(${r(-cx)} 0) translate(${r(2 * it.x + it.w!)} 0) scale(-1 1)"`;
+          } else {
+            const cx = it.x + nar[1] * k32;
+            tx = ` transform="translate(${r(cx + nar[2] * k32)} ${r(nar[3] * k32)}) scale(${nar[0]} 1) translate(${r(-cx)} 0)"`;
+          }
+        }
         // Arabic mathematical symbols are shapes, not text: each one a path at its advance. The run is laid out in its
         // reading direction: letters of Arabic script read from the right, so the first character is the rightmost.
         if (/[\ue100-\uefff]/.test(it.text) && [...it.text].some((c) => zulfiSymbol(c.codePointAt(0) ?? 0))) {

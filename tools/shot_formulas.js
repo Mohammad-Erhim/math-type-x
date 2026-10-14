@@ -56,7 +56,7 @@ if (process.env.FORMULAS) F = JSON.parse(fs.readFileSync(process.env.FORMULAS, '
       return out;
     });
     fs.writeFileSync(`${out}/${String(i).padStart(2, '0')}.json`, JSON.stringify({ cb: bx, leaves }));
-    await p.screenshot({ path: `${out}/${String(i).padStart(2, '0')}.png`, clip: { x: bx.x, y: bx.y + 100, width: Number(process.env.CLIPW || 300), height: 110 } });
+    await p.screenshot({ path: `${out}/${String(i).padStart(2, '0')}.png`, clip: { x: process.env.CLIPRIGHT ? bx.x + bx.width - Number(process.env.CLIPW || 300) : bx.x, y: bx.y + 100, width: Number(process.env.CLIPW || 300), height: 110 } });
   }
   await b.close();
 })();

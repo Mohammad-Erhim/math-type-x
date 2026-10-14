@@ -219,9 +219,10 @@ function parseInto(x: XNode, out: Row): void {
   const name = stripPrefix(x.name);
   const attrs = parseAttrs(x);
   if (name === 'mrow' && attrs.length === 0) {
-    // an empty group between other elements of an inline row stays (e.g. the empty argument of a styled bracket)
+    // an empty group after an operator stays (e.g. the empty argument of a styled bracket); between other elements the
+    // reference shows nothing and keeps no room for it
     if (x.children.length === 0 && out.length > 0) {
-      out.push({ t: 'mrow', a: [], c: [[]] });
+      if (out[out.length - 1].t === 'mo') out.push({ t: 'mrow', a: [], c: [[]] });
       return;
     }
     parseRowChildren(x, out);

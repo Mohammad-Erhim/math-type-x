@@ -638,7 +638,7 @@ function fraction(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   // a fraction nested in the numerator / denominator of another one is set at 3/4 of the size of its surroundings
   const depth = env.fracDepth ?? 0;
   const innerEnv: Env = { ...env, fracDepth: depth + 1 };
-  if (depth > 0 && env.level === 0) innerEnv.size = Math.max(K.minScript, Math.round(env.size * K.scriptScale));
+  if (depth > 0) innerEnv.size = Math.max(K.minScript, Math.round(env.size * K.scriptScale));
   // a fraction in text style (mstyle displaystyle="false": the "Small fraction" control) is set at script size
   else if (depth === 0 && env.level === 0 && env.display === false) innerEnv.size = Math.max(K.minScript, Math.round(env.size * K.scriptScale));
   const num = R(0, innerEnv);
@@ -661,8 +661,10 @@ function fraction(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   // a fraction whose contents are set smaller (nested, or in text style) also has smaller offsets
   const sf = innerEnv.size < env.size ? innerEnv.size / env.size * s : s;
   const shift = K.fracShift * sf;
-  const ruleW = Math.max(round(num.w), round(den.w)) + 4;
-  const w = ruleW + 4;
+  // inside a script the room around the rule is smaller with the size (measured on the reference)
+  const kp = env.level > 0 ? env.size / 16 : 1;
+  const ruleW = Math.max(round(num.w), round(den.w)) + 4 * kp;
+  const w = ruleW + 4 * kp;
   const numBase = -Math.max(shift, num.d + (num.italicEnd ? 0 : 0) + 6.5 * s - 1 + 1);
   const denBase = Math.max(shift, den.a + 0.5 * s - 0.5);
   void numBase;
@@ -674,10 +676,10 @@ function fraction(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const db = ruleTop + 1 + 1 - tight + den.a;
   const numY = Math.min(nb, -shift);
   const denY = Math.max(db, shift - 2 * sf);
-  const items: Item[] = [{ k: 'r', x: 2, y: ruleTop, w: ruleW, h: 1, color: env.color }];
+  const items: Item[] = [{ k: 'r', x: 2 * kp, y: ruleTop, w: ruleW, h: 1, color: env.color }];
   const kids: Placed[] = [
-    { b: num, x: 2 + round((ruleW - round(num.w)) / 2), y: numY },
-    { b: den, x: 2 + round((ruleW - round(den.w)) / 2), y: denY },
+    { b: num, x: 2 * kp + round((ruleW - round(num.w)) / 2), y: numY },
+    { b: den, x: 2 * kp + round((ruleW - round(den.w)) / 2), y: denY },
   ];
   return mk(w, -numY + num.a + tight, denY + den.d, items, kids);
 }
@@ -688,33 +690,60 @@ function radical(body: Box, index: Box | null, env: Env): Box {
   const signW = K.radW * s;
   const top = K.radTop * s;
   const contentW = round(body.w);
-  const idxW = index ? round(index.w) : 0;
-  const x0 = idxW > 7 * s ? idxW - 7 * s : 0;
+  let idxW = index ? round(index.w) : 0;
+  // an index of digits is set 7 px per digit and 2 px per point in the reference (hinted text; the widths of the table scale)
+  const idxGlyph = index ? singleGlyph(index) : null;
+  if (idxGlyph && /^[0-9.]+$/.test(idxGlyph.text) && idxGlyph.size === 12) {
+    idxW = Array.from(idxGlyph.text).reduce((w, c) => w + (c === '.' ? 2 : 7), 0);
+  }
+  // a wide index stretches the sign (a flat tick under the index), it does not push it to the right (measured on the reference)
+  const ext = idxW > 8 * s ? idxW - 8 * s : 0;
+  const x0 = 0;
   const barW = contentW + 4;
-  const bodyX = x0 + signW + 2;
+  const bodyX = x0 + ext + signW + 2;
   const asc = top + body.a;
   const items: Item[] = [];
   // radical sign: small tick, long down stroke, up stroke to the bar
   const h = body.a + body.d;
   // a radicand with operator glyphs: the bar and the sign sit one more pixel up (measured on the reference)
-  const y0 = -body.a - (body.lift ? 1 : 0);
+  // an empty radicand: its placeholder is half a pixel taller above than a letter, the bar stays where a letter's is
+  const y0 = -body.a - (body.lift ? 1 : 0) + (onlySlot(body) ? 0.5 : 0);
+  // measured on the reference: the small tick (or the flat one under a wide index) sits at about 0.55 of the sign's height
+  // and the tip of the down stroke is 1.5 px above the descent of the radicand
   items.push({
     k: 'p',
     x: x0,
     y: y0,
-    d: `M0 ${h * 0.55} L${2.2 * s} ${h * 0.5} L${5.2 * s} ${h + 0.5} L${signW} 0`,
+    d: ext
+      ? `M${1 * s} ${0.56 * h + 0.75} L${ext + 2.7 * s} ${0.56 * h + 0.75} L${ext + 6.7 * s} ${h - 1} L${ext + signW - 0.5 * s} 0`
+      : env.rtl
+        ? // the mirrored sign of a right-to-left document is narrower on its far side (measured on the reference)
+          `M${3 * s} ${0.58 * h} L${4.6 * s} ${0.5 * h} L${8 * s} ${h - 1} L${signW - 0.5 * s} 0`
+        : `M${1 * s} ${0.61 * h} L${3.2 * s} ${0.55 * h} L${6.2 * s} ${h - 1} L${signW - 0.5 * s} 0`,
     sw: 1,
     color: env.color,
   });
-  items.push({ k: 'r', x: x0 + signW, y: y0, w: barW, h: 1, color: env.color });
+  items.push({ k: 'r', x: x0 + ext + signW, y: y0, w: barW, h: 1, color: env.color });
   const kids: Placed[] = [{ b: body, x: bodyX, y: 0 }];
   let a = asc;
   if (index) {
-    const iy = -(K.rootIndexShift * s);
-    kids.push({ b: index, x: 1 * s, y: iy });
+    // a tall index (fraction, root) rises: its bottom stays where the bottom of a line of digits is
+    const iy = -(K.rootIndexShift * s) - Math.max(0, index.d - 3.14 * s);
+    kids.push({ b: index, x: 0, y: iy });
     a = Math.max(a, -iy + index.a);
   }
-  return mk(x0 + signW + barW, a, body.d, items, kids);
+  return mk(x0 + ext + signW + barW, a, body.d, items, kids);
+}
+
+/** does the box hold nothing but an empty placeholder? */
+function onlySlot(b: Box): boolean {
+  let cur: Box | undefined = b;
+  for (let i = 0; i < 4 && cur; i++) {
+    if (cur.items && cur.items.length) return cur.items.length === 1 && cur.items[0].k === 's';
+    if (!cur.kids || cur.kids.length !== 1) return false;
+    cur = cur.kids[0].b;
+  }
+  return false;
 }
 
 function singleGlyph(b: Box): Extract<Item, { k: 'g' }> | null {
@@ -750,6 +779,19 @@ function bigOpBase(base: Box): boolean {
   return !!it && isBigOp(it.text.codePointAt(0) ?? 0);
 }
 
+const fracAscentCache = new Map<number, number>();
+/** ascent of the box of a one-line over one-line fraction at the size of `env` (what a lower limit may reach up to) */
+function plainFractionAscent(env: Env): number {
+  let v = fracAscentCache.get(env.size);
+  if (v === undefined) {
+    const tok = (x: string): El => ({ t: 'mi', a: [], x, g: 0 });
+    const b = layoutEl({ t: 'mfrac', a: [], c: [[tok('a')], [tok('b')]] }, env, [], 0);
+    v = b.a;
+    fracAscentCache.set(env.size, v);
+  }
+  return v;
+}
+
 function scripts(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const s = sc(env);
   const se = scriptEnv(env);
@@ -781,6 +823,12 @@ function scripts(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
     supX = Math.round(base.w * 1.15);
     supY = (-0.753 + K.bigScriptDrop) * os;
     subY = (0.278 + K.bigScriptDrop) * os;
+    // limits taller than a fraction keep the top of their box where a fraction's is (the reference lets the lower
+    // limit grow downwards, not up into the operator and the upper limit)
+    if (sub) {
+      const aFrac = plainFractionAscent(se);
+      subY = Math.max(subY, (0.278 + K.bigScriptDrop) * os - aFrac - 2 * s + sub.a);
+    }
   } else {
     if (sup) supY = Math.min(supY, -(sup.d + 3.5 * s) + 0);
     if (sub) subY = Math.max(subY, sub.a - 12 * s);
