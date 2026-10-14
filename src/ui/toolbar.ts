@@ -145,10 +145,12 @@ export class Toolbar {
         // narrow screens: a second tap on the open tab folds its panel away (more room for the formula)
         if (this.reflowOn && i === this.selected) {
           const folded = this.container.classList.toggle('wrs_collapsed');
+          this.root.classList.toggle('wrs_folded', folded);
           btn.setAttribute('aria-expanded', String(!folded));
           return;
         }
         this.container.classList.remove('wrs_collapsed');
+        this.root.classList.remove('wrs_folded');
         this.tabs.forEach((t) => t.removeAttribute('aria-expanded'));
         this.host.selectTab(i);
       });
@@ -499,6 +501,7 @@ export class Toolbar {
     this.container.scrollTop = 0;
     this.placeCues();
     this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
+    this.root.classList.toggle('wrs_folded', this.container.classList.contains('wrs_collapsed'));
     // the first control of the selected tab is the single tab stop
     for (let t = 0; t < 10; t++) this.setTabStop(t, null);
     const first = this.firstButton(i);

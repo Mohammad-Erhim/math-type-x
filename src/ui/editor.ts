@@ -393,21 +393,14 @@ export class MathEditor implements ToolbarHost {
     kb.addEventListener('mousedown', (e) => e.preventDefault());
     kb.addEventListener('click', (e) => {
       e.preventDefault();
-      const input = this.display.input;
-      const on = input.inputMode === 'none';
-      input.inputMode = on ? 'text' : 'none';
-      kb.setAttribute('aria-pressed', String(on));
-      kb.classList.toggle('wrs_navOn', on);
-      // a changed input mode takes effect when the field is focused again
-      input.blur();
-      input.focus({ preventScroll: true });
+      this.setKeyboard(!this.kbOn);
     });
     // on a touch screen the keyboard stays away until the formula is tapped (or this key is pressed)
-    const touchKb = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
-    if (touchKb) this.display.input.inputMode = 'none';
-    kb.setAttribute('aria-pressed', String(!touchKb));
-    kb.classList.toggle('wrs_navOn', !touchKb);
+    this.kbOn = !this.coarse();
+    if (this.coarse()) this.display.input.inputMode = 'none';
+    this.paintKeyboardKey();
     this.navKeyboard = kb;
+    this.paintKeyboardKey();
     pad.prepend(kb);
     pad.prepend(clear);
     // the history group sits right before the arrows
@@ -483,6 +476,18 @@ export class MathEditor implements ToolbarHost {
       });
     }
     this.root.addEventListener('keydown', this.onRootKeyDown);
+    // a tap on a tab, a control, a list item … must not take the focus (and so the keyboard) away from the formula
+    this.root.addEventListener(
+      'mousedown',
+      (e) => {
+        if (!this.coarse() || !this.kbOn) return;
+        const t = e.target as Element | null;
+        if (!t || t.closest('input, select, textarea, [contenteditable], .wrs_hand')) return;
+        e.preventDefault();
+      },
+      true,
+    );
+    this.root.addEventListener('focusout', this.onFocusOut);
     this.display.onHandle = (end, x, y) => {
       const sel = this.core.sel;
       if (!sel) return;
@@ -505,6 +510,7 @@ export class MathEditor implements ToolbarHost {
     window.removeEventListener('pagehide', this.onPageHide);
     window.removeEventListener('resize', this.onWinResize);
     window.removeEventListener('orientationchange', this.onWinResize);
+    window.visualViewport?.removeEventListener('resize', this.onViewport);
     this.root?.remove();
   }
 
@@ -517,6 +523,7 @@ export class MathEditor implements ToolbarHost {
     }
     window.addEventListener('resize', this.onWinResize);
     window.addEventListener('orientationchange', this.onWinResize);
+    window.visualViewport?.addEventListener('resize', this.onViewport);
     this.applyLayout();
   }
 
@@ -1332,6 +1339,12 @@ export class MathEditor implements ToolbarHost {
       return;
     }
     this.closePopup();
+    // on a touch screen the tap that brings the keyboard back only does that: the caret stays where it was
+    if (this.coarse() && !this.kbOn) {
+      this.setKeyboard(true);
+      e.preventDefault();
+      return;
+    }
     const p = this.contentPoint(e);
     const hit = this.display.hitTest(p.x, p.y);
     if (!hit) {
@@ -1354,15 +1367,75 @@ export class MathEditor implements ToolbarHost {
     e.preventDefault();
   }
 
+  /* ------------------------------------------------- the phone's soft keyboard
+   * On a touch screen the keyboard is a state of its own: it comes up when the formula is tapped or the Keys key is
+   * pressed, and goes away only with the Keys key, the Export bar or the system's Back – never because a tab, a
+   * control, a list or a dialog was used (buttons do not take the focus away from the formula). The Keys key shows
+   * the real state, also after the system closed the keyboard. */
+  private kbOn = true;
+  private kbOpenedAt = 0;
+  private kbPeak = 0;
+
+  private coarse(): boolean {
+    return typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+  }
+
+  private paintKeyboardKey(): void {
+    this.navKeyboard?.setAttribute('aria-pressed', String(this.kbOn));
+    this.navKeyboard?.classList.toggle('wrs_navOn', this.kbOn);
+  }
+
+  /** is the soft keyboard (meant to be) up? */
+  isKeyboardOpen(): boolean {
+    return this.kbOn && this.coarse();
+  }
+
+  /** bring the soft keyboard up / put it away (touch screens; the Export bar of the demo page uses it) */
+  setKeyboard(on: boolean): void {
+    if (!this.coarse()) return;
+    const input = this.display.input;
+    this.kbOn = on;
+    this.kbOpenedAt = Date.now();
+    input.inputMode = on ? 'text' : 'none';
+    this.paintKeyboardKey();
+    // a changed input mode takes effect when the field is focused again
+    input.blur();
+    input.focus({ preventScroll: true });
+  }
+
+  closeKeyboard(): void {
+    if (this.kbOn) this.setKeyboard(false);
+  }
+
+  /** the keyboard went away by itself (system Back, a gesture): the key and the input mode follow */
+  private keyboardGone(): void {
+    if (!this.kbOn || !this.coarse()) return;
+    this.kbOn = false;
+    this.display.input.inputMode = 'none';
+    this.paintKeyboardKey();
+  }
+
+  private onViewport = (): void => {
+    const vv = window.visualViewport;
+    if (!vv || !this.kbOn || !this.coarse()) return;
+    this.kbPeak = Math.max(this.kbPeak, window.innerHeight, vv.height + vv.offsetTop);
+    const shrunk = this.kbPeak - (vv.height + vv.offsetTop) > 100;
+    // right after it was asked for the keyboard is still sliding in
+    if (!shrunk && Date.now() - this.kbOpenedAt > 700 && this.display.input === this.root.ownerDocument.activeElement) this.keyboardGone();
+  };
+
+  /** the focus went somewhere that is not a text field: the keyboard is gone with it */
+  private onFocusOut = (): void => {
+    if (!this.kbOn || !this.coarse()) return;
+    setTimeout(() => {
+      const a = this.root?.ownerDocument.activeElement as HTMLElement | null;
+      if (!a || a === this.root.ownerDocument.body) this.keyboardGone();
+    }, 350);
+  };
+
   /** a tap on the formula is the one thing that brings the phone's keyboard up */
   private wantKeyboard(): void {
-    const input = this.display.input;
-    if (input.inputMode !== 'none') return;
-    input.inputMode = 'text';
-    this.navKeyboard?.setAttribute('aria-pressed', 'true');
-    this.navKeyboard?.classList.add('wrs_navOn');
-    // the mode counts when the field is focused (again)
-    input.blur();
+    if (this.coarse() && !this.kbOn) this.setKeyboard(true);
   }
 
   private onMouseMove = (e: MouseEvent): void => {
