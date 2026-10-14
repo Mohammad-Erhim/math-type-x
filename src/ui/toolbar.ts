@@ -96,7 +96,9 @@ export class Toolbar {
     // narrow windows: the panel is a short window onto its controls; arrows at its edges tell when there is more to see
     const cue = (dir: 'up' | 'down') => {
       const b = h('button', { type: 'button', class: 'wrs_scrollCue wrs_cue' + (dir === 'up' ? 'Up' : 'Down'), tabindex: '-1', 'aria-label': dir === 'up' ? 'Scroll up' : 'Scroll down' }) as HTMLButtonElement;
-      b.innerHTML = `<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${dir === 'up' ? 'M3 10l5-5 5 5' : 'M3 6l5 5 5-5'}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${dir === 'down' ? '<span>More</span>' : ''}`;
+      // an inner box that centres itself: older Android WebViews / Samsung Internet do not lay out the children of a button
+      // as a flex container, and a positioned button shrinks to its content there – the width is explicit, the content centred
+      b.innerHTML = `<span class="wrs_cueInner"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="${dir === 'up' ? 'M3 10l5-5 5 5' : 'M3 6l5 5 5-5'}" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>${dir === 'down' ? '<span>More</span>' : ''}</span>`;
       b.addEventListener('pointerdown', (e) => e.preventDefault());
       b.addEventListener('click', () => this.container.scrollBy({ top: (dir === 'up' ? -1 : 1) * Math.max(40, this.container.clientHeight * 0.75), behavior: 'smooth' }));
       return b;
@@ -130,7 +132,26 @@ export class Toolbar {
     );
     io.observe(top);
     io.observe(bottom);
+    // the first state is measured at once (the observer answers a frame or two later): the cue is there – or not – in the
+    // first frame it can be seen, and it does not fade in as a flash after the editor appeared
+    const measure = () => {
+      const c = this.container;
+      if (!c.clientHeight) return;
+      this.root.classList.toggle('wrs_moreBelow', c.scrollHeight - c.scrollTop - c.clientHeight > 2);
+      this.root.classList.toggle('wrs_moreAbove', c.scrollTop > 2);
+    };
+    this.measureCues = measure;
+    this.root.classList.add('wrs_cueInit');
+    requestAnimationFrame(() => {
+      measure();
+      requestAnimationFrame(() => {
+        measure();
+        this.root.classList.remove('wrs_cueInit');
+      });
+    });
   }
+
+  private measureCues: (() => void) | null = null;
 
   private buildTabs(): void {
     TAB_TITLES.forEach((title, i) => {
@@ -500,6 +521,7 @@ export class Toolbar {
     this.caption.textContent = TAB_CAPTIONS[i] ?? '';
     this.container.scrollTop = 0;
     this.placeCues();
+    this.measureCues?.();
     this.container.classList.toggle('wrs_ctxEmpty', this.ctxOff && i === 9);
     this.root.classList.toggle('wrs_folded', this.container.classList.contains('wrs_collapsed'));
     // the first control of the selected tab is the single tab stop
