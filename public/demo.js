@@ -7,6 +7,24 @@
     opts.layout = 'classic';
     document.documentElement.classList.add('classic');
   }
+  // the page is exactly as high as what the user sees: browser bars, the bars of in-app browsers, the soft keyboard.
+  // (dvh does that in current browsers; the measured visual viewport is the answer where it does not)
+  if (opts.layout !== 'classic') {
+    var root = document.documentElement;
+    var vv = window.visualViewport;
+    var fit = function () {
+      var h = vv && vv.scale <= 1.02 ? vv.height : window.innerHeight;
+      if (h > 0) root.style.setProperty('--app-h', Math.round(h) + 'px');
+      if (window.scrollY || window.scrollX) window.scrollTo(0, 0);
+    };
+    fit();
+    window.addEventListener('resize', fit);
+    window.addEventListener('orientationchange', fit);
+    if (vv) {
+      vv.addEventListener('resize', fit);
+      vv.addEventListener('scroll', fit);
+    }
+  }
   if (q.has('toolbarSize')) opts.toolbarSize = parseFloat(q.get('toolbarSize'));
   if (q.has('autoformat')) opts.autoformat = q.get('autoformat') === 'true';
   // handwriting is switched off for now (?detectHand=true brings it back)
