@@ -291,9 +291,10 @@ export class FormulaDisplay {
     let nearest: { dist: number; g: any; key: string } | null = null;
     const cands: { dist: number; g: any; key: string; bl: number }[] = [];
     for (const [key, g] of lay.rows) {
+      // the stops of a right-to-left row run backwards: its extent is the span between the two ends, whichever is left
       const hxs = g.hx ?? g.xs;
-      const x1 = hxs[0];
-      const x2 = hxs[hxs.length - 1];
+      const x1 = Math.min(hxs[0], hxs[hxs.length - 1]);
+      const x2 = Math.max(hxs[0], hxs[hxs.length - 1]);
       const bands: { y: number; a: number; d: number }[] = key === '' ? lay.lines.map((l) => ({ y: l.y, a: l.a, d: l.d })) : [{ y: g.y, a: g.a, d: g.d }];
       for (const bnd of bands) {
         // table cells and slots have padding around their content; empty slots show a small box
@@ -327,7 +328,7 @@ export class FormulaDisplay {
       if (root && root.structs) {
         let ei = -1;
         for (let i = 0; i < root.structs.length; i++) {
-          if (root.structs[i] && px >= root.xs[i] && px <= root.xs[i + 1]) ei = i;
+          if (root.structs[i] && px >= Math.min(root.xs[i], root.xs[i + 1]) && px <= Math.max(root.xs[i], root.xs[i + 1])) ei = i;
         }
         if (ei >= 0) {
           let near: { dist: number; g: any; key: string } | null = null;
@@ -335,8 +336,8 @@ export class FormulaDisplay {
             if (key === '' || !g.path.length || g.path[0][0] !== ei) continue;
             if (g.stops && !g.stops.some(Boolean)) continue;
             const bnd = { y: g.y, a: g.a, d: g.d };
-            const x1 = g.xs[0];
-            const x2 = g.xs[g.xs.length - 1];
+            const x1 = Math.min(g.xs[0], g.xs[g.xs.length - 1]);
+            const x2 = Math.max(g.xs[0], g.xs[g.xs.length - 1]);
             const dx = px < x1 ? x1 - px : px > x2 ? px - x2 : 0;
             const dy = py < bnd.y - bnd.a ? bnd.y - bnd.a - py : py > bnd.y + bnd.d ? py - bnd.y - bnd.d : 0;
             const dist = dx * dx + dy * dy * 4;
