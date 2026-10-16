@@ -913,6 +913,11 @@ function leafText(r: Row): string {
   return r.map((e) => (e.c === undefined ? e.x ?? '' : e.c.map(leafText).join(''))).join('');
 }
 
+/** the text is made of Arabic math letters only */
+function isZulfiOnly(text: string): boolean {
+  return text !== '' && [...text].every((ch) => !!zulfiSymbol(ch.codePointAt(0) ?? 0));
+}
+
 /** ink of the Arabic math letters in a text, in em above (top) / below (bottom) the baseline; null when there are none */
 function zulfiInk(text: string): { top: number; bottom: number } | null {
   let top = 0;
@@ -1144,7 +1149,9 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
   const hasUnder = el.t === 'munder' || el.t === 'munderover';
   const hasOver = el.t === 'mover' || el.t === 'munderover';
   const under = hasUnder ? R(1, se) : null;
-  const over = hasOver ? R(el.t === 'mover' ? 1 : 2, se) : null;
+  // marks of the Arabic math letters (derivatives) over a letter keep the size of the text: they are small shapes already
+  const markOver = hasOver && isZulfiOnly(leafText(el.c![el.t === 'mover' ? 1 : 2]));
+  const over = hasOver ? R(el.t === 'mover' ? 1 : 2, markOver ? { ...env, display: false } : se) : null;
   const bw = round(base.w);
   const big = bigOpBase(base);
   const inline = !env.display && big;
@@ -1204,9 +1211,11 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
     // (marks over a letter never touch or cross it)
     const zBase = zulfiInk(baseText);
     const zOver = zulfiInk(leafText(el.c![1]));
-    const zy = zBase ? -(zBase.top * env.size + 0.1 * env.size + 1) - (zOver ? zOver.bottom * se.size : 0) : 0;
+    const zy = zBase ? -(zBase.top * env.size + 0.1 * env.size + 1) - (zOver ? zOver.bottom * (markOver ? env.size : se.size) : 0) : 0;
     const y = zBase && tok ? zy : big ? (-1.0358 + K.bigScriptDrop) * os : tok ? -((inkOp ? 15 : inkTall ? 12 : 8) + 4.5) * s : braced ? -(base.a + braceOff * s) : -(base.a - 2 + 1.5 * s);
-    kids.push({ b: over, x: Math.floor((w - round(over.w)) / 2), y });
+    // derivative marks lean to the right of the letter's middle
+    const lean = markOver ? Math.round(0.12 * env.size) : 0;
+    kids.push({ b: over, x: Math.floor((w - round(over.w)) / 2) + lean, y });
     a = Math.max(a, -y + over.a + 2);
   }
   if (under) {
