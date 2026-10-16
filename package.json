@@ -31,6 +31,7 @@
     "typecheck": "tsc --noEmit -p .",
     "test": "node tools/run-tests.mjs",
     "build:static": "node tools/build.mjs --prod --static",
-    "build:site": "node tools/build.mjs --prod --static --out=.site-app && node tools/build_site.mjs"
+    "build:site": "node tools/build.mjs --prod --static --out=.site-app && node tools/build_site.mjs",
+    "check:site": "node tools/site_check.mjs"
   }
 }

@@ -8,9 +8,11 @@
 :root{--ink:#18212f;--ink2:#2b3547;--muted:#566275;--line:#e1e5ea;--gray:#f2f2f2;--blue:#2a5bdc;--blue-d:#1f47b3;--teal:#14a899;--coral:#ff4d5e;--crimson:#a8123a;--slate:#3b5a96;--orange:#ffa31a;--ok:#16825a;--r:14px;--shadow:0 2px 6px rgba(24,33,47,.06),0 14px 34px rgba(24,33,47,.10);--head:"Roboto Slab",Rockwell,"Rockwell Nova",Cambria,Georgia,"Noto Serif",serif;--body:"Noto Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.65 var(--body);overflow-x:hidden;text-rendering:optimizeLegibility}
+body{margin:0;background:#fff;color:var(--ink);font:400 17px/1.65 var(--body);text-rendering:optimizeLegibility}
+html,body{overflow-x:clip}
 :lang(ar){--head:"Noto Naskh Arabic","Noto Sans Arabic","Segoe UI",Tahoma,serif;--body:"Noto Sans Arabic","Segoe UI",Tahoma,"Noto Sans",system-ui,Arial,sans-serif;line-height:1.9}
-main :where(.row,.card,.tile,.hero-visual,.video-box,figure,.blue-cta,.prose,.pg-load,.wide,.band,.hero) :where(img,video){max-width:100%;height:auto;display:block}
+img,video{max-width:100%;height:auto;display:block}
+#pgEditor img,#pgEditor video,#pgEditor svg{max-width:none}
 .brand img,.product img,.site-footer img{display:block}
 a{color:var(--blue-d);text-underline-offset:3px}
 a:hover{color:var(--ink)}
@@ -60,7 +62,7 @@ nav.main a:hover,nav.main a[aria-current=page]{background:var(--gray)}
   .site-header .bar{position:relative}
   .head-right{order:3}
 }
-@media (max-width:420px){.lang span{display:none}.brand{font-size:1.3rem}}
+@media (max-width:480px){.site-header .bar{gap:10px}.lang span{display:none}.brand{font-size:1.2rem;gap:8px;min-width:0}.brand img{width:32px;height:32px}.head-right{gap:6px}.lang{padding:8px 6px}.menu-btn{padding:6px 10px}}
 
 /* buttons */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 22px;border-radius:10px;font:700 1rem/1.2 var(--body);text-decoration:none;border:2px solid var(--ink);cursor:pointer;min-height:48px;transition:transform .12s,box-shadow .12s,background .12s}
@@ -96,7 +98,8 @@ nav.main a:hover,nav.main a[aria-current=page]{background:var(--gray)}
 .band ul{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 38px;list-style:none;margin:0;padding:0;font:700 clamp(1.1rem,2.2vw,1.5rem) var(--head);color:#fff}
 
 /* sections */
-section{padding:clamp(48px,7vw,92px) 0}
+section{padding:clamp(48px,7vw,92px) 0;overflow-x:clip}
+.hero{overflow-x:clip}
 .gray{background:var(--gray)}
 .sec-head{max-width:760px;margin:0 auto 38px;text-align:center}
 .sec-head .lead{margin-inline:auto}

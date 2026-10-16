@@ -34,6 +34,10 @@ jobs:
           # optional repository variables for a custom domain: SITE_URL=https://example.com and CNAME=example.com
           SITE_URL: ${{ vars.SITE_URL }}
           CNAME: ${{ vars.CNAME }}
+      - name: Check the website (links, titles, structured data)
+        run: npm run check:site
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist-site
