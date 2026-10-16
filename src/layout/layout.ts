@@ -913,6 +913,21 @@ function leafText(r: Row): string {
   return r.map((e) => (e.c === undefined ? e.x ?? '' : e.c.map(leafText).join(''))).join('');
 }
 
+/** ink of the Arabic math letters in a text, in em above (top) / below (bottom) the baseline; null when there are none */
+function zulfiInk(text: string): { top: number; bottom: number } | null {
+  let top = 0;
+  let bottom = 0;
+  let found = false;
+  for (const ch of text) {
+    const zs = zulfiSymbol(ch.codePointAt(0) ?? 0);
+    if (!zs) continue;
+    found = true;
+    top = Math.max(top, -zs.t / 1000);
+    bottom = Math.max(bottom, zs.b / 1000);
+  }
+  return found ? { top, bottom } : null;
+}
+
 /** accents over / under a short base (bar, arrow, hat, tilde, dot): measured on the reference */
 function accentLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | null {
   if ((el.t !== 'mover' && el.t !== 'munder') || !el.c || el.c.length !== 2) return null;
@@ -1185,7 +1200,12 @@ function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
     const inner = el.c![0].length === 1 ? el.c![0][0] : null;
     const braced = !!inner && (inner.t === 'mover' || inner.t === 'munder') && !!inner.c && inner.c.length === 2 && inner.c[1].length === 1 && !!HBRACE[inner.c[1][0].x ?? ''];
     const braceOff = braced ? 1 + Math.min(braceGap(inner!.c![0], HBRACE[inner!.c![1][0].x ?? ''].top), 4) / 2 : 2;
-    const y = big ? (-1.0358 + K.bigScriptDrop) * os : tok ? -((inkOp ? 15 : inkTall ? 12 : 8) + 4.5) * s : braced ? -(base.a + braceOff * s) : -(base.a - 2 + 1.5 * s);
+    // Arabic math letters are shapes of known ink: the script stands a clear gap above the highest ink of the base
+    // (marks over a letter never touch or cross it)
+    const zBase = zulfiInk(baseText);
+    const zOver = zulfiInk(leafText(el.c![1]));
+    const zy = zBase ? -(zBase.top * env.size + 0.1 * env.size + 1) - (zOver ? zOver.bottom * se.size : 0) : 0;
+    const y = zBase && tok ? zy : big ? (-1.0358 + K.bigScriptDrop) * os : tok ? -((inkOp ? 15 : inkTall ? 12 : 8) + 4.5) * s : braced ? -(base.a + braceOff * s) : -(base.a - 2 + 1.5 * s);
     kids.push({ b: over, x: Math.floor((w - round(over.w)) / 2), y });
     a = Math.max(a, -y + over.a + 2);
   }
