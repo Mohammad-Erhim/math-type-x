@@ -1136,7 +1136,23 @@ function arrowLayout(el: El, env: Env, R: (s: number, e?: Env) => Box): Box | nu
   return mk(W, a, d, items, kids);
 }
 
+/** two elements one above the other, both at the size of the text (`wrs:stack="same"`; the plain over script is smaller) */
+function stackSame(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
+  const s = sc(env);
+  const e = { ...env, display: false };
+  const base = R(0, e);
+  const top = R(1, e);
+  const w = Math.max(round(base.w), round(top.w));
+  const y = -(base.a + top.d + 1 * s);
+  const kids: Placed[] = [
+    { b: base, x: Math.floor((w - round(base.w)) / 2), y: 0 },
+    { b: top, x: Math.floor((w - round(top.w)) / 2), y },
+  ];
+  return mk(w, -y + top.a, base.d, undefined, kids);
+}
+
 function underOver(el: El, env: Env, R: (s: number, e?: Env) => Box): Box {
+  if (el.t === 'mover' && getAttr(el, 'wrs:stack') === 'same') return stackSame(el, env, R);
   const arrow = arrowLayout(el, env, R);
   if (arrow) return arrow;
   const brace = braceLayout(el, env, R);

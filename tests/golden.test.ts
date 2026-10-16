@@ -16,7 +16,8 @@ test('toolbar controls reproduce the golden MathML in states A, A2, B, C', () =>
   const fails: string[] = [];
   let n = 0;
   for (const c of catalogue.controls) {
-    if (behaviorOf(c) !== 'insert' || !c.A) continue;
+    // controls added by this product (id TB-n-Xnn) are not in the recorded reference: tests/stacksame.test.ts
+    if (behaviorOf(c) !== 'insert' || !c.A || /-X\d+$/.test(c.id)) continue;
     // digit mode contamination of the recorded crawl (Q-08)
     const ds = digitSet(c.A2);
     const run = (setup: (ed: EditorCore) => void) => {
