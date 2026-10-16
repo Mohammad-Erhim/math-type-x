@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Sets every Arabic math letter of src/data/zulfi.json at the height of the normal Arabic letters of its key: the vertical
-middle of the ink of the letter equals the vertical middle of the ink of the keyboard letter(s) (`k`) drawn in the editor's
-Arabic font, on the same baseline. The marks (derivatives) are not letters of a keyboard and keep their place.
+"""Sets every Arabic math letter of src/data/zulfi.json at the height of the normal Arabic letters of its key: halfway between
+"lowest ink level with the lowest ink of the keyboard letter(s) (`k`)" and "middles level", the keyboard letters drawn in the
+editor's Arabic font on the same baseline (the math letters are larger than the text letters: aligning the middles let them
+hang below the text, aligning the lowest ink made them stand high). The marks (derivatives) are not letters of a keyboard and keep their place.
 Idempotent: the shift is computed from the current position.
 usage: python3 tools/gen/zulfi/align_keyboard.py [--dry]   (needs Pillow with raqm)"""
 import json, os, re, sys
@@ -15,8 +16,9 @@ MARKS = {'E19A', 'E19B', 'E19C'}
 # the math letters are the dotless skeletons of the letters: the keyboard letter is measured without its dots
 DOTLESS = str.maketrans({'ب': 'ٮ', 'ت': 'ٮ', 'ث': 'ٮ', 'ج': 'ح', 'خ': 'ح', 'ذ': 'د', 'ز': 'ر', 'ش': 'س', 'ض': 'ص', 'ظ': 'ط', 'غ': 'ع',
                          'ف': 'ڡ', 'ق': 'ٯ', 'ن': 'ں', 'ي': 'ى', 'أ': 'ا', 'إ': 'ا', 'آ': 'ا', 'ة': 'ه'})
-# glyphs that carry a mark above the letter (U+E124): the letter alone decides, as for U+E152
+# glyphs that carry a mark above the letter (U+E124): the letter below it moves like U+E152
 BODY = {'E124': 'E152'}
+applied = {}
 
 
 def keyboard_ink(text):
@@ -45,8 +47,8 @@ for h in data['groups'][0]['items']:
         continue
     s = data['symbols'][h]
     kt, kb = keyboard_ink(s['k'].replace(' ', '').translate(DOTLESS))
-    body = data['symbols'][BODY[h]] if h in BODY else s
-    dy = round((kt + kb) / 2 - (body['t'] + body['b']) / 2)
+    dy = applied[BODY[h]] if h in BODY else round(((kb - s['b']) + ((kt + kb) / 2 - (s['t'] + s['b']) / 2)) / 2)
+    applied[h] = dy
     print(h, repr(s['k']), 'keyboard ink', (kt, kb), 'now', (s['t'], s['b']), 'shift', dy)
     if dy and '--dry' not in sys.argv:
         s['d'] = shift_y(s['d'], dy)
