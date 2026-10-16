@@ -5,6 +5,11 @@ All notable changes are documented here. The format follows
 
 ## [1.0.0] – Unreleased
 
+### Changed
+- README rewritten for users (hero demo video, feature tour with screenshots, Arabic mathematics section, quick start);
+  the technical content moved to `docs/TECHNICAL.md`. Media in `docs/media/`, produced by `tools/readme_shots.js` and
+  `tools/readme_demo.js` / `tools/readme_demo.py`.
+
 ### Added
 - Browser equation editor playground (725 × 415 px): ten-tab toolbar with 700 controls, Contextual tab,
   pop-ups and pickers, special characters, handwriting mode, output panel, SRS 9.2 JavaScript API and events.
