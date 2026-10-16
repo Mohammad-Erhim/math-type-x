@@ -15,3 +15,7 @@ __pycache__/
 coverage/
 dist-static/
 dist-static-build/
+.site-app/
+.site-app-build/
+.site-app-old/
+dist-site/

@@ -1,0 +1,49 @@
+name: Website (GitHub Pages)
+
+# Every push to main rebuilds the website (landing page, full-page editor, guide, FAQ …, in English and Arabic) and publishes it.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+      - name: Build the website
+        run: npm run build:site
+        env:
+          # optional repository variables for a custom domain: SITE_URL=https://example.com and CNAME=example.com
+          SITE_URL: ${{ vars.SITE_URL }}
+          CNAME: ${{ vars.CNAME }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist-site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
