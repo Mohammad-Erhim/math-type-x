@@ -100,7 +100,7 @@ const playground = (x, t) => `
         </div>
       </div>
       <div class="pg-bottom">
-        <button class="btn btn-dark btn-sm" type="button" id="pgPng" disabled>${t.pgDownload}</button>
+        <button class="btn btn-dark btn-sm" type="button" id="pgPng" disabled hidden>${t.pgDownload}</button>
         <button class="btn btn-outline btn-sm" type="button" id="pgCopy" hidden>${t.pgCopy}</button>
         <a class="btn btn-outline btn-sm" id="pgFull" href="${x.u('editor')}">${t.pgFull}</a>
         <span class="pg-status" id="pgStatus" role="status" aria-live="polite"></span>

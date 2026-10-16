@@ -29,6 +29,7 @@
       editor.insertInto(host);
       load.hidden = true;
       png.disabled = false;
+      png.hidden = false;
       if (navigator.clipboard && window.ClipboardItem) copy.hidden = false;
       window.mtxPlayground = editor;
     };
@@ -54,7 +55,7 @@
   });
   function pngBlob() {
     if (!editor || editor.isEmpty()) { say(T.empty); return Promise.reject(); }
-    return editor.getPNG({ zoom: 2 });
+    return editor.getPNG({ zoom: 2, background: '#ffffff' });
   }
   png.addEventListener('click', function () {
     pngBlob().then(function (blob) {
