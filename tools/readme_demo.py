@@ -59,7 +59,7 @@ def card(kind):
     im = gradient(W, h)
     d = ImageDraw.Draw(im)
     if kind == 'title':
-        centered(d, 330, 'math-type-x', BOLD(150), (255, 255, 255))
+        centered(d, 330, 'MathTypeX', BOLD(150), (255, 255, 255))
         ar = 'محرر المعادلات الرياضية'
         d.text(((W - d.textlength(ar, font=AR(78))) / 2, 520), ar, font=AR(78), fill=(180, 235, 228), direction='rtl', language='ar')
         centered(d, 690, 'A complete web equation editor – with first-class Arabic support', REG(44), (215, 228, 238))
@@ -71,9 +71,9 @@ def card(kind):
             d.text((x + 28, 812), c, font=BOLD(30), fill=(235, 245, 245))
             x += wd + 24
     else:
-        centered(d, 360, 'math-type-x', BOLD(130), (255, 255, 255))
+        centered(d, 360, 'MathTypeX', BOLD(130), (255, 255, 255))
         centered(d, 560, 'Write mathematics the way it is printed – in English and Arabic.', REG(52), (205, 232, 230))
-        centered(d, 700, 'Runs in any browser  ·  MathML, LaTeX, PNG and SVG export  ·  Works on phones', REG(34), (160, 195, 205))
+        centered(d, 700, 'Runs in any browser  ·  Exports PNG images  ·  Works on phones', REG(34), (160, 195, 205))
     return im
 
 
@@ -93,10 +93,11 @@ def compose(f, ptr=None, ring=False, ripple=0.0, press=0.0):
     base = im.resize((W, round(im.height * W / im.width)), Image.LANCZOS)
     s = W / CSS
     d = ImageDraw.Draw(base, 'RGBA')
-    if f.get('inset', True) and f.get('fbox'):
-        # a magnified view of the whole formula (with some margin), placed on the empty side of the editor canvas
-        fx, fy, fw, fh = f['fbox']
-        dx, dy, dw, dh = f['dbox']
+    if f.get('inset', True) and (f.get('fbox') or f.get('zbox')):
+        # a magnified view of the whole formula (or of another box, such as the exported image), with some margin, placed on the
+        # empty side of the editor canvas
+        fx, fy, fw, fh = f.get('zbox') or f['fbox']
+        dx, dy, dw, dh = (0, 0, CSS, 560) if f.get('zbox') else f['dbox']
         # visible part of the formula, with a margin and a minimum size so that small formulas get a roomy box
         vx0, vy0, vx1, vy1 = max(fx, dx), max(fy, dy), min(fx + fw, dx + dw - 2), min(fy + fh, dy + dh)
         cw, ch = max(vx1 - vx0 + 20, 120), max(vy1 - vy0 + 20, 60)
@@ -109,7 +110,7 @@ def compose(f, ptr=None, ring=False, ripple=0.0, press=0.0):
         crop = im.crop((round(x0 * k), round(y0 * k), round(x1 * k), round(y1 * k)))
         zw, zh = round(cw * s * z), round(ch * s * z)
         crop = crop.resize((zw, zh), Image.LANCZOS)
-        right_side = (fx + fw / 2) > 480
+        right_side = (fx + fw / 2) > 480 or bool(f.get('zbox'))
         ix = (dx + 32 if right_side else dx + dw - 32 - cw * z) * s
         iy = 190 * s
         shadow = Image.new('RGBA', base.size, (0, 0, 0, 0))

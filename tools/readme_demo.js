@@ -25,7 +25,7 @@ const frames = [];
   let chip = '';
   const wait = (ms) => p.waitForTimeout(ms);
   // one frame: caption, how long it stays (ms), the control the pointer goes to, whether the zoom inset is shown
-  const shot = async (caption, ms, ring, inset = true) => {
+  const shot = async (caption, ms, ring, inset = true, zoomSel = null) => {
     let box = null;
     if (ring) {
       const bb = await ring.first().boundingBox();
@@ -41,7 +41,12 @@ const frames = [];
       const q = d.getBoundingClientRect();
       return r.width > 4 && r.height > 4 ? { f: [r.x, r.y, r.width, r.height], d: [q.x, q.y, q.width, q.height] } : null;
     });
-    frames.push({ file, caption, chip, ms, ring: box, inset: inset && !!fb, fbox: fb && fb.f, dbox: fb && fb.d });
+    let zbox = null;
+    if (zoomSel) {
+      const zb = await p.locator(zoomSel).first().boundingBox();
+      if (zb) zbox = [zb.x, zb.y, zb.width, zb.height];
+    }
+    frames.push({ file, caption, chip, ms, ring: box, inset: inset && (!!fb || !!zbox), fbox: fb && fb.f, dbox: fb && fb.d, zbox });
   };
   const click = async (loc, caption, ms = 1100, inset = true) => { await shot(caption, ms, loc, inset); await loc.first().click(); await wait(350); };
   const key = async (t, d = 200) => { await p.keyboard.type(t); await wait(d); };
@@ -64,7 +69,26 @@ const frames = [];
   await p.keyboard.press('ArrowDown'); await wait(250); await key('2', 150); await key('a', 400);
   await shot('The quadratic formula – in English', 2400);
   await p.keyboard.press('Control+A'); await wait(200); await p.keyboard.press('Delete'); await wait(300);
-  await shot('…and the same editor in Arabic', 1500, null, false);
+
+  // ---- 0b. how to turn Arabic on, from the English interface
+  chip = 'TURN ON ARABIC';
+  const en = (t) => p.locator(`.wrs_toolbar [title="${t}"]`);
+  await shot('Arabic is three buttons away', 1700, null, false);
+  await click(en('Right to left editing'), '1  Right to left editing: formulas grow from the right', 1100, false);
+  await p.locator('#editorContainer').click({ position: { x: 700, y: 300 } });
+  await key('ب', 150); await key('س', 150); await key('م', 400);
+  await shot('Letters stay separate – like variables in a formula', 1700);
+  await p.keyboard.press('Control+A'); await wait(150); await p.keyboard.press('Delete'); await wait(250);
+  await click(en('Arabic ligature'), '2  Arabic ligature: typed letters join into a word', 1100, false);
+  await p.locator('#editorContainer').click({ position: { x: 700, y: 300 } });
+  await key('ب', 150); await key('س', 150); await key('م', 400);
+  await shot('Now they connect, as in written Arabic', 1900);
+  await p.keyboard.press('Control+A'); await wait(150); await p.keyboard.press('Delete'); await wait(250);
+  await click(en('Insert special characters'), '3  Insert special characters', 1000, false);
+  await p.locator('.wrs_unicodeChooserPanel select').selectOption('Z:letters'); await wait(500);
+  await shot('Choose “Arabic math letters” to get the Arabic mathematical letters', 2600, null, false);
+  await p.keyboard.press('Escape'); await wait(300);
+  await shot('…or open the page with ?lang=ar for a fully Arabic interface', 2000, null, false);
   await ready('ar');
 
   // ---- 1. right to left
@@ -82,20 +106,6 @@ const frames = [];
   await shot('Arabic-Indic digits and Arabic letters, laid out right to left', 1500);
   await p.keyboard.press('ArrowDown'); await wait(250); await key('٢', 150); await key('أ', 400);
   await shot('The quadratic formula in Arabic', 2600);
-
-  // ---- 2. export
-  chip = 'EXPORT';
-  await click(p.locator('#mtx-tab-png'), 'Export as an image', 900, false);
-  await wait(1900);
-  await shot('PNG and SVG images, with the Arabic text shaped correctly', 2400, null, false);
-  await click(p.locator('#mtx-tab-latex'), 'Or as LaTeX', 800, false);
-  await wait(1300);
-  await shot('LaTeX, MathML and plain text', 2000, null, false);
-  await click(p.locator('#mtx-tab-accessible'), 'Even spoken text for screen readers – in Arabic', 800, false);
-  await wait(1500);
-  await shot('Accessible text reads the formula aloud, right to left', 2800, null, false);
-  await click(p.locator('#mtx-tab-mathml'), 'Back to the MathML source', 700, false);
-  await wait(500);
 
   // ---- 3. Arabic math letters
   chip = 'ARABIC MATH LETTERS';
@@ -132,6 +142,12 @@ const frames = [];
   for (let i = 1; i <= 3; i++) { await shot(`Up ${i} px`, 750, nud('Nudge up')); await nud('Nudge up').click(); await wait(900); }
   await shot('The exact offset is saved inside the formula', 2600);
 
+
+  // ---- 5. export: the PNG image of the finished formula (no other output tab is opened)
+  chip = 'EXPORT';
+  await click(p.locator('#mtx-tab-png'), 'Export the formula as a PNG image', 1000, false);
+  await wait(2000);
+  await shot('A crisp PNG with the mark exactly where you put it', 3200, p.locator('.mtx_foot button:has-text("نسخ")'), true, '.mtx_body img');
   await b.close();
   fs.writeFileSync(path.join(OUT, 'frames.json'), JSON.stringify(frames, null, 1));
   console.log(frames.length, 'frames', OUT);
