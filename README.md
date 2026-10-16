@@ -4,7 +4,7 @@
 
 **A complete web equation editor – with first-class Arabic support.**
 
-Click, type or handwrite a formula, keep it as MathML, and export it as LaTeX, PNG, SVG or spoken text.
+Click or type a formula, keep it as MathML, and export it as LaTeX, PNG, SVG or spoken text.
 Full English interface out of the box – and, as a feature of its own, right-to-left Arabic with the Arabic math letters.
 
 <br>
@@ -71,8 +71,9 @@ plus a **contextual tab** that offers exactly the controls that make sense for w
 <tr>
 <td width="50%" valign="top">
 
-### Handwriting
-Switch to handwriting mode, draw a formula with a finger or a pen, and it is recognised and turned into an editable formula.
+### Keyboard friendly
+Shortcuts for the common structures (<kbd>Ctrl</kbd> + <kbd>/</kbd> for a fraction, <kbd>Ctrl</kbd> + <kbd>↑</kbd> for a superscript),
+arrow-key navigation through every structure, and select, copy and paste like in a text editor.
 
 </td>
 <td width="50%" valign="top">
@@ -153,7 +154,7 @@ The offset is saved inside the formula (as standard MathML), so it survives copy
 ## Works on phones and tablets
 
 On small screens the editor switches to a fluid layout: bigger touch targets, scrolling tab strip, an on-screen arrow pad (the
-soft keyboard has none), the output as a slide-up bar and a handwriting surface that fills the window.
+soft keyboard has none), and the output as a slide-up bar.
 
 <p align="center">
 <img src="docs/media/phone.png" alt="The editor on a phone" width="240">
