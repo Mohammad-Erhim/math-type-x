@@ -29,9 +29,13 @@ The page is static files plus an optional services server, so there are two ways
   SVG, PNG (canvas, fonts embedded in the SVG), PDF / EPS (canvas pixels + the same writers), handwriting recognition
   (the same recogniser in a Web Worker) and the converters. The same build therefore also runs unchanged behind the
   server. `?local=1`-style forcing is available through `services: { local: true }`.
-* **Vercel**: import the repository (framework "Other"); `vercel.json` sets the build command
-  (`npm run build:static`), the output directory (`dist/public`) and cache / security headers.
-  `node tools/static_e2e.js` checks the static build in a real browser against the server's images.
+* **GitHub Pages (the project website)**: `npm run build:site` builds the editor (static, minified) and the website around it
+  (`tools/build_site.mjs`, content in `site/`) into `dist-site/`: the landing page with the live playground, the full-page
+  editor, features, the Arabic math editor page, the guide, FAQ, embedding and about pages, each in English and Arabic
+  (`/ar/`), plus `sitemap.xml`, `robots.txt`, structured data and social cards. The workflow `.github/workflows/pages.yml`
+  publishes it on every push to `main`. For a custom domain set the repository variables `SITE_URL` (for example
+  `https://example.com`) and `CNAME` (`example.com`). `node tools/static_e2e.js` checks the static build in a real browser
+  against the server's images. See [SEO.md](SEO.md) for the search-engine setup.
 
 ## Responsive layout
 

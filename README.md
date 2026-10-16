@@ -4,7 +4,7 @@
 
 **A complete web equation editor – with first-class Arabic support.**
 
-Click or type a formula and export it as a crisp PNG image – ready for documents, slides and the web.
+Click or type a formula and export it as a crisp PNG image – ready for documents, slides and the web. Free to use online.
 Full English interface out of the box – and, as a feature of its own, right-to-left Arabic with the Arabic math letters.
 
 <br>
@@ -22,6 +22,8 @@ Full English interface out of the box – and, as a feature of its own, right-to
 ![Phones](https://img.shields.io/badge/works%20on-phones%20%26%20tablets-4b6584)
 
 [Features](#features) · [Turn on Arabic](#turn-on-arabic) · [Arabic mathematics](#arabic-mathematics) · [Quick start](#quick-start) · [Use it on your site](#use-it-on-your-website) · [Documentation](#documentation)
+
+**[Try it online → mohammad-erhim.github.io/math-type-x](https://mohammad-erhim.github.io/math-type-x/)** · [بالعربية](https://mohammad-erhim.github.io/math-type-x/ar/)
 
 </div>
 
@@ -204,7 +206,7 @@ Open **http://localhost:8080** – the editor and its output panel are ready. Ad
 | <kbd>Shift</kbd> + arrows | Select |
 | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + arrows | Move the selection by one pixel |
 
-No server? `npm run build:static` produces plain files you can host anywhere (GitHub Pages, Netlify, Vercel); the editor then
+No server? `npm run build:static` produces plain files you can host anywhere (GitHub Pages, Netlify and others); the editor then
 makes its images and conversions in the browser.
 
 ## Use it on your website
@@ -237,6 +239,3 @@ Read the formula with `editor.getMathML()`, `getLaTeX()`, `getSVG()`, `getPNG()`
 The Arabic math letters are shapes from the symbol tables of the *Zulfi Math* Arabic keyboard maps. Formulas are drawn with the
 bundled STIX Two Math, Liberation Sans and Noto Arabic faces.
 
-## License
-
-Not yet published under an open-source license; all rights reserved until one is added.

@@ -6,6 +6,9 @@ All notable changes are documented here. The format follows
 ## [1.0.0] – Unreleased
 
 ### Changed
+- The project website (landing page with a live playground, full-page editor, features, Arabic math editor, guide, FAQ, embedding,
+  about; English and Arabic) is published to GitHub Pages on every push to `main` (`.github/workflows/pages.yml`, `tools/build_site.mjs`);
+  it replaces the Vercel deployment. `services: { local: true }` no longer needs a `baseUrl`.
 - README rewritten for users (hero demo video, feature tour with screenshots, Arabic mathematics section, quick start);
   the technical content moved to `docs/TECHNICAL.md`. Media in `docs/media/`, produced by `tools/readme_shots.js` and
   `tools/readme_demo.js` / `tools/readme_demo.py`.
