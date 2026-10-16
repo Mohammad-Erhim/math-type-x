@@ -7,7 +7,7 @@ import { renderPngBlob, renderVector, getAssetsBase } from '../render/client';
 import { recognize as recognizeHere } from '../hand/recognize';
 
 export interface ServicesOptions {
-  baseUrl: string;
+  baseUrl?: string;
   headers?: Record<string, string>;
   telemetry?: boolean;
   /** use only the local implementation (no server at all) */
@@ -80,7 +80,7 @@ export class Services {
       if (signal.aborted) ac.abort();
       else signal.addEventListener('abort', () => ac.abort(), { once: true });
     }
-    const base = this.opts.baseUrl.replace(/\/?$/, '/');
+    const base = (this.opts.baseUrl ?? '').replace(/\/?$/, '/');
     return this.remote(
       () =>
         fetch(base + name + '?httpstatus=true', {
@@ -131,7 +131,7 @@ export class Services {
     if (o.background) params.backgroundColor = o.background;
     if (o.color) params.color = o.color;
     if (o.fontSize) params.fontSize = o.fontSize;
-    const base = this.opts.baseUrl.replace(/\/?$/, '/');
+    const base = (this.opts.baseUrl ?? '').replace(/\/?$/, '/');
     try {
       const body = await this.remote(
         () => fetch(base + 'render.' + format, { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', ...(this.opts.headers ?? {}) }, body: new URLSearchParams(params), signal: o.signal }),
@@ -163,7 +163,7 @@ export class Services {
   }
 
   async recognize(strokes: { x: number[][]; y: number[][]; t?: number[][] }): Promise<{ mathml: string; score: number }> {
-    const base = this.opts.baseUrl.replace(/\/?$/, '/');
+    const base = (this.opts.baseUrl ?? '').replace(/\/?$/, '/');
     try {
       return await this.remote(
         () =>
@@ -197,7 +197,7 @@ export class Services {
       this.getWorker();
       return;
     }
-    const base = this.opts.baseUrl.replace(/\/?$/, '/');
+    const base = (this.opts.baseUrl ?? '').replace(/\/?$/, '/');
     void this.remote(
       () => fetch(base + 'tick', { headers: this.opts.headers }),
       async () => true,
