@@ -32,7 +32,7 @@
   if (q.has('fontStyle')) opts.fontStyle = q.get('fontStyle');
   if (q.has('parity')) opts.parity = q.get('parity');
   // the host page follows the language of the editor (right-to-left for Arabic)
-  var AR = { title: 'محرر المعادلات math-type-x', lead: 'جرّب المحرر أدناه: استخدم شريط الأدوات أو اكتب بلوحة المفاتيح أو انتقل إلى وضع الكتابة بخط اليد.' };
+  var AR = { title: 'محرر المعادلات MathTypeX', lead: 'جرّب المحرر أدناه: استخدم شريط الأدوات أو اكتب بلوحة المفاتيح أو انتقل إلى وضع الكتابة بخط اليد.' };
   if (/^ar/i.test(opts.language)) {
     document.documentElement.lang = 'ar';
     document.documentElement.dir = 'rtl';

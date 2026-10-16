@@ -394,7 +394,7 @@ export class HandMode {
     this.redraw();
     this.scheduleRecognition(true);
     const note = h('div', { class: 'wrs_helpText' });
-    note.innerHTML = '<div>To delete parts of the formula, scribble them out</div><div class="wrs_helpBrand">Powered by math-type-x</div>';
+    note.innerHTML = '<div>To delete parts of the formula, scribble them out</div><div class="wrs_helpBrand">Powered by MathTypeX</div>';
     this.root.querySelector('.wrs_canvasContainer')?.append(note);
     await new Promise((r) => setTimeout(r, 2200));
     note.remove();
