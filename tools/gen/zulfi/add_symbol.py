@@ -2,7 +2,11 @@
 """Adds one symbol to src/data/zulfi.json straight from a Zulfi Math font: the text is shaped with the font and the glyphs
 are converted exactly like extract.py does (SYMBOL_SCALE, raised forms brought onto the baseline).
 usage: PYTHONPATH=<fonttools,uharfbuzz> python3 tools/gen/zulfi/add_symbol.py <ksor|tkamol> <text> <group> [--after HEX]
-e.g.   add_symbol.py ksor ق letters --after E173   (--check re-derives an existing symbol instead and compares it)"""
+           [--scale F] [--sit] [--replace HEX]
+e.g.   add_symbol.py ksor ق letters --after E173   (--check re-derives an existing symbol instead and compares it)
+--scale F  extra size factor on top of SYMBOL_SCALE (a letter that is drawn small in its font)
+--sit      the lowest ink rests on the baseline (letters that float above it)
+--replace  overwrite that symbol (keeps its place in the palette) instead of adding a new one"""
 import json, os, sys
 import uharfbuzz as hb
 from fontTools.ttLib import TTFont
@@ -25,9 +29,9 @@ def shape(font, text):
     return [(i.codepoint, p.x_advance, p.x_offset, p.y_offset) for i, p in zip(buf.glyph_infos, buf.glyph_positions)]
 
 
-def symbol_path(font, glyphs):
+def symbol_path(font, glyphs, scale=SYMBOL_SCALE, sit=False):
     tt = TTFont(os.path.join(HERE, FONTS[font]))
-    k = 1000 / tt['head'].unitsPerEm * SYMBOL_SCALE
+    k = 1000 / tt['head'].unitsPerEm * scale
     gs = tt.getGlyphSet()
 
     def draw(shift_x, shift_y):
@@ -43,7 +47,7 @@ def symbol_path(font, glyphs):
 
     adv, d, b = draw(0, 0)
     shift_x = shift_y = 0
-    if b[3] < -120:
+    if b[3] < -120 or sit:
         shift_y = -b[3]
     if adv < 1 or b[0] < -10:
         shift_x = 30 - b[0]
@@ -57,7 +61,9 @@ def symbol_path(font, glyphs):
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     font, text, group = args[0], args[1], args[2]
-    adv, d, y0, y1 = symbol_path(font, shape(font, text))
+    arg = lambda n, default=None: sys.argv[sys.argv.index(n) + 1] if n in sys.argv else default
+    scale = SYMBOL_SCALE * float(arg('--scale', 1))
+    adv, d, y0, y1 = symbol_path(font, shape(font, text), scale, '--sit' in sys.argv)
     data = json.load(open(DATA))
     if '--check' in sys.argv:
         for h, s in data['symbols'].items():
@@ -67,6 +73,12 @@ def main():
     for h, s in data['symbols'].items():
         if (s['a'], s['d']) == (adv, d):
             sys.exit(f'already there: U+{h}')
+    if '--replace' in sys.argv:
+        key = arg('--replace').upper()
+        data['symbols'][key] = dict(a=adv, d=d, t=y0, b=y1, k=text, f=font, g=group, m='mi')
+        json.dump(data, open(DATA, 'w'), ensure_ascii=False, separators=(',', ':'))
+        print('replaced U+' + key, text, 'advance', adv, 'ink', y0, y1)
+        return
     cp = max(int(h, 16) for h in data['symbols']) + 1
     key = f'{cp:04X}'
     data['symbols'][key] = dict(a=adv, d=d, t=y0, b=y1, k=text, f=font, g=group, m='mi')
