@@ -58,6 +58,15 @@ All notable changes are documented here. The format follows
 - Website: the header switches to the menu button up to 1200 px so Arabic labels no longer wrap; favicon set (`favicon.ico`,
   48 / 96 px icons).
 
+### Changed (install, SEO)
+- Landing page hero: two buttons – *Open the full editor online* and *Install app*; after installing (or when the browser reports the
+  app as installed) every install button reads *Open app* (`getInstalledRelatedApps`, a remembered flag, `related_applications` in the
+  manifest). The install button in the hero is always visible and leads to the install steps when the browser cannot install.
+- Titles, descriptions, headings and the tagline say *online and offline* (English and Arabic); the editor pages ask the browser to
+  resize the page with the on-screen keyboard (`interactive-widget=resizes-content`).
+- Service worker: caches are named `mtx2-…`; the first activation after the older workers reloads the open pages once so an
+  installed app that still shows an old version updates by itself; an untouched open page also refreshes when a new worker takes over.
+
 ### Fixed
 - Several details found in review: panel scroll cue and border, shaded line under the wide toolbar panel, doubled border of the
   Arabic background toggle, off-screen palettes, stale pages after a site update.

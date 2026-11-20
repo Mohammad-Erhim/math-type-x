@@ -100,7 +100,7 @@ function head({ lang, slug, title, description, og, noindex, schema, styles }) {
 <meta name="apple-mobile-web-app-title" content="MathTypeX">
 <script>if('serviceWorker' in navigator){var had=!!navigator.serviceWorker.controller,touched=false,once=false;['pointerdown','keydown','touchstart'].forEach(function(t){addEventListener(t,function(){touched=true},{capture:true,once:true,passive:true})});navigator.serviceWorker.addEventListener('controllerchange',function(){if(had&&!touched&&!once){once=true;location.reload()}had=true});addEventListener('load',function(){navigator.serviceWorker.register('${BASE}/sw.js',{scope:'${BASE}/',updateViaCache:'none'}).catch(function(){})})}</script>
 <script>(function(){var sa=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;if(sa){var r0=document.documentElement,ar0=location.pathname.indexOf('${BASE}/ar/')===0;r0.classList.add('standalone');if(location.pathname.slice(-8)!=='/editor/')location.replace('${BASE}'+(ar0?'/ar':'')+'/editor/')}})()</script>
-<script>(function(){var d,r=document.documentElement;addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;r.classList.add('can-install')});addEventListener('appinstalled',function(){d=null;r.classList.remove('can-install')});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-install]');if(!b||!d)return;e.preventDefault();d.prompt();d.userChoice.then(function(){d=null;r.classList.remove('can-install')})})})()</script>
+<script>(function(){var d,r=document.documentElement,K='mtx:installed',U='${BASE}/${lang === 'ar' ? 'ar/' : ''}editor/?source=pwa';function save(){try{localStorage.setItem(K,'1')}catch(e){}}function drop(){try{localStorage.removeItem(K)}catch(e){}}try{if(localStorage.getItem(K)==='1')r.classList.add('installed')}catch(e){}if(r.classList.contains('standalone')){save();r.classList.add('installed')}if(navigator.getInstalledRelatedApps)navigator.getInstalledRelatedApps().then(function(a){if(a&&a.length){save();r.classList.add('installed')}}).catch(function(){});addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;drop();r.classList.remove('installed');r.classList.add('can-install')});addEventListener('appinstalled',function(){d=null;save();r.classList.remove('can-install');r.classList.add('installed')});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-install]');if(!b)return;if(r.classList.contains('installed')){e.preventDefault();window.open(U,'_blank');return}if(!d)return;e.preventDefault();d.prompt();d.userChoice.then(function(){d=null;r.classList.remove('can-install')})})})()</script>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-naskh-arabic-700' : 'roboto-slab-700'}.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-sans-arabic-400' : 'noto-sans-400'}.woff2" as="font" type="font/woff2" crossorigin>
 <style>${styles ?? css}</style>
@@ -112,7 +112,7 @@ ${cfg.gaId ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${c
 function header(lang, slug) {
   const s = SITE[lang];
   const x = ctx(lang);
-  const links = s.nav.map(([sl, label]) => `<li><a href="${x.u(sl)}"${sl === slug ? ' aria-current="page"' : ''}>${label}</a></li>`).join('') + `<li class="nav-cta"><a class="btn btn-dark" href="${x.u('editor')}">${s.openEditor}</a></li><li class="nav-install"><button type="button" class="btn btn-outline" data-install>${lang === 'ar' ? 'تثبيت التطبيق' : 'Install app'}</button></li>`;
+  const links = s.nav.map(([sl, label]) => `<li><a href="${x.u(sl)}"${sl === slug ? ' aria-current="page"' : ''}>${label}</a></li>`).join('') + `<li class="nav-cta"><a class="btn btn-dark" href="${x.u('editor')}">${s.openEditor}</a></li><li class="nav-install"><button type="button" class="btn btn-outline" data-install><span class="i-install">${lang === 'ar' ? 'ثبّت التطبيق' : 'Install app'}</span><span class="i-open">${lang === 'ar' ? 'افتح التطبيق' : 'Open app'}</span></button></li>`;
   const bar = lang === 'ar' ? 'جرّب MathTypeX الآن – بلا تسجيل.' : 'Try MathTypeX right now – no sign-up needed.';
   const globe = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>';
   return `<a class="skip" href="#main">${s.skip}</a>
@@ -243,14 +243,14 @@ function renderEditor(lang) {
   const x = ctx(lang);
   const ar = lang === 'ar';
   const meta = ar
-    ? { title: 'المحرر الكامل – محرر المعادلات MathTypeX', description: 'محرر معادلات رياضية بملء الصفحة: اكتب بالعربية أو الإنجليزية، ونزّل معادلتك صورة PNG. يعمل في متصفحك، ويمكنك تثبيته كتطبيق ليعمل بلا إنترنت.', h1: 'محرر المعادلات MathTypeX', intro: 'استخدم شريط الأدوات أو لوحة المفاتيح لبناء معادلتك، ثم افتح تبويب PNG لتنزيلها صورة.' }
-    : { title: 'Full-Page Equation Editor – MathTypeX', description: 'The full-page equation editor: write in English or Arabic and download your equation as a PNG image. Runs in your browser; install it as an app to work offline.', h1: 'MathTypeX equation editor', intro: 'Use the toolbar or the keyboard to build your equation, then open the PNG tab to download it as an image.' };
+    ? { title: 'المحرر الكامل – على الإنترنت وبلا إنترنت | MathTypeX', description: 'محرر معادلات رياضية بملء الصفحة: اكتب بالعربية أو الإنجليزية، ونزّل معادلتك صورة PNG. يعمل في متصفحك، ويمكنك تثبيته كتطبيق ليعمل بلا إنترنت.', h1: 'محرر المعادلات MathTypeX', intro: 'استخدم شريط الأدوات أو لوحة المفاتيح لبناء معادلتك، ثم افتح تبويب PNG لتنزيلها صورة.' }
+    : { title: 'Full-Page Equation Editor – Online & Offline | MathTypeX', description: 'The full-page equation editor, online and offline: write in English or Arabic and download a PNG. Runs in your browser; install it as an app.', h1: 'MathTypeX equation editor', intro: 'Use the toolbar or the keyboard to build your equation, then open the PNG tab to download it as an image.' };
   const schema = [{ '@context': 'https://schema.org', '@graph': [crumbs(lang, 'editor', ar ? 'المحرر' : 'Editor'), appSchema(lang)] }];
   const h = head({ lang, slug: 'editor', title: meta.title, description: meta.description, schema, styles: appCss + '\n' + editorPageCss.replace(/html\{color-scheme[^}]*\}/, '') });
   return `${h}
 <body class="app">
 <div class="app-bar"><a class="brand" href="${x.u('')}"><img src="${BASE}/media/icon-192.png" width="26" height="26" alt="">MathTypeX</a>
-  <span class="sp">${updated(lang)}<button type="button" class="inst" data-install>${ar ? 'تثبيت التطبيق' : 'Install app'}</button><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
+  <span class="sp">${updated(lang)}<button type="button" class="inst" data-install><span class="i-install">${ar ? 'ثبّت التطبيق' : 'Install app'}</span><span class="i-open">${ar ? 'افتح التطبيق' : 'Open app'}</span></button><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
 <main class="page">
   <h1 class="sr-only">${meta.h1}</h1>
   <p class="sr-only">${meta.intro}</p>
@@ -301,6 +301,7 @@ write('manifest.webmanifest', JSON.stringify({
     { src: `${BASE}/media/icon-512.png`, sizes: '512x512', type: 'image/png', purpose: 'any' },
     { src: `${BASE}/media/icon-maskable-512.png`, sizes: '512x512', type: 'image/png', purpose: 'maskable' },
   ],
+  related_applications: [{ platform: 'webapp', url: `${SITE_URL}/manifest.webmanifest` }], prefer_related_applications: false,
   shortcuts: [
     { name: 'Equation editor', short_name: 'Editor', url: `${BASE}/editor/?source=pwa`, icons: [{ src: `${BASE}/media/icon-192.png`, sizes: '192x192' }] },
     { name: 'محرر المعادلات بالعربية', short_name: 'العربية', url: `${BASE}/ar/editor/?source=pwa`, icons: [{ src: `${BASE}/media/icon-192.png`, sizes: '192x192' }] },

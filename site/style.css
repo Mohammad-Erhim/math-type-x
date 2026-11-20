@@ -45,8 +45,11 @@ nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;align-items:
 nav.main a{display:block;white-space:nowrap;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.97rem}
 nav.main a:hover,nav.main a[aria-current=page]{background:var(--gray)}
 nav.main .nav-cta,nav.main .nav-install{display:none}
-[data-install]{display:none}
-html.can-install [data-install]{display:inline-flex}
+html [data-install]{display:none}
+html [data-install-always],html.can-install [data-install],html.installed [data-install]{display:inline-flex}
+.i-open{display:none}
+html.installed .i-install{display:none}
+html.installed .i-open{display:inline}
 .head-right{margin-inline-start:auto;display:flex;align-items:center;gap:12px}
 .head-right .btn,.lang{white-space:nowrap}
 .lang{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
@@ -248,7 +251,11 @@ main .prose pre code,main .narrow pre code{background:none;padding:0}
 .app-bar .sp{margin-inline-start:auto;display:flex;align-items:center;gap:16px}
 .app-bar .upd{color:#9fb0bd;font-size:.8rem;font-weight:400}
 .app-bar .inst{display:none}
-html.can-install .app-bar .inst{display:inline-block}
+html.can-install .app-bar .inst,html.installed .app-bar .inst{display:inline-block}
+.i-open{display:none}
+html.installed .i-install{display:none}
+html.installed .i-open{display:inline}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .app-bar .inst{background:none;border:1px solid #5d727d;border-radius:6px;color:#dbe6ee;font:700 .8rem Arial,sans-serif;padding:4px 10px;cursor:pointer}
 .app-bar .inst:hover{background:#2b3a4d;color:#fff}
 body.app{height:100%;margin:0;background:#fff;overflow:hidden}
@@ -275,7 +282,11 @@ html.standalone .app-bar .brand{pointer-events:none}
   .mtx_dock .mtx_lang{border-inline-end:1px solid #c5d1d7}
   .mtx_dock .mtx_home{border-inline-start:1px solid #c5d1d7}
   .mtx_dock .mtx_install{display:none;align-items:center;justify-content:center;min-width:46px;padding:0;border:0;border-inline-start:1px solid #c5d1d7;background:none;color:#324d5b;cursor:pointer;-webkit-tap-highlight-color:transparent}
-  html.can-install .mtx_dock .mtx_install{display:flex}
+  html.can-install .mtx_dock .mtx_install,html.installed .mtx_dock .mtx_install{display:flex}
+  .mtx_dock .mtx_install .i-install,.mtx_dock .mtx_install .i-open{display:inline-flex}
+  html.installed .mtx_dock .mtx_install .i-install{display:none}
+  .mtx_dock .mtx_install .i-open{display:none}
+  html.installed .mtx_dock .mtx_install .i-open{display:inline-flex}
   .mtx_dock .mtx_install:active{background:#f6efd0}
   .mtx_dock .mtx_install svg{width:22px;height:22px}
   html.kbd .mtx_dock{display:none}

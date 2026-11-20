@@ -3,6 +3,7 @@
 What the website already does, and the few steps that only the site owner can do.
 
 ## Built into every page
+* Titles, headings and descriptions say *online and offline* (the site is an installable offline app); titles stay under 70 characters, descriptions between 70 and 170 (`npm run check:site`).
 * A unique `<title>` (brand first on the home page) and `<meta name="description">`; one `<h1>`, ordered headings, descriptive link text.
 * `<link rel="canonical">`, and English ⇄ Arabic alternates (`hreflang="en"`, `ar`, `x-default`) so Google shows each language to the right people.
 * Open Graph and Twitter cards with a 1200 × 630 share picture.

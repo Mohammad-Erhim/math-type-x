@@ -4,7 +4,7 @@
 
 **A complete web equation editor – with first-class Arabic support.**
 
-Click or type a formula and export it as a crisp PNG image – ready for documents, slides and the web. Free to use online.
+Click or type a formula and export it as a crisp PNG image – ready for documents, slides and the web. Free to use online – and offline once you install it as an app.
 Full English interface out of the box – and, as a feature of its own, right-to-left Arabic with the Arabic math letters.
 
 <br>
@@ -23,7 +23,7 @@ Full English interface out of the box – and, as a feature of its own, right-to
 
 [Features](#features) · [Turn on Arabic](#turn-on-arabic) · [Arabic mathematics](#arabic-mathematics) · [Quick start](#quick-start) · [Use it on your site](#use-it-on-your-website) · [Documentation](#documentation)
 
-**[Try it online → mohammad-erhim.github.io/math-type-x](https://mohammad-erhim.github.io/math-type-x/)** · [بالعربية](https://mohammad-erhim.github.io/math-type-x/ar/)
+**[Try it online → mohammad-erhim.github.io/math-type-x](https://mohammad-erhim.github.io/math-type-x/)** (install it to use it offline) · [بالعربية](https://mohammad-erhim.github.io/math-type-x/ar/)
 
 </div>
 

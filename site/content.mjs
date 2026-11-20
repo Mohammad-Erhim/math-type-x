@@ -6,7 +6,7 @@ const shot = (x, file, w, h, alt, extra = '') => `<img src="${x.m(file)}" width=
 export const SITE = {
   en: {
     lang: 'en', dir: 'ltr', name: 'MathTypeX', locale: 'en_US',
-    tagline: 'Free online math equation editor – English and Arabic',
+    tagline: 'Free online and offline math equation editor – English and Arabic',
     skip: 'Skip to the content', menu: 'Menu', home: 'Home', switchTo: 'العربية', switchLabel: 'قراءة هذه الصفحة بالعربية',
     openEditor: 'Open the editor', footerAbout: 'MathTypeX is a free visual equation editor that runs in your browser. Build math with clicks or the keyboard and download it as a PNG image – in English or Arabic.',
     footProduct: 'Product', footLearn: 'Learn', footProject: 'Project', github: 'GitHub',
@@ -16,7 +16,7 @@ export const SITE = {
   },
   ar: {
     lang: 'ar', dir: 'rtl', name: 'MathTypeX', locale: 'ar_AR',
-    tagline: 'محرر معادلات رياضية مجاني على الإنترنت – عربي وإنجليزي',
+    tagline: 'محرر معادلات رياضية مجاني على الإنترنت وبلا إنترنت – عربي وإنجليزي',
     skip: 'انتقل إلى المحتوى', menu: 'القائمة', home: 'الرئيسية', switchTo: 'English', switchLabel: 'Read this page in English',
     openEditor: 'افتح المحرر', footerAbout: 'MathTypeX محرر معادلات مرئي مجاني يعمل في متصفحك. ابنِ المعادلات بالنقر أو بلوحة المفاتيح ونزّلها صورة PNG – بالعربية أو الإنجليزية.',
     footProduct: 'المنتج', footLearn: 'تعلّم', footProject: 'المشروع', github: 'جيت هب',
@@ -129,9 +129,9 @@ const cta = (x, t) => `
 const T = {
   en: {
     stepWatch: 'Step 1 · Watch', stepTry: 'Step 2 · Try it', stepUse: 'Step 3 · Use it',
-    heroTitle: 'Free online equation editor – in English and Arabic',
+    heroTitle: 'Free online and offline equation editor – in English and Arabic',
     heroLead: 'MathTypeX is a free visual equation editor that runs in your browser. Click or type to build fractions, roots, matrices and more, then download the result as a PNG image. Arabic is a first-class feature: right-to-left writing, Arabic math letters and exact positioning.',
-    heroTry: 'Try it now – no sign-up', heroFull: 'Open the full editor', heroInstall: 'Install the app', heroBadge: 'Arabic math letters', bandTitle: 'Made for everyone who writes mathematics', band: ['Teachers', 'Students', 'Researchers', 'Web publishers'],
+    heroTry: 'Try it now – no sign-up', heroFull: 'Open the full editor online', heroInstall: 'Install app', heroOpenApp: 'Open app', heroBadge: 'Arabic math letters', bandTitle: 'Made for everyone who writes mathematics', band: ['Teachers', 'Students', 'Researchers', 'Web publishers'],
     trust: ['Works in your browser', 'Install it as an app', 'Works offline', 'English and Arabic'],
     heroAlt: 'The MathTypeX equation editor showing the quadratic formula',
     watchTitle: 'See it in 60 seconds',
@@ -173,7 +173,7 @@ const T = {
       ['iPhone and iPad – Safari', 'Tap Share, then Add to Home Screen.'],
       ['Windows, Mac and Linux – Chrome or Edge', 'Click Install app on this page, or the install icon in the address bar.'],
     ],
-    installButton: 'Install app', installNote: 'The Install app button appears only when your browser offers the installation. If you do not see it, use the steps above. (Firefox on a computer does not install web apps.)',
+    installButton: 'Install app', installOpen: 'Open app', installNote: 'The Install app button appears only when your browser offers the installation. If you do not see it, use the steps above. (Firefox on a computer does not install web apps.)',
     howTitle: 'How it works', howLead: 'Three steps, no learning curve.',
     how: [['Build your equation', 'Click the toolbar buttons or type. The equation is drawn the way it is printed as you work.'], ['Check it', 'Switch to Arabic, move a symbol, or undo and redo – all from the same editor.'], ['Download the image', 'Open the PNG tab and click Download. Paste the picture wherever you need it.']],
     whoTitle: 'Who it is for',
@@ -183,9 +183,9 @@ const T = {
   },
   ar: {
     stepWatch: 'الخطوة ١ · شاهد', stepTry: 'الخطوة ٢ · جرّب', stepUse: 'الخطوة ٣ · استخدم',
-    heroTitle: 'محرر معادلات رياضية مجاني – بالعربية والإنجليزية',
+    heroTitle: 'محرر معادلات رياضية مجاني على الإنترنت وبلا إنترنت – بالعربية والإنجليزية',
     heroLead: 'MathTypeX محرر معادلات مرئي مجاني يعمل في متصفحك. انقر أو اكتب لتبني الكسور والجذور والمصفوفات وغيرها، ثم نزّل النتيجة صورة PNG. والعربية فيه ميزة أساسية: كتابة من اليمين إلى اليسار، وحروف رياضية عربية، وضبط دقيق للمواضع.',
-    heroTry: 'جرّبه الآن – بلا تسجيل', heroFull: 'افتح المحرر الكامل', heroInstall: 'ثبّت التطبيق', heroBadge: 'حروف رياضية عربية', bandTitle: 'لكل من يكتب الرياضيات', band: ['المعلمون', 'الطلاب', 'الباحثون', 'ناشرو المواقع'],
+    heroTry: 'جرّبه الآن – بلا تسجيل', heroFull: 'افتح المحرر الكامل على الإنترنت', heroInstall: 'ثبّت التطبيق', heroOpenApp: 'افتح التطبيق', heroBadge: 'حروف رياضية عربية', bandTitle: 'لكل من يكتب الرياضيات', band: ['المعلمون', 'الطلاب', 'الباحثون', 'ناشرو المواقع'],
     trust: ['يعمل في متصفحك', 'ثبّته كتطبيق', 'يعمل بلا إنترنت', 'بالعربية والإنجليزية'],
     heroAlt: 'محرر المعادلات MathTypeX يعرض معادلة الدرجة الثانية',
     watchTitle: 'شاهده في ٦٠ ثانية',
@@ -227,7 +227,7 @@ const T = {
       ['آيفون وآيباد – Safari', 'اضغط «مشاركة» ثم «إضافة إلى الشاشة الرئيسية».'],
       ['ويندوز وماك ولينكس – Chrome أو Edge', 'انقر «ثبّت التطبيق» في هذه الصفحة، أو أيقونة التثبيت في شريط العنوان.'],
     ],
-    installButton: 'ثبّت التطبيق', installNote: 'يظهر زر «ثبّت التطبيق» فقط حين يعرض متصفحك التثبيت. وإن لم تره فاتبع الخطوات أعلاه. (متصفح Firefox على الحاسوب لا يثبّت تطبيقات الويب.)',
+    installButton: 'ثبّت التطبيق', installOpen: 'افتح التطبيق', installNote: 'يظهر زر «ثبّت التطبيق» فقط حين يعرض متصفحك التثبيت. وإن لم تره فاتبع الخطوات أعلاه. (متصفح Firefox على الحاسوب لا يثبّت تطبيقات الويب.)',
     howTitle: 'كيف يعمل', howLead: 'ثلاث خطوات، بلا منحنى تعلّم.',
     how: [['ابنِ معادلتك', 'انقر أزرار الشريط أو اكتب. تُرسم المعادلة كما تُطبع أثناء عملك.'], ['راجعها', 'بدّل إلى العربية أو حرّك رمزًا أو تراجع وأعد – كله من المحرر نفسه.'], ['نزّل الصورة', 'افتح تبويب PNG وانقر «تنزيل». ثم الصق الصورة حيث تحتاجها.']],
     whoTitle: 'لمن هو؟',
@@ -240,8 +240,8 @@ const T = {
 export const PAGES = {
   // ---------------------------------------------------------------------------------------------------------------- home
   '': {
-    en: { title: 'MathTypeX – Free Online Equation Editor (English & Arabic)', description: 'MathTypeX is a free online equation editor: write math in English or Arabic, see it as printed and download a PNG. Install it as an app and use it offline.', og: 'og-home.png', breadcrumb: null },
-    ar: { title: 'MathTypeX – محرر معادلات رياضية مجاني على الإنترنت (عربي وإنجليزي)', description: 'اكتب المعادلات الرياضية على الإنترنت بالعربية أو الإنجليزية. انقر أو اكتب، وشاهدها كما تُطبع، ثم نزّلها PNG. MathTypeX مجاني ولا يحتاج إلى تثبيت ويعمل في متصفحك.', og: 'og-home-ar.png', breadcrumb: null },
+    en: { title: 'MathTypeX – Online & Offline Equation Editor (English, Arabic)', description: 'MathTypeX is a free equation editor that works online and offline: write math in English or Arabic, download a PNG, and install it as an app.', og: 'og-home.png', breadcrumb: null },
+    ar: { title: 'MathTypeX – محرر معادلات مجاني، على الإنترنت وبلا إنترنت', description: 'اكتب المعادلات الرياضية بالعربية أو الإنجليزية، على الإنترنت وبلا إنترنت. انقر أو اكتب، وشاهدها كما تُطبع، ونزّلها PNG، وثبّته كتطبيق. مجاني.', og: 'og-home-ar.png', breadcrumb: null },
     body: (x) => {
       const t = T[x.lang];
       const ed = 'hero-' + (x.lang === 'ar' ? 'ar' : 'en') + '.webp';
@@ -250,7 +250,7 @@ export const PAGES = {
   <div>
     <h1>${t.heroTitle}</h1>
     <p class="lead">${t.heroLead}</p>
-    <div class="btn-row"><a class="btn btn-dark" href="#try">${t.heroTry}</a><a class="btn btn-outline" href="${x.u('editor')}">${t.heroFull}</a><a class="btn btn-outline" href="#install">${t.heroInstall}</a></div>
+    <div class="btn-row"><a class="btn btn-dark" href="${x.u('editor')}">${t.heroFull}</a><a class="btn btn-outline" href="#install" data-install data-install-always><span class="i-install">${t.heroInstall}</span><span class="i-open">${t.heroOpenApp}</span></a></div>
   </div>
   <div class="hero-visual">${BLOB}
     <div class="shot">${shot(x, ed, 1100, 446, t.heroAlt, ' fetchpriority="high"').replace(' loading="lazy"', '')}</div>
@@ -295,7 +295,7 @@ ${playground(x, t)}
   <div class="grid g3">${t.installBenefits.map(([h, p]) => `<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>
   <div class="narrow" style="margin-top:38px"><h3 style="text-align:center">${t.installStepsTitle}</h3>
     <ol class="steps">${t.installSteps.map(([h, p]) => `<li><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
-    <p style="text-align:center;margin-top:22px"><button type="button" class="btn btn-dark" data-install>${t.installButton}</button></p>
+    <p style="text-align:center;margin-top:22px"><button type="button" class="btn btn-dark" data-install><span class="i-install">${t.installButton}</span><span class="i-open">${t.installOpen}</span></button></p>
     <p class="note" style="text-align:center">${t.installNote}</p></div>
 </div></section>
 
@@ -387,8 +387,8 @@ ${cta(x, T.en)}`),
 
   // ---------------------------------------------------------------------------------------------------------------- arabic
   'arabic-math-editor': {
-    en: { title: 'Arabic Math Editor – Right-to-Left Equations Online | MathTypeX', description: 'Write Arabic mathematics online: right-to-left equations, Arabic-Indic digits, Arabic math letters and derivative marks, with exact positioning.', h1: 'Arabic math editor', lead: 'Write equations right to left, with Arabic math letters, derivative marks and exact positioning.', crumb: 'Arabic math editor', og: 'og-home.png' },
-    ar: { title: 'محرر المعادلات الرياضية العربي – من اليمين إلى اليسار | MathTypeX', description: 'اكتب الرياضيات العربية على الإنترنت: معادلات من اليمين إلى اليسار، أرقام هندية عربية، حروف رياضية عربية وعلامات مشتقة، مع ضبط دقيق.', h1: 'محرر المعادلات الرياضية العربي', lead: 'اكتب المعادلات من اليمين إلى اليسار، بحروف رياضية عربية وعلامات مشتقة وضبط دقيق للمواضع.', crumb: 'محرر المعادلات العربي', og: 'og-home-ar.png' },
+    en: { title: 'Arabic Math Editor – Right-to-Left, Online & Offline | MathTypeX', description: 'Write Arabic mathematics online and offline: right-to-left equations, Arabic-Indic digits, Arabic math letters and derivative marks, with exact positioning.', h1: 'Arabic math editor', lead: 'Write equations right to left, with Arabic math letters, derivative marks and exact positioning.', crumb: 'Arabic math editor', og: 'og-home.png' },
+    ar: { title: 'محرر المعادلات الرياضية العربي – من اليمين إلى اليسار | MathTypeX', description: 'اكتب الرياضيات العربية على الإنترنت وبلا إنترنت: معادلات من اليمين إلى اليسار، أرقام هندية عربية، حروف رياضية عربية وعلامات مشتقة، مع ضبط دقيق.', h1: 'محرر المعادلات الرياضية العربي', lead: 'اكتب المعادلات من اليمين إلى اليسار، بحروف رياضية عربية وعلامات مشتقة وضبط دقيق للمواضع.', crumb: 'محرر المعادلات العربي', og: 'og-home-ar.png' },
     body: (x) => (x.lang === 'ar' ? `
 <section><div class="wrap prose">
   <div class="narrow" style="margin-bottom:34px"><h2>لماذا الرياضيات العربية مختلفة؟</h2><p>تُكتب الرياضيات العربية من اليمين إلى اليسار، وتنعكس فيها بنى كثيرة: الكسور والجذور والأس والأقواس. ولها حروفها الرياضية الخاصة وعلاماتها، مثل علامات المشتقة التي تقف فوق الحرف. أما معظم محررات المعادلات فمبنية للغة اللاتينية، وتجعل العربية مهمة شاقة. صُمّم MathTypeX ليجعلها بسيطة.</p></div>
@@ -452,8 +452,8 @@ ${cta(x, T.en)}`),
 
   // ---------------------------------------------------------------------------------------------------------------- guide
   guide: {
-    en: { title: 'How to Write Equations Online – Step-by-Step Guide | MathTypeX', description: 'A simple guide: build an equation, type in Arabic, move a symbol exactly, use keyboard shortcuts and download your equation as a PNG image.', h1: 'Guide: how to write equations online', lead: 'Step-by-step help for beginners. No technical knowledge needed.', crumb: 'Guide', og: 'og-home.png' },
-    ar: { title: 'دليل كتابة المعادلات على الإنترنت خطوة بخطوة | MathTypeX', description: 'دليل بسيط: ابنِ معادلة، واكتب بالعربية، وحرّك رمزًا بدقة، واستخدم اختصارات لوحة المفاتيح، ونزّل معادلتك صورة PNG.', h1: 'الدليل: كيف تكتب المعادلات على الإنترنت', lead: 'مساعدة خطوة بخطوة للمبتدئين. لا حاجة إلى معرفة تقنية.', crumb: 'الدليل', og: 'og-home-ar.png' },
+    en: { title: 'How to Write Equations Online & Offline – Guide | MathTypeX', description: 'A simple guide: build an equation, type in Arabic, move a symbol, install the app to work offline, use shortcuts and download your equation as a PNG.', h1: 'Guide: how to write equations online and offline', lead: 'Step-by-step help for beginners. No technical knowledge needed.', crumb: 'Guide', og: 'og-home.png' },
+    ar: { title: 'دليل كتابة المعادلات على الإنترنت وبلا إنترنت | MathTypeX', description: 'دليل بسيط: ابنِ معادلة، واكتب بالعربية، وحرّك رمزًا، وثبّت التطبيق لتعمل بلا إنترنت، واستخدم الاختصارات، ونزّل معادلتك صورة PNG.', h1: 'الدليل: كيف تكتب المعادلات على الإنترنت وبلا إنترنت', lead: 'مساعدة خطوة بخطوة للمبتدئين. لا حاجة إلى معرفة تقنية.', crumb: 'الدليل', og: 'og-home-ar.png' },
     body: (x) => (x.lang === 'ar' ? `
 <section><div class="narrow prose">
   <nav aria-label="محتويات الصفحة" class="note"><strong>في هذه الصفحة:</strong> <a href="#build">بناء معادلة</a> · <a href="#arabic">الكتابة بالعربية</a> · <a href="#export">تنزيل صورة</a> · <a href="#position">تحريك رمز</a> · <a href="#install">التثبيت وبلا إنترنت</a> · <a href="#keys">الاختصارات</a></nav>

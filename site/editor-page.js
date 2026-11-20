@@ -89,9 +89,9 @@
   inst.type = 'button';
   inst.className = 'mtx_install';
   inst.setAttribute('data-install', '');
-  inst.setAttribute('aria-label', ar ? 'تثبيت التطبيق' : 'Install app');
   inst.title = ar ? 'تثبيت التطبيق' : 'Install app';
-  inst.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg>';
+  inst.innerHTML = '<span class="i-install"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4.5-4.5M12 15l4.5-4.5M5 20h14"/></svg><span class="sr-only">' + (ar ? 'ثبّت التطبيق' : 'Install app') + '</span></span>'
+    + '<span class="i-open"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg><span class="sr-only">' + (ar ? 'افتح التطبيق' : 'Open app') + '</span></span>';
   dock.append(lang2, bar, inst, home);
   outBox.appendChild(dock);
   // leaving by mistake (the logo and the language switch sit next to the keyboard): ask first, when there is a formula
