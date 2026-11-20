@@ -939,7 +939,30 @@ export class MathEditor implements ToolbarHost {
     const minY = Math.min(...items.map((c) => c.geom[1]));
     const maxX = Math.max(...items.map((c) => c.geom[0] + c.geom[2]));
     const maxY = Math.max(...items.map((c) => c.geom[1] + c.geom[3]));
-    const el = h('div', { class: 'wrs_popup' + (tab === 3 && group === 6 ? ' wrs_periodic' : ''), role: 'menu' });
+    const periodic = tab === 3 && group === 6;
+    // a long palette on a narrow screen: the cells wrap into rows that fit the width (the periodic table keeps its grid)
+    const narrowUi = this.fluid && this.root.classList.contains('wrs_reflow');
+    const availW = narrowUi ? (this.root.getBoundingClientRect().width - 8) / this.zoomK : 0;
+    const flow = narrowUi && !periodic && maxX - minX + 7 > availW;
+    const flowPos = new Map<string, [number, number]>();
+    let flowH = 0;
+    if (flow) {
+      let fx = 2;
+      let fy = 2;
+      let rowH = 0;
+      for (const c of items) {
+        if (fx > 2 && fx + c.geom[2] > availW - 4) {
+          fx = 2;
+          fy += rowH;
+          rowH = 0;
+        }
+        flowPos.set(c.id, [fx, fy]);
+        fx += c.geom[2];
+        rowH = Math.max(rowH, c.geom[3]);
+      }
+      flowH = fy + rowH + 2;
+    }
+    const el = h('div', { class: 'wrs_popup' + (periodic ? ' wrs_periodic' : ''), role: 'menu' });
     // measured on the reference: 1px border + 2px padding around a grid of cells, 1px extra on the right
     el.style.left = minX - 3 + 'px';
     el.style.top = minY - 3 + 'px';
@@ -959,14 +982,30 @@ export class MathEditor implements ToolbarHost {
       el.style.left = (tb.left - rr0.left - (strip?.scrollLeft ?? 0) + (minX - 3) * kz) / kz + 'px';
       el.style.top = (tb.top - rr0.top + (minY - 3) * kz) / kz + 'px';
     }
-    el.style.width = maxX - minX + 7 + 'px';
-    el.style.height = maxY - minY + 6 + 'px';
+    el.style.width = flow ? availW + 'px' : maxX - minX + 7 + 'px';
+    el.style.height = flow ? flowH + 4 + 'px' : maxY - minY + 6 + 'px';
+    if (flow) {
+      // taller than the screen allows: it scrolls up and down
+      const maxH = (this.root.getBoundingClientRect().height * 0.7) / this.zoomK;
+      if (flowH + 4 > maxH) {
+        el.style.height = maxH + 'px';
+        el.style.overflowY = 'auto';
+        el.style.boxSizing = 'border-box';
+      }
+    }
+    // the periodic table on a narrow screen: the whole table, a little smaller, instead of a part of it
+    if (narrowUi && periodic && maxX - minX + 7 > availW) {
+      el.style.maxWidth = 'none';
+      el.style.transformOrigin = '0 0';
+      el.style.transform = `scale(${Math.max(0.5, availW / (maxX - minX + 7))})`;
+    }
     const btns: HTMLButtonElement[] = [];
     items.forEach((c, i) => {
       const b = this.toolbar.addControl(el, c, tab, false);
       b.dataset.id = c.id;
-      b.style.left = c.geom[0] - minX + 2 + 'px';
-      b.style.top = c.geom[1] - minY + 2 + 'px';
+      const fp = flowPos.get(c.id);
+      b.style.left = fp ? fp[0] + 'px' : c.geom[0] - minX + 2 + 'px';
+      b.style.top = fp ? fp[1] + 'px' : c.geom[1] - minY + 2 + 'px';
       b.setAttribute('role', 'menuitem');
       b.tabIndex = i === 0 ? 0 : -1;
       b.addEventListener('keydown', (ev) => this.popupKey(ev as KeyboardEvent, btns, i, btn));
