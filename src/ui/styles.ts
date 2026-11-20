@@ -175,6 +175,9 @@ export const CSS = `
 .wrs_fluid .wrs_formulaDisplay{width:100%;height:100%;font-size:16px}
 .wrs_fluid.wrs_noHand .wrs_formulaDisplayWrapper{margin-right:0}
 .wrs_fluid.wrs_noHand .wrs_formulaDisplay{width:100%}
+/* narrow layout: the text area has the same 6px gap on each side as the tabs and the panel above it */
+.wrs_fluid.wrs_reflow .wrs_formulaDisplayWrapper{margin-left:6px;margin-right:6px}
+.wrs_fluid.wrs_reflow:not(.wrs_noHand) .wrs_formulaDisplayWrapper{margin-right:calc(var(--wrs-strip) + 6px)}
 @media (max-width:724px){.wrs_fluid .wrs_formulaDisplay{border-width:0}}
 .wrs_fluid .wrs_handWrapper{left:auto;right:0;top:calc(25px * var(--wrs-k) + 72px * var(--wrs-k));bottom:0;width:var(--wrs-strip);height:auto;border:0}
 .wrs_fluid .wrs_handWrapper .wrs_handStrip{left:0;top:0;width:100%;height:100%}
