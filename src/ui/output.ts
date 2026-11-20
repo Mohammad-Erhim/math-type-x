@@ -23,13 +23,21 @@ export const OUTPUT_CSS = `
 .mtx_body pre{margin:0;font:12px/1.45 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-all}
 .mtx_body img{max-width:100%;max-height:100%;background:#fff;border:1px solid #d3dce1}
 .mtx_body.mtx_image{display:flex;align-items:center;justify-content:center}
+.mtx_body.mtx_transparent img{background:#fff repeating-conic-gradient(#e4e9ec 0 25%,#fff 0 50%) 0 0/14px 14px}
+.mtx_bg{display:flex;align-items:center;gap:6px;color:#5d727d;font-size:11px}
+.mtx_bg[hidden]{display:none}
+.mtx_bg .mtx_seg{display:inline-flex;border:1px solid #778e9a;border-radius:3px;overflow:hidden}
+.mtx_bg .mtx_seg button{border:0;border-radius:0;background:#fff;padding:3px 9px;font:700 11px Arial,sans-serif;color:#425a66;cursor:pointer}
+.mtx_bg .mtx_seg button+button{border-left:1px solid #778e9a}
+.mtx_bg .mtx_seg button[aria-checked=true]{background:#425a66;color:#fff}
+.mtx_bg .mtx_seg button:focus-visible{outline:2px solid #ffcc00;outline-offset:-2px}
 .mtx_body .mtx_text{font-size:14px}
 .mtx_body.mtx_stale{opacity:.5;transition:opacity .15s .1s}
 .mtx_skeleton{height:14px;margin:4px 0;border-radius:3px;background:linear-gradient(90deg,#e3eaee,#f5f8f9,#e3eaee);background-size:200% 100%;animation:mtx_sk 1.2s linear infinite}
 @keyframes mtx_sk{to{background-position:-200% 0}}
 .mtx_err{color:#a12020}
-.mtx_foot{display:flex;align-items:center;gap:8px;padding:4px 10px;border-top:1px solid #d3dce1;background:#eef2f4;flex:none}
-.mtx_status{flex:1;color:#5d727d;font-size:11px}
+.mtx_foot{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:4px 10px;border-top:1px solid #d3dce1;background:#eef2f4;flex:none}
+.mtx_status{flex:1 1 120px;color:#5d727d;font-size:11px}
 .mtx_foot button{padding:3px 10px;border:1px solid #778e9a;border-radius:3px;background:linear-gradient(#fff,#e6edf0);font:700 11px Arial,sans-serif;color:#18212f;cursor:pointer}
 .mtx_foot button:disabled{opacity:.45;cursor:default}
 .mtx_foot button:focus-visible{outline:2px solid #ffcc00}
@@ -60,6 +68,10 @@ export class OutputPanel {
   private blob: Blob | null = null;
   private tabEls = new Map<Kind, HTMLButtonElement>();
   private imgUrl: string | null = null;
+  /** PNG background: opaque white by default, or transparent */
+  private pngBg: 'white' | 'transparent' = 'white';
+  private bgBox: HTMLElement;
+  private bgBtns = new Map<'white' | 'transparent', HTMLButtonElement>();
   /** right-to-left interface: images and text follow it, source code (MathML, LaTeX) stays left to right */
   private rtlUi = false;
 
@@ -98,7 +110,16 @@ export class OutputPanel {
       this.shareBtn = h('button', { type: 'button', text: 'Share' }) as HTMLButtonElement;
       this.shareBtn.addEventListener('click', () => void this.share());
     }
-    const foot = h('div', { class: 'mtx_foot' }, this.status, ...(this.shareBtn ? [this.shareBtn] : []), this.copyBtn, this.dlBtn);
+    // PNG only: a white background (default) or a transparent one
+    const seg = h('div', { class: 'mtx_seg', role: 'radiogroup', 'aria-label': 'PNG background' });
+    for (const [v, label] of [['white', 'White'], ['transparent', 'Transparent']] as const) {
+      const b = h('button', { type: 'button', role: 'radio', 'aria-checked': 'false', text: label }) as HTMLButtonElement;
+      b.addEventListener('click', () => this.setBg(v));
+      this.bgBtns.set(v, b);
+      seg.append(b);
+    }
+    this.bgBox = h('div', { class: 'mtx_bg', hidden: '' }, h('span', { text: 'Background' }), seg);
+    const foot = h('div', { class: 'mtx_foot' }, this.status, this.bgBox, ...(this.shareBtn ? [this.shareBtn] : []), this.copyBtn, this.dlBtn);
     this.root = h('section', { class: 'mtx_output', 'aria-label': 'Output' }, tabs, this.body, foot);
     container.append(this.root);
     // translated labels (the code shown in the body stays as it is)
@@ -113,6 +134,9 @@ export class OutputPanel {
     }
     // the format chosen last time
     const saved = ed.readState()?.output as Kind | undefined;
+    if (ed.readState()?.pngBg === 'transparent') this.pngBg = 'transparent';
+    this.syncBg();
+    this.bgBox.hidden = this.kind !== 'png';
     if (saved && TABS.some((t) => t[0] === saved)) this.setKind(saved);
     // a change: stop what is running, mark the shown output as out of date, and make the new one once typing pauses
     ed.on('change', () => this.onChange());
@@ -142,6 +166,23 @@ export class OutputPanel {
       el.tabIndex = kk === k ? 0 : -1;
     }
     this.body.setAttribute('aria-labelledby', 'mtx-tab-' + k);
+    this.bgBox.hidden = k !== 'png';
+  }
+
+  private syncBg(): void {
+    for (const [v, b] of this.bgBtns) {
+      b.setAttribute('aria-checked', String(v === this.pngBg));
+      b.tabIndex = v === this.pngBg ? 0 : -1;
+    }
+  }
+
+  private setBg(v: 'white' | 'transparent'): void {
+    if (v === this.pngBg) return;
+    this.pngBg = v;
+    this.syncBg();
+    this.ed.writeState({ pngBg: v });
+    this.cancel();
+    this.schedule(0);
   }
 
   select(k: Kind): void {
@@ -163,7 +204,7 @@ export class OutputPanel {
   }
 
   private key(k: Kind, mml: string): string {
-    return k + '\u0000' + (k === 'accessible' ? this.ed.lang + '\u0000' : '') + mml;
+    return k + '\u0000' + (k === 'accessible' ? this.ed.lang + '\u0000' : '') + (k === 'png' ? this.pngBg + '\u0000' : '') + mml;
   }
 
   private onChange(): void {
@@ -222,8 +263,8 @@ export class OutputPanel {
           blob = new Blob([value], { type: 'image/svg+xml' });
           break;
         case 'png':
-          // opaque white: a transparent PNG is shown black by many viewers (and by messengers)
-          blob = await this.ed.getPNG({ zoom: 2, background: '#ffffff', signal });
+          // white by default: a transparent PNG is shown black by many viewers (and by messengers); transparent on request
+          blob = await this.ed.getPNG({ zoom: 2, ...(this.pngBg === 'white' ? { background: '#ffffff' } : {}), signal });
           break;
         case 'accessible':
           value = await this.ed.getAccessibleText(undefined, { signal });
@@ -283,6 +324,7 @@ export class OutputPanel {
     }
     // an image sits in the middle of the panel
     this.body.classList.toggle('mtx_image', (k === 'svg' || k === 'png') && !!blob);
+    this.body.classList.toggle('mtx_transparent', k === 'png' && this.pngBg === 'transparent');
     if ((k === 'svg' || k === 'png') && blob) {
       this.imgUrl = URL.createObjectURL(blob);
       this.body.replaceChildren(h('img', { src: this.imgUrl, alt: 'Rendered formula' }));

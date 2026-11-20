@@ -60,3 +60,9 @@ test('a full or blocked storage never throws', () => {
   delete (globalThis as any).localStorage;
   assert.equal(new Store('k').read(), null);
 });
+
+test('the PNG background choice is kept only as white or transparent', () => {
+  assert.equal(sanitize({ v: 1, pngBg: 'transparent' })!.pngBg, 'transparent');
+  assert.equal(sanitize({ v: 1, pngBg: 'white' })!.pngBg, 'white');
+  assert.equal(sanitize({ v: 1, pngBg: 'red; x' })!.pngBg, undefined);
+});
