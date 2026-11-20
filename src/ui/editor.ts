@@ -137,6 +137,11 @@ export class MathEditor implements ToolbarHost {
     // what the person left in this browser (formula with its font and size, typing modes, tab)
     if (this.opts.persist) this.store = new Store('mtx:' + this.opts.persist);
     const restored = !options.mml && this.store ? this.restore(this.store.read()) : false;
+    // write the reset state now: the record then belongs to this language, so coming back to the other one starts over again too
+    if (this.langSwitched) {
+      this.persistNow(this.core.getMathML());
+      this.store?.flush();
+    }
     // right-to-left languages start with a right-to-left formula (`<math dir="rtl">`), like the reference
     if (!options.mml && !restored && this.opts.rtlLanguages.includes(this.lang.toLowerCase())) this.core.setRtl(true, false);
   }
@@ -144,6 +149,8 @@ export class MathEditor implements ToolbarHost {
   /* ---------------------------------------------------------- persistence */
   private store: Store | null = null;
   private restoredTab: number | undefined;
+  /** the saved record was made in another language (the language-related options started over) */
+  private langSwitched = false;
   private onHide = (): void => {
     if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.onPageHide();
   };
@@ -157,14 +164,17 @@ export class MathEditor implements ToolbarHost {
     if (!s) return false;
     let formula = false;
     // a record made in another language (the person switched language): the options that belong to a language start over
+    const newRtl = this.opts.rtlLanguages.includes(this.lang.toLowerCase());
     const sameLang = s.lang !== undefined && s.lang.toLowerCase() === this.lang.toLowerCase();
-    const switched = s.lang !== undefined && !sameLang;
+    let switched = s.lang !== undefined && !sameLang;
     try {
       if (s.mml) {
         this.core.setMathML(s.mml);
+        // a record without a language (an older version): a formula whose direction is not the language's was made in another one
+        if (s.lang === undefined && this.core.rtl !== newRtl) switched = true;
         if (switched) {
           // direction and font go back to the new language's defaults (the formula itself stays)
-          this.core.setRtl(this.opts.rtlLanguages.includes(this.lang.toLowerCase()), false);
+          this.core.setRtl(newRtl, false);
           if (this.core.getFontFamily()) this.core.setFontFamily('');
         }
         this.core.clearHistory();
@@ -190,6 +200,7 @@ export class MathEditor implements ToolbarHost {
       if (m.color !== undefined) t.color = m.color;
     }
     this.restoredTab = s.tab;
+    this.langSwitched = switched;
     return formula;
   }
 
