@@ -40,7 +40,8 @@ export const OUTPUT_CSS = `
 .mtx_status{flex:1 1 120px;color:#5d727d;font-size:11px}
 .mtx_foot button{padding:3px 10px;border:1px solid #778e9a;border-radius:3px;background:linear-gradient(#fff,#e6edf0);font:700 11px Arial,sans-serif;color:#18212f;cursor:pointer}
 .mtx_acts{display:flex;gap:6px;margin-inline-start:auto}
-@media (max-width:520px){.mtx_foot{padding:6px 10px;gap:6px}.mtx_status{display:none}.mtx_bg{flex:1 1 100%;justify-content:space-between}.mtx_acts{flex:1 1 100%}.mtx_acts button{flex:1;padding:6px 4px;font-size:12px}.mtx_bg .mtx_seg button{padding:5px 14px}}
+@media (max-width:520px){.mtx_foot{flex-wrap:nowrap;padding:6px 10px;gap:6px}.mtx_status,.mtx_bg>span{display:none}.mtx_bg{flex:none}.mtx_acts{flex:1 1 auto;min-width:0}.mtx_acts button{flex:1 1 0;min-width:0;padding:6px 4px;font-size:12px}.mtx_bg .mtx_seg button{padding:6px 8px}}
+@media (max-width:360px){.mtx_foot{padding:6px 8px;gap:4px}.mtx_acts button{font-size:11px;padding:6px 2px}.mtx_bg .mtx_seg button{padding:6px 5px;font-size:10.5px}}
 .mtx_foot button:disabled{opacity:.45;cursor:default}
 .mtx_foot button:focus-visible{outline:2px solid #ffcc00}
 `;
