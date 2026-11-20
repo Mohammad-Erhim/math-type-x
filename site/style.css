@@ -163,6 +163,7 @@ section{padding:clamp(48px,7vw,92px) 0;overflow-x:clip}
 /* steps, faq, text */
 .steps{counter-reset:s;list-style:none;margin:0;padding:0;display:grid;gap:16px}
 .steps li{counter-increment:s;background:#fff;border-radius:12px;padding:20px 22px 20px 74px;position:relative;box-shadow:0 1px 3px rgba(24,33,47,.1);border:1px solid var(--line)}
+.steps.narrow{margin-inline:auto}
 :lang(ar) .steps li{padding:20px 74px 20px 22px}
 .steps li::before{content:counter(s);position:absolute;inset-inline-start:20px;top:20px;width:38px;height:38px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;font:700 1.1rem var(--head)}
 .steps h3{margin-bottom:.15em;font-size:1.15rem}
