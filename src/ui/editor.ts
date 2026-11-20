@@ -154,6 +154,11 @@ export class MathEditor implements ToolbarHost {
   private onHide = (): void => {
     if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.onPageHide();
   };
+  /** leaving the page (another app or tab, the home screen): the soft keyboard is put away, so it is not up again on return */
+  private onAway = (): void => {
+    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.closeKeyboard();
+  };
+  private onGone = (): void => this.closeKeyboard();
   private onPageHide = (): void => {
     if (this.changeTimer) this.flushChange();
     this.store?.flush();
@@ -253,6 +258,8 @@ export class MathEditor implements ToolbarHost {
       document.addEventListener('visibilitychange', this.onHide);
       window.addEventListener('pagehide', this.onPageHide);
     }
+    document.addEventListener('visibilitychange', this.onAway);
+    window.addEventListener('pagehide', this.onGone);
     this.ready = true;
     queueMicrotask(() => this.emitEv('ready', {}));
     this.scheduleAccessible(true);
@@ -553,6 +560,8 @@ export class MathEditor implements ToolbarHost {
     this.resizeObs?.disconnect();
     this.onPageHide();
     document.removeEventListener('visibilitychange', this.onHide);
+    document.removeEventListener('visibilitychange', this.onAway);
+    window.removeEventListener('pagehide', this.onGone);
     window.removeEventListener('pagehide', this.onPageHide);
     window.removeEventListener('resize', this.onWinResize);
     window.removeEventListener('orientationchange', this.onWinResize);
