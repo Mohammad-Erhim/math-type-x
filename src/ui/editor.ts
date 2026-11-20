@@ -621,7 +621,7 @@ export class MathEditor implements ToolbarHost {
     this.root.style.setProperty('--wrs-k', String(k));
     this.root.style.setProperty('--wrs-hk', String(hk));
     if (changed) this.closePopup();
-    this.toolbar.setReflow(narrow, narrow ? Math.floor(w / k) : 0);
+    this.toolbar.setReflow(narrow, narrow ? Math.floor((w - 12) / k) : 0); // 12 = the 6 px gap on each side of the toolbar
     this.hand.resize();
   }
 
