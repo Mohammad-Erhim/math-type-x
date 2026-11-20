@@ -25,6 +25,8 @@ export class FormulaDisplay {
   private caretHandle!: HTMLElement;
   readonly view: HTMLElement;
   readonly input: HTMLInputElement;
+  /** true when the keys go to an editable element (see EditorOptions.typingField) */
+  readonly editableField: boolean;
   readonly live: HTMLElement;
   private content: HTMLElement;
   private svgHost: HTMLElement;
@@ -38,7 +40,8 @@ export class FormulaDisplay {
   /** padding of the formula container (px) */
   readonly pad = 5;
 
-  constructor() {
+  constructor(editableField = false) {
+    this.editableField = editableField;
     this.live = h('div', { class: 'wrs_ariaLiveRegion wrs_hiddenButDisplayed', 'aria-live': 'polite', 'aria-hidden': 'false' });
     this.svgHost = h('div', { class: 'wrs_formulaSvg' });
     this.selLayer = h('div', { class: 'wrs_selectionLayer' });
@@ -70,24 +73,35 @@ export class FormulaDisplay {
       });
       this.selHandles[end] = el;
     }
-    this.input = h('input', {
-      type: 'text',
-      // no suggestions, no autofill strip (cards, passwords, addresses), no password-manager icons: the field is only a way to get keys
-      name: 'mtx-math-input',
-      autocomplete: 'off',
-      autocapitalize: 'none',
-      autocorrect: 'off',
-      spellcheck: false,
-      enterkeyhint: 'enter',
-      'aria-autocomplete': 'none',
-      'data-form-type': 'other',
-      'data-lpignore': 'true',
-      'data-1p-ignore': 'true',
-      'data-bwignore': 'true',
-      'aria-hidden': 'false',
-      title: 'Math input',
-      class: 'wrs_focusElement',
-    });
+    if (editableField) {
+      // an editable element that behaves like the text input for the rest of the editor: `value` (read and cleared), `inputMode`
+      const el = h('div', { class: 'wrs_focusElement wrs_editableField', title: 'Math input', role: 'textbox', 'aria-hidden': 'false' }) as unknown as HTMLInputElement;
+      el.setAttribute('contenteditable', 'plaintext-only');
+      if ((el as HTMLElement).contentEditable !== 'plaintext-only') el.setAttribute('contenteditable', 'true');
+      Object.defineProperty(el, 'value', { get: () => el.textContent || '', set: (v: string) => { el.textContent = v; }, configurable: true });
+      Object.defineProperty(el, 'select', { value: () => undefined, configurable: true });
+      Object.defineProperty(el, 'setSelectionRange', { value: () => undefined, configurable: true });
+      this.input = el;
+    } else {
+      this.input = h('input', {
+        type: 'text',
+        // no suggestions, no autofill strip (cards, passwords, addresses), no password-manager icons: the field is only a way to get keys
+        name: 'mtx-math-input',
+        autocomplete: 'off',
+        autocapitalize: 'none',
+        autocorrect: 'off',
+        spellcheck: false,
+        enterkeyhint: 'enter',
+        'aria-autocomplete': 'none',
+        'data-form-type': 'other',
+        'data-lpignore': 'true',
+        'data-1p-ignore': 'true',
+        'data-bwignore': 'true',
+        'aria-hidden': 'false',
+        title: 'Math input',
+        class: 'wrs_focusElement',
+      });
+    }
     // set as attributes: in Chrome `autocorrect` is a boolean property, and the string 'off' made it true (suggestions on)
     this.input.setAttribute('autocorrect', 'off');
     this.input.setAttribute('autocapitalize', 'none');

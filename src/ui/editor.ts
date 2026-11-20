@@ -54,11 +54,15 @@ export interface EditorOptions {
   fontsUrl?: string;
   /** local-storage key: the formula, tab, typing modes and output format are kept in the browser under it (off when empty) */
   persist?: string;
+  /** what receives the keys: 'input' (default) or 'editable' – an editable element instead of a text input, which Chrome on Android
+   * does not decorate with its autofill strip (passwords, cards, addresses) above the keyboard */
+  typingField?: 'input' | 'editable';
 }
 
 type Ev = 'ready' | 'change' | 'focus' | 'blur' | 'tabchange' | 'handstart' | 'handend' | 'rtltoggle';
 
 const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'fontsUrl' | 'persist'>> = {
+  typingField: 'input',
   language: 'en',
   layout: 'auto',
   autoformat: false,
@@ -277,7 +281,7 @@ export class MathEditor implements ToolbarHost {
   }
 
   private build(container: HTMLElement): void {
-    this.display = new FormulaDisplay();
+    this.display = new FormulaDisplay(this.opts.typingField === 'editable');
     this.toolbar = new Toolbar(this);
     this.geom = new DocGeometry(this.core);
     this.core.geometry = this.geom;

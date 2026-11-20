@@ -74,6 +74,13 @@ All notable changes are documented here. The format follows
   mathml }`) so an embedding page can do the same; without a handler the typing options (digits, Arabic ligature, Arabic font, Arabic
   differential) follow the direction.
 
+### Added (experimental)
+- `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an
+  editable element instead of a text input, which Chrome on Android does not decorate with its autofill strip (passwords, cards,
+  addresses) above the soft keyboard. Off by default until it has been tried on devices.
+- The hidden typing input sets `autocorrect` / `spellcheck` / `autocapitalize` as real attributes (Chrome read the string `'off'` as
+  `true`) and asks autofill and password managers to stay away.
+
 ### Fixed
 - Several details found in review: panel scroll cue and border, shaded line under the wide toolbar panel, doubled border of the
   Arabic background toggle, off-screen palettes, stale pages after a site update.
