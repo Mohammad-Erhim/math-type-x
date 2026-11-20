@@ -237,7 +237,7 @@ function renderEditor(lang) {
   <div class="wp-block-columns is-layout-flex"><div class="wp-block-column"><div id="editorContainer"></div><div id="outputContainer"></div></div></div>
 </main>
 <noscript><p style="padding:20px">${ar ? 'يحتاج المحرر إلى JavaScript.' : 'The editor needs JavaScript.'}</p></noscript>
-<script>window.MTX_PAGE=${JSON.stringify({ lang })}</script>
+<script>window.MTX_PAGE=${JSON.stringify({ lang, home: x.u(''), icon: `${BASE}/media/icon-192.png`, other: path(other(lang), 'editor'), otherLang: other(lang), otherLabel: s.switchTo })}</script>
 <script src="${BASE}/assets/editor.js?v=${stamp}"></script>
 <script src="${BASE}/assets/editor-page.js?v=${stamp}"></script>
 </body>

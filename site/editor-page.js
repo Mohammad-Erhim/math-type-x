@@ -65,7 +65,24 @@
     }
     setOpen(open);
   });
-  outBox.appendChild(bar);
+  // phones: the language switch and the home link live in the same bottom row as the export bar (no top bar, more room for the text)
+  var dock = document.createElement('div');
+  dock.className = 'mtx_dock';
+  var lang2 = document.createElement('a');
+  lang2.className = 'mtx_lang';
+  lang2.href = cfg.other || '#';
+  lang2.setAttribute('hreflang', cfg.otherLang || '');
+  lang2.lang = cfg.otherLang || '';
+  lang2.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>';
+  lang2.appendChild(document.createTextNode(cfg.otherLabel || ''));
+  var home = document.createElement('a');
+  home.className = 'mtx_home';
+  home.href = cfg.home || '/';
+  home.setAttribute('aria-label', 'MathTypeX');
+  home.innerHTML = '<img alt="" width="24" height="24">';
+  home.firstChild.src = cfg.icon || '';
+  dock.append(lang2, bar, home);
+  outBox.appendChild(dock);
   document.addEventListener('focusin', function (e) {
     var t = e.target;
     if (!t || !t.classList || !t.classList.contains('wrs_focusElement') || t.inputMode === 'none') return;
