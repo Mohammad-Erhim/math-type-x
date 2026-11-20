@@ -249,7 +249,17 @@ body.app{height:100%;margin:0;background:#fff;overflow:hidden}
 body.app{--bar:46px}
 body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));height:calc(var(--app-h,100dvh) - var(--bar))}
 @media (max-width:724px),(max-height:480px){.app-bar .hide-sm{display:none}}
-/* phones: a slim bar (the logo already links home); it goes away while the keyboard is open so the editor gets the room */
-@media (max-width:724px){body.app{--bar:38px}.app-bar{height:38px;gap:10px;padding:0 12px;font-size:.85rem}.app-bar .brand{font-size:.95rem}.app-bar .brand img{width:22px;height:22px}.app-bar .sp a.home{display:none}}
-html.kbd body.app{--bar:0px}
-html.kbd .app-bar{display:none}
+/* phones and low windows: no top bar at all (the editor gets the whole height); the language switch and the home link sit in the export bar at the bottom */
+@media (max-width:724px),(max-height:480px){.app-bar{display:none}body.app{--bar:0px}}
+.mtx_dock{display:none}
+@media (max-width:724px),(max-height:480px){
+  .mtx_dock{display:flex;align-items:stretch;height:46px;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed)}
+  #outputContainer .mtx_dock .mtx_exportBar{flex:1 1 auto;width:auto;min-width:0;border-top:0;background:none}
+  .mtx_dock a{display:flex;align-items:center;justify-content:center;gap:6px;min-width:46px;padding:0 12px;color:#324d5b;font:700 13px Arial,sans-serif;text-decoration:none;-webkit-tap-highlight-color:transparent}
+  .mtx_dock a:active{background:#f6efd0}
+  .mtx_dock a svg{width:20px;height:20px;flex:none}
+  .mtx_dock a img{width:24px;height:24px;border-radius:6px}
+  .mtx_dock .mtx_lang{border-inline-end:1px solid #c5d1d7}
+  .mtx_dock .mtx_home{border-inline-start:1px solid #c5d1d7}
+  html.kbd .mtx_dock{display:none}
+}
