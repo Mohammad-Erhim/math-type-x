@@ -44,22 +44,35 @@ nav.main{margin-inline-start:12px}
 nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;align-items:center}
 nav.main a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.97rem}
 nav.main a:hover,nav.main a[aria-current=page]{background:var(--gray)}
+nav.main .nav-cta{display:none}
 .head-right{margin-inline-start:auto;display:flex;align-items:center;gap:12px}
 .lang{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
 .lang:hover{background:var(--gray);color:var(--ink)}
 .lang svg{width:20px;height:20px}
 .menu-toggle{position:absolute;opacity:0;pointer-events:none}
-.menu-btn{display:none;margin-inline-start:auto;border:2px solid var(--ink);border-radius:10px;padding:6px 12px;font-weight:700;font-size:.95rem;line-height:1.2;white-space:nowrap;cursor:pointer;color:var(--ink);background:#fff;min-height:44px;align-items:center}
+.menu-btn{display:none;gap:7px;margin-inline-start:auto;border:2px solid var(--ink);border-radius:10px;padding:6px 12px;font-weight:700;font-size:.95rem;line-height:1.2;white-space:nowrap;cursor:pointer;color:var(--ink);background:#fff;min-height:44px;align-items:center}
 .menu-toggle:focus-visible ~ .site-header .menu-btn{outline:3px solid var(--orange);outline-offset:2px}
 @media (max-width:1020px){
   .menu-btn{display:inline-flex}
   .head-right .btn{display:none}
   .head-right{margin-inline-start:0}
-  nav.main{display:none;position:absolute;inset-inline:0;top:100%;background:#fff;border-bottom:1px solid var(--line);padding:8px 20px 18px;box-shadow:0 16px 30px rgba(24,33,47,.1);margin:0}
+  /* the open menu: a full-width sheet under the header, one clear row per page, the editor button at the end */
+  nav.main{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:0;box-shadow:0 18px 30px rgba(24,33,47,.16);margin:0;max-height:calc(100vh - 72px);max-height:calc(100dvh - 72px);overflow-y:auto;overscroll-behavior:contain}
   .menu-toggle:checked ~ .site-header nav.main{display:block}
-  nav.main ul{flex-direction:column;align-items:stretch}
-  nav.main a{padding:13px 12px;font-size:1.05rem}
-  .site-header .bar{position:relative}
+  nav.main ul{flex-direction:column;align-items:stretch;gap:0}
+  nav.main li+li{border-top:1px solid var(--line)}
+  nav.main a{display:flex;align-items:center;justify-content:space-between;padding:0 20px;min-height:52px;border-radius:0;font-size:1.05rem}
+  nav.main a::after{content:"\203A";font-size:1.5rem;font-weight:400;line-height:1;color:var(--muted)}
+  :lang(ar) nav.main a::after{content:"\2039"}
+  nav.main a[aria-current=page]{background:var(--gray);box-shadow:inset 4px 0 0 var(--ink)}
+  :lang(ar) nav.main a[aria-current=page]{box-shadow:inset -4px 0 0 var(--ink)}
+  nav.main .nav-cta{display:block;padding:14px 20px 18px;border-top:1px solid var(--line)}
+  nav.main .nav-cta a{color:#fff;justify-content:center;min-height:48px;padding:12px 22px;border-radius:10px}
+  nav.main .nav-cta a::after{content:none}
+  .menu-btn .ic-close{display:none}
+  .menu-toggle:checked ~ .site-header .menu-btn .ic-open{display:none}
+  .menu-toggle:checked ~ .site-header .menu-btn .ic-close{display:inline}
+  .site-header .bar{position:static}
   .head-right{order:3}
 }
 @media (max-width:480px){.site-header .bar{gap:10px}.lang span{display:none}.brand{font-size:1.2rem;gap:8px;min-width:0}.brand img{width:32px;height:32px}.head-right{gap:6px}.lang{padding:8px 6px}.menu-btn{padding:6px 10px}}
