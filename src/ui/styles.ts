@@ -177,7 +177,7 @@ export const CSS = `
 .wrs_fluid .wrs_hand canvas{width:100%;height:100%}
 .wrs_fluid .wrs_hand .wrs_helpText{font-size:16px;padding:0 12px}
 /* narrow windows: no sideways scrolling – one row of tabs, the controls of a tab wrap into rows */
-.wrs_reflow .wrs_header{width:calc(100% - 26px * var(--wrs-k));height:40px;display:flex;overflow:visible;gap:1px}
+.wrs_reflow .wrs_header{width:100%;height:40px;display:flex;overflow:visible;gap:1px}
 .wrs_reflow .wrs_header>button[role=tab]{position:relative;left:auto!important;top:auto;zoom:1;flex:1 1 0;min-width:0;width:auto;height:36px;background-size:100% 100%;margin-top:3px}
 .wrs_reflow .wrs_header>button[role=tab].wrs_selected{top:auto;height:40px;margin-top:0;background-size:100% 100%}
 .wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
@@ -191,7 +191,7 @@ export const CSS = `
 .wrs_sentinel{height:1px;width:1px;margin:0;padding:0;pointer-events:none;visibility:hidden}
 /* narrow windows: a short panel that scrolls. Its height follows the window in CSS alone (dvh: a soft keyboard makes it
    shorter in the same frame, without script); the scroll cues say that there is more */
-.wrs_reflow .wrs_panelContainer{height:auto;max-height:120px;max-height:clamp(84px,24dvh,120px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f8793 transparent;-webkit-overflow-scrolling:touch;contain:layout paint}
+.wrs_reflow .wrs_panelContainer{height:auto;border-radius:0;max-height:104px;max-height:clamp(76px,20dvh,104px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f8793 transparent;-webkit-overflow-scrolling:touch;contain:layout paint}
 .wrs_reflow .wrs_panelContainer::-webkit-scrollbar{display:block;width:6px}
 .wrs_reflow .wrs_panelContainer::-webkit-scrollbar-thumb{background:#6f8793;border-radius:3px}
 .wrs_scrollCue{display:none}
