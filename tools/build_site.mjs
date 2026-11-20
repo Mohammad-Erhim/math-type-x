@@ -62,7 +62,7 @@ function head({ lang, slug, title, description, og, noindex, schema, styles }) {
 <html lang="${lang}" dir="${s.dir}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1${slug === 'editor' ? ',interactive-widget=resizes-content' : ''}">
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${url}">
