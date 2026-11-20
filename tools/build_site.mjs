@@ -4,6 +4,7 @@
 //   CNAME=example.com                  write a CNAME file (custom domain)
 import { cpSync, mkdirSync, rmSync, writeFileSync, readFileSync, existsSync, copyFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
+import { execSync } from 'node:child_process';
 import { SITE, PAGES, FAQ, EX, T, faqPlain } from '../site/content.mjs';
 
 const cfg = JSON.parse(readFileSync('site/config.json', 'utf8'));
@@ -219,6 +220,13 @@ ${footer(lang)}
   return html;
 }
 
+const updated = (lang) => (lang === 'ar' ? 'آخر تحديث: ' : 'Updated ') + LAST_UPDATE.toLocaleDateString(lang === 'ar' ? 'ar' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+const LAST_UPDATE = (() => {
+  try {
+    const d = execSync('git log -1 --format=%cI', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    return d ? new Date(d) : new Date();
+  } catch { return new Date(); }
+})();
 function renderEditor(lang) {
   const s = SITE[lang];
   const x = ctx(lang);
@@ -231,7 +239,7 @@ function renderEditor(lang) {
   return `${h}
 <body class="app">
 <div class="app-bar"><a class="brand" href="${x.u('')}"><img src="${BASE}/media/icon-192.png" width="26" height="26" alt="">MathTypeX</a>
-  <span class="sp"><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
+  <span class="sp"><span class="upd">${updated(lang)}</span><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
 <main class="page">
   <h1 class="sr-only">${meta.h1}</h1>
   <p class="sr-only">${meta.intro}</p>

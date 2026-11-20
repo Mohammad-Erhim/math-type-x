@@ -11,7 +11,7 @@ html,body{height:100%;margin:0;padding:0;background:#fff;color:#18212f;font-fami
 @media (max-width:724px),(max-height:480px){
   /* phones: the page never scrolls (the editor and the output panel have their own scrolling) */
   html,body{overflow:hidden;overscroll-behavior:none}
-  .page{padding:0;min-height:0}
+  .page{padding:6px 0 0;min-height:0}
   #outputContainer .mtx_output{margin-top:0;border-radius:0;border-width:1px 0 0}
 }
 /* the export bar: only where the export section can be folded away (phones, low windows) */
