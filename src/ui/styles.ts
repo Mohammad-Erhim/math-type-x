@@ -244,6 +244,9 @@ export const CSS = `
 .wrs_editor .wrs_navKeyboard,.wrs_editor .wrs_navBackspace{color:#324d5b}
 @media (max-height:560px){.wrs_editor .wrs_navKey{height:40px;width:44px;flex-basis:44px}.wrs_fluid .wrs_navPad{padding:3px 8px}}
 .wrs_rtl .wrs_navBackspace svg{transform:scaleX(-1)}
+/* a gap between the arrow keys and the delete key, so Delete is not hit by mistake */
+.wrs_editor .wrs_navBackspace{margin-left:10px}
+@media (max-width:380px){.wrs_editor .wrs_navBackspace{margin-left:6px}}
 .wrs_editor .wrs_navKeyboard.wrs_navOn{background:linear-gradient(#5f7681,#3f535c);border-color:#2b3b43;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
 @media (pointer:fine),(min-width:720px){.wrs_editor .wrs_navPad .wrs_navKeyboard{display:none!important}}
 .wrs_fluid .wrs_navPad .wrs_navClear{margin-right:auto}
