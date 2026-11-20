@@ -158,6 +158,7 @@ export class Toolbar {
       const ctx = i === 9;
       const btn = h('button', { type: 'button', role: 'tab', class: ctx ? 'wrs_context' : '', title, 'aria-label': title, 'aria-selected': 'false', tabindex: '-1' });
       btn.style.left = i * 46 + 'px';
+      btn.style.setProperty('--ti', String(i));
       const icon = h('span', { class: 'wrs_imageContainer' });
       icon.innerHTML = `<svg width="30" height="20" viewBox="0 0 30 20" aria-hidden="true" style="color:#fff">${TAB_ICONS[i]}</svg>`;
       btn.append(icon);
@@ -182,8 +183,7 @@ export class Toolbar {
   }
 
   private tabKey(e: KeyboardEvent, i: number): void {
-    // the arrows follow the picture: the tabs are mirrored only in the narrow layout
-    const rtl = this.root.closest('.wrs_rtl.wrs_reflow') !== null;
+    const rtl = this.root.closest('.wrs_rtl') !== null;
     let t = i;
     if (e.key === 'ArrowRight') t = rtl ? i - 1 : i + 1;
     else if (e.key === 'ArrowLeft') t = rtl ? i + 1 : i - 1;
@@ -314,8 +314,7 @@ export class Toolbar {
     const cur = rect(btn);
     let best: HTMLButtonElement | null = null;
     let bd = Infinity;
-    // the arrows follow the picture: the panel is mirrored only in the narrow layout
-    const rtl = parent.closest('.wrs_rtl.wrs_reflow') !== null;
+    const rtl = parent.closest('.wrs_rtl') !== null;
     const dir = e.key === 'ArrowLeft' ? (rtl ? 'r' : 'l') : e.key === 'ArrowRight' ? (rtl ? 'l' : 'r') : e.key === 'ArrowUp' ? 'u' : e.key === 'ArrowDown' ? 'd' : '';
     if (e.key === 'Escape') {
       // Esc did not move focus back to the editing area in the reference
