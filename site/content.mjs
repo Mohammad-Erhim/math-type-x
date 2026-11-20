@@ -206,7 +206,6 @@ export const PAGES = {
       return `
 <header class="hero"><div class="wrap hero-grid">
   <div>
-    <div class="product"><img src="${x.m('icon-192.png')}" width="42" height="42" alt="">MathTypeX</div>
     <h1>${t.heroTitle}</h1>
     <p class="lead">${t.heroLead}</p>
     <div class="btn-row"><a class="btn btn-dark" href="#try">${t.heroTry}</a><a class="btn btn-outline" href="${x.u('editor')}">${t.heroFull}</a></div>

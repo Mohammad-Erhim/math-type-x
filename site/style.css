@@ -83,8 +83,6 @@ nav.main a:hover,nav.main a[aria-current=page]{background:var(--gray)}
 /* hero */
 .hero{padding:clamp(36px,6vw,72px) 0 clamp(48px,7vw,92px)}
 .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center}
-.product{display:flex;align-items:center;gap:10px;font:700 1.2rem var(--head);margin-bottom:18px}
-.product img{width:42px;height:42px;border-radius:10px}
 .hero h1{font-size:clamp(2rem,4.6vw,3.1rem);max-width:17ch}
 .hero .lead{margin-bottom:26px}
 .hero-visual{position:relative;display:grid;place-items:center;padding:0 7% 11% 2%}
