@@ -28,7 +28,7 @@ export const OUTPUT_CSS = `
 .mtx_bg[hidden]{display:none}
 .mtx_bg .mtx_seg{display:inline-flex;border:1px solid #778e9a;border-radius:3px;overflow:hidden}
 .mtx_bg .mtx_seg button{border:0;border-radius:0;background:#fff;padding:3px 9px;font:700 11px Arial,sans-serif;color:#425a66;cursor:pointer}
-.mtx_bg .mtx_seg button+button{border-left:1px solid #778e9a}
+.mtx_bg .mtx_seg button+button{border-inline-start:1px solid #778e9a}
 .mtx_bg .mtx_seg button[aria-checked=true]{background:#425a66;color:#fff}
 .mtx_bg .mtx_seg button:focus-visible{outline:2px solid #ffcc00;outline-offset:-2px}
 .mtx_body .mtx_text{font-size:14px}
