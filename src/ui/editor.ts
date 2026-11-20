@@ -156,9 +156,17 @@ export class MathEditor implements ToolbarHost {
   private restore(s: Saved | null): boolean {
     if (!s) return false;
     let formula = false;
+    // a record made in another language (the person switched language): the options that belong to a language start over
+    const sameLang = s.lang !== undefined && s.lang.toLowerCase() === this.lang.toLowerCase();
+    const switched = s.lang !== undefined && !sameLang;
     try {
       if (s.mml) {
         this.core.setMathML(s.mml);
+        if (switched) {
+          // direction and font go back to the new language's defaults (the formula itself stays)
+          this.core.setRtl(this.opts.rtlLanguages.includes(this.lang.toLowerCase()), false);
+          if (this.core.getFontFamily()) this.core.setFontFamily('');
+        }
         this.core.clearHistory();
         formula = true;
       }
@@ -169,11 +177,11 @@ export class MathEditor implements ToolbarHost {
     }
     // the digit set (and the other typing modes) belong to the language they were chosen in: an English session does
     // not turn the Arabic one's default Arabic-Indic digits back into Western ones
-    const sameLang = s.lang !== undefined && s.lang.toLowerCase() === this.lang.toLowerCase();
     const m = s.modes;
     if (m) {
       const t = this.core.modes as any;
-      for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (m[k] !== undefined) t[k] = m[k];
+      // (the Arabic ligature belongs to Arabic: it starts off again when the language changed)
+      for (const k of ['bold', 'italic', 'autoItalic', 'text', 'arabicLigature'] as const) if (m[k] !== undefined && !(switched && k === 'arabicLigature')) t[k] = m[k];
       // digits the person chose themselves come back; the default follows the language / direction / Arabic font
       if (m.digits && sameLang && m.digitsChosen) {
         t.digits = m.digits;
