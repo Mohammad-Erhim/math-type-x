@@ -269,4 +269,5 @@ body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));
 .mtx_leaveBtns button{flex:1 1 0;min-width:0;height:48px;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);font:700 14px Arial,sans-serif;color:#324d5b;cursor:pointer}
 .mtx_leaveBtns button:active{background:linear-gradient(#fffdf2,#f6efd0)}
 .mtx_leaveBtns .mtx_go{background:linear-gradient(#ea5a52,#c62d26);border-color:#a3221c;color:#fff}
+.mtx_leaveBtns .mtx_go:hover,.mtx_leaveBtns .mtx_go:focus,.mtx_leaveBtns .mtx_go:active{background:linear-gradient(#d94a42,#a82019);border-color:#8f1a15;color:#fff}
 .mtx_leaveBtns button:focus-visible{outline:3px solid #ffcc00;outline-offset:1px}
