@@ -734,9 +734,10 @@ export class MathEditor implements ToolbarHost {
     this.display.view.style.fontFamily = fam === 'stix' ? "'STIX Two Math',serif" : fam || '';
     if (rtl) {
       const w = this.display.view.clientWidth;
-      // the content box is two pixels wider than the drawing: the drawing ends at the reference's right padding
+      // the content box is two pixels wider than the drawing and has a 5 px margin on each side: when the formula fits, the box
+      // plus its margins are exactly as wide as the text area (no sideways scrolling)
       const cw = Math.ceil(this.lastLayout.w);
-      (this.display as any).content.style.marginLeft = Math.max(5, w - cw - 5) + 'px';
+      (this.display as any).content.style.marginLeft = Math.max(5, w - cw - 7) + 'px';
     } else (this.display as any).content.style.marginLeft = '5px';
     this.display.scrollCaretIntoView(core.caret);
     this.display.poke();
