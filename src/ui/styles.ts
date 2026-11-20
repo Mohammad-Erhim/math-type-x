@@ -12,6 +12,9 @@ export const CSS = `
 .wrs_header{position:absolute;left:0;top:1px;width:725px;height:25px;z-index:2}
 .wrs_header>button[role=tab]{position:absolute;top:3px;width:44px;height:21px;border:0;border-radius:0;background:url(${skin.tab}) no-repeat 0 0;cursor:default;overflow:hidden}
 .wrs_header>button[role=tab]:hover{background-image:url(${skin.tabHover})}
+/* right-to-left editing (Arabic) on phones and tablets: the tabs start from the right, the first tab is the right-most */
+.wrs_rtl.wrs_reflow .wrs_header{flex-direction:row-reverse}
+.wrs_rtl.wrs_reflow .wrs_tabCaption{text-align:right}
 .wrs_header>button[role=tab] .wrs_imageContainer{position:absolute;left:7px;top:1px;width:30px;height:20px;pointer-events:none}
 .wrs_header>button[role=tab].wrs_context{background-image:url(${skin.ctx})}
 .wrs_header>button[role=tab].wrs_context:hover{background-image:url(${skin.ctxHover})}
@@ -183,7 +186,7 @@ export const CSS = `
 .wrs_reflow .wrs_header>button[role=tab] .wrs_imageContainer,.wrs_reflow .wrs_header>button[role=tab].wrs_selected .wrs_imageContainer{left:50%;margin-left:-15px;top:50%;margin-top:-10px}
 .wrs_fluid .wrs_toolbar.wrs_main{margin-bottom:10px}
 .wrs_tabCaption{display:none}
-.wrs_reflow .wrs_tabCaption{display:block;flex:none;padding:3px 10px;background:#e6edf0;border-bottom:1px solid #b7c4cb;color:#324d5b;font:700 12px/16px Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wrs_reflow .wrs_tabCaption{display:block;flex:none;box-sizing:border-box;padding:3px 10px;background:#e6edf0;border:1px solid #778e9a;border-bottom:1px solid #b7c4cb;color:#324d5b;font:700 12px/16px Arial,sans-serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wrs_hint{display:none;position:absolute;left:34px;right:12px;top:9px;color:#6d7f89;font:15px/1.3 Arial,sans-serif;pointer-events:none;z-index:1;direction:ltr;text-align:left}
 .wrs_rtl .wrs_hint{direction:rtl;text-align:right;left:12px;right:34px}
 .wrs_emptyDoc .wrs_hint{display:block}
