@@ -169,7 +169,7 @@ export const CSS = `
 .wrs_fluid .wrs_header{position:relative;left:auto;top:auto;flex:none;width:calc(100% - 26px * var(--wrs-k));height:calc(25px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .wrs_fluid .wrs_header::-webkit-scrollbar,.wrs_fluid .wrs_panelContainer::-webkit-scrollbar{display:none}
 .wrs_fluid .wrs_header>button[role=tab]{zoom:var(--wrs-k)}
-.wrs_fluid .wrs_panelContainer{position:relative;left:auto;top:auto;flex:none;width:100%;height:calc(72px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:url(${skin.panel}) no-repeat 0 0 / auto 100%,url(${skin.panel}) no-repeat 100% 0 / 20000% 100%,linear-gradient(#f6f9fa,#e3eaed)}
+.wrs_fluid .wrs_panelContainer{position:relative;left:auto;top:auto;flex:none;width:100%;height:calc(72px * var(--wrs-k));overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch;background:linear-gradient(#dae4e9,#dae4e9) 0 100% / 100% 4px no-repeat,url(${skin.panel}) no-repeat 0 0 / auto 100%,url(${skin.panel}) no-repeat 100% 0 / 20000% 100%,linear-gradient(#f6f9fa,#e3eaed)}
 .wrs_fluid .wrs_multipleRowPanel{zoom:var(--wrs-k)}
 .wrs_fluid .wrs_formulaDisplayWrapper{position:relative;left:auto;top:auto;flex:1 1 0;width:auto;height:auto;min-height:0;margin-right:var(--wrs-strip)}
 .wrs_fluid .wrs_formulaDisplay{width:100%;height:100%;font-size:16px}
