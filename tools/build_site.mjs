@@ -16,6 +16,7 @@ if (!existsSync(`${APP}/editor.js`)) throw new Error('run `node tools/build.mjs 
 rmSync(OUT, { recursive: true, force: true });
 mkdirSync(`${OUT}/assets/site`, { recursive: true });
 cpSync('site/media', `${OUT}/media`, { recursive: true });
+cpSync('site/media/favicon.ico', `${OUT}/favicon.ico`);
 cpSync(`${APP}/fonts`, `${OUT}/assets/fonts`, { recursive: true });
 copyFileSync(`${APP}/editor.js`, `${OUT}/assets/editor.js`);
 const FONTS = [
@@ -86,7 +87,10 @@ function head({ lang, slug, title, description, og, noindex, schema, styles }) {
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(description)}">
 <meta name="twitter:image" content="${image}">
+<link rel="icon" href="${BASE}/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="${BASE}/media/icon-32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="${BASE}/media/icon-48.png">
+<link rel="icon" type="image/png" sizes="96x96" href="${BASE}/media/icon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="${BASE}/media/icon-192.png">
 <link rel="apple-touch-icon" href="${BASE}/media/icon-180.png">
 <link rel="manifest" href="${BASE}/manifest.webmanifest">
