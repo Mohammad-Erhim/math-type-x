@@ -267,6 +267,10 @@ body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));
   .mtx_dock a img{width:24px;height:24px;border-radius:6px}
   .mtx_dock .mtx_lang{border-inline-end:1px solid #c5d1d7}
   .mtx_dock .mtx_home{border-inline-start:1px solid #c5d1d7}
+  .mtx_dock .mtx_install{display:none;align-items:center;justify-content:center;min-width:46px;padding:0;border:0;border-inline-start:1px solid #c5d1d7;background:none;color:#324d5b;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  html.can-install .mtx_dock .mtx_install{display:flex}
+  .mtx_dock .mtx_install:active{background:#f6efd0}
+  .mtx_dock .mtx_install svg{width:22px;height:22px}
   html.kbd .mtx_dock{display:none}
 }
 /* same look as the editor's "Clear the whole formula?" box */
