@@ -349,7 +349,7 @@ self.addEventListener('fetch', (e) => {
   if (req.mode === 'navigate') {
     // pages: the network first (new versions show at once), the saved copy when there is no network
     e.respondWith(
-      Promise.race([fetch(req), new Promise((_, no) => setTimeout(no, 4000))])
+      Promise.race([fetch(req.url, { cache: 'no-cache', credentials: 'same-origin' }), new Promise((_, no) => setTimeout(no, 4000))])
         .then((res) => {
           if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
           return res;
