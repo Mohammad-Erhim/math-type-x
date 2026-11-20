@@ -648,9 +648,27 @@ export class MathEditor implements ToolbarHost {
   private digitsChosen = false;
   /** Arabic-Indic digits by default as soon as the formula is Arabic: an Arabic language, the toolbar's right-to-left or
    * Arabic-ligature button, or an Arabic font; Western again when none of them applies (unless the person chose) */
+  /** the person pressed the toolbar's right-to-left button: from that tap the writing is Arabic (true) or not (false), whatever the
+   * language of the interface; null = follow the language */
+  private arabicMode: boolean | null = null;
+
+  /** right-to-left editing was switched on / off by hand: the options of the writing language follow it at once (digits,
+   * Arabic ligature, Arabic font, the Arabic differential), like a change of language does */
+  private applyArabicMode(on: boolean): void {
+    this.arabicMode = on;
+    this.core.arabicLanguage = on;
+    if (!on) {
+      this.core.modes.arabicLigature = false;
+      if (arabicFontOf(this.core.getFontFamily())) this.core.setFontFamily('');
+    }
+    this.digitsChosen = false;
+    this.syncDigits();
+    this.syncToolbar();
+  }
+
   private syncDigits(): void {
     if (this.digitsChosen) return;
-    const lang = digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
+    const lang = this.arabicMode === false ? 'western' : digitsForLanguage(this.lang, this.opts.arabicIndicLanguages, this.opts.easternArabicIndicLanguages);
     const arabic = this.core.rtl || this.core.modes.arabicLigature || !!arabicFontOf(this.core.getFontFamily());
     const want = lang !== 'western' ? lang : arabic ? 'arabicIndic' : 'western';
     if (this.core.modes.digits !== want) this.core.modes.digits = want;
@@ -876,7 +894,10 @@ export class MathEditor implements ToolbarHost {
     else if (/^Italic/.test(t)) core.toggleItalic();
     else if (/^Automatic italic/.test(t)) core.setAutoItalic(!core.modes.autoItalic);
     else if (/^Regular text/.test(t)) core.setRegularText(!core.modes.text);
-    else if (/^Right to left/.test(t)) core.setRtl(!core.rtl);
+    else if (/^Right to left/.test(t)) {
+      core.setRtl(!core.rtl);
+      this.applyArabicMode(core.rtl);
+    }
     else if (/^Arabic ligature/.test(t)) {
       core.modes.arabicLigature = !core.modes.arabicLigature;
       this.syncToolbar();
