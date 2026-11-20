@@ -253,6 +253,10 @@ html.can-install .app-bar .inst{display:inline-block}
 .app-bar .inst:hover{background:#2b3a4d;color:#fff}
 body.app{height:100%;margin:0;background:#fff;overflow:hidden}
 body.app{--bar:46px}
+/* the page never scrolls: the editor fills exactly what is visible (with the keyboard open the phone may pan the visible area; the page follows it) */
+html:has(body.app){overflow:hidden;overscroll-behavior:none}
+body.app{position:fixed;left:0;right:0;top:0;bottom:0;overflow:hidden;overscroll-behavior:none}
+body.app .page{position:relative;top:var(--vv-top,0px)}
 body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));height:calc(var(--app-h,100dvh) - var(--bar))}
 @media (max-width:724px),(max-height:480px){.app-bar .hide-sm{display:none}}
 /* phones and low windows: no top bar at all (the editor gets the whole height); the language switch and the home link sit in the export bar at the bottom */
