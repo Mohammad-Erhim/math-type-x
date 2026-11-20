@@ -220,7 +220,12 @@ ${footer(lang)}
   return html;
 }
 
-const updated = (lang) => (lang === 'ar' ? 'آخر تحديث: ' : 'Updated ') + LAST_UPDATE.toLocaleDateString(lang === 'ar' ? 'ar' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+const updated = (lang) => {
+  const label = lang === 'ar' ? 'آخر تحديث: ' : 'Updated ';
+  const when = LAST_UPDATE.toLocaleString(lang === 'ar' ? 'ar' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'UTC' });
+  // the page script shows it in the visitor's own time zone; this is the fallback (UTC)
+  return `<time class="upd" datetime="${LAST_UPDATE.toISOString()}" data-label="${label}">${label}${when} UTC</time>`;
+};
 const LAST_UPDATE = (() => {
   try {
     const d = execSync('git log -1 --format=%cI', { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
@@ -239,7 +244,7 @@ function renderEditor(lang) {
   return `${h}
 <body class="app">
 <div class="app-bar"><a class="brand" href="${x.u('')}"><img src="${BASE}/media/icon-192.png" width="26" height="26" alt="">MathTypeX</a>
-  <span class="sp"><span class="upd">${updated(lang)}</span><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
+  <span class="sp">${updated(lang)}<a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
 <main class="page">
   <h1 class="sr-only">${meta.h1}</h1>
   <p class="sr-only">${meta.intro}</p>
