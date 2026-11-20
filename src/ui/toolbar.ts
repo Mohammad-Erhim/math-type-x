@@ -182,7 +182,8 @@ export class Toolbar {
   }
 
   private tabKey(e: KeyboardEvent, i: number): void {
-    const rtl = this.root.closest('.wrs_rtl') !== null;
+    // the arrows follow the picture: the tabs are mirrored only in the narrow layout
+    const rtl = this.root.closest('.wrs_rtl.wrs_reflow') !== null;
     let t = i;
     if (e.key === 'ArrowRight') t = rtl ? i - 1 : i + 1;
     else if (e.key === 'ArrowLeft') t = rtl ? i + 1 : i - 1;
