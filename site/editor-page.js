@@ -7,14 +7,19 @@
   var opts = { language: lang, layout: 'fluid', services: { local: true }, persist: q.get('persist') === '0' ? '' : 'mathtypex', detectHand: false };
   var root = document.documentElement;
   var vv = window.visualViewport;
+  var base = 0; // tallest height seen: the window without the on-screen keyboard
   var fit = function () {
     var h = vv && vv.scale <= 1.02 ? vv.height : window.innerHeight;
+    if (h > base) base = h;
+    // on-screen keyboard open (phone, short viewport): hide the top bar so the editor gets the room
+    var kbd = base - h > 120 && window.matchMedia('(max-width:724px),(max-height:480px)').matches;
+    root.classList.toggle('kbd', kbd);
     if (h > 0) root.style.setProperty('--app-h', Math.round(h) + 'px');
     if (window.scrollY || window.scrollX) window.scrollTo(0, 0);
   };
   fit();
   window.addEventListener('resize', fit);
-  window.addEventListener('orientationchange', fit);
+  window.addEventListener('orientationchange', function () { base = 0; fit(); });
   if (vv) {
     vv.addEventListener('resize', fit);
     vv.addEventListener('scroll', fit);
