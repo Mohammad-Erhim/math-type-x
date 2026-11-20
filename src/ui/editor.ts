@@ -1026,7 +1026,15 @@ export class MathEditor implements ToolbarHost {
     // the element is placed in the zoomed coordinates of the pop-ups (left / top are divided by the zoom)
     const k = this.zoomK;
     const rr = this.root.getBoundingClientRect();
-    const r = el.getBoundingClientRect();
+    let r = el.getBoundingClientRect();
+    // wider than the screen (a long palette on a phone): it is as wide as the screen and scrolls sideways
+    if (r.width > rr.width - 8) {
+      el.style.boxSizing = 'border-box';
+      el.style.width = (rr.width - 8) / k + 'px';
+      el.style.height = parseFloat(el.style.height || '0') + 10 + 'px';
+      el.classList.add('wrs_popupScroll');
+      r = el.getBoundingClientRect();
+    }
     let dx = 0;
     let dy = 0;
     if (r.right > rr.right - 4) dx = rr.right - 4 - r.right;
