@@ -99,6 +99,7 @@ function head({ lang, slug, title, description, og, noindex, schema, styles }) {
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="MathTypeX">
 <script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('${BASE}/sw.js',{scope:'${BASE}/'}).catch(function(){})})</script>
+<script>(function(){var d,r=document.documentElement;addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;r.classList.add('can-install')});addEventListener('appinstalled',function(){d=null;r.classList.remove('can-install')});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-install]');if(!b||!d)return;e.preventDefault();d.prompt();d.userChoice.then(function(){d=null;r.classList.remove('can-install')})})})()</script>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-naskh-arabic-700' : 'roboto-slab-700'}.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-sans-arabic-400' : 'noto-sans-400'}.woff2" as="font" type="font/woff2" crossorigin>
 <style>${styles ?? css}</style>
@@ -110,7 +111,7 @@ ${cfg.gaId ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${c
 function header(lang, slug) {
   const s = SITE[lang];
   const x = ctx(lang);
-  const links = s.nav.map(([sl, label]) => `<li><a href="${x.u(sl)}"${sl === slug ? ' aria-current="page"' : ''}>${label}</a></li>`).join('') + `<li class="nav-cta"><a class="btn btn-dark" href="${x.u('editor')}">${s.openEditor}</a></li>`;
+  const links = s.nav.map(([sl, label]) => `<li><a href="${x.u(sl)}"${sl === slug ? ' aria-current="page"' : ''}>${label}</a></li>`).join('') + `<li class="nav-cta"><a class="btn btn-dark" href="${x.u('editor')}">${s.openEditor}</a></li><li class="nav-install"><button type="button" class="btn btn-outline" data-install>${lang === 'ar' ? 'تثبيت التطبيق' : 'Install app'}</button></li>`;
   const bar = lang === 'ar' ? 'جرّب MathTypeX الآن – بلا تسجيل.' : 'Try MathTypeX right now – no sign-up needed.';
   const globe = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>';
   return `<a class="skip" href="#main">${s.skip}</a>
@@ -248,7 +249,7 @@ function renderEditor(lang) {
   return `${h}
 <body class="app">
 <div class="app-bar"><a class="brand" href="${x.u('')}"><img src="${BASE}/media/icon-192.png" width="26" height="26" alt="">MathTypeX</a>
-  <span class="sp">${updated(lang)}<a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
+  <span class="sp">${updated(lang)}<button type="button" class="inst" data-install>${ar ? 'تثبيت التطبيق' : 'Install app'}</button><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
 <main class="page">
   <h1 class="sr-only">${meta.h1}</h1>
   <p class="sr-only">${meta.intro}</p>
