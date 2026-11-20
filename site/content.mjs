@@ -32,12 +32,16 @@ export const FAQ = {
   en: [
     ['What is MathTypeX?', 'MathTypeX is an equation editor that runs in your web browser. You build a formula by clicking buttons or typing, see it drawn the way it is printed, and download it as a PNG image to use in documents, slides, worksheets or websites.'],
     ['Is MathTypeX free?', 'Yes. Using MathTypeX in your browser is free: no sign-up, no payment and no trial period.'],
-    ['Do I need to install anything or create an account?', 'No. Open the page and start typing. There is nothing to install and no sign-up. It works in current versions of Chrome, Edge, Firefox and Safari, on computers, tablets and phones.'],
+    ['Do I need to install anything or create an account?', 'No. Open the page and start typing: nothing has to be installed and there is no sign-up. If you like, you can install MathTypeX as an app (see the next question) – that is optional. It works in current versions of Chrome, Edge, Firefox and Safari, on computers, tablets and phones.'],
+    ['Can I install MathTypeX as an app?', 'Yes. MathTypeX is a web app that your browser can add to your home screen or desktop and open in its own window, with no app store. Use the Install app button on this site (it appears when your browser offers the installation), the install icon in the address bar of Chrome or Edge, or Share, then Add to Home Screen, in Safari on iPhone and iPad. See <a href="{install}">how to install</a>.'],
+    ['Does MathTypeX work offline?', 'Yes. After your first visit the editor, its fonts and the image export are kept on your device, so you can build equations and download PNG images with no internet connection. While you are online the app checks for a newer version each time you open it.'],
+    ['What is different in the installed app?', 'The installed app opens straight to the editor and shows only the editor and the language switch – no website menus – so your equation gets the most room. It works offline like the website does, and your formula is kept on the device between visits.'],
+    ['How do I remove the app?', 'Like any other app. On Android press and hold the icon and choose Uninstall. On iPhone and iPad press and hold the icon and choose Remove App. On a computer open the app, use its menu and choose Uninstall. Your saved formula stays in the browser until you clear the site data.'],
     ['Can I write equations in Arabic?', 'Yes – this is one of the main features. MathTypeX writes right to left, has a fully translated Arabic interface, Arabic-Indic digits, Arabic fonts, and a palette of Arabic mathematical letters with derivative marks. See the <a href="{arabic}">Arabic math editor page</a>.'],
     ['How do I turn on Arabic?', 'Open the <a href="{editorAr}">Arabic version of the editor</a> for a fully Arabic interface. If you are already using the English editor, click the “Right to left editing” button in the General tab. The <a href="{guide}#arabic">guide</a> shows exactly where the buttons are.'],
-    ['How do I save my equation as an image?', 'Build the equation, open the PNG tab under the editor and click Download. You get a PNG image with a white background that you can paste into Word, Google Docs, PowerPoint or any web page.'],
+    ['How do I save my equation as an image?', 'Build the equation, open the PNG tab under the editor and click Download. You get a PNG image that you can paste into Word, Google Docs, PowerPoint or any web page. The background is white by default; choose Transparent next to the buttons for a see-through background, for example on a dark slide.'],
     ['Does MathTypeX upload my equations?', 'No. The editor and the image export run inside your browser, so your formulas are not sent to a server.'],
-    ['Does it work on a phone or tablet?', 'Yes. On small screens the editor switches to a touch layout with larger buttons, an on-screen arrow pad and a slide-up export bar.'],
+    ['Does it work on a phone or tablet?', 'Yes. On small screens the editor switches to a touch layout with larger buttons, an on-screen arrow pad and a slide-up export bar. The full-page editor gives the text area the whole height (the bottom bar steps aside while the keyboard is open), and in Arabic the tabs and the toolbar start from the right. You can also install it as an app.'],
     ['What are the Arabic math letters?', 'They are the letter shapes used in printed Arabic mathematics, such as the letter forms used for variables and functions. MathTypeX includes a palette of them, drawn as vector shapes, so they look the same on every device and in every exported image.'],
     ['Can I move a symbol by a pixel or two?', 'Yes. Select a letter, a mark or a group, open the contextual tab and use the four arrows – or press Ctrl + Shift + an arrow key. The position is saved inside the formula.'],
     ['Can I put the editor on my own website?', 'Yes. It is a small script that you add to a page. See <a href="{embed}">for websites</a> for the short version.'],
@@ -45,19 +49,23 @@ export const FAQ = {
   ar: [
     ['ما هو MathTypeX؟', 'MathTypeX محرر معادلات يعمل داخل متصفح الويب. تبني المعادلة بالنقر على الأزرار أو بالكتابة، فتراها مرسومة كما تُطبع، ثم تنزّلها صورة PNG لتستخدمها في المستندات والعروض وأوراق العمل والمواقع.'],
     ['هل MathTypeX مجاني؟', 'نعم. استخدام MathTypeX في متصفحك مجاني: بلا تسجيل ولا دفع ولا فترة تجريبية.'],
-    ['هل أحتاج إلى تثبيت شيء أو إنشاء حساب؟', 'لا. افتح الصفحة وابدأ الكتابة. لا يوجد تثبيت ولا تسجيل. يعمل في الإصدارات الحديثة من Chrome وEdge وFirefox وSafari، على الحاسوب والجهاز اللوحي والهاتف.'],
+    ['هل أحتاج إلى تثبيت شيء أو إنشاء حساب؟', 'لا. افتح الصفحة وابدأ الكتابة: لا يلزم تثبيت شيء ولا تسجيل. وإن شئت يمكنك تثبيت MathTypeX كتطبيق (انظر السؤال التالي) – وهذا اختياري. يعمل في الإصدارات الحديثة من Chrome وEdge وFirefox وSafari، على الحاسوب والجهاز اللوحي والهاتف.'],
+    ['هل يمكنني تثبيت MathTypeX كتطبيق؟', 'نعم. MathTypeX تطبيق ويب يستطيع متصفحك إضافته إلى الشاشة الرئيسية أو سطح المكتب وفتحه في نافذته الخاصة، دون متجر تطبيقات. استخدم زر «ثبّت التطبيق» في هذا الموقع (يظهر حين يعرض متصفحك التثبيت)، أو أيقونة التثبيت في شريط عنوان Chrome أو Edge، أو «مشاركة» ثم «إضافة إلى الشاشة الرئيسية» في Safari على آيفون وآيباد. راجع <a href="{install}">طريقة التثبيت</a>.'],
+    ['هل يعمل MathTypeX بلا إنترنت؟', 'نعم. بعد زيارتك الأولى يُحفظ المحرر وخطوطه وتصدير الصور على جهازك، فتستطيع بناء المعادلات وتنزيل صور PNG دون اتصال بالإنترنت. وحين تكون متصلًا يتحقق التطبيق من وجود نسخة أحدث في كل مرة تفتحه.'],
+    ['ما الفرق في التطبيق المثبّت؟', 'يفتح التطبيق المثبّت مباشرةً على المحرر ويعرض المحرر ومبدّل اللغة فقط – بلا قوائم الموقع – فتنال معادلتك أكبر مساحة. ويعمل بلا إنترنت كما يعمل الموقع، وتبقى معادلتك محفوظة على الجهاز بين الزيارات.'],
+    ['كيف أزيل التطبيق؟', 'كما تزيل أي تطبيق. في أندرويد اضغط مطولًا على الأيقونة واختر «إلغاء التثبيت». وفي آيفون وآيباد اضغط مطولًا واختر «إزالة التطبيق». وعلى الحاسوب افتح التطبيق واستخدم قائمته واختر «إلغاء التثبيت». وتبقى معادلتك المحفوظة في المتصفح إلى أن تمسح بيانات الموقع.'],
     ['هل يمكنني كتابة المعادلات بالعربية؟', 'نعم، وهذه من أهم ميزاته. يكتب MathTypeX من اليمين إلى اليسار، وله واجهة عربية مترجمة بالكامل، وأرقام هندية عربية، وخطوط عربية، ولوحة بالحروف الرياضية العربية مع علامات المشتقة. راجع <a href="{arabic}">صفحة محرر المعادلات العربي</a>.'],
     ['كيف أفعّل اللغة العربية؟', 'افتح <a href="{editorAr}">النسخة العربية من المحرر</a> لتحصل على واجهة عربية كاملة. وإن كنت تستخدم المحرر الإنجليزي فانقر زر «الكتابة من اليمين إلى اليسار» في التبويب العام. ويوضح <a href="{guide}#arabic">الدليل</a> مكان الأزرار بالضبط.'],
-    ['كيف أحفظ المعادلة صورة؟', 'ابنِ المعادلة، ثم افتح تبويب PNG أسفل المحرر وانقر «تنزيل». ستحصل على صورة PNG بخلفية بيضاء يمكنك لصقها في Word أو مستندات Google أو PowerPoint أو أي صفحة ويب.'],
+    ['كيف أحفظ المعادلة صورة؟', 'ابنِ المعادلة، ثم افتح تبويب PNG أسفل المحرر وانقر «تنزيل». ستحصل على صورة PNG يمكنك لصقها في Word أو مستندات Google أو PowerPoint أو أي صفحة ويب. الخلفية بيضاء افتراضيًا، واختر «شفافة» بجانب الأزرار للحصول على خلفية شفافة، مثلًا فوق شريحة داكنة.'],
     ['هل يرفع MathTypeX معادلاتي إلى خادم؟', 'لا. يعمل المحرر وتصدير الصور داخل متصفحك، فلا تُرسل معادلاتك إلى أي خادم.'],
-    ['هل يعمل على الهاتف أو الجهاز اللوحي؟', 'نعم. على الشاشات الصغيرة يتحول المحرر إلى تخطيط للمس بأزرار أكبر ولوحة أسهم على الشاشة وشريط تصدير ينزلق من الأسفل.'],
+    ['هل يعمل على الهاتف أو الجهاز اللوحي؟', 'نعم. على الشاشات الصغيرة يتحول المحرر إلى تخطيط للمس بأزرار أكبر ولوحة أسهم على الشاشة وشريط تصدير ينزلق من الأسفل. ويمنح المحرر الكامل مساحة الكتابة الارتفاع كله (ويتنحّى الشريط السفلي حين تُفتح لوحة المفاتيح)، وفي العربية تبدأ التبويبات وشريط الأدوات من اليمين. ويمكنك أيضًا تثبيته كتطبيق.'],
     ['ما الحروف الرياضية العربية؟', 'هي أشكال الحروف المستخدمة في الرياضيات العربية المطبوعة، مثل الأشكال التي تُستعمل للمتغيرات والدوال. يضم MathTypeX لوحة بها، مرسومة أشكالًا متجهة، فتظهر بالشكل نفسه على كل جهاز وفي كل صورة مصدَّرة.'],
     ['هل يمكنني تحريك رمز بمقدار بكسل أو بكسلين؟', 'نعم. حدّد حرفًا أو علامة أو مجموعة، وافتح التبويب السياقي واستخدم الأسهم الأربعة، أو اضغط Ctrl + Shift مع مفتاح سهم. يُحفظ الموضع داخل المعادلة.'],
     ['هل يمكنني وضع المحرر في موقعي؟', 'نعم. هو سكربت صغير تضيفه إلى الصفحة. راجع <a href="{embed}">صفحة المواقع</a> للنسخة المختصرة.'],
   ],
 };
 
-const faqHtml = (x, list) => list.map(([q, a]) => `<details class="faq"><summary>${q}</summary><p>${a.replace(/\{arabic\}/g, x.u('arabic-math-editor')).replace(/\{editorAr\}/g, x.uLang('ar', 'editor')).replace(/\{guide\}/g, x.u('guide')).replace(/\{embed\}/g, x.u('embed'))}</p></details>`).join('\n');
+const faqHtml = (x, list) => list.map(([q, a]) => `<details class="faq"><summary>${q}</summary><p>${a.replace(/\{arabic\}/g, x.u('arabic-math-editor')).replace(/\{editorAr\}/g, x.uLang('ar', 'editor')).replace(/\{guide\}/g, x.u('guide')).replace(/\{embed\}/g, x.u('embed')).replace(/\{install\}/g, x.u('') + '#install')}</p></details>`).join('\n');
 export const faqPlain = (x, lang) => FAQ[lang].map(([q, a]) => [q, a.replace(/<[^>]+>/g, '').replace(/\{[a-zA-Z]+\}/g, '')]);
 
 const EXAMPLES = {
@@ -123,8 +131,8 @@ const T = {
     stepWatch: 'Step 1 · Watch', stepTry: 'Step 2 · Try it', stepUse: 'Step 3 · Use it',
     heroTitle: 'Free online equation editor – in English and Arabic',
     heroLead: 'MathTypeX is a free visual equation editor that runs in your browser. Click or type to build fractions, roots, matrices and more, then download the result as a PNG image. Arabic is a first-class feature: right-to-left writing, Arabic math letters and exact positioning.',
-    heroTry: 'Try it now – no sign-up', heroFull: 'Open the full editor', heroBadge: 'Arabic math letters', bandTitle: 'Made for everyone who writes mathematics', band: ['Teachers', 'Students', 'Researchers', 'Web publishers'],
-    trust: ['Nothing to install', 'Works in your browser', 'English and Arabic', 'Phone, tablet and computer'],
+    heroTry: 'Try it now – no sign-up', heroFull: 'Open the full editor', heroInstall: 'Install the app', heroBadge: 'Arabic math letters', bandTitle: 'Made for everyone who writes mathematics', band: ['Teachers', 'Students', 'Researchers', 'Web publishers'],
+    trust: ['Works in your browser', 'Install it as an app', 'Works offline', 'English and Arabic'],
     heroAlt: 'The MathTypeX equation editor showing the quadratic formula',
     watchTitle: 'See it in 60 seconds',
     watchLead: 'A short tour without sound: building a formula, turning on Arabic, the Arabic math letters, exact positioning and the PNG export.',
@@ -139,16 +147,33 @@ const T = {
     cards: [
       ['∑', 'Build with clicks or keys', 'Fractions, roots, powers, matrices, integrals, sums and limits are one click away on the toolbar. Prefer the keyboard? Type your formula and use shortcuts.', 'The toolbar of the MathTypeX editor'],
       ['ع', 'Arabic mathematics', 'Right-to-left editing, a translated interface, Arabic-Indic digits, Arabic fonts and a palette of Arabic math letters with derivative marks.'],
-      ['⇩', 'Download as an image', 'Export your equation as a crisp PNG with a white background. Paste it into Word, Google Docs, PowerPoint or a web page.', 'The export panel showing the PNG image of an equation'],
+      ['⇩', 'Download as an image', 'Export your equation as a crisp PNG – on a white or a transparent background. Paste it into Word, Google Docs, PowerPoint or a web page.', 'The export panel showing the PNG image of an equation'],
       ['↔', 'Exact positioning', 'Move any letter or mark pixel by pixel when printed mathematics needs it. The position is saved with the formula.', 'Moving a mark above a letter pixel by pixel'],
       ['📱', 'Works on every screen', 'On phones and tablets the editor switches to a touch layout with big buttons and an on-screen arrow pad.'],
-      ['🔒', 'Private by design', 'The editor and the image export run in your browser. Your formulas are not uploaded anywhere.'],
+      ['🔒', 'Private by design', 'The editor and the image export run in your browser – and offline once the app is installed. Your formulas are not uploaded anywhere.'],
     ],
     shotCap1: 'The General tab: the most-used structures and symbols.', shotCap2: 'Export: the finished equation as a PNG image.',
     arabicTitle: 'Built for Arabic mathematics', arabicLead: 'Most equation editors treat Arabic as an afterthought. MathTypeX was designed for it.',
     arabicPoints: ['Formulas grow from the right, and fractions, roots and brackets are mirrored the way Arabic mathematics is printed.', 'A fully translated Arabic interface.', 'Arabic-Indic digits (٠١٢٣…), and Arabic fonts that match in the editor and in exported images.', 'A palette of Arabic mathematical letters, plus derivative marks that stand clear above a letter.'],
     arabicLink: 'Explore the Arabic math editor', arabicShotAlt: 'The palette of Arabic math letters in the MathTypeX editor',
     moreInfo: 'More info', rowsTitle: 'Everything in one editor', rows: [['Arabic is three buttons away', 'Switch on right-to-left writing, join Arabic letters into words and open the Arabic math letters – all from the General tab.', 'The three buttons that turn Arabic on'], ['Arabic mathematics, done properly', 'Mirrored structures, Arabic-Indic digits, Arabic fonts and a palette of Arabic math letters.', ''], ['Phone, tablet or computer', 'The same editor adapts to your screen: big touch buttons and an on-screen arrow pad on small devices.', 'The MathTypeX editor on a phone']],
+    installTitle: 'Install MathTypeX as an app – and use it offline',
+    installLead: 'Add MathTypeX to your phone, tablet or computer like any other app. It opens straight to the editor in its own window and keeps working when you have no internet.',
+    installBenefits: [
+      ['Works offline', 'After your first visit the editor, its fonts and the image export are kept on your device. Write equations and download PNG images on a plane, in a classroom with no Wi-Fi or on a slow connection.'],
+      ['Opens straight to the editor', 'The installed app shows the editor and the language switch only – no menus and no website around it – so the whole screen is for your equation.'],
+      ['English and Arabic', 'Switch language inside the app. The direction, the font and the Arabic options start fresh for the language you choose.'],
+      ['Free – no store, no account', 'Installing just adds an icon from your browser. There is no app store and no sign-up, and nothing is uploaded: your equations stay on your device.'],
+      ['Always up to date', 'While you are online the app checks for a newer version each time you open it, so fixes reach you without any manual update.'],
+      ['Phone, tablet or computer', 'The same app adapts to the screen: a touch layout with an arrow pad on phones and tablets, the full toolbar on a computer.'],
+    ],
+    installStepsTitle: 'How to install',
+    installSteps: [
+      ['Android – Chrome', 'Tap the Install app button on this page, or open the browser menu and choose Install app (Add to Home screen).'],
+      ['iPhone and iPad – Safari', 'Tap Share, then Add to Home Screen.'],
+      ['Windows, Mac and Linux – Chrome or Edge', 'Click Install app on this page, or the install icon in the address bar.'],
+    ],
+    installButton: 'Install app', installNote: 'The Install app button appears only when your browser offers the installation. If you do not see it, use the steps above. (Firefox on a computer does not install web apps.)',
     howTitle: 'How it works', howLead: 'Three steps, no learning curve.',
     how: [['Build your equation', 'Click the toolbar buttons or type. The equation is drawn the way it is printed as you work.'], ['Check it', 'Switch to Arabic, move a symbol, or undo and redo – all from the same editor.'], ['Download the image', 'Open the PNG tab and click Download. Paste the picture wherever you need it.']],
     whoTitle: 'Who it is for',
@@ -160,8 +185,8 @@ const T = {
     stepWatch: 'الخطوة ١ · شاهد', stepTry: 'الخطوة ٢ · جرّب', stepUse: 'الخطوة ٣ · استخدم',
     heroTitle: 'محرر معادلات رياضية مجاني – بالعربية والإنجليزية',
     heroLead: 'MathTypeX محرر معادلات مرئي مجاني يعمل في متصفحك. انقر أو اكتب لتبني الكسور والجذور والمصفوفات وغيرها، ثم نزّل النتيجة صورة PNG. والعربية فيه ميزة أساسية: كتابة من اليمين إلى اليسار، وحروف رياضية عربية، وضبط دقيق للمواضع.',
-    heroTry: 'جرّبه الآن – بلا تسجيل', heroFull: 'افتح المحرر الكامل', heroBadge: 'حروف رياضية عربية', bandTitle: 'لكل من يكتب الرياضيات', band: ['المعلمون', 'الطلاب', 'الباحثون', 'ناشرو المواقع'],
-    trust: ['لا حاجة إلى تثبيت', 'يعمل في متصفحك', 'بالعربية والإنجليزية', 'هاتف وجهاز لوحي وحاسوب'],
+    heroTry: 'جرّبه الآن – بلا تسجيل', heroFull: 'افتح المحرر الكامل', heroInstall: 'ثبّت التطبيق', heroBadge: 'حروف رياضية عربية', bandTitle: 'لكل من يكتب الرياضيات', band: ['المعلمون', 'الطلاب', 'الباحثون', 'ناشرو المواقع'],
+    trust: ['يعمل في متصفحك', 'ثبّته كتطبيق', 'يعمل بلا إنترنت', 'بالعربية والإنجليزية'],
     heroAlt: 'محرر المعادلات MathTypeX يعرض معادلة الدرجة الثانية',
     watchTitle: 'شاهده في ٦٠ ثانية',
     watchLead: 'جولة قصيرة بلا صوت: بناء معادلة، وتفعيل العربية، والحروف الرياضية العربية، والضبط الدقيق للمواضع، وتصدير PNG.',
@@ -176,16 +201,33 @@ const T = {
     cards: [
       ['∑', 'ابنِ بالنقر أو بالمفاتيح', 'الكسور والجذور والأسس والمصفوفات والتكاملات والمجاميع والنهايات على بُعد نقرة في شريط الأدوات. تفضّل لوحة المفاتيح؟ اكتب معادلتك واستخدم الاختصارات.', 'شريط أدوات محرر MathTypeX'],
       ['ع', 'رياضيات عربية', 'تحرير من اليمين إلى اليسار، وواجهة مترجمة، وأرقام هندية عربية، وخطوط عربية، ولوحة حروف رياضية عربية مع علامات المشتقة.'],
-      ['⇩', 'نزّل صورة', 'صدّر معادلتك صورة PNG واضحة بخلفية بيضاء. الصقها في Word أو مستندات Google أو PowerPoint أو صفحة ويب.', 'لوحة التصدير تعرض صورة PNG لمعادلة'],
+      ['⇩', 'نزّل صورة', 'صدّر معادلتك صورة PNG واضحة بخلفية بيضاء أو شفافة. الصقها في Word أو مستندات Google أو PowerPoint أو صفحة ويب.', 'لوحة التصدير تعرض صورة PNG لمعادلة'],
       ['↔', 'ضبط دقيق للموضع', 'حرّك أي حرف أو علامة بكسل بكسل حين تتطلب الرياضيات المطبوعة ذلك. يُحفظ الموضع مع المعادلة.', 'تحريك علامة فوق حرف بكسل بكسل'],
       ['📱', 'يعمل على كل شاشة', 'على الهاتف والجهاز اللوحي يتحول المحرر إلى تخطيط للمس بأزرار كبيرة ولوحة أسهم على الشاشة.'],
-      ['🔒', 'خصوصية أولًا', 'يعمل المحرر وتصدير الصور في متصفحك. لا تُرفع معادلاتك إلى أي مكان.'],
+      ['🔒', 'خصوصية أولًا', 'يعمل المحرر وتصدير الصور في متصفحك – وبلا إنترنت بعد تثبيت التطبيق. لا تُرفع معادلاتك إلى أي مكان.'],
     ],
     shotCap1: 'التبويب العام: أكثر البنى والرموز استخدامًا.', shotCap2: 'التصدير: المعادلة النهائية صورة PNG.',
     arabicTitle: 'مصمَّم للرياضيات العربية', arabicLead: 'تتعامل معظم محررات المعادلات مع العربية كأنها إضافة لاحقة. أما MathTypeX فصُمّم لها.',
     arabicPoints: ['تنمو المعادلات من اليمين، وتُعكس الكسور والجذور والأقواس كما تُطبع الرياضيات العربية.', 'واجهة عربية مترجمة بالكامل.', 'أرقام هندية عربية (٠١٢٣…)، وخطوط عربية متطابقة في المحرر وفي الصور المصدَّرة.', 'لوحة بالحروف الرياضية العربية، وعلامات مشتقة تقف فوق الحرف دون أن تلمسه.'],
     arabicLink: 'اكتشف محرر المعادلات العربي', arabicShotAlt: 'لوحة الحروف الرياضية العربية في محرر MathTypeX',
     moreInfo: 'المزيد', rowsTitle: 'كل شيء في محرر واحد', rows: [['العربية على بُعد ثلاثة أزرار', 'فعّل الكتابة من اليمين إلى اليسار، واربط الأحرف العربية في كلمات، وافتح الحروف الرياضية العربية – كله من التبويب العام.', 'الأزرار الثلاثة التي تفعّل العربية'], ['رياضيات عربية كما ينبغي', 'بنى معكوسة وأرقام هندية عربية وخطوط عربية ولوحة بالحروف الرياضية العربية.', ''], ['هاتف أو جهاز لوحي أو حاسوب', 'يتكيّف المحرر نفسه مع شاشتك: أزرار لمس كبيرة ولوحة أسهم على الشاشة في الأجهزة الصغيرة.', 'محرر MathTypeX على هاتف']],
+    installTitle: 'ثبّت MathTypeX كتطبيق – واستخدمه بلا إنترنت',
+    installLead: 'أضف MathTypeX إلى هاتفك أو جهازك اللوحي أو حاسوبك كأي تطبيق آخر. يفتح مباشرةً على المحرر في نافذته الخاصة، ويواصل العمل حتى حين لا يتوفر الإنترنت.',
+    installBenefits: [
+      ['يعمل بلا إنترنت', 'بعد زيارتك الأولى يُحفظ المحرر وخطوطه وتصدير الصور على جهازك. اكتب المعادلات ونزّل صور PNG في الطائرة أو في قاعة بلا واي فاي أو مع اتصال بطيء.'],
+      ['يفتح مباشرةً على المحرر', 'يعرض التطبيق المثبّت المحرر ومبدّل اللغة فقط – بلا قوائم ولا موقع حوله – فتكون الشاشة كلها لمعادلتك.'],
+      ['بالعربية والإنجليزية', 'بدّل اللغة من داخل التطبيق. يبدأ الاتجاه والخط وخيارات العربية من جديد للغة التي تختارها.'],
+      ['مجاني – بلا متجر ولا حساب', 'التثبيت يضيف أيقونة من متصفحك فقط. لا متجر تطبيقات ولا تسجيل، ولا يُرفع شيء: تبقى معادلاتك على جهازك.'],
+      ['محدَّث دائمًا', 'حين تكون متصلًا يتحقق التطبيق من وجود نسخة أحدث في كل مرة تفتحه، فتصلك الإصلاحات دون تحديث يدوي.'],
+      ['هاتف أو جهاز لوحي أو حاسوب', 'التطبيق نفسه يتكيف مع الشاشة: تخطيط للمس مع لوحة أسهم على الهاتف والجهاز اللوحي، وشريط الأدوات الكامل على الحاسوب.'],
+    ],
+    installStepsTitle: 'طريقة التثبيت',
+    installSteps: [
+      ['أندرويد – Chrome', 'اضغط زر «ثبّت التطبيق» في هذه الصفحة، أو افتح قائمة المتصفح واختر «تثبيت التطبيق» (أو «إضافة إلى الشاشة الرئيسية»).'],
+      ['آيفون وآيباد – Safari', 'اضغط «مشاركة» ثم «إضافة إلى الشاشة الرئيسية».'],
+      ['ويندوز وماك ولينكس – Chrome أو Edge', 'انقر «ثبّت التطبيق» في هذه الصفحة، أو أيقونة التثبيت في شريط العنوان.'],
+    ],
+    installButton: 'ثبّت التطبيق', installNote: 'يظهر زر «ثبّت التطبيق» فقط حين يعرض متصفحك التثبيت. وإن لم تره فاتبع الخطوات أعلاه. (متصفح Firefox على الحاسوب لا يثبّت تطبيقات الويب.)',
     howTitle: 'كيف يعمل', howLead: 'ثلاث خطوات، بلا منحنى تعلّم.',
     how: [['ابنِ معادلتك', 'انقر أزرار الشريط أو اكتب. تُرسم المعادلة كما تُطبع أثناء عملك.'], ['راجعها', 'بدّل إلى العربية أو حرّك رمزًا أو تراجع وأعد – كله من المحرر نفسه.'], ['نزّل الصورة', 'افتح تبويب PNG وانقر «تنزيل». ثم الصق الصورة حيث تحتاجها.']],
     whoTitle: 'لمن هو؟',
@@ -198,7 +240,7 @@ const T = {
 export const PAGES = {
   // ---------------------------------------------------------------------------------------------------------------- home
   '': {
-    en: { title: 'MathTypeX – Free Online Equation Editor (English & Arabic)', description: 'MathTypeX is a free online equation editor: write math in English or Arabic, see it as printed and download a PNG. Nothing to install.', og: 'og-home.png', breadcrumb: null },
+    en: { title: 'MathTypeX – Free Online Equation Editor (English & Arabic)', description: 'MathTypeX is a free online equation editor: write math in English or Arabic, see it as printed and download a PNG. Install it as an app and use it offline.', og: 'og-home.png', breadcrumb: null },
     ar: { title: 'MathTypeX – محرر معادلات رياضية مجاني على الإنترنت (عربي وإنجليزي)', description: 'اكتب المعادلات الرياضية على الإنترنت بالعربية أو الإنجليزية. انقر أو اكتب، وشاهدها كما تُطبع، ثم نزّلها PNG. MathTypeX مجاني ولا يحتاج إلى تثبيت ويعمل في متصفحك.', og: 'og-home-ar.png', breadcrumb: null },
     body: (x) => {
       const t = T[x.lang];
@@ -208,7 +250,7 @@ export const PAGES = {
   <div>
     <h1>${t.heroTitle}</h1>
     <p class="lead">${t.heroLead}</p>
-    <div class="btn-row"><a class="btn btn-dark" href="#try">${t.heroTry}</a><a class="btn btn-outline" href="${x.u('editor')}">${t.heroFull}</a></div>
+    <div class="btn-row"><a class="btn btn-dark" href="#try">${t.heroTry}</a><a class="btn btn-outline" href="${x.u('editor')}">${t.heroFull}</a><a class="btn btn-outline" href="#install">${t.heroInstall}</a></div>
   </div>
   <div class="hero-visual">${BLOB}
     <div class="shot">${shot(x, ed, 1100, 446, t.heroAlt, ' fetchpriority="high"').replace(' loading="lazy"', '')}</div>
@@ -248,6 +290,15 @@ ${playground(x, t)}
   </div>
 </div></section>
 
+<section class="white" id="install" aria-labelledby="install-h"><div class="wrap">
+  <div class="sec-head"><h2 id="install-h">${t.installTitle}</h2><p class="lead">${t.installLead}</p></div>
+  <div class="grid g3">${t.installBenefits.map(([h, p]) => `<div class="card"><h3>${h}</h3><p>${p}</p></div>`).join('')}</div>
+  <div class="narrow" style="margin-top:38px"><h3 style="text-align:center">${t.installStepsTitle}</h3>
+    <ol class="steps">${t.installSteps.map(([h, p]) => `<li><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
+    <p style="text-align:center;margin-top:22px"><button type="button" class="btn btn-dark" data-install>${t.installButton}</button></p>
+    <p class="note" style="text-align:center">${t.installNote}</p></div>
+</div></section>
+
 <section aria-labelledby="how-h"><div class="wrap">
   <div class="sec-head"><h2 id="how-h">${t.howTitle}</h2><p class="lead">${t.howLead}</p></div>
   <ol class="steps narrow">${t.how.map(([h, p]) => `<li><h3>${h}</h3><p>${p}</p></li>`).join('')}</ol>
@@ -271,8 +322,8 @@ ${cta(x, t)}
 
   // ---------------------------------------------------------------------------------------------------------------- features
   features: {
-    en: { title: 'Features – Equation Editor with Arabic Support | MathTypeX', description: 'Everything MathTypeX can do: build fractions, roots and matrices, write Arabic math right to left, position symbols exactly and export PNG images.', h1: 'Features', lead: 'Everything you can do with the MathTypeX equation editor.', crumb: 'Features', og: 'og-home.png' },
-    ar: { title: 'المزايا – محرر معادلات يدعم العربية | MathTypeX', description: 'كل ما يستطيعه MathTypeX: بناء الكسور والجذور والمصفوفات، وكتابة الرياضيات العربية من اليمين إلى اليسار، وضبط الرموز بدقة، وتصدير صور PNG.', h1: 'المزايا', lead: 'كل ما يمكنك فعله بمحرر المعادلات MathTypeX.', crumb: 'المزايا', og: 'og-home-ar.png' },
+    en: { title: 'Features – Equation Editor with Arabic Support | MathTypeX', description: 'Everything MathTypeX can do: build equations, write Arabic math right to left, position symbols, export PNG and install it as an offline app.', h1: 'Features', lead: 'Everything you can do with the MathTypeX equation editor.', crumb: 'Features', og: 'og-home.png' },
+    ar: { title: 'المزايا – محرر معادلات يدعم العربية | MathTypeX', description: 'كل ما يستطيعه MathTypeX: بناء الكسور والجذور والمصفوفات، وكتابة الرياضيات العربية من اليمين إلى اليسار، وضبط الرموز بدقة، وتصدير صور PNG، وتثبيته كتطبيق يعمل بلا إنترنت.', h1: 'المزايا', lead: 'كل ما يمكنك فعله بمحرر المعادلات MathTypeX.', crumb: 'المزايا', og: 'og-home-ar.png' },
     body: (x) => (x.lang === 'ar' ? `
 <section><div class="wrap prose">
   <div class="row"><div><h2>بناء المعادلات بسهولة</h2><p>يضم شريط الأدوات أكثر من ٧٠٠ بنية جاهزة موزعة على تبويبات واضحة: الكسور والجذور والأسس والأقواس والمصفوفات والتكاملات والمجاميع والنهايات والأسهم واليونانية وغيرها. انقر الزر فتظهر البنية في المعادلة، ثم اكتب في الخانات الفارغة.</p>
@@ -288,11 +339,19 @@ ${cta(x, t)}
   <div class="row rev"><div><h2>ضبط دقيق للموضع</h2><p>حدّد أي حرف أو علامة أو مجموعة، وحرّكها بكسل واحد في كل مرة بالأسهم الأربعة في التبويب السياقي (أو Ctrl + Shift مع مفتاح سهم). يُحفظ الموضع داخل المعادلة ويظهر في الصورة المصدَّرة.</p></div>
   <figure><video controls preload="none" playsinline poster="${x.m('position-poster.webp')}" width="960" height="622" aria-label="تحريك علامة بكسل بكسل"><source src="${x.m('position.mp4')}" type="video/mp4"></video><figcaption>تحريك علامة المشتقة ثلاثة بكسلات يمينًا وثلاثة للأعلى.</figcaption></figure></div>
 
-  <div class="row"><div><h2>صدّر الصورة</h2><p>افتح تبويب PNG وانقر «تنزيل» لتحصل على صورة واضحة بخلفية بيضاء. الصق الصورة في Word أو مستندات Google أو PowerPoint أو أي صفحة.</p></div>
+  <div class="row"><div><h2>صدّر الصورة</h2><p>افتح تبويب PNG وانقر «تنزيل» لتحصل على صورة واضحة. الخلفية بيضاء افتراضيًا، أو اختر «شفافة» بجانب الأزرار لصورة بلا خلفية. الصق الصورة في Word أو مستندات Google أو PowerPoint أو أي صفحة.</p></div>
   <figure>${shot(x, 'export-png.webp', 1200, 740, 'لوحة التصدير تعرض صورة PNG للمعادلة')}</figure></div>
 
-  <div class="row rev"><div><h2>على الهاتف والجهاز اللوحي</h2><p>على الشاشات الصغيرة يتحول المحرر إلى تخطيط للمس: أزرار أكبر، وشريط تبويبات قابل للتمرير، ولوحة أسهم على الشاشة (لأن لوحة مفاتيح الهاتف بلا أسهم)، وشريط تصدير ينزلق من الأسفل.</p></div>
+  <div class="row rev"><div><h2>على الهاتف والجهاز اللوحي</h2><p>على الشاشات الصغيرة يتحول المحرر إلى تخطيط للمس: أزرار أكبر، وشريط تبويبات قابل للتمرير، ولوحة أسهم على الشاشة (لأن لوحة مفاتيح الهاتف بلا أسهم)، وشريط تصدير ينزلق من الأسفل. في المحرر الكامل تنال مساحة الكتابة الارتفاع كله، ويتنحّى الشريط السفلي حين تُفتح لوحة المفاتيح، وتحذّرك نافذة تأكيد قبل أن تغادر أو تمسح معادلتك. وفي العربية تبدأ التبويبات وأزرار الشريط من اليمين.</p></div>
   <figure style="max-width:260px;margin-inline:auto">${shot(x, 'phone.webp', 420, 840, 'محرر MathTypeX على هاتف')}</figure></div>
+
+  <div class="row" id="install"><div><h2>ثبّته كتطبيق واعمل بلا إنترنت</h2><p>يستطيع متصفحك تثبيت MathTypeX كتطبيق على الهاتف أو الجهاز اللوحي أو الحاسوب، دون متجر تطبيقات ودون حساب. بعد زيارتك الأولى يُحفظ المحرر وخطوطه وتصدير الصور على جهازك، فتبني المعادلات وتنزّل صور PNG حتى بلا اتصال بالإنترنت.</p>
+  <ul class="checks"><li>يفتح التطبيق المثبّت مباشرةً على المحرر، ويعرض المحرر ومبدّل اللغة فقط.</li><li>يعمل بلا إنترنت، وتبقى معادلتك محفوظة على الجهاز.</li><li>يتحقق من وجود نسخة أحدث في كل مرة تفتحه وأنت متصل.</li><li>زر «ثبّت التطبيق» في الموقع (أو في شريط الأسفل على الهاتف) يظهر حين يعرض متصفحك التثبيت. وفي آيفون وآيباد: «مشاركة» ثم «إضافة إلى الشاشة الرئيسية».</li></ul>
+  <p><a class="more" href="${x.u('')}#install">طريقة التثبيت خطوة بخطوة</a></p></div>
+  <figure style="max-width:260px;margin-inline:auto">${shot(x, 'phone.webp', 420, 840, 'محرر MathTypeX على هاتف')}</figure></div>
+
+  <div class="row rev"><div><h2>تبديل اللغة يعيد ضبط خيارات اللغة</h2><p>حين تنتقل بين العربية والإنجليزية تبدأ الخيارات المرتبطة باللغة من جديد: اتجاه الكتابة والخط وربط الأحرف العربية والأرقام. أما معادلتك فتبقى. وفي العربية تبدأ التبويبات وأزرار الشريط من اليمين، وتتحرك أزرار «إزاحة يمين» و«إزاحة يسار» في الاتجاه الذي يشير إليه السهم.</p></div>
+  <figure>${shot(x, 'editor-ar.webp', 1200, 740, 'محرر MathTypeX بالواجهة العربية')}</figure></div>
 </div></section>
 ${cta(x, T.ar)}` : `
 <section><div class="wrap prose">
@@ -309,11 +368,19 @@ ${cta(x, T.ar)}` : `
   <div class="row rev"><div><h2>Exact positioning</h2><p>Select a letter, a mark or a whole group and move it one pixel at a time with the four arrows of the contextual tab (or Ctrl + Shift + an arrow key). The position is saved inside the formula and appears in the exported image.</p></div>
   <figure><video controls preload="none" playsinline poster="${x.m('position-poster.webp')}" width="960" height="622" aria-label="Moving a mark pixel by pixel"><source src="${x.m('position.mp4')}" type="video/mp4"></video><figcaption>Moving a derivative mark three pixels right and three up.</figcaption></figure></div>
 
-  <div class="row"><div><h2>Export as an image</h2><p>Open the PNG tab and click Download to get a crisp image with a white background. Paste it into Word, Google Docs, PowerPoint or any web page.</p></div>
+  <div class="row"><div><h2>Export as an image</h2><p>Open the PNG tab and click Download to get a crisp image. The background is white by default; choose Transparent next to the buttons for an image with no background. Paste it into Word, Google Docs, PowerPoint or any web page.</p></div>
   <figure>${shot(x, 'export-png.webp', 1200, 740, 'The export panel showing the PNG image of the formula')}</figure></div>
 
-  <div class="row rev"><div><h2>On phones and tablets</h2><p>On small screens the editor switches to a touch layout: bigger buttons, a scrolling tab strip, an on-screen arrow pad (phone keyboards have no arrows) and a slide-up export bar.</p></div>
+  <div class="row rev"><div><h2>On phones and tablets</h2><p>On small screens the editor switches to a touch layout: bigger buttons, a scrolling tab strip, an on-screen arrow pad (phone keyboards have no arrows) and a slide-up export bar. In the full-page editor the text area gets the whole height, the bottom bar steps aside while the keyboard is open, and a confirmation appears before you leave or clear a formula. In Arabic the tabs and the toolbar start from the right.</p></div>
   <figure style="max-width:260px;margin-inline:auto">${shot(x, 'phone.webp', 420, 840, 'The MathTypeX editor on a phone')}</figure></div>
+
+  <div class="row" id="install"><div><h2>Install it as an app and work offline</h2><p>Your browser can install MathTypeX as an app on a phone, tablet or computer – no app store and no account. After your first visit the editor, its fonts and the image export are kept on your device, so you can build equations and download PNG images even with no internet connection.</p>
+  <ul class="checks"><li>The installed app opens straight to the editor and shows only the editor and the language switch.</li><li>It works offline, and your formula is kept on the device.</li><li>While you are online it checks for a newer version each time you open it.</li><li>The Install app button on the site (or in the bottom bar of the phone editor) appears when your browser offers the installation. On iPhone and iPad use Share, then Add to Home Screen.</li></ul>
+  <p><a class="more" href="${x.u('')}#install">How to install, step by step</a></p></div>
+  <figure style="max-width:260px;margin-inline:auto">${shot(x, 'phone.webp', 420, 840, 'The MathTypeX editor on a phone')}</figure></div>
+
+  <div class="row rev"><div><h2>Switching language resets the language options</h2><p>When you move between Arabic and English the options that belong to a language start fresh: writing direction, font, Arabic ligature and digits. Your equation stays. In Arabic the tabs and toolbar start from the right, and the nudge left and right buttons move a symbol the way the arrow points.</p></div>
+  <figure>${shot(x, 'editor-ar.webp', 1200, 740, 'The MathTypeX editor with the Arabic interface')}</figure></div>
 </div></section>
 ${cta(x, T.en)}`),
   },
@@ -389,7 +456,7 @@ ${cta(x, T.en)}`),
     ar: { title: 'دليل كتابة المعادلات على الإنترنت خطوة بخطوة | MathTypeX', description: 'دليل بسيط: ابنِ معادلة، واكتب بالعربية، وحرّك رمزًا بدقة، واستخدم اختصارات لوحة المفاتيح، ونزّل معادلتك صورة PNG.', h1: 'الدليل: كيف تكتب المعادلات على الإنترنت', lead: 'مساعدة خطوة بخطوة للمبتدئين. لا حاجة إلى معرفة تقنية.', crumb: 'الدليل', og: 'og-home-ar.png' },
     body: (x) => (x.lang === 'ar' ? `
 <section><div class="narrow prose">
-  <nav aria-label="محتويات الصفحة" class="note"><strong>في هذه الصفحة:</strong> <a href="#build">بناء معادلة</a> · <a href="#arabic">الكتابة بالعربية</a> · <a href="#export">تنزيل صورة</a> · <a href="#position">تحريك رمز</a> · <a href="#keys">الاختصارات</a></nav>
+  <nav aria-label="محتويات الصفحة" class="note"><strong>في هذه الصفحة:</strong> <a href="#build">بناء معادلة</a> · <a href="#arabic">الكتابة بالعربية</a> · <a href="#export">تنزيل صورة</a> · <a href="#position">تحريك رمز</a> · <a href="#install">التثبيت وبلا إنترنت</a> · <a href="#keys">الاختصارات</a></nav>
 
   <h2 id="build">١. ابنِ معادلتك الأولى</h2>
   <ol class="steps">
@@ -407,11 +474,16 @@ ${cta(x, T.en)}`),
   <ol><li><strong>الكتابة من اليمين إلى اليسار</strong> لتنمو المعادلة من اليمين.</li><li><strong>ربط الأحرف العربية</strong> لتتصل الأحرف في كلمة. اتركه مغلقًا إذا كانت أحرفك متغيرات منفصلة.</li><li><strong>إدراج أحرف خاصة</strong> ثم «الحروف الرياضية العربية» لإدراج الحروف الرياضية وعلامات المشتقة.</li></ol>
 
   <h2 id="export">٣. نزّل معادلتك صورة</h2>
-  <ol class="steps"><li><h3>افتح تبويب PNG</h3><p>تحت المحرر شريط تبويبات؛ انقر «PNG».</p></li><li><h3>انقر تنزيل</h3><p>تُحفظ الصورة في جهازك بخلفية بيضاء.</p></li><li><h3>الصقها حيث تريد</h3><p>في Word أو مستندات Google أو PowerPoint أو صفحة ويب.</p></li></ol>
+  <ol class="steps"><li><h3>افتح تبويب PNG</h3><p>تحت المحرر شريط تبويبات؛ انقر «PNG».</p></li><li><h3>اختر الخلفية وانقر تنزيل</h3><p>تُحفظ الصورة في جهازك. الخلفية بيضاء افتراضيًا؛ اختر «شفافة» بجانب الأزرار إن أردت صورة بلا خلفية.</p></li><li><h3>الصقها حيث تريد</h3><p>في Word أو مستندات Google أو PowerPoint أو صفحة ويب.</p></li></ol>
   <figure>${shot(x, 'export-png.webp', 1200, 740, 'لوحة التصدير تعرض صورة PNG')}</figure>
 
   <h2 id="position">٤. حرّك رمزًا بدقة</h2>
   <p>حدّد الحرف أو العلامة بالنقر عليه مع السحب أو بـ Shift + الأسهم. ثم افتح <strong>التبويب السياقي</strong> (آخر تبويب) وانقر الأسهم الأربعة لتحريكه بكسلًا في كل مرة.</p>
+
+  <h2 id="install">٥. ثبّت التطبيق واعمل بلا إنترنت</h2>
+  <p>يمكنك تثبيت MathTypeX كتطبيق على هاتفك أو حاسوبك. يفتح مباشرةً على المحرر في نافذته، ويعمل حتى حين لا يتوفر الإنترنت.</p>
+  <ol class="steps"><li><h3>أندرويد (Chrome)</h3><p>اضغط «ثبّت التطبيق» (في الصفحة الرئيسية أو في شريط الأسفل في المحرر)، أو افتح قائمة المتصفح واختر «تثبيت التطبيق».</p></li><li><h3>آيفون وآيباد (Safari)</h3><p>اضغط «مشاركة» ثم «إضافة إلى الشاشة الرئيسية».</p></li><li><h3>ويندوز وماك ولينكس (Chrome أو Edge)</h3><p>انقر أيقونة التثبيت في شريط العنوان، أو زر «ثبّت التطبيق» في الموقع.</p></li></ol>
+  <p class="note">يظهر زر «ثبّت التطبيق» فقط حين يعرض متصفحك التثبيت. افتح التطبيق مرة واحدة وأنت متصل لتُحفظ ملفاته؛ بعدها يعمل بلا إنترنت. التطبيق المثبّت يعرض المحرر ومبدّل اللغة فقط. لمزيد من التفاصيل راجع <a href="${x.u('')}#install">الصفحة الرئيسية</a> و<a href="${x.u('faq')}">الأسئلة الشائعة</a>.</p>
 
   <h2 id="keys">اختصارات لوحة المفاتيح</h2>
   <div class="tbl-wrap"><table class="tbl"><tr><th>الاختصار</th><th>الوظيفة</th></tr>
@@ -424,7 +496,7 @@ ${cta(x, T.en)}`),
 </div></section>
 ${cta(x, T.ar)}` : `
 <section><div class="narrow prose">
-  <nav aria-label="On this page" class="note"><strong>On this page:</strong> <a href="#build">Build an equation</a> · <a href="#arabic">Type in Arabic</a> · <a href="#export">Download an image</a> · <a href="#position">Move a symbol</a> · <a href="#keys">Shortcuts</a></nav>
+  <nav aria-label="On this page" class="note"><strong>On this page:</strong> <a href="#build">Build an equation</a> · <a href="#arabic">Type in Arabic</a> · <a href="#export">Download an image</a> · <a href="#position">Move a symbol</a> · <a href="#install">Install and offline</a> · <a href="#keys">Shortcuts</a></nav>
 
   <h2 id="build">1. Build your first equation</h2>
   <ol class="steps">
@@ -442,11 +514,16 @@ ${cta(x, T.ar)}` : `
   <ol><li><strong>Right to left editing</strong> so the equation grows from the right.</li><li><strong>Arabic ligature</strong> so the Arabic letters you type connect into a word. Leave it off if your letters are separate variables.</li><li><strong>Insert special characters</strong>, then <em>Arabic math letters</em>, to insert Arabic mathematical letters and derivative marks.</li></ol>
 
   <h2 id="export">3. Download your equation as an image</h2>
-  <ol class="steps"><li><h3>Open the PNG tab</h3><p>Under the editor there is a row of tabs; click “PNG”.</p></li><li><h3>Click Download</h3><p>The image is saved to your device with a white background.</p></li><li><h3>Paste it where you need it</h3><p>In Word, Google Docs, PowerPoint or a web page.</p></li></ol>
+  <ol class="steps"><li><h3>Open the PNG tab</h3><p>Under the editor there is a row of tabs; click “PNG”.</p></li><li><h3>Pick the background and click Download</h3><p>The image is saved to your device. The background is white by default; choose Transparent next to the buttons if you want an image with no background.</p></li><li><h3>Paste it where you need it</h3><p>In Word, Google Docs, PowerPoint or a web page.</p></li></ol>
   <figure>${shot(x, 'export-png.webp', 1200, 740, 'The export panel showing the PNG image')}</figure>
 
   <h2 id="position">4. Move a symbol exactly</h2>
   <p>Select the letter or mark by clicking and dragging over it, or with Shift + the arrow keys. Then open the <strong>contextual tab</strong> (the last tab) and click the four arrows to move it one pixel per click.</p>
+
+  <h2 id="install">5. Install the app and work offline</h2>
+  <p>You can install MathTypeX as an app on your phone or computer. It opens straight to the editor in its own window and keeps working when you have no internet.</p>
+  <ol class="steps"><li><h3>Android (Chrome)</h3><p>Tap Install app (on the home page, or in the bottom bar of the editor), or open the browser menu and choose Install app.</p></li><li><h3>iPhone and iPad (Safari)</h3><p>Tap Share, then Add to Home Screen.</p></li><li><h3>Windows, Mac and Linux (Chrome or Edge)</h3><p>Click the install icon in the address bar, or the Install app button on the site.</p></li></ol>
+  <p class="note">The Install app button appears only when your browser offers the installation. Open the app once while you are online so its files are saved; after that it works offline. The installed app shows only the editor and the language switch. More on the <a href="${x.u('')}#install">home page</a> and in the <a href="${x.u('faq')}">questions</a>.</p>
 
   <h2 id="keys">Keyboard shortcuts</h2>
   <div class="tbl-wrap"><table class="tbl"><tr><th>Shortcut</th><th>What it does</th></tr>
@@ -514,7 +591,7 @@ ${cta(x, T.en)}`),
   <h2>لماذا MathTypeX؟</h2>
   <p>كتابة الرياضيات على الحاسوب ينبغي أن تكون سهلة. وكتابة الرياضيات العربية ينبغي ألّا تكون استثناءً صعبًا. بنينا MathTypeX محررًا مرئيًا يعمل في المتصفح، يتعامل مع العربية والإنجليزية بجدية متساوية، ويدعم ما تحتاجه الرياضيات العربية المطبوعة: الكتابة من اليمين إلى اليسار، والحروف الرياضية، وعلامات المشتقة، والتحكم الدقيق بالمواضع.</p>
   <h2>الخصوصية</h2>
-  <p>يعمل المحرر وتصدير الصور داخل متصفحك، فلا تُرسل معادلاتك إلى أي خادم، ولا يتطلب الموقع تسجيلًا.</p>
+  <p>يعمل المحرر وتصدير الصور داخل متصفحك، فلا تُرسل معادلاتك إلى أي خادم، ولا يتطلب الموقع تسجيلًا. وإن ثبّتّ التطبيق أو استخدمت الموقع بلا إنترنت فتُحفظ ملفات الموقع على جهازك لهذا الغرض، ولا تحوي أي بيانات شخصية.</p>
   <h2>الشكر</h2>
   <p>أشكال الحروف الرياضية العربية مأخوذة من جداول رموز لوحات المفاتيح الرياضية العربية <em>Zulfi Math</em>. وتُرسم المعادلات بخطوط STIX Two Math وLiberation Sans وNoto العربية المضمَّنة.</p>
   <h2>مشروع مستقل</h2>
@@ -526,7 +603,7 @@ ${cta(x, T.en)}`),
   <h2>Why MathTypeX?</h2>
   <p>Writing mathematics on a computer should be easy. Writing Arabic mathematics should not be a hard exception. We built MathTypeX as a visual editor that runs in the browser, treats English and Arabic with equal seriousness, and supports what printed Arabic mathematics needs: right-to-left writing, mathematical letters, derivative marks and exact control over positions.</p>
   <h2>Privacy</h2>
-  <p>The editor and the image export run inside your browser. Your formulas are not sent to a server, and the site needs no sign-up.</p>
+  <p>The editor and the image export run inside your browser. Your formulas are not sent to a server, and the site needs no sign-up. If you install the app or use the site offline, the site files are saved on your device for that purpose; they hold none of your personal data.</p>
   <h2>Credits</h2>
   <p>The shapes of the Arabic math letters come from the symbol tables of the <em>Zulfi Math</em> Arabic keyboard maps. Equations are drawn with the bundled STIX Two Math, Liberation Sans and Noto Arabic faces.</p>
   <h2>An independent project</h2>
