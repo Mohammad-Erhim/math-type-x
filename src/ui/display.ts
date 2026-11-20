@@ -72,14 +72,26 @@ export class FormulaDisplay {
     }
     this.input = h('input', {
       type: 'text',
+      // no suggestions, no autofill strip (cards, passwords, addresses), no password-manager icons: the field is only a way to get keys
+      name: 'mtx-math-input',
       autocomplete: 'off',
       autocapitalize: 'none',
       autocorrect: 'off',
       spellcheck: false,
+      enterkeyhint: 'enter',
+      'aria-autocomplete': 'none',
+      'data-form-type': 'other',
+      'data-lpignore': 'true',
+      'data-1p-ignore': 'true',
+      'data-bwignore': 'true',
       'aria-hidden': 'false',
       title: 'Math input',
       class: 'wrs_focusElement',
     });
+    // set as attributes: in Chrome `autocorrect` is a boolean property, and the string 'off' made it true (suggestions on)
+    this.input.setAttribute('autocorrect', 'off');
+    this.input.setAttribute('autocapitalize', 'none');
+    this.input.setAttribute('spellcheck', 'false');
     const focusBox = h('div', { class: 'wrs_focusElementContainer' }, this.input);
     this.content = h('div', { class: 'wrs_formulaContent' }, this.selLayer, this.svgHost, this.underline, this.caretEl, this.caretHandle, this.selHandles.from, this.selHandles.to, focusBox);
     this.view = h('div', { class: 'wrs_formulaDisplay', tabindex: '-1' }, this.live, this.content);
