@@ -156,9 +156,20 @@ export class MathEditor implements ToolbarHost {
   };
   /** leaving the page (another app or tab, the home screen): the soft keyboard is put away, so it is not up again on return */
   private onAway = (): void => {
-    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.closeKeyboard();
+    if (document.visibilityState === 'hidden' || document.visibilityState === undefined) this.putKeyboardAway();
   };
-  private onGone = (): void => this.closeKeyboard();
+  private onGone = (): void => this.putKeyboardAway();
+
+  /** the formula field lets go of the focus, the keyboard key goes off, and the next tap on the formula brings the keyboard back
+   * (the same state as a freshly opened page): no keyboard that opens by itself while the key shows it off */
+  private putKeyboardAway(): void {
+    if (!this.coarse() || !this.kbOn) return;
+    this.kbOn = false;
+    const input = this.display.input;
+    input.inputMode = 'none';
+    input.blur();
+    this.paintKeyboardKey();
+  }
   private onPageHide = (): void => {
     if (this.changeTimer) this.flushChange();
     this.store?.flush();
