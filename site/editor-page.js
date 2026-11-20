@@ -4,7 +4,10 @@
   var q = new URLSearchParams(location.search);
   var lang = q.get('lang') || cfg.lang || 'en';
   // no server on a static host: the editor does its images and conversions itself
-  var opts = { language: lang, layout: 'fluid', services: { local: true }, persist: q.get('persist') === '0' ? '' : 'mathtypex', detectHand: false };
+  // ?field=editable: the keys go to an editable element instead of a text input (no autofill strip above the keyboard on Chrome for Android); remembered
+  var field = q.get('field');
+  try { if (field === 'editable' || field === 'input') localStorage.setItem('mtx:field', field); else field = localStorage.getItem('mtx:field'); } catch (err) {}
+  var opts = { language: lang, layout: 'fluid', services: { local: true }, persist: q.get('persist') === '0' ? '' : 'mathtypex', detectHand: false, typingField: field === 'editable' ? 'editable' : 'input' };
   var root = document.documentElement;
   var vv = window.visualViewport;
   var base = 0; // tallest height seen: the window without the on-screen keyboard
