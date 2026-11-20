@@ -260,3 +260,12 @@ body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));
   .mtx_dock .mtx_home{border-inline-start:1px solid #c5d1d7}
   html.kbd .mtx_dock{display:none}
 }
+.mtx_leave{box-sizing:border-box;margin:auto;inset:0;height:fit-content;border:0;border-radius:14px;padding:22px 22px 18px;width:min(340px,100% - 40px);box-shadow:0 20px 50px rgba(0,0,0,.35);color:#18212f;font-family:Arial,sans-serif}
+.mtx_leave::backdrop{background:rgba(24,33,47,.55)}
+.mtx_leave h2{margin:0 0 6px;font-size:1.15rem}
+.mtx_leave p{margin:0 0 18px;color:#425a66;font-size:.95rem;line-height:1.4}
+.mtx_leaveBtns{display:flex;gap:10px}
+.mtx_leaveBtns button{flex:1;min-height:46px;border-radius:10px;border:2px solid #18212f;font:700 1rem Arial,sans-serif;cursor:pointer}
+.mtx_leaveBtns .mtx_stay{background:#18212f;color:#fff}
+.mtx_leaveBtns .mtx_go{background:#fff;color:#18212f}
+.mtx_leaveBtns button:focus-visible{outline:3px solid #ffa31a;outline-offset:2px}
