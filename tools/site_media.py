@@ -67,7 +67,7 @@ def logo(size):
     return im.resize((size, size), Image.LANCZOS)
 
 
-for n in (32, 180, 192, 512):
+for n in (32, 48, 96, 180, 192, 512):
     logo(n).save(os.path.join(OUT, f'icon-{n}.png'))
 logo(512).save(os.path.join(OUT, 'logo.png'))
 
