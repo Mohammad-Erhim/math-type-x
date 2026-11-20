@@ -83,6 +83,39 @@
   home.firstChild.src = cfg.icon || '';
   dock.append(lang2, bar, home);
   outBox.appendChild(dock);
+  // leaving by mistake (the logo and the language switch sit next to the keyboard): ask first, when there is a formula
+  var txt = ar
+    ? { title: 'مغادرة المحرر؟', saved: 'معادلتك محفوظة على هذا الجهاز.', lost: 'ستفقد معادلتك.', stay: 'البقاء', go: 'مغادرة' }
+    : { title: 'Leave the editor?', saved: 'Your equation is saved on this device.', lost: 'Your equation will be lost.', stay: 'Stay', go: 'Leave' };
+  var dlg = document.createElement('dialog');
+  dlg.className = 'mtx_leave';
+  dlg.setAttribute('aria-labelledby', 'mtx-leave-t');
+  dlg.innerHTML = '<h2 id="mtx-leave-t"></h2><p></p><div class="mtx_leaveBtns"><button type="button" class="mtx_stay"></button><button type="button" class="mtx_go"></button></div>';
+  dlg.querySelector('h2').textContent = txt.title;
+  dlg.querySelector('.mtx_stay').textContent = txt.stay;
+  dlg.querySelector('.mtx_go').textContent = txt.go;
+  document.body.appendChild(dlg);
+  var target = '';
+  var guard = function (a) {
+    a.addEventListener('click', function (e) {
+      var empty = true;
+      try { empty = editor.isEmpty(); } catch (err) {}
+      if (empty || typeof dlg.showModal !== 'function') return;
+      e.preventDefault();
+      target = a.href;
+      var saved = false;
+      try { saved = !!(editor.isPersisted && editor.isPersisted()); } catch (err) {}
+      dlg.querySelector('p').textContent = saved ? txt.saved : txt.lost;
+      dlg.showModal();
+      dlg.querySelector('.mtx_stay').focus();
+    });
+  };
+  guard(lang2);
+  guard(home);
+  dlg.querySelector('.mtx_stay').addEventListener('click', function () { dlg.close(); });
+  dlg.querySelector('.mtx_go').addEventListener('click', function () { dlg.close(); location.href = target; });
+  // a tap on the dim area around the card closes it too
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   document.addEventListener('focusin', function (e) {
     var t = e.target;
     if (!t || !t.classList || !t.classList.contains('wrs_focusElement') || t.inputMode === 'none') return;
