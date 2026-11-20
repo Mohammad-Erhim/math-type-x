@@ -116,7 +116,8 @@ function header(lang, slug) {
   <label class="menu-btn" for="menu"><span class="ic-open" aria-hidden="true">☰</span><span class="ic-close" aria-hidden="true">✕</span>${s.menu}</label>
   <nav class="main" aria-label="${lang === 'ar' ? 'القائمة الرئيسية' : 'Main'}"><ul>${links}</ul></nav>
   <div class="head-right"><a class="lang" href="${path(other(lang), slug)}" hreflang="${other(lang)}" lang="${other(lang)}" title="${esc(s.switchLabel)}">${globe}<span>${s.switchTo}</span></a><a class="btn btn-dark btn-sm" href="${x.u('editor')}">${s.openEditor}</a></div>
-</div></header>`;
+</div></header>
+<script>(function(){var m=document.getElementById('menu'),h=document.querySelector('.site-header');if(!m||!h)return;function f(){if(!m.checked)return;window.scrollTo({top:0,behavior:'instant'});var a=document.querySelector('.announce');document.documentElement.style.setProperty('--hb',(h.offsetHeight+(a?a.offsetHeight:0))+'px')}m.addEventListener('change',f);addEventListener('resize',f)})()</script>`;
 }
 
 function footer(lang) {
