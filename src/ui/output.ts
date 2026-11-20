@@ -45,7 +45,7 @@ export const OUTPUT_CSS = `
 
 export class OutputPanel {
   readonly root: HTMLElement;
-  private kind: Kind = 'mathml';
+  private kind: Kind = 'png';
   private body: HTMLElement;
   private status: HTMLElement;
   private copyBtn: HTMLButtonElement;
