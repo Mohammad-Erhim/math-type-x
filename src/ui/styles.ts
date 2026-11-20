@@ -12,8 +12,13 @@ export const CSS = `
 .wrs_header{position:absolute;left:0;top:1px;width:725px;height:25px;z-index:2}
 .wrs_header>button[role=tab]{position:absolute;top:3px;width:44px;height:21px;border:0;border-radius:0;background:url(${skin.tab}) no-repeat 0 0;cursor:default;overflow:hidden}
 .wrs_header>button[role=tab]:hover{background-image:url(${skin.tabHover})}
-/* right-to-left editing (Arabic) on phones and tablets: the tabs start from the right, the first tab is the right-most */
+/* right-to-left editing (Arabic): the tabs start from the right, the first tab is the right-most */
 .wrs_rtl.wrs_reflow .wrs_header{flex-direction:row-reverse}
+/* the wide layout: the tabs and the panel are placed from the right edge */
+.wrs_rtl:not(.wrs_reflow) .wrs_header{width:100%}
+.wrs_rtl:not(.wrs_reflow) .wrs_header>button[role=tab]{left:auto!important;right:calc(var(--ti,0) * 46px)}
+.wrs_rtl:not(.wrs_reflow) .wrs_multipleRowPanel{left:auto!important;right:3px;transform:scaleX(-1)}
+.wrs_rtl:not(.wrs_reflow) .wrs_multipleRowPanel>*{transform:scaleX(-1)}
 .wrs_rtl.wrs_reflow .wrs_tabCaption{text-align:right}
 /* ... and the controls of the panel start from the right: the panel is mirrored, each control is turned back so icons and text read normally */
 .wrs_rtl.wrs_reflow .wrs_multipleRowPanel{transform:scaleX(-1)}
