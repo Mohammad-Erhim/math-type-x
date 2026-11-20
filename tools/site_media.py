@@ -70,6 +70,11 @@ def logo(size):
 for n in (32, 48, 96, 180, 192, 512):
     logo(n).save(os.path.join(OUT, f'icon-{n}.png'))
 logo(512).save(os.path.join(OUT, 'logo.png'))
+# the maskable app icon (installed app): the logo on a full navy square, inside the safe zone
+_m = Image.new('RGBA', (512, 512), (*NAVY, 255))
+_l = logo(512).resize((338, 338), Image.LANCZOS)
+_m.paste(_l, (87, 87), _l)
+_m.save(os.path.join(OUT, 'icon-maskable-512.png'))
 
 BOLD = lambda n: ImageFont.truetype(os.path.join(FD, 'LiberationSans-Bold.ttf'), n)
 REG = lambda n: ImageFont.truetype(os.path.join(FD, 'LiberationSans-Regular.ttf'), n)
