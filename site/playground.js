@@ -18,6 +18,19 @@
     : { saved: 'Image downloaded', copied: 'Image copied', fail: 'Could not make the image. Add something to the equation first.', empty: 'Type an equation first' };
   var say = function (m) { status.textContent = m; clearTimeout(say.t); say.t = setTimeout(function () { status.textContent = ''; }, 4000); };
 
+  // the editor of the playground; Arabic switched off in the Arabic editor (or on in the English one) turns it into the other language
+  function make(edLang, mml) {
+    if (editor) { try { editor.destroy(); } catch (e) {} host.innerHTML = ''; }
+    editor = MathTypeX.JsEditor.newInstance({ language: edLang, layout: 'auto', services: { local: true }, persist: '', detectHand: false });
+    editor.insertInto(host);
+    window.mtxPlayground = editor;
+    editor.on('rtltoggle', function (e) {
+      var wrong = (edLang === 'ar' && !e.rtl) || (edLang !== 'ar' && e.rtl);
+      if (wrong) make(edLang === 'ar' ? 'en' : 'ar', e.mathml);
+    });
+    if (mml) editor.on('ready', function () { editor.setMathML(mml); editor.focus(); });
+  }
+
   function start() {
     if (started) return;
     started = true;
@@ -25,13 +38,11 @@
     s.src = cfg.editorSrc;
     s.async = true;
     s.onload = function () {
-      editor = MathTypeX.JsEditor.newInstance({ language: lang, layout: 'auto', services: { local: true }, persist: '', detectHand: false });
-      editor.insertInto(host);
+      make(lang, null);
       load.hidden = true;
       png.disabled = false;
       png.hidden = false;
       if (navigator.clipboard && window.ClipboardItem) copy.hidden = false;
-      window.mtxPlayground = editor;
     };
     s.onerror = function () { started = false; say(ar ? 'تعذّر تحميل المحرر. جرّب المحرر الكامل.' : 'The editor could not load. Try the full editor.'); };
     document.head.appendChild(s);

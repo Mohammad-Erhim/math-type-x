@@ -56,7 +56,7 @@ export interface EditorOptions {
   persist?: string;
 }
 
-type Ev = 'ready' | 'change' | 'focus' | 'blur' | 'tabchange' | 'handstart' | 'handend';
+type Ev = 'ready' | 'change' | 'focus' | 'blur' | 'tabchange' | 'handstart' | 'handend' | 'rtltoggle';
 
 const DEFAULTS: Required<Omit<EditorOptions, 'services' | 'mml' | 'reservedWords' | 'fontsUrl' | 'persist'>> = {
   language: 'en',
@@ -909,6 +909,8 @@ export class MathEditor implements ToolbarHost {
     else if (/^Right to left/.test(t)) {
       core.setRtl(!core.rtl);
       this.applyArabicMode(core.rtl);
+      // the person switched Arabic on / off by hand: the page may switch the whole editor to the other language
+      this.emitEv('rtltoggle', { rtl: core.rtl, language: this.lang, mathml: this.getMathML() });
     }
     else if (/^Arabic ligature/.test(t)) {
       core.modes.arabicLigature = !core.modes.arabicLigature;
