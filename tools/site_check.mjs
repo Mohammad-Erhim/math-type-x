@@ -19,6 +19,8 @@ for (const u of urls) {
   const canon = (h.match(/<link rel="canonical" href="([^"]*)"/) || [])[1];
   const ld = [...h.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
   let ldOk = true; for (const m of ld) { try { JSON.parse(m[1]); } catch { ldOk = false; } }
+  // every inline script must parse (an escaped slash in a template string once turned a script into a comment)
+  let jsOk = true; for (const m of h.matchAll(/<script>([\s\S]*?)<\/script>/g)) { try { new Function(m[1]); } catch { jsOk = false; } }
   const dupT = seen.has(title); seen.add(title);
   const warn = [];
   if (title.length > 70) warn.push('title ' + title.length);
@@ -27,6 +29,7 @@ for (const u of urls) {
   if (h1 !== 1 && u.includes('/editor/')) warn.push('editor h1 x' + h1);
   if (canon !== u) warn.push('canonical ' + canon);
   if (!ldOk) warn.push('bad json-ld');
+  if (!jsOk) warn.push('inline script does not parse');
   if (dupT) warn.push('duplicate title');
   // links
   for (const m of h.matchAll(/(?:href|src)="([^"#]+)(?:#[^"]*)?"/g)) {
