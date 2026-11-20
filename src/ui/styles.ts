@@ -15,6 +15,9 @@ export const CSS = `
 /* right-to-left editing (Arabic) on phones and tablets: the tabs start from the right, the first tab is the right-most */
 .wrs_rtl.wrs_reflow .wrs_header{flex-direction:row-reverse}
 .wrs_rtl.wrs_reflow .wrs_tabCaption{text-align:right}
+/* ... and the controls of the panel start from the right: the panel is mirrored, each control is turned back so icons and text read normally */
+.wrs_rtl.wrs_reflow .wrs_multipleRowPanel{transform:scaleX(-1)}
+.wrs_rtl.wrs_reflow .wrs_multipleRowPanel>*{transform:scaleX(-1)}
 .wrs_header>button[role=tab] .wrs_imageContainer{position:absolute;left:7px;top:1px;width:30px;height:20px;pointer-events:none}
 .wrs_header>button[role=tab].wrs_context{background-image:url(${skin.ctx})}
 .wrs_header>button[role=tab].wrs_context:hover{background-image:url(${skin.ctxHover})}

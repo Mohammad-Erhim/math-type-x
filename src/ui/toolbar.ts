@@ -314,7 +314,8 @@ export class Toolbar {
     const cur = rect(btn);
     let best: HTMLButtonElement | null = null;
     let bd = Infinity;
-    const rtl = parent.closest('.wrs_rtl') !== null;
+    // the arrows follow the picture: the panel is mirrored only in the narrow layout
+    const rtl = parent.closest('.wrs_rtl.wrs_reflow') !== null;
     const dir = e.key === 'ArrowLeft' ? (rtl ? 'r' : 'l') : e.key === 'ArrowRight' ? (rtl ? 'l' : 'r') : e.key === 'ArrowUp' ? 'u' : e.key === 'ArrowDown' ? 'd' : '';
     if (e.key === 'Escape') {
       // Esc did not move focus back to the editing area in the reference
