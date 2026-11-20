@@ -1495,7 +1495,8 @@ export class EditorCore {
       row[i] = el;
     }
     const attr = dir === 'up' || dir === 'down' ? 'voffset' : 'lspace';
-    const delta = dir === 'up' || dir === 'left' ? -1 : 1;
+    // left / right follow the screen: in a right-to-left formula a positive lspace moves the element to the left
+    const delta = dir === 'up' ? -1 : dir === 'down' ? 1 : (dir === 'left') === !this.rtl ? -1 : 1;
     const cur = parseInt((getAttr(el, attr) ?? '0').replace('px', ''), 10) || 0;
     const nv = cur + delta;
     const text = nv === 0 ? null : (nv > 0 ? '+' : '-') + Math.abs(nv) + 'px';

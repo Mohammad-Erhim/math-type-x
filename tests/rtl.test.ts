@@ -116,3 +116,18 @@ test('the exponent of an inverse function follows the typed digit set (Arabic-In
     assert.ok(set === 'western' ? m.includes('<mn>1</mn>') : m.includes(`<mn>&#x${cp};</mn>`), set + ' ' + m);
   }
 });
+
+// the nudge buttons follow the screen: in a right-to-left formula a positive lspace moves the element left
+test('nudge left / right move the symbol the way the arrow points, in both directions', () => {
+  const lspace = (rtl: boolean, dir: 'left' | 'right') => {
+    const ed = new EditorCore();
+    ed.setMathML('<math xmlns="http://www.w3.org/1998/Math/MathML"><mi>a</mi><mi>b</mi></math>');
+    ed.setRtl(rtl, false);
+    ed.nudge(dir);
+    return /lspace="([^"]+)"/.exec(ed.getMathML())?.[1];
+  };
+  assert.equal(lspace(false, 'left'), '-1px');
+  assert.equal(lspace(false, 'right'), '+1px');
+  assert.equal(lspace(true, 'left'), '+1px');
+  assert.equal(lspace(true, 'right'), '-1px');
+});
