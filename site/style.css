@@ -68,6 +68,7 @@ nav.main .nav-cta{display:none}
   :lang(ar) nav.main a[aria-current=page]{box-shadow:inset -4px 0 0 var(--ink)}
   nav.main .nav-cta{display:block;padding:14px 20px 18px;border-top:1px solid var(--line)}
   nav.main .nav-cta a{color:#fff;justify-content:center;min-height:48px;padding:12px 22px;border-radius:10px}
+  nav.main .nav-cta a:hover,nav.main .nav-cta a:focus-visible{background:#000;color:#fff}
   nav.main .nav-cta a::after{content:none}
   .menu-btn .ic-close{display:none}
   .menu-toggle:checked ~ .site-header .menu-btn .ic-open{display:none}
