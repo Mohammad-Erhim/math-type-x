@@ -105,7 +105,7 @@ ${cfg.gaId ? `<script async src="https://www.googletagmanager.com/gtag/js?id=${c
 function header(lang, slug) {
   const s = SITE[lang];
   const x = ctx(lang);
-  const links = s.nav.map(([sl, label]) => `<li><a href="${x.u(sl)}"${sl === slug ? ' aria-current="page"' : ''}>${label}</a></li>`).join('');
+  const links = s.nav.map(([sl, label]) => `<li><a href="${x.u(sl)}"${sl === slug ? ' aria-current="page"' : ''}>${label}</a></li>`).join('') + `<li class="nav-cta"><a class="btn btn-dark" href="${x.u('editor')}">${s.openEditor}</a></li>`;
   const bar = lang === 'ar' ? 'جرّب MathTypeX الآن – بلا تسجيل.' : 'Try MathTypeX right now – no sign-up needed.';
   const globe = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>';
   return `<a class="skip" href="#main">${s.skip}</a>
@@ -113,7 +113,7 @@ function header(lang, slug) {
 <input type="checkbox" id="menu" class="menu-toggle" aria-label="${s.menu}">
 <header class="site-header"><div class="wrap bar">
   <a class="brand" href="${x.u('')}"><img src="${BASE}/media/icon-192.png" width="38" height="38" alt="">MathTypeX</a>
-  <label class="menu-btn" for="menu">☰ ${s.menu}</label>
+  <label class="menu-btn" for="menu"><span class="ic-open" aria-hidden="true">☰</span><span class="ic-close" aria-hidden="true">✕</span>${s.menu}</label>
   <nav class="main" aria-label="${lang === 'ar' ? 'القائمة الرئيسية' : 'Main'}"><ul>${links}</ul></nav>
   <div class="head-right"><a class="lang" href="${path(other(lang), slug)}" hreflang="${other(lang)}" lang="${other(lang)}" title="${esc(s.switchLabel)}">${globe}<span>${s.switchTo}</span></a><a class="btn btn-dark btn-sm" href="${x.u('editor')}">${s.openEditor}</a></div>
 </div></header>`;
