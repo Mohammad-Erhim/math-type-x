@@ -67,6 +67,13 @@ All notable changes are documented here. The format follows
 - Service worker: caches are named `mtx2-…`; the first activation after the older workers reloads the open pages once so an
   installed app that still shows an old version updates by itself; an untouched open page also refreshes when a new worker takes over.
 
+### Changed (right-to-left button)
+- The *Right to left editing* button now switches the whole editor from the first tap: turning Arabic off in the Arabic editor (or on
+  in the English one) moves to the editor of the other language – the full-page editor opens the other language's page, the home page
+  playground rebuilds its editor in place – and the formula goes along. The editor emits a new `rtltoggle` event (`{ rtl, language,
+  mathml }`) so an embedding page can do the same; without a handler the typing options (digits, Arabic ligature, Arabic font, Arabic
+  differential) follow the direction.
+
 ### Fixed
 - Several details found in review: panel scroll cue and border, shaded line under the wide toolbar panel, doubled border of the
   Arabic background toggle, off-screen palettes, stale pages after a site update.
