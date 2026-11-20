@@ -206,7 +206,7 @@ export const CSS = `
 .wrs_sentinel{height:1px;width:1px;margin:0;padding:0;pointer-events:none;visibility:hidden}
 /* narrow windows: a short panel that scrolls. Its height follows the window in CSS alone (dvh: a soft keyboard makes it
    shorter in the same frame, without script); the scroll cues say that there is more */
-.wrs_reflow .wrs_panelContainer{height:auto;border-radius:0;max-height:112px;max-height:clamp(80px,22dvh,112px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f8793 transparent;-webkit-overflow-scrolling:touch;contain:layout paint}
+.wrs_reflow .wrs_panelContainer{height:auto;border-radius:0;max-height:104px;max-height:clamp(76px,20dvh,104px);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#6f8793 transparent;-webkit-overflow-scrolling:touch;contain:layout paint}
 .wrs_reflow .wrs_panelContainer::-webkit-scrollbar{display:block;width:6px}
 .wrs_reflow .wrs_panelContainer::-webkit-scrollbar-thumb{background:#6f8793;border-radius:3px}
 .wrs_scrollCue{display:none}
