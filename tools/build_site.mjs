@@ -99,6 +99,7 @@ function head({ lang, slug, title, description, og, noindex, schema, styles }) {
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="MathTypeX">
 <script>if('serviceWorker' in navigator)addEventListener('load',function(){navigator.serviceWorker.register('${BASE}/sw.js',{scope:'${BASE}/',updateViaCache:'none'}).catch(function(){})})</script>
+<script>(function(){var sa=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;if(sa){var r0=document.documentElement,ar0=location.pathname.indexOf('${BASE}/ar/')===0;r0.classList.add('standalone');if(location.pathname.slice(-8)!=='/editor/')location.replace('${BASE}'+(ar0?'/ar':'')+'/editor/')}})()</script>
 <script>(function(){var d,r=document.documentElement;addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;r.classList.add('can-install')});addEventListener('appinstalled',function(){d=null;r.classList.remove('can-install')});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-install]');if(!b||!d)return;e.preventDefault();d.prompt();d.userChoice.then(function(){d=null;r.classList.remove('can-install')})})})()</script>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-naskh-arabic-700' : 'roboto-slab-700'}.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-sans-arabic-400' : 'noto-sans-400'}.woff2" as="font" type="font/woff2" crossorigin>

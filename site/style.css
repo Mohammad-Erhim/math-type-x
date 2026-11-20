@@ -258,6 +258,9 @@ body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));
 /* phones and low windows: no top bar at all (the editor gets the whole height); the language switch and the home link sit in the export bar at the bottom */
 @media (max-width:724px),(max-height:480px){.app-bar{display:none}body.app{--bar:0px}}
 .mtx_dock{display:none}
+/* the installed app: only the editor and the language switch (no link to the website, no install button) */
+html.standalone .mtx_dock .mtx_home,html.standalone .mtx_dock .mtx_install,html.standalone .app-bar .inst,html.standalone .app-bar .upd,html.standalone .app-bar .sp a:not([hreflang]){display:none!important}
+html.standalone .app-bar .brand{pointer-events:none}
 @media (max-width:724px),(max-height:480px){
   .mtx_dock{display:flex;align-items:stretch;height:46px;border-top:1px solid #778e9a;background:linear-gradient(#f6f9fa,#e3eaed)}
   #outputContainer .mtx_dock .mtx_exportBar{flex:1 1 auto;width:auto;min-width:0;border-top:0;background:none}
