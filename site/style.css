@@ -44,7 +44,9 @@ nav.main{margin-inline-start:12px}
 nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;align-items:center}
 nav.main a{display:block;padding:9px 12px;border-radius:8px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.97rem}
 nav.main a:hover,nav.main a[aria-current=page]{background:var(--gray)}
-nav.main .nav-cta{display:none}
+nav.main .nav-cta,nav.main .nav-install{display:none}
+[data-install]{display:none}
+html.can-install [data-install]{display:inline-flex}
 .head-right{margin-inline-start:auto;display:flex;align-items:center;gap:12px}
 .lang{display:inline-flex;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-weight:700;padding:8px 10px;border-radius:8px}
 .lang:hover{background:var(--gray);color:var(--ink)}
@@ -63,6 +65,8 @@ nav.main .nav-cta{display:none}
   nav.main ul{flex:1 1 auto;display:flex;flex-direction:column;align-items:stretch;gap:2px}
   nav.main a{padding:14px 14px;font-size:1.05rem}
   nav.main .nav-cta{display:block;padding:10px 0 0;margin-top:auto}
+  html.can-install nav.main .nav-install{display:block;padding:8px 0 0}
+  nav.main .nav-install .btn{width:100%;justify-content:center;min-height:48px}
   nav.main .nav-cta a{display:flex;color:#fff;justify-content:center;min-height:48px;padding:12px 22px;border-radius:10px}
   nav.main .nav-cta a:hover,nav.main .nav-cta a:focus-visible{background:#000;color:#fff}
   .menu-btn .ic-close{display:none}
@@ -242,6 +246,10 @@ main .prose pre code,main .narrow pre code{background:none;padding:0}
 .app-bar .brand img{width:26px;height:26px;border-radius:6px}
 .app-bar .sp{margin-inline-start:auto;display:flex;align-items:center;gap:16px}
 .app-bar .upd{color:#9fb0bd;font-size:.8rem;font-weight:400}
+.app-bar .inst{display:none}
+html.can-install .app-bar .inst{display:inline-block}
+.app-bar .inst{background:none;border:1px solid #5d727d;border-radius:6px;color:#dbe6ee;font:700 .8rem Arial,sans-serif;padding:4px 10px;cursor:pointer}
+.app-bar .inst:hover{background:#2b3a4d;color:#fff}
 body.app{height:100%;margin:0;background:#fff;overflow:hidden}
 body.app{--bar:46px}
 body.app .page{height:calc(100vh - var(--bar));height:calc(100dvh - var(--bar));height:calc(var(--app-h,100dvh) - var(--bar))}
