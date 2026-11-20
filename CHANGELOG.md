@@ -29,6 +29,39 @@ All notable changes are documented here. The format follows
   reference, recorded evidence, CI workflow.
 - Documentation: SRS and functional reference PDFs, architecture, services, testing.
 
+### Added (installable app, offline)
+- **Installable web app (PWA).** `manifest.webmanifest` (id, standalone display, 192 / 512 icons and a maskable icon, shortcuts to
+  the English and Arabic editors) and a generated service worker `sw.js` (`tools/build_site.mjs`): the pages, the editor, its fonts
+  and the icons are pre-cached, so the editor works with no network (typing, conversions, PNG / SVG export). Pages are
+  fetched network-first with revalidation (GitHub Pages sends `max-age=600`), files cache-first, versioned files
+  (`editor.js?v=…`) are matched exactly so an older script is never served for a newer page, and a new version replaces the old
+  cache. Verified offline in a real browser (`Page.getInstallabilityErrors`: installable).
+- **Install buttons**: on the website menu (phones), in the editor top bar (desktop) and in the bottom bar of the phone editor;
+  shown only when the browser fires `beforeinstallprompt`, hidden again after installing (iPhone: Share → Add to Home Screen).
+- **Installed app mode** (`display-mode: standalone`): only the editor and the language switch – no website links, no install
+  button; any website page opens the editor in the same language.
+- Landing page, features page, guide, FAQ, About / Privacy and the app structured data describe installing and working offline,
+  in English and Arabic (new *Install MathTypeX as an app* section with per-platform steps).
+- The full-page editor bar shows the date of the last update (the visitor's own time zone).
+
+### Added (export, language, phones)
+- PNG export on a **white** (default) or **transparent** background (toggle in the output panel, remembered, checkerboard
+  preview); the output panel opens on PNG.
+- Switching language resets the language-related options (direction, font, Arabic ligature, digits) to the new language's
+  defaults and saves that state at once, also for older records without a language.
+- Arabic: tabs and toolbar controls start from the right (mirrored; icons keep their orientation, arrow keys follow the
+  picture); the contextual left / right nudge moves the symbol the way the arrow points in right-to-left formulas.
+- Phones: no top bar in the full-page editor (language switch and home link in the bottom bar, which hides while the keyboard is
+  open), full-width tabs, a 6 px gap around tabs, panel and text area, a one-line export footer, long palettes wrapped to the
+  screen width and a scaled periodic table, full-screen website menu that keeps the announcement bar, confirmation dialogs for
+  leaving and clearing (same look, tap outside to close, red buttons keep their colour on focus / hover / press).
+- Website: the header switches to the menu button up to 1200 px so Arabic labels no longer wrap; favicon set (`favicon.ico`,
+  48 / 96 px icons).
+
+### Fixed
+- Several details found in review: panel scroll cue and border, shaded line under the wide toolbar panel, doubled border of the
+  Arabic background toggle, off-screen palettes, stale pages after a site update.
+
 ### Added (behaviour pass)
 - Arabic: translated user interface (toolbar, pop-ups, output panel, demo page), right-to-left default, RTL layout with
   mirrored structures and glyphs, Arabic typing classes and function names, Arabic accessible text.

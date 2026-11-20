@@ -37,7 +37,8 @@ Full English interface out of the box – and, as a feature of its own, right-to
   the typing rules, the layout and the exports work right to left, with Arabic mathematical letters built in.
 * **Your formulas are yours.** Everything is stored as standard MathML, so it works in web pages, e-books and other
   editors, and exports to PNG images.
-* **Nothing to install for readers.** It is a web page: it runs in any modern browser on a computer, a tablet or a phone.
+* **Nothing to install – or install it as an app.** It is a web page that runs in any modern browser on a computer, a tablet or a
+  phone. Add it to your home screen or desktop and it opens straight to the editor in its own window and **works offline**.
 
 ## Turn on Arabic
 
@@ -106,8 +107,8 @@ arrow-key navigation through every structure, and select, copy and paste like in
 
 **Copy, export, share**
 
-Export the formula as a **PNG image**, with Arabic text shaped correctly. See the picture live in the output panel, then copy
-it or download it.
+Export the formula as a **PNG image**, with Arabic text shaped correctly, on a **white** (default) or a **transparent**
+background. The output panel opens on PNG; see the picture live, then copy, share or download it.
 
 </td>
 </tr>
@@ -177,10 +178,38 @@ The offset is saved inside the formula (as standard MathML), so it survives copy
 * There is a separate control, *Elements stacked, same size* (Scripts and layout tab), for two items one above the other at
   full size – nest it for as many levels as you need.
 
+## Install it as an app – works offline
+
+MathTypeX is an installable web app (PWA). Install it once and it opens like any other app, straight to the editor, even with
+no internet connection.
+
+| Where | How |
+| --- | --- |
+| Android – Chrome | Tap the **Install app** button (the download icon in the bottom bar of the phone editor, or the button on the website), or use the browser menu → *Install app* |
+| iPhone and iPad – Safari | **Share** → **Add to Home Screen** |
+| Windows, Mac, Linux – Chrome or Edge | **Install app** in the editor's top bar or on the website, or the install icon in the address bar |
+
+* **Works offline.** After the first visit the pages, the editor, its fonts and the image export are saved on the device by a
+  service worker. Equations, PNG / SVG export and conversions all run in the browser, so nothing needs a connection.
+* **Only the editor.** The installed app shows the editor and the language switch – no website menu, no home link, no install
+  button. Any website page opened inside the app goes to the editor in the same language.
+* **Always current.** While you are online the app asks for a fresh copy of each page, and a new version replaces the saved one
+  (no manual update). The install button appears only when the browser offers the installation.
+* **Private.** The saved files are the public site files; no equation or personal data is in them.
+
 ## Works on phones and tablets
 
-On small screens the editor switches to a fluid layout: bigger touch targets, scrolling tab strip, an on-screen arrow pad (the
-soft keyboard has none), and the output as a slide-up bar.
+On small screens the editor switches to a fluid layout: bigger touch targets, an on-screen arrow pad (the soft keyboard has
+none), and the output as a slide-up bar. In the full-page editor:
+
+* the text area gets the whole height – there is no top bar, the language switch sits next to **Export** in the bottom bar, and
+  that bar steps aside while the keyboard is open;
+* tabs, toolbar and text area share the same width; long palettes wrap into rows that fit the screen and the periodic table is
+  shown whole;
+* the export footer is one line: **White | Transparent** background, Share, Copy, Download;
+* leaving by the logo or the language button, and clearing the formula, ask for confirmation first;
+* in Arabic the tabs and the toolbar start from the right, and switching language resets the language options
+  (direction, font, Arabic ligature, digits) to the new language's defaults – your equation stays.
 
 <p align="center">
 <img src="docs/media/phone.png" alt="The editor on a phone" width="240">

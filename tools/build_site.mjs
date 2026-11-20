@@ -148,12 +148,12 @@ const orgSchema = () => ({
 });
 const appSchema = (lang) => ({
   '@type': 'SoftwareApplication', '@id': `${abs(BASE + '/')}#app`, name: cfg.siteName, url: abs(path(lang, '')),
-  applicationCategory: 'EducationalApplication', operatingSystem: 'Any (web browser)', browserRequirements: 'Requires JavaScript. Works in current Chrome, Edge, Firefox and Safari.',
+  applicationCategory: 'EducationalApplication', operatingSystem: 'Any (web browser; installable as an app)', browserRequirements: 'Requires JavaScript. Works in current Chrome, Edge, Firefox and Safari.',
   description: PAGES[''][lang].description, inLanguage: ['en', 'ar'], image: abs(`${BASE}/media/og-home.png`),
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
   featureList: lang === 'ar'
-    ? ['كتابة المعادلات من اليمين إلى اليسار', 'واجهة عربية كاملة', 'حروف رياضية عربية', 'علامات المشتقة', 'ضبط دقيق للمواضع', 'تصدير صورة PNG', 'يعمل على الهاتف']
-    : ['Right-to-left equation writing', 'Fully translated Arabic interface', 'Arabic math letters', 'Derivative marks', 'Exact positioning', 'PNG image export', 'Works on phones and tablets'],
+    ? ['كتابة المعادلات من اليمين إلى اليسار', 'واجهة عربية كاملة', 'حروف رياضية عربية', 'علامات المشتقة', 'ضبط دقيق للمواضع', 'تصدير صورة PNG بخلفية بيضاء أو شفافة', 'يعمل على الهاتف', 'يُثبَّت كتطبيق (PWA)', 'يعمل بلا إنترنت']
+    : ['Right-to-left equation writing', 'Fully translated Arabic interface', 'Arabic math letters', 'Derivative marks', 'Exact positioning', 'PNG image export with a white or transparent background', 'Works on phones and tablets', 'Installable as an app (PWA)', 'Works offline'],
   publisher: { '@id': `${abs(BASE + '/')}#org` },
 });
 const crumbs = (lang, slug, name) => ({
@@ -213,8 +213,8 @@ function renderPrivacy(lang) {
     ? { title: 'الخصوصية | MathTypeX', description: 'كيف يتعامل MathTypeX مع بياناتك: المحرر يعمل في متصفحك ولا يرفع معادلاتك.', h1: 'الخصوصية', lead: 'ببساطة: معادلاتك تبقى عندك.' }
     : { title: 'Privacy | MathTypeX', description: 'How MathTypeX treats your data: the editor runs in your browser and does not upload your equations.', h1: 'Privacy', lead: 'In short: your equations stay with you.' };
   const body = ar
-    ? `<p>يعمل محرر MathTypeX وتصدير الصور بالكامل داخل متصفحك. لا تُرسل معادلاتك إلى أي خادم، ولا يتطلب الموقع حسابًا.</p><p>يحفظ المحرر في متصفحك (التخزين المحلي) معادلتك الأخيرة وبعض تفضيلاتك مثل التبويب المفتوح، لتجدها عند عودتك. يمكنك مسحها بمسح بيانات الموقع في المتصفح.</p><p>تُستضاف الصفحات على GitHub Pages، وقد يسجّل المستضيف بيانات تقنية قياسية مثل عنوان IP عند طلب الصفحات، وفق سياسته. ونستخدم Google Analytics لعدّ الزيارات (مثل الصفحات المعروضة وبلد الزائر)، ولا يستقبل معادلاتك أبدًا. ونستخدم كذلك Google Search Console لفهم ظهور الموقع في نتائج البحث.</p>`
-    : `<p>The MathTypeX editor and its image export run entirely inside your browser. Your equations are not sent to a server, and the site needs no account.</p><p>The editor keeps your last equation and a few preferences, such as the open tab, in your browser's local storage so they are there when you return. You can remove them by clearing the site data in your browser.</p><p>The pages are hosted on GitHub Pages, which may log standard technical data such as IP addresses when pages are requested, under its own policy. We use Google Analytics to count visits (for example which pages are viewed and from which country); it never receives your equations. We also use Google Search Console to understand how the site appears in search.</p>`;
+    ? `<p>يعمل محرر MathTypeX وتصدير الصور بالكامل داخل متصفحك. لا تُرسل معادلاتك إلى أي خادم، ولا يتطلب الموقع حسابًا.</p><p>يحفظ المحرر في متصفحك (التخزين المحلي) معادلتك الأخيرة وبعض تفضيلاتك مثل التبويب المفتوح، لتجدها عند عودتك. يمكنك مسحها بمسح بيانات الموقع في المتصفح.</p><p>للعمل بلا إنترنت وللتثبيت كتطبيق يحفظ المتصفح ملفات الموقع (الصفحات والمحرر والخطوط) في ذاكرة التخزين على جهازك. هذه الملفات هي نفسها التي يحملها أي زائر ولا تحوي معادلاتك ولا بياناتك الشخصية.</p><p>تُستضاف الصفحات على GitHub Pages، وقد يسجّل المستضيف بيانات تقنية قياسية مثل عنوان IP عند طلب الصفحات، وفق سياسته. ونستخدم Google Analytics لعدّ الزيارات (مثل الصفحات المعروضة وبلد الزائر)، ولا يستقبل معادلاتك أبدًا. ونستخدم كذلك Google Search Console لفهم ظهور الموقع في نتائج البحث.</p>`
+    : `<p>The MathTypeX editor and its image export run entirely inside your browser. Your equations are not sent to a server, and the site needs no account.</p><p>The editor keeps your last equation and a few preferences, such as the open tab, in your browser's local storage so they are there when you return. You can remove them by clearing the site data in your browser.</p><p>To work offline and to install the app, your browser keeps the site files (the pages, the editor and the fonts) in storage on your device. They are the same files every visitor loads and they hold neither your equations nor any personal data.</p><p>The pages are hosted on GitHub Pages, which may log standard technical data such as IP addresses when pages are requested, under its own policy. We use Google Analytics to count visits (for example which pages are viewed and from which country); it never receives your equations. We also use Google Search Console to understand how the site appears in search.</p>`;
   const html = `${head({ lang, slug: 'privacy', title: meta.title, description: meta.description, schema: [] })}
 <body>
 ${header(lang, 'privacy')}
@@ -243,8 +243,8 @@ function renderEditor(lang) {
   const x = ctx(lang);
   const ar = lang === 'ar';
   const meta = ar
-    ? { title: 'المحرر الكامل – محرر المعادلات MathTypeX', description: 'محرر معادلات رياضية بملء الصفحة: اكتب بالعربية أو الإنجليزية، ونزّل معادلتك صورة PNG. يعمل في متصفحك دون تثبيت.', h1: 'محرر المعادلات MathTypeX', intro: 'استخدم شريط الأدوات أو لوحة المفاتيح لبناء معادلتك، ثم افتح تبويب PNG لتنزيلها صورة.' }
-    : { title: 'Full-Page Equation Editor – MathTypeX', description: 'The full-page equation editor: write in English or Arabic and download your equation as a PNG image. Runs in your browser, nothing to install.', h1: 'MathTypeX equation editor', intro: 'Use the toolbar or the keyboard to build your equation, then open the PNG tab to download it as an image.' };
+    ? { title: 'المحرر الكامل – محرر المعادلات MathTypeX', description: 'محرر معادلات رياضية بملء الصفحة: اكتب بالعربية أو الإنجليزية، ونزّل معادلتك صورة PNG. يعمل في متصفحك، ويمكنك تثبيته كتطبيق ليعمل بلا إنترنت.', h1: 'محرر المعادلات MathTypeX', intro: 'استخدم شريط الأدوات أو لوحة المفاتيح لبناء معادلتك، ثم افتح تبويب PNG لتنزيلها صورة.' }
+    : { title: 'Full-Page Equation Editor – MathTypeX', description: 'The full-page equation editor: write in English or Arabic and download your equation as a PNG image. Runs in your browser; install it as an app to work offline.', h1: 'MathTypeX equation editor', intro: 'Use the toolbar or the keyboard to build your equation, then open the PNG tab to download it as an image.' };
   const schema = [{ '@context': 'https://schema.org', '@graph': [crumbs(lang, 'editor', ar ? 'المحرر' : 'Editor'), appSchema(lang)] }];
   const h = head({ lang, slug: 'editor', title: meta.title, description: meta.description, schema, styles: appCss + '\n' + editorPageCss.replace(/html\{color-scheme[^}]*\}/, '') });
   return `${h}

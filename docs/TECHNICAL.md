@@ -37,6 +37,28 @@ The page is static files plus an optional services server, so there are two ways
   `https://example.com`) and `CNAME` (`example.com`). `node tools/static_e2e.js` checks the static build in a real browser
   against the server's images. See [SEO.md](SEO.md) for the search-engine setup.
 
+## Installable app and offline use (PWA)
+
+The website (`tools/build_site.mjs`) is an installable progressive web app. Everything is generated at build time:
+
+* `manifest.webmanifest` – `id`, `start_url` (`…/editor/?source=pwa`), `scope`, `display: standalone`, icons (192, 512 and a
+  maskable 512 made by `tools/site_media.py`), shortcuts to the English and Arabic editors. Every page links it and registers the
+  worker (`updateViaCache: 'none'`).
+* `sw.js` – the cache name is a hash of the pre-cached files, so a new build replaces the old cache. Install fetches every file
+  of the build (pages, `assets/`, fonts, icons; not the videos or the share images) **past the browser cache**
+  (`cache: 'reload'`). Navigations go network-first with revalidation (`no-cache`, 4 s timeout) and fall back to the saved page, then to the
+  editor of the same language; other files are cache-first with an **exact** match (versioned files such as `editor.js?v=…` are never
+  answered by another version) and fall back to any saved copy only when the network fails.
+* Installed mode (`display-mode: standalone`, or `navigator.standalone` on iOS): the page script adds `html.standalone`; the
+  CSS hides the website links, the home link and the install buttons, and a page that is not an editor page redirects to the editor
+  of the same language.
+* Install buttons use `beforeinstallprompt` (captured in the page head) and are hidden until the browser offers the install.
+* The offline copy holds only public site files; the formula and preferences live in `localStorage` (`persist`).
+
+To check it: serve `dist-site` over HTTP (a server that sends `Cache-Control: max-age=600` reproduces GitHub Pages), load the
+editor once, then cut the network – the editor, typing and PNG export keep working; Chrome DevTools → Application shows the
+manifest and the worker, and `Page.getInstallabilityErrors` lists what blocks the install.
+
 ## Responsive layout
 
 * **Wide screens** (container ≥ 725 px and window ≥ 480 px high): the classic 725 × 415 widget, pixel for pixel as before.
