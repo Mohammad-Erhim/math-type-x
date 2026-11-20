@@ -163,7 +163,7 @@ export const CSS = `
 .wrs_fluid .wrs_formulaDisplay{width:100%;height:100%;font-size:16px}
 .wrs_fluid.wrs_noHand .wrs_formulaDisplayWrapper{margin-right:0}
 .wrs_fluid.wrs_noHand .wrs_formulaDisplay{width:100%}
-@media (max-width:724px){.wrs_fluid .wrs_formulaDisplay{border-left-width:0;border-right-width:0}}
+@media (max-width:724px){.wrs_fluid .wrs_formulaDisplay{border-width:0}}
 .wrs_fluid .wrs_handWrapper{left:auto;right:0;top:calc(25px * var(--wrs-k) + 72px * var(--wrs-k));bottom:0;width:var(--wrs-strip);height:auto;border:0}
 .wrs_fluid .wrs_handWrapper .wrs_handStrip{left:0;top:0;width:100%;height:100%}
 .wrs_fluid .wrs_handWrapper .wrs_handStrip svg{position:absolute;left:50%;top:50%;margin-left:-15px;margin-top:-158px}
