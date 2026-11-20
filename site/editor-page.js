@@ -15,6 +15,9 @@
     var kbd = base - h > 120 && window.matchMedia('(max-width:724px),(max-height:480px)').matches;
     root.classList.toggle('kbd', kbd);
     if (h > 0) root.style.setProperty('--app-h', Math.round(h) + 'px');
+    // the visible area may have been panned down by the keyboard: the page follows it, so no blank area shows below
+    var top = vv && vv.scale <= 1.02 ? Math.max(0, Math.round(vv.offsetTop)) : 0;
+    root.style.setProperty('--vv-top', top + 'px');
     if (window.scrollY || window.scrollX) window.scrollTo(0, 0);
   };
   fit();
