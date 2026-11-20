@@ -39,6 +39,8 @@ export const OUTPUT_CSS = `
 .mtx_foot{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:4px 10px;border-top:1px solid #d3dce1;background:#eef2f4;flex:none}
 .mtx_status{flex:1 1 120px;color:#5d727d;font-size:11px}
 .mtx_foot button{padding:3px 10px;border:1px solid #778e9a;border-radius:3px;background:linear-gradient(#fff,#e6edf0);font:700 11px Arial,sans-serif;color:#18212f;cursor:pointer}
+.mtx_acts{display:flex;gap:6px;margin-inline-start:auto}
+@media (max-width:560px){.mtx_foot{padding:8px 10px;gap:8px}.mtx_status{flex:1 1 100%}.mtx_bg{flex:1 1 100%;justify-content:space-between}.mtx_acts{flex:1 1 100%}.mtx_acts button{flex:1;padding:8px 6px;font-size:12px}.mtx_bg .mtx_seg button{padding:7px 14px}}
 .mtx_foot button:disabled{opacity:.45;cursor:default}
 .mtx_foot button:focus-visible{outline:2px solid #ffcc00}
 `;
@@ -119,7 +121,8 @@ export class OutputPanel {
       seg.append(b);
     }
     this.bgBox = h('div', { class: 'mtx_bg', hidden: '' }, h('span', { text: 'Background' }), seg);
-    const foot = h('div', { class: 'mtx_foot' }, this.status, this.bgBox, ...(this.shareBtn ? [this.shareBtn] : []), this.copyBtn, this.dlBtn);
+    const acts = h('div', { class: 'mtx_acts' }, ...(this.shareBtn ? [this.shareBtn] : []), this.copyBtn, this.dlBtn);
+    const foot = h('div', { class: 'mtx_foot' }, this.status, this.bgBox, acts);
     this.root = h('section', { class: 'mtx_output', 'aria-label': 'Output' }, tabs, this.body, foot);
     container.append(this.root);
     // translated labels (the code shown in the body stays as it is)
