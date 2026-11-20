@@ -242,7 +242,7 @@ export const CSS = `
 .wrs_editor .wrs_navClear.wrs_navOff{opacity:.45;background:linear-gradient(#e6a9a5,#d68a85);border-color:#c9908c}
 .wrs_editor .wrs_navClear,.wrs_editor .wrs_navKeyboard,.wrs_editor .wrs_navBackspace{display:flex;flex-direction:column;align-items:center;justify-content:center}
 .wrs_navClear svg path{stroke:#fff}
-.wrs_confirm{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;width:min(300px,calc(100% - 32px));box-sizing:border-box;padding:16px;border:2px solid #778e9a;border-radius:6px;background:linear-gradient(#f6f9fa,#e3eaed);box-shadow:0 0 0 100vmax rgba(24,33,47,.38),0 6px 22px rgba(24,33,47,.35);font:700 15px/1.4 Arial,sans-serif;color:#324d5b;direction:ltr;text-align:center}
+.wrs_confirm{display:none;position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:9;width:min(300px,calc(100% - 32px));box-sizing:border-box;padding:16px;border:2px solid #778e9a;border-radius:6px;background:linear-gradient(#f6f9fa,#e3eaed);box-shadow:0 0 0 100vmax rgba(24,33,47,.38),0 6px 22px rgba(24,33,47,.35);font:700 15px/1.4 Arial,sans-serif;color:#324d5b;direction:ltr;text-align:center}
 .wrs_confirm.wrs_open{display:flex;flex-wrap:wrap;gap:10px}
 .wrs_confirmText{flex:1 1 100%;margin:0 0 4px}
 .wrs_editor .wrs_confirm button{flex:1 1 0;height:48px;min-width:0;margin:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);font:700 14px Arial,sans-serif;color:#324d5b}

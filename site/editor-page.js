@@ -122,9 +122,13 @@
     if (!window.matchMedia || !window.matchMedia('(pointer: coarse)').matches) return;
     if (outBox.classList.contains('mtx_open')) setOpen(false, true);
   });
-  // the editor's own "clear the whole formula?" box dims only the editor: dim the export section and the bottom bar too
-  var dimWatch = function () {
-    document.documentElement.classList.toggle('mtx_dim', !!document.querySelector('.wrs_confirm.wrs_open'));
-  };
-  new MutationObserver(dimWatch).observe(document.getElementById('editorContainer'), { subtree: true, attributes: true, attributeFilter: ['class'] });
+  // the last update, in the visitor's own time zone
+  try {
+    var up = document.querySelector('time.upd[datetime]');
+    if (up) {
+      var when = new Date(up.getAttribute('datetime'));
+      up.textContent = (up.getAttribute('data-label') || '') + new Intl.DateTimeFormat(ar ? 'ar' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).format(when);
+      up.title = when.toString();
+    }
+  } catch (err) {}
 })();

@@ -387,6 +387,19 @@ export class MathEditor implements ToolbarHost {
       this.core.reset();
       this.focusEditor();
     });
+    // a tap anywhere outside the box closes it (the dimmed area around it)
+    document.addEventListener(
+      'pointerdown',
+      (e) => {
+        if (!confirmBox.classList.contains('wrs_open')) return;
+        const t = e.target as Node | null;
+        if (t && (confirmBox.contains(t) || clear.contains(t))) return;
+        hideConfirm();
+        e.preventDefault();
+        e.stopPropagation();
+      },
+      true,
+    );
     confirmBox.addEventListener('keydown', (e) => {
       if ((e as KeyboardEvent).key === 'Escape') {
         hideConfirm();
