@@ -248,6 +248,8 @@ export const CSS = `
 .wrs_confirmText{flex:1 1 100%;margin:0 0 4px}
 .wrs_editor .wrs_confirm button{flex:1 1 0;height:48px;min-width:0;margin:0;border:2px solid #778e9a;border-radius:3px;background:linear-gradient(#f3f6f7,#dde6ea);font:700 14px Arial,sans-serif;color:#324d5b}
 .wrs_editor .wrs_confirm button:active{background:linear-gradient(#fffdf2,#f6efd0)}
+.wrs_editor .wrs_confirm .wrs_confirmYes:hover,.wrs_editor .wrs_confirm .wrs_confirmYes:focus,.wrs_editor .wrs_confirm .wrs_confirmYes:active{background:linear-gradient(#d94a42,#a82019);border-color:#8f1a15;color:#fff}
+.wrs_editor .wrs_confirm button:focus-visible{outline:3px solid #ffcc00;outline-offset:1px}
 .wrs_editor .wrs_confirm .wrs_confirmYes{background:linear-gradient(#ea5a52,#c62d26);border-color:#a3221c;color:#fff}
 /* touch devices have no hover: a tapped control must not stay highlighted */
 @media (hover:none){
