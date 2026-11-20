@@ -95,6 +95,7 @@ export const CSS = `
 .wrs_popup{position:absolute;z-index:20;padding:2px;background:#f3f5f6 url(${skin.bodyBg}) no-repeat 0 100%;background-size:auto 100%;border:1px solid #778e9a;border-radius:0 0 5px 5px}
 .wrs_popup.wrs_periodic::before{content:"";position:absolute;left:1px;top:1px;width:399px;height:200px;background:url(${skin.periodic}) no-repeat 50% 50%;background-size:100% 100%;pointer-events:none}
 .wrs_popup .wrs_button{position:absolute}
+.wrs_popup.wrs_popupScroll{overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#6f8793 transparent}
 .wrs_dialog{position:absolute;z-index:30;background:#ebeff2;border:1px solid #a9b4bb;font-size:12px;font-weight:700;color:#778e9a}
 .wrs_dialog label{position:absolute;white-space:nowrap}
 .wrs_dialog input,.wrs_dialog select{font:700 12px sans-serif;color:#000}
