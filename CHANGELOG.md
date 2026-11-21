@@ -87,6 +87,11 @@ All notable changes are documented here. The format follows
   the key the app follows the device's rotation setting (the installed app picks the change up when the browser refreshes its
   manifest, or after a re-install).
 
+### Added (back button)
+- The system Back button (and the browser's) in the full-page editor asks before leaving when there is a formula – the same *Leave the
+  editor?* box as the logo, Stay or Leave, Esc keeps you; an empty editor leaves at once. A history guard entry is added at the first
+  tap or key press (browsers skip entries made without one).
+
 ### Added (experimental)
 - `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an
   editable element instead of a text input, which Chrome on Android does not decorate with its autofill strip (passwords, cards,
