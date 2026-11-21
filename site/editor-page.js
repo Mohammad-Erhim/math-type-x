@@ -179,7 +179,35 @@
     if (pos > 0) armed = true;
   };
   ['click', 'pointerup', 'touchend', 'keydown'].forEach(function (t) { window.addEventListener(t, arm, { capture: true, passive: true }); });
-  var leave = function () { leaving = true; history.go(-(pos + 1)); };
+  // Leave: back past the guards to the page before the editor. When the editor was the first page (the installed app opened on it) there is
+  // none to go to: the guards are left behind, the window is asked to close, and a hint says the next Back exits (nothing guards it now).
+  var hadPrev = history.length > 1;
+  var toast = null;
+  var hint = function () {
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'mtx_toast';
+      toast.setAttribute('role', 'status');
+      document.body.appendChild(toast);
+    }
+    toast.textContent = (T(lang).dlg && T(lang).dlg.exitHint) || (lang === 'ar' ? 'اضغط «رجوع» مرة أخرى للخروج' : 'Press Back once more to exit');
+    toast.classList.add('mtx_on');
+    setTimeout(function () { toast.classList.remove('mtx_on'); }, 4000);
+  };
+  var leave = function () {
+    leaving = true;
+    if (hadPrev) { history.go(-(pos + 1)); return; }
+    var n = pos;
+    var done = function () {
+      try { window.close(); } catch (err) {}
+      setTimeout(hint, 350);
+    };
+    if (n > 0) {
+      var once = function () { window.removeEventListener('popstate', once); done(); };
+      window.addEventListener('popstate', once);
+      history.go(-n);
+    } else done();
+  };
   window.addEventListener('popstate', function () {
     if (!armed || leaving) return;
     pos = Math.max(0, pos - 1);

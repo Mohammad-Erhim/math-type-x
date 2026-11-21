@@ -93,6 +93,10 @@ All notable changes are documented here. The format follows
   (`click`, `pointerup`, `touchend`, `keydown` – not at touch-down: browsers skip entries made before an activation) and two are kept, so
   quick repeated Back presses are caught too.
 
+### Fixed (leaving the installed app)
+- *Leave* in the Back box works when the editor is the first page (the installed app opened on it): there is no page to go back to, so
+  the guard entries are left, the window is asked to close, and a hint says the next Back exits (that Back is no longer guarded).
+
 ### Added (experimental)
 - `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an
   editable element instead of a text input, which Chrome on Android does not decorate with its autofill strip (passwords, cards,

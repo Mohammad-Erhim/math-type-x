@@ -254,8 +254,8 @@ function editorTexts(L) {
     homeLabel: S.home, guideLabel: S.nav[3][1], faqLabel: S.nav[4][1], other: path(other(L), 'editor'), otherLang: other(L), otherLabel: S.switchTo,
     install: A ? 'ثبّت التطبيق' : 'Install app', open: A ? 'افتح التطبيق' : 'Open app', exportLabel: A ? 'تصدير' : 'Export', updated: A ? 'آخر تحديث: ' : 'Updated ',
     dlg: A
-      ? { home: 'مغادرة المحرر؟', lang: 'تبديل اللغة؟', saved: 'معادلتك محفوظة على هذا الجهاز.', lost: 'ستفقد معادلتك.', stay: 'البقاء', goHome: 'مغادرة', goLang: 'تبديل' }
-      : { home: 'Leave the editor?', lang: 'Switch language?', saved: 'Your equation is saved on this device.', lost: 'Your equation will be lost.', stay: 'Stay', goHome: 'Leave', goLang: 'Switch' },
+      ? { home: 'مغادرة المحرر؟', lang: 'تبديل اللغة؟', saved: 'معادلتك محفوظة على هذا الجهاز.', lost: 'ستفقد معادلتك.', stay: 'البقاء', goHome: 'مغادرة', goLang: 'تبديل', exitHint: 'اضغط «رجوع» مرة أخرى للخروج' }
+      : { home: 'Leave the editor?', lang: 'Switch language?', saved: 'Your equation is saved on this device.', lost: 'Your equation will be lost.', stay: 'Stay', goHome: 'Leave', goLang: 'Switch', exitHint: 'Press Back once more to exit' },
   };
 }
 function renderEditor(lang) {
