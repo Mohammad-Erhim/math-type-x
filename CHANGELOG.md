@@ -93,6 +93,11 @@ All notable changes are documented here. The format follows
   (`click`, `pointerup`, `touchend`, `keydown` – not at touch-down: browsers skip entries made before an activation) and two are kept, so
   quick repeated Back presses are caught too.
 
+### Changed (Back in the installed app)
+- The installed app opened on the editor has no page to go back to and a web page cannot close an app, so there Back works as on Android:
+  the first Back shows *Press Back again to exit* (no box) and removes the guards, a second Back within about 3 s exits, and after that
+  time the guards are restored. In a browser tab the *Leave the editor?* box stays.
+
 ### Fixed (leaving the installed app)
 - *Leave* in the Back box works when the editor is the first page (the installed app opened on it): there is no page to go back to, so
   the guard entries are left, the window is asked to close, and a hint says the next Back exits (that Back is no longer guarded).
