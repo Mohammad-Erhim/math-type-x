@@ -89,8 +89,9 @@ All notable changes are documented here. The format follows
 
 ### Added (back button)
 - The system Back button (and the browser's) in the full-page editor asks before leaving when there is a formula – the same *Leave the
-  editor?* box as the logo, Stay or Leave, Esc keeps you; an empty editor leaves at once. A history guard entry is added at the first
-  tap or key press (browsers skip entries made without one).
+  editor?* box as the logo, Stay or Leave, Esc keeps you; an empty editor leaves at once. Guard entries are added at a real tap or key press
+  (`click`, `pointerup`, `touchend`, `keydown` – not at touch-down: browsers skip entries made before an activation) and two are kept, so
+  quick repeated Back presses are caught too.
 
 ### Added (experimental)
 - `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an

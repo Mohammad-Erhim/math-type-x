@@ -145,7 +145,7 @@
   dlg.querySelector('.mtx_go').addEventListener('click', function () {
     var back = dlg.getAttribute('data-mode') === 'back';
     dlg.close();
-    if (back) { leaving = true; history.back(); } else location.href = target;
+    if (back) { leave(); } else location.href = target;
   });
   // a tap on the dim area around the card closes it too
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
@@ -165,20 +165,30 @@
     }
   } catch (err) {}
   // ---- the system Back button (and the browser's): with a formula in the editor it asks before leaving, like the logo does
+  // Guard entries sit above the editor's own entry. The browser skips entries made before the page has had a real tap or key press, so
+  // they are added at those (not at touch-down); two are kept, so a quick second Back is still caught.
   var armed = false;
-  var arm = function () {
-    if (armed || leaving) return;
-    armed = true;
-    try { history.pushState({ mtx: 'back-guard' }, '', location.href); } catch (err) { armed = false; }
+  var pos = 0; // guard entries at or below the current position
+  var push = function () {
+    try { history.pushState({ mtx: 'back-guard' }, '', location.href); pos++; return true; } catch (err) { return false; }
   };
-  // an entry added without a tap or a key press is skipped by the browser's Back: the guard goes in at the first one
-  ['pointerdown', 'keydown', 'touchstart'].forEach(function (t) { window.addEventListener(t, arm, { once: true, capture: true, passive: true }); });
+  var arm = function () {
+    if (leaving) return;
+    var ok = true;
+    while (pos < 2 && ok) ok = push();
+    if (pos > 0) armed = true;
+  };
+  ['click', 'pointerup', 'touchend', 'keydown'].forEach(function (t) { window.addEventListener(t, arm, { capture: true, passive: true }); });
+  var leave = function () { leaving = true; history.go(-(pos + 1)); };
   window.addEventListener('popstate', function () {
     if (!armed || leaving) return;
-    armed = false; // the guard entry has been used
+    pos = Math.max(0, pos - 1);
     var empty = true;
     try { empty = editor.isEmpty(); } catch (err) {}
-    if (empty || typeof dlg.showModal !== 'function') { leaving = true; history.back(); return; }
+    if (empty || typeof dlg.showModal !== 'function') { leave(); return; }
+    // keep the depth at once, so that another Back lands on a guard again instead of leaving
+    while (pos < 2) { if (!push()) break; }
+    if (dlg.open) return;
     var saved = false;
     try { saved = !!(editor.isPersisted && editor.isPersisted()); } catch (err) {}
     dlg.setAttribute('data-mode', 'back');
@@ -188,7 +198,7 @@
     dlg.showModal();
     dlg.querySelector('.mtx_stay').focus();
   });
-  // staying (the Stay button, Esc, a tap outside): the guard goes back in
+  // staying (the Stay button, Esc, a tap outside): the guard is topped up
   dlg.addEventListener('close', function () {
     if (dlg.getAttribute('data-mode') === 'back' && !leaving) arm();
     dlg.removeAttribute('data-mode');
