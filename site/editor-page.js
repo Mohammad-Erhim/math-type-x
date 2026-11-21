@@ -2,7 +2,11 @@
 (function () {
   var cfg = window.MTX_PAGE || {};
   var q = new URLSearchParams(location.search);
-  var lang = q.get('lang') || cfg.lang || 'en';
+  var routeLang = q.get('lang') || cfg.lang || 'en';
+  var lang = routeLang;
+  var T = function (l) { return (cfg.i18n && cfg.i18n[l]) || {}; };
+  // the language is a setting, not a route: the choice made earlier (the language button, the right-to-left button) is applied here, in place – the address does not decide
+  try { var pref = localStorage.getItem('mtx:lang'); if (!q.get('lang') && (pref === 'ar' || pref === 'en') && T(pref).lang) lang = pref; } catch (err) {}
   // no server on a static host: the editor does its images and conversions itself
   // ?field=editable: the keys go to an editable element instead of a text input (no autofill strip above the keyboard on Chrome for Android); remembered
   var field = q.get('field');
@@ -30,14 +34,22 @@
     vv.addEventListener('resize', fit);
     vv.addEventListener('scroll', fit);
   }
-  var editor = MathTypeX.JsEditor.newInstance(opts);
-  window.editor = editor;
-  // Arabic switched off in the Arabic editor (or on in the English one): the whole editor follows – the other language's page, the formula goes along
-  editor.on('rtltoggle', function (e) {
-    var wrong = (lang === 'ar' && !e.rtl) || (lang !== 'ar' && e.rtl);
-    if (wrong && cfg.other) { try { localStorage.setItem('mtx:lang', lang === 'ar' ? 'en' : 'ar'); } catch (err) {} setTimeout(function () { location.href = cfg.other; }, 50); }
-  });
-  editor.insertInto(document.getElementById('editorContainer'));
+  var editor = null;
+  var outBox = document.getElementById('outputContainer');
+  var dock = null;
+  var mount = function () {
+    editor = MathTypeX.JsEditor.newInstance(opts);
+    window.editor = editor;
+    // Arabic switched off in the Arabic editor (or on in the English one): the whole editor follows, in place – the formula goes along
+    editor.on('rtltoggle', function (e) {
+      var wrong = (lang === 'ar' && !e.rtl) || (lang !== 'ar' && e.rtl);
+      if (wrong) setTimeout(function () { switchLang(lang === 'ar' ? 'en' : 'ar'); }, 0);
+    });
+    editor.insertInto(document.getElementById('editorContainer'));
+    window.outputPanel = new MathTypeX.OutputPanel(editor, outBox);
+    if (dock) outBox.appendChild(dock); // the bottom row stays the last one
+  };
+  mount();
   // a formula started in the playground of the home page continues here
   try {
     var pending = localStorage.getItem('mtx:handoff');
@@ -47,8 +59,6 @@
       setTimeout(function () { try { if (editor.isEmpty()) editor.setMathML(pending); } catch (e) {} }, 600);
     }
   } catch (e) {}
-  var outBox = document.getElementById('outputContainer');
-  window.outputPanel = new MathTypeX.OutputPanel(editor, outBox);
   // phones: the export section is folded away behind a bar at the bottom
   var ar = /^ar/i.test(lang);
   var bar = document.createElement('button');
@@ -77,7 +87,7 @@
     setOpen(open);
   });
   // phones: the language switch and the home link live in the same bottom row as the export bar (no top bar, more room for the text)
-  var dock = document.createElement('div');
+  dock = document.createElement('div');
   dock.className = 'mtx_dock';
   var lang2 = document.createElement('a');
   lang2.className = 'mtx_lang';
@@ -129,7 +139,6 @@
       dlg.querySelector('.mtx_stay').focus();
     });
   };
-  guard(lang2, 'lang');
   guard(home, 'home');
   dlg.querySelector('.mtx_stay').addEventListener('click', function () { dlg.close(); });
   dlg.querySelector('.mtx_go').addEventListener('click', function () { dlg.close(); location.href = target; });
@@ -150,4 +159,64 @@
       up.title = when.toString();
     }
   } catch (err) {}
+  // ---- the language switch: in place (the formula, the page and its address stay)
+  var fmtUpdated = function () {
+    try {
+      var up = document.querySelector('time.upd[datetime]');
+      if (!up) return;
+      var when = new Date(up.getAttribute('datetime'));
+      up.textContent = (up.getAttribute('data-label') || '') + new Intl.DateTimeFormat(ar ? 'ar' : 'en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false }).format(when);
+      up.title = when.toString();
+    } catch (err) {}
+  };
+  var applyChrome = function () {
+    var t = T(lang);
+    if (!t.lang) return;
+    ar = /^ar/i.test(lang);
+    root.lang = lang;
+    root.dir = t.dir || (ar ? 'rtl' : 'ltr');
+    if (t.title) document.title = t.title;
+    var h1 = document.querySelector('main.page > h1.sr-only'), intro = document.querySelector('main.page > p.sr-only');
+    if (h1) h1.textContent = t.h1;
+    if (intro) intro.textContent = t.intro;
+    var brand = document.querySelector('.app-bar .brand');
+    if (brand) brand.href = t.home;
+    var set = function (a, href, text) { if (a) { a.href = href; if (text !== undefined) a.textContent = text; } };
+    set(document.querySelector('.app-bar [data-k="guide"]'), t.guide, t.guideLabel);
+    set(document.querySelector('.app-bar [data-k="faq"]'), t.faq, t.faqLabel);
+    set(document.querySelector('.app-bar [data-k="home"]'), t.home, t.homeLabel);
+    var barLang = document.querySelector('.app-bar [data-k="lang"]');
+    if (barLang) { set(barLang, t.other, t.otherLabel); barLang.setAttribute('hreflang', t.otherLang); barLang.lang = t.otherLang; }
+    var upd = document.querySelector('time.upd'); if (upd) upd.setAttribute('data-label', t.updated);
+    fmtUpdated();
+    var ins = document.querySelector('.app-bar .inst');
+    if (ins) { ins.querySelector('.i-install').textContent = t.install; ins.querySelector('.i-open').textContent = t.open; }
+    // the bottom row (phones)
+    lang2.href = t.other; lang2.setAttribute('hreflang', t.otherLang); lang2.lang = t.otherLang;
+    lang2.lastChild.textContent = t.otherLabel;
+    home.href = t.home;
+    label = t.exportLabel;
+    setOpen(outBox.classList.contains('mtx_open'), true);
+    inst.title = t.install;
+    var srs = inst.querySelectorAll('.sr-only'); if (srs[0]) srs[0].textContent = t.install; if (srs[1]) srs[1].textContent = t.open;
+    txt = t.dlg;
+    dlg.querySelector('.mtx_stay').textContent = txt.stay;
+  };
+  var switchLang = function (next) {
+    if (next === lang || !T(next).lang) return;
+    try { localStorage.setItem('mtx:lang', next); } catch (err) {}
+    try { window.outputPanel.destroy(); } catch (err) {}
+    try { editor.destroy(); } catch (err) {} // saves the formula; the new editor restores it with the options of the new language
+    lang = next;
+    opts.language = next;
+    mount();
+    applyChrome();
+  };
+  var otherLang = function () { return lang === 'ar' ? 'en' : 'ar'; };
+  var link = function (a) { a.addEventListener('click', function (e) { if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); switchLang(otherLang()); }); };
+  link(lang2);
+  var barLink = document.querySelector('.app-bar [data-k="lang"]');
+  if (barLink) link(barLink);
+  // opened in a language other than the page's own (the remembered choice): the texts and links follow it now
+  if (lang !== routeLang) applyChrome();
 })();

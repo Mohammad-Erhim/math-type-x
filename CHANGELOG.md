@@ -74,11 +74,13 @@ All notable changes are documented here. The format follows
   mathml }`) so an embedding page can do the same; without a handler the typing options (digits, Arabic ligature, Arabic font, Arabic
   differential) follow the direction.
 
-### Changed (language is remembered)
-- The language chosen with the language switch (website header, editor bar, phone bottom bar) or by the right-to-left button is
-  remembered in the browser (`mtx:lang`): an English address opens the Arabic page for a visitor who chose Arabic – also the start
-  address of the installed app – until English is chosen again. Arabic pages are never forced to English and search engines (no
-  storage) see no redirect.
+### Changed (language is a setting, not a route)
+- The language chosen with a language switch (website header, editor bar, phone bottom bar) or by the right-to-left button is remembered
+  in the browser (`mtx:lang`) and **decides the language, not the address**: the full-page editor switches language in place (the
+  address and the history do not change, the texts, links, editor and output panel follow, the formula goes along), and website pages
+  open in the remembered language at either address (`location.replace`, so the back button never bounces between languages). Without a
+  remembered choice the address's own language is shown, so search engines and first visits are unaffected.
+- `OutputPanel.destroy()`; the editor page script keeps both languages' texts and links in `window.MTX_PAGE.i18n`.
 
 ### Added (experimental)
 - `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an
