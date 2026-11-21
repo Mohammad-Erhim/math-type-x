@@ -123,6 +123,7 @@
   dlg.querySelector('.mtx_stay').textContent = txt.stay;
   document.body.appendChild(dlg);
   var target = '';
+  var leaving = false;
   var guard = function (a, kind) {
     a.addEventListener('click', function (e) {
       var empty = true;
@@ -141,7 +142,11 @@
   };
   guard(home, 'home');
   dlg.querySelector('.mtx_stay').addEventListener('click', function () { dlg.close(); });
-  dlg.querySelector('.mtx_go').addEventListener('click', function () { dlg.close(); location.href = target; });
+  dlg.querySelector('.mtx_go').addEventListener('click', function () {
+    var back = dlg.getAttribute('data-mode') === 'back';
+    dlg.close();
+    if (back) { leaving = true; history.back(); } else location.href = target;
+  });
   // a tap on the dim area around the card closes it too
   dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
   document.addEventListener('focusin', function (e) {
@@ -159,6 +164,35 @@
       up.title = when.toString();
     }
   } catch (err) {}
+  // ---- the system Back button (and the browser's): with a formula in the editor it asks before leaving, like the logo does
+  var armed = false;
+  var arm = function () {
+    if (armed || leaving) return;
+    armed = true;
+    try { history.pushState({ mtx: 'back-guard' }, '', location.href); } catch (err) { armed = false; }
+  };
+  // an entry added without a tap or a key press is skipped by the browser's Back: the guard goes in at the first one
+  ['pointerdown', 'keydown', 'touchstart'].forEach(function (t) { window.addEventListener(t, arm, { once: true, capture: true, passive: true }); });
+  window.addEventListener('popstate', function () {
+    if (!armed || leaving) return;
+    armed = false; // the guard entry has been used
+    var empty = true;
+    try { empty = editor.isEmpty(); } catch (err) {}
+    if (empty || typeof dlg.showModal !== 'function') { leaving = true; history.back(); return; }
+    var saved = false;
+    try { saved = !!(editor.isPersisted && editor.isPersisted()); } catch (err) {}
+    dlg.setAttribute('data-mode', 'back');
+    dlg.querySelector('h2').textContent = txt.home;
+    dlg.querySelector('.mtx_go').textContent = txt.goHome;
+    dlg.querySelector('p').textContent = saved ? txt.saved : txt.lost;
+    dlg.showModal();
+    dlg.querySelector('.mtx_stay').focus();
+  });
+  // staying (the Stay button, Esc, a tap outside): the guard goes back in
+  dlg.addEventListener('close', function () {
+    if (dlg.getAttribute('data-mode') === 'back' && !leaving) arm();
+    dlg.removeAttribute('data-mode');
+  });
   // ---- the language switch: in place (the formula, the page and its address stay)
   var fmtUpdated = function () {
     try {
