@@ -74,6 +74,12 @@ All notable changes are documented here. The format follows
   mathml }`) so an embedding page can do the same; without a handler the typing options (digits, Arabic ligature, Arabic font, Arabic
   differential) follow the direction.
 
+### Changed (language is remembered)
+- The language chosen with the language switch (website header, editor bar, phone bottom bar) or by the right-to-left button is
+  remembered in the browser (`mtx:lang`): an English address opens the Arabic page for a visitor who chose Arabic – also the start
+  address of the installed app – until English is chosen again. Arabic pages are never forced to English and search engines (no
+  storage) see no redirect.
+
 ### Added (experimental)
 - `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an
   editable element instead of a text input, which Chrome on Android does not decorate with its autofill strip (passwords, cards,
