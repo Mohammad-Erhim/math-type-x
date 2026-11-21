@@ -82,6 +82,11 @@ All notable changes are documented here. The format follows
   remembered choice the address's own language is shown, so search engines and first visits are unaffected.
 - `OutputPanel.destroy()`; the editor page script keeps both languages' texts and links in `window.MTX_PAGE.i18n`.
 
+### Fixed (rotation)
+- The manifest no longer has `orientation: 'any'`: on Android that let the installed app rotate even when auto-rotate was off. Without
+  the key the app follows the device's rotation setting (the installed app picks the change up when the browser refreshes its
+  manifest, or after a re-install).
+
 ### Added (experimental)
 - `typingField: 'editable'` option and `?field=editable` on the full-page editor (remembered; `?field=input` goes back): the keys go to an
   editable element instead of a text input, which Chrome on Android does not decorate with its autofill strip (passwords, cards,

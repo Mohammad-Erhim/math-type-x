@@ -310,9 +310,10 @@ for (const slug of sitemapSlugs) {
 }
 write('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`);
 write('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${abs(BASE + '/sitemap.xml')}\n`);
+// no `orientation` key on purpose: 'any' lets Android rotate the installed app even when the person turned auto-rotate off; without it the app follows the device setting
 write('manifest.webmanifest', JSON.stringify({
   id: `${BASE}/`, name: 'MathTypeX equation editor', short_name: 'MathTypeX', description: PAGES[''].en.description,
-  start_url: `${BASE}/editor/?source=pwa`, scope: `${BASE}/`, display: 'standalone', orientation: 'any',
+  start_url: `${BASE}/editor/?source=pwa`, scope: `${BASE}/`, display: 'standalone',
   background_color: '#ffffff', theme_color: '#18212f', lang: 'en', categories: ['education', 'productivity', 'utilities'],
   icons: [
     { src: `${BASE}/media/icon-192.png`, sizes: '192x192', type: 'image/png', purpose: 'any' },
