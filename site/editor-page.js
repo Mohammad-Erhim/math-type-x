@@ -35,7 +35,7 @@
   // Arabic switched off in the Arabic editor (or on in the English one): the whole editor follows – the other language's page, the formula goes along
   editor.on('rtltoggle', function (e) {
     var wrong = (lang === 'ar' && !e.rtl) || (lang !== 'ar' && e.rtl);
-    if (wrong && cfg.other) setTimeout(function () { location.href = cfg.other; }, 50);
+    if (wrong && cfg.other) { try { localStorage.setItem('mtx:lang', lang === 'ar' ? 'en' : 'ar'); } catch (err) {} setTimeout(function () { location.href = cfg.other; }, 50); }
   });
   editor.insertInto(document.getElementById('editorContainer'));
   // a formula started in the playground of the home page continues here
