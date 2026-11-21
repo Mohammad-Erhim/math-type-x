@@ -99,7 +99,7 @@ function head({ lang, slug, title, description, og, noindex, schema, styles }) {
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="MathTypeX">
 <script>if('serviceWorker' in navigator){var had=!!navigator.serviceWorker.controller,touched=false,once=false;['pointerdown','keydown','touchstart'].forEach(function(t){addEventListener(t,function(){touched=true},{capture:true,once:true,passive:true})});navigator.serviceWorker.addEventListener('controllerchange',function(){if(had&&!touched&&!once){once=true;location.reload()}had=true});addEventListener('load',function(){navigator.serviceWorker.register('${BASE}/sw.js',{scope:'${BASE}/',updateViaCache:'none'}).catch(function(){})})}</script>
-<script>(function(){var K='mtx:lang',L='${lang}';try{if(L==='en'&&localStorage.getItem(K)==='ar'&&location.search.indexOf('lang=en')<0)location.replace('${path('ar', slug)}'+location.search+location.hash)}catch(e){}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(a){var h=a.getAttribute('hreflang');if(h&&h!==L){try{localStorage.setItem(K,h)}catch(x){}}}},true)})()</script>
+${slug === 'editor' ? '' : `<script>(function(){var K='mtx:lang',L='${lang}';try{var P=localStorage.getItem(K);if((P==='ar'||P==='en')&&P!==L)location.replace((P==='ar'?'${path('ar', slug)}':'${path('en', slug)}')+location.search+location.hash)}catch(e){}document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[hreflang]');if(!a||e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey)return;var h=a.getAttribute('hreflang');if(h&&h!==L){try{localStorage.setItem(K,h)}catch(x){}e.preventDefault();location.replace(a.href)}},true)})()</script>`}
 <script>(function(){var sa=(window.matchMedia&&matchMedia('(display-mode: standalone)').matches)||navigator.standalone===true;if(sa){var r0=document.documentElement,ar0=location.pathname.indexOf('${BASE}/ar/')===0;r0.classList.add('standalone');if(location.pathname.slice(-8)!=='/editor/')location.replace('${BASE}'+(ar0?'/ar':'')+'/editor/')}})()</script>
 <script>(function(){var d,r=document.documentElement,K='mtx:installed',P='mtx:offered',U='${BASE}/${lang === 'ar' ? 'ar/' : ''}editor/?source=pwa';function save(){try{localStorage.setItem(K,'1')}catch(e){}}function drop(){try{localStorage.removeItem(K)}catch(e){}}try{if(localStorage.getItem(K)==='1')r.classList.add('installed')}catch(e){}if(r.classList.contains('standalone')){save();r.classList.add('installed')}if(navigator.getInstalledRelatedApps)navigator.getInstalledRelatedApps().then(function(a){if(a&&a.length){save();r.classList.add('installed')}}).catch(function(){});addEventListener('beforeinstallprompt',function(e){e.preventDefault();d=e;drop();try{localStorage.setItem(P,'1')}catch(x){}r.classList.remove('installed');r.classList.add('can-install')});try{if(localStorage.getItem(P)==='1'&&!r.classList.contains('standalone')&&!r.classList.contains('installed'))setTimeout(function(){if(!d){save();r.classList.add('installed')}},4000)}catch(e){}var ua=navigator.userAgent;if(/Android/.test(ua)&&ua.indexOf('Chrome/')>-1&&ua.indexOf('; wv)')<0&&!/SamsungBrowser|Firefox|OPR|EdgA/.test(ua))setTimeout(function(){if(!d&&!r.classList.contains('standalone')&&!r.classList.contains('can-install'))r.classList.add('installed')},6000);addEventListener('appinstalled',function(){d=null;save();r.classList.remove('can-install');r.classList.add('installed')});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('[data-install]');if(!b)return;if(r.classList.contains('installed')){e.preventDefault();window.open(U,'_blank');return}if(!d)return;e.preventDefault();d.prompt();d.userChoice.then(function(){d=null;r.classList.remove('can-install')})})})()</script>
 <link rel="preload" href="${BASE}/assets/site/${lang === 'ar' ? 'noto-naskh-arabic-700' : 'roboto-slab-700'}.woff2" as="font" type="font/woff2" crossorigin>
@@ -239,26 +239,43 @@ const LAST_UPDATE = (() => {
     return d ? new Date(d) : new Date();
   } catch { return new Date(); }
 })();
+// the title, description and texts of the full-page editor in a language (the page can switch language in place)
+const editorMeta = (lang) => {
+  const ar = lang === 'ar';
+  return ar
+    ? { title: 'المحرر الكامل – على الإنترنت وبلا إنترنت | MathTypeX', description: 'محرر معادلات رياضية بملء الصفحة: اكتب بالعربية أو الإنجليزية، ونزّل معادلتك صورة PNG. يعمل في متصفحك، ويمكنك تثبيته كتطبيق ليعمل بلا إنترنت.', h1: 'محرر المعادلات MathTypeX', intro: 'استخدم شريط الأدوات أو لوحة المفاتيح لبناء معادلتك، ثم افتح تبويب PNG لتنزيلها صورة.' }
+    : { title: 'Full-Page Equation Editor – Online & Offline | MathTypeX', description: 'The full-page equation editor, online and offline: write in English or Arabic and download a PNG. Runs in your browser; install it as an app.', h1: 'MathTypeX equation editor', intro: 'Use the toolbar or the keyboard to build your equation, then open the PNG tab to download it as an image.' };
+};
+// everything the page script needs to show the editor page in either language without leaving the page
+function editorTexts(L) {
+  const S = SITE[L], X = ctx(L), A = L === 'ar', m = editorMeta(L);
+  return {
+    lang: L, dir: S.dir, title: m.title, h1: m.h1, intro: m.intro, home: X.u(''), guide: X.u('guide'), faq: X.u('faq'),
+    homeLabel: S.home, guideLabel: S.nav[3][1], faqLabel: S.nav[4][1], other: path(other(L), 'editor'), otherLang: other(L), otherLabel: S.switchTo,
+    install: A ? 'ثبّت التطبيق' : 'Install app', open: A ? 'افتح التطبيق' : 'Open app', exportLabel: A ? 'تصدير' : 'Export', updated: A ? 'آخر تحديث: ' : 'Updated ',
+    dlg: A
+      ? { home: 'مغادرة المحرر؟', lang: 'تبديل اللغة؟', saved: 'معادلتك محفوظة على هذا الجهاز.', lost: 'ستفقد معادلتك.', stay: 'البقاء', goHome: 'مغادرة', goLang: 'تبديل' }
+      : { home: 'Leave the editor?', lang: 'Switch language?', saved: 'Your equation is saved on this device.', lost: 'Your equation will be lost.', stay: 'Stay', goHome: 'Leave', goLang: 'Switch' },
+  };
+}
 function renderEditor(lang) {
   const s = SITE[lang];
   const x = ctx(lang);
   const ar = lang === 'ar';
-  const meta = ar
-    ? { title: 'المحرر الكامل – على الإنترنت وبلا إنترنت | MathTypeX', description: 'محرر معادلات رياضية بملء الصفحة: اكتب بالعربية أو الإنجليزية، ونزّل معادلتك صورة PNG. يعمل في متصفحك، ويمكنك تثبيته كتطبيق ليعمل بلا إنترنت.', h1: 'محرر المعادلات MathTypeX', intro: 'استخدم شريط الأدوات أو لوحة المفاتيح لبناء معادلتك، ثم افتح تبويب PNG لتنزيلها صورة.' }
-    : { title: 'Full-Page Equation Editor – Online & Offline | MathTypeX', description: 'The full-page equation editor, online and offline: write in English or Arabic and download a PNG. Runs in your browser; install it as an app.', h1: 'MathTypeX equation editor', intro: 'Use the toolbar or the keyboard to build your equation, then open the PNG tab to download it as an image.' };
+  const meta = editorMeta(lang);
   const schema = [{ '@context': 'https://schema.org', '@graph': [crumbs(lang, 'editor', ar ? 'المحرر' : 'Editor'), appSchema(lang)] }];
   const h = head({ lang, slug: 'editor', title: meta.title, description: meta.description, schema, styles: appCss + '\n' + editorPageCss.replace(/html\{color-scheme[^}]*\}/, '') });
   return `${h}
 <body class="app">
 <div class="app-bar"><a class="brand" href="${x.u('')}"><img src="${BASE}/media/icon-192.png" width="26" height="26" alt="">MathTypeX</a>
-  <span class="sp">${updated(lang)}<button type="button" class="inst" data-install><span class="i-install">${ar ? 'ثبّت التطبيق' : 'Install app'}</span><span class="i-open">${ar ? 'افتح التطبيق' : 'Open app'}</span></button><a class="hide-sm" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" href="${x.u('')}">${s.home}</a><a href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
+  <span class="sp">${updated(lang)}<button type="button" class="inst" data-install><span class="i-install">${ar ? 'ثبّت التطبيق' : 'Install app'}</span><span class="i-open">${ar ? 'افتح التطبيق' : 'Open app'}</span></button><a class="hide-sm" data-k="guide" href="${x.u('guide')}">${s.nav[3][1]}</a><a class="hide-sm" data-k="faq" href="${x.u('faq')}">${s.nav[4][1]}</a><a class="home" data-k="home" href="${x.u('')}">${s.home}</a><a data-k="lang" href="${path(other(lang), 'editor')}" hreflang="${other(lang)}" lang="${other(lang)}">${s.switchTo}</a></span></div>
 <main class="page">
   <h1 class="sr-only">${meta.h1}</h1>
   <p class="sr-only">${meta.intro}</p>
   <div class="wp-block-columns is-layout-flex"><div class="wp-block-column"><div id="editorContainer"></div><div id="outputContainer"></div></div></div>
 </main>
 <noscript><p style="padding:20px">${ar ? 'يحتاج المحرر إلى JavaScript.' : 'The editor needs JavaScript.'}</p></noscript>
-<script>window.MTX_PAGE=${JSON.stringify({ lang, home: x.u(''), icon: `${BASE}/media/icon-192.png`, other: path(other(lang), 'editor'), otherLang: other(lang), otherLabel: s.switchTo })}</script>
+<script>window.MTX_PAGE=${JSON.stringify({ lang, home: x.u(''), icon: `${BASE}/media/icon-192.png`, other: path(other(lang), 'editor'), otherLang: other(lang), otherLabel: s.switchTo, i18n: { en: editorTexts('en'), ar: editorTexts('ar') } })}</script>
 <script src="${BASE}/assets/editor.js?v=${stamp}"></script>
 <script src="${BASE}/assets/editor-page.js?v=${stamp}"></script>
 </body>

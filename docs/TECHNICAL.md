@@ -53,6 +53,7 @@ The website (`tools/build_site.mjs`) is an installable progressive web app. Ever
   CSS hides the website links, the home link and the install buttons, and a page that is not an editor page redirects to the editor
   of the same language.
 * Install buttons use `beforeinstallprompt` (captured in the page head) and are hidden until the browser offers the install.
+* Language: `localStorage['mtx:lang']` (`en` / `ar`, set by a language switch or the right-to-left button) decides the language, not the address. The editor page rebuilds its editor and output panel in place (`switchLang` in `site/editor-page.js`, texts and links from `MTX_PAGE.i18n`); website pages `location.replace` to the other language's address when the stored choice differs. With no stored choice the address's language is used (crawlers, first visits).
 * The offline copy holds only public site files; the formula and preferences live in `localStorage` (`persist`).
 
 To check it: serve `dist-site` over HTTP (a server that sends `Cache-Control: max-age=600` reproduces GitHub Pages), load the

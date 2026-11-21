@@ -146,21 +146,38 @@ export class OutputPanel {
     ed.on('change', () => this.onChange());
     ed.on('ready', () => this.schedule(0));
     if (typeof IntersectionObserver === 'function') {
-      new IntersectionObserver((es) => {
+      this.observer = new IntersectionObserver((es) => {
         this.shown = es[es.length - 1].isIntersecting;
         if (this.shown && this.hiddenPending) {
           this.hiddenPending = false;
           this.schedule(0);
         }
-      }).observe(this.root);
+      });
+      this.observer.observe(this.root);
     }
-    document.addEventListener('visibilitychange', () => {
-      if (!document.hidden && this.hiddenPending) {
-        this.hiddenPending = false;
-        this.schedule(0);
-      }
-    });
+    document.addEventListener('visibilitychange', this.onVisible);
     this.schedule(0);
+  }
+
+  private onVisible = (): void => {
+    if (!document.hidden && this.hiddenPending) {
+      this.hiddenPending = false;
+      this.schedule(0);
+    }
+  };
+  private observer: IntersectionObserver | null = null;
+
+  /** take the panel away (the editor it belongs to was replaced): no timers, requests or listeners are left */
+  destroy(): void {
+    if (this.timer) clearTimeout(this.timer);
+    this.timer = null;
+    this.abort?.abort();
+    this.abort = null;
+    this.seq++;
+    this.observer?.disconnect();
+    document.removeEventListener('visibilitychange', this.onVisible);
+    if (this.imgUrl) URL.revokeObjectURL(this.imgUrl);
+    this.root.remove();
   }
 
   private setKind(k: Kind): void {
