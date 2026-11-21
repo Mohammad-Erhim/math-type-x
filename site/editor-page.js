@@ -192,7 +192,7 @@
     }
     toast.textContent = (T(lang).dlg && T(lang).dlg.exitHint) || (lang === 'ar' ? 'اضغط «رجوع» مرة أخرى للخروج' : 'Press Back once more to exit');
     toast.classList.add('mtx_on');
-    setTimeout(function () { toast.classList.remove('mtx_on'); }, 4000);
+    setTimeout(function () { toast.classList.remove('mtx_on'); }, 3000);
   };
   var leave = function () {
     leaving = true;
@@ -208,9 +208,24 @@
       history.go(-n);
     } else done();
   };
+  // The installed app opened on the editor has no page before it and a web page cannot close an app: there Back works as on Android – the
+  // first Back shows "Press Back again to exit" and takes the guards out of the way, a second one within a few seconds exits, and after
+  // that time the guards are put back.
+  var appFirst = root.classList.contains('standalone') && !hadPrev;
+  var rearm = null;
   window.addEventListener('popstate', function () {
     if (!armed || leaving) return;
     pos = Math.max(0, pos - 1);
+    if (appFirst) {
+      armed = false;
+      hint();
+      var n = pos;
+      pos = 0;
+      if (n > 0) history.go(-n);
+      clearTimeout(rearm);
+      rearm = setTimeout(arm, 3200);
+      return;
+    }
     var empty = true;
     try { empty = editor.isEmpty(); } catch (err) {}
     if (empty || typeof dlg.showModal !== 'function') { leave(); return; }
